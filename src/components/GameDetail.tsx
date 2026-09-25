@@ -1,7 +1,7 @@
 import { useEffect, type ReactNode } from 'react';
 import type { Game } from '../types';
 import { formatDate, formatNumber, formatPlaytime, genreLabel } from '../lib/format';
-import { Cover } from './Cover';
+import { Gallery } from './Gallery';
 import { PlatformBadge, RatingBadge, StatusBadge } from './Badges';
 
 interface Props {
@@ -42,7 +42,7 @@ export function GameDetail({ game, onClose, onPrev, onNext, actions }: Props) {
           ×
         </button>
         <div className="detail-cover">
-          <Cover game={game} eager />
+          <Gallery game={game} />
         </div>
         <div className="detail-info">
           <div className="detail-top">

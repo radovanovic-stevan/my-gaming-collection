@@ -1,7 +1,8 @@
 // Local-only editing API, mounted on the Vite dev server (`npm run dev`).
 // Everything is persisted straight to the file system:
 //   public/data/games.json  - the collection
-//   public/covers/          - cover images, named <id>-<hash>.<ext>
+//   public/images/          - game images, named <id>-<hash>.<ext>
+// Each game lists its images in `images`; `cover` is one of them (or null).
 // The static build (GitHub Pages) has no API, so the app is read-only there.
 import type { Plugin } from 'vite';
 import type { IncomingMessage, ServerResponse } from 'node:http';
@@ -11,13 +12,14 @@ import path from 'node:path';
 
 const ROOT = process.cwd();
 const GAMES_FILE = path.join(ROOT, 'public/data/games.json');
-const COVERS_DIR = path.join(ROOT, 'public/covers');
+const IMAGES_DIR = path.join(ROOT, 'public/images');
 
 const STATUSES = ['Completed', 'Not Completed', 'Null', 'Unplayable', 'Unrateable'];
 const IMAGE_TYPES: Record<string, string> = { 'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp', 'image/gif': 'gif' };
 const MAX_BODY = 15 * 1024 * 1024;
+const MIME_BY_EXT = Object.fromEntries(Object.entries(IMAGE_TYPES).map(([mime, ext]) => [ext, mime]));
 
-type Game = Record<string, unknown> & { id: number; cover: string | null };
+type Game = Record<string, unknown> & { id: number; images: string[]; cover: string | null };
 
 class HttpError extends Error {
   constructor(
@@ -47,9 +49,8 @@ async function saveGames(games: Game[]) {
   await rename(tmp, GAMES_FILE);
 }
 
-async function removeCoverFile(file: string | null) {
-  if (!file) return;
-  await unlink(path.join(COVERS_DIR, path.basename(file))).catch(() => {});
+async function removeImageFile(file: string) {
+  await unlink(path.join(IMAGES_DIR, path.basename(file))).catch(() => {});
 }
 
 const str = (v: unknown) => (typeof v === 'string' ? v.replace(/\s+/g, ' ').trim() : '');
@@ -63,7 +64,7 @@ function num(v: unknown, field: string): number | null {
 }
 
 /** Whitelists and normalizes the editable fields of a game. */
-function sanitize(input: Record<string, unknown>): Omit<Game, 'id' | 'cover'> {
+function sanitize(input: Record<string, unknown>): Omit<Game, 'id' | 'images' | 'cover'> {
   const title = str(input.title);
   const platform = str(input.platform);
   const status = str(input.status);
@@ -144,7 +145,7 @@ async function handle(req: IncomingMessage, res: ServerResponse): Promise<void> 
     const body = await readBody(req);
     const game = await exclusive(async () => {
       const games = await loadGames();
-      const created: Game = { id: Math.max(0, ...games.map((g) => g.id)) + 1, ...sanitize(body), cover: null };
+      const created: Game = { id: Math.max(0, ...games.map((g) => g.id)) + 1, ...sanitize(body), images: [], cover: null };
       games.push(created);
       await saveGames(games);
       return created;
@@ -160,7 +161,7 @@ async function handle(req: IncomingMessage, res: ServerResponse): Promise<void> 
     const game = await exclusive(async () => {
       const games = await loadGames();
       const i = findIndex(games, id);
-      games[i] = { id, ...sanitize(body), cover: games[i].cover };
+      games[i] = { id, ...sanitize(body), images: games[i].images, cover: games[i].cover };
       await saveGames(games);
       return games[i];
     });
@@ -173,13 +174,14 @@ async function handle(req: IncomingMessage, res: ServerResponse): Promise<void> 
       const games = await loadGames();
       const [removed] = games.splice(findIndex(games, id), 1);
       await saveGames(games);
-      await removeCoverFile(removed.cover);
+      await Promise.all(removed.images.map(removeImageFile));
     });
     return send(res, 200, { ok: true });
   }
 
-  // PUT /api/games/:id/cover   body: { dataUrl: "data:image/jpeg;base64,..." }
-  if (parts[2] === 'cover' && method === 'PUT') {
+  // POST /api/games/:id/images   body: { dataUrl: "data:image/jpeg;base64,..." }
+  // The first image a game gets becomes its cover.
+  if (parts[2] === 'images' && parts.length === 3 && method === 'POST') {
     const { dataUrl } = await readBody(req);
     const m = typeof dataUrl === 'string' && dataUrl.match(/^data:([\w/+.-]+);base64,(.+)$/);
     if (!m || !IMAGE_TYPES[m[1]]) throw new HttpError(400, 'Expected a JPEG, PNG, WebP or GIF data URL');
@@ -189,22 +191,42 @@ async function handle(req: IncomingMessage, res: ServerResponse): Promise<void> 
     const game = await exclusive(async () => {
       const games = await loadGames();
       const i = findIndex(games, id);
-      await writeFile(path.join(COVERS_DIR, file), bytes);
-      if (games[i].cover !== file) await removeCoverFile(games[i].cover);
-      games[i] = { ...games[i], cover: file };
+      const g = games[i];
+      if (!g.images.includes(file)) {
+        await writeFile(path.join(IMAGES_DIR, file), bytes);
+        games[i] = { ...g, images: [...g.images, file], cover: g.cover ?? file };
+        await saveGames(games);
+      }
+      return games[i];
+    });
+    return send(res, 200, game);
+  }
+
+  // DELETE /api/games/:id/images/:file   (a removed cover passes to the next image)
+  if (parts[2] === 'images' && parts.length === 4 && method === 'DELETE') {
+    const file = decodeURIComponent(parts[3]);
+    const game = await exclusive(async () => {
+      const games = await loadGames();
+      const i = findIndex(games, id);
+      const g = games[i];
+      if (!g.images.includes(file)) throw new HttpError(404, `Image ${file} not found`);
+      const images = g.images.filter((f) => f !== file);
+      await removeImageFile(file);
+      games[i] = { ...g, images, cover: g.cover === file ? (images[0] ?? null) : g.cover };
       await saveGames(games);
       return games[i];
     });
     return send(res, 200, game);
   }
 
-  // DELETE /api/games/:id/cover
-  if (parts[2] === 'cover' && method === 'DELETE') {
+  // PUT /api/games/:id/cover   body: { file: "<one of the game's images>" }
+  if (parts[2] === 'cover' && method === 'PUT') {
+    const { file } = await readBody(req);
     const game = await exclusive(async () => {
       const games = await loadGames();
       const i = findIndex(games, id);
-      await removeCoverFile(games[i].cover);
-      games[i] = { ...games[i], cover: null };
+      if (!games[i].images.includes(file)) throw new HttpError(400, 'Cover must be one of the game\'s images');
+      games[i] = { ...games[i], cover: file };
       await saveGames(games);
       return games[i];
     });
@@ -219,6 +241,19 @@ export function collectionApi(): Plugin {
     name: 'collection-api',
     apply: 'serve',
     configureServer(server) {
+      // Vite only serves public files it saw at startup (or via its watcher, which skips
+      // public/images), so serve images added while running straight from disk.
+      server.middlewares.use('/images', (req, res, next) => {
+        const file = path.join(IMAGES_DIR, path.basename(decodeURIComponent((req.url ?? '').split('?')[0])));
+        readFile(file).then(
+          (bytes) => {
+            res.setHeader('Content-Type', MIME_BY_EXT[path.extname(file).slice(1)] ?? 'application/octet-stream');
+            res.setHeader('Cache-Control', 'no-cache');
+            res.end(bytes);
+          },
+          () => next(),
+        );
+      });
       server.middlewares.use('/api', (req, res) => {
         // Connect strips the mount path; restore it for the router.
         req.url = `/api${req.url ?? ''}`;

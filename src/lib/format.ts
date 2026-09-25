@@ -17,10 +17,9 @@ export function formatPlaytime(minutes: number | null): string {
 
 export const formatNumber = (n: number | null, suffix = '') => (n === null ? '—' : `${n}${suffix}`);
 
-export function coverUrl(game: Game): string | null {
-  if (!game.cover) return null;
-  return `${import.meta.env.BASE_URL}covers/${encodeURIComponent(game.cover)}`;
-}
+export const imageUrl = (file: string) => `${import.meta.env.BASE_URL}images/${encodeURIComponent(file)}`;
+
+export const coverUrl = (game: Game): string | null => (game.cover ? imageUrl(game.cover) : null);
 
 /** Tags from the sheet with a friendlier display name. "<3" marks games my wife bought for me. */
 export const genreLabel = (g: string) => (g === '<3' ? '♥ From my wife' : g);

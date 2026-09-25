@@ -1,5 +1,5 @@
 // Converts the spreadsheet export (data/source/*.tsv) into public/data/games.json.
-// Existing cover assignments in games.json are preserved across re-imports.
+// Existing images and cover assignments in games.json are preserved across re-imports.
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 
 const SRC = process.argv[2] ?? 'data/source/games-1.5.tsv';
@@ -49,7 +49,7 @@ function normalizeCondition(c) {
 }
 
 const existing = existsSync(OUT) ? JSON.parse(readFileSync(OUT, 'utf8')) : [];
-const coverById = new Map(existing.map((g) => [g.id, g.cover]));
+const existingById = new Map(existing.map((g) => [g.id, g]));
 
 const lines = readFileSync(SRC, 'utf8').split(/\r?\n/).filter((l) => l.trim());
 const games = lines.slice(1).map((line) => {
@@ -80,7 +80,8 @@ const games = lines.slice(1).map((line) => {
     genres,
     condition: splitList(c[12]).map(normalizeCondition),
     edition: clean(c[13]),
-    cover: coverById.get(id) ?? null,
+    images: existingById.get(id)?.images ?? [],
+    cover: existingById.get(id)?.cover ?? null,
   };
 });
 

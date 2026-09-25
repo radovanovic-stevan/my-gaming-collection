@@ -866,13 +866,11 @@ select {
   color: var(--r-meh);
 }
 
-.game-form,
-.cover-editor {
+.game-form {
   padding: 24px;
 }
 
-.game-form h2,
-.cover-editor h2 {
+.game-form h2 {
   font-size: 18px;
   margin-bottom: 16px;
   padding-right: 32px;
@@ -947,38 +945,232 @@ select {
   }
 }
 
-.cover-editor {
-  width: min(680px, 100%);
+/* --- Gallery ---------------------------------------------------------------- */
+
+.detail-cover {
+  aspect-ratio: auto;
+  background: none;
 }
 
-.cover-editor-body {
-  display: grid;
-  grid-template-columns: 200px minmax(0, 1fr);
-  gap: 20px;
-}
-
-.cover-editor-preview {
-  aspect-ratio: 5 / 7;
-  border-radius: 8px;
-  overflow: hidden;
+.gallery {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   background: var(--bg-sunk);
 }
 
-.cover-editor-inputs {
+.gallery-main {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 5 / 7;
+  padding: 0;
+  border: 0;
+  background: var(--bg-sunk);
+  cursor: zoom-in;
+  overflow: hidden;
+}
+
+div.gallery-main {
+  cursor: default;
+}
+
+/* Show whole images (photos may be landscape); box art fills the frame anyway. */
+.gallery-main img.cover {
+  object-fit: contain;
+}
+
+.gallery-count,
+.card-count {
+  position: absolute;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
+  background: rgb(0 0 0 / 0.6);
+}
+
+.gallery-count {
+  right: 8px;
+  bottom: 8px;
+}
+
+.card-count {
+  left: 6px;
+  bottom: 7px;
+}
+
+.gallery-thumbs {
+  display: flex;
+  gap: 6px;
+  padding: 8px;
+  overflow-x: auto;
+}
+
+.gallery-thumbs button {
+  flex: 0 0 44px;
+  height: 58px;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  overflow: hidden;
+  background: none;
+  opacity: 0.65;
+}
+
+.gallery-thumbs button.on {
+  border-color: var(--accent);
+  opacity: 1;
+}
+
+.gallery-thumbs img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  padding: 24px 64px;
+  background: rgb(0 0 0 / 0.88);
+  cursor: zoom-out;
+}
+
+.lightbox img {
+  max-width: 100%;
+  max-height: calc(100vh - 48px);
+  object-fit: contain;
+  border-radius: 6px;
+  cursor: default;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 64px;
+  border: 0;
+  border-radius: 8px;
+  font-size: 36px;
+  line-height: 1;
+  color: #fff;
+  background: rgb(255 255 255 / 0.1);
+}
+
+.lightbox-nav:hover {
+  background: rgb(255 255 255 / 0.2);
+}
+
+.lightbox-nav.prev {
+  left: 12px;
+}
+
+.lightbox-nav.next {
+  right: 12px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 18px;
+}
+
+@media (max-width: 640px) {
+  .gallery-main {
+    aspect-ratio: auto;
+    height: 360px;
+  }
+  .gallery-main .cover {
+    object-fit: contain;
+  }
+  .lightbox {
+    padding: 16px;
+  }
+}
+
+/* --- Image manager ---------------------------------------------------------- */
+
+.image-manager {
+  width: min(760px, 100%);
+  padding: 24px;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  align-items: flex-start;
+}
+
+.image-manager h2 {
+  font-size: 18px;
+  padding-right: 32px;
+}
+
+.image-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 12px;
+}
+
+.image-list li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.image-list img {
+  width: 100%;
+  aspect-ratio: 5 / 7;
+  object-fit: cover;
+  border-radius: 7px;
+  border: 2px solid transparent;
+  background: var(--bg-sunk);
+}
+
+.image-list li.is-cover img {
+  border-color: var(--accent);
+}
+
+.cover-tag {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  background: var(--accent);
+  color: var(--accent-fg);
+}
+
+.image-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.image-actions .btn {
+  flex: 1;
+  justify-content: center;
+  padding: 5px 6px;
+  font-size: 12px;
 }
 
 .dropzone {
-  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 4px;
   align-items: center;
   justify-content: center;
-  padding: 28px 12px;
+  padding: 24px 12px;
   border: 2px dashed var(--border);
   border-radius: var(--radius);
   text-align: center;
@@ -994,17 +1186,4 @@ select {
 .dropzone.dragging {
   border-color: var(--accent);
   background: var(--accent-soft);
-}
-
-.url-row {
-  width: 100%;
-}
-
-@media (max-width: 560px) {
-  .cover-editor-body {
-    grid-template-columns: 1fr;
-  }
-  .cover-editor-preview {
-    width: 160px;
-  }
 }

@@ -9,6 +9,6 @@ export default defineConfig({
   server: {
     // The editing API rewrites these; the app updates itself from API responses,
     // so a file-watcher reload would only throw away the current view.
-    watch: { ignored: ['**/public/data/**', '**/public/covers/**'] },
+    watch: { ignored: ['**/public/data/**', '**/public/images/**'] },
   },
 });

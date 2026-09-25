@@ -7,10 +7,10 @@ import { GridView } from './components/GridView';
 import { TableView } from './components/TableView';
 import { GameDetail } from './components/GameDetail';
 import { GameForm } from './components/GameForm';
-import { CoverEditor } from './components/CoverEditor';
+import { ImageManager } from './components/ImageManager';
 import { api, detectEditing } from './lib/api';
 
-type Modal = { kind: 'detail' | 'edit' | 'cover'; id: number } | { kind: 'new' } | null;
+type Modal = { kind: 'detail' | 'edit' | 'images'; id: number } | { kind: 'new' } | null;
 
 export default function App() {
   const [games, setGames] = useState<Game[] | null>(null);
@@ -104,7 +104,7 @@ export default function App() {
         </div>
         {editable && (
           <div className="header-actions">
-            <span className="edit-pill" title="Changes are written to public/data and public/covers">Local editing on</span>
+            <span className="edit-pill" title="Changes are written to public/data and public/images">Local editing on</span>
             <button className="btn primary" onClick={() => setModal({ kind: 'new' })}>
               + Add game
             </button>
@@ -167,8 +167,8 @@ export default function App() {
           actions={
             editable && (
               <div className="detail-nav">
-                <button className="btn" onClick={() => setModal({ kind: 'cover', id: openGame.id })}>
-                  {openGame.cover ? 'Change cover' : 'Add cover'}
+                <button className="btn" onClick={() => setModal({ kind: 'images', id: openGame.id })}>
+                  Images{openGame.images.length ? ` (${openGame.images.length})` : ''}
                 </button>
                 <button className="btn" onClick={() => setModal({ kind: 'edit', id: openGame.id })}>
                   Edit
@@ -185,9 +185,9 @@ export default function App() {
         <GameForm game={openGame} allGames={games} onClose={backToDetail} onSaved={(g) => (upsert(g), showDetail(g.id))} />
       )}
       {modal?.kind === 'new' && (
-        <GameForm game={null} allGames={games} onClose={closeModal} onSaved={(g) => (upsert(g), setModal({ kind: 'cover', id: g.id }))} />
+        <GameForm game={null} allGames={games} onClose={closeModal} onSaved={(g) => (upsert(g), setModal({ kind: 'images', id: g.id }))} />
       )}
-      {modal?.kind === 'cover' && openGame && <CoverEditor game={openGame} onClose={backToDetail} onSaved={upsert} />}
+      {modal?.kind === 'images' && openGame && <ImageManager game={openGame} onClose={backToDetail} onSaved={upsert} />}
     </div>
   );
 }

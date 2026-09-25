@@ -12,8 +12,8 @@ npm run dev      # http://localhost:5173 — viewing + editing
 ```
 
 When it runs through `npm run dev`, the app has a small local API that allows
-**adding, editing and deleting games** and **managing cover art** (drop, pick, paste
-or fetch from a URL). The static build has no API, so it's view-only.
+**adding, editing and deleting games** and **managing images**. A game can have
+several images: drop, pick, paste or fetch them from a URL, and mark one as the cover. The static build has no API, so it's view-only.
 
 ## Where the data lives
 
@@ -22,7 +22,7 @@ Everything is plain files in the repo. There is no database.
 | Path | What |
 | --- | --- |
 | `public/data/games.json` | The collection. Edited by the app, or by hand. |
-| `public/covers/` | Cover images, named `<id>-<hash>.<ext>`. |
+| `public/images/` | Game images, named `<id>-<hash>.<ext>`. A game's `images` lists its files and `cover` picks one of them. |
 | `data/source/games-1.5.tsv` | Original spreadsheet export. |
 
 Commit the changes after editing to publish them.

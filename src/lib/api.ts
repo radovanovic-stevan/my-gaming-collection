@@ -1,6 +1,6 @@
 import type { Game } from '../types';
 
-export type GameInput = Omit<Game, 'id' | 'cover'>;
+export type GameInput = Omit<Game, 'id' | 'images' | 'cover'>;
 
 async function request<T>(method: string, path: string, body?: unknown): Promise<T> {
   const r = await fetch(`/api/${path}`, {
@@ -27,8 +27,9 @@ export const api = {
   create: (game: GameInput) => request<Game>('POST', 'games', game),
   update: (id: number, game: GameInput) => request<Game>('PUT', `games/${id}`, game),
   remove: (id: number) => request<{ ok: true }>('DELETE', `games/${id}`),
-  setCover: (id: number, dataUrl: string) => request<Game>('PUT', `games/${id}/cover`, { dataUrl }),
-  removeCover: (id: number) => request<Game>('DELETE', `games/${id}/cover`),
+  addImage: (id: number, dataUrl: string) => request<Game>('POST', `games/${id}/images`, { dataUrl }),
+  removeImage: (id: number, file: string) => request<Game>('DELETE', `games/${id}/images/${encodeURIComponent(file)}`),
+  setCover: (id: number, file: string) => request<Game>('PUT', `games/${id}/cover`, { file }),
   fetchImage: async (url: string): Promise<Blob> => {
     const r = await fetch(`/api/fetch-image?url=${encodeURIComponent(url)}`);
     if (!r.ok) throw new Error((await r.json().catch(() => ({}))).error ?? `HTTP ${r.status}`);

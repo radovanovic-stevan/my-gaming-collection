@@ -18,7 +18,9 @@ export interface Game {
   genres: string[];
   condition: string[];
   edition: string;
-  /** File name inside public/covers. */
+  /** File names inside public/images. */
+  images: string[];
+  /** The image shown as the game's cover; always one of `images`. */
   cover: string | null;
 }
 

@@ -117,7 +117,8 @@ for (const game of targets) {
     const ext = type.includes('png') ? 'png' : type.includes('webp') ? 'webp' : type.includes('gif') ? 'gif' : 'jpg';
     const bytes = Buffer.from(await r.arrayBuffer());
     const file = `${game.id}-${createHash('sha1').update(bytes).digest('hex').slice(0, 8)}.${ext}`;
-    writeFileSync(`public/covers/${file}`, bytes);
+    writeFileSync(`public/images/${file}`, bytes);
+    game.images = [...(game.images ?? []), file];
     game.cover = file;
     saved++;
     console.log(`✓ #${game.id} ${game.title}  ←  ${hit.article}`);
