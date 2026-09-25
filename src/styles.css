@@ -838,3 +838,182 @@ select {
     grid-template-columns: 1fr;
   }
 }
+
+/* --- Editing (local dev server only) ---------------------------------------- */
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.edit-pill {
+  font-size: 12px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  color: var(--r-top);
+  border: 1px solid currentColor;
+}
+
+.small {
+  font-size: 12.5px;
+  margin: 0;
+}
+
+.small a {
+  color: var(--accent);
+}
+
+.error {
+  margin: 0;
+  color: var(--r-meh);
+}
+
+.game-form,
+.cover-editor {
+  padding: 24px;
+}
+
+.game-form h2,
+.cover-editor h2 {
+  font-size: 18px;
+  margin-bottom: 16px;
+  padding-right: 32px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.field.span-2 {
+  grid-column: span 2;
+}
+
+.field > span {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--fg-muted);
+}
+
+.field input,
+.field select,
+.field textarea,
+.tag-input,
+.url-row input {
+  width: 100%;
+  padding: 7px 9px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--bg);
+}
+
+.field textarea {
+  resize: vertical;
+}
+
+.form-grid .field:has(.chips),
+.form-grid .field:has(textarea) {
+  grid-column: 1 / -1;
+}
+
+.tag-input {
+  max-width: 220px;
+}
+
+.input-with-btn,
+.url-row {
+  display: flex;
+  gap: 6px;
+}
+
+.input-with-btn .btn {
+  padding: 6px 10px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.form-actions .error {
+  margin-right: auto;
+}
+
+@media (max-width: 640px) {
+  .form-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.cover-editor {
+  width: min(680px, 100%);
+}
+
+.cover-editor-body {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  gap: 20px;
+}
+
+.cover-editor-preview {
+  aspect-ratio: 5 / 7;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--bg-sunk);
+}
+
+.cover-editor-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.dropzone {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 12px;
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  text-align: center;
+  cursor: pointer;
+  color: var(--fg-muted);
+}
+
+.dropzone b {
+  color: var(--fg);
+}
+
+.dropzone:hover,
+.dropzone.dragging {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.url-row {
+  width: 100%;
+}
+
+@media (max-width: 560px) {
+  .cover-editor-body {
+    grid-template-columns: 1fr;
+  }
+  .cover-editor-preview {
+    width: 160px;
+  }
+}

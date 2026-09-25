@@ -6,12 +6,18 @@ import { SortBuilder } from './components/SortBuilder';
 import { GridView } from './components/GridView';
 import { TableView } from './components/TableView';
 import { GameDetail } from './components/GameDetail';
+import { GameForm } from './components/GameForm';
+import { CoverEditor } from './components/CoverEditor';
+import { api, detectEditing } from './lib/api';
+
+type Modal = { kind: 'detail' | 'edit' | 'cover'; id: number } | { kind: 'new' } | null;
 
 export default function App() {
   const [games, setGames] = useState<Game[] | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [query, setQuery] = useState<Query>(() => paramsToQuery(location.search));
-  const [openId, setOpenId] = useState<number | null>(null);
+  const [modal, setModal] = useState<Modal>(null);
+  const [editable, setEditable] = useState(false);
   const [filtersOpen, setFiltersOpen] = useState(false);
 
   useEffect(() => {
@@ -19,6 +25,7 @@ export default function App() {
       .then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))))
       .then(setGames)
       .catch((e) => setError(String(e)));
+    detectEditing().then(setEditable);
   }, []);
 
   useEffect(() => {
@@ -55,8 +62,26 @@ export default function App() {
     });
   };
 
+  const openId = modal && modal.kind !== 'new' ? modal.id : null;
   const openIndex = openId === null ? -1 : results.findIndex((g) => g.id === openId);
   const openGame = openId === null ? null : (games?.find((g) => g.id === openId) ?? null);
+  const showDetail = (id: number) => setModal({ kind: 'detail', id });
+  const closeModal = useCallback(() => setModal(null), []);
+  const backToDetail = useCallback(() => setModal((m) => (m && m.kind !== 'new' ? { kind: 'detail', id: m.id } : null)), []);
+
+  const upsert = (saved: Game) =>
+    setGames((gs) => (gs!.some((g) => g.id === saved.id) ? gs!.map((g) => (g.id === saved.id ? saved : g)) : [...gs!, saved]));
+
+  const deleteGame = async (game: Game) => {
+    if (!confirm(`Delete "${game.title}" (#${game.id}) from the collection? This can't be undone.`)) return;
+    try {
+      await api.remove(game.id);
+      setGames((gs) => gs!.filter((g) => g.id !== game.id));
+      setModal(null);
+    } catch (e) {
+      alert(`Delete failed: ${e instanceof Error ? e.message : e}`);
+    }
+  };
 
   const activeFilterCount =
     query.platforms.length + query.statuses.length + query.genres.length + query.conditions.length +
@@ -77,6 +102,14 @@ export default function App() {
             <span><b>{stats.avg.toFixed(1)}</b> avg rating</span>
           </p>
         </div>
+        {editable && (
+          <div className="header-actions">
+            <span className="edit-pill" title="Changes are written to public/data and public/covers">Local editing on</span>
+            <button className="btn primary" onClick={() => setModal({ kind: 'new' })}>
+              + Add game
+            </button>
+          </div>
+        )}
       </header>
 
       <div className="toolbar">
@@ -118,21 +151,43 @@ export default function App() {
           {results.length === 0 ? (
             <div className="empty">No games match these filters.</div>
           ) : query.view === 'grid' ? (
-            <GridView games={results} onOpen={(g) => setOpenId(g.id)} />
+            <GridView games={results} onOpen={(g) => showDetail(g.id)} />
           ) : (
-            <TableView games={results} sort={query.sort} onSortClick={onSortClick} onOpen={(g) => setOpenId(g.id)} />
+            <TableView games={results} sort={query.sort} onSortClick={onSortClick} onOpen={(g) => showDetail(g.id)} />
           )}
         </main>
       </div>
 
-      {openGame && (
+      {modal?.kind === 'detail' && openGame && (
         <GameDetail
           game={openGame}
-          onClose={() => setOpenId(null)}
-          onPrev={openIndex > 0 ? () => setOpenId(results[openIndex - 1].id) : undefined}
-          onNext={openIndex >= 0 && openIndex < results.length - 1 ? () => setOpenId(results[openIndex + 1].id) : undefined}
+          onClose={closeModal}
+          onPrev={openIndex > 0 ? () => showDetail(results[openIndex - 1].id) : undefined}
+          onNext={openIndex >= 0 && openIndex < results.length - 1 ? () => showDetail(results[openIndex + 1].id) : undefined}
+          actions={
+            editable && (
+              <div className="detail-nav">
+                <button className="btn" onClick={() => setModal({ kind: 'cover', id: openGame.id })}>
+                  {openGame.cover ? 'Change cover' : 'Add cover'}
+                </button>
+                <button className="btn" onClick={() => setModal({ kind: 'edit', id: openGame.id })}>
+                  Edit
+                </button>
+                <button className="btn danger" onClick={() => deleteGame(openGame)}>
+                  Delete
+                </button>
+              </div>
+            )
+          }
         />
       )}
+      {modal?.kind === 'edit' && openGame && (
+        <GameForm game={openGame} allGames={games} onClose={backToDetail} onSaved={(g) => (upsert(g), showDetail(g.id))} />
+      )}
+      {modal?.kind === 'new' && (
+        <GameForm game={null} allGames={games} onClose={closeModal} onSaved={(g) => (upsert(g), setModal({ kind: 'cover', id: g.id }))} />
+      )}
+      {modal?.kind === 'cover' && openGame && <CoverEditor game={openGame} onClose={backToDetail} onSaved={upsert} />}
     </div>
   );
 }
