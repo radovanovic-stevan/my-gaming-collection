@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc && vite build",
     "preview": "vite preview",
     "import:tsv": "node scripts/import-tsv.mjs",
     "covers:fetch": "node scripts/fetch-covers.mjs"
