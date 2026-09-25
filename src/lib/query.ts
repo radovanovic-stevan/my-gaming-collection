@@ -19,6 +19,8 @@ export const DEFAULT_QUERY: Query = {
   statuses: [],
   genres: [],
   conditions: [],
+  acquiredYears: [],
+  completedYears: [],
   ratingMin: null,
   ratingMax: null,
   cover: 'any',
@@ -45,6 +47,18 @@ export function dateKey(value: string | null): string | null {
   if (lower.startsWith('late')) return `${year}-10-01`;
   return `${year}-06-30`;
 }
+
+/** Year of a date field ("2019", "2013" for "Late 2013 - Early 2014"), or null when unknown. */
+export function yearOf(value: string | null): string | null {
+  // "Before 2012" has no single year; keep it as its own bucket.
+  if (value && /^before\b/i.test(value)) return value;
+  return dateKey(value)?.slice(0, 4) ?? null;
+}
+
+export const yearList = (value: string | null) => {
+  const y = yearOf(value);
+  return y ? [y] : [];
+};
 
 function sortValue(g: Game, key: SortKey): string | number | null {
   switch (key) {
@@ -101,6 +115,8 @@ export function applyQuery(games: Game[], q: Query): Game[] {
         // Genres narrow the list: a game must have every selected genre.
         q.genres.every((x) => g.genres.includes(x)) &&
         anyOf(q.conditions, g.condition) &&
+        anyOf(q.acquiredYears, yearList(g.acquired)) &&
+        anyOf(q.completedYears, yearList(g.completed)) &&
         (q.ratingMin === null || (g.rating !== null && g.rating >= q.ratingMin)) &&
         (q.ratingMax === null || (g.rating !== null && g.rating <= q.ratingMax)) &&
         (q.cover === 'any' || (q.cover === 'with') === Boolean(g.cover)),
@@ -117,7 +133,7 @@ export function facet(games: Game[], pick: (g: Game) => string[]): [string, numb
 
 // --- URL state -------------------------------------------------------------
 
-const LIST_KEYS = ['platforms', 'statuses', 'genres', 'conditions'] as const;
+const LIST_KEYS = ['platforms', 'statuses', 'genres', 'conditions', 'acquiredYears', 'completedYears'] as const;
 
 export function queryToParams(q: Query): string {
   const p = new URLSearchParams();

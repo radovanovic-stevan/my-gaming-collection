@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import type { Game, Query } from '../types';
 import { STATUSES } from '../types';
-import { facet } from '../lib/query';
+import { facet, yearList } from '../lib/query';
 import { genreLabel } from '../lib/format';
 
 interface Props {
@@ -11,7 +11,11 @@ interface Props {
   onReset: () => void;
 }
 
-type ListKey = 'platforms' | 'statuses' | 'genres' | 'conditions';
+type ListKey = 'platforms' | 'statuses' | 'genres' | 'conditions' | 'acquiredYears' | 'completedYears';
+
+// Newest first; non-year buckets such as "Before 2012" go last.
+const byYearDesc = (items: [string, number][]) =>
+  items.sort((a, b) => Number(/^\d/.test(b[0])) - Number(/^\d/.test(a[0])) || b[0].localeCompare(a[0]));
 
 function FacetGroup({
   title,
@@ -64,6 +68,8 @@ export function Filters({ games, query, onChange, onReset }: Props) {
       statuses: facet(games, (g) => [g.status]).sort((a, b) => STATUSES.indexOf(a[0] as never) - STATUSES.indexOf(b[0] as never)),
       genres: facet(games, (g) => g.genres),
       conditions: facet(games, (g) => g.condition),
+      acquiredYears: byYearDesc(facet(games, (g) => yearList(g.acquired))),
+      completedYears: byYearDesc(facet(games, (g) => yearList(g.completed))),
     }),
     [games],
   );
@@ -87,6 +93,8 @@ export function Filters({ games, query, onChange, onReset }: Props) {
       <FacetGroup title="Status" items={facets.statuses} selected={query.statuses} onToggle={toggle('statuses')} />
       <FacetGroup title="Platform" items={facets.platforms} selected={query.platforms} onToggle={toggle('platforms')} collapsedCount={10} />
       <FacetGroup title="Genre (match all)" items={facets.genres} selected={query.genres} onToggle={toggle('genres')} label={genreLabel} collapsedCount={12} />
+      <FacetGroup title="Year acquired" items={facets.acquiredYears} selected={query.acquiredYears} onToggle={toggle('acquiredYears')} collapsedCount={10} />
+      <FacetGroup title="Year completed" items={facets.completedYears} selected={query.completedYears} onToggle={toggle('completedYears')} collapsedCount={10} />
       <FacetGroup title="Condition" items={facets.conditions} selected={query.conditions} onToggle={toggle('conditions')} />
 
       <fieldset className="facet">

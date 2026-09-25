@@ -84,7 +84,7 @@ export default function App() {
   };
 
   const activeFilterCount =
-    query.platforms.length + query.statuses.length + query.genres.length + query.conditions.length +
+    query.platforms.length + query.statuses.length + query.genres.length + query.conditions.length + query.acquiredYears.length + query.completedYears.length +
     (query.ratingMin !== null ? 1 : 0) + (query.ratingMax !== null ? 1 : 0) + (query.cover !== 'any' ? 1 : 0);
 
   if (error) return <div className="empty">Couldn't load the collection: {error}</div>;

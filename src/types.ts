@@ -48,6 +48,8 @@ export interface Query {
   statuses: string[];
   genres: string[];
   conditions: string[];
+  acquiredYears: string[];
+  completedYears: string[];
   ratingMin: number | null;
   ratingMax: number | null;
   cover: 'any' | 'with' | 'without';
