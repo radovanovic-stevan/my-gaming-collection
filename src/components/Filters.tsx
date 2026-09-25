@@ -9,6 +9,9 @@ interface Props {
   query: Query;
   onChange: (patch: Partial<Query>) => void;
   onReset: () => void;
+  /** Number of games matching the current filters, shown on the mobile "done" button. */
+  resultCount: number;
+  onDone: () => void;
 }
 
 type ListKey = 'platforms' | 'statuses' | 'genres' | 'conditions' | 'acquiredYears' | 'completedYears';
@@ -61,7 +64,7 @@ function FacetGroup({
   );
 }
 
-export function Filters({ games, query, onChange, onReset }: Props) {
+export function Filters({ games, query, onChange, onReset, resultCount, onDone }: Props) {
   const facets = useMemo(
     () => ({
       platforms: facet(games, (g) => [g.platform]),
@@ -134,6 +137,12 @@ export function Filters({ games, query, onChange, onReset }: Props) {
           ))}
         </div>
       </fieldset>
+
+      <div className="filters-done">
+        <button className="btn primary" onClick={onDone}>
+          Show {resultCount} {resultCount === 1 ? 'game' : 'games'}
+        </button>
+      </div>
     </aside>
   );
 }

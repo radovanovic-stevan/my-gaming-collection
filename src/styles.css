@@ -92,10 +92,16 @@ h2 {
 
 .header {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-end;
   justify-content: space-between;
   gap: 16px;
   padding: 28px 0 18px;
+}
+
+.brand {
+  flex: 1 1 300px;
+  min-width: 0;
 }
 
 .brand h1 {
@@ -152,7 +158,8 @@ select:focus,
   padding-top: 16px;
 }
 
-.filters-toggle {
+.toolbar .filters-toggle,
+.filters-done {
   display: none;
 }
 
@@ -160,14 +167,62 @@ select:focus,
   .layout {
     grid-template-columns: minmax(0, 1fr);
   }
-  .filters-toggle {
+  .toolbar .filters-toggle {
     display: inline-flex;
   }
   .filters {
     display: none;
   }
+  /* On small screens filters open as a full-screen panel over the results. */
   .layout.filters-open .filters {
     display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    align-self: stretch; /* desktop "start" would shrink the panel to its content */
+    max-height: none;
+    padding: 16px 16px 0;
+    background: var(--bg);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .filters-done {
+    display: block;
+    position: sticky;
+    bottom: 0;
+    margin: 0 -16px;
+    padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+  }
+  .filters-done .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: 20px 0 12px;
+    gap: 12px;
+  }
+  .brand h1 {
+    font-size: 24px;
+  }
+  .stats {
+    gap: 2px 12px;
+    font-size: 13px;
+  }
+  .header-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .sort-menu summary {
+    max-width: 200px;
+  }
+  .popover {
+    max-width: calc(100vw - 32px);
   }
 }
 
@@ -824,15 +879,13 @@ select {
     grid-template-columns: 1fr;
   }
   .detail-cover {
-    max-height: 360px;
     aspect-ratio: auto;
-    height: 360px;
   }
   .detail-cover .cover {
     object-fit: contain;
   }
-  .detail-list {
-    grid-template-columns: 1fr;
+  .detail-info {
+    padding: 18px;
   }
 }
 
@@ -845,6 +898,7 @@ select {
 }
 
 .edit-pill {
+  white-space: nowrap;
   font-size: 12px;
   padding: 3px 9px;
   border-radius: 999px;
@@ -942,6 +996,12 @@ select {
 @media (max-width: 640px) {
   .form-grid {
     grid-template-columns: 1fr 1fr;
+  }
+  .form-grid .field:has(.input-with-btn) {
+    grid-column: 1 / -1;
+  }
+  .game-form {
+    padding: 18px;
   }
 }
 
@@ -1086,7 +1146,7 @@ div.gallery-main {
 @media (max-width: 640px) {
   .gallery-main {
     aspect-ratio: auto;
-    height: 360px;
+    height: 300px;
   }
   .gallery-main .cover {
     object-fit: contain;

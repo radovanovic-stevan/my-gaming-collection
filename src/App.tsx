@@ -143,7 +143,14 @@ export default function App() {
       </div>
 
       <div className={`layout ${filtersOpen ? 'filters-open' : ''}`}>
-        <Filters games={games} query={query} onChange={patch} onReset={() => setQuery({ ...DEFAULT_QUERY, view: query.view })} />
+        <Filters
+          games={games}
+          query={query}
+          onChange={patch}
+          onReset={() => setQuery({ ...DEFAULT_QUERY, view: query.view })}
+          resultCount={results.length}
+          onDone={() => setFiltersOpen(false)}
+        />
         <main className="results">
           <p className="result-count">
             Showing <b>{results.length}</b> of {games.length}
