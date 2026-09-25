@@ -77,7 +77,6 @@ const games = lines.slice(1).map((line) => {
     timesCompleted: parseNumber(c[7]),
     percent: parseNumber(c[8]),
     playtime: parsePlaytime(c[9]),
-    note: clean(c[10]),
     genres,
     condition: splitList(c[12]).map(normalizeCondition),
     edition: clean(c[13]),

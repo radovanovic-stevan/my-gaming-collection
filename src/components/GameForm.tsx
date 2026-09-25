@@ -26,7 +26,6 @@ interface FormState {
   genres: string[];
   condition: string[];
   edition: string;
-  note: string;
 }
 
 const today = () => new Date().toISOString().slice(0, 10);
@@ -55,7 +54,6 @@ function toForm(g: Game | null): FormState {
     genres: g?.genres ?? [],
     condition: g?.condition ?? ['Box', 'Cover', 'Manual'],
     edition: g?.edition ?? '',
-    note: g?.note ?? '',
   };
 }
 
@@ -74,7 +72,6 @@ function toInput(f: FormState): GameInput {
     genres: f.genres,
     condition: f.condition,
     edition: f.edition,
-    note: f.note,
   };
 }
 
@@ -146,7 +143,7 @@ export function GameForm({ game, allGames, onSaved, onClose }: Props) {
   const set = <K extends keyof FormState>(key: K, value: FormState[K]) => setForm((f) => ({ ...f, [key]: value }));
   const field = (key: keyof FormState) => ({
     value: form[key] as string,
-    onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => set(key, e.target.value),
+    onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => set(key, e.target.value),
   });
 
   const submit = async (e: React.FormEvent) => {
@@ -233,10 +230,6 @@ export function GameForm({ game, allGames, onSaved, onClose }: Props) {
             <span>Condition</span>
             <TagPicker options={options.conditions} value={form.condition} onChange={(v) => set('condition', v)} />
           </div>
-          <label className="field span-2">
-            <span>Notes</span>
-            <textarea rows={2} {...field('note')} />
-          </label>
         </div>
 
         {error && <p className="error">{error}</p>}

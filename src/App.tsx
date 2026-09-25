@@ -116,7 +116,7 @@ export default function App() {
         <input
           className="search"
           type="search"
-          placeholder="Search titles, notes, editions…"
+          placeholder="Search titles, platforms, editions…"
           value={query.search}
           onChange={(e) => patch({ search: e.target.value })}
           autoFocus

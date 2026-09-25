@@ -140,8 +140,7 @@ h2 {
 .search:focus,
 .range input:focus,
 select:focus,
-.field input:focus,
-.field textarea:focus {
+.field input:focus {
   outline: 2px solid var(--accent);
   outline-offset: -1px;
 }
@@ -794,8 +793,7 @@ select {
   margin: 4px 0 0;
 }
 
-.detail-list dt,
-.detail-note dt {
+.detail-list dt {
   font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
@@ -803,8 +801,7 @@ select {
   color: var(--fg-muted);
 }
 
-.detail-list dd,
-.detail-note dd {
+.detail-list dd {
   margin: 2px 0 0;
 }
 
@@ -906,7 +903,6 @@ select {
 
 .field input,
 .field select,
-.field textarea,
 .tag-input,
 .url-row input {
   width: 100%;
@@ -916,12 +912,7 @@ select {
   background: var(--bg);
 }
 
-.field textarea {
-  resize: vertical;
-}
-
-.form-grid .field:has(.chips),
-.form-grid .field:has(textarea) {
+.form-grid .field:has(.chips) {
   grid-column: 1 / -1;
 }
 

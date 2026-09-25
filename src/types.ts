@@ -15,7 +15,6 @@ export interface Game {
   percent: number | null;
   /** Minutes played. */
   playtime: number | null;
-  note: string;
   genres: string[];
   condition: string[];
   edition: string;

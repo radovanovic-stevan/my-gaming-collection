@@ -98,7 +98,7 @@ const normalize = (s: string) =>
 
 function matchesSearch(g: Game, terms: string[]): boolean {
   if (terms.length === 0) return true;
-  const hay = normalize([g.title, g.platform, g.edition, g.note, g.genres.join(' '), String(g.id)].join(' '));
+  const hay = normalize([g.title, g.platform, g.edition, g.genres.join(' '), String(g.id)].join(' '));
   return terms.every((t) => hay.includes(t));
 }
 

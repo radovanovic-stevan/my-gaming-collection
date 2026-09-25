@@ -80,7 +80,6 @@ function sanitize(input: Record<string, unknown>): Omit<Game, 'id' | 'cover'> {
     timesCompleted: num(input.timesCompleted, 'Times completed'),
     percent: num(input.percent, '% complete'),
     playtime: num(input.playtime, 'Playtime'),
-    note: str(input.note),
     genres: strList(input.genres),
     condition: strList(input.condition),
     edition: str(input.edition),

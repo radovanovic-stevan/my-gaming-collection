@@ -68,12 +68,6 @@ export function GameDetail({ game, onClose, onPrev, onNext, actions }: Props) {
               </div>
             ))}
           </dl>
-          {game.note && (
-            <div className="detail-note">
-              <dt>Notes</dt>
-              <dd>{game.note}</dd>
-            </div>
-          )}
           <div className="detail-actions">
             <div className="detail-nav">
               <button className="btn" onClick={onPrev} disabled={!onPrev}>

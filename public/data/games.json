@@ -10,7 +10,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure",
@@ -35,7 +34,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports",
    "L"
@@ -59,7 +57,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -82,7 +79,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -103,7 +99,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -126,7 +121,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -148,7 +142,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -170,7 +163,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -192,7 +184,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -214,7 +205,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [],
   "edition": "",
@@ -231,7 +221,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "#4 PS1",
   "genres": [
    "Party"
   ],
@@ -252,7 +241,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -275,7 +263,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "#3 DS || #2 Platformer",
   "genres": [
    "Platformer"
   ],
@@ -294,7 +281,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Adventure"
   ],
@@ -313,7 +299,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Platformer"
   ],
@@ -332,7 +317,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -351,7 +335,6 @@
   "timesCompleted": 1,
   "percent": 14,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -370,7 +353,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Platformer"
   ],
@@ -389,7 +371,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "#1 Strategy",
   "genres": [
    "Strategy"
   ],
@@ -408,7 +389,6 @@
   "timesCompleted": 2,
   "percent": null,
   "playtime": null,
-  "note": "#4 Puzzle",
   "genres": [
    "Puzzle"
   ],
@@ -427,7 +407,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "#4 Sports",
   "genres": [
    "Sports"
   ],
@@ -449,7 +428,6 @@
   "timesCompleted": 2,
   "percent": 100,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -472,7 +450,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "#4 PSP",
   "genres": [
    "Action",
    "Adventure",
@@ -497,7 +474,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -518,7 +494,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -540,7 +515,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -562,7 +536,6 @@
   "timesCompleted": 2,
   "percent": null,
   "playtime": 1270,
-  "note": "",
   "genres": [
    "Action",
    "Stealth"
@@ -586,7 +559,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -609,7 +581,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -630,7 +601,6 @@
   "timesCompleted": 1,
   "percent": 100,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -653,7 +623,6 @@
   "timesCompleted": 1,
   "percent": 100,
   "playtime": null,
-  "note": "",
   "genres": [
    "Platformer"
   ],
@@ -675,7 +644,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "#3 Racing",
   "genres": [
    "Racing"
   ],
@@ -697,7 +665,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS",
    "L",
@@ -722,7 +689,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -744,7 +710,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -766,7 +731,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -789,7 +753,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -811,7 +774,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -833,7 +795,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Platformer"
   ],
@@ -856,7 +817,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS",
    "L"
@@ -878,7 +838,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports",
    "Fighting"
@@ -901,7 +860,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -924,7 +882,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -948,7 +905,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -971,7 +927,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG",
    "Action"
@@ -995,7 +950,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "#4 Strategy",
   "genres": [
    "Strategy"
   ],
@@ -1017,7 +971,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -1040,7 +993,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -1064,7 +1016,6 @@
   "timesCompleted": 1,
   "percent": 37,
   "playtime": 842,
-  "note": "GotM Sept19",
   "genres": [
    "Action",
    "Adventure",
@@ -1088,7 +1039,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "#5 PC || #2 Horror",
   "genres": [
    "Horror",
    "Adventure"
@@ -1111,7 +1061,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -1134,7 +1083,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "#1 Sports",
   "genres": [
    "Sports"
   ],
@@ -1157,7 +1105,6 @@
   "timesCompleted": 2,
   "percent": 100,
   "playtime": null,
-  "note": "#3 PSP || #5 Action",
   "genres": [
    "Action",
    "Adventure"
@@ -1181,7 +1128,6 @@
   "timesCompleted": 3,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "TPS"
   ],
@@ -1203,7 +1149,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS",
    "TPS"
@@ -1226,7 +1171,6 @@
   "timesCompleted": 1,
   "percent": 66,
   "playtime": null,
-  "note": "#2 Racing",
   "genres": [
    "Racing"
   ],
@@ -1248,7 +1192,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "#5 Sports",
   "genres": [
    "Sports"
   ],
@@ -1270,7 +1213,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": 149,
-  "note": "",
   "genres": [
    "Platformer",
    "Puzzle"
@@ -1293,7 +1235,6 @@
   "timesCompleted": 2,
   "percent": null,
   "playtime": null,
-  "note": "#2 Sports",
   "genres": [
    "Sports"
   ],
@@ -1315,7 +1256,6 @@
   "timesCompleted": 1,
   "percent": 99,
   "playtime": null,
-  "note": "#2 PSP",
   "genres": [
    "Action",
    "Puzzle"
@@ -1338,7 +1278,6 @@
   "timesCompleted": 2,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -1361,7 +1300,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Strategy"
@@ -1385,7 +1323,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -1408,7 +1345,6 @@
   "timesCompleted": 3,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -1432,7 +1368,6 @@
   "timesCompleted": 1,
   "percent": 94,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -1456,7 +1391,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -1480,7 +1414,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "TPS"
@@ -1504,7 +1437,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -1528,7 +1460,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Stealth",
    "Action"
@@ -1552,7 +1483,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "#2 Fighting",
   "genres": [
    "Fighting"
   ],
@@ -1575,7 +1505,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -1599,7 +1528,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -1623,7 +1551,6 @@
   "timesCompleted": 1,
   "percent": 44,
   "playtime": 566,
-  "note": "",
   "genres": [
    "Platformer",
    "Adventure"
@@ -1646,7 +1573,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -1669,7 +1595,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS",
    "Strategy"
@@ -1692,7 +1617,6 @@
   "timesCompleted": 1,
   "percent": 91,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -1715,7 +1639,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -1738,7 +1661,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "#5 Shooter",
   "genres": [
    "Action",
    "TPS"
@@ -1762,7 +1684,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -1785,7 +1706,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action"
   ],
@@ -1808,7 +1728,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "TPS"
   ],
@@ -1831,7 +1750,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -1855,7 +1773,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -1876,7 +1793,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -1899,7 +1815,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -1922,7 +1837,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -1944,7 +1858,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -1967,7 +1880,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -1990,7 +1902,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -2011,7 +1922,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -2033,7 +1943,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "#1 Wii || #3 Platformer",
   "genres": [
    "Platformer"
   ],
@@ -2055,7 +1964,6 @@
   "timesCompleted": 1,
   "percent": 77,
   "playtime": null,
-  "note": "#4 Wii",
   "genres": [
    "Racing"
   ],
@@ -2078,7 +1986,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -2100,7 +2007,6 @@
   "timesCompleted": 1,
   "percent": 84,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -2123,7 +2029,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure",
@@ -2148,7 +2053,6 @@
   "timesCompleted": 1,
   "percent": 92,
   "playtime": 489,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -2171,7 +2075,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -2193,7 +2096,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "#3 2015a|c || #3 PC || #3 Shooter",
   "genres": [
    "FPS"
   ],
@@ -2215,7 +2117,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -2237,7 +2138,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -2259,7 +2159,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -2282,7 +2181,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [],
   "edition": "",
@@ -2299,7 +2197,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Platformer"
   ],
@@ -2318,7 +2215,6 @@
   "timesCompleted": 2,
   "percent": 100,
   "playtime": 730,
-  "note": "#1 2015a|c || #1 DS || #1 Puzzle",
   "genres": [
    "Puzzle"
   ],
@@ -2337,7 +2233,6 @@
   "timesCompleted": 1,
   "percent": 100,
   "playtime": 869,
-  "note": "GotM Aug19 || #4 PS3 || #5 2019a|c",
   "genres": [
    "Puzzle",
    "L"
@@ -2357,7 +2252,6 @@
   "timesCompleted": 1,
   "percent": 100,
   "playtime": 875,
-  "note": "#5 DS || #3 Puzzle",
   "genres": [
    "Puzzle",
    "L"
@@ -2377,7 +2271,6 @@
   "timesCompleted": 1,
   "percent": 55,
   "playtime": null,
-  "note": "#1 PS1",
   "genres": [
    "Platformer"
   ],
@@ -2399,7 +2292,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 1067,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -2422,7 +2314,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 1511,
-  "note": "#2 2015a|c || #1 PS2 || #2 Action",
   "genres": [
    "Action",
    "Adventure"
@@ -2445,7 +2336,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Box",
@@ -2466,7 +2356,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -2490,7 +2379,6 @@
   "timesCompleted": 0,
   "percent": 62,
   "playtime": 281,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -2514,7 +2402,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -2537,7 +2424,6 @@
   "timesCompleted": 1,
   "percent": 75,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -2560,7 +2446,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -2584,7 +2469,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": 505,
-  "note": "#5 Strategy",
   "genres": [
    "Strategy"
   ],
@@ -2606,7 +2490,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Box",
@@ -2626,7 +2509,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "TPS",
    "Action",
@@ -2651,7 +2533,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": 59,
-  "note": "#3 PS1",
   "genres": [
    "Action",
    "Adventure"
@@ -2674,7 +2555,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "TPS"
   ],
@@ -2697,7 +2577,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "#4 2015a|c || #5 PS2 || #1 Racing",
   "genres": [
    "Racing"
   ],
@@ -2720,7 +2599,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": 179,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -2743,7 +2621,6 @@
   "timesCompleted": 1,
   "percent": 41,
   "playtime": null,
-  "note": "#3 Wii",
   "genres": [
    "Action",
    "Adventure"
@@ -2767,7 +2644,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -2791,7 +2667,6 @@
   "timesCompleted": 1,
   "percent": 77,
   "playtime": null,
-  "note": "#5 Wii",
   "genres": [
    "Platformer"
   ],
@@ -2813,7 +2688,6 @@
   "timesCompleted": 1,
   "percent": 91,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -2836,7 +2710,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -2859,7 +2732,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -2882,7 +2754,6 @@
   "timesCompleted": 1,
   "percent": 100,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -2906,7 +2777,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -2930,7 +2800,6 @@
   "timesCompleted": 1,
   "percent": 58,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -2953,7 +2822,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -2977,7 +2845,6 @@
   "timesCompleted": 1,
   "percent": 100,
   "playtime": null,
-  "note": "",
   "genres": [
    "Adventure"
   ],
@@ -2999,7 +2866,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -3021,7 +2887,6 @@
   "timesCompleted": 1,
   "percent": 92,
   "playtime": 284,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -3044,7 +2909,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "#3 Horror || #3 2016c",
   "genres": [
    "Horror",
    "Adventure"
@@ -3068,7 +2932,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Horror",
    "FPS"
@@ -3091,7 +2954,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -3112,7 +2974,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "#2 PS1",
   "genres": [
    "FPS",
    "Strategy"
@@ -3136,7 +2997,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Stealth",
    "Action"
@@ -3158,7 +3018,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "#5 2016a|c",
   "genres": [
    "Stealth",
    "Action"
@@ -3180,7 +3039,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -3202,7 +3060,6 @@
   "timesCompleted": 1,
   "percent": 51,
   "playtime": null,
-  "note": "#4 2016a|c || #2 Wii",
   "genres": [
    "Action",
    "Adventure"
@@ -3226,7 +3083,6 @@
   "timesCompleted": 1,
   "percent": 100,
   "playtime": null,
-  "note": "",
   "genres": [
    "TPS",
    "Action"
@@ -3249,7 +3105,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -3272,7 +3127,6 @@
   "timesCompleted": 0,
   "percent": 93,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -3295,7 +3149,6 @@
   "timesCompleted": 0,
   "percent": 2,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -3317,7 +3170,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -3340,7 +3192,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -3362,7 +3213,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "#1 2016a|c || #1 PC || #1 RPG",
   "genres": [
    "RPG",
    "OpenWorld"
@@ -3385,7 +3235,6 @@
   "timesCompleted": 1,
   "percent": 100,
   "playtime": 219,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -3404,7 +3253,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -3423,7 +3271,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "TPS",
    "L"
@@ -3443,7 +3290,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -3464,7 +3310,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports",
    "Fighting"
@@ -3484,7 +3329,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -3503,7 +3347,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -3522,7 +3365,6 @@
   "timesCompleted": 1,
   "percent": 100,
   "playtime": 443,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -3545,7 +3387,6 @@
   "timesCompleted": 0,
   "percent": 11,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure",
@@ -3566,7 +3407,6 @@
   "timesCompleted": 0,
   "percent": 33,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -3586,7 +3426,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 683,
-  "note": "#3 2016a",
   "genres": [
    "RPG",
    "Action"
@@ -3606,7 +3445,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -3629,7 +3467,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": 521,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -3652,7 +3489,6 @@
   "timesCompleted": 1,
   "percent": 40,
   "playtime": null,
-  "note": "#2 2016a|c || #5 PSP",
   "genres": [
    "Action",
    "Adventure",
@@ -3677,7 +3513,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG",
    "Action"
@@ -3701,7 +3536,6 @@
   "timesCompleted": 1,
   "percent": 89,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -3724,7 +3558,6 @@
   "timesCompleted": 1,
   "percent": 53,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -3748,7 +3581,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "#2 Strategy",
   "genres": [
    "Strategy"
   ],
@@ -3770,7 +3602,6 @@
   "timesCompleted": 0,
   "percent": 66,
   "playtime": 367,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -3793,7 +3624,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -3816,7 +3646,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Box",
@@ -3836,7 +3665,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "TPS",
    "Strategy"
@@ -3860,7 +3688,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 896,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -3883,7 +3710,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -3905,7 +3731,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 838,
-  "note": "#4 2017a|c || #4 PC",
   "genres": [
    "RPG",
    "OpenWorld"
@@ -3928,7 +3753,6 @@
   "timesCompleted": 1,
   "percent": 100,
   "playtime": null,
-  "note": "#5 Puzzle",
   "genres": [
    "RPG",
    "Puzzle"
@@ -3952,7 +3776,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -3974,7 +3797,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -3997,7 +3819,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -4018,7 +3839,6 @@
   "timesCompleted": 3,
   "percent": null,
   "playtime": 434,
-  "note": "#5 2017a|c || #1 Horror",
   "genres": [
    "Horror",
    "Adventure"
@@ -4042,7 +3862,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "#5 Horror",
   "genres": [
    "Horror",
    "Adventure"
@@ -4066,7 +3885,6 @@
   "timesCompleted": 1,
   "percent": 100,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -4090,7 +3908,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -4114,7 +3931,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -4138,7 +3954,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Horror",
    "Action"
@@ -4161,7 +3976,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "TPS"
   ],
@@ -4184,7 +3998,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 455,
-  "note": "",
   "genres": [
    "FPS",
    "RPG"
@@ -4207,7 +4020,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": 117,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -4230,7 +4042,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 1775,
-  "note": "#2 2017a|c || #2 PS2 || #3 Action",
   "genres": [
    "Action",
    "Adventure"
@@ -4254,7 +4065,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -4277,7 +4087,6 @@
   "timesCompleted": 1,
   "percent": 100,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -4299,7 +4108,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": 275,
-  "note": "",
   "genres": [
    "RPG"
   ],
@@ -4320,7 +4128,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -4344,7 +4151,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "#5 2016a",
   "genres": [
    "Action",
    "H&S"
@@ -4367,7 +4173,6 @@
   "timesCompleted": 1,
   "percent": 100,
   "playtime": null,
-  "note": "#1 2017a|c || #2 PC || #2 Shooter",
   "genres": [
    "FPS"
   ],
@@ -4386,7 +4191,6 @@
   "timesCompleted": 1,
   "percent": 100,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -4405,7 +4209,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 878,
-  "note": "#3 2017a|c || #4 PS2",
   "genres": [
    "Action",
    "H&S"
@@ -4429,7 +4232,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 290,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -4452,7 +4254,6 @@
   "timesCompleted": 1,
   "percent": 36,
   "playtime": 274,
-  "note": "",
   "genres": [
    "Platformer",
    "Adventure"
@@ -4476,7 +4277,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -4500,7 +4300,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 423,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -4524,7 +4323,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG",
    "Action"
@@ -4548,7 +4346,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -4571,7 +4368,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG"
   ],
@@ -4593,7 +4389,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -4616,7 +4411,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -4639,7 +4433,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -4661,7 +4454,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -4680,7 +4472,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -4703,7 +4494,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Box",
@@ -4723,7 +4513,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -4746,7 +4535,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "TPS"
   ],
@@ -4769,7 +4557,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 451,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -4793,7 +4580,6 @@
   "timesCompleted": 1,
   "percent": 16,
   "playtime": null,
-  "note": "#3 Fighting",
   "genres": [
    "Fighting"
   ],
@@ -4815,7 +4601,6 @@
   "timesCompleted": 0,
   "percent": 12,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -4838,7 +4623,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 473,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -4860,7 +4644,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle",
    "Adventure"
@@ -4880,7 +4663,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Adventure",
    "OpenWorld"
@@ -4900,7 +4682,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "#3 Strategy",
   "genres": [
    "Strategy"
   ],
@@ -4919,7 +4700,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "#1 2018a|c || #2 DS || GotM Sep18 || #2 RPG",
   "genres": [
    "RPG",
    "OpenWorld"
@@ -4939,7 +4719,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Adventure",
    "OpenWorld"
@@ -4959,7 +4738,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 1235,
-  "note": "",
   "genres": [
    "RPG"
   ],
@@ -4978,7 +4756,6 @@
   "timesCompleted": 1,
   "percent": 44,
   "playtime": 153,
-  "note": "#5 SNESc || #5 Platformer",
   "genres": [
    "Platformer"
   ],
@@ -4999,7 +4776,6 @@
   "timesCompleted": 1,
   "percent": 58,
   "playtime": 570,
-  "note": "#2 2018a|c || #1 SNESc || #1 Platformer || GotM Aug18",
   "genres": [
    "Platformer"
   ],
@@ -5020,7 +4796,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG"
   ],
@@ -5041,7 +4816,6 @@
   "timesCompleted": 1,
   "percent": 33,
   "playtime": 51,
-  "note": "",
   "genres": [
    "Action"
   ],
@@ -5062,7 +4836,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 1129,
-  "note": "#4 2018a || #3 SNESc || #3 2018c",
   "genres": [
    "RPG"
   ],
@@ -5083,7 +4856,6 @@
   "timesCompleted": 1,
   "percent": 46,
   "playtime": 153,
-  "note": "",
   "genres": [
    "Platformer"
   ],
@@ -5104,7 +4876,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG"
   ],
@@ -5125,7 +4896,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -5146,7 +4916,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 132,
-  "note": "",
   "genres": [
    "Platformer"
   ],
@@ -5167,7 +4936,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -5188,7 +4956,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 630,
-  "note": "",
   "genres": [
    "RPG",
    "OpenWorld"
@@ -5210,7 +4977,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": 33,
-  "note": "",
   "genres": [
    "Platformer"
   ],
@@ -5231,7 +4997,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -5252,7 +5017,6 @@
   "timesCompleted": 1,
   "percent": 82,
   "playtime": 210,
-  "note": "",
   "genres": [
    "Platformer"
   ],
@@ -5273,7 +5037,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 549,
-  "note": "#5 2018a || #4 SNESc || #4 Platformer || #4 2018c",
   "genres": [
    "Platformer"
   ],
@@ -5294,7 +5057,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 101,
-  "note": "",
   "genres": [
    "Platformer"
   ],
@@ -5315,7 +5077,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 1650,
-  "note": "#3 2018a || #2 SNESc || #4 RPG || #3 2019c",
   "genres": [
    "RPG"
   ],
@@ -5336,7 +5097,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 56,
-  "note": "",
   "genres": [
    "Action",
    "Platformer"
@@ -5358,7 +5118,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -5379,7 +5138,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "#5 Fighting",
   "genres": [
    "Fighting"
   ],
@@ -5400,7 +5158,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 21,
-  "note": "",
   "genres": [
    "Action"
   ],
@@ -5421,7 +5178,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -5442,7 +5198,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG",
    "L"
@@ -5466,7 +5221,6 @@
   "timesCompleted": 0,
   "percent": 13,
   "playtime": 42,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -5489,7 +5243,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -5511,7 +5264,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -5533,7 +5285,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -5552,7 +5303,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -5573,7 +5323,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -5594,7 +5343,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -5615,7 +5363,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -5636,7 +5383,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -5659,7 +5405,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -5682,7 +5427,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [],
   "edition": "",
@@ -5699,7 +5443,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "GotM Oct18",
   "genres": [
    "Action",
    "Adventure"
@@ -5719,7 +5462,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "#4 Racing",
   "genres": [
    "Racing"
   ],
@@ -5738,7 +5480,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -5757,7 +5498,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -5776,7 +5516,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG"
   ],
@@ -5795,7 +5534,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 942,
-  "note": "GotM Jan19",
   "genres": [
    "RPG"
   ],
@@ -5814,7 +5552,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "GotM Nov18 || #4 Fighting",
   "genres": [
    "Sports",
    "Fighting"
@@ -5838,7 +5575,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "#1 Fighting || #5 2018c",
   "genres": [
    "Fighting"
   ],
@@ -5860,7 +5596,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS",
    "<3"
@@ -5884,7 +5619,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing",
    "L"
@@ -5907,7 +5641,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": 405,
-  "note": "GotM Dec18",
   "genres": [
    "Racing"
   ],
@@ -5930,7 +5663,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -5952,7 +5684,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action"
   ],
@@ -5975,7 +5706,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -5999,7 +5729,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Adventure"
   ],
@@ -6022,7 +5751,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 376,
-  "note": "",
   "genres": [
    "Action",
    "Stealth"
@@ -6046,7 +5774,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "TPS"
   ],
@@ -6069,7 +5796,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -6093,7 +5819,6 @@
   "timesCompleted": 2,
   "percent": null,
   "playtime": 942,
-  "note": "GotM Feb19 || #5 2019c",
   "genres": [
    "Action",
    "<3",
@@ -6118,7 +5843,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG",
    "<3",
@@ -6142,7 +5866,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS",
    "<3"
@@ -6165,7 +5888,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 231,
-  "note": "",
   "genres": [
    "Horror",
    "<3"
@@ -6189,7 +5911,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Horror",
    "TPS"
@@ -6213,7 +5934,6 @@
   "timesCompleted": 3,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG",
    "OpenWorld"
@@ -6237,7 +5957,6 @@
   "timesCompleted": 1,
   "percent": 90,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure",
@@ -6262,7 +5981,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "Gotm Mar19",
   "genres": [
    "Horror",
    "FPS"
@@ -6285,7 +6003,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 1029,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -6309,7 +6026,6 @@
   "timesCompleted": 1,
   "percent": 100,
   "playtime": 1435,
-  "note": "GotM Aug19",
   "genres": [
    "Action",
    "Adventure",
@@ -6334,7 +6050,6 @@
   "timesCompleted": 1,
   "percent": 73,
   "playtime": 1016,
-  "note": "",
   "genres": [
    "Action",
    "Adventure",
@@ -6359,7 +6074,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG",
    "TPS"
@@ -6379,7 +6093,6 @@
   "timesCompleted": 2,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -6402,7 +6115,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 352,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -6425,7 +6137,6 @@
   "timesCompleted": 1,
   "percent": 82,
   "playtime": null,
-  "note": "GotM Apr19",
   "genres": [
    "Racing"
   ],
@@ -6448,7 +6159,6 @@
   "timesCompleted": 3,
   "percent": null,
   "playtime": null,
-  "note": "#2 PS3 || #2 2019a|c",
   "genres": [
    "Adventure"
   ],
@@ -6471,7 +6181,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "#4 Horror",
   "genres": [
    "Horror",
    "Action"
@@ -6495,7 +6204,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -6518,7 +6226,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "TPS"
   ],
@@ -6540,7 +6247,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Platformer"
   ],
@@ -6563,7 +6269,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 753,
-  "note": "#5 Racing",
   "genres": [
    "Racing",
    "OpenWorld"
@@ -6586,7 +6291,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -6609,7 +6313,6 @@
   "timesCompleted": 1,
   "percent": 55,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure",
@@ -6634,7 +6337,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 2485,
-  "note": "GotM May|Jun19 || #1 PSP || #1 Action || #1 2019a|c",
   "genres": [
    "Action",
    "Stealth"
@@ -6658,7 +6360,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -6681,7 +6382,6 @@
   "timesCompleted": 3,
   "percent": null,
   "playtime": 1477,
-  "note": "GotM July19 || #5 PS3 || #4 2019a|c",
   "genres": [
    "Action",
    "<3",
@@ -6706,7 +6406,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -6729,7 +6428,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Platformer"
   ],
@@ -6750,7 +6448,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -6771,7 +6468,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -6790,7 +6486,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -6811,7 +6506,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports",
    "Fighting"
@@ -6831,7 +6525,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 1690,
-  "note": "GotM Oct19|Nov19",
   "genres": [
    "RPG",
    "OpenWorld"
@@ -6851,7 +6544,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG",
    "OpenWorld"
@@ -6875,7 +6567,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 1392,
-  "note": "GotM Dec19",
   "genres": [
    "RPG"
   ],
@@ -6898,7 +6589,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "#5 PS3",
   "genres": [
    "Action",
    "Adventure",
@@ -6923,7 +6613,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -6945,7 +6634,6 @@
   "timesCompleted": 2,
   "percent": 100,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "<3",
@@ -6970,7 +6658,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG",
    "Action"
@@ -6993,7 +6680,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -7016,7 +6702,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS",
    "OpenWorld"
@@ -7039,7 +6724,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -7062,7 +6746,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -7086,7 +6769,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -7108,7 +6790,6 @@
   "timesCompleted": 1,
   "percent": 100,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy",
    "RPG"
@@ -7132,7 +6813,6 @@
   "timesCompleted": 1,
   "percent": 100,
   "playtime": 1880,
-  "note": "#5 2019a || #5 RPG || GotM Feb20",
   "genres": [
    "RPG",
    "<3",
@@ -7157,7 +6837,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 2735,
-  "note": "GotM May20 || #3 RPG || #3 PS3 || #3 2019a",
   "genres": [
    "RPG"
   ],
@@ -7180,7 +6859,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -7203,7 +6881,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -7226,7 +6903,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -7249,7 +6925,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -7272,7 +6947,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -7295,7 +6969,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Box",
@@ -7316,7 +6989,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 1380,
-  "note": "GotM Jan20",
   "genres": [
    "Horror",
    "TPS",
@@ -7341,7 +7013,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -7365,7 +7036,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "RPG"
@@ -7389,7 +7059,6 @@
   "timesCompleted": 1,
   "percent": 71,
   "playtime": 430,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -7413,7 +7082,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "RPG"
@@ -7437,7 +7105,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 1040,
-  "note": "GotM Mar20",
   "genres": [
    "RPG",
    "Action"
@@ -7457,7 +7124,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -7480,7 +7146,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "#4 Shooter || #4 PS3 || GotM Apr20",
   "genres": [
    "FPS"
   ],
@@ -7503,7 +7168,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 432,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -7527,7 +7191,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -7551,7 +7214,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -7570,7 +7232,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS",
    "Strategy"
@@ -7594,7 +7255,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "GotM June20",
   "genres": [
    "Action",
    "Adventure",
@@ -7619,7 +7279,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -7642,7 +7301,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -7666,7 +7324,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -7688,7 +7345,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 466,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -7712,7 +7368,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "#3 Sports",
   "genres": [
    "Sports",
    "OpenWorld"
@@ -7736,7 +7391,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -7759,7 +7413,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -7782,7 +7435,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -7806,7 +7458,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Horror",
    "Adventure"
@@ -7830,7 +7481,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "FPS"
@@ -7854,7 +7504,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 118,
-  "note": "",
   "genres": [
    "Action",
    "Fighting"
@@ -7878,7 +7527,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 406,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -7900,7 +7548,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 683,
-  "note": "#4 Action || #3 PS2",
   "genres": [
    "Action",
    "Stealth"
@@ -7923,7 +7570,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "#1 PS3 || #1 Shooter || GotM Jul20",
   "genres": [
    "FPS",
    "<3"
@@ -7947,7 +7593,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 2079,
-  "note": "",
   "genres": [
    "RPG",
    "<3",
@@ -7972,7 +7617,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Platformer",
    "Action"
@@ -7992,7 +7636,6 @@
   "timesCompleted": 1,
   "percent": 84,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -8016,7 +7659,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG",
    "OpenWorld"
@@ -8040,7 +7682,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -8063,7 +7704,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -8086,7 +7726,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG"
   ],
@@ -8105,7 +7744,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -8124,7 +7762,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG",
    "<3"
@@ -8148,7 +7785,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 1221,
-  "note": "",
   "genres": [
    "RPG",
    "<3"
@@ -8171,7 +7807,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -8194,7 +7829,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -8217,7 +7851,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -8240,7 +7873,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS",
    "<3"
@@ -8264,7 +7896,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure",
@@ -8289,7 +7920,6 @@
   "timesCompleted": 1,
   "percent": 100,
   "playtime": null,
-  "note": "",
   "genres": [
    "TPS",
    "Strategy"
@@ -8313,7 +7943,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 1172,
-  "note": "",
   "genres": [
    "Action",
    "Adventure",
@@ -8338,7 +7967,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -8360,7 +7988,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -8383,7 +8010,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -8405,7 +8031,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -8426,7 +8051,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action"
   ],
@@ -8447,7 +8071,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -8470,7 +8093,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Platformer"
   ],
@@ -8493,7 +8115,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -8516,7 +8137,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG",
    "<3"
@@ -8540,7 +8160,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "RPG",
@@ -8565,7 +8184,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Horror",
@@ -8590,7 +8208,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -8614,7 +8231,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -8637,7 +8253,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -8660,7 +8275,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -8683,7 +8297,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "RPG"
@@ -8707,7 +8320,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 2356,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -8730,7 +8342,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -8753,7 +8364,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -8776,7 +8386,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -8798,7 +8407,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "TPS"
@@ -8822,7 +8430,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS",
    "Horror"
@@ -8846,7 +8453,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "TPS"
@@ -8870,7 +8476,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -8893,7 +8498,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing",
    "Action"
@@ -8917,7 +8521,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 2850,
-  "note": "",
   "genres": [
    "Action",
    "RPG",
@@ -8942,7 +8545,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -8965,7 +8567,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -8987,7 +8588,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -9010,7 +8610,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Platformer"
   ],
@@ -9029,7 +8628,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -9052,7 +8650,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy",
    "RPG"
@@ -9072,7 +8669,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -9093,7 +8689,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure",
@@ -9118,7 +8713,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -9140,7 +8734,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -9163,7 +8756,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "TPS"
@@ -9187,7 +8779,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -9211,7 +8802,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -9234,7 +8824,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -9257,7 +8846,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -9280,7 +8868,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG"
   ],
@@ -9303,7 +8890,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -9326,7 +8912,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 295,
-  "note": "",
   "genres": [
    "Horror",
    "Adventure"
@@ -9350,7 +8935,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -9373,7 +8957,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -9396,7 +8979,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -9419,7 +9001,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -9441,7 +9022,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Stealth"
@@ -9464,7 +9044,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "TPS"
@@ -9488,7 +9067,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -9511,7 +9089,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 371,
-  "note": "",
   "genres": [
    "TPS",
    "Action"
@@ -9535,7 +9112,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -9557,7 +9133,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -9579,7 +9154,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -9602,7 +9176,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -9625,7 +9198,6 @@
   "timesCompleted": 2,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure",
@@ -9650,7 +9222,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -9672,7 +9243,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Adventure"
   ],
@@ -9695,7 +9265,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -9717,7 +9286,6 @@
   "timesCompleted": 1,
   "percent": 66,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure",
@@ -9742,7 +9310,6 @@
   "timesCompleted": 2,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -9765,7 +9332,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -9789,7 +9355,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Horror",
    "Adventure"
@@ -9813,7 +9378,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle",
    "<3"
@@ -9837,7 +9401,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Horror",
    "Adventure"
@@ -9861,7 +9424,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -9884,7 +9446,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS",
    "RPG",
@@ -9908,7 +9469,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG"
   ],
@@ -9930,7 +9490,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -9953,7 +9512,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -9977,7 +9535,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS",
    "Horror"
@@ -10001,7 +9558,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Stealth"
@@ -10025,7 +9581,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 990,
-  "note": "",
   "genres": [
    "RPG",
    "OpenWorld"
@@ -10049,7 +9604,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG"
   ],
@@ -10072,7 +9626,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -10095,7 +9648,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "<3"
   ],
@@ -10117,7 +9669,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 245,
-  "note": "",
   "genres": [
    "Action",
    "H&S",
@@ -10141,7 +9692,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Platformer"
   ],
@@ -10160,7 +9710,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy",
    "OpenWorld"
@@ -10180,7 +9729,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -10203,7 +9751,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -10227,7 +9774,6 @@
   "timesCompleted": 1,
   "percent": 96,
   "playtime": 1340,
-  "note": "",
   "genres": [
    "Action",
    "Adventure",
@@ -10252,7 +9798,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure",
@@ -10277,7 +9822,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG"
   ],
@@ -10300,7 +9844,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure",
@@ -10325,7 +9868,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure",
@@ -10350,7 +9892,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Horror",
@@ -10375,7 +9916,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Box",
@@ -10396,7 +9936,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Box",
@@ -10417,7 +9956,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -10440,7 +9978,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -10463,7 +10000,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -10486,7 +10022,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS",
    "<3"
@@ -10510,7 +10045,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -10533,7 +10067,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -10556,7 +10089,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Stealth",
    "Action",
@@ -10580,7 +10112,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "TPS"
@@ -10604,7 +10135,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 227,
-  "note": "",
   "genres": [
    "Action",
    "TPS"
@@ -10628,7 +10158,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -10647,7 +10176,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Horror",
    "Adventure"
@@ -10671,7 +10199,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "TPS"
@@ -10695,7 +10222,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -10718,7 +10244,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Adventure",
    "Puzzle"
@@ -10742,7 +10267,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -10765,7 +10289,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -10788,7 +10311,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -10811,7 +10333,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -10834,7 +10355,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -10857,7 +10377,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -10880,7 +10399,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -10903,7 +10421,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -10926,7 +10443,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "TPS"
@@ -10950,7 +10466,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -10972,7 +10487,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -10995,7 +10509,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -11017,7 +10530,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -11040,7 +10552,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -11063,7 +10574,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -11086,7 +10596,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -11108,7 +10617,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -11130,7 +10638,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -11153,7 +10660,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -11176,7 +10682,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -11198,7 +10703,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -11221,7 +10725,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -11244,7 +10747,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -11267,7 +10769,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -11290,7 +10791,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Stealth"
@@ -11312,7 +10812,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG"
   ],
@@ -11335,7 +10834,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -11358,7 +10856,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -11381,7 +10878,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports",
    "Fighting"
@@ -11405,7 +10901,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports",
    "Fighting"
@@ -11429,7 +10924,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -11452,7 +10946,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -11475,7 +10968,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -11498,7 +10990,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -11521,7 +11012,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -11543,7 +11033,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "TPS"
@@ -11566,7 +11055,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Platformer",
    "Adventure"
@@ -11590,7 +11078,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -11612,7 +11099,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "RPG"
@@ -11634,7 +11120,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "RPG"
@@ -11656,7 +11141,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -11675,7 +11159,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 951,
-  "note": "",
   "genres": [
    "Action",
    "Stealth"
@@ -11699,7 +11182,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -11722,7 +11204,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -11745,7 +11226,6 @@
   "timesCompleted": 1,
   "percent": 100,
   "playtime": 1617,
-  "note": "",
   "genres": [
    "Action",
    "Adventure",
@@ -11770,7 +11250,6 @@
   "timesCompleted": 1,
   "percent": 64,
   "playtime": 854,
-  "note": "",
   "genres": [
    "Action",
    "Adventure",
@@ -11794,7 +11273,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "TPS"
   ],
@@ -11817,7 +11295,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -11839,7 +11316,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -11861,7 +11337,6 @@
   "timesCompleted": 1,
   "percent": 46.3,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -11885,7 +11360,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 142,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -11908,7 +11382,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -11931,7 +11404,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -11954,7 +11426,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -11975,7 +11446,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -11997,7 +11467,6 @@
   "timesCompleted": 0,
   "percent": 34,
   "playtime": 355,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -12018,7 +11487,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "RPG"
@@ -12038,7 +11506,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -12061,7 +11528,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports",
    "Party"
@@ -12085,7 +11551,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -12109,7 +11574,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 1427,
-  "note": "",
   "genres": [
    "Action",
    "Adventure",
@@ -12134,7 +11598,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Platformer",
    "<3"
@@ -12158,7 +11621,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -12180,7 +11642,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -12202,7 +11663,6 @@
   "timesCompleted": 2,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -12225,7 +11685,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 921,
-  "note": "",
   "genres": [
    "Horror",
    "TPS"
@@ -12249,7 +11708,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Horror",
    "TPS"
@@ -12273,7 +11731,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -12296,7 +11753,6 @@
   "timesCompleted": 1,
   "percent": 55.8,
   "playtime": 567,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -12320,7 +11776,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "<3"
   ],
@@ -12343,7 +11798,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -12366,7 +11820,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -12389,7 +11842,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Platformer"
   ],
@@ -12408,7 +11860,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -12427,7 +11878,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 1150,
-  "note": "",
   "genres": [
    "RPG",
    "<3",
@@ -12452,7 +11902,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "RPG"
@@ -12476,7 +11925,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -12499,7 +11947,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -12522,7 +11969,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS",
    "Stealth"
@@ -12546,7 +11992,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -12569,7 +12014,6 @@
   "timesCompleted": 1,
   "percent": 95,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure",
@@ -12594,7 +12038,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -12617,7 +12060,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -12640,7 +12082,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports",
    "Fighting"
@@ -12664,7 +12105,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -12688,7 +12128,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -12711,7 +12150,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -12734,7 +12172,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -12757,7 +12194,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports",
    "<3"
@@ -12781,7 +12217,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 1769,
-  "note": "",
   "genres": [
    "RPG",
    "<3",
@@ -12806,7 +12241,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy",
    "L"
@@ -12830,7 +12264,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -12854,7 +12287,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -12877,7 +12309,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 727,
-  "note": "",
   "genres": [
    "FPS",
    "OpenWorld"
@@ -12901,7 +12332,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -12922,7 +12352,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -12945,7 +12374,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -12968,7 +12396,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -12991,7 +12418,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -13015,7 +12441,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -13038,7 +12463,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -13061,7 +12485,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -13084,7 +12507,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -13108,7 +12530,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -13132,7 +12553,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 1046,
-  "note": "",
   "genres": [
    "Action",
    "RPG",
@@ -13157,7 +12577,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -13180,7 +12599,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG"
   ],
@@ -13202,7 +12620,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -13225,7 +12642,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -13249,7 +12665,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS",
    "RPG",
@@ -13274,7 +12689,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "RPG"
@@ -13298,7 +12712,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Platformer"
   ],
@@ -13321,7 +12734,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Platformer"
   ],
@@ -13344,7 +12756,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -13368,7 +12779,6 @@
   "timesCompleted": 1,
   "percent": 26,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -13391,7 +12801,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -13414,7 +12823,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -13438,7 +12846,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 491,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -13462,7 +12869,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -13481,7 +12887,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": 536,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -13500,7 +12905,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 526,
-  "note": "",
   "genres": [
    "Horror",
    "Adventure"
@@ -13524,7 +12928,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -13548,7 +12951,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Adventure"
   ],
@@ -13571,7 +12973,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -13594,7 +12995,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Stealth",
    "Action"
@@ -13618,7 +13018,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "TPS"
@@ -13642,7 +13041,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG"
   ],
@@ -13661,7 +13059,6 @@
   "timesCompleted": 1,
   "percent": 33,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -13681,7 +13078,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -13700,7 +13096,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -13720,7 +13115,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -13740,7 +13134,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": 434,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -13759,7 +13152,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 242,
-  "note": "",
   "genres": [
    "Adventure"
   ],
@@ -13782,7 +13174,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Stealth",
    "Action"
@@ -13805,7 +13196,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 150,
-  "note": "",
   "genres": [
    "Action",
    "Fighting"
@@ -13829,7 +13219,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -13853,7 +13242,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Stealth"
@@ -13877,7 +13265,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -13900,7 +13287,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -13923,7 +13309,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Stealth"
@@ -13947,7 +13332,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -13970,7 +13354,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -13993,7 +13376,6 @@
   "timesCompleted": 1,
   "percent": 54,
   "playtime": 1025,
-  "note": "",
   "genres": [
    "Action",
    "Adventure",
@@ -14018,7 +13400,6 @@
   "timesCompleted": 1,
   "percent": 100,
   "playtime": null,
-  "note": "",
   "genres": [
    "Adventure"
   ],
@@ -14041,7 +13422,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Racing"
@@ -14065,7 +13445,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 947,
-  "note": "",
   "genres": [
    "Action",
    "Horror"
@@ -14089,7 +13468,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -14111,7 +13489,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -14135,7 +13512,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Platformer"
   ],
@@ -14156,7 +13532,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -14178,7 +13553,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -14200,7 +13574,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Platformer"
   ],
@@ -14223,7 +13596,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -14247,7 +13619,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -14271,7 +13642,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -14295,7 +13665,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 2320,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -14319,7 +13688,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -14343,7 +13711,6 @@
   "timesCompleted": 2,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S",
@@ -14368,7 +13735,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -14392,7 +13758,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -14416,7 +13781,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -14440,7 +13804,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -14464,7 +13827,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -14488,7 +13850,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -14512,7 +13873,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -14536,7 +13896,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -14559,7 +13918,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -14582,7 +13940,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -14605,7 +13962,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 2553,
-  "note": "",
   "genres": [
    "FPS",
    "RPG",
@@ -14630,7 +13986,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS",
    "RPG"
@@ -14654,7 +14009,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG"
   ],
@@ -14677,7 +14031,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 133,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -14700,7 +14053,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -14724,7 +14076,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 3619,
-  "note": "",
   "genres": [
    "RPG",
    "OpenWorld"
@@ -14748,7 +14099,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -14771,7 +14121,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG",
    "TPS"
@@ -14795,7 +14144,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -14819,7 +14167,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Stealth"
@@ -14843,7 +14190,6 @@
   "timesCompleted": 2,
   "percent": 100,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -14867,7 +14213,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "TPS",
    "RPG"
@@ -14891,7 +14236,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure",
@@ -14916,7 +14260,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action"
   ],
@@ -14939,7 +14282,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 360,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -14962,7 +14304,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 2161,
-  "note": "",
   "genres": [
    "Action",
    "H&S",
@@ -14987,7 +14328,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure",
@@ -15012,7 +14352,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -15036,7 +14375,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Stealth"
@@ -15060,7 +14398,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "TPS",
@@ -15085,7 +14422,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Horror",
    "Adventure",
@@ -15109,7 +14445,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -15130,7 +14465,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -15151,7 +14485,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -15172,7 +14505,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG"
   ],
@@ -15193,7 +14525,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -15215,7 +14546,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -15236,7 +14566,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Platformer"
   ],
@@ -15257,7 +14586,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Stealth"
@@ -15279,7 +14607,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -15300,7 +14627,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Platformer"
   ],
@@ -15321,7 +14647,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Platformer"
   ],
@@ -15342,7 +14667,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Horror",
    "Adventure"
@@ -15364,7 +14688,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 1920,
-  "note": "",
   "genres": [
    "RPG"
   ],
@@ -15385,7 +14708,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -15406,7 +14728,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -15427,7 +14748,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "TPS"
   ],
@@ -15448,7 +14768,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -15469,7 +14788,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -15490,7 +14808,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -15511,7 +14828,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG"
   ],
@@ -15532,7 +14848,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -15556,7 +14871,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 2351,
-  "note": "",
   "genres": [
    "Action",
    "Adventure",
@@ -15580,7 +14894,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS",
    "RPG"
@@ -15603,7 +14916,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG"
   ],
@@ -15626,7 +14938,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Stealth"
@@ -15650,7 +14961,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 825,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -15673,7 +14983,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure",
@@ -15697,7 +15006,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -15720,7 +15028,6 @@
   "timesCompleted": 1,
   "percent": 51,
   "playtime": 392,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -15742,7 +15049,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -15766,7 +15072,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "RPG",
@@ -15790,7 +15095,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 2651,
-  "note": "",
   "genres": [
    "RPG",
    "OpenWorld"
@@ -15813,7 +15117,6 @@
   "timesCompleted": 1,
   "percent": 79,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -15836,7 +15139,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -15860,7 +15162,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -15884,7 +15185,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -15908,7 +15208,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -15932,7 +15231,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "RPG"
@@ -15956,7 +15254,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -15978,7 +15275,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -16001,7 +15297,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -16024,7 +15319,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -16047,7 +15341,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -16070,7 +15363,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Horror",
    "TPS",
@@ -16095,7 +15387,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Horror",
    "TPS",
@@ -16120,7 +15411,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Horror",
    "TPS",
@@ -16145,7 +15435,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -16168,7 +15457,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -16191,7 +15479,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Platformer",
    "Racing"
@@ -16215,7 +15502,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Platformer"
   ],
@@ -16238,7 +15524,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -16261,7 +15546,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "RPG",
@@ -16286,7 +15570,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Horror",
    "Action"
@@ -16309,7 +15592,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "RPG"
@@ -16333,7 +15615,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Platformer"
   ],
@@ -16356,7 +15637,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Box",
@@ -16377,7 +15657,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action"
   ],
@@ -16400,7 +15679,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "RPG"
@@ -16424,7 +15702,6 @@
   "timesCompleted": 1,
   "percent": 71,
   "playtime": 539,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -16448,7 +15725,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 257,
-  "note": "",
   "genres": [
    "Action"
   ],
@@ -16471,7 +15747,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Box",
@@ -16492,7 +15767,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 142,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -16515,7 +15789,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 1655,
-  "note": "",
   "genres": [
    "Action",
    "RPG",
@@ -16540,7 +15813,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -16563,7 +15835,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -16587,7 +15858,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 769,
-  "note": "",
   "genres": [
    "Action",
    "Adventure",
@@ -16612,7 +15882,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -16635,7 +15904,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -16659,7 +15927,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -16682,7 +15949,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -16705,7 +15971,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -16729,7 +15994,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS",
    "Strategy"
@@ -16753,7 +16017,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -16776,7 +16039,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -16800,7 +16062,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -16823,7 +16084,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "H&S",
    "TPS"
@@ -16847,7 +16107,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -16870,7 +16129,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -16893,7 +16151,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -16916,7 +16173,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "RPG"
@@ -16939,7 +16195,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure",
@@ -16964,7 +16219,6 @@
   "timesCompleted": 1,
   "percent": 28,
   "playtime": 845,
-  "note": "",
   "genres": [
    "Action",
    "Adventure",
@@ -16989,7 +16243,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -17012,7 +16265,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG"
   ],
@@ -17034,7 +16286,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Platformer"
   ],
@@ -17057,7 +16308,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -17080,7 +16330,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG"
   ],
@@ -17103,7 +16352,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG"
   ],
@@ -17126,7 +16374,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG"
   ],
@@ -17149,7 +16396,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG"
   ],
@@ -17172,7 +16418,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG"
   ],
@@ -17195,7 +16440,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG"
   ],
@@ -17218,7 +16462,6 @@
   "timesCompleted": 1,
   "percent": 100,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -17242,7 +16485,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS",
    "Horror"
@@ -17266,7 +16508,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS",
    "Horror"
@@ -17290,7 +16531,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -17313,7 +16553,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 303,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -17336,7 +16575,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 264,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -17360,7 +16598,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -17383,7 +16620,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -17406,7 +16642,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -17430,7 +16665,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "TPS"
   ],
@@ -17453,7 +16687,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Adventure"
   ],
@@ -17475,7 +16708,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -17498,7 +16730,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -17521,7 +16752,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -17545,7 +16775,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure",
@@ -17570,7 +16799,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Racing"
@@ -17593,7 +16821,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -17616,7 +16843,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -17639,7 +16865,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -17662,7 +16887,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Platformer"
   ],
@@ -17685,7 +16909,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure",
@@ -17710,7 +16933,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -17734,7 +16956,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG"
   ],
@@ -17757,7 +16978,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -17780,7 +17000,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "RPG"
@@ -17804,7 +17023,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -17827,7 +17045,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure",
@@ -17852,7 +17069,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -17875,7 +17091,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -17898,7 +17113,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "RPG"
@@ -17922,7 +17136,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -17945,7 +17158,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -17968,7 +17180,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -17991,7 +17202,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -18014,7 +17224,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action"
   ],
@@ -18037,7 +17246,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -18060,7 +17268,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -18084,7 +17291,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -18107,7 +17313,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -18130,7 +17335,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -18153,7 +17357,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -18176,7 +17379,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -18199,7 +17401,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action"
   ],
@@ -18222,7 +17423,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -18245,7 +17445,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Platformer"
   ],
@@ -18267,7 +17466,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -18290,7 +17488,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -18313,7 +17510,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -18336,7 +17532,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -18359,7 +17554,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -18382,7 +17576,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -18405,7 +17598,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -18428,7 +17620,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS",
    "Strategy"
@@ -18452,7 +17643,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action"
   ],
@@ -18475,7 +17665,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action"
   ],
@@ -18498,7 +17687,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Adventure"
   ],
@@ -18521,7 +17709,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "TPS"
@@ -18545,7 +17732,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "TPS"
@@ -18568,7 +17754,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -18592,7 +17777,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Platformer"
   ],
@@ -18614,7 +17798,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -18638,7 +17821,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "RPG"
@@ -18662,7 +17844,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -18684,7 +17865,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -18707,7 +17887,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle",
    "Platformer"
@@ -18730,7 +17909,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -18753,7 +17931,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -18776,7 +17953,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -18799,7 +17975,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure",
@@ -18824,7 +17999,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -18847,7 +18021,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure",
@@ -18872,7 +18045,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "TPS"
@@ -18896,7 +18068,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Horror"
   ],
@@ -18919,7 +18090,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "RPG"
@@ -18942,7 +18112,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "TPS"
   ],
@@ -18964,7 +18133,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG"
   ],
@@ -18986,7 +18154,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "TPS"
   ],
@@ -19008,7 +18175,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "TPS"
   ],
@@ -19030,7 +18196,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -19053,7 +18218,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -19073,7 +18237,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -19092,7 +18255,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "TPS"
@@ -19115,7 +18277,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -19137,7 +18298,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -19159,7 +18319,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -19181,7 +18340,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Stealth"
@@ -19204,7 +18362,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG"
   ],
@@ -19226,7 +18383,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -19247,7 +18403,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Adventure"
   ],
@@ -19268,7 +18423,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Adventure"
   ],
@@ -19289,7 +18443,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action"
   ],
@@ -19310,7 +18463,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -19329,7 +18481,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -19348,7 +18499,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -19367,7 +18517,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -19388,7 +18537,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -19407,7 +18555,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -19428,7 +18575,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -19447,7 +18593,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -19466,7 +18611,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -19487,7 +18631,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -19506,7 +18649,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -19525,7 +18667,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -19544,7 +18685,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -19563,7 +18703,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -19582,7 +18721,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -19601,7 +18739,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -19622,7 +18759,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -19643,7 +18779,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -19662,7 +18797,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -19681,7 +18815,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -19700,7 +18833,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -19719,7 +18851,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -19738,7 +18869,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -19759,7 +18889,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -19778,7 +18907,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -19797,7 +18925,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -19816,7 +18943,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -19835,7 +18961,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -19856,7 +18981,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -19875,7 +18999,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -19896,7 +19019,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -19915,7 +19037,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -19936,7 +19057,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -19957,7 +19077,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -19978,7 +19097,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -19999,7 +19117,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -20020,7 +19137,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -20039,7 +19155,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -20058,7 +19173,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -20077,7 +19191,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -20096,7 +19209,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -20115,7 +19227,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -20134,7 +19245,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -20153,7 +19263,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -20172,7 +19281,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -20191,7 +19299,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -20212,7 +19319,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -20231,7 +19337,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -20252,7 +19357,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -20273,7 +19377,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -20292,7 +19395,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -20311,7 +19413,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -20330,7 +19431,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -20351,7 +19451,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -20372,7 +19471,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -20391,7 +19489,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Built-in Console"
@@ -20410,7 +19507,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports",
    "<3"
@@ -20434,7 +19530,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action"
   ],
@@ -20456,7 +19551,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 319,
-  "note": "",
   "genres": [
    "Platformer"
   ],
@@ -20478,7 +19572,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Platformer"
   ],
@@ -20501,7 +19594,6 @@
   "timesCompleted": 1,
   "percent": 100,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -20524,7 +19616,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Adventure"
   ],
@@ -20547,7 +19638,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -20571,7 +19661,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -20594,7 +19683,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -20617,7 +19705,6 @@
   "timesCompleted": 2,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -20641,7 +19728,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -20664,7 +19750,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Horror",
    "FPS"
@@ -20688,7 +19773,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -20711,7 +19795,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Adventure"
   ],
@@ -20733,7 +19816,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "TPS"
@@ -20757,7 +19839,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -20781,7 +19862,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS",
    "RPG"
@@ -20804,7 +19884,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -20827,7 +19906,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -20851,7 +19929,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure",
@@ -20875,7 +19952,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -20898,7 +19974,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Adventure"
   ],
@@ -20921,7 +19996,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -20943,7 +20017,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Stealth"
@@ -20966,7 +20039,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Stealth"
@@ -20989,7 +20061,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Stealth"
@@ -21012,7 +20083,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -21034,7 +20104,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS",
    "Horror"
@@ -21057,7 +20126,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -21080,7 +20148,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -21103,7 +20170,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -21126,7 +20192,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Platformer"
   ],
@@ -21149,7 +20214,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -21172,7 +20236,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -21195,7 +20258,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "TPS"
@@ -21219,7 +20281,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -21242,7 +20303,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -21265,7 +20325,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -21288,7 +20347,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG"
   ],
@@ -21311,7 +20369,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "RPG"
@@ -21335,7 +20392,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "RPG"
@@ -21359,7 +20415,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -21383,7 +20438,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -21407,7 +20461,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 371,
-  "note": "",
   "genres": [
    "Horror",
    "<3",
@@ -21432,7 +20485,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [],
   "condition": [
    "Box",
@@ -21453,7 +20505,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -21476,7 +20527,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -21499,7 +20549,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Horror",
    "TPS"
@@ -21523,7 +20572,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS",
    "Horror"
@@ -21547,7 +20595,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -21570,7 +20617,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -21594,7 +20640,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -21618,7 +20663,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "RPG"
@@ -21642,7 +20686,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 1393,
-  "note": "",
   "genres": [
    "H&S",
    "RPG"
@@ -21666,7 +20709,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -21690,7 +20732,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -21713,7 +20754,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "RPG",
@@ -21738,7 +20778,6 @@
   "timesCompleted": 1,
   "percent": 100,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Puzzle",
@@ -21763,7 +20802,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -21787,7 +20825,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Racing"
@@ -21811,7 +20848,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -21834,7 +20870,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -21857,7 +20892,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle",
    "Platformer"
@@ -21881,7 +20915,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -21905,7 +20938,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -21929,7 +20961,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -21952,7 +20983,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Platformer"
   ],
@@ -21975,7 +21005,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "TPS"
   ],
@@ -21998,7 +21027,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -22022,7 +21050,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -22046,7 +21073,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "TPS"
   ],
@@ -22069,7 +21095,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -22092,7 +21117,6 @@
   "timesCompleted": 1,
   "percent": 100,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -22115,7 +21139,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -22138,7 +21161,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure",
@@ -22163,7 +21185,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports",
    "RPG"
@@ -22187,7 +21208,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S",
@@ -22212,7 +21232,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -22235,7 +21254,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "H&S",
    "Strategy"
@@ -22259,7 +21277,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Racing"
@@ -22283,7 +21300,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Adventure"
   ],
@@ -22306,7 +21322,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG"
   ],
@@ -22329,7 +21344,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "TPS",
    "Action"
@@ -22349,7 +21363,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -22368,7 +21381,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -22387,7 +21399,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -22406,7 +21417,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -22425,7 +21435,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -22448,7 +21457,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -22470,7 +21478,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -22492,7 +21499,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "RPG"
@@ -22515,7 +21521,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "TPS"
   ],
@@ -22537,7 +21542,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure",
@@ -22561,7 +21565,6 @@
   "timesCompleted": 2,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "H&S",
    "Strategy"
@@ -22584,7 +21587,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "TPS"
   ],
@@ -22606,7 +21608,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "TPS"
   ],
@@ -22628,7 +21629,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -22651,7 +21651,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -22674,7 +21673,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Adventure"
   ],
@@ -22697,7 +21695,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -22720,7 +21717,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "RPG"
@@ -22744,7 +21740,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -22767,7 +21762,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -22790,7 +21784,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -22814,7 +21807,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -22838,7 +21830,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -22862,7 +21853,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -22885,7 +21875,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -22908,7 +21897,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Adventure"
   ],
@@ -22931,7 +21919,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -22954,7 +21941,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -22976,7 +21962,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -22998,7 +21983,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG"
   ],
@@ -23020,7 +22004,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Stealth"
@@ -23043,7 +22026,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Platformer",
    "Horror"
@@ -23066,7 +22048,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Horror"
@@ -23090,7 +22071,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Horror",
    "TPS"
@@ -23114,7 +22094,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -23135,7 +22114,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -23158,7 +22136,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -23181,7 +22158,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -23205,7 +22181,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -23228,7 +22203,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -23252,7 +22226,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -23275,7 +22248,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Adventure"
   ],
@@ -23297,7 +22269,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Stealth",
    "Adventure"
@@ -23321,7 +22292,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action"
   ],
@@ -23343,7 +22313,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -23366,7 +22335,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG"
   ],
@@ -23389,7 +22357,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Horror",
    "Adventure"
@@ -23413,7 +22380,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 347,
-  "note": "",
   "genres": [
    "Horror",
    "Adventure"
@@ -23437,7 +22403,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure",
@@ -23458,7 +22423,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action"
   ],
@@ -23477,7 +22441,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -23496,7 +22459,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -23515,7 +22477,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action"
   ],
@@ -23534,7 +22495,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Platformer"
   ],
@@ -23553,7 +22513,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Adventure"
   ],
@@ -23572,7 +22531,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Adventure"
   ],
@@ -23591,7 +22549,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -23610,7 +22567,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Platformer"
   ],
@@ -23629,7 +22585,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -23649,7 +22604,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Strategy"
   ],
@@ -23668,7 +22622,6 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": 291,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -23687,7 +22640,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -23706,7 +22658,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Platformer"
   ],
@@ -23725,7 +22676,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -23749,7 +22699,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -23772,7 +22721,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -23795,7 +22743,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -23818,7 +22765,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -23837,7 +22783,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -23856,7 +22801,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -23875,7 +22819,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -23894,7 +22837,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Adventure"
   ],
@@ -23913,7 +22855,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -23932,7 +22873,6 @@
   "timesCompleted": 2,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Racing"
   ],
@@ -23951,7 +22891,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -23970,7 +22909,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Sports"
   ],
@@ -23989,7 +22927,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -24008,7 +22945,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -24027,7 +22963,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -24046,7 +22981,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Puzzle"
   ],
@@ -24065,7 +22999,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -24088,7 +23021,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -24110,7 +23042,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -24133,7 +23064,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -24156,7 +23086,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "FPS"
   ],
@@ -24179,7 +23108,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Adventure"
   ],
@@ -24202,7 +23130,6 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Party"
   ],
@@ -24225,7 +23152,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Fighting"
   ],
@@ -24248,7 +23174,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "Adventure"
@@ -24272,7 +23197,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -24296,7 +23220,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Action",
    "H&S"
@@ -24320,7 +23243,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "RPG"
   ],
@@ -24343,7 +23265,6 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "note": "",
   "genres": [
    "Horror"
   ],
