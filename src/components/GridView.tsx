@@ -16,7 +16,7 @@ export function GridView({ games, onOpen }: Props) {
             <div className="card-cover">
               <Cover game={g} />
               <RatingBadge rating={g.rating} />
-              {g.genres.includes('<3') && <span className="card-heart" aria-label="Favourite">♥</span>}
+              {g.genres.includes('<3') && <span className="card-heart" aria-label="From my wife" title="From my wife">♥</span>}
             </div>
             <div className="card-body">
               <span className="card-title">{g.title}</span>

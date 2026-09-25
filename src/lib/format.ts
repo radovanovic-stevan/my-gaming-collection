@@ -22,8 +22,8 @@ export function coverUrl(game: Game): string | null {
   return `${import.meta.env.BASE_URL}covers/${encodeURIComponent(game.cover)}`;
 }
 
-/** Tags from the sheet with a friendlier display name. */
-export const genreLabel = (g: string) => (g === '<3' ? '♥ Favourite' : g);
+/** Tags from the sheet with a friendlier display name. "<3" marks games my wife bought for me. */
+export const genreLabel = (g: string) => (g === '<3' ? '♥ From my wife' : g);
 
 /** Stable per-platform hue used for badges and placeholder covers. */
 export function platformHue(platform: string): number {
