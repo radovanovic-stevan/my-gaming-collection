@@ -13,7 +13,12 @@ npm run dev      # http://localhost:5173 — viewing + editing
 
 When it runs through `npm run dev`, the app has a small local API that allows
 **adding, editing and deleting games** and **managing images**. A game can have
-several images: drop, pick, paste or fetch them from a URL, and mark one as the cover. The static build has no API, so it's view-only.
+several images: drop, pick, paste or fetch them from a URL, and mark one as the cover.
+
+The **Game of the Month** and **Game of the Category** tabs are editable locally too:
+add or edit months (games played with their status, bought count; the completed count
+is worked out from the ✅ games), add or edit yearly awards and stats (a new year copies
+last year's categories), and edit the all-time top-5 rankings. The static build has no API, so it's view-only.
 
 ## Where the data lives
 
@@ -33,10 +38,11 @@ Commit the changes after editing to publish them.
 
 - `npm run import:tsv [file]` rebuilds `games.json` from a spreadsheet export.
   Cover assignments are kept. It also fixes known data issues in the sheet (see the script).
-- `npm run import:awards` rebuilds `gotm.json` and `gotc.json` from the Game of the Month
-  and Game of the Category exports in `data/source/`. Export the sheets again and re-run it
-  to update the tabs. Entries are linked to collection games by title and platform when the
-  page loads.
+- `npm run import:awards -- --force` rebuilds `gotm.json` and `gotc.json` from the Game of
+  the Month and Game of the Category exports in `data/source/`. This was the one-time
+  migration from the sheets: now that entries are added in the app, the JSON files are the
+  source of truth, so it refuses to run without `--force`. Entries are linked to collection
+  games by title and platform when the page loads.
 - `npm run covers:fetch [N]` fetches box art from Wikipedia infoboxes for the top-N
   rated games that have no cover yet (default 60). `--ids 12,34` targets specific games.
   It only accepts close title matches, so it skips some games rather than guess.

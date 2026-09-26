@@ -1,4 +1,4 @@
-import type { Game } from '../types';
+import type { Game, GotcData, GotcYear, GotmMonth } from '../types';
 
 export type GameInput = Omit<Game, 'id' | 'images' | 'cover'>;
 
@@ -30,6 +30,11 @@ export const api = {
   addImage: (id: number, dataUrl: string) => request<Game>('POST', `games/${id}/images`, { dataUrl }),
   removeImage: (id: number, file: string) => request<Game>('DELETE', `games/${id}/images/${encodeURIComponent(file)}`),
   setCover: (id: number, file: string) => request<Game>('PUT', `games/${id}/cover`, { file }),
+  saveMonth: (key: string, month: GotmMonth) => request<GotmMonth>('PUT', `gotm/${key}`, month),
+  deleteMonth: (key: string) => request<{ ok: true }>('DELETE', `gotm/${key}`),
+  saveYear: (key: number, year: GotcYear) => request<GotcYear>('PUT', `gotc/years/${key}`, year),
+  deleteYear: (key: number) => request<{ ok: true }>('DELETE', `gotc/years/${key}`),
+  saveAllTime: (allTime: GotcData['allTime']) => request<GotcData['allTime']>('PUT', 'gotc/all-time', { allTime }),
   fetchImage: async (url: string): Promise<Blob> => {
     const r = await fetch(`/api/fetch-image?url=${encodeURIComponent(url)}`);
     if (!r.ok) throw new Error((await r.json().catch(() => ({}))).error ?? `HTTP ${r.status}`);

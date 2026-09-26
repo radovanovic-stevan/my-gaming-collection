@@ -1,14 +1,27 @@
 // Converts the "Game of the Month" and "Game of the Category" sheet exports into
 // public/data/gotm.json and public/data/gotc.json.
 //
-//   node scripts/import-awards.mjs [gotm.tsv] [gotc.tsv]
+//   node scripts/import-awards.mjs --force [gotm.tsv] [gotc.tsv]
+//
+// Once months or years are added in the app, the JSON files are the source of truth,
+// so this refuses to overwrite them unless --force is given.
 //
 // Both sheets are laid out for people, not machines (blocks, merged cells, images),
 // so this reads them by their visual structure. Images don't survive a TSV export.
-import { readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 
-const GOTM_SRC = process.argv[2] ?? 'data/source/gotm-2.0.tsv';
-const GOTC_SRC = process.argv[3] ?? 'data/source/gotc-2.0.tsv';
+const args = process.argv.slice(2);
+const force = args.includes('--force');
+const [GOTM_SRC = 'data/source/gotm-2.0.tsv', GOTC_SRC = 'data/source/gotc-2.0.tsv'] = args.filter((a) => a !== '--force');
+
+const OUTPUTS = ['public/data/gotm.json', 'public/data/gotc.json'];
+if (!force && OUTPUTS.some(existsSync)) {
+  console.error(
+    'gotm.json / gotc.json already exist and may contain entries added in the app.\n' +
+      'Re-run with --force to replace them with the sheet exports.',
+  );
+  process.exit(1);
+}
 
 /** Minimal TSV reader that honours quoted cells (which may contain tabs or newlines). */
 function readTsv(file) {
