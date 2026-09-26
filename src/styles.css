@@ -1247,3 +1247,529 @@ div.gallery-main {
   border-color: var(--accent);
   background: var(--accent-soft);
 }
+
+/* --- Tabs ------------------------------------------------------------------- */
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tabs button {
+  flex: none;
+  padding: 10px 14px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: none;
+  color: var(--fg-muted);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.tabs button:hover {
+  color: var(--fg);
+}
+
+.tab-short {
+  display: none;
+}
+
+@media (max-width: 520px) {
+  .tab-long {
+    display: none;
+  }
+  .tab-short {
+    display: inline;
+  }
+  .tabs button {
+    flex: 1;
+  }
+}
+
+.tabs button.on {
+  color: var(--fg);
+  border-bottom-color: var(--accent);
+}
+
+/* --- Award pages (Game of the Month / Category) ------------------------------ */
+
+.awards {
+  padding: 20px 0 0;
+}
+
+.awards-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px 24px;
+  margin-bottom: 16px;
+}
+
+.awards-head h2 {
+  font-size: 22px;
+  letter-spacing: -0.01em;
+}
+
+.awards-head p {
+  margin: 4px 0 0;
+}
+
+.year-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 16px;
+}
+
+.awards-head .year-picker {
+  margin-bottom: 0;
+}
+
+.year-picker .chip {
+  font-size: 13px;
+  padding: 4px 11px;
+}
+
+.year-totals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.year-totals > div {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 150px;
+  min-width: 120px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-elev);
+}
+
+.year-totals b {
+  font-size: 22px;
+  font-variant-numeric: tabular-nums;
+}
+
+.year-totals span {
+  color: var(--fg-muted);
+  font-size: 12.5px;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin: 0 0 16px;
+  font-size: 12.5px;
+}
+
+.section-title {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--fg-muted);
+  margin: 0 0 10px;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--fg-muted);
+}
+
+/* Links to collection games */
+
+.ref-link,
+.ref-plain {
+  display: inline;
+  padding: 0;
+  border: 0;
+  background: none;
+  text-align: left;
+  font: inherit;
+  line-height: 1.35;
+}
+
+.ref-link .ref-title {
+  text-decoration: underline;
+  text-decoration-color: var(--border);
+  text-underline-offset: 3px;
+}
+
+.ref-link:hover .ref-title {
+  text-decoration-color: var(--accent);
+}
+
+.ref-plain .ref-title {
+  color: var(--fg-muted);
+}
+
+.ref-link .badge-platform,
+.ref-plain .badge-platform {
+  vertical-align: 1px;
+}
+
+.play-status {
+  flex: none;
+  width: 20px;
+  text-align: center;
+}
+
+/* Month cards */
+
+.month-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 14px;
+  align-items: start;
+}
+
+.month-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-elev);
+}
+
+.month-card-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.month-card-head h3 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.month-card-head .muted {
+  font-size: 12.5px;
+}
+
+.month-card-head b {
+  color: var(--fg);
+}
+
+.gotm-hero {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  background: var(--accent-soft);
+}
+
+.gotm-cover,
+.award-cover {
+  flex: none;
+  padding: 0;
+  border: 0;
+  background: none;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.gotm-cover:disabled,
+.award-cover:disabled {
+  cursor: default;
+}
+
+.gotm-cover {
+  width: 64px;
+  aspect-ratio: 5 / 7;
+}
+
+.gotm-cover .cover-placeholder,
+.award-small .cover-placeholder,
+.rank-thumb .cover-placeholder {
+  padding: 4px;
+}
+
+.gotm-cover .cover-placeholder-title,
+.award-small .cover-placeholder-title,
+.rank-thumb .cover-placeholder-title {
+  font-size: 8.5px;
+  -webkit-line-clamp: 4;
+}
+
+.gotm-cover .cover-placeholder-platform,
+.award-small .cover-placeholder-platform,
+.rank-thumb .cover-placeholder-platform {
+  display: none;
+}
+
+.gotm-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  font-weight: 600;
+}
+
+.played-list,
+.plain-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.played-list li {
+  display: flex;
+  gap: 6px;
+  align-items: baseline;
+}
+
+/* Game of the Category */
+
+.gotc-year {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 1000px) {
+  .gotc-year {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.podium {
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  align-items: stretch;
+}
+
+.podium li {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--bg-elev);
+}
+
+.podium-1 {
+  border-color: #d4a72c !important;
+  box-shadow: 0 0 0 1px #d4a72c55, var(--shadow);
+}
+
+.podium-place {
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.award-game {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  min-width: 0;
+}
+
+.award-large {
+  flex-direction: column;
+  align-items: flex-start;
+  font-weight: 600;
+}
+
+.award-large .award-cover {
+  width: 100%;
+  max-width: 130px;
+  aspect-ratio: 5 / 7;
+}
+
+.podium-1 .award-large .award-cover {
+  max-width: 160px;
+}
+
+.award-small .award-cover {
+  width: 42px;
+  aspect-ratio: 5 / 7;
+}
+
+/* Too small for a readable title: show just the platform colour. */
+.award-small .cover-placeholder span,
+.rank-thumb .cover-placeholder span {
+  display: none;
+}
+
+.award-group {
+  margin-bottom: 24px;
+}
+
+.award-grid,
+.ranking-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 10px;
+}
+
+.award-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-elev);
+  font-size: 13px;
+}
+
+.award-category {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--fg-muted);
+}
+
+.award-text {
+  font-weight: 600;
+}
+
+.year-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-elev);
+  position: sticky;
+  top: 12px;
+}
+
+.year-stats .year-totals {
+  margin: 0;
+}
+
+.year-stats .year-totals > div {
+  flex: 1;
+  min-width: 0;
+  background: var(--bg);
+}
+
+.stat-block h4,
+.ranking-card h4 {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--fg-muted);
+}
+
+.stat-block p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.stat-block .down {
+  color: var(--r-meh);
+}
+
+.stat-block .up {
+  color: var(--r-top);
+}
+
+.ranking-grid {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.ranking-card {
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-elev);
+}
+
+.ranking-card ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.ranking-card ol li {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.rank {
+  flex: none;
+  width: 18px;
+  font-weight: 700;
+  color: var(--fg-muted);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.ranking-card li:first-child .rank {
+  color: #d4a72c;
+}
+
+.rank-thumb {
+  flex: none;
+  width: 28px;
+  aspect-ratio: 5 / 7;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.about {
+  max-width: 70ch;
+  margin: 32px 0 0;
+}
+
+@media (max-width: 640px) {
+  .year-totals {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .podium {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .podium .award-large {
+    flex-direction: row;
+    align-items: center;
+  }
+  .podium .award-large .award-cover {
+    width: 72px;
+  }
+  .year-stats {
+    position: static;
+  }
+}

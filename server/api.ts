@@ -17,7 +17,10 @@ const IMAGES_DIR = path.join(ROOT, 'public/images');
 const STATUSES = ['Completed', 'Not Completed', 'Null', 'Unplayable', 'Unrateable'];
 const IMAGE_TYPES: Record<string, string> = { 'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp', 'image/gif': 'gif' };
 const MAX_BODY = 15 * 1024 * 1024;
-const MIME_BY_EXT = Object.fromEntries(Object.entries(IMAGE_TYPES).map(([mime, ext]) => [ext, mime]));
+const MIME_BY_EXT: Record<string, string> = {
+  ...Object.fromEntries(Object.entries(IMAGE_TYPES).map(([mime, ext]) => [ext, mime])),
+  json: 'application/json',
+};
 
 type Game = Record<string, unknown> & { id: number; images: string[]; cover: string | null };
 
@@ -242,18 +245,24 @@ export function collectionApi(): Plugin {
     apply: 'serve',
     configureServer(server) {
       // Vite only serves public files it saw at startup (or via its watcher, which skips
-      // public/images), so serve images added while running straight from disk.
-      server.middlewares.use('/images', (req, res, next) => {
-        const file = path.join(IMAGES_DIR, path.basename(decodeURIComponent((req.url ?? '').split('?')[0])));
-        readFile(file).then(
-          (bytes) => {
-            res.setHeader('Content-Type', MIME_BY_EXT[path.extname(file).slice(1)] ?? 'application/octet-stream');
-            res.setHeader('Cache-Control', 'no-cache');
-            res.end(bytes);
-          },
-          () => next(),
-        );
-      });
+      // these folders), so serve data files and images straight from disk. That way new
+      // images and re-imported data show up without restarting the server.
+      for (const [mount, dir] of [
+        ['/images', IMAGES_DIR],
+        ['/data', path.dirname(GAMES_FILE)],
+      ] as const) {
+        server.middlewares.use(mount, (req, res, next) => {
+          const file = path.join(dir, path.basename(decodeURIComponent((req.url ?? '').split('?')[0])));
+          readFile(file).then(
+            (bytes) => {
+              res.setHeader('Content-Type', MIME_BY_EXT[path.extname(file).slice(1)] ?? 'application/octet-stream');
+              res.setHeader('Cache-Control', 'no-cache');
+              res.end(bytes);
+            },
+            () => next(),
+          );
+        });
+      }
       server.middlewares.use('/api', (req, res) => {
         // Connect strips the mount path; restore it for the router.
         req.url = `/api${req.url ?? ''}`;

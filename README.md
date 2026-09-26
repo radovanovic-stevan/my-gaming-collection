@@ -23,7 +23,9 @@ Everything is plain files in the repo. There is no database.
 | --- | --- |
 | `public/data/games.json` | The collection. Edited by the app, or by hand. |
 | `public/images/` | Game images, named `<id>-<hash>.<ext>`. A game's `images` lists its files and `cover` picks one of them. |
-| `data/source/games-1.5.tsv` | Original spreadsheet export. |
+| `public/data/gotm.json` | Game of the Month: every month's games played, completed and bought counts, and the winner. |
+| `public/data/gotc.json` | Game of the Category: yearly awards, yearly stats and all-time top-5 lists. |
+| `data/source/*.tsv` | Original spreadsheet exports. |
 
 Commit the changes after editing to publish them.
 
@@ -31,6 +33,10 @@ Commit the changes after editing to publish them.
 
 - `npm run import:tsv [file]` rebuilds `games.json` from a spreadsheet export.
   Cover assignments are kept. It also fixes known data issues in the sheet (see the script).
+- `npm run import:awards` rebuilds `gotm.json` and `gotc.json` from the Game of the Month
+  and Game of the Category exports in `data/source/`. Export the sheets again and re-run it
+  to update the tabs. Entries are linked to collection games by title and platform when the
+  page loads.
 - `npm run covers:fetch [N]` fetches box art from Wikipedia infoboxes for the top-N
   rated games that have no cover yet (default 60). `--ids 12,34` targets specific games.
   It only accepts close title matches, so it skips some games rather than guess.

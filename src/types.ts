@@ -57,3 +57,50 @@ export interface Query {
   sort: SortLevel[];
   view: View;
 }
+
+// --- Game of the Month / Game of the Category (imported from the sheets) ----
+
+export type PlayStatus = 'completed' | 'in-progress' | 'played' | 'post-completion';
+
+/** A game as the award sheets name it; linked to the collection by title + platform. */
+export interface GameRef {
+  title: string;
+  platform: string;
+}
+
+export interface PlayedGame extends GameRef {
+  status: PlayStatus | null;
+}
+
+export interface GotmMonth {
+  /** yyyy-mm */
+  month: string;
+  gameOfTheMonth: PlayedGame | null;
+  /** Games completed that month, including the Game of the Month. */
+  completed: number | null;
+  bought: number | null;
+  /** Other games played that month (the Game of the Month is not repeated here). */
+  played: PlayedGame[];
+}
+
+/** A category winner: a game, or free text for awards like "Console of the Year". */
+export type AwardValue = GameRef | { text: string };
+
+export interface GotcYear {
+  year: number;
+  awards: { category: string; winner: AwardValue | null }[];
+  stats: {
+    gamesCompleted?: number;
+    gamesBought?: number;
+    consolesBought?: string[];
+    multipleGotmWinners?: GameRef[];
+    honorableMentions?: string;
+    ratingChanges?: { title: string; from: number; to: number }[];
+  };
+}
+
+export interface GotcData {
+  about: string;
+  allTime: { category: string; ranking: AwardValue[] }[];
+  years: GotcYear[];
+}

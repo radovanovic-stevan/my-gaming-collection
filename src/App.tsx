@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import type { Game, Query, SortKey } from './types';
+import type { Game, GotcData, GotmMonth, Query, SortKey } from './types';
 import { DEFAULT_QUERY, SORT_LABELS, applyQuery, paramsToQuery, queryToParams } from './lib/query';
 import { Filters } from './components/Filters';
 import { SortBuilder } from './components/SortBuilder';
@@ -8,7 +8,36 @@ import { TableView } from './components/TableView';
 import { GameDetail } from './components/GameDetail';
 import { GameForm } from './components/GameForm';
 import { ImageManager } from './components/ImageManager';
+import { GotmView } from './components/GotmView';
+import { GotcView } from './components/GotcView';
 import { api, detectEditing } from './lib/api';
+import { createLinker } from './lib/links';
+
+type Tab = 'collection' | 'gotm' | 'gotc';
+const TABS: { id: Tab; label: string; short: string }[] = [
+  { id: 'collection', label: 'Collection', short: 'Collection' },
+  { id: 'gotm', label: 'Game of the Month', short: 'GOTM' },
+  { id: 'gotc', label: 'Game of the Category', short: 'GOTC' },
+];
+const tabFromUrl = (): Tab => {
+  const t = new URLSearchParams(location.search).get('tab');
+  return t === 'gotm' || t === 'gotc' ? t : 'collection';
+};
+
+/** Fetches a JSON file from public/data the first time it's needed. */
+function useDataFile<T>(file: string, needed: boolean): { data: T | null; error: string | null } {
+  const [state, setState] = useState<{ data: T | null; error: string | null }>({ data: null, error: null });
+  const [started, setStarted] = useState(false);
+  useEffect(() => {
+    if (!needed || started) return;
+    setStarted(true);
+    fetch(`${import.meta.env.BASE_URL}data/${file}`, { cache: 'no-cache' })
+      .then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))))
+      .then((data) => setState({ data, error: null }))
+      .catch((e) => setState({ data: null, error: String(e) }));
+  }, [file, needed, started]);
+  return state;
+}
 
 type Modal = { kind: 'detail' | 'edit' | 'images'; id: number } | { kind: 'new' } | null;
 
@@ -19,6 +48,9 @@ export default function App() {
   const [modal, setModal] = useState<Modal>(null);
   const [editable, setEditable] = useState(false);
   const [filtersOpen, setFiltersOpen] = useState(false);
+  const [tab, setTab] = useState<Tab>(tabFromUrl);
+  const gotm = useDataFile<GotmMonth[]>('gotm.json', tab === 'gotm');
+  const gotc = useDataFile<GotcData>('gotc.json', tab === 'gotc');
 
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}data/games.json`, { cache: 'no-cache' })
@@ -29,9 +61,11 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    const params = queryToParams(query);
+    const params = tab === 'collection' ? queryToParams(query) : `tab=${tab}`;
     history.replaceState(null, '', params ? `?${params}` : location.pathname);
-  }, [query]);
+  }, [query, tab]);
+
+  const link = useMemo(() => createLinker(games ?? []), [games]);
 
   const patch = useCallback((p: Partial<Query>) => setQuery((q) => ({ ...q, ...p })), []);
 
@@ -102,7 +136,7 @@ export default function App() {
             <span><b>{stats.avg.toFixed(1)}</b> avg rating</span>
           </p>
         </div>
-        {editable && (
+        {editable && tab === 'collection' && (
           <div className="header-actions">
             <span className="edit-pill" title="Changes are written to public/data and public/images">Local editing on</span>
             <button className="btn primary" onClick={() => setModal({ kind: 'new' })}>
@@ -112,65 +146,91 @@ export default function App() {
         )}
       </header>
 
-      <div className="toolbar">
-        <input
-          className="search"
-          type="search"
-          placeholder="Search titles, platforms, editions…"
-          value={query.search}
-          onChange={(e) => patch({ search: e.target.value })}
-          autoFocus
-        />
-        <button className={`btn filters-toggle ${activeFilterCount ? 'on' : ''}`} onClick={() => setFiltersOpen(!filtersOpen)}>
-          Filters{activeFilterCount ? ` (${activeFilterCount})` : ''}
-        </button>
-        <details className="sort-menu">
-          <summary className="btn">
-            Sort: {query.sort.map((s) => `${SORT_LABELS[s.key]} ${s.dir === 'asc' ? '↑' : '↓'}`).join(', ')}
-          </summary>
-          <div className="popover">
-            <SortBuilder sort={query.sort} onChange={(sort) => patch({ sort })} />
-          </div>
-        </details>
-        <div className="segmented view-toggle" role="group" aria-label="View">
-          <button className={query.view === 'grid' ? 'on' : ''} onClick={() => patch({ view: 'grid' })}>
-            Covers
+      <nav className="tabs" aria-label="Sections">
+        {TABS.map((t) => (
+          <button key={t.id} className={tab === t.id ? 'on' : ''} aria-label={t.label} aria-current={tab === t.id ? 'page' : undefined} onClick={() => (setTab(t.id), scrollTo(0, 0))}>
+            <span className="tab-long">{t.label}</span>
+            <span className="tab-short">{t.short}</span>
           </button>
-          <button className={query.view === 'table' ? 'on' : ''} onClick={() => patch({ view: 'table' })}>
-            Table
-          </button>
-        </div>
-      </div>
+        ))}
+      </nav>
 
-      <div className={`layout ${filtersOpen ? 'filters-open' : ''}`}>
-        <Filters
-          games={games}
-          query={query}
-          onChange={patch}
-          onReset={() => setQuery({ ...DEFAULT_QUERY, view: query.view })}
-          resultCount={results.length}
-          onDone={() => setFiltersOpen(false)}
-        />
-        <main className="results">
-          <p className="result-count">
-            Showing <b>{results.length}</b> of {games.length}
-          </p>
-          {results.length === 0 ? (
-            <div className="empty">No games match these filters.</div>
-          ) : query.view === 'grid' ? (
-            <GridView games={results} onOpen={(g) => showDetail(g.id)} />
-          ) : (
-            <TableView games={results} sort={query.sort} onSortClick={onSortClick} onOpen={(g) => showDetail(g.id)} />
-          )}
-        </main>
-      </div>
+      {tab === 'gotm' &&
+        (gotm.data ? (
+          <GotmView months={gotm.data} link={link} onOpen={(g) => showDetail(g.id)} />
+        ) : (
+          <div className="empty">{gotm.error ? `Couldn't load Game of the Month: ${gotm.error}` : 'Loading…'}</div>
+        ))}
+      {tab === 'gotc' &&
+        (gotc.data ? (
+          <GotcView data={gotc.data} link={link} onOpen={(g) => showDetail(g.id)} />
+        ) : (
+          <div className="empty">{gotc.error ? `Couldn't load Game of the Category: ${gotc.error}` : 'Loading…'}</div>
+        ))}
+
+      {tab === 'collection' && (
+        <>
+          <div className="toolbar">
+            <input
+              className="search"
+              type="search"
+              placeholder="Search titles, platforms, editions…"
+              value={query.search}
+              onChange={(e) => patch({ search: e.target.value })}
+              autoFocus
+            />
+            <button className={`btn filters-toggle ${activeFilterCount ? 'on' : ''}`} onClick={() => setFiltersOpen(!filtersOpen)}>
+              Filters{activeFilterCount ? ` (${activeFilterCount})` : ''}
+            </button>
+            <details className="sort-menu">
+              <summary className="btn">
+                Sort: {query.sort.map((s) => `${SORT_LABELS[s.key]} ${s.dir === 'asc' ? '↑' : '↓'}`).join(', ')}
+              </summary>
+              <div className="popover">
+                <SortBuilder sort={query.sort} onChange={(sort) => patch({ sort })} />
+              </div>
+            </details>
+            <div className="segmented view-toggle" role="group" aria-label="View">
+              <button className={query.view === 'grid' ? 'on' : ''} onClick={() => patch({ view: 'grid' })}>
+                Covers
+              </button>
+              <button className={query.view === 'table' ? 'on' : ''} onClick={() => patch({ view: 'table' })}>
+                Table
+              </button>
+            </div>
+          </div>
+
+          <div className={`layout ${filtersOpen ? 'filters-open' : ''}`}>
+            <Filters
+              games={games}
+              query={query}
+              onChange={patch}
+              onReset={() => setQuery({ ...DEFAULT_QUERY, view: query.view })}
+              resultCount={results.length}
+              onDone={() => setFiltersOpen(false)}
+            />
+            <main className="results">
+              <p className="result-count">
+                Showing <b>{results.length}</b> of {games.length}
+              </p>
+              {results.length === 0 ? (
+                <div className="empty">No games match these filters.</div>
+              ) : query.view === 'grid' ? (
+                <GridView games={results} onOpen={(g) => showDetail(g.id)} />
+              ) : (
+                <TableView games={results} sort={query.sort} onSortClick={onSortClick} onOpen={(g) => showDetail(g.id)} />
+              )}
+            </main>
+          </div>
+        </>
+      )}
 
       {modal?.kind === 'detail' && openGame && (
         <GameDetail
           game={openGame}
           onClose={closeModal}
-          onPrev={openIndex > 0 ? () => showDetail(results[openIndex - 1].id) : undefined}
-          onNext={openIndex >= 0 && openIndex < results.length - 1 ? () => showDetail(results[openIndex + 1].id) : undefined}
+          onPrev={tab === 'collection' && openIndex > 0 ? () => showDetail(results[openIndex - 1].id) : undefined}
+          onNext={tab === 'collection' && openIndex >= 0 && openIndex < results.length - 1 ? () => showDetail(results[openIndex + 1].id) : undefined}
           actions={
             editable && (
               <div className="detail-nav">
