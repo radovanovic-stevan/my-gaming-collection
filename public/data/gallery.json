@@ -12,5 +12,19 @@
   "date": "2026-05-30",
   "description": "Palermo, GameStop",
   "games": []
+ },
+ {
+  "id": 4,
+  "image": "gallery-4-8b9a596e.jpg",
+  "date": "2025-12-11",
+  "description": "Milano, CeX Store",
+  "games": []
+ },
+ {
+  "id": 3,
+  "image": "gallery-3-742e71d6.jpg",
+  "date": "2025-12-11",
+  "description": "Milano, CeX Store",
+  "games": []
  }
 ]
