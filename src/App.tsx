@@ -25,7 +25,7 @@ const tabFromUrl = (): Tab => {
 };
 
 /** Fetches a JSON file from public/data the first time it's needed. */
-function useDataFile<T>(file: string, needed: boolean): { data: T | null; error: string | null } {
+function useDataFile<T>(file: string, needed: boolean): { data: T | null; error: string | null; setData: (data: T) => void } {
   const [state, setState] = useState<{ data: T | null; error: string | null }>({ data: null, error: null });
   const [started, setStarted] = useState(false);
   useEffect(() => {
@@ -36,7 +36,8 @@ function useDataFile<T>(file: string, needed: boolean): { data: T | null; error:
       .then((data) => setState({ data, error: null }))
       .catch((e) => setState({ data: null, error: String(e) }));
   }, [file, needed, started]);
-  return state;
+  const setData = useCallback((data: T) => setState({ data, error: null }), []);
+  return { ...state, setData };
 }
 
 type Modal = { kind: 'detail' | 'edit' | 'images'; id: number } | { kind: 'new' } | null;
@@ -49,7 +50,8 @@ export default function App() {
   const [editable, setEditable] = useState(false);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [tab, setTab] = useState<Tab>(tabFromUrl);
-  const gotm = useDataFile<GotmMonth[]>('gotm.json', tab === 'gotm');
+  // The year editor fills stats from Game of the Month, so load it for editing too.
+  const gotm = useDataFile<GotmMonth[]>('gotm.json', tab === 'gotm' || (tab === 'gotc' && editable));
   const gotc = useDataFile<GotcData>('gotc.json', tab === 'gotc');
 
   useEffect(() => {
@@ -157,13 +159,21 @@ export default function App() {
 
       {tab === 'gotm' &&
         (gotm.data ? (
-          <GotmView months={gotm.data} link={link} onOpen={(g) => showDetail(g.id)} />
+          <GotmView months={gotm.data} link={link} onOpen={(g) => showDetail(g.id)} editable={editable} games={games} onChange={gotm.setData} />
         ) : (
           <div className="empty">{gotm.error ? `Couldn't load Game of the Month: ${gotm.error}` : 'Loading…'}</div>
         ))}
       {tab === 'gotc' &&
         (gotc.data ? (
-          <GotcView data={gotc.data} link={link} onOpen={(g) => showDetail(g.id)} />
+          <GotcView
+            data={gotc.data}
+            link={link}
+            onOpen={(g) => showDetail(g.id)}
+            editable={editable}
+            games={games}
+            months={gotm.data}
+            onChange={gotc.setData}
+          />
         ) : (
           <div className="empty">{gotc.error ? `Couldn't load Game of the Category: ${gotc.error}` : 'Loading…'}</div>
         ))}

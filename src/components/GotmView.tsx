@@ -1,19 +1,37 @@
 import { useMemo, useState } from 'react';
 import type { Game, GameRef, GotmMonth } from '../types';
 import { PLAY_STATUS, RefCover, RefTitle, StatusEmoji } from './GameRefView';
+import { MonthEditor } from './MonthEditor';
 
 interface Props {
   months: GotmMonth[];
   link: (ref: GameRef) => Game | null;
   onOpen: (game: Game) => void;
+  /** Local editing (dev server only). */
+  editable: boolean;
+  games: Game[];
+  onChange: (months: GotmMonth[]) => void;
 }
 
 const monthName = new Intl.DateTimeFormat('en-GB', { month: 'long' });
 const formatMonth = (yyyyMm: string) => monthName.format(new Date(`${yyyyMm}-01T00:00:00`));
 
-export function GotmView({ months, link, onOpen }: Props) {
+export function GotmView({ months, link, onOpen, editable, games, onChange }: Props) {
   const years = useMemo(() => [...new Set(months.map((m) => m.month.slice(0, 4)))], [months]);
   const [year, setYear] = useState(years[0]);
+  // undefined: closed; null: adding a month; otherwise the month being edited.
+  const [editing, setEditing] = useState<GotmMonth | null | undefined>(undefined);
+
+  const onSaved = (saved: GotmMonth, previousKey: string | null) => {
+    const rest = months.filter((m) => m.month !== saved.month && m.month !== previousKey);
+    onChange([...rest, saved].sort((a, b) => b.month.localeCompare(a.month)));
+    setYear(saved.month.slice(0, 4));
+    setEditing(undefined);
+  };
+  const onDeleted = (key: string) => {
+    onChange(months.filter((m) => m.month !== key));
+    setEditing(undefined);
+  };
   const shown = months.filter((m) => m.month.startsWith(year));
 
   const totals = useMemo(() => {
@@ -33,12 +51,19 @@ export function GotmView({ months, link, onOpen }: Props) {
           <h2>Game of the Month</h2>
           <p className="muted">Everything played each month, what got finished, what got bought, and the month's favourite.</p>
         </div>
-        <div className="year-picker" role="group" aria-label="Year">
-          {years.map((y) => (
-            <button key={y} className={`chip ${y === year ? 'on' : ''}`} aria-pressed={y === year} onClick={() => setYear(y)}>
-              {y}
+        <div className="awards-actions">
+          <div className="year-picker" role="group" aria-label="Year">
+            {years.map((y) => (
+              <button key={y} className={`chip ${y === year ? 'on' : ''}`} aria-pressed={y === year} onClick={() => setYear(y)}>
+                {y}
+              </button>
+            ))}
+          </div>
+          {editable && (
+            <button className="btn primary" onClick={() => setEditing(null)}>
+              + Add month
             </button>
-          ))}
+          )}
         </div>
       </div>
 
@@ -77,12 +102,17 @@ export function GotmView({ months, link, onOpen }: Props) {
             <li key={m.month} className="month-card">
               <header className="month-card-head">
                 <h3>{formatMonth(m.month)}</h3>
-                {m.completed !== null ? (
+                {m.gameOfTheMonth ? (
                   <span className="muted">
-                    <b>{m.completed}</b> completed · <b>{m.bought}</b> bought
+                    <b>{m.completed ?? 0}</b> completed · <b>{m.bought ?? 0}</b> bought
                   </span>
                 ) : (
-                  <span className="muted">In progress</span>
+                  <span className="muted">In progress{m.bought ? ` · ${m.bought} bought` : ''}</span>
+                )}
+                {editable && (
+                  <button className="link card-edit" onClick={() => setEditing(m)}>
+                    Edit
+                  </button>
                 )}
               </header>
 
@@ -117,6 +147,10 @@ export function GotmView({ months, link, onOpen }: Props) {
           );
         })}
       </ul>
+
+      {editing !== undefined && (
+        <MonthEditor month={editing} months={months} games={games} link={link} onSaved={onSaved} onDeleted={onDeleted} onClose={() => setEditing(undefined)} />
+      )}
     </section>
   );
 }

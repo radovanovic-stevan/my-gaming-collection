@@ -1773,3 +1773,276 @@ div.gallery-main {
     position: static;
   }
 }
+
+/* --- Award editors (local dev server only) ----------------------------------- */
+
+.awards-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.awards-head .awards-actions,
+.awards-actions .year-picker {
+  margin-bottom: 0;
+}
+
+.awards-head .awards-actions {
+  justify-content: flex-end;
+}
+
+.month-card-head .card-edit {
+  margin-left: 4px;
+}
+
+.ranking-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.award-editor {
+  width: min(760px, 100%);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.award-editor.wide {
+  width: min(980px, 100%);
+}
+
+.award-editor h2 {
+  font-size: 18px;
+  padding-right: 32px;
+}
+
+.award-editor .field input,
+.award-editor .field textarea,
+.award-editor select,
+.award-row-category,
+.change-row input,
+.picker input {
+  width: 100%;
+  min-width: 0;
+  padding: 7px 9px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--bg);
+}
+
+.award-editor textarea {
+  resize: vertical;
+}
+
+.award-editor select {
+  width: auto;
+}
+
+.editor-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.editor-row .field {
+  flex: 0 1 180px;
+}
+
+.editor-row .field.grow {
+  flex: 1 1 260px;
+}
+
+.computed {
+  display: block;
+  padding: 7px 9px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.editor-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.editor-section > * {
+  align-self: stretch;
+}
+
+.editor-section > .btn,
+.editor-section > .link {
+  align-self: flex-start;
+}
+
+.editor-section legend {
+  padding: 0 6px;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.gotm-section {
+  background: var(--accent-soft);
+  border-color: transparent;
+}
+
+.played-rows,
+.award-rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.played-row {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.played-row .picker {
+  flex: 1;
+  min-width: 0;
+}
+
+.played-row.ranked .rank {
+  padding-top: 8px;
+}
+
+.row-actions {
+  display: flex;
+  gap: 4px;
+  padding-top: 3px;
+}
+
+.award-row {
+  display: grid;
+  grid-template-columns: minmax(140px, 220px) minmax(0, 1fr) 28px;
+  gap: 8px;
+  align-items: start;
+}
+
+.award-row .icon-btn {
+  margin-top: 3px;
+}
+
+.change-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 80px auto 80px 28px;
+  gap: 8px;
+  align-items: center;
+}
+
+.form-actions .spacer {
+  flex: 1;
+}
+
+/* Game picker */
+
+.picker {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.picker-inputs {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 130px;
+  gap: 6px;
+}
+
+.picker-title {
+  position: relative;
+}
+
+.picker-list {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 70;
+  list-style: none;
+  margin: 0;
+  padding: 4px;
+  max-height: 280px;
+  overflow-y: auto;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.picker-list button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 6px 8px;
+  border: 0;
+  border-radius: 5px;
+  background: none;
+  text-align: left;
+  font-size: 13px;
+}
+
+.picker-list button.on,
+.picker-list button:hover {
+  background: var(--accent-soft);
+}
+
+.picker-hint {
+  font-size: 11.5px;
+  color: var(--fg-muted);
+}
+
+.picker-hint.ok {
+  color: var(--r-top);
+}
+
+@media (max-width: 640px) {
+  .award-editor {
+    padding: 18px;
+  }
+  .award-row {
+    grid-template-columns: minmax(0, 1fr) 28px;
+  }
+  .award-row .picker {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+  .picker-inputs {
+    grid-template-columns: minmax(0, 1fr) 96px;
+  }
+  .played-row {
+    flex-wrap: wrap;
+  }
+  .played-row .picker {
+    flex-basis: 100%;
+  }
+  .played-row select {
+    flex: 1;
+    min-width: 0;
+  }
+  .editor-row .field {
+    flex: 1 1 130px;
+  }
+  .change-row {
+    grid-template-columns: minmax(0, 1fr) 60px auto 60px 28px;
+  }
+}
+
+.award-editor .field > .link {
+  align-self: flex-start;
+}
