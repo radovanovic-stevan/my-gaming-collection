@@ -26,5 +26,12 @@
   "date": "2025-12-11",
   "description": "Milano, CeX Store",
   "games": []
+ },
+ {
+  "id": 5,
+  "image": "gallery-5-0ed13ca7.jpg",
+  "date": "2025-02-09",
+  "description": "Lisbon, CeX Store",
+  "games": []
  }
 ]
