@@ -103,3 +103,16 @@ export interface GotcData {
   about: string;
   years: GotcYear[];
 }
+
+// --- Gallery -----------------------------------------------------------------
+
+export interface GalleryEntry {
+  id: number;
+  /** File name inside public/images. */
+  image: string;
+  /** When the picture was taken (yyyy-mm-dd), if known. */
+  date: string | null;
+  description: string;
+  /** Games shown in the picture; linked to the collection by title + platform. */
+  games: GameRef[];
+}

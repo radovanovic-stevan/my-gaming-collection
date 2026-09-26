@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import type { Game, GotcData, GotmMonth, Query, SortKey } from './types';
+import type { Game, GalleryEntry, GotcData, GotmMonth, Query, SortKey } from './types';
 import { DEFAULT_QUERY, SORT_LABELS, applyQuery, paramsToQuery, queryToParams } from './lib/query';
 import { Filters } from './components/Filters';
 import { SortBuilder } from './components/SortBuilder';
@@ -10,18 +10,20 @@ import { GameForm } from './components/GameForm';
 import { ImageManager } from './components/ImageManager';
 import { GotmView } from './components/GotmView';
 import { GotcView } from './components/GotcView';
+import { GalleryView } from './components/GalleryView';
 import { api, detectEditing } from './lib/api';
 import { createLinker } from './lib/links';
 
-type Tab = 'collection' | 'gotm' | 'gotc';
+type Tab = 'collection' | 'gotm' | 'gotc' | 'gallery';
 const TABS: { id: Tab; label: string; short: string }[] = [
   { id: 'collection', label: 'Collection', short: 'Collection' },
   { id: 'gotm', label: 'Game of the Month', short: 'GOTM' },
   { id: 'gotc', label: 'Game of the Category', short: 'GOTC' },
+  { id: 'gallery', label: 'Gallery', short: 'Gallery' },
 ];
 const tabFromUrl = (): Tab => {
   const t = new URLSearchParams(location.search).get('tab');
-  return t === 'gotm' || t === 'gotc' ? t : 'collection';
+  return t === 'gotm' || t === 'gotc' || t === 'gallery' ? t : 'collection';
 };
 
 /** Fetches a JSON file from public/data the first time it's needed. */
@@ -53,6 +55,7 @@ export default function App() {
   // The year editor fills stats from Game of the Month, so load it for editing too.
   const gotm = useDataFile<GotmMonth[]>('gotm.json', tab === 'gotm' || (tab === 'gotc' && editable));
   const gotc = useDataFile<GotcData>('gotc.json', tab === 'gotc');
+  const gallery = useDataFile<GalleryEntry[]>('gallery.json', tab === 'gallery');
 
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}data/games.json`, { cache: 'no-cache' })
@@ -176,6 +179,12 @@ export default function App() {
           />
         ) : (
           <div className="empty">{gotc.error ? `Couldn't load Game of the Category: ${gotc.error}` : 'Loading…'}</div>
+        ))}
+      {tab === 'gallery' &&
+        (gallery.data ? (
+          <GalleryView entries={gallery.data} link={link} onOpen={(g) => showDetail(g.id)} editable={editable} games={games} onChange={gallery.setData} />
+        ) : (
+          <div className="empty">{gallery.error ? `Couldn't load the gallery: ${gallery.error}` : 'Loading…'}</div>
         ))}
 
       {tab === 'collection' && (

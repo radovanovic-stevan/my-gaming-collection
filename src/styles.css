@@ -2058,3 +2058,123 @@ div.gallery-main {
 .all-time-note {
   margin: 0 0 20px;
 }
+
+/* --- Gallery ------------------------------------------------------------------ */
+
+.picture-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+.picture-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+  text-align: left;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-elev);
+}
+
+.picture-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.picture-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 12px 12px;
+  font-size: 13px;
+}
+
+.picture-card-description,
+.picture-card-games {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.picture-viewer figure {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0;
+  cursor: default;
+}
+
+.picture-viewer figure img {
+  min-width: 0;
+  max-width: calc(100% - 300px);
+  max-height: calc(100vh - 48px);
+}
+
+.picture-viewer figcaption {
+  flex: 0 0 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  padding: 16px;
+  border-radius: 10px;
+  background: var(--bg-elev);
+  font-size: 14px;
+}
+
+.picture-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.picture-description {
+  margin: 0;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.picture-games {
+  display: grid;
+  gap: 6px;
+}
+
+.picture-drop.has-picture img {
+  max-width: 100%;
+  max-height: 260px;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+@media (max-width: 800px) {
+  .picture-viewer {
+    overflow-y: auto;
+    place-items: start center;
+  }
+  .picture-viewer figure {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .picture-viewer figure img {
+    max-width: 100%;
+    max-height: 70vh;
+  }
+  .picture-viewer figcaption {
+    flex: none;
+    max-height: none;
+  }
+}

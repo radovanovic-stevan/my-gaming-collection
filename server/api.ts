@@ -4,6 +4,7 @@
 //   public/images/          - game images, named <id>-<hash>.<ext>
 //   public/data/gotm.json   - Game of the Month, one entry per month
 //   public/data/gotc.json   - Game of the Category: yearly awards and stats
+//   public/data/gallery.json - Gallery: pictures with a date, a description and the games in them
 // Each game lists its images in `images`; `cover` is one of them (or null).
 // The static build (GitHub Pages) has no API, so the app is read-only there.
 import type { Plugin } from 'vite';
@@ -17,6 +18,7 @@ const GAMES_FILE = path.join(ROOT, 'public/data/games.json');
 const IMAGES_DIR = path.join(ROOT, 'public/images');
 const GOTM_FILE = path.join(ROOT, 'public/data/gotm.json');
 const GOTC_FILE = path.join(ROOT, 'public/data/gotc.json');
+const GALLERY_FILE = path.join(ROOT, 'public/data/gallery.json');
 
 const STATUSES = ['Completed', 'Not Completed', 'Null', 'Unplayable', 'Unrateable'];
 const IMAGE_TYPES: Record<string, string> = { 'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp', 'image/gif': 'gif' };
@@ -262,6 +264,97 @@ async function handleAwards(parts: string[], method: string, req: IncomingMessag
   return false;
 }
 
+// --- Gallery -------------------------------------------------------------------
+
+type GalleryEntry = { id: number; image: string; date: string | null; description: string; games: GameRef[] };
+
+/** Decodes an uploaded image and writes it to public/images as <prefix>-<hash>.<ext>. */
+async function saveUpload(dataUrl: unknown, prefix: string): Promise<string> {
+  const m = typeof dataUrl === 'string' && dataUrl.match(/^data:([\w/+.-]+);base64,(.+)$/);
+  if (!m || !IMAGE_TYPES[m[1]]) throw new HttpError(400, 'Expected a JPEG, PNG, WebP or GIF data URL');
+  const bytes = Buffer.from(m[2], 'base64');
+  const file = `${prefix}-${createHash('sha1').update(bytes).digest('hex').slice(0, 8)}.${IMAGE_TYPES[m[1]]}`;
+  await writeFile(path.join(IMAGES_DIR, file), bytes);
+  return file;
+}
+
+function sanitizeGalleryEntry(input: Record<string, unknown>): Omit<GalleryEntry, 'id' | 'image'> {
+  const date = str(input.date) || null;
+  if (date !== null && !/^\d{4}-\d{2}-\d{2}$/.test(date)) throw new HttpError(400, 'Date must look like 2026-09-26');
+  const games = (Array.isArray(input.games) ? input.games : []).map((g, i) => gameRef(g, `Game ${i + 1}`));
+  const description = typeof input.description === 'string' ? input.description.trim() : '';
+  return { date, description, games };
+}
+
+/** Newest pictures first; undated ones last. */
+const sortGallery = (entries: GalleryEntry[]) =>
+  entries.sort((a, b) => (b.date ?? '').localeCompare(a.date ?? '') || b.id - a.id);
+
+const loadGallery = () => loadJson<GalleryEntry[]>(GALLERY_FILE).catch((e) => (e.code === 'ENOENT' ? [] : Promise.reject(e)));
+
+/** Routes under /api/gallery. Returns false when the path isn't one of them. */
+async function handleGallery(parts: string[], method: string, req: IncomingMessage, res: ServerResponse): Promise<boolean> {
+  if (parts[0] !== 'gallery') return false;
+  const id = parts[1] === undefined ? null : Number(parts[1]);
+  if (id !== null && !Number.isInteger(id)) throw new HttpError(400, 'Invalid id');
+  const findEntry = (entries: GalleryEntry[]) => {
+    const i = entries.findIndex((e) => e.id === id);
+    if (i < 0) throw new HttpError(404, `Picture #${id} not found`);
+    return i;
+  };
+
+  // POST /api/gallery   body: { dataUrl, date, description, games }
+  if (id === null && parts.length === 1 && method === 'POST') {
+    const body = await readBody(req);
+    const fields = sanitizeGalleryEntry(body);
+    const entry = await exclusive(async () => {
+      const entries = await loadGallery();
+      const created: GalleryEntry = { id: Math.max(0, ...entries.map((e) => e.id)) + 1, image: '', ...fields };
+      created.image = await saveUpload(body.dataUrl, `gallery-${created.id}`);
+      await saveJson(GALLERY_FILE, sortGallery([...entries, created]));
+      return created;
+    });
+    send(res, 201, entry);
+    return true;
+  }
+
+  // PUT /api/gallery/:id   body: { date, description, games, dataUrl? }  (a dataUrl replaces the picture)
+  if (id !== null && parts.length === 2 && method === 'PUT') {
+    const body = await readBody(req);
+    const fields = sanitizeGalleryEntry(body);
+    const entry = await exclusive(async () => {
+      const entries = await loadGallery();
+      const i = findEntry(entries);
+      let image = entries[i].image;
+      if (body.dataUrl) {
+        const replaced = image;
+        image = await saveUpload(body.dataUrl, `gallery-${id}`);
+        if (replaced !== image) await removeImageFile(replaced);
+      }
+      entries[i] = { id, image, ...fields };
+      const saved = entries[i];
+      await saveJson(GALLERY_FILE, sortGallery(entries));
+      return saved;
+    });
+    send(res, 200, entry);
+    return true;
+  }
+
+  // DELETE /api/gallery/:id
+  if (id !== null && parts.length === 2 && method === 'DELETE') {
+    await exclusive(async () => {
+      const entries = await loadGallery();
+      const [removed] = entries.splice(findEntry(entries), 1);
+      await saveJson(GALLERY_FILE, entries);
+      await removeImageFile(removed.image);
+    });
+    send(res, 200, { ok: true });
+    return true;
+  }
+
+  throw new HttpError(405, 'Method not allowed');
+}
+
 async function handle(req: IncomingMessage, res: ServerResponse): Promise<void> {
   const url = new URL(req.url ?? '/', 'http://localhost');
   const parts = url.pathname.replace(/^\/api\/?/, '').split('/').filter(Boolean);
@@ -284,6 +377,7 @@ async function handle(req: IncomingMessage, res: ServerResponse): Promise<void> 
   }
 
   if (await handleAwards(parts, method, req, res)) return;
+  if (await handleGallery(parts, method, req, res)) return;
   if (parts[0] !== 'games') throw new HttpError(404, 'Not found');
   const id = parts[1] === undefined ? null : Number(parts[1]);
   if (id !== null && !Number.isInteger(id)) throw new HttpError(400, 'Invalid id');
@@ -331,17 +425,12 @@ async function handle(req: IncomingMessage, res: ServerResponse): Promise<void> 
   // The first image a game gets becomes its cover.
   if (parts[2] === 'images' && parts.length === 3 && method === 'POST') {
     const { dataUrl } = await readBody(req);
-    const m = typeof dataUrl === 'string' && dataUrl.match(/^data:([\w/+.-]+);base64,(.+)$/);
-    if (!m || !IMAGE_TYPES[m[1]]) throw new HttpError(400, 'Expected a JPEG, PNG, WebP or GIF data URL');
-    const bytes = Buffer.from(m[2], 'base64');
-    const hash = createHash('sha1').update(bytes).digest('hex').slice(0, 8);
-    const file = `${id}-${hash}.${IMAGE_TYPES[m[1]]}`;
     const game = await exclusive(async () => {
       const games = await loadGames();
       const i = findIndex(games, id);
       const g = games[i];
+      const file = await saveUpload(dataUrl, String(id));
       if (!g.images.includes(file)) {
-        await writeFile(path.join(IMAGES_DIR, file), bytes);
         games[i] = { ...g, images: [...g.images, file], cover: g.cover ?? file };
         await saveGames(games);
       }

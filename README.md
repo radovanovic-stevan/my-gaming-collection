@@ -20,7 +20,11 @@ add or edit months (games played with their status, bought count; the completed 
 is worked out from the ✅ games), add or edit yearly awards and stats (a new year copies
 last year's categories), The all-time top-5 lists are
 worked out from the collection's ratings (ties go to the most recently completed game), so they
-update by themselves. The static build has no API, so it's view-only.
+update by themselves.
+
+The **Gallery** tab holds free-form pictures: add a picture (drop, pick, paste or fetch it
+from a URL), its date, a description and the games shown in it, if any. Pictures are resized
+to 1600px. The static build has no API, so it's view-only.
 
 ## Where the data lives
 
@@ -29,9 +33,10 @@ Everything is plain files in the repo. There is no database.
 | Path | What |
 | --- | --- |
 | `public/data/games.json` | The collection. Edited by the app, or by hand. |
-| `public/images/` | Game images, named `<id>-<hash>.<ext>`. A game's `images` lists its files and `cover` picks one of them. |
+| `public/images/` | Game images, named `<id>-<hash>.<ext>`. A game's `images` lists its files and `cover` picks one of them. Gallery pictures are named `gallery-<id>-<hash>.jpg`. |
 | `public/data/gotm.json` | Game of the Month: every month's games played, completed and bought counts, and the winner. |
 | `public/data/gotc.json` | Game of the Category: yearly awards and yearly stats. |
+| `public/data/gallery.json` | Gallery: each picture's image file, date, description and the games in it. |
 | `data/source/*.tsv` | Original spreadsheet exports. |
 
 Commit the changes after editing to publish them.
