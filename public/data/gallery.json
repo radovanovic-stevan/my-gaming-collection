@@ -1,5 +1,29 @@
 [
  {
+  "id": 59,
+  "image": "gallery-59-52ecaf9d.jpg",
+  "date": "2026-09-18",
+  "description": "",
+  "games": [
+   {
+    "title": "One Piece: Pirate Warriors 3",
+    "platform": "PS4"
+   },
+   {
+    "title": "One Piece: Pirate Warriors 4",
+    "platform": "PS4"
+   },
+   {
+    "title": "Shin Megami Tensei III Nocturne",
+    "platform": "PS4"
+   },
+   {
+    "title": "Siren: New Translation",
+    "platform": "PS3"
+   }
+  ]
+ },
+ {
   "id": 58,
   "image": "gallery-58-e82f910f.jpg",
   "date": "2026-08-28",
