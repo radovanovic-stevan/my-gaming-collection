@@ -14,6 +14,114 @@
   "games": []
  },
  {
+  "id": 27,
+  "image": "gallery-27-4b22c669.jpg",
+  "date": "2025-12-15",
+  "description": "Milano, CeX Store Part 2",
+  "games": [
+   {
+    "title": "Bladestorm: The Hundred Years' War",
+    "platform": "PS3"
+   },
+   {
+    "title": "Fired Up",
+    "platform": "PSP"
+   },
+   {
+    "title": "The Council",
+    "platform": "PS4"
+   },
+   {
+    "title": "Soul Hackers 2",
+    "platform": "PS4"
+   }
+  ]
+ },
+ {
+  "id": 26,
+  "image": "gallery-26-8c70332e.jpg",
+  "date": "2025-12-11",
+  "description": "Milano, CeX Store",
+  "games": [
+   {
+    "title": "Driver: Renegade 3D",
+    "platform": "3DS"
+   },
+   {
+    "title": "Dead or Alive: Dimensions",
+    "platform": "3DS"
+   },
+   {
+    "title": "Mario Party: Island Tour",
+    "platform": "3DS"
+   },
+   {
+    "title": "Cubic Ninja",
+    "platform": "3DS"
+   },
+   {
+    "title": "LEGO Marvel Super Heroes: Universe in Peril",
+    "platform": "VITA"
+   },
+   {
+    "title": "LEGO Star Wars: The Force Awakens",
+    "platform": "VITA"
+   },
+   {
+    "title": "Call of Duty: Modern Warfare: Reflex Edition",
+    "platform": "Wii"
+   },
+   {
+    "title": "de Blob 2",
+    "platform": "Wii"
+   },
+   {
+    "title": "Binary Domain",
+    "platform": "PS3"
+   },
+   {
+    "title": "Ninja Gaiden Sigma 2",
+    "platform": "PS3"
+   },
+   {
+    "title": "Heavenly Sword",
+    "platform": "PS3"
+   },
+   {
+    "title": "Max Payne",
+    "platform": "PS2"
+   },
+   {
+    "title": "Dead or Alive 2",
+    "platform": "PS2"
+   },
+   {
+    "title": "Unreal Tournament",
+    "platform": "PS2"
+   },
+   {
+    "title": "Nobunaga's Ambition: Taishi",
+    "platform": "PS4"
+   },
+   {
+    "title": "Bound by Flame",
+    "platform": "PS4"
+   },
+   {
+    "title": "Dodgeball Academia",
+    "platform": "PS4"
+   },
+   {
+    "title": "Samurai Warriors 4 Empires",
+    "platform": "PS4"
+   },
+   {
+    "title": "My Hero One's Justice",
+    "platform": "PS4"
+   }
+  ]
+ },
+ {
   "id": 4,
   "image": "gallery-4-8b9a596e.jpg",
   "date": "2025-12-11",
@@ -26,6 +134,493 @@
   "date": "2025-12-11",
   "description": "Milano, CeX Store",
   "games": []
+ },
+ {
+  "id": 25,
+  "image": "gallery-25-87f9c355.jpg",
+  "date": "2025-11-19",
+  "description": "Vita Haul from Ivan & Burazer",
+  "games": [
+   {
+    "title": "Toukiden: The Age of Demons",
+    "platform": "VITA"
+   },
+   {
+    "title": "Touch My Katamari",
+    "platform": "VITA"
+   },
+   {
+    "title": "Assassin's Creed III Liberation",
+    "platform": "VITA"
+   }
+  ]
+ },
+ {
+  "id": 24,
+  "image": "gallery-24-5ac0d9e1.jpg",
+  "date": "2025-11-17",
+  "description": "Vita Haul!",
+  "games": [
+   {
+    "title": "Uncharted: Golden Abyss",
+    "platform": "VITA"
+   },
+   {
+    "title": "Resistance: Burning Skies",
+    "platform": "VITA"
+   }
+  ]
+ },
+ {
+  "id": 23,
+  "image": "gallery-23-72b86538.jpg",
+  "date": "2025-11-02",
+  "description": "Gift from Lola & Ilija, Madrid",
+  "games": [
+   {
+    "title": "Yakuza 3",
+    "platform": "PS3"
+   },
+   {
+    "title": "Monster Hunter World",
+    "platform": "PS4"
+   },
+   {
+    "title": "Persona 5 Strikers",
+    "platform": "PS4"
+   }
+  ]
+ },
+ {
+  "id": 22,
+  "image": "gallery-22-24f210de.jpg",
+  "date": "2025-10-28",
+  "description": "Mixed haul, came in 10 days late due to a late package",
+  "games": [
+   {
+    "title": "The Sum of All Fears",
+    "platform": "PS2"
+   },
+   {
+    "title": "Fifa Street 2",
+    "platform": "PS2"
+   },
+   {
+    "title": "Wild Wild Racing",
+    "platform": "PS2"
+   },
+   {
+    "title": "The Evil Within",
+    "platform": "PS4"
+   },
+   {
+    "title": "Metro Exodus",
+    "platform": "PS4"
+   },
+   {
+    "title": "Unreal Tournament 3",
+    "platform": "PS3"
+   },
+   {
+    "title": "Dante's Inferno",
+    "platform": "PSP"
+   }
+  ]
+ },
+ {
+  "id": 21,
+  "image": "gallery-21-306a5932.jpg",
+  "date": "2025-10-17",
+  "description": "Birthday gift, game + diorama",
+  "games": [
+   {
+    "title": "Silent Hill 2",
+    "platform": "PS2"
+   }
+  ]
+ },
+ {
+  "id": 20,
+  "image": "gallery-20-66e0dee8.jpg",
+  "date": "2025-10-01",
+  "description": "KP Haul",
+  "games": [
+   {
+    "title": "Red Faction: Armageddon",
+    "platform": "PS3"
+   },
+   {
+    "title": "Virtua Fighter 5",
+    "platform": "PS3"
+   },
+   {
+    "title": "GoldenEye 007 Reloaded",
+    "platform": "PS3"
+   },
+   {
+    "title": "Medal of Honor",
+    "platform": "PS3"
+   },
+   {
+    "title": "Dragon Age: Inquisition",
+    "platform": "PS3"
+   },
+   {
+    "title": "Code Vein",
+    "platform": "PS4"
+   },
+   {
+    "title": "Shadows Awakening",
+    "platform": "PS4"
+   },
+   {
+    "title": "inFamous: Second Son",
+    "platform": "PS4"
+   },
+   {
+    "title": "Dragon Quest Heroes: The World Tree's Woe and the Blight Below",
+    "platform": "PS4"
+   }
+  ]
+ },
+ {
+  "id": 19,
+  "image": "gallery-19-b6b945f0.jpg",
+  "date": "2025-09-27",
+  "description": "Flea Market Haul",
+  "games": [
+   {
+    "title": "Sports Island",
+    "platform": "Wii"
+   },
+   {
+    "title": "Sports Island 2",
+    "platform": "Wii"
+   }
+  ]
+ },
+ {
+  "id": 18,
+  "image": "gallery-18-127948b2.jpg",
+  "date": "2025-09-15",
+  "description": "Memory from Corfu",
+  "games": [
+   {
+    "title": "Rayman Legends",
+    "platform": "PS4"
+   }
+  ]
+ },
+ {
+  "id": 17,
+  "image": "gallery-17-c0e24e00.jpg",
+  "date": "2025-08-20",
+  "description": "KP Haul",
+  "games": [
+   {
+    "title": "F.E.A.R. 2",
+    "platform": "PS3"
+   },
+   {
+    "title": "Horizon Zero Dawn",
+    "platform": "PS4"
+   },
+   {
+    "title": "The Last Guardian",
+    "platform": "PS4"
+   },
+   {
+    "title": "Batman: Arkham Knight",
+    "platform": "PS4"
+   }
+  ]
+ },
+ {
+  "id": 16,
+  "image": "gallery-16-731409cc.jpg",
+  "date": "2025-07-19",
+  "description": "Flea Market Haul",
+  "games": [
+   {
+    "title": "Abzu",
+    "platform": "PS4"
+   },
+   {
+    "title": "The Order 1886",
+    "platform": "PS4"
+   },
+   {
+    "title": "Dying Light",
+    "platform": "PS4"
+   },
+   {
+    "title": "Borderlands 3",
+    "platform": "PS4"
+   },
+   {
+    "title": "RAGE 2",
+    "platform": "PS4"
+   },
+   {
+    "title": "Star Wars Jedi: Fallen Order",
+    "platform": "PS4"
+   },
+   {
+    "title": "Republique",
+    "platform": "PS4"
+   },
+   {
+    "title": "Captain Tsubasa: Rise of New Champions",
+    "platform": "PS4"
+   },
+   {
+    "title": "Minecraft",
+    "platform": "PS3"
+   },
+   {
+    "title": "Sonic & Sega All-Stars Racing",
+    "platform": "PS3"
+   },
+   {
+    "title": "Tom Clancy's Splinter Cell",
+    "platform": "PS3"
+   },
+   {
+    "title": "Tom Clancy's Splinter Cell: Pandora Tomorrow",
+    "platform": "PS3"
+   },
+   {
+    "title": "Tom Clancy's Splinter Cell: Chaos Theory",
+    "platform": "PS3"
+   },
+   {
+    "title": "Naruto Shippuden: Ultimate Ninja 5",
+    "platform": "PS2"
+   }
+  ]
+ },
+ {
+  "id": 15,
+  "image": "gallery-15-c453d509.jpg",
+  "date": "2025-06-11",
+  "description": "Cex Store Haul #2, Alicante",
+  "games": [
+   {
+    "title": "NBA 2K11",
+    "platform": "PS2"
+   }
+  ]
+ },
+ {
+  "id": 14,
+  "image": "gallery-14-e54d1c05.jpg",
+  "date": "2025-06-09",
+  "description": "CeX Store Haul, Alicante",
+  "games": [
+   {
+    "title": "Naruto: Ninja Council - European Version",
+    "platform": "NDS"
+   },
+   {
+    "title": "Super Mario 3D Land",
+    "platform": "3DS"
+   },
+   {
+    "title": "Yoshi's New Island",
+    "platform": "3DS"
+   },
+   {
+    "title": "Medievil",
+    "platform": "PS4"
+   },
+   {
+    "title": "Hidden Agenda",
+    "platform": "PS4"
+   },
+   {
+    "title": "Uncharted: The Lost Legacy",
+    "platform": "PS4"
+   },
+   {
+    "title": "Driv3r",
+    "platform": "PS2"
+   },
+   {
+    "title": "SSX Blur",
+    "platform": "Wii"
+   },
+   {
+    "title": "One Piece: Pirate Warriors 2",
+    "platform": "PS3"
+   },
+   {
+    "title": "Injustice: Gods Among Us",
+    "platform": "PS3"
+   },
+   {
+    "title": "The Darkness II",
+    "platform": "PS3"
+   }
+  ]
+ },
+ {
+  "id": 13,
+  "image": "gallery-13-3b04bc53.jpg",
+  "date": "2025-05-21",
+  "description": "Anniversary Gift!",
+  "games": [
+   {
+    "title": "NBA 2K12",
+    "platform": "PS3"
+   }
+  ]
+ },
+ {
+  "id": 12,
+  "image": "gallery-12-da54b722.jpg",
+  "date": "2025-05-13",
+  "description": "Atari Flashback 3",
+  "games": []
+ },
+ {
+  "id": 11,
+  "image": "gallery-11-5e3f04d9.jpg",
+  "date": "2025-04-17",
+  "description": "KP Haul",
+  "games": [
+   {
+    "title": "MindJack",
+    "platform": "PS3"
+   },
+   {
+    "title": "TimeShift",
+    "platform": "PS3"
+   },
+   {
+    "title": "Conflict: Denied Ops",
+    "platform": "PS3"
+   },
+   {
+    "title": "Legendary",
+    "platform": "PS3"
+   },
+   {
+    "title": "Hitman: Absolution",
+    "platform": "PS3"
+   },
+   {
+    "title": "Risen 2: Dark Waters",
+    "platform": "PS3"
+   }
+  ]
+ },
+ {
+  "id": 10,
+  "image": "gallery-10-0afb32d8.jpg",
+  "date": "2025-03-08",
+  "description": "KP Haul",
+  "games": [
+   {
+    "title": "Alpha Protocol",
+    "platform": "PS3"
+   },
+   {
+    "title": "Army of Two",
+    "platform": "PS3"
+   },
+   {
+    "title": "Dragon Age: Origins",
+    "platform": "PS3"
+   },
+   {
+    "title": "Damnation",
+    "platform": "PS3"
+   },
+   {
+    "title": "Dark Void",
+    "platform": "PS3"
+   },
+   {
+    "title": "Hunted: The Demon's Forge",
+    "platform": "PS3"
+   }
+  ]
+ },
+ {
+  "id": 9,
+  "image": "gallery-9-c4a39c2a.jpg",
+  "date": "2025-02-09",
+  "description": "Lisbon, CeX Store",
+  "games": [
+   {
+    "title": "Star Wars Battlefront: Renegade Squadron",
+    "platform": "PSP"
+   },
+   {
+    "title": "Star Wars Battlefront: Elite Squadron",
+    "platform": "PSP"
+   },
+   {
+    "title": "Marvel Super Hero Squad",
+    "platform": "PSP"
+   },
+   {
+    "title": "LocoRoco 2",
+    "platform": "PSP"
+   },
+   {
+    "title": "Underworld: The Eternal War",
+    "platform": "PS2"
+   },
+   {
+    "title": "Forgotten Realms: Demon Stone",
+    "platform": "PS2"
+   },
+   {
+    "title": "Furry Tales",
+    "platform": "PS2"
+   },
+   {
+    "title": "Mercenaries 2: World in Flames",
+    "platform": "PS2"
+   },
+   {
+    "title": "Myth Makers: Orbs of Doom",
+    "platform": "PS2"
+   },
+   {
+    "title": "Naruto Uzumaki Chronicles 2",
+    "platform": "PS2"
+   },
+   {
+    "title": "Bulletstorm",
+    "platform": "PS3"
+   },
+   {
+    "title": "Singularity",
+    "platform": "PS3"
+   },
+   {
+    "title": "Prototype",
+    "platform": "PS3"
+   },
+   {
+    "title": "Syndicate",
+    "platform": "PS3"
+   },
+   {
+    "title": "Batman: Arkham Origins",
+    "platform": "PS3"
+   },
+   {
+    "title": "Red Faction: Guerilla",
+    "platform": "PS3"
+   },
+   {
+    "title": "Condemned 2: Bloodshot",
+    "platform": "PS3"
+   }
+  ]
  },
  {
   "id": 5,
