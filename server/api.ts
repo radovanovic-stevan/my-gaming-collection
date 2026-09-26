@@ -72,6 +72,12 @@ async function removeImageFile(file: string) {
   await unlink(path.join(IMAGES_DIR, path.basename(file))).catch(() => {});
 }
 
+/** Deletes game image files, keeping any that another game still uses (e.g. one console photo shared by its built-in games). */
+async function removeUnusedGameImages(files: string[], games: Game[]) {
+  const used = new Set(games.flatMap((g) => g.images));
+  await Promise.all(files.filter((f) => !used.has(f)).map(removeImageFile));
+}
+
 const str = (v: unknown) => (typeof v === 'string' ? v.replace(/\s+/g, ' ').trim() : '');
 const nullableStr = (v: unknown) => str(v) || null;
 const strList = (v: unknown) => (Array.isArray(v) ? [...new Set(v.map(str).filter(Boolean))] : []);
@@ -416,7 +422,7 @@ async function handle(req: IncomingMessage, res: ServerResponse): Promise<void> 
       const games = await loadGames();
       const [removed] = games.splice(findIndex(games, id), 1);
       await saveGames(games);
-      await Promise.all(removed.images.map(removeImageFile));
+      await removeUnusedGameImages(removed.images, games);
     });
     return send(res, 200, { ok: true });
   }
@@ -448,9 +454,9 @@ async function handle(req: IncomingMessage, res: ServerResponse): Promise<void> 
       const g = games[i];
       if (!g.images.includes(file)) throw new HttpError(404, `Image ${file} not found`);
       const images = g.images.filter((f) => f !== file);
-      await removeImageFile(file);
       games[i] = { ...g, images, cover: g.cover === file ? (images[0] ?? null) : g.cover };
       await saveGames(games);
+      await removeUnusedGameImages([file], games);
       return games[i];
     });
     return send(res, 200, game);
