@@ -101,6 +101,5 @@ export interface GotcYear {
 
 export interface GotcData {
   about: string;
-  allTime: { category: string; ranking: AwardValue[] }[];
   years: GotcYear[];
 }

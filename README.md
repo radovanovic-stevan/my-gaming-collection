@@ -18,7 +18,9 @@ several images: drop, pick, paste or fetch them from a URL, and mark one as the 
 The **Game of the Month** and **Game of the Category** tabs are editable locally too:
 add or edit months (games played with their status, bought count; the completed count
 is worked out from the ✅ games), add or edit yearly awards and stats (a new year copies
-last year's categories), and edit the all-time top-5 rankings. The static build has no API, so it's view-only.
+last year's categories), The all-time top-5 lists are
+worked out from the collection's ratings (ties go to the most recently completed game), so they
+update by themselves. The static build has no API, so it's view-only.
 
 ## Where the data lives
 
@@ -29,7 +31,7 @@ Everything is plain files in the repo. There is no database.
 | `public/data/games.json` | The collection. Edited by the app, or by hand. |
 | `public/images/` | Game images, named `<id>-<hash>.<ext>`. A game's `images` lists its files and `cover` picks one of them. |
 | `public/data/gotm.json` | Game of the Month: every month's games played, completed and bought counts, and the winner. |
-| `public/data/gotc.json` | Game of the Category: yearly awards, yearly stats and all-time top-5 lists. |
+| `public/data/gotc.json` | Game of the Category: yearly awards and yearly stats. |
 | `data/source/*.tsv` | Original spreadsheet exports. |
 
 Commit the changes after editing to publish them.

@@ -145,8 +145,8 @@ function parseStats(text) {
 }
 
 /**
- * Layout: an "All-Time Categories" block (category names in one row, a top-5 in the
- * five rows under it), then one "<year> Best-Of" block per year (category names,
+ * Layout: an "All-Time Categories" block (skipped: the app works the top 5s out from
+ * the collection's ratings), then one "<year> Best-Of" block per year (category names,
  * then a single winner row). Column AY holds the description and yearly notes.
  */
 function importGotc(file) {
@@ -154,14 +154,6 @@ function importGotc(file) {
   const NOTES_COL = rows[2].findIndex((c) => c === 'What is GOTC?');
   const cell = (r, j) => rows[r]?.[j] ?? '';
   const categoryCols = (r) => rows[r].map((c, j) => (j > 0 && j !== NOTES_COL && c.startsWith('Category:') ? j : -1)).filter((j) => j >= 0);
-
-  const allTimeHeader = rows.findIndex((r) => r[1] === 'All-Time Categories') + 1;
-  const allTime = categoryCols(allTimeHeader)
-    .map((j) => ({
-      category: categoryName(cell(allTimeHeader, j)),
-      ranking: [1, 2, 3, 4, 5].map((k) => award(cell(allTimeHeader + 1 + k, j))).filter(Boolean),
-    }))
-    .filter((c) => c.ranking.length);
 
   const years = [];
   for (const [i, r] of rows.entries()) {
@@ -177,7 +169,7 @@ function importGotc(file) {
     });
   }
 
-  return { about: cell(3, NOTES_COL), allTime, years: years.sort((a, b) => b.year - a.year) };
+  return { about: cell(3, NOTES_COL), years: years.sort((a, b) => b.year - a.year) };
 }
 
 const gotm = importGotm(GOTM_SRC);
@@ -186,4 +178,4 @@ console.log(`Wrote ${gotm.length} months to public/data/gotm.json`);
 
 const gotc = importGotc(GOTC_SRC);
 writeFileSync('public/data/gotc.json', JSON.stringify(gotc, null, 1) + '\n');
-console.log(`Wrote ${gotc.allTime.length} all-time categories and ${gotc.years.length} years to public/data/gotc.json`);
+console.log(`Wrote ${gotc.years.length} years to public/data/gotc.json`);
