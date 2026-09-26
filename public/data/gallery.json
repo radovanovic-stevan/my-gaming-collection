@@ -47,6 +47,86 @@
   ]
  },
  {
+  "id": 8,
+  "image": "gallery-8-90932f0e.jpg",
+  "date": "2023-12-09",
+  "description": "Eindhoven, CeX Store",
+  "games": [
+   {
+    "title": "Death Stranding",
+    "platform": "PS4"
+   },
+   {
+    "title": "Deus Ex: Mankind Divided",
+    "platform": "PS4"
+   },
+   {
+    "title": "Fallout 76",
+    "platform": "PS4"
+   },
+   {
+    "title": "Metal Gear Solid V: The Phantom Pain",
+    "platform": "PS4"
+   },
+   {
+    "title": "Uncharted 4: A Thief's End",
+    "platform": "PS4"
+   },
+   {
+    "title": "Assassin's Creed III",
+    "platform": "PS3"
+   },
+   {
+    "title": "Bayonetta",
+    "platform": "PS3"
+   },
+   {
+    "title": "Call of Duty: Modern Warfare 2",
+    "platform": "PS3"
+   },
+   {
+    "title": "Castlevania: Lords of Shadow",
+    "platform": "PS3"
+   },
+   {
+    "title": "Dead Island",
+    "platform": "PS3"
+   },
+   {
+    "title": "Fallout 3 Game of the Year Edition",
+    "platform": "PS3"
+   },
+   {
+    "title": "Need for Speed: Most Wanted",
+    "platform": "PS3"
+   },
+   {
+    "title": "NeverDead",
+    "platform": "PS3"
+   },
+   {
+    "title": "The Last of Us",
+    "platform": "PS3"
+   },
+   {
+    "title": "Jak and Daxter: The Precursor Legacy",
+    "platform": "PS2"
+   },
+   {
+    "title": "Army of Two: The 40th Day",
+    "platform": "PSP"
+   },
+   {
+    "title": "Alien Syndrome",
+    "platform": "Wii"
+   },
+   {
+    "title": "Far Cry Vengeance",
+    "platform": "Wii"
+   }
+  ]
+ },
+ {
   "id": 7,
   "image": "gallery-7-74a366ae.jpg",
   "date": "2022-09-22",
