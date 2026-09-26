@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import type { AwardValue, Game, GameRef, GotcData, GotcYear, GotmMonth } from '../types';
 import { isGameRef } from '../lib/links';
 import { RefCover, RefTitle } from './GameRefView';
 import { YearEditor } from './YearEditor';
-import { RankingEditor } from './RankingEditor';
+import { buildAllTime } from '../lib/allTime';
 
 interface Props {
   data: GotcData;
@@ -28,13 +28,6 @@ const YEAR_GROUPS: Group[] = [
   { title: 'Platforms', test: (c) => PLATFORM_WORDS.test(c) && c.endsWith('GOTY') },
   { title: 'Genres', test: (c) => c.endsWith('GOTY') && !PLATFORM_WORDS.test(c) && !c.startsWith('Games from') && !c.startsWith('Co-op') },
   { title: 'Highlights', test: () => true },
-];
-
-const ALL_TIME_GROUPS: Group[] = [
-  { title: 'Overall', test: (c) => c === 'All-Time List' || c.startsWith('Games from') },
-  { title: 'By year', test: (c) => /^Games (Acquired|Completed) \d{4}$/.test(c) },
-  { title: 'Platforms', test: (c) => PLATFORM_WORDS.test(c) },
-  { title: 'Genres', test: () => true },
 ];
 
 /** Puts each item into the first group whose test it passes. */
@@ -131,7 +124,7 @@ export function GotcView({ data, link, onOpen, editable, games, months, onChange
   const year: GotcYear | undefined = data.years.find((y) => y.year === yearNo) ?? data.years[0];
   // undefined: closed; null: adding; otherwise what's being edited.
   const [editingYear, setEditingYear] = useState<GotcYear | null | undefined>(undefined);
-  const [editingRanking, setEditingRanking] = useState<number | null | undefined>(undefined);
+  const allTime = useMemo(() => buildAllTime(games), [games]);
 
   const podium = year ? PODIUM.map((c) => year.awards.find((a) => a.category === c)) : [];
   const rest = year ? year.awards.filter((a) => !PODIUM.includes(a.category)) : [];
@@ -228,51 +221,32 @@ export function GotcView({ data, link, onOpen, editable, games, months, onChange
         </>
       ) : (
         <>
-          {editable && (
-            <div className="awards-actions">
-              <span className="muted small">Each ranking is a top 5.</span>
-              <button className="btn primary" onClick={() => setEditingRanking(null)}>
-                + Add ranking
-              </button>
-            </div>
-          )}
-          {groupBy(
-            data.allTime.map((c, index) => ({ ...c, index })),
-            ALL_TIME_GROUPS,
-            (c) => c.category,
-          ).map((group) => (
-            <div key={group.title} className="award-group">
-              <h3 className="section-title">{group.title}</h3>
+          <p className="all-time-note muted small">Worked out from the collection: the highest rated games, and on a tie the one completed most recently.</p>
+          {(['Overall', 'By year', 'Platforms', 'Genres'] as const).map((group) => (
+            <div key={group} className="award-group">
+              <h3 className="section-title">{group}</h3>
               <ul className="ranking-grid">
-                {group.items.map((c) => (
-                  <li key={c.category} className="ranking-card">
-                    <div className="ranking-head">
-                      <h4>{c.category}</h4>
-                      {editable && (
-                        <button className="link" onClick={() => setEditingRanking(c.index)}>
-                          Edit
-                        </button>
-                      )}
-                    </div>
-                    <ol>
-                      {c.ranking.map((v, i) => (
-                        <li key={i}>
-                          <span className="rank">{i + 1}</span>
-                          {isGameRef(v) ? (
-                            <>
-                              <span className="rank-thumb">
-                                <RefCover entry={v} game={link(v)} />
-                              </span>
-                              <RefTitle entry={v} game={link(v)} onOpen={onOpen} />
-                            </>
-                          ) : (
-                            <span className="award-text">{v.text}</span>
-                          )}
-                        </li>
-                      ))}
-                    </ol>
-                  </li>
-                ))}
+                {allTime
+                  .filter((c) => c.group === group)
+                  .map((c) => (
+                    <li key={c.category} className="ranking-card">
+                      <div className="ranking-head">
+                        <h4>{c.category}</h4>
+                      </div>
+                      <ol>
+                        {c.ranking.map((g, i) => (
+                          <li key={g.id}>
+                            <span className="rank">{i + 1}</span>
+                            <span className="rank-thumb">
+                              <RefCover entry={g} game={g} />
+                            </span>
+                            <RefTitle entry={g} game={g} onOpen={onOpen} />
+                            <span className="rank-rating">{g.rating}</span>
+                          </li>
+                        ))}
+                      </ol>
+                    </li>
+                  ))}
               </ul>
             </div>
           ))}
@@ -291,16 +265,6 @@ export function GotcView({ data, link, onOpen, editable, games, months, onChange
           onSaved={onYearSaved}
           onDeleted={onYearDeleted}
           onClose={() => setEditingYear(undefined)}
-        />
-      )}
-      {editingRanking !== undefined && (
-        <RankingEditor
-          allTime={data.allTime}
-          index={editingRanking}
-          games={games}
-          link={link}
-          onSaved={(allTime) => (onChange({ ...data, allTime }), setEditingRanking(undefined))}
-          onClose={() => setEditingRanking(undefined)}
         />
       )}
     </section>

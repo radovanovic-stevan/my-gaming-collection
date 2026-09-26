@@ -3,7 +3,7 @@
 //   public/data/games.json  - the collection
 //   public/images/          - game images, named <id>-<hash>.<ext>
 //   public/data/gotm.json   - Game of the Month, one entry per month
-//   public/data/gotc.json   - Game of the Category: yearly awards and all-time top 5s
+//   public/data/gotc.json   - Game of the Category: yearly awards and stats
 // Each game lists its images in `images`; `cover` is one of them (or null).
 // The static build (GitHub Pages) has no API, so the app is read-only there.
 import type { Plugin } from 'vite';
@@ -141,7 +141,7 @@ type Played = GameRef & { status: string | null };
 type AwardValue = GameRef | { text: string };
 type GotmMonth = { month: string; gameOfTheMonth: Played | null; completed: number; bought: number | null; played: Played[] };
 type GotcYear = { year: number; awards: { category: string; winner: AwardValue | null }[]; stats: Record<string, unknown> };
-type GotcData = { about: string; allTime: { category: string; ranking: AwardValue[] }[]; years: GotcYear[] };
+type GotcData = { about: string; years: GotcYear[] };
 
 const obj = (v: unknown): Record<string, unknown> => (v && typeof v === 'object' ? (v as Record<string, unknown>) : {});
 
@@ -202,16 +202,6 @@ function sanitizeYear(input: Record<string, unknown>): GotcYear {
   return { year, awards, stats };
 }
 
-function sanitizeAllTime(input: unknown): GotcData['allTime'] {
-  if (!Array.isArray(input)) throw new HttpError(400, 'Expected a list of categories');
-  return input
-    .map((c) => ({
-      category: str(obj(c).category),
-      ranking: (Array.isArray(obj(c).ranking) ? (obj(c).ranking as unknown[]) : []).map(awardValue).filter((v): v is AwardValue => v !== null),
-    }))
-    .filter((c) => c.category);
-}
-
 /** Routes under /api/gotm and /api/gotc. Returns false when the path isn't one of them. */
 async function handleAwards(parts: string[], method: string, req: IncomingMessage, res: ServerResponse): Promise<boolean> {
   // PUT /api/gotm/:month (creates or replaces; a different body.month moves the entry)
@@ -266,17 +256,6 @@ async function handleAwards(parts: string[], method: string, req: IncomingMessag
       send(res, 200, { ok: true });
       return true;
     }
-  }
-
-  // PUT /api/gotc/all-time   body: { allTime: [...] }
-  if (parts[0] === 'gotc' && parts[1] === 'all-time' && parts.length === 2 && method === 'PUT') {
-    const allTime = sanitizeAllTime((await readBody(req)).allTime);
-    await exclusive(async () => {
-      const data = await loadJson<GotcData>(GOTC_FILE);
-      await saveJson(GOTC_FILE, { ...data, allTime });
-    });
-    send(res, 200, allTime);
-    return true;
   }
 
   if (parts[0] === 'gotm' || parts[0] === 'gotc') throw new HttpError(405, 'Method not allowed');

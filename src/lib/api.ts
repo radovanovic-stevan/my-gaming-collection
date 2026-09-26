@@ -1,4 +1,4 @@
-import type { Game, GotcData, GotcYear, GotmMonth } from '../types';
+import type { Game, GotcYear, GotmMonth } from '../types';
 
 export type GameInput = Omit<Game, 'id' | 'images' | 'cover'>;
 
@@ -34,7 +34,6 @@ export const api = {
   deleteMonth: (key: string) => request<{ ok: true }>('DELETE', `gotm/${key}`),
   saveYear: (key: number, year: GotcYear) => request<GotcYear>('PUT', `gotc/years/${key}`, year),
   deleteYear: (key: number) => request<{ ok: true }>('DELETE', `gotc/years/${key}`),
-  saveAllTime: (allTime: GotcData['allTime']) => request<GotcData['allTime']>('PUT', 'gotc/all-time', { allTime }),
   fetchImage: async (url: string): Promise<Blob> => {
     const r = await fetch(`/api/fetch-image?url=${encodeURIComponent(url)}`);
     if (!r.ok) throw new Error((await r.json().catch(() => ({}))).error ?? `HTTP ${r.status}`);

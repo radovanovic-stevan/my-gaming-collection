@@ -1748,6 +1748,14 @@ div.gallery-main {
   overflow: hidden;
 }
 
+.rank-rating {
+  flex: none;
+  margin-left: auto;
+  font-weight: 700;
+  color: var(--fg-muted);
+  font-variant-numeric: tabular-nums;
+}
+
 .about {
   max-width: 70ch;
   margin: 32px 0 0;
@@ -2045,4 +2053,8 @@ div.gallery-main {
 
 .award-editor .field > .link {
   align-self: flex-start;
+}
+
+.all-time-note {
+  margin: 0 0 20px;
 }
