@@ -1,0 +1,3456 @@
+{
+ "about": "The \"GOTC\" sheet is a comprehensive catalog documenting the Game of the Year (GOTY) awards across various years and categories. The sheet provides a structured overview of outstanding games that have earned prestigious honors in their respective genres. It's consistently kept up-to-date, and a new GOTY entry is added once a year. Each entry is accompanied with a game icon, that's created from scratch.",
+ "allTime": [
+  {
+   "category": "All-Time List",
+   "ranking": [
+    {
+     "title": "Fallout: New Vegas",
+     "platform": "PS3"
+    },
+    {
+     "title": "Fallout 3 Game of the Year Edition",
+     "platform": "PS3"
+    },
+    {
+     "title": "Metal Gear Solid: Peace Walker",
+     "platform": "PSP"
+    },
+    {
+     "title": "Warriors Orochi",
+     "platform": "PSP"
+    },
+    {
+     "title": "Dark Souls II",
+     "platform": "PS3"
+    }
+   ]
+  },
+  {
+   "category": "Games Acquired 2025",
+   "ranking": [
+    {
+     "title": "Silent Hill 2",
+     "platform": "PS2"
+    },
+    {
+     "title": "Medievil",
+     "platform": "PS4"
+    },
+    {
+     "title": "Rayman Legends",
+     "platform": "PS4"
+    },
+    {
+     "title": "LocoRoco 2",
+     "platform": "PSP"
+    },
+    {
+     "title": "Condemned 2: Bloodshot",
+     "platform": "PS3"
+    }
+   ]
+  },
+  {
+   "category": "Games Acquired 2024",
+   "ranking": [
+    {
+     "title": "Bloodborne",
+     "platform": "PS4"
+    },
+    {
+     "title": "Dead Space 2",
+     "platform": "PS3"
+    },
+    {
+     "title": "Dead Space",
+     "platform": "PS3"
+    },
+    {
+     "title": "Odin Sphere",
+     "platform": "PS2"
+    },
+    {
+     "title": "Yakuza",
+     "platform": "PS2"
+    }
+   ]
+  },
+  {
+   "category": "Games Acquired 2023",
+   "ranking": [
+    {
+     "title": "Fallout 4",
+     "platform": "PS4"
+    },
+    {
+     "title": "Fallout 3 Game of the Year Edition",
+     "platform": "PS3"
+    },
+    {
+     "title": "Death Stranding",
+     "platform": "PS4"
+    },
+    {
+     "title": "Warriors Orochi 4",
+     "platform": "PS4"
+    },
+    {
+     "title": "Borderlands 2",
+     "platform": "PS4"
+    }
+   ]
+  },
+  {
+   "category": "Games Acquired 2022",
+   "ranking": [
+    {
+     "title": "Red Dead Redemption",
+     "platform": "PS3"
+    },
+    {
+     "title": "Yo-kai Watch",
+     "platform": "3DS"
+    },
+    {
+     "title": "Saints Row IV",
+     "platform": "PS3"
+    },
+    {
+     "title": "Resident Evil Revelations",
+     "platform": "PS3"
+    },
+    {
+     "title": "Sleeping Dogs",
+     "platform": "PS3"
+    }
+   ]
+  },
+  {
+   "category": "Games Acquired 2021",
+   "ranking": [
+    {
+     "title": "Kingdoms of Amalur: Reckoning",
+     "platform": "PS3"
+    },
+    {
+     "title": "Bully",
+     "platform": "PS2"
+    },
+    {
+     "title": "Bioshock Infinite",
+     "platform": "PS3"
+    },
+    {
+     "title": "Kessen II",
+     "platform": "PS2"
+    },
+    {
+     "title": "Uncharted 2: Among Thieves",
+     "platform": "PS3"
+    }
+   ]
+  },
+  {
+   "category": "Games Acquired 2020",
+   "ranking": [
+    {
+     "title": "Warriors Orochi",
+     "platform": "PSP"
+    },
+    {
+     "title": "Dark Souls II",
+     "platform": "PS3"
+    },
+    {
+     "title": "Bioshock",
+     "platform": "PS3"
+    },
+    {
+     "title": "Metal Gear Solid 2: Sons of Liberty",
+     "platform": "PS2"
+    },
+    {
+     "title": "Fallout 3",
+     "platform": "PS3"
+    }
+   ]
+  },
+  {
+   "category": "Games Acquired 2019",
+   "ranking": [
+    {
+     "title": "Fallout: New Vegas",
+     "platform": "PS3"
+    },
+    {
+     "title": "Metal Gear Solid: Peace Walker",
+     "platform": "PSP"
+    },
+    {
+     "title": "Heavy Rain",
+     "platform": "PS3"
+    },
+    {
+     "title": "Final Fantasy XIII",
+     "platform": "PS3"
+    },
+    {
+     "title": "DMC Devil May Cry",
+     "platform": "PS3"
+    }
+   ]
+  },
+  {
+   "category": "Games Acquired 2018",
+   "ranking": [
+    {
+     "title": "Rune Factory 2",
+     "platform": "NDS"
+    },
+    {
+     "title": "Super Metroid",
+     "platform": "SNES Classic"
+    },
+    {
+     "title": "Earthbound",
+     "platform": "SNES Classic"
+    },
+    {
+     "title": "Super Mario RPG: Legend Of The Seven Stars",
+     "platform": "SNES Classic"
+    },
+    {
+     "title": "Super Mario World 2: Yoshi's Island",
+     "platform": "SNES Classic"
+    }
+   ]
+  },
+  {
+   "category": "Games Completed 2018",
+   "ranking": [
+    {
+     "title": "Rune Factory 2",
+     "platform": "NDS"
+    },
+    {
+     "title": "Super Metroid",
+     "platform": "SNES Classic"
+    },
+    {
+     "title": "Super Mario RPG: Legend Of The Seven Stars",
+     "platform": "SNES Classic"
+    },
+    {
+     "title": "Guilty Gear X2 #Reload",
+     "platform": "PC"
+    },
+    {
+     "title": "Super Mario World 2: Yoshi's Island",
+     "platform": "SNES Classic"
+    }
+   ]
+  },
+  {
+   "category": "Games Acquired 2017",
+   "ranking": [
+    {
+     "title": "Half-Life",
+     "platform": "PC"
+    },
+    {
+     "title": "Ratchet & Clank 3",
+     "platform": "PS2"
+    },
+    {
+     "title": "God of War II",
+     "platform": "PS2"
+    },
+    {
+     "title": "Jade Empire: Special Edition",
+     "platform": "PC"
+    },
+    {
+     "title": "Silent Hill: Origins",
+     "platform": "PSP"
+    }
+   ]
+  },
+  {
+   "category": "Games Completed 2017",
+   "ranking": [
+    {
+     "title": "Half-Life",
+     "platform": "PC"
+    },
+    {
+     "title": "Ratchet & Clank 3",
+     "platform": "PS2"
+    },
+    {
+     "title": "God of War II",
+     "platform": "PS2"
+    },
+    {
+     "title": "Jade Empire: Special Edition",
+     "platform": "PC"
+    },
+    {
+     "title": "Silent Hill: Origins",
+     "platform": "PSP"
+    }
+   ]
+  },
+  {
+   "category": "Games Acquired 2016",
+   "ranking": [
+    {
+     "title": "Neverwinter Nights",
+     "platform": "PC"
+    },
+    {
+     "title": "Grand Theft Auto: Liberty City Stories",
+     "platform": "PSP"
+    },
+    {
+     "title": "Baldur's Gate: Dark Alliance II",
+     "platform": "PS2"
+    },
+    {
+     "title": "Skylanders: Giants",
+     "platform": "Wii"
+    },
+    {
+     "title": "Tom Clancy's Splinter Cell: Chaos Theory",
+     "platform": "PC"
+    }
+   ]
+  },
+  {
+   "category": "Games Completed 2016",
+   "ranking": [
+    {
+     "title": "Neverwinter Nights",
+     "platform": "PC"
+    },
+    {
+     "title": "Grand Theft Auto: Liberty City Stories",
+     "platform": "PSP"
+    },
+    {
+     "title": "Resident Evil - Code: Veronica X",
+     "platform": "PS2"
+    },
+    {
+     "title": "Skylanders: Giants",
+     "platform": "Wii"
+    },
+    {
+     "title": "Tom Clancy's Splinter Cell: Chaos Theory",
+     "platform": "PC"
+    }
+   ]
+  },
+  {
+   "category": "Games Acquired 2015",
+   "ranking": [
+    {
+     "title": "Professor Layton and the Curious Village",
+     "platform": "NDS"
+    },
+    {
+     "title": "Ratchet & Clank 2",
+     "platform": "PS2"
+    },
+    {
+     "title": "Half-Life 2",
+     "platform": "PC"
+    },
+    {
+     "title": "Burnout Revenge",
+     "platform": "PS2"
+    },
+    {
+     "title": "Professor Layton and the Pandora's Box",
+     "platform": "NDS"
+    }
+   ]
+  },
+  {
+   "category": "Games Completed 2015",
+   "ranking": [
+    {
+     "title": "Professor Layton and the Curious Village",
+     "platform": "NDS"
+    },
+    {
+     "title": "Ratchet & Clank 2",
+     "platform": "PS2"
+    },
+    {
+     "title": "Half-Life 2",
+     "platform": "PC"
+    },
+    {
+     "title": "Burnout Revenge",
+     "platform": "PS2"
+    },
+    {
+     "title": "Professor Layton and the Pandora's Box",
+     "platform": "NDS"
+    }
+   ]
+  },
+  {
+   "category": "PS1 Games",
+   "ranking": [
+    {
+     "title": "Dino Crisis",
+     "platform": "PS1"
+    },
+    {
+     "title": "Crash Bandicoot 2: Cortex Strikes Back",
+     "platform": "PS1"
+    },
+    {
+     "title": "Tom Clancy's Rainbow Six",
+     "platform": "PS1"
+    },
+    {
+     "title": "Toshinden 4",
+     "platform": "PS1"
+    },
+    {
+     "title": "In Cold Blood",
+     "platform": "PS1"
+    }
+   ]
+  },
+  {
+   "category": "PS Classic Games",
+   "ranking": [
+    {
+     "title": "Revelations: Persona",
+     "platform": "PS Classic"
+    },
+    {
+     "title": "Metal Gear Solid",
+     "platform": "PS Classic"
+    },
+    {
+     "title": "Oddworld: Abe’s Oddysee",
+     "platform": "PS Classic"
+    },
+    {
+     "title": "Mr Driller",
+     "platform": "PS Classic"
+    },
+    {
+     "title": "Tekken 3",
+     "platform": "PS Classic"
+    }
+   ]
+  },
+  {
+   "category": "PS2 Games",
+   "ranking": [
+    {
+     "title": "Silent Hill 2",
+     "platform": "PS2"
+    },
+    {
+     "title": "Kessen III",
+     "platform": "PS2"
+    },
+    {
+     "title": "Ratchet & Clank 2",
+     "platform": "PS2"
+    },
+    {
+     "title": "Ratchet & Clank 3",
+     "platform": "PS2"
+    },
+    {
+     "title": "Metal Gear Solid 2: Sons of Liberty",
+     "platform": "PS2"
+    }
+   ]
+  },
+  {
+   "category": "PS3 Games",
+   "ranking": [
+    {
+     "title": "Fallout: New Vegas",
+     "platform": "PS3"
+    },
+    {
+     "title": "Fallout 3 Game of the Year Edition",
+     "platform": "PS3"
+    },
+    {
+     "title": "Dark Souls II",
+     "platform": "PS3"
+    },
+    {
+     "title": "Bioshock",
+     "platform": "PS3"
+    },
+    {
+     "title": "Red Dead Redemption",
+     "platform": "PS3"
+    }
+   ]
+  },
+  {
+   "category": "PS4 Games",
+   "ranking": [
+    {
+     "title": "Fallout 4",
+     "platform": "PS4"
+    },
+    {
+     "title": "Bloodborne",
+     "platform": "PS4"
+    },
+    {
+     "title": "Death Stranding",
+     "platform": "PS4"
+    },
+    {
+     "title": "Warriors Orochi 4",
+     "platform": "PS4"
+    },
+    {
+     "title": "Borderlands 2",
+     "platform": "PS4"
+    }
+   ]
+  },
+  {
+   "category": "Wii Games",
+   "ranking": [
+    {
+     "title": "MadWorld",
+     "platform": "Wii"
+    },
+    {
+     "title": "Cursed Mountain",
+     "platform": "Wii"
+    },
+    {
+     "title": "New Super Mario Bros. Wii",
+     "platform": "Wii"
+    },
+    {
+     "title": "Skylanders: Giants",
+     "platform": "Wii"
+    },
+    {
+     "title": "Rayman Origins",
+     "platform": "Wii"
+    }
+   ]
+  },
+  {
+   "category": "3DS Games",
+   "ranking": [
+    {
+     "title": "Yo-kai Watch",
+     "platform": "3DS"
+    },
+    {
+     "title": "Yo-Kai Watch 2: Fleshy Souls",
+     "platform": "3DS"
+    },
+    {
+     "title": "Super Mario Maker",
+     "platform": "3DS"
+    },
+    {
+     "title": "New Super Mario Bros. 2",
+     "platform": "3DS"
+    },
+    {
+     "title": "Super Mario 3D Land",
+     "platform": "3DS"
+    }
+   ]
+  },
+  {
+   "category": "DS Games",
+   "ranking": [
+    {
+     "title": "Professor Layton and the Curious Village",
+     "platform": "NDS"
+    },
+    {
+     "title": "Rune Factory 2",
+     "platform": "NDS"
+    },
+    {
+     "title": "New Super Mario Bros.",
+     "platform": "NDS"
+    },
+    {
+     "title": "Professor Layton and the Pandora's Box",
+     "platform": "NDS"
+    },
+    {
+     "title": "Professor Layton and the Unwound Future",
+     "platform": "NDS"
+    }
+   ]
+  },
+  {
+   "category": "GCN Games",
+   "ranking": [
+    {
+     "title": "NBA Street Vol. 2",
+     "platform": "GCN"
+    }
+   ]
+  },
+  {
+   "category": "SNES Classic Games",
+   "ranking": [
+    {
+     "title": "Super Metroid",
+     "platform": "SNES Classic"
+    },
+    {
+     "title": "Earthbound",
+     "platform": "SNES Classic"
+    },
+    {
+     "title": "Super Mario RPG: Legend Of The Seven Stars",
+     "platform": "SNES Classic"
+    },
+    {
+     "title": "Super Mario World 2: Yoshi's Island",
+     "platform": "SNES Classic"
+    },
+    {
+     "title": "Super Mario World",
+     "platform": "SNES Classic"
+    }
+   ]
+  },
+  {
+   "category": "PSP Games",
+   "ranking": [
+    {
+     "title": "Metal Gear Solid: Peace Walker",
+     "platform": "PSP"
+    },
+    {
+     "title": "Warriors Orochi",
+     "platform": "PSP"
+    },
+    {
+     "title": "Me & My Katamari",
+     "platform": "PSP"
+    },
+    {
+     "title": "Medievil Resurrection",
+     "platform": "PSP"
+    },
+    {
+     "title": "Grand Theft Auto: Chinatown Wars",
+     "platform": "PSP"
+    }
+   ]
+  },
+  {
+   "category": "VITA Games",
+   "ranking": [
+    {
+     "title": "Toukiden: The Age of Demons",
+     "platform": "VITA"
+    },
+    {
+     "title": "Uncharted: Golden Abyss",
+     "platform": "VITA"
+    },
+    {
+     "title": "Resistance: Burning Skies",
+     "platform": "VITA"
+    }
+   ]
+  },
+  {
+   "category": "Atari FB Games",
+   "ranking": [
+    {
+     "title": "Adventure II",
+     "platform": "Atari FB3"
+    },
+    {
+     "title": "Super Breakout",
+     "platform": "Atari FB3"
+    },
+    {
+     "title": "Adventure",
+     "platform": "Atari FB3"
+    },
+    {
+     "title": "Outlaw",
+     "platform": "Atari FB3"
+    },
+    {
+     "title": "Aquaventure",
+     "platform": "Atari FB3"
+    }
+   ]
+  },
+  {
+   "category": "PC Games",
+   "ranking": [
+    {
+     "title": "Neverwinter Nights",
+     "platform": "PC"
+    },
+    {
+     "title": "Half-Life",
+     "platform": "PC"
+    },
+    {
+     "title": "Half-Life 2",
+     "platform": "PC"
+    },
+    {
+     "title": "Jade Empire: Special Edition",
+     "platform": "PC"
+    },
+    {
+     "title": "Resident Evil 2",
+     "platform": "PC"
+    }
+   ]
+  },
+  {
+   "category": "FPS Games",
+   "ranking": [
+    {
+     "title": "Bioshock",
+     "platform": "PS3"
+    },
+    {
+     "title": "Borderlands 2",
+     "platform": "PS4"
+    },
+    {
+     "title": "Half-Life",
+     "platform": "PC"
+    },
+    {
+     "title": "Half-Life 2",
+     "platform": "PC"
+    },
+    {
+     "title": "Bioshock 2",
+     "platform": "PS3"
+    }
+   ]
+  },
+  {
+   "category": "TPS Games",
+   "ranking": [
+    {
+     "title": "Resident Evil Revelations",
+     "platform": "PS3"
+    },
+    {
+     "title": "Dead Space 2",
+     "platform": "PS3"
+    },
+    {
+     "title": "Dead Space",
+     "platform": "PS3"
+    },
+    {
+     "title": "Resident Evil Revelations 2",
+     "platform": "PS3"
+    },
+    {
+     "title": "Syphon Filter: Dark Mirror",
+     "platform": "PSP"
+    }
+   ]
+  },
+  {
+   "category": "Horror Games",
+   "ranking": [
+    {
+     "title": "Silent Hill 2",
+     "platform": "PS2"
+    },
+    {
+     "title": "Silent Hill 4: The Room",
+     "platform": "PS2"
+    },
+    {
+     "title": "Resident Evil 4",
+     "platform": "PS2"
+    },
+    {
+     "title": "Resident Evil Revelations",
+     "platform": "PS3"
+    },
+    {
+     "title": "Dead Space 2",
+     "platform": "PS3"
+    }
+   ]
+  },
+  {
+   "category": "Racing Games",
+   "ranking": [
+    {
+     "title": "Burnout Revenge",
+     "platform": "PS2"
+    },
+    {
+     "title": "Burnout Legends",
+     "platform": "PSP"
+    },
+    {
+     "title": "Burnout Dominator",
+     "platform": "PSP"
+    },
+    {
+     "title": "Mario Kart DS",
+     "platform": "NDS"
+    },
+    {
+     "title": "Burnout Paradise",
+     "platform": "PS3"
+    }
+   ]
+  },
+  {
+   "category": "Fighting Games",
+   "ranking": [
+    {
+     "title": "Guilty Gear X2 #Reload",
+     "platform": "PC"
+    },
+    {
+     "title": "Naruto Shippuden: Ultimate Ninja Storm 2",
+     "platform": "PS3"
+    },
+    {
+     "title": "Naruto Shippuden: Ultimate Ninja Heroes 3",
+     "platform": "PSP"
+    },
+    {
+     "title": "Tekken 6",
+     "platform": "PS3"
+    },
+    {
+     "title": "BlazBlue: Calamity Trigger",
+     "platform": "PS3"
+    }
+   ]
+  },
+  {
+   "category": "RPGs",
+   "ranking": [
+    {
+     "title": "Fallout: New Vegas",
+     "platform": "PS3"
+    },
+    {
+     "title": "Fallout 4",
+     "platform": "PS4"
+    },
+    {
+     "title": "Fallout 3 Game of the Year Edition",
+     "platform": "PS3"
+    },
+    {
+     "title": "Bloodborne",
+     "platform": "PS4"
+    },
+    {
+     "title": "Neverwinter Nights",
+     "platform": "PC"
+    }
+   ]
+  },
+  {
+   "category": "Platformers",
+   "ranking": [
+    {
+     "title": "Super Metroid",
+     "platform": "SNES Classic"
+    },
+    {
+     "title": "Rayman Legends",
+     "platform": "PS4"
+    },
+    {
+     "title": "LocoRoco 2",
+     "platform": "PSP"
+    },
+    {
+     "title": "LocoRoco",
+     "platform": "PSP"
+    },
+    {
+     "title": "New Super Mario Bros. Wii",
+     "platform": "Wii"
+    }
+   ]
+  },
+  {
+   "category": "Action Games",
+   "ranking": [
+    {
+     "title": "Bloodborne",
+     "platform": "PS4"
+    },
+    {
+     "title": "Metal Gear Solid: Peace Walker",
+     "platform": "PSP"
+    },
+    {
+     "title": "Warriors Orochi",
+     "platform": "PS4"
+    },
+    {
+     "title": "Red Dead Redemption",
+     "platform": "PS3"
+    },
+    {
+     "title": "Death Stranding",
+     "platform": "PS4"
+    }
+   ]
+  },
+  {
+   "category": "Adventure Games",
+   "ranking": [
+    {
+     "title": "Red Dead Redemption",
+     "platform": "PS3"
+    },
+    {
+     "title": "Death Stranding",
+     "platform": "PS4"
+    },
+    {
+     "title": "Ratchet & Clank 2",
+     "platform": "PS2"
+    },
+    {
+     "title": "Ratchet & Clank 3",
+     "platform": "PS2"
+    },
+    {
+     "title": "Medievil",
+     "platform": "PS4"
+    }
+   ]
+  },
+  {
+   "category": "Stealth Games",
+   "ranking": [
+    {
+     "title": "Metal Gear Solid: Peace Walker",
+     "platform": "PSP"
+    },
+    {
+     "title": "Metal Gear Solid 2: Sons of Liberty",
+     "platform": "PS2"
+    },
+    {
+     "title": "Deus Ex: Human Revolution",
+     "platform": "PS3"
+    },
+    {
+     "title": "Metal Gear Solid: Portable Ops",
+     "platform": "PSP"
+    },
+    {
+     "title": "Dishonored",
+     "platform": "PS4"
+    }
+   ]
+  },
+  {
+   "category": "Hack&Slash Games",
+   "ranking": [
+    {
+     "title": "Warriors Orochi",
+     "platform": "PSP"
+    },
+    {
+     "title": "Warriors Orochi 4",
+     "platform": "PS4"
+    },
+    {
+     "title": "Warriors Orochi 3",
+     "platform": "PS3"
+    },
+    {
+     "title": "God of War II",
+     "platform": "PS2"
+    },
+    {
+     "title": "DMC Devil May Cry",
+     "platform": "PS3"
+    }
+   ]
+  },
+  {
+   "category": "Puzzle Games",
+   "ranking": [
+    {
+     "title": "Professor Layton and the Curious Village",
+     "platform": "NDS"
+    },
+    {
+     "title": "Me & My Katamari",
+     "platform": "PSP"
+    },
+    {
+     "title": "Professor Layton and the Pandora's Box",
+     "platform": "NDS"
+    },
+    {
+     "title": "Professor Layton and the Unwound Future",
+     "platform": "NDS"
+    },
+    {
+     "title": "Another Code: Two Memories",
+     "platform": "PSP"
+    }
+   ]
+  },
+  {
+   "category": "Strategy Games",
+   "ranking": [
+    {
+     "title": "Kessen III",
+     "platform": "PS2"
+    },
+    {
+     "title": "Samurai Warriors 2 Empires",
+     "platform": "PS2"
+    },
+    {
+     "title": "Kessen II",
+     "platform": "PS2"
+    },
+    {
+     "title": "Falling Skies: The Game",
+     "platform": "PS3"
+    },
+    {
+     "title": "Anno: Create a New World",
+     "platform": "NDS"
+    }
+   ]
+  },
+  {
+   "category": "Sports Games",
+   "ranking": [
+    {
+     "title": "Football Manager 2010 Handheld",
+     "platform": "PSP"
+    },
+    {
+     "title": "Skate 3",
+     "platform": "PS3"
+    },
+    {
+     "title": "Tony Hawk's Project 8",
+     "platform": "PSP"
+    },
+    {
+     "title": "Everybody's Tennis",
+     "platform": "PSP"
+    },
+    {
+     "title": "Pro Evolution Soccer 2010",
+     "platform": "PSP"
+    }
+   ]
+  },
+  {
+   "category": "Party Games",
+   "ranking": [
+    {
+     "title": "Mario Party 8",
+     "platform": "Wii"
+    },
+    {
+     "title": "Mario Party DS",
+     "platform": "NDS"
+    },
+    {
+     "title": "Buzz! Junior: Monster Rumble",
+     "platform": "PS2"
+    },
+    {
+     "title": "High School Musical: Sing It!",
+     "platform": "PS2"
+    },
+    {
+     "title": "Buzz! Junior: Jungle Party",
+     "platform": "PS2"
+    }
+   ]
+  },
+  {
+   "category": "Open World Games",
+   "ranking": [
+    {
+     "title": "Fallout: New Vegas",
+     "platform": "PS3"
+    },
+    {
+     "title": "Fallout 4",
+     "platform": "PS4"
+    },
+    {
+     "title": "Fallout 3 Game of the Year Edition",
+     "platform": "PS3"
+    },
+    {
+     "title": "Bloodborne",
+     "platform": "PS4"
+    },
+    {
+     "title": "Neverwinter Nights",
+     "platform": "PC"
+    }
+   ]
+  },
+  {
+   "category": "Games from Slavica",
+   "ranking": [
+    {
+     "title": "Silent Hill 2",
+     "platform": "PS2"
+    },
+    {
+     "title": "Dark Souls II",
+     "platform": "PS3"
+    },
+    {
+     "title": "Bioshock",
+     "platform": "PS3"
+    },
+    {
+     "title": "Warriors Orochi 4",
+     "platform": "PS4"
+    },
+    {
+     "title": "Yo-kai Watch",
+     "platform": "3DS"
+    }
+   ]
+  }
+ ],
+ "years": [
+  {
+   "year": 2025,
+   "awards": [
+    {
+     "category": "Game of the Year Winner",
+     "winner": {
+      "title": "Fallout 4",
+      "platform": "PS4"
+     }
+    },
+    {
+     "category": "Game of the Year Runner-Up",
+     "winner": {
+      "title": "Silent Hill 2",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Game of the Year Third Place",
+     "winner": {
+      "title": "Bloodborne",
+      "platform": "PS4"
+     }
+    },
+    {
+     "category": "Favourite Platinum",
+     "winner": {
+      "title": "MediEvil",
+      "platform": "PS4"
+     }
+    },
+    {
+     "category": "Co-op GOTY",
+     "winner": {
+      "title": "Rayman Legends",
+      "platform": "PS4"
+     }
+    },
+    {
+     "category": "Biggest Surprise",
+     "winner": {
+      "title": "Toukiden: The Age of Demons",
+      "platform": "VITA"
+     }
+    },
+    {
+     "category": "Biggest Dissapointment",
+     "winner": {
+      "title": "Brink",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Console of the Year",
+     "winner": {
+      "text": "PlayStation 4"
+     }
+    },
+    {
+     "category": "Best Non-English Game",
+     "winner": {
+      "title": "Toukiden: The Age of Demons",
+      "platform": "VITA"
+     }
+    },
+    {
+     "category": "Best Game Not Finished",
+     "winner": {
+      "title": "Midnight Club: Los Angeles",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Best Game in 🐥 Opinion",
+     "winner": {
+      "title": "Rayman Legends",
+      "platform": "PS4"
+     }
+    },
+    {
+     "category": "Best Game of Q1",
+     "winner": {
+      "title": "Fallout 4",
+      "platform": "PS4"
+     }
+    },
+    {
+     "category": "Best Game of Q2",
+     "winner": {
+      "title": "Borderlands 2",
+      "platform": "PS4"
+     }
+    },
+    {
+     "category": "Best Game of Q3",
+     "winner": {
+      "title": "Bloodborne",
+      "platform": "PS4"
+     }
+    },
+    {
+     "category": "Best Game of Q4",
+     "winner": {
+      "title": "Silent Hill 2",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Most Memorable Moment",
+     "winner": {
+      "text": "Silent Hill 2 - Final Letter"
+     }
+    },
+    {
+     "category": "Best Cover Art",
+     "winner": {
+      "title": "Condemned 2: Bloodshoot",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "PS1 GOTY",
+     "winner": {
+      "title": "Tomb Raider III: Adventures of Lara Croft",
+      "platform": "PS1"
+     }
+    },
+    {
+     "category": "PS Classic GOTY",
+     "winner": {
+      "title": "Metal Gear Solid",
+      "platform": "PS Classic"
+     }
+    },
+    {
+     "category": "PS2 GOTY",
+     "winner": {
+      "title": "Silent Hill 2",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "PS3 GOTY",
+     "winner": {
+      "title": "Deus Ex: Human Revolution",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "PS4 GOTY",
+     "winner": {
+      "title": "Fallout 4",
+      "platform": "PS4"
+     }
+    },
+    {
+     "category": "Wii GOTY",
+     "winner": {
+      "title": "de Blob",
+      "platform": "Wii"
+     }
+    },
+    {
+     "category": "3DS GOTY",
+     "winner": {
+      "title": "Super Mario 3D Land",
+      "platform": "3DS"
+     }
+    },
+    {
+     "category": "DS GOTY",
+     "winner": {
+      "title": "Star Wars: The Force Unleashed II",
+      "platform": "NDS"
+     }
+    },
+    {
+     "category": "GCN GOTY",
+     "winner": {
+      "title": "NBA Street Vol. 2",
+      "platform": "GCN"
+     }
+    },
+    {
+     "category": "SNES Classic GOTY",
+     "winner": {
+      "title": "The Legend of Zelda: A Link to the Past",
+      "platform": "SNES Classic"
+     }
+    },
+    {
+     "category": "PSP GOTY",
+     "winner": {
+      "title": "LocoRoco 2",
+      "platform": "PSP"
+     }
+    },
+    {
+     "category": "VITA GOTY",
+     "winner": {
+      "title": "Toukiden: The Age of Demons",
+      "platform": "VITA"
+     }
+    },
+    {
+     "category": "Atari FB GOTY",
+     "winner": {
+      "title": "Adventure II",
+      "platform": "Atari FB3"
+     }
+    },
+    {
+     "category": "PC GOTY",
+     "winner": null
+    },
+    {
+     "category": "FPS GOTY",
+     "winner": {
+      "title": "Borderlands 2",
+      "platform": "PS4"
+     }
+    },
+    {
+     "category": "TPS GOTY",
+     "winner": {
+      "title": "The Order 1886",
+      "platform": "PS4"
+     }
+    },
+    {
+     "category": "Horror GOTY",
+     "winner": {
+      "title": "Silent Hill 2",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Racing Game GOTY",
+     "winner": {
+      "title": "Midnight Club: Los Angeles",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Fighting Game GOTY",
+     "winner": {
+      "title": "Mortal Kombat XL",
+      "platform": "PS4"
+     }
+    },
+    {
+     "category": "RPG GOTY",
+     "winner": {
+      "title": "Fallout 4",
+      "platform": "PS4"
+     }
+    },
+    {
+     "category": "Platformer GOTY",
+     "winner": {
+      "title": "Rayman Legends",
+      "platform": "PS4"
+     }
+    },
+    {
+     "category": "Action Game GOTY",
+     "winner": {
+      "title": "Bloodborne",
+      "platform": "PS4"
+     }
+    },
+    {
+     "category": "Adventure Game GOTY",
+     "winner": {
+      "title": "Death Stranding",
+      "platform": "PS4"
+     }
+    },
+    {
+     "category": "Stealth Game GOTY",
+     "winner": {
+      "title": "Deus Ex: Human Revolution",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Hack&Slash Game GOTY",
+     "winner": {
+      "title": "Warriors Orochi 4",
+      "platform": "PS4"
+     }
+    },
+    {
+     "category": "Puzzle Game GOTY",
+     "winner": {
+      "title": "Myth Makers: Orbs of Doom",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Strategy Game GOTY",
+     "winner": {
+      "title": "The History Channel: Great Battles of Rome",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Sports Game GOTY",
+     "winner": {
+      "title": "Captain Tsubasa: Rise of New Champions",
+      "platform": "PS4"
+     }
+    },
+    {
+     "category": "Party Game GOTY",
+     "winner": {
+      "title": "Outlaw",
+      "platform": "Atari FB3"
+     }
+    },
+    {
+     "category": "Open World GOTY",
+     "winner": {
+      "title": "Fallout 4",
+      "platform": "PS4"
+     }
+    },
+    {
+     "category": "Games from Slavica GOTY",
+     "winner": {
+      "title": "Silent Hill 2",
+      "platform": "PS2"
+     }
+    }
+   ],
+   "stats": {
+    "gamesCompleted": 53,
+    "gamesBought": 173,
+    "consolesBought": [
+     "Atari FlashBack 3",
+     "PS Vita"
+    ],
+    "honorableMentions": "Fallout 4 Final Mission and Final Moments Deux Ex Namir Boss Fight LocoRoco2 - Mui Mui House Lu Bu Final Battle DW6 Beating Adventure II Bloodborne - First Boss Bloodborne - Blood-Starved Beast Bloodborne - Shadow of Yarhnam Death Stranding - Starting Walk Death Stranding - Finalizing Zip Line Rayman Legends - Castle Rock Silent Hill - Bathroom Scene Getting the Vita"
+   }
+  },
+  {
+   "year": 2024,
+   "awards": [
+    {
+     "category": "Game of the Year Winner",
+     "winner": {
+      "title": "Fallout 3 Game of the Year Edition",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Game of the Year Runner-Up",
+     "winner": {
+      "title": "Kessen III",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Game of the Year Third Place",
+     "winner": {
+      "title": "The Last of Us",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Favourite Platinum",
+     "winner": {
+      "title": "The Walking Dead: Season 2",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Co-op GOTY",
+     "winner": {
+      "title": "Link's Crossbow Training",
+      "platform": "Wii"
+     }
+    },
+    {
+     "category": "Biggest Surprise",
+     "winner": {
+      "title": "Army of Two: The 40th Day",
+      "platform": "PSP"
+     }
+    },
+    {
+     "category": "Biggest Dissapointment",
+     "winner": {
+      "title": "Burnout Dominator",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Console of the Year",
+     "winner": {
+      "text": "PlayStation 3"
+     }
+    },
+    {
+     "category": "Best Non-English Game",
+     "winner": null
+    },
+    {
+     "category": "Best Game Not Finished",
+     "winner": {
+      "title": "Burnout Dominator",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Best Game in 🐥 Opinion",
+     "winner": {
+      "title": "Uncharted 4: A Thief's End",
+      "platform": "PS4"
+     }
+    },
+    {
+     "category": "Best Game of Q1",
+     "winner": {
+      "title": "Fallout 3 Game of the Year Edition",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Best Game of Q2",
+     "winner": {
+      "title": "The Last of Us",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Best Game of Q3",
+     "winner": {
+      "title": "Samurai Warriors 2 Empires",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Best Game of Q4",
+     "winner": {
+      "title": "Kessen III",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Most Memorable Moment",
+     "winner": {
+      "title": "Samurai Warriors 2 Empires - Slavica Rank 1",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Best Cover Art",
+     "winner": {
+      "title": "Odin Sphere",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "PS1 GOTY",
+     "winner": null
+    },
+    {
+     "category": "PS Classic GOTY",
+     "winner": {
+      "title": "Oddworld: Abe’s Oddysee",
+      "platform": "PS Classic"
+     }
+    },
+    {
+     "category": "PS2 GOTY",
+     "winner": {
+      "title": "Kessen III",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "PS3 GOTY",
+     "winner": {
+      "title": "Fallout 3 Game of the Year Edition",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "PS4 GOTY",
+     "winner": {
+      "title": "Uncharted 4: A Thief's End",
+      "platform": "PS4"
+     }
+    },
+    {
+     "category": "Wii GOTY",
+     "winner": {
+      "title": "Samurai Warriors: Katana",
+      "platform": "Wii"
+     }
+    },
+    {
+     "category": "3DS GOTY",
+     "winner": {
+      "title": "Yo-Kai Watch 2: Fleshy Souls",
+      "platform": "3DS"
+     }
+    },
+    {
+     "category": "DS GOTY",
+     "winner": {
+      "title": "Speed Racer: The Videogame",
+      "platform": "NDS"
+     }
+    },
+    {
+     "category": "GCN GOTY",
+     "winner": {
+      "title": "NBA Street Vol. 2",
+      "platform": "GCN"
+     }
+    },
+    {
+     "category": "SNES Classic GOTY",
+     "winner": null
+    },
+    {
+     "category": "PSP GOTY",
+     "winner": {
+      "title": "Phantasy Star Portable",
+      "platform": "PSP"
+     }
+    },
+    {
+     "category": "VITA GOTY",
+     "winner": null
+    },
+    {
+     "category": "Atari FB GOTY",
+     "winner": null
+    },
+    {
+     "category": "PC GOTY",
+     "winner": null
+    },
+    {
+     "category": "FPS GOTY",
+     "winner": {
+      "title": "Evolve",
+      "platform": "PS4"
+     }
+    },
+    {
+     "category": "TPS GOTY",
+     "winner": {
+      "title": "Dead Space 2",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Horror GOTY",
+     "winner": {
+      "title": "Dead Space 2",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Racing Game GOTY",
+     "winner": {
+      "title": "Need for Speed: Most Wanted",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Fighting Game GOTY",
+     "winner": {
+      "title": "Mortal Kombat vs DC Universe",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "RPG GOTY",
+     "winner": {
+      "title": "Fallout 3 Game of the Year Edition",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Platformer GOTY",
+     "winner": {
+      "title": "Oddworld: Abe’s Oddysee",
+      "platform": "PS Classic"
+     }
+    },
+    {
+     "category": "Action Game GOTY",
+     "winner": {
+      "title": "The Last of Us",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Adventure Game GOTY",
+     "winner": {
+      "title": "The Last of Us",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Stealth Game GOTY",
+     "winner": {
+      "title": "Hitman 2: Silent Assassin",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Hack&Slash Game GOTY",
+     "winner": {
+      "title": "Samurai Warriors 2 Empires",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Puzzle Game GOTY",
+     "winner": {
+      "title": "James Noir's Hollywood Mystery 3D",
+      "platform": "3DS"
+     }
+    },
+    {
+     "category": "Strategy Game GOTY",
+     "winner": {
+      "title": "Kessen III",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Sports Game GOTY",
+     "winner": {
+      "title": "Pro Evolution Soccer 2013",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Party Game GOTY",
+     "winner": {
+      "title": "Fruit Machine Mania",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Open World GOTY",
+     "winner": {
+      "title": "Fallout 3 Game of the Year Edition",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Games from Slavica GOTY",
+     "winner": {
+      "title": "Yo-Kai Watch 2: Fleshy Souls",
+      "platform": "3DS"
+     }
+    }
+   ],
+   "stats": {
+    "gamesCompleted": 49,
+    "gamesBought": 105,
+    "consolesBought": [
+     "GameCube (Kinda)"
+    ],
+    "honorableMentions": "Murdered Soul Suspect Final Twist One Piece SP 2 Final Boss Fallout 3 GOTY - Final Room Cleaning Odin Sphere Fights - King Gallon and Levanthan Uncharted 4 Ending Climbing Eiffel Tower - Saboteur Kessen 3 Planning Song TOP ANGLER!"
+   }
+  },
+  {
+   "year": 2023,
+   "awards": [
+    {
+     "category": "Game of the Year Winner",
+     "winner": {
+      "title": "Dark Souls II",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Game of the Year Runner-Up",
+     "winner": {
+      "title": "Red Dead Redemption",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Game of the Year Third Place",
+     "winner": {
+      "title": "Warriors Orochi 3",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Favourite Platinum",
+     "winner": {
+      "title": "Sleeping Dogs",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Co-op GOTY",
+     "winner": {
+      "title": "Resident Evil: Umbrella Chronicles",
+      "platform": "Wii"
+     }
+    },
+    {
+     "category": "Biggest Surprise",
+     "winner": {
+      "title": "Everybody's Tennis",
+      "platform": "PSP"
+     }
+    },
+    {
+     "category": "Biggest Dissapointment",
+     "winner": {
+      "title": "Dead Rising 2: Off the Record",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Console of the Year",
+     "winner": {
+      "text": "PlayStation 3"
+     }
+    },
+    {
+     "category": "Best Non-English Game",
+     "winner": {
+      "title": "Samurai Warriors",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Best Game Not Finished",
+     "winner": {
+      "title": "Onimusha: Warlords",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Best Game in 🐥 Opinion",
+     "winner": {
+      "title": "Sleeping Dogs",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Best Game of Q1",
+     "winner": {
+      "title": "Dark Souls II",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Best Game of Q2",
+     "winner": {
+      "title": "Silent Hill 4: The Room",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Best Game of Q3",
+     "winner": {
+      "title": "Resident Evil 4",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Best Game of Q4",
+     "winner": {
+      "title": "Red Dead Redemption",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Most Memorable Moment",
+     "winner": {
+      "title": "Extermination - Final Boss",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Best Cover Art",
+     "winner": {
+      "title": "Silent Hill 4: The Room",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "PS1 GOTY",
+     "winner": null
+    },
+    {
+     "category": "PS Classic GOTY",
+     "winner": {
+      "title": "Revelations: Persona",
+      "platform": "PS Classic"
+     }
+    },
+    {
+     "category": "PS2 GOTY",
+     "winner": {
+      "title": "Silent Hill 4: The Room",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "PS3 GOTY",
+     "winner": {
+      "title": "Dark Souls II",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "PS4 GOTY",
+     "winner": {
+      "title": "DIshonored",
+      "platform": "PS4"
+     }
+    },
+    {
+     "category": "Wii GOTY",
+     "winner": {
+      "title": "Resident Evil: Umbrella Chronicles",
+      "platform": "Wii"
+     }
+    },
+    {
+     "category": "3DS GOTY",
+     "winner": {
+      "title": "Super Mario Maker",
+      "platform": "3DS"
+     }
+    },
+    {
+     "category": "DS GOTY",
+     "winner": {
+      "title": "Scurge: Hive",
+      "platform": "NDS"
+     }
+    },
+    {
+     "category": "GCN GOTY",
+     "winner": null
+    },
+    {
+     "category": "SNES Classic GOTY",
+     "winner": null
+    },
+    {
+     "category": "PSP GOTY",
+     "winner": {
+      "title": "Locoroco",
+      "platform": "PSP"
+     }
+    },
+    {
+     "category": "VITA GOTY",
+     "winner": null
+    },
+    {
+     "category": "Atari FB GOTY",
+     "winner": null
+    },
+    {
+     "category": "PC GOTY",
+     "winner": null
+    },
+    {
+     "category": "FPS GOTY",
+     "winner": {
+      "title": "Borderlands",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "TPS GOTY",
+     "winner": {
+      "title": "Destroy All Humans!",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Horror GOTY",
+     "winner": {
+      "title": "Silent Hill 4: The Room",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Racing Game GOTY",
+     "winner": {
+      "title": "Mario Kart Wii",
+      "platform": "Wii"
+     }
+    },
+    {
+     "category": "Fighting Game GOTY",
+     "winner": {
+      "title": "BlazBlue: Calamity Trigger",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "RPG GOTY",
+     "winner": {
+      "title": "Dark Souls II",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Platformer GOTY",
+     "winner": {
+      "title": "Locoroco",
+      "platform": "PSP"
+     }
+    },
+    {
+     "category": "Action Game GOTY",
+     "winner": {
+      "title": "Red Dead Redemption",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Adventure Game GOTY",
+     "winner": {
+      "title": "Red Dead Redemption",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Stealth Game GOTY",
+     "winner": {
+      "title": "Dishonored",
+      "platform": "PS4"
+     }
+    },
+    {
+     "category": "Hack&Slash Game GOTY",
+     "winner": {
+      "title": "Warriors Orochi 3",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Puzzle Game GOTY",
+     "winner": {
+      "title": "Mr Driller",
+      "platform": "PS Classic"
+     }
+    },
+    {
+     "category": "Strategy Game GOTY",
+     "winner": {
+      "title": "Tom Clancy's EndWar",
+      "platform": "PSP"
+     }
+    },
+    {
+     "category": "Sports Game GOTY",
+     "winner": {
+      "title": "Everybody's Tennis",
+      "platform": "PSP"
+     }
+    },
+    {
+     "category": "Party Game GOTY",
+     "winner": {
+      "title": "High School Musical: Sing It!",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Open World GOTY",
+     "winner": {
+      "title": "Dark Souls II",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Games from Slavica GOTY",
+     "winner": {
+      "title": "Dark Souls II",
+      "platform": "PS3"
+     }
+    }
+   ],
+   "stats": {
+    "gamesCompleted": 54,
+    "gamesBought": 131,
+    "consolesBought": [
+     "PS2 Fat",
+     "PS4",
+     "PS Classic"
+    ],
+    "honorableMentions": "Dark Souls II - First Boss Dark Souls II - Final Boss Warriors Haul Unboxing Carnival Games Mini Golf - Final Hole Victory Red Dead Redemption - Ending Silent Hill 4: The Room - Room Becoming Alive Revelations: Persona - Final Boss",
+    "ratingChanges": [
+     {
+      "title": "Assassin's Creed: Bloodlines",
+      "from": 79,
+      "to": 75
+     },
+     {
+      "title": "Grand Theft Auto: Chinatown Wars",
+      "from": 89,
+      "to": 88
+     },
+     {
+      "title": "New Super Mario Bros. DS",
+      "from": 88,
+      "to": 83
+     },
+     {
+      "title": "Untold Legends: The Warriors Code",
+      "from": 79,
+      "to": 72.5
+     },
+     {
+      "title": "Star Wars: Battlefront",
+      "from": 71,
+      "to": 69.5
+     }
+    ]
+   }
+  },
+  {
+   "year": 2022,
+   "awards": [
+    {
+     "category": "Game of the Year Winner",
+     "winner": {
+      "title": "Kingdoms of Amalur: Reckoning",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Game of the Year Runner-Up",
+     "winner": {
+      "title": "Yo-kai Watch",
+      "platform": "3DS"
+     }
+    },
+    {
+     "category": "Game of the Year Third Place",
+     "winner": {
+      "title": "Saints Row IV",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Favourite Platinum",
+     "winner": {
+      "title": "Falling Skies: The Game",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Co-op GOTY",
+     "winner": {
+      "title": "Motorstorm: Pacific Rift",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Biggest Surprise",
+     "winner": {
+      "title": "Falling Skies: The Game",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Biggest Dissapointment",
+     "winner": {
+      "title": "Devil May Cry",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Console of the Year",
+     "winner": {
+      "text": "PlayStation 3"
+     }
+    },
+    {
+     "category": "Best Non-English Game",
+     "winner": null
+    },
+    {
+     "category": "Best Game Not Finished",
+     "winner": {
+      "title": "Street Fighter IV",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Best Game in 🐥 Opinion",
+     "winner": {
+      "title": "Kingdoms of Amalur: Reckoning",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Best Game of Q1",
+     "winner": {
+      "title": "Kingdoms of Amalur: Reckoning",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Best Game of Q2",
+     "winner": {
+      "title": "Metal Gear Solid 4: Guns of the Patriots",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Best Game of Q3",
+     "winner": {
+      "title": "Saints Row IV",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Best Game of Q4",
+     "winner": {
+      "title": "Yo-kai Watch",
+      "platform": "3DS"
+     }
+    },
+    {
+     "category": "Most Memorable Moment",
+     "winner": {
+      "title": "Final Gold - MotorStorm: Pacific Rift",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Best Cover Art",
+     "winner": {
+      "title": "Final Fantasy XII",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "PS1 GOTY",
+     "winner": null
+    },
+    {
+     "category": "PS Classic GOTY",
+     "winner": null
+    },
+    {
+     "category": "PS2 GOTY",
+     "winner": {
+      "title": "Thrillville: Off The Rails",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "PS3 GOTY",
+     "winner": {
+      "title": "Kingdom of Amalur: Reckoning",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "PS4 GOTY",
+     "winner": null
+    },
+    {
+     "category": "Wii GOTY",
+     "winner": {
+      "title": "Wii Fit Plus",
+      "platform": "Wii"
+     }
+    },
+    {
+     "category": "3DS GOTY",
+     "winner": {
+      "title": "Yo-kai Watch",
+      "platform": "3DS"
+     }
+    },
+    {
+     "category": "DS GOTY",
+     "winner": {
+      "text": "Lost in Blue 3"
+     }
+    },
+    {
+     "category": "GCN GOTY",
+     "winner": null
+    },
+    {
+     "category": "SNES Classic GOTY",
+     "winner": null
+    },
+    {
+     "category": "PSP GOTY",
+     "winner": {
+      "title": "Championship Manager",
+      "platform": "PSP"
+     }
+    },
+    {
+     "category": "VITA GOTY",
+     "winner": null
+    },
+    {
+     "category": "Atari FB GOTY",
+     "winner": null
+    },
+    {
+     "category": "PC GOTY",
+     "winner": null
+    },
+    {
+     "category": "FPS GOTY",
+     "winner": {
+      "title": "Bioshock Infinite",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "TPS GOTY",
+     "winner": {
+      "title": "Resident Evil Revelations",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Horror GOTY",
+     "winner": {
+      "title": "Resident Evil Revelations",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Racing Game GOTY",
+     "winner": {
+      "title": "Need for Speed: The Run",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Fighting Game GOTY",
+     "winner": {
+      "title": "Tekken 6",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "RPG GOTY",
+     "winner": {
+      "title": "Kingdoms of Amalur: Reckoning",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Platformer GOTY",
+     "winner": {
+      "title": "New Super Mario Bros. 2",
+      "platform": "3DS"
+     }
+    },
+    {
+     "category": "Action Game GOTY",
+     "winner": {
+      "title": "Kingdoms of Amalur: Reckoning",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Adventure Game GOTY",
+     "winner": {
+      "title": "Saints Row IV",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Stealth Game GOTY",
+     "winner": {
+      "title": "Metal Gear Solid 4: Guns of the Patriots",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Hack&Slash Game GOTY",
+     "winner": {
+      "title": "Devil May Cry",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Puzzle Game GOTY",
+     "winner": {
+      "title": "The Da Vinci Code",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Strategy Game GOTY",
+     "winner": {
+      "title": "Falling Skies: The Game",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Sports Game GOTY",
+     "winner": {
+      "title": "SSX On Tour",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Party Game GOTY",
+     "winner": {
+      "title": "Buzz! Junior: Monster Rumble",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Open World GOTY",
+     "winner": {
+      "title": "Kingdoms of Amalur: Reckoning",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Games from Slavica GOTY",
+     "winner": {
+      "title": "Yo-Kai Watch",
+      "platform": "3DS"
+     }
+    }
+   ],
+   "stats": {
+    "gamesCompleted": 46,
+    "gamesBought": 124,
+    "consolesBought": [
+     "3DS",
+     "Zelda Game&Watch"
+    ],
+    "multipleGotmWinners": [
+     {
+      "title": "Kingdoms of Amalur: Reckoning",
+      "platform": "PS3"
+     }
+    ]
+   }
+  },
+  {
+   "year": 2021,
+   "awards": [
+    {
+     "category": "Game of the Year Winner",
+     "winner": {
+      "title": "Bully",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Game of the Year Runner-Up",
+     "winner": {
+      "title": "MadWorld",
+      "platform": "Wii"
+     }
+    },
+    {
+     "category": "Game of the Year Third Place",
+     "winner": {
+      "title": "Cursed Mountain",
+      "platform": "Wii"
+     }
+    },
+    {
+     "category": "Favourite Platinum",
+     "winner": null
+    },
+    {
+     "category": "Co-op GOTY",
+     "winner": {
+      "title": "Wild Earth: African Safari",
+      "platform": "Wii"
+     }
+    },
+    {
+     "category": "Biggest Surprise",
+     "winner": {
+      "title": "Anno: Create a New World",
+      "platform": "NDS"
+     }
+    },
+    {
+     "category": "Biggest Dissapointment",
+     "winner": {
+      "title": "Scribblenauts",
+      "platform": "NDS"
+     }
+    },
+    {
+     "category": "Console of the Year",
+     "winner": {
+      "text": "Nintendo Wii"
+     }
+    },
+    {
+     "category": "Best Non-English Game",
+     "winner": {
+      "title": "Dino Crisis",
+      "platform": "PS1"
+     }
+    },
+    {
+     "category": "Best Game Not Finished",
+     "winner": {
+      "title": "Metroid Prime 3: Corruption",
+      "platform": "Wii"
+     }
+    },
+    {
+     "category": "Best Game in 🐥 Opinion",
+     "winner": {
+      "title": "Cursed Mountain",
+      "platform": "Wii"
+     }
+    },
+    {
+     "category": "Best Game of Q1",
+     "winner": {
+      "title": "Pokemon White",
+      "platform": "NDS"
+     }
+    },
+    {
+     "category": "Best Game of Q2",
+     "winner": {
+      "title": "Resistance: Fall of Man",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Best Game of Q3",
+     "winner": {
+      "title": "Madworld",
+      "platform": "Wii"
+     }
+    },
+    {
+     "category": "Best Game of Q4",
+     "winner": {
+      "title": "Bully",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Most Memorable Moment",
+     "winner": {
+      "title": "Beating Frank on Video - MadWorld",
+      "platform": "Wii"
+     }
+    },
+    {
+     "category": "Best Cover Art",
+     "winner": {
+      "title": "Bioshock Infinite",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "PS1 GOTY",
+     "winner": {
+      "title": "Dino Crisis",
+      "platform": "PS1"
+     }
+    },
+    {
+     "category": "PS Classic GOTY",
+     "winner": null
+    },
+    {
+     "category": "PS2 GOTY",
+     "winner": {
+      "title": "Bully",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "PS3 GOTY",
+     "winner": {
+      "title": "Darksiders II",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "PS4 GOTY",
+     "winner": null
+    },
+    {
+     "category": "Wii GOTY",
+     "winner": {
+      "title": "MadWorld",
+      "platform": "Wii"
+     }
+    },
+    {
+     "category": "3DS GOTY",
+     "winner": null
+    },
+    {
+     "category": "DS GOTY",
+     "winner": {
+      "title": "Pokemon White",
+      "platform": "NDS"
+     }
+    },
+    {
+     "category": "GCN GOTY",
+     "winner": null
+    },
+    {
+     "category": "SNES Classic GOTY",
+     "winner": null
+    },
+    {
+     "category": "PSP GOTY",
+     "winner": {
+      "title": "Star Wars: The Force Unleashed",
+      "platform": "PSP"
+     }
+    },
+    {
+     "category": "VITA GOTY",
+     "winner": null
+    },
+    {
+     "category": "Atari FB GOTY",
+     "winner": null
+    },
+    {
+     "category": "PC GOTY",
+     "winner": null
+    },
+    {
+     "category": "FPS GOTY",
+     "winner": {
+      "title": "Resistance: Fall of Man",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "TPS GOTY",
+     "winner": {
+      "title": "Wet",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Horror GOTY",
+     "winner": {
+      "title": "Cursed Mountain",
+      "platform": "Wii"
+     }
+    },
+    {
+     "category": "Racing Game GOTY",
+     "winner": {
+      "title": "Jak X: Combat Racing",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Fighting Game GOTY",
+     "winner": {
+      "title": "Naruto Shippuden: Ultimate Ninja Storm 2",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "RPG GOTY",
+     "winner": {
+      "title": "Key of Heaven",
+      "platform": "PSP"
+     }
+    },
+    {
+     "category": "Platformer GOTY",
+     "winner": {
+      "title": "Rayman Origins",
+      "platform": "Wii"
+     }
+    },
+    {
+     "category": "Action Game GOTY",
+     "winner": {
+      "title": "Bully",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Adventure Game GOTY",
+     "winner": {
+      "title": "Bully",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Stealth Game GOTY",
+     "winner": {
+      "title": "Manhunt 2",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Hack&Slash Game GOTY",
+     "winner": {
+      "title": "MadWorld",
+      "platform": "Wii"
+     }
+    },
+    {
+     "category": "Puzzle Game GOTY",
+     "winner": {
+      "title": "Mahjongg DS",
+      "platform": "NDS"
+     }
+    },
+    {
+     "category": "Strategy Game GOTY",
+     "winner": {
+      "title": "Kessen II",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Sports Game GOTY",
+     "winner": {
+      "title": "Pro Evolution Soccer 2010",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Party Game GOTY",
+     "winner": {
+      "title": "Just Dance 3",
+      "platform": "Wii"
+     }
+    },
+    {
+     "category": "Open World GOTY",
+     "winner": {
+      "title": "Bully",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Games from Slavica GOTY",
+     "winner": {
+      "title": "Pokemon White",
+      "platform": "NDS"
+     }
+    }
+   ],
+   "stats": {
+    "gamesCompleted": 40,
+    "gamesBought": 78,
+    "consolesBought": [
+     "DS Lite"
+    ]
+   }
+  },
+  {
+   "year": 2020,
+   "awards": [
+    {
+     "category": "Game of the Year Winner",
+     "winner": {
+      "title": "Fallout: New Vegas",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Game of the Year Runner-Up",
+     "winner": {
+      "title": "Warriors Orochi",
+      "platform": "PSP"
+     }
+    },
+    {
+     "category": "Game of the Year Third Place",
+     "winner": {
+      "title": "Bioshock",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Favourite Platinum",
+     "winner": {
+      "title": "Lightning Returns: Final Fantasy XIII",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Co-op GOTY",
+     "winner": {
+      "title": "Resident Evil 6",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Biggest Surprise",
+     "winner": {
+      "title": "Dungeon Siege 3",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Biggest Dissapointment",
+     "winner": {
+      "title": "Turok",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Console of the Year",
+     "winner": {
+      "text": "PlayStation 3"
+     }
+    },
+    {
+     "category": "Best Non-English Game",
+     "winner": {
+      "title": "Warriors Orochi",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Best Game Not Finished",
+     "winner": {
+      "title": "Uncharted 3: Drake's Deception",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Best Game in 🐥 Opinion",
+     "winner": null
+    },
+    {
+     "category": "Best Game of Q1",
+     "winner": {
+      "title": "Lightning Returns: Final Fantasy XIII",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Best Game of Q2",
+     "winner": {
+      "title": "Final Fantasy XIII",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Best Game of Q3",
+     "winner": {
+      "title": "Fallout: New Vegas",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Best Game of Q4",
+     "winner": {
+      "title": "Warriors Orochi",
+      "platform": "PSP"
+     }
+    },
+    {
+     "category": "Most Memorable Moment",
+     "winner": {
+      "title": "First Platinum - Lightning Returns: Final Fantasy XII",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Best Cover Art",
+     "winner": {
+      "title": "Fallout 3",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "PS1 GOTY",
+     "winner": null
+    },
+    {
+     "category": "PS Classic GOTY",
+     "winner": null
+    },
+    {
+     "category": "PS2 GOTY",
+     "winner": {
+      "title": "Metal Gear Solid 2: Sons of Liberty",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "PS3 GOTY",
+     "winner": {
+      "title": "Fallout: New Vegas",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "PS4 GOTY",
+     "winner": null
+    },
+    {
+     "category": "Wii GOTY",
+     "winner": null
+    },
+    {
+     "category": "3DS GOTY",
+     "winner": null
+    },
+    {
+     "category": "DS GOTY",
+     "winner": {
+      "title": "Harvest Fishing",
+      "platform": "NDS"
+     }
+    },
+    {
+     "category": "GCN GOTY",
+     "winner": null
+    },
+    {
+     "category": "SNES Classic GOTY",
+     "winner": null
+    },
+    {
+     "category": "PSP GOTY",
+     "winner": {
+      "title": "Warriors Orochi",
+      "platform": "PSP"
+     }
+    },
+    {
+     "category": "VITA GOTY",
+     "winner": null
+    },
+    {
+     "category": "Atari FB GOTY",
+     "winner": null
+    },
+    {
+     "category": "PC GOTY",
+     "winner": null
+    },
+    {
+     "category": "FPS GOTY",
+     "winner": {
+      "title": "Bioshock",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "TPS GOTY",
+     "winner": {
+      "title": "Resident Evil 6",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Horror GOTY",
+     "winner": {
+      "title": "Resident Evil 6",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Racing Game GOTY",
+     "winner": {
+      "title": "Gran Turismo 5",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Fighting Game GOTY",
+     "winner": {
+      "title": "One Piece Grand Adventure",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "RPG GOTY",
+     "winner": {
+      "title": "Fallout: New Vegas",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Platformer GOTY",
+     "winner": {
+      "title": "LittleBigPlanet 2",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Action Game GOTY",
+     "winner": {
+      "title": "Warriors Orochi",
+      "platform": "PSP"
+     }
+    },
+    {
+     "category": "Adventure Game GOTY",
+     "winner": {
+      "title": "Batman: Arkham City",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Stealth Game GOTY",
+     "winner": {
+      "title": "Metal Gear Solid 2: Sons of Liberty",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Hack&Slash Game GOTY",
+     "winner": {
+      "title": "Warriors Orochi",
+      "platform": "PSP"
+     }
+    },
+    {
+     "category": "Puzzle Game GOTY",
+     "winner": null
+    },
+    {
+     "category": "Strategy Game GOTY",
+     "winner": {
+      "title": "Tom Clancy's Rainbow Six: Vegas 2",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Sports Game GOTY",
+     "winner": {
+      "title": "Virtua Tennis 3",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Party Game GOTY",
+     "winner": null
+    },
+    {
+     "category": "Open World GOTY",
+     "winner": {
+      "title": "Fallout: New Vegas",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Games from Slavica GOTY",
+     "winner": {
+      "title": "Bioshock",
+      "platform": "PS3"
+     }
+    }
+   ],
+   "stats": {
+    "gamesCompleted": 34,
+    "gamesBought": 43,
+    "multipleGotmWinners": [
+     {
+      "title": "Warriors Orochi",
+      "platform": "PSP"
+     }
+    ]
+   }
+  },
+  {
+   "year": 2019,
+   "awards": [
+    {
+     "category": "Game of the Year Winner",
+     "winner": {
+      "title": "Metal Gear Solid: Peacewalker",
+      "platform": "PSP"
+     }
+    },
+    {
+     "category": "Game of the Year Runner-Up",
+     "winner": {
+      "title": "Heavy Rain",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Game of the Year Third Place",
+     "winner": {
+      "title": "DMC Devil May Cry",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Favourite Platinum",
+     "winner": null
+    },
+    {
+     "category": "Co-op GOTY",
+     "winner": {
+      "title": "Resident Evil 5",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Biggest Surprise",
+     "winner": {
+      "title": "Alone in the Dark: Inferno",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Biggest Dissapointment",
+     "winner": {
+      "title": "Metal Gear Ac!d",
+      "platform": "PSP"
+     }
+    },
+    {
+     "category": "Console of the Year",
+     "winner": {
+      "text": "PlayStation 3"
+     }
+    },
+    {
+     "category": "Best Non-English Game",
+     "winner": {
+      "title": "Pokémon Mystery Dungeon: Blue Rescue Team",
+      "platform": "NDS"
+     }
+    },
+    {
+     "category": "Best Game Not Finished",
+     "winner": {
+      "title": "Metal Gear Ac!d",
+      "platform": "PSP"
+     }
+    },
+    {
+     "category": "Best Game in 🐥 Opinion",
+     "winner": null
+    },
+    {
+     "category": "Best Game of Q1",
+     "winner": {
+      "title": "Devil May Cry 3 Special Edition",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "Best Game of Q2",
+     "winner": {
+      "title": "Metal Gear Solid: Peacewalker",
+      "platform": "PSP"
+     }
+    },
+    {
+     "category": "Best Game of Q3",
+     "winner": {
+      "title": "DMC Devil May Cry",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Best Game of Q4",
+     "winner": {
+      "title": "L.A. Noire",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Most Memorable Moment",
+     "winner": {
+      "title": "First Step in Mojave Desert - Fallout: New Vegas",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Best Cover Art",
+     "winner": {
+      "title": "Lightning Returns: Final Fantasy XIII",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "PS1 GOTY",
+     "winner": null
+    },
+    {
+     "category": "PS Classic GOTY",
+     "winner": null
+    },
+    {
+     "category": "PS2 GOTY",
+     "winner": {
+      "title": "Devil May Cry 3 Special Edition",
+      "platform": "PS2"
+     }
+    },
+    {
+     "category": "PS3 GOTY",
+     "winner": {
+      "title": "Heavy Rain",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "PS4 GOTY",
+     "winner": null
+    },
+    {
+     "category": "Wii GOTY",
+     "winner": null
+    },
+    {
+     "category": "3DS GOTY",
+     "winner": null
+    },
+    {
+     "category": "DS GOTY",
+     "winner": {
+      "title": "Pokémon Mystery Dungeon: Blue Rescue Team",
+      "platform": "NDS"
+     }
+    },
+    {
+     "category": "GCN GOTY",
+     "winner": null
+    },
+    {
+     "category": "SNES Classic GOTY",
+     "winner": {
+      "title": "Earthbound",
+      "platform": "SNES Classic"
+     }
+    },
+    {
+     "category": "PSP GOTY",
+     "winner": {
+      "title": "Metal Gear Solid: Peacewalker",
+      "platform": "PSP"
+     }
+    },
+    {
+     "category": "VITA GOTY",
+     "winner": null
+    },
+    {
+     "category": "Atari FB GOTY",
+     "winner": null
+    },
+    {
+     "category": "PC GOTY",
+     "winner": null
+    },
+    {
+     "category": "FPS GOTY",
+     "winner": {
+      "title": "The Darkness",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "TPS GOTY",
+     "winner": {
+      "title": "Resident Evil 5",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Horror GOTY",
+     "winner": {
+      "title": "Alone in the Dark: Inferno",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "RPG GOTY",
+     "winner": {
+      "title": "Earthbound",
+      "platform": "SNES Classic"
+     }
+    },
+    {
+     "category": "Platformer GOTY",
+     "winner": {
+      "title": "LittleBigPlanet",
+      "platform": "PSP"
+     }
+    },
+    {
+     "category": "Action Game GOTY",
+     "winner": {
+      "title": "Metal Gear Solid: Peacewalker",
+      "platform": "PSP"
+     }
+    },
+    {
+     "category": "Adventure Game GOTY",
+     "winner": {
+      "title": "Heavy Rain",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Stealth Game GOTY",
+     "winner": {
+      "title": "Metal Gear Solid: Peacewalker",
+      "platform": "PSP"
+     }
+    },
+    {
+     "category": "Hack&Slash Game GOTY",
+     "winner": {
+      "title": "DMC Devil May Cry",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Puzzle Game GOTY",
+     "winner": {
+      "title": "Professor Layton and the Curious Village",
+      "platform": "NDS"
+     }
+    },
+    {
+     "category": "Strategy Game GOTY",
+     "winner": {
+      "title": "Metal Gear Ac!d",
+      "platform": "PSP"
+     }
+    },
+    {
+     "category": "Sports Game GOTY",
+     "winner": null
+    },
+    {
+     "category": "Party Game GOTY",
+     "winner": {
+      "title": "Mario Party DS",
+      "platform": "NDS"
+     }
+    },
+    {
+     "category": "Open World GOTY",
+     "winner": {
+      "title": "L.A. Noire",
+      "platform": "PS3"
+     }
+    },
+    {
+     "category": "Games from Slavica GOTY",
+     "winner": {
+      "title": "DMC Devil May Cry",
+      "platform": "PS3"
+     }
+    }
+   ],
+   "stats": {
+    "gamesCompleted": 28,
+    "gamesBought": 57,
+    "consolesBought": [
+     "PS3"
+    ],
+    "multipleGotmWinners": [
+     {
+      "title": "Innocent Life",
+      "platform": "PSP"
+     },
+     {
+      "title": "Metal Gear Solid: Peacewalker",
+      "platform": "PSP"
+     }
+    ]
+   }
+  }
+ ]
+}

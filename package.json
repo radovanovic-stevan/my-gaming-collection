@@ -8,7 +8,8 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "import:tsv": "node scripts/import-tsv.mjs",
-    "covers:fetch": "node scripts/fetch-covers.mjs"
+    "covers:fetch": "node scripts/fetch-covers.mjs",
+    "import:awards": "node scripts/import-awards.mjs"
   },
   "dependencies": {
     "react": "^19.3.0",
