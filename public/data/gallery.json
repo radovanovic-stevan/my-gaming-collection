@@ -1,5 +1,12 @@
 [
  {
+  "id": 2,
+  "image": "gallery-2-880ec299.jpg",
+  "date": "2026-06-01",
+  "description": "Palermo, Chioschetto del Videogioco",
+  "games": []
+ },
+ {
   "id": 1,
   "image": "gallery-1-57424027.jpg",
   "date": "2026-05-30",
