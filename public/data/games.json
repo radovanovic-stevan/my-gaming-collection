@@ -1357,8 +1357,10 @@
    "Cover*"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "61-230b8ce1.jpg"
+  ],
+  "cover": "61-230b8ce1.jpg"
  },
  {
   "id": 62,
@@ -4122,8 +4124,10 @@
    "Manual"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "183-4509d960.jpg"
+  ],
+  "cover": "183-4509d960.jpg"
  },
  {
   "id": 184,
@@ -6048,8 +6052,10 @@
    "Manual"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "269-02b78117.jpg"
+  ],
+  "cover": "269-02b78117.jpg"
  },
  {
   "id": 270,
@@ -7510,8 +7516,10 @@
    "Manual"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "332-89cd362d.jpg"
+  ],
+  "cover": "332-89cd362d.jpg"
  },
  {
   "id": 333,
