@@ -26,6 +26,7 @@ interface FormState {
   genres: string[];
   condition: string[];
   edition: string;
+  trophies: string;
 }
 
 const today = () => new Date().toISOString().slice(0, 10);
@@ -54,6 +55,7 @@ function toForm(g: Game | null): FormState {
     genres: g?.genres ?? [],
     condition: g?.condition ?? ['Box', 'Cover', 'Manual'],
     edition: g?.edition ?? '',
+    trophies: g?.trophies ?? '',
   };
 }
 
@@ -72,6 +74,7 @@ function toInput(f: FormState): GameInput {
     genres: f.genres,
     condition: f.condition,
     edition: f.edition,
+    trophies: f.trophies.trim() || null,
   };
 }
 
@@ -221,6 +224,10 @@ export function GameForm({ game, allGames, onSaved, onClose }: Props) {
           <label className="field span-2">
             <span>Edition</span>
             <input placeholder="e.g. Platinum, GOTY" {...field('edition')} />
+          </label>
+          <label className="field span-2">
+            <span>Trophies (PSNProfiles link)</span>
+            <input type="url" placeholder="https://psnprofiles.com/trophies/…" {...field('trophies')} />
           </label>
           <div className="field span-2">
             <span>Genres</span>

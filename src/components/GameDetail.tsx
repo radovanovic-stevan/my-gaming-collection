@@ -34,6 +34,13 @@ export function GameDetail({ game, onClose, onPrev, onNext, actions }: Props) {
     ['Condition', game.condition.join(', ') || '—'],
     ['Edition', game.edition || '—'],
   ];
+  if (game.trophies)
+    rows.push([
+      'Trophies',
+      <a href={game.trophies} target="_blank" rel="noreferrer">
+        View on PSNProfiles ↗
+      </a>,
+    ]);
 
   return (
     <div className="modal-backdrop" onClick={onClose}>

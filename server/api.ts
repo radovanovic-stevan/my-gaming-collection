@@ -88,6 +88,14 @@ function num(v: unknown, field: string): number | null {
   return n;
 }
 
+/** A PSNProfiles trophy-list link, or null. */
+function trophiesUrl(v: unknown): string | null {
+  const url = str(v);
+  if (!url) return null;
+  if (!/^https:\/\/psnprofiles\.com\/trophies\/\S+$/.test(url)) throw new HttpError(400, 'Trophies must be a https://psnprofiles.com/trophies/… link');
+  return url;
+}
+
 /** Whitelists and normalizes the editable fields of a game. */
 function sanitize(input: Record<string, unknown>): Omit<Game, 'id' | 'images' | 'cover'> {
   const title = str(input.title);
@@ -109,6 +117,7 @@ function sanitize(input: Record<string, unknown>): Omit<Game, 'id' | 'images' | 
     genres: strList(input.genres),
     condition: strList(input.condition),
     edition: str(input.edition),
+    trophies: trophiesUrl(input.trophies),
   };
 }
 
