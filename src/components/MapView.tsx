@@ -1,8 +1,8 @@
 import { useMemo, useState } from 'react';
-import { geoEqualEarth, geoPath } from 'd3-geo';
+import { geoArea, geoCentroid, geoDistance, geoEqualEarth, geoPath } from 'd3-geo';
 import { feature, merge } from 'topojson-client';
 import type { Topology, GeometryCollection } from 'topojson-specification';
-import type { Feature, Geometry } from 'geojson';
+import type { Feature, Geometry, Polygon } from 'geojson';
 import world from 'world-atlas/countries-50m.json';
 import type { Game } from '../types';
 import { Cover } from './Cover';
@@ -31,9 +31,28 @@ const countries = (feature(topology, topology.objects.countries).features as Cou
     // Merging the shapes drops the border between them.
     return parts.length > 1 ? { ...f, geometry: merge(topology, parts as never) } : f;
   });
+/** How far (in degrees) a piece of a country can be from its largest landmass and still count as the country. */
+const NEAR = 25;
+
+/**
+ * Splits off the pieces of a country far from its mainland (French Guiana and Réunion for France,
+ * the Caribbean islands for the Netherlands), so only the mainland takes the country's colour.
+ */
+function splitOverseas(f: Country): { home: Country; overseas: Polygon[] } {
+  if (f.geometry.type !== 'MultiPolygon') return { home: f, overseas: [] };
+  const parts: Polygon[] = f.geometry.coordinates.map((coordinates) => ({ type: 'Polygon', coordinates }));
+  const main = geoCentroid(parts.reduce((a, b) => (geoArea(b) > geoArea(a) ? b : a)));
+  const isNear = (p: Polygon) => (geoDistance(geoCentroid(p), main) * 180) / Math.PI <= NEAR;
+  const home = parts.filter(isNear);
+  return { home: { ...f, geometry: { type: 'MultiPolygon', coordinates: home.map((p) => p.coordinates) } }, overseas: parts.filter((p) => !isNear(p)) };
+}
+
+const split = countries.map(splitOverseas);
 const projection = geoEqualEarth().fitSize([WIDTH, HEIGHT], { type: 'FeatureCollection', features: countries });
 const path = geoPath(projection);
-const shapes = countries.map((f) => ({ name: f.properties.name, d: path(f) ?? '' }));
+const shapes = split.map(({ home }) => ({ name: home.properties.name, d: path(home) ?? '' }));
+// Overseas pieces are still drawn as land, just not as part of their country.
+const overseas = split.flatMap(({ overseas }) => overseas).map((p) => path(p) ?? '');
 
 /** The default view: Europe, from Iceland and Portugal across to the Urals' foothills. */
 const EUROPE = (() => {
@@ -87,6 +106,9 @@ export default function MapView({ games, onOpen }: Props) {
 
       <div className="world-map" onMouseLeave={() => setHover(null)}>
         <svg viewBox={viewBox} style={{ '--map-scale': scale } as React.CSSProperties} role="img" aria-label="World map of where games were bought">
+          {overseas.map((d, i) => (
+            <path key={`overseas-${i}`} d={d} className="country" />
+          ))}
           {shapes.map((s) => {
             const n = byCountry.get(s.name)?.length ?? 0;
             return (
