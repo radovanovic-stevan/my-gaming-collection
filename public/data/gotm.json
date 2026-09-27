@@ -2,7 +2,7 @@
  {
   "month": "2026-09",
   "gameOfTheMonth": null,
-  "completed": null,
+  "completed": 5,
   "bought": null,
   "played": [
    {
@@ -33,7 +33,7 @@
    {
     "title": "Time Crisis 4",
     "platform": "PS3",
-    "status": null
+    "status": "completed"
    }
   ]
  },

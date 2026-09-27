@@ -25507,10 +25507,10 @@
   "title": "Time Crisis 4",
   "platform": "PS3",
   "acquired": "2026-08-08",
-  "completed": null,
-  "status": "Not Completed",
-  "rating": null,
-  "timesCompleted": 0,
+  "completed": "2026-09-27",
+  "status": "Completed",
+  "rating": 64,
+  "timesCompleted": 1,
   "percent": null,
   "playtime": null,
   "genres": [
@@ -25521,6 +25521,7 @@
    "Cover"
   ],
   "edition": "",
+  "trophies": null,
   "boughtIn": "Serbia",
   "images": [],
   "cover": null
