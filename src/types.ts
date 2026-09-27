@@ -20,6 +20,8 @@ export interface Game {
   edition: string;
   /** Link to this game's trophy list on PSNProfiles, for games with trophies. */
   trophies?: string | null;
+  /** Country the copy was bought in (or, for a gift, where the giver got it). Named as on the world map. */
+  boughtIn?: string | null;
   /** File names inside public/images. */
   images: string[];
   /** The image shown as the game's cover; always one of `images`. */

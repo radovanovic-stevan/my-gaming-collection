@@ -118,6 +118,7 @@ function sanitize(input: Record<string, unknown>): Omit<Game, 'id' | 'images' | 
     condition: strList(input.condition),
     edition: str(input.edition),
     trophies: trophiesUrl(input.trophies),
+    boughtIn: nullableStr(input.boughtIn),
   };
 }
 

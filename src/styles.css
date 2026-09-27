@@ -2178,3 +2178,88 @@ div.gallery-main {
     max-height: none;
   }
 }
+
+/* --- Map ----------------------------------------------------------------------- */
+
+.world-map {
+  position: relative;
+  margin: 8px 0 16px;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-elev);
+}
+
+.world-map svg {
+  display: block;
+  transition: none;
+  width: 100%;
+  height: auto;
+}
+
+.country {
+  fill: var(--bg-sunk);
+  stroke: var(--border);
+  stroke-width: calc(0.4px / var(--map-scale, 1));
+}
+
+.country.has-games {
+  cursor: pointer;
+}
+
+.country:hover {
+  stroke: var(--fg-muted);
+  stroke-width: calc(0.8px / var(--map-scale, 1));
+}
+
+.country.selected {
+  stroke: var(--fg);
+  stroke-width: calc(1.2px / var(--map-scale, 1));
+}
+
+.map-tooltip {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: var(--fg);
+  color: var(--bg);
+  font-size: 12.5px;
+  white-space: nowrap;
+  pointer-events: none;
+  transform: translate(-50%, calc(-100% - 12px));
+}
+
+.map-countries {
+  margin-bottom: 16px;
+  align-items: center;
+}
+
+.map-games {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 6px 16px;
+}
+
+.map-game {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 4px;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  text-align: left;
+  font-size: 13px;
+}
+
+.map-game:hover {
+  background: var(--bg-sunk);
+}

@@ -22,6 +22,11 @@ last year's categories), The all-time top-5 lists are
 worked out from the collection's ratings (ties go to the most recently completed game), so they
 update by themselves.
 
+The **Map** tab shows where the games were bought. Each game has a **Bought in** country
+(for a gift, where the giver bought it), set in the game's edit form. Hovering a country shows
+how many games came from it, and clicking it lists them. The map opens on Europe; a button
+switches to the whole world.
+
 The **Gallery** tab holds free-form pictures: add a picture (drop, pick, paste or fetch it
 from a URL), its date, a description and the games shown in it, if any. Pictures are resized
 to 1600px. The static build has no API, so it's view-only.

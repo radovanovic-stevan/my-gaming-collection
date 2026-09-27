@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { Suspense, lazy, useCallback, useEffect, useMemo, useState } from 'react';
 import type { Game, GalleryEntry, GotcData, GotmMonth, Query, SortKey } from './types';
 import { DEFAULT_QUERY, SORT_LABELS, applyQuery, paramsToQuery, queryToParams } from './lib/query';
 import { Filters } from './components/Filters';
@@ -11,19 +11,22 @@ import { ImageManager } from './components/ImageManager';
 import { GotmView } from './components/GotmView';
 import { GotcView } from './components/GotcView';
 import { GalleryView } from './components/GalleryView';
+// The map carries the world's country shapes, so it's only loaded when opened.
+const MapView = lazy(() => import('./components/MapView'));
 import { api, detectEditing } from './lib/api';
 import { createLinker } from './lib/links';
 
-type Tab = 'collection' | 'gotm' | 'gotc' | 'gallery';
+type Tab = 'collection' | 'gotm' | 'gotc' | 'gallery' | 'map';
 const TABS: { id: Tab; label: string; short: string }[] = [
   { id: 'collection', label: 'Collection', short: 'Collection' },
   { id: 'gotm', label: 'Game of the Month', short: 'GOTM' },
   { id: 'gotc', label: 'Game of the Category', short: 'GOTC' },
   { id: 'gallery', label: 'Gallery', short: 'Gallery' },
+  { id: 'map', label: 'Map', short: 'Map' },
 ];
 const tabFromUrl = (): Tab => {
   const t = new URLSearchParams(location.search).get('tab');
-  return t === 'gotm' || t === 'gotc' || t === 'gallery' ? t : 'collection';
+  return t === 'gotm' || t === 'gotc' || t === 'gallery' || t === 'map' ? t : 'collection';
 };
 
 /** Fetches a JSON file from public/data the first time it's needed. */
@@ -186,6 +189,12 @@ export default function App() {
         ) : (
           <div className="empty">{gallery.error ? `Couldn't load the gallery: ${gallery.error}` : 'Loading…'}</div>
         ))}
+
+      {tab === 'map' && (
+        <Suspense fallback={<div className="empty">Loading map…</div>}>
+          <MapView games={games} onOpen={(g) => showDetail(g.id)} />
+        </Suspense>
+      )}
 
       {tab === 'collection' && (
         <>

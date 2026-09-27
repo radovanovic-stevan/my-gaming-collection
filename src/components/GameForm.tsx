@@ -4,6 +4,7 @@ import { STATUSES } from '../types';
 import { api, type GameInput } from '../lib/api';
 import { facet } from '../lib/query';
 import { genreLabel } from '../lib/format';
+import { COUNTRIES } from '../lib/countries';
 
 interface Props {
   /** Game to edit, or null to add a new one. */
@@ -27,6 +28,7 @@ interface FormState {
   condition: string[];
   edition: string;
   trophies: string;
+  boughtIn: string;
 }
 
 const today = () => new Date().toISOString().slice(0, 10);
@@ -56,6 +58,7 @@ function toForm(g: Game | null): FormState {
     condition: g?.condition ?? ['Box', 'Cover', 'Manual'],
     edition: g?.edition ?? '',
     trophies: g?.trophies ?? '',
+    boughtIn: g?.boughtIn ?? '',
   };
 }
 
@@ -75,6 +78,7 @@ function toInput(f: FormState): GameInput {
     condition: f.condition,
     edition: f.edition,
     trophies: f.trophies.trim() || null,
+    boughtIn: f.boughtIn.trim() || null,
   };
 }
 
@@ -224,6 +228,15 @@ export function GameForm({ game, allGames, onSaved, onClose }: Props) {
           <label className="field span-2">
             <span>Edition</span>
             <input placeholder="e.g. Platinum, GOTY" {...field('edition')} />
+          </label>
+          <label className="field span-2">
+            <span>Bought in</span>
+            <input list="countries" placeholder="Country, e.g. Spain (for a gift: where the giver bought it)" {...field('boughtIn')} />
+            <datalist id="countries">
+              {COUNTRIES.map((c) => (
+                <option key={c} value={c} />
+              ))}
+            </datalist>
           </label>
           <label className="field span-2">
             <span>Trophies (PSNProfiles link)</span>

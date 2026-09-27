@@ -33,6 +33,7 @@ export function GameDetail({ game, onClose, onPrev, onNext, actions }: Props) {
     ['Playtime', formatPlaytime(game.playtime)],
     ['Condition', game.condition.join(', ') || '—'],
     ['Edition', game.edition || '—'],
+    ['Bought in', game.boughtIn || '—'],
   ];
   if (game.trophies)
     rows.push([
