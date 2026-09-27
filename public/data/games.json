@@ -526,8 +526,10 @@
    "Box"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "24-0b25b0aa.jpg"
+  ],
+  "cover": "24-0b25b0aa.jpg"
  },
  {
   "id": 25,
@@ -646,8 +648,10 @@
    "Box"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "29-c90c1bd7.jpg"
+  ],
+  "cover": "29-c90c1bd7.jpg"
  },
  {
   "id": 30,
@@ -766,8 +770,10 @@
    "Cover"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "34-026c457c.jpg"
+  ],
+  "cover": "34-026c457c.jpg"
  },
  {
   "id": 35,
@@ -861,8 +867,10 @@
    "Cover*"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "38-a399fcad.jpg"
+  ],
+  "cover": "38-a399fcad.jpg"
  },
  {
   "id": 39,
@@ -933,8 +941,10 @@
    "Cover*"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "41-172274cb.jpg"
+  ],
+  "cover": "41-172274cb.jpg"
  },
  {
   "id": 42,
@@ -1033,8 +1043,10 @@
    "Manual"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "45-f051a261.jpg"
+  ],
+  "cover": "45-f051a261.jpg"
  },
  {
   "id": 46,
@@ -1347,8 +1359,10 @@
    "Cover*"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "58-e448055e.jpg"
+  ],
+  "cover": "58-e448055e.jpg"
  },
  {
   "id": 59,
@@ -1369,8 +1383,10 @@
    "Cover*"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "59-b795a4e9.jpg"
+  ],
+  "cover": "59-b795a4e9.jpg"
  },
  {
   "id": 60,
@@ -1546,8 +1562,10 @@
    "Manual"
   ],
   "edition": "Essentials",
-  "images": [],
-  "cover": null
+  "images": [
+   "66-6705a756.jpg"
+  ],
+  "cover": "66-6705a756.jpg"
  },
  {
   "id": 67,
@@ -1620,8 +1638,10 @@
    "Manual"
   ],
   "edition": "Platinum",
-  "images": [],
-  "cover": null
+  "images": [
+   "69-64028698.jpg"
+  ],
+  "cover": "69-64028698.jpg"
  },
  {
   "id": 70,
@@ -1768,8 +1788,10 @@
    "Cover"
   ],
   "edition": "Essentials",
-  "images": [],
-  "cover": null
+  "images": [
+   "75-b7ba16e5.jpg"
+  ],
+  "cover": "75-b7ba16e5.jpg"
  },
  {
   "id": 76,
@@ -1964,8 +1986,10 @@
    "Box"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "83-eb5b0da9.jpg"
+  ],
+  "cover": "83-eb5b0da9.jpg"
  },
  {
   "id": 84,
@@ -3936,8 +3960,10 @@
    "Manual"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "170-77716ded.jpg"
+  ],
+  "cover": "170-77716ded.jpg"
  },
  {
   "id": 171,
@@ -4138,8 +4164,10 @@
    "Box"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "179-7f66240f.jpg"
+  ],
+  "cover": "179-7f66240f.jpg"
  },
  {
   "id": 180,
@@ -5000,8 +5028,10 @@
    "Box"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "216-c4eaa4e8.jpg"
+  ],
+  "cover": "216-c4eaa4e8.jpg"
  },
  {
   "id": 217,
@@ -6157,8 +6187,10 @@
    "Manual"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "267-df31da95.jpg"
+  ],
+  "cover": "267-df31da95.jpg"
  },
  {
   "id": 268,
@@ -6993,8 +7025,10 @@
    "Box"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "302-c576ce97.jpg"
+  ],
+  "cover": "302-c576ce97.jpg"
  },
  {
   "id": 303,
@@ -7014,8 +7048,10 @@
    "Box"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "303-bcf3d041.jpg"
+  ],
+  "cover": "303-bcf3d041.jpg"
  },
  {
   "id": 304,
@@ -7033,8 +7069,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "304-6b95ce7d.jpg"
+  ],
+  "cover": "304-6b95ce7d.jpg"
  },
  {
   "id": 305,
@@ -7054,8 +7092,10 @@
    "Box"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "305-df74adbb.jpg"
+  ],
+  "cover": "305-df74adbb.jpg"
  },
  {
   "id": 306,
@@ -7074,8 +7114,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "306-925daf3d.jpg"
+  ],
+  "cover": "306-925daf3d.jpg"
  },
  {
   "id": 307,
@@ -7094,8 +7136,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "307-d76eec56.jpg"
+  ],
+  "cover": "307-d76eec56.jpg"
  },
  {
   "id": 308,
@@ -7706,8 +7750,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "333-f82a7031.jpg"
+  ],
+  "cover": "333-f82a7031.jpg"
  },
  {
   "id": 334,
@@ -8568,8 +8614,10 @@
    "Manual"
   ],
   "edition": "Essentials",
-  "images": [],
-  "cover": null
+  "images": [
+   "370-3d1951c6.jpg"
+  ],
+  "cover": "370-3d1951c6.jpg"
  },
  {
   "id": 371,
@@ -9246,8 +9294,10 @@
    "Cover"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "399-cc8f9a61.jpg"
+  ],
+  "cover": "399-cc8f9a61.jpg"
  },
  {
   "id": 400,
@@ -9269,8 +9319,10 @@
    "Manual"
   ],
   "edition": "PSP The Best",
-  "images": [],
-  "cover": null
+  "images": [
+   "400-43100d92.jpg"
+  ],
+  "cover": "400-43100d92.jpg"
  },
  {
   "id": 401,
@@ -12254,8 +12306,10 @@
    "Box"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "529-28c05b38.jpg"
+  ],
+  "cover": "529-28c05b38.jpg"
  },
  {
   "id": 530,
@@ -14374,8 +14428,10 @@
    "Manual"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "620-b9fadf8e.jpg"
+  ],
+  "cover": "620-b9fadf8e.jpg"
  },
  {
   "id": 621,
@@ -16569,7 +16625,8 @@
   ],
   "edition": "",
   "images": [
-   "712-673d0553.jpg"
+   "712-673d0553.jpg",
+   "712-00f70d95.jpg"
   ],
   "cover": "712-673d0553.jpg"
  },
@@ -23668,8 +23725,10 @@
    "Box"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "1021-bca7202d.jpg"
+  ],
+  "cover": "1021-bca7202d.jpg"
  },
  {
   "id": 1022,
