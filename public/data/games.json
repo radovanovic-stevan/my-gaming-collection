@@ -280,8 +280,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "13-5641e0a7.jpg"
+  ],
+  "cover": "13-5641e0a7.jpg"
  },
  {
   "id": 14,
@@ -299,8 +301,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "14-8aad60e1.jpg"
+  ],
+  "cover": "14-8aad60e1.jpg"
  },
  {
   "id": 15,
@@ -318,8 +322,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "15-549f1150.jpg"
+  ],
+  "cover": "15-549f1150.jpg"
  },
  {
   "id": 16,
@@ -337,8 +343,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "16-4da9018b.jpg"
+  ],
+  "cover": "16-4da9018b.jpg"
  },
  {
   "id": 17,
@@ -356,8 +364,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "17-775ed525.jpg"
+  ],
+  "cover": "17-775ed525.jpg"
  },
  {
   "id": 18,
@@ -375,8 +385,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "18-55939ce8.jpg"
+  ],
+  "cover": "18-55939ce8.jpg"
  },
  {
   "id": 19,
@@ -394,8 +406,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "19-66d7f999.jpg"
+  ],
+  "cover": "19-66d7f999.jpg"
  },
  {
   "id": 20,
@@ -413,8 +427,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "20-cef80705.jpg"
+  ],
+  "cover": "20-cef80705.jpg"
  },
  {
   "id": 21,
@@ -2379,8 +2395,10 @@
   "genres": [],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "102-5e8dc677.jpg"
+  ],
+  "cover": "102-5e8dc677.jpg"
  },
  {
   "id": 103,
@@ -2398,8 +2416,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "103-a41ef2cb.jpg"
+  ],
+  "cover": "103-a41ef2cb.jpg"
  },
  {
   "id": 104,
@@ -2417,8 +2437,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "104-1177c9ae.jpg"
+  ],
+  "cover": "104-1177c9ae.jpg"
  },
  {
   "id": 105,
@@ -2437,8 +2459,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "105-8e1c6cb7.jpg"
+  ],
+  "cover": "105-8e1c6cb7.jpg"
  },
  {
   "id": 106,
@@ -2457,8 +2481,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "106-3a633c37.jpg"
+  ],
+  "cover": "106-3a633c37.jpg"
  },
  {
   "id": 107,
@@ -4786,8 +4812,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "208-85ff45b1.jpg"
+  ],
+  "cover": "208-85ff45b1.jpg"
  },
  {
   "id": 209,
@@ -4992,8 +5020,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "217-047053c8.jpg"
+  ],
+  "cover": "217-047053c8.jpg"
  },
  {
   "id": 218,
@@ -5012,8 +5042,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "218-6483f4ba.jpg"
+  ],
+  "cover": "218-6483f4ba.jpg"
  },
  {
   "id": 219,
@@ -5031,8 +5063,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "219-551cd839.jpg"
+  ],
+  "cover": "219-551cd839.jpg"
  },
  {
   "id": 220,
@@ -5051,8 +5085,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "220-65d3961d.jpg"
+  ],
+  "cover": "220-65d3961d.jpg"
  },
  {
   "id": 221,
@@ -5071,8 +5107,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "221-c0114aca.jpg"
+  ],
+  "cover": "221-c0114aca.jpg"
  },
  {
   "id": 222,
@@ -5090,8 +5128,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "222-4e47e57b.jpg"
+  ],
+  "cover": "222-4e47e57b.jpg"
  },
  {
   "id": 223,
@@ -5913,8 +5953,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "258-478d900c.jpg"
+  ],
+  "cover": "258-478d900c.jpg"
  },
  {
   "id": 259,
@@ -5932,8 +5974,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "259-c0ea5c22.jpg"
+  ],
+  "cover": "259-c0ea5c22.jpg"
  },
  {
   "id": 260,
@@ -5951,8 +5995,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "260-356d31b1.jpg"
+  ],
+  "cover": "260-356d31b1.jpg"
  },
  {
   "id": 261,
@@ -5970,8 +6016,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "261-fc6ba73c.jpg"
+  ],
+  "cover": "261-fc6ba73c.jpg"
  },
  {
   "id": 262,
@@ -5989,8 +6037,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "262-5dce9a5f.jpg"
+  ],
+  "cover": "262-5dce9a5f.jpg"
  },
  {
   "id": 263,
@@ -8304,8 +8354,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "361-48699811.jpg"
+  ],
+  "cover": "361-48699811.jpg"
  },
  {
   "id": 362,
@@ -8323,8 +8375,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "362-227d3e57.jpg"
+  ],
+  "cover": "362-227d3e57.jpg"
  },
  {
   "id": 363,
@@ -9279,8 +9333,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "403-50a5d552.jpg"
+  ],
+  "cover": "403-50a5d552.jpg"
  },
  {
   "id": 404,
@@ -10369,8 +10425,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "450-44806b25.jpg"
+  ],
+  "cover": "450-44806b25.jpg"
  },
  {
   "id": 451,
@@ -10389,8 +10447,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "451-8ac7f5c1.jpg"
+  ],
+  "cover": "451-8ac7f5c1.jpg"
  },
  {
   "id": 452,
@@ -12633,8 +12693,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "548-d87c3f6a.jpg"
+  ],
+  "cover": "548-d87c3f6a.jpg"
  },
  {
   "id": 549,
@@ -12652,8 +12714,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "549-e2a94295.jpg"
+  ],
+  "cover": "549-e2a94295.jpg"
  },
  {
   "id": 550,
@@ -13894,8 +13958,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "602-ed6c286f.jpg"
+  ],
+  "cover": "602-ed6c286f.jpg"
  },
  {
   "id": 603,
@@ -13914,8 +13980,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "603-acb77588.jpg"
+  ],
+  "cover": "603-acb77588.jpg"
  },
  {
   "id": 604,
@@ -13933,8 +14001,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "604-c3a8fbb2.jpg"
+  ],
+  "cover": "604-c3a8fbb2.jpg"
  },
  {
   "id": 605,
@@ -13953,8 +14023,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "605-e65a2592.jpg"
+  ],
+  "cover": "605-e65a2592.jpg"
  },
  {
   "id": 606,
@@ -13973,8 +14045,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "606-745fecfe.jpg"
+  ],
+  "cover": "606-745fecfe.jpg"
  },
  {
   "id": 607,
@@ -13992,8 +14066,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "607-2da1a3e5.jpg"
+  ],
+  "cover": "607-2da1a3e5.jpg"
  },
  {
   "id": 608,
@@ -22275,8 +22351,10 @@
    "Manual"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "964-2edd7bac.jpg"
+  ],
+  "cover": "964-2edd7bac.jpg"
  },
  {
   "id": 965,
@@ -23917,8 +23995,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "1035-61413775.jpg"
+  ],
+  "cover": "1035-61413775.jpg"
  },
  {
   "id": 1036,
@@ -23936,8 +24016,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "1036-834dd58d.jpg"
+  ],
+  "cover": "1036-834dd58d.jpg"
  },
  {
   "id": 1037,
@@ -23955,8 +24037,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "1037-db10fb4e.jpg"
+  ],
+  "cover": "1037-db10fb4e.jpg"
  },
  {
   "id": 1038,
@@ -23974,8 +24058,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "1038-0cdd70ee.jpg"
+  ],
+  "cover": "1038-0cdd70ee.jpg"
  },
  {
   "id": 1039,
@@ -23993,8 +24079,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "1039-f3fe2a1a.jpg"
+  ],
+  "cover": "1039-f3fe2a1a.jpg"
  },
  {
   "id": 1040,
@@ -24012,8 +24100,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "1040-6920d33f.jpg"
+  ],
+  "cover": "1040-6920d33f.jpg"
  },
  {
   "id": 1041,
@@ -24031,8 +24121,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "1041-8006a1dd.jpg"
+  ],
+  "cover": "1041-8006a1dd.jpg"
  },
  {
   "id": 1042,
@@ -24050,8 +24142,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "1042-0bcb429f.jpg"
+  ],
+  "cover": "1042-0bcb429f.jpg"
  },
  {
   "id": 1043,
@@ -24069,8 +24163,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "1043-aab39f33.jpg"
+  ],
+  "cover": "1043-aab39f33.jpg"
  },
  {
   "id": 1044,
@@ -24088,8 +24184,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "1044-ab9c2f61.jpg"
+  ],
+  "cover": "1044-ab9c2f61.jpg"
  },
  {
   "id": 1045,
@@ -24108,8 +24206,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "1045-c308c424.jpg"
+  ],
+  "cover": "1045-c308c424.jpg"
  },
  {
   "id": 1046,
@@ -24127,8 +24227,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "1046-76318220.jpg"
+  ],
+  "cover": "1046-76318220.jpg"
  },
  {
   "id": 1047,
@@ -24146,8 +24248,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "1047-61186b4a.jpg"
+  ],
+  "cover": "1047-61186b4a.jpg"
  },
  {
   "id": 1048,
@@ -24165,8 +24269,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "1048-93bd8b31.jpg"
+  ],
+  "cover": "1048-93bd8b31.jpg"
  },
  {
   "id": 1049,
@@ -24296,8 +24402,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "1054-820f62c6.jpg"
+  ],
+  "cover": "1054-820f62c6.jpg"
  },
  {
   "id": 1055,
@@ -24315,8 +24423,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "1055-05f9f758.jpg"
+  ],
+  "cover": "1055-05f9f758.jpg"
  },
  {
   "id": 1056,
@@ -24334,8 +24444,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "1056-58718487.jpg"
+  ],
+  "cover": "1056-58718487.jpg"
  },
  {
   "id": 1057,
@@ -24353,8 +24465,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "1057-f8085175.jpg"
+  ],
+  "cover": "1057-f8085175.jpg"
  },
  {
   "id": 1058,
@@ -24372,8 +24486,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "1058-8fe1b6e9.jpg"
+  ],
+  "cover": "1058-8fe1b6e9.jpg"
  },
  {
   "id": 1059,
@@ -24391,8 +24507,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "1059-83ae951f.jpg"
+  ],
+  "cover": "1059-83ae951f.jpg"
  },
  {
   "id": 1060,
@@ -24410,8 +24528,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "1060-e7f258f8.jpg"
+  ],
+  "cover": "1060-e7f258f8.jpg"
  },
  {
   "id": 1061,
@@ -24429,8 +24549,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "1061-487b315c.jpg"
+  ],
+  "cover": "1061-487b315c.jpg"
  },
  {
   "id": 1062,
@@ -24448,8 +24570,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "1062-59790d52.jpg"
+  ],
+  "cover": "1062-59790d52.jpg"
  },
  {
   "id": 1063,
@@ -24467,8 +24591,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "1063-8e21379a.jpg"
+  ],
+  "cover": "1063-8e21379a.jpg"
  },
  {
   "id": 1064,
@@ -24486,8 +24612,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "1064-88a6c8f6.jpg"
+  ],
+  "cover": "1064-88a6c8f6.jpg"
  },
  {
   "id": 1065,
@@ -24505,8 +24633,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "1065-b8ff50ad.jpg"
+  ],
+  "cover": "1065-b8ff50ad.jpg"
  },
  {
   "id": 1066,
@@ -24524,8 +24654,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "1066-0763beb7.jpg"
+  ],
+  "cover": "1066-0763beb7.jpg"
  },
  {
   "id": 1067,
