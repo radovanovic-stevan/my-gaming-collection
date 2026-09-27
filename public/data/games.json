@@ -4422,8 +4422,10 @@
    "Box"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "192-f574de17.jpg"
+  ],
+  "cover": "192-f574de17.jpg"
  },
  {
   "id": 193,
@@ -14453,7 +14455,7 @@
    "Cover",
    "Manual"
   ],
-  "edition": "",
+  "edition": "Platinum",
   "images": [
    "627-b5409f16.jpg"
   ],
@@ -18894,7 +18896,7 @@
    "Cover",
    "Manual"
   ],
-  "edition": "",
+  "edition": "Essentials",
   "images": [
    "815-02be4c7e.jpg"
   ],
@@ -18918,7 +18920,7 @@
    "Box",
    "Cover"
   ],
-  "edition": "",
+  "edition": "Essentials",
   "images": [
    "816-eadd476d.jpg"
   ],
