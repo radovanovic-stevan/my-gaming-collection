@@ -458,8 +458,10 @@
    "Cover"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "22-62d4a59a.jpg"
+  ],
+  "cover": "22-62d4a59a.jpg"
  },
  {
   "id": 23,
@@ -595,8 +597,10 @@
    "Manual"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "28-ba55ff69.jpg"
+  ],
+  "cover": "28-ba55ff69.jpg"
  },
  {
   "id": 29,
@@ -683,8 +687,10 @@
    "Cover"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "32-c8edd4d0.jpg"
+  ],
+  "cover": "32-c8edd4d0.jpg"
  },
  {
   "id": 33,
@@ -842,8 +848,10 @@
    "Manual"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "39-1b3f2ed9.jpg"
+  ],
+  "cover": "39-1b3f2ed9.jpg"
  },
  {
   "id": 40,
@@ -1234,8 +1242,10 @@
    "Cover*"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "56-5805e33f.jpg"
+  ],
+  "cover": "56-5805e33f.jpg"
  },
  {
   "id": 57,
@@ -1632,8 +1642,10 @@
    "Cover"
   ],
   "edition": "Essentials",
-  "images": [],
-  "cover": null
+  "images": [
+   "73-211b8b11.jpg"
+  ],
+  "cover": "73-211b8b11.jpg"
  },
  {
   "id": 74,
@@ -1701,8 +1713,10 @@
    "Manual"
   ],
   "edition": "Essentials",
-  "images": [],
-  "cover": null
+  "images": [
+   "76-417307b2.jpg"
+  ],
+  "cover": "76-417307b2.jpg"
  },
  {
   "id": 77,
@@ -1771,8 +1785,10 @@
    "Manual"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "79-65230774.jpg"
+  ],
+  "cover": "79-65230774.jpg"
  },
  {
   "id": 80,
@@ -2109,8 +2125,10 @@
    "Cover"
   ],
   "edition": "Platinum",
-  "images": [],
-  "cover": null
+  "images": [
+   "94-6a8e0e32.jpg"
+  ],
+  "cover": "94-6a8e0e32.jpg"
  },
  {
   "id": 95,
@@ -3734,8 +3752,10 @@
    "Manual"
   ],
   "edition": "Platinum",
-  "images": [],
-  "cover": null
+  "images": [
+   "167-eb2b3153.jpg"
+  ],
+  "cover": "167-eb2b3153.jpg"
  },
  {
   "id": 168,
@@ -4076,8 +4096,10 @@
    "Manual"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "182-b2793662.jpg"
+  ],
+  "cover": "182-b2793662.jpg"
  },
  {
   "id": 183,
@@ -4330,8 +4352,10 @@
    "Manual"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "193-a3e79fc0.jpg"
+  ],
+  "cover": "193-a3e79fc0.jpg"
  },
  {
   "id": 194,
@@ -12087,8 +12111,10 @@
   ],
   "condition": [],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "532-7e37b4c0.jpg"
+  ],
+  "cover": "532-7e37b4c0.jpg"
  },
  {
   "id": 533,
@@ -12806,8 +12832,10 @@
    "Manual"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "563-a1dd1d1c.jpg"
+  ],
+  "cover": "563-a1dd1d1c.jpg"
  },
  {
   "id": 564,
@@ -16041,8 +16069,10 @@
    "Manual"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "701-aa9627af.jpg"
+  ],
+  "cover": "701-aa9627af.jpg"
  },
  {
   "id": 702,
@@ -21703,8 +21733,10 @@
    "Manual"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "954-36c3a162.jpg"
+  ],
+  "cover": "954-36c3a162.jpg"
  },
  {
   "id": 955,
