@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { geoEqualEarth, geoPath } from 'd3-geo';
-import { feature } from 'topojson-client';
+import { feature, merge } from 'topojson-client';
 import type { Topology, GeometryCollection } from 'topojson-specification';
 import type { Feature, Geometry } from 'geojson';
 import world from 'world-atlas/countries-50m.json';
@@ -20,7 +20,17 @@ type Country = Feature<Geometry, { name: string }>;
 
 // Country shapes, projected once. Antarctica only takes up room.
 const topology = world as unknown as Topology<{ countries: GeometryCollection<{ name: string }> }>;
-const countries = (feature(topology, topology.objects.countries).features as Country[]).filter((f) => f.properties.name !== 'Antarctica');
+// Shapes drawn as part of another country: Kosovo is shown as part of Serbia.
+const PART_OF: Record<string, string> = { Kosovo: 'Serbia' };
+const geometries = topology.objects.countries.geometries;
+const countries = (feature(topology, topology.objects.countries).features as Country[])
+  .filter((f) => f.properties.name !== 'Antarctica' && !(f.properties.name in PART_OF))
+  .map((f): Country => {
+    const nameOf = (g: (typeof geometries)[number]) => (g.properties as { name?: string } | undefined)?.name ?? '';
+    const parts = geometries.filter((g) => nameOf(g) === f.properties.name || PART_OF[nameOf(g)] === f.properties.name);
+    // Merging the shapes drops the border between them.
+    return parts.length > 1 ? { ...f, geometry: merge(topology, parts as never) } : f;
+  });
 const projection = geoEqualEarth().fitSize([WIDTH, HEIGHT], { type: 'FeatureCollection', features: countries });
 const path = geoPath(projection);
 const shapes = countries.map((f) => ({ name: f.properties.name, d: path(f) ?? '' }));

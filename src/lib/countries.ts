@@ -1,5 +1,6 @@
 // Country names as the world map (world-atlas / Natural Earth) spells them, so a
-// game's "bought in" country can be matched to its shape on the map.
+// game's "bought in" country can be matched to its shape on the map. Kosovo is
+// left out: the map draws it as part of Serbia.
 export const COUNTRIES: string[] = [
   "Afghanistan",
   "Albania",
@@ -112,7 +113,6 @@ export const COUNTRIES: string[] = [
   "Kazakhstan",
   "Kenya",
   "Kiribati",
-  "Kosovo",
   "Kuwait",
   "Kyrgyzstan",
   "Laos",
