@@ -7672,8 +7672,10 @@
    "Manual"
   ],
   "edition": "",
-  "images": [],
-  "cover": null
+  "images": [
+   "329-e928e273.jpg"
+  ],
+  "cover": "329-e928e273.jpg"
  },
  {
   "id": 330,
@@ -8940,7 +8942,7 @@
    "Cover",
    "Manual"
   ],
-  "edition": "Platinum",
+  "edition": "",
   "images": [
    "383-3d4beb78.jpg"
   ],
