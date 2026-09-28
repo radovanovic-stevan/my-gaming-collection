@@ -1,18 +1,30 @@
-import { useEffect, useRef, useState } from 'react';
-import type { Game } from '../types';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
+import type { WithImages } from '../types';
 import { api } from '../lib/api';
 import { toImageDataUrl } from '../lib/image';
 import { imageUrl } from '../lib/format';
 
-interface Props {
-  game: Game;
-  onSaved: (game: Game) => void;
+/** The API calls for one kind of item; each returns the updated item. */
+export interface ImageOps<T> {
+  add: (id: number, dataUrl: string) => Promise<T>;
+  remove: (id: number, file: string) => Promise<T>;
+  setCover: (id: number, file: string) => Promise<T>;
+}
+
+interface Props<T extends WithImages> {
+  item: T;
+  /** Shown in the heading. */
+  title: string;
+  ops: ImageOps<T>;
+  /** Links to places to find pictures. */
+  findLinks: ReactNode;
+  onSaved: (item: T) => void;
   onClose: () => void;
 }
 
 const isHttpUrl = (s: string) => /^https?:\/\//i.test(s.trim());
 
-export function ImageManager({ game, onSaved, onClose }: Props) {
+export function ImageManager<T extends WithImages>({ item, title, ops, findLinks, onSaved, onClose }: Props<T>) {
   const [url, setUrl] = useState('');
   const [progress, setProgress] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -20,7 +32,7 @@ export function ImageManager({ game, onSaved, onClose }: Props) {
   const fileInput = useRef<HTMLInputElement>(null);
   const busy = progress !== null;
 
-  /** Uploads images one after another; the server makes the first image of a game its cover. */
+  /** Uploads images one after another; the server makes the first image of an item its cover. */
   const upload = async (sources: (() => Promise<Blob>)[]) => {
     if (!sources.length || busy) return;
     setError(null);
@@ -28,7 +40,7 @@ export function ImageManager({ game, onSaved, onClose }: Props) {
     for (const [i, getBlob] of sources.entries()) {
       setProgress(sources.length > 1 ? `Adding ${i + 1} of ${sources.length}…` : 'Adding…');
       try {
-        onSaved(await api.addImage(game.id, await toImageDataUrl(await getBlob())));
+        onSaved(await ops.add(item.id, await toImageDataUrl(await getBlob())));
       } catch (e) {
         failures.push(e instanceof Error ? e.message : String(e));
       }
@@ -40,7 +52,7 @@ export function ImageManager({ game, onSaved, onClose }: Props) {
   const uploadFiles = (files: Iterable<File>) =>
     upload([...files].filter((f) => f.type.startsWith('image/')).map((f) => async () => f));
 
-  const run = async (action: () => Promise<Game>) => {
+  const run = async (action: () => Promise<T>) => {
     setError(null);
     setProgress('Saving…');
     try {
@@ -82,12 +94,10 @@ export function ImageManager({ game, onSaved, onClose }: Props) {
   };
 
   const remove = (file: string) => {
-    if (confirm(file === game.cover ? 'Delete the cover image? The next image becomes the cover.' : 'Delete this image?')) {
-      run(() => api.removeImage(game.id, file));
+    if (confirm(file === item.cover ? 'Delete the cover image? The next image becomes the cover.' : 'Delete this image?')) {
+      run(() => ops.remove(item.id, file));
     }
   };
-
-  const searchQuery = encodeURIComponent(`${game.title} ${game.platform} cover`);
 
   return (
     <div className="modal-backdrop" onClick={onClose}>
@@ -95,19 +105,19 @@ export function ImageManager({ game, onSaved, onClose }: Props) {
         <button className="modal-close icon-btn" onClick={onClose} aria-label="Close">
           ×
         </button>
-        <h2>Images · {game.title}</h2>
+        <h2>Images · {title}</h2>
 
-        {game.images.length > 0 ? (
+        {item.images.length > 0 ? (
           <ul className="image-list">
-            {game.images.map((file) => {
-              const isCover = file === game.cover;
+            {item.images.map((file) => {
+              const isCover = file === item.cover;
               return (
                 <li key={file} className={isCover ? 'is-cover' : ''}>
                   <img src={imageUrl(file)} alt="" loading="lazy" />
                   {isCover && <span className="cover-tag">★ Cover</span>}
                   <div className="image-actions">
                     {!isCover && (
-                      <button className="btn" disabled={busy} onClick={() => run(() => api.setCover(game.id, file))}>
+                      <button className="btn" disabled={busy} onClick={() => run(() => ops.setCover(item.id, file))}>
                         Make cover
                       </button>
                     )}
@@ -162,15 +172,7 @@ export function ImageManager({ game, onSaved, onClose }: Props) {
         </form>
 
         <p className="muted small">
-          Find one:{' '}
-          <a href={`https://www.google.com/search?tbm=isch&q=${searchQuery}`} target="_blank" rel="noreferrer">
-            Google Images
-          </a>{' '}
-          ·{' '}
-          <a href={`https://www.mobygames.com/search/?q=${encodeURIComponent(game.title)}`} target="_blank" rel="noreferrer">
-            MobyGames
-          </a>
-          . Images are resized to 1200px and saved to public/images.
+          Find one: {findLinks}. Images are resized to 1200px and saved to public/images.
         </p>
 
         {progress && <p className="muted">{progress}</p>}

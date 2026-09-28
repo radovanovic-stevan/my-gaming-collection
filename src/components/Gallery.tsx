@@ -1,18 +1,18 @@
-import { useEffect, useState } from 'react';
-import type { Game } from '../types';
+import { useEffect, useState, type ReactNode } from 'react';
+import type { WithImages } from '../types';
 import { imageUrl } from '../lib/format';
-import { Cover } from './Cover';
 
 /** Cover first, then the rest in the order they were added. */
-const orderedImages = (g: Game) => (g.cover ? [g.cover, ...g.images.filter((f) => f !== g.cover)] : g.images);
+const orderedImages = (g: WithImages) => (g.cover ? [g.cover, ...g.images.filter((f) => f !== g.cover)] : g.images);
 
-export function Gallery({ game }: { game: Game }) {
-  const images = orderedImages(game);
+/** An item's images, cover first. `placeholder` is shown when it has none. */
+export function Gallery({ item, placeholder }: { item: WithImages & { title: string }; placeholder: ReactNode }) {
+  const images = orderedImages(item);
   const [index, setIndex] = useState(0);
   const [zoomed, setZoomed] = useState(false);
 
-  // Start from the cover whenever a different game (or a changed image set) is shown.
-  const key = `${game.id}:${images.join(',')}`;
+  // Start from the cover whenever a different item (or a changed image set) is shown.
+  const key = `${item.id}:${images.join(',')}`;
   useEffect(() => {
     setIndex(0);
     setZoomed(false);
@@ -22,7 +22,7 @@ export function Gallery({ game }: { game: Game }) {
 
   useEffect(() => {
     if (!zoomed) return;
-    // Capture phase so the arrows page through images instead of games while zoomed.
+    // Capture phase so the arrows page through images instead of the modal behind while zoomed.
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setZoomed(false);
       else if (e.key === 'ArrowLeft') step(-1);
@@ -37,9 +37,7 @@ export function Gallery({ game }: { game: Game }) {
   if (images.length === 0) {
     return (
       <div className="gallery">
-        <div className="gallery-main">
-          <Cover game={game} eager />
-        </div>
+        <div className="gallery-main">{placeholder}</div>
       </div>
     );
   }
@@ -49,7 +47,7 @@ export function Gallery({ game }: { game: Game }) {
   return (
     <div className="gallery">
       <button className="gallery-main" onClick={() => setZoomed(true)} title="View full size">
-        <img className="cover" src={imageUrl(current)} alt={`${game.title} image ${index + 1}`} />
+        <img className="cover" src={imageUrl(current)} alt={`${item.title} image ${index + 1}`} />
         {images.length > 1 && (
           <span className="gallery-count">
             {index + 1} / {images.length}
@@ -69,7 +67,7 @@ export function Gallery({ game }: { game: Game }) {
 
       {zoomed && (
         <div className="lightbox" onClick={() => setZoomed(false)}>
-          <img src={imageUrl(current)} alt={`${game.title} image ${index + 1}`} onClick={(e) => e.stopPropagation()} />
+          <img src={imageUrl(current)} alt={`${item.title} image ${index + 1}`} onClick={(e) => e.stopPropagation()} />
           {images.length > 1 && (
             <>
               <button className="lightbox-nav prev" onClick={(e) => (e.stopPropagation(), step(-1))} aria-label="Previous image">

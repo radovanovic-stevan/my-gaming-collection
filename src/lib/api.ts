@@ -1,7 +1,8 @@
-import type { ChecklistSeries, Game, GalleryEntry, GotcYear, GotmMonth } from '../types';
+import type { ChecklistSeries, Game, GalleryEntry, GotcYear, GotmMonth, Vinyl } from '../types';
 
 export type GameInput = Omit<Game, 'id' | 'images' | 'cover'>;
 /** A new picture needs a dataUrl; when editing, one replaces the picture. */
+export type VinylInput = Pick<Vinyl, 'artist' | 'title' | 'listens'>;
 export type SeriesInput = Omit<ChecklistSeries, 'id'> & { position?: number };
 export type GalleryInput = Omit<GalleryEntry, 'id' | 'image'> & { dataUrl?: string };
 
@@ -43,6 +44,12 @@ export const api = {
   addSeries: (collection: string, series: SeriesInput) => request<ChecklistSeries>('POST', `collections/${collection}/series`, series),
   updateSeries: (collection: string, id: number, series: SeriesInput) => request<ChecklistSeries>('PUT', `collections/${collection}/series/${id}`, series),
   deleteSeries: (collection: string, id: number) => request<{ ok: true }>('DELETE', `collections/${collection}/series/${id}`),
+  addVinyl: (record: VinylInput) => request<Vinyl>('POST', 'vinyl', record),
+  updateVinyl: (id: number, record: VinylInput) => request<Vinyl>('PUT', `vinyl/${id}`, record),
+  deleteVinyl: (id: number) => request<{ ok: true }>('DELETE', `vinyl/${id}`),
+  addVinylImage: (id: number, dataUrl: string) => request<Vinyl>('POST', `vinyl/${id}/images`, { dataUrl }),
+  removeVinylImage: (id: number, file: string) => request<Vinyl>('DELETE', `vinyl/${id}/images/${encodeURIComponent(file)}`),
+  setVinylCover: (id: number, file: string) => request<Vinyl>('PUT', `vinyl/${id}/cover`, { file }),
   fetchImage: async (url: string): Promise<Blob> => {
     const r = await fetch(`/api/fetch-image?url=${encodeURIComponent(url)}`);
     if (!r.ok) throw new Error((await r.json().catch(() => ({}))).error ?? `HTTP ${r.status}`);

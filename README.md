@@ -37,6 +37,11 @@ marked owned or missing. Locally, **Tick off issues** lets you click issues to s
 (and **+** adds the next number), and each series' **Edit** sets its name and its owned and
 missing issues as ranges like `1-10, 12`.
 
+The **Vinyl** tab is a cover grid of records, with pictures like the games (the first one becomes
+the cover). Each record keeps a listening log: one entry per side played (1, 2, A, B, …) with its
+date. Locally, open a record to set or change dates, change sides, remove entries, or log a side
+played today. **Needs dates** shows the records that still have listens without a date.
+
 ## Where the data lives
 
 Everything is plain files in the repo. There is no database.
@@ -49,6 +54,7 @@ Everything is plain files in the repo. There is no database.
 | `public/data/gotc.json` | Game of the Category: yearly awards and yearly stats. |
 | `public/data/gallery.json` | Gallery: each picture's image file, date, description and the games in it. |
 | `public/data/dylan-dog.json` | Dylan Dog: each series and which of its issues are owned. |
+| `public/data/vinyl.json` | Vinyl: each record's artist, album, images and listening log. Images are `vinyl-<id>-<hash>.<ext>`. |
 | `data/source/*.tsv` | Original spreadsheet exports. |
 
 Commit the changes after editing to publish them.

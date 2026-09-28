@@ -2285,11 +2285,19 @@ div.gallery-main {
 }
 
 .tabs .other-tab {
-  color: var(--other-accent);
+  color: var(--tab-accent);
 }
 
 .tabs .other-tab.on {
-  border-bottom-color: var(--other-accent);
+  border-bottom-color: var(--tab-accent);
+}
+
+.tabs .tab-dylan-dog {
+  --tab-accent: var(--c-dylan-dog);
+}
+
+.tabs .tab-vinyl {
+  --tab-accent: var(--c-vinyl);
 }
 
 @media (max-width: 520px) {
@@ -2302,10 +2310,16 @@ div.gallery-main {
 }
 
 :root {
-  --other-accent: #c8102e;
+  --c-dylan-dog: #c8102e;
+  --c-vinyl: #b45309;
 }
 
 /* Each other collection gets its own colours, so it doesn't read as part of the game pages. */
+.app[data-collection='vinyl'] {
+  --accent: var(--c-vinyl);
+  --accent-soft: #fbeedd;
+}
+
 .app[data-collection='dylan-dog'] {
   --accent: #c8102e;
   --accent-soft: #fbe4e7;
@@ -2315,7 +2329,11 @@ div.gallery-main {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --other-accent: #ff6b6b;
+    --c-dylan-dog: #ff6b6b;
+    --c-vinyl: #f5b544;
+  }
+  .app[data-collection='vinyl'] {
+    --accent-soft: #3a2c14;
   }
   .app[data-collection='dylan-dog'] {
     --accent: #ff6b6b;
@@ -2512,4 +2530,155 @@ button.issue:hover {
   border: 1px solid var(--border);
   border-radius: 7px;
   background: var(--bg);
+}
+
+/* --- Vinyl ------------------------------------------------------------------- */
+
+.vinyl {
+  padding-top: 0;
+}
+
+.vinyl .toolbar {
+  margin-bottom: 12px;
+}
+
+.vinyl-sort {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.vinyl-sort select {
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-elev);
+}
+
+.vinyl .toolbar .chip {
+  padding: 7px 11px;
+  font-size: 13px;
+}
+
+.vinyl-grid {
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+}
+
+.vinyl-grid > li {
+  contain-intrinsic-size: 170px 230px;
+}
+
+.vinyl-grid .card-cover,
+.vinyl-detail .gallery-main {
+  aspect-ratio: 1;
+}
+
+.vinyl-placeholder {
+  padding-bottom: 10px;
+}
+
+.vinyl-placeholder .cover-placeholder-platform {
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+
+.plays-badge {
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  background: rgb(0 0 0 / 0.6);
+}
+
+.vinyl-detail {
+  grid-template-columns: 360px minmax(0, 1fr);
+  width: min(900px, 100%);
+}
+
+.vinyl-detail .detail-info {
+  gap: 10px;
+}
+
+.vinyl-detail .eyebrow {
+  color: var(--accent);
+  font-size: 12px;
+}
+
+.vinyl-detail .detail-title {
+  margin-top: -4px;
+}
+
+.listen-log {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.listen-log .section-title {
+  margin: 0;
+}
+
+.listen-log .section-title .muted {
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+
+.listen-rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 4px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.listen-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.listen-row select,
+.listen-row input {
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--bg);
+}
+
+.listen-row input.undated {
+  border-style: dashed;
+  border-color: var(--accent);
+}
+
+.side-tag {
+  min-width: 56px;
+  font-weight: 600;
+}
+
+.log-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.log-actions .btn {
+  padding: 5px 10px;
+}
+
+@media (max-width: 640px) {
+  .vinyl-detail {
+    grid-template-columns: 1fr;
+  }
+  .vinyl-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
 }

@@ -6,6 +6,7 @@
 //   public/data/gotc.json   - Game of the Category: yearly awards and stats
 //   public/data/gallery.json - Gallery: pictures with a date, a description and the games in them
 //   public/data/<slug>.json  - other collections (e.g. dylan-dog.json): a checklist per series
+//   public/data/vinyl.json   - vinyl records and when each side was played; images are vinyl-<id>-<hash>.<ext>
 // Each game lists its images in `images`; `cover` is one of them (or null).
 // The static build (GitHub Pages) has no API, so the app is read-only there.
 import type { Plugin } from 'vite';
@@ -20,6 +21,7 @@ const IMAGES_DIR = path.join(ROOT, 'public/images');
 const GOTM_FILE = path.join(ROOT, 'public/data/gotm.json');
 const GOTC_FILE = path.join(ROOT, 'public/data/gotc.json');
 const GALLERY_FILE = path.join(ROOT, 'public/data/gallery.json');
+const VINYL_FILE = path.join(ROOT, 'public/data/vinyl.json');
 
 const STATUSES = ['Completed', 'Not Completed', 'Null', 'Unplayable', 'Unrateable'];
 const IMAGE_TYPES: Record<string, string> = { 'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp', 'image/gif': 'gif' };
@@ -455,6 +457,117 @@ async function handleCollections(parts: string[], method: string, req: IncomingM
   throw new HttpError(405, 'Method not allowed');
 }
 
+// --- Vinyl -----------------------------------------------------------------------
+
+type Vinyl = { id: number; artist: string; title: string; images: string[]; cover: string | null; listens: { side: string; date: string | null }[] };
+
+function sanitizeVinyl(input: Record<string, unknown>): Pick<Vinyl, 'artist' | 'title' | 'listens'> {
+  const artist = str(input.artist);
+  const title = str(input.title);
+  if (!artist) throw new HttpError(400, 'Artist is required');
+  if (!title) throw new HttpError(400, 'Title is required');
+  const listens = (Array.isArray(input.listens) ? input.listens : []).map((l, i) => {
+    const side = str(obj(l).side).toUpperCase();
+    const date = str(obj(l).date) || null;
+    if (!side) throw new HttpError(400, `Listen ${i + 1} needs a side`);
+    if (date !== null && !/^\d{4}-\d{2}-\d{2}$/.test(date)) throw new HttpError(400, `Listen ${i + 1}: date must look like 2026-09-28`);
+    return { side, date };
+  });
+  return { artist, title, listens };
+}
+
+const sortVinyl = (records: Vinyl[]) => records.sort((a, b) => a.id - b.id);
+
+/** Routes under /api/vinyl. Returns false when the path isn't one of them. */
+async function handleVinyl(parts: string[], method: string, req: IncomingMessage, res: ServerResponse): Promise<boolean> {
+  if (parts[0] !== 'vinyl') return false;
+  const id = parts[1] === undefined ? null : Number(parts[1]);
+  if (id !== null && !Number.isInteger(id)) throw new HttpError(400, 'Invalid id');
+  /** Loads the records, lets `fn` change the one with this id, and saves. */
+  const change = (fn: (records: Vinyl[], i: number) => Promise<Vinyl | null>) =>
+    exclusive(async () => {
+      const records = await loadJson<Vinyl[]>(VINYL_FILE);
+      const i = records.findIndex((r) => r.id === id);
+      if (i < 0) throw new HttpError(404, `Record #${id} not found`);
+      const result = await fn(records, i);
+      await saveJson(VINYL_FILE, sortVinyl(records));
+      return result;
+    });
+
+  // POST /api/vinyl
+  if (id === null && parts.length === 1 && method === 'POST') {
+    const fields = sanitizeVinyl(await readBody(req));
+    const created = await exclusive(async () => {
+      const records = await loadJson<Vinyl[]>(VINYL_FILE);
+      const record: Vinyl = { id: Math.max(0, ...records.map((r) => r.id)) + 1, ...fields, images: [], cover: null };
+      await saveJson(VINYL_FILE, sortVinyl([...records, record]));
+      return record;
+    });
+    send(res, 201, created);
+    return true;
+  }
+  if (id === null) throw new HttpError(405, 'Method not allowed');
+
+  // PUT /api/vinyl/:id   body: { artist, title, listens }
+  if (parts.length === 2 && method === 'PUT') {
+    const fields = sanitizeVinyl(await readBody(req));
+    send(res, 200, await change(async (records, i) => (records[i] = { ...records[i], ...fields })));
+    return true;
+  }
+
+  // DELETE /api/vinyl/:id
+  if (parts.length === 2 && method === 'DELETE') {
+    await change(async (records, i) => {
+      const [removed] = records.splice(i, 1);
+      await Promise.all(removed.images.map(removeImageFile));
+      return null;
+    });
+    send(res, 200, { ok: true });
+    return true;
+  }
+
+  // POST /api/vinyl/:id/images   body: { dataUrl }  (the first image becomes the cover)
+  if (parts[2] === 'images' && parts.length === 3 && method === 'POST') {
+    const { dataUrl } = await readBody(req);
+    const saved = await change(async (records, i) => {
+      const r = records[i];
+      const file = await saveUpload(dataUrl, `vinyl-${id}`);
+      if (!r.images.includes(file)) records[i] = { ...r, images: [...r.images, file], cover: r.cover ?? file };
+      return records[i];
+    });
+    send(res, 200, saved);
+    return true;
+  }
+
+  // DELETE /api/vinyl/:id/images/:file   (a removed cover passes to the next image)
+  if (parts[2] === 'images' && parts.length === 4 && method === 'DELETE') {
+    const file = decodeURIComponent(parts[3]);
+    const saved = await change(async (records, i) => {
+      const r = records[i];
+      if (!r.images.includes(file)) throw new HttpError(404, `Image ${file} not found`);
+      const images = r.images.filter((f) => f !== file);
+      records[i] = { ...r, images, cover: r.cover === file ? (images[0] ?? null) : r.cover };
+      await removeImageFile(file);
+      return records[i];
+    });
+    send(res, 200, saved);
+    return true;
+  }
+
+  // PUT /api/vinyl/:id/cover   body: { file }
+  if (parts[2] === 'cover' && parts.length === 3 && method === 'PUT') {
+    const { file } = await readBody(req);
+    const saved = await change(async (records, i) => {
+      if (!records[i].images.includes(file)) throw new HttpError(400, "Cover must be one of the record's images");
+      return (records[i] = { ...records[i], cover: file });
+    });
+    send(res, 200, saved);
+    return true;
+  }
+
+  throw new HttpError(405, 'Method not allowed');
+}
+
 async function handle(req: IncomingMessage, res: ServerResponse): Promise<void> {
   const url = new URL(req.url ?? '/', 'http://localhost');
   const parts = url.pathname.replace(/^\/api\/?/, '').split('/').filter(Boolean);
@@ -479,6 +592,7 @@ async function handle(req: IncomingMessage, res: ServerResponse): Promise<void> 
   if (await handleAwards(parts, method, req, res)) return;
   if (await handleGallery(parts, method, req, res)) return;
   if (await handleCollections(parts, method, req, res)) return;
+  if (await handleVinyl(parts, method, req, res)) return;
   if (parts[0] !== 'games') throw new HttpError(404, 'Not found');
   const id = parts[1] === undefined ? null : Number(parts[1]);
   if (id !== null && !Number.isInteger(id)) throw new HttpError(400, 'Invalid id');

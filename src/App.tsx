@@ -1,5 +1,5 @@
 import { Suspense, lazy, useCallback, useEffect, useMemo, useState } from 'react';
-import type { ChecklistCollection, Game, GalleryEntry, GotcData, GotmMonth, Query, SortKey } from './types';
+import type { ChecklistCollection, Game, GalleryEntry, GotcData, GotmMonth, Query, SortKey, Vinyl } from './types';
 import { DEFAULT_QUERY, SORT_LABELS, applyQuery, paramsToQuery, queryToParams } from './lib/query';
 import { Filters } from './components/Filters';
 import { SortBuilder } from './components/SortBuilder';
@@ -7,11 +7,12 @@ import { GridView } from './components/GridView';
 import { TableView } from './components/TableView';
 import { GameDetail } from './components/GameDetail';
 import { GameForm } from './components/GameForm';
-import { ImageManager } from './components/ImageManager';
+import { ImageManager, type ImageOps } from './components/ImageManager';
 import { GotmView } from './components/GotmView';
 import { GotcView } from './components/GotcView';
 import { GalleryView } from './components/GalleryView';
 import { ChecklistView } from './components/ChecklistView';
+import { VinylView } from './components/VinylView';
 // The map carries the world's country shapes, so it's only loaded when opened.
 const MapView = lazy(() => import('./components/MapView'));
 import { api, detectEditing } from './lib/api';
@@ -19,7 +20,10 @@ import { createLinker } from './lib/links';
 
 type GameTab = 'collection' | 'gotm' | 'gotc' | 'gallery' | 'map';
 /** Collections that aren't games. Each one is public/data/<id>.json. */
-const OTHER_COLLECTIONS = [{ id: 'dylan-dog', label: 'Dylan Dog', short: 'Dylan Dog' }] as const;
+const OTHER_COLLECTIONS = [
+  { id: 'dylan-dog', label: 'Dylan Dog', short: 'Dylan Dog' },
+  { id: 'vinyl', label: 'Vinyl', short: 'Vinyl' },
+] as const;
 type OtherTab = (typeof OTHER_COLLECTIONS)[number]['id'];
 type Tab = GameTab | OtherTab;
 const isOther = (t: Tab): t is OtherTab => OTHER_COLLECTIONS.some((c) => c.id === t);
@@ -51,6 +55,8 @@ function useDataFile<T>(file: string, needed: boolean): { data: T | null; error:
   return { ...state, setData };
 }
 
+const GAME_IMAGE_OPS: ImageOps<Game> = { add: api.addImage, remove: api.removeImage, setCover: api.setCover };
+
 type Modal = { kind: 'detail' | 'edit' | 'images'; id: number } | { kind: 'new' } | null;
 
 export default function App() {
@@ -66,7 +72,7 @@ export default function App() {
   const gotc = useDataFile<GotcData>('gotc.json', tab === 'gotc');
   const gallery = useDataFile<GalleryEntry[]>('gallery.json', tab === 'gallery');
   const dylanDog = useDataFile<ChecklistCollection>('dylan-dog.json', tab === 'dylan-dog');
-  const other = isOther(tab) ? { 'dylan-dog': dylanDog }[tab] : null;
+  const vinyl = useDataFile<Vinyl[]>('vinyl.json', tab === 'vinyl');
 
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}data/games.json`, { cache: 'no-cache' })
@@ -98,12 +104,21 @@ export default function App() {
     };
   }, [games]);
 
-  const otherStats = useMemo(() => {
-    if (!other?.data) return null;
-    const items = other.data.series.flatMap((s) => s.items);
-    const complete = other.data.series.filter((s) => s.items.length && s.items.every((i) => i.owned)).length;
-    return { owned: items.filter((i) => i.owned).length, total: items.length, series: other.data.series.length, complete };
-  }, [other?.data]);
+  /** The header's stats line for the open other collection, as [number, label] pairs. */
+  const otherStats = useMemo((): [number, string][] | null => {
+    if (tab === 'dylan-dog' && dylanDog.data) {
+      const { series } = dylanDog.data;
+      const items = series.flatMap((s) => s.items);
+      const owned = items.filter((i) => i.owned).length;
+      const complete = series.filter((s) => s.items.length && s.items.every((i) => i.owned)).length;
+      return [[owned, 'owned'], [items.length - owned, 'missing'], [series.length, 'series'], [complete, 'complete']];
+    }
+    if (tab === 'vinyl' && vinyl.data) {
+      const records = vinyl.data;
+      return [[records.length, 'records'], [new Set(records.map((r) => r.artist)).size, 'artists'], [records.reduce((n, r) => n + r.listens.length, 0), 'sides played']];
+    }
+    return null;
+  }, [tab, dylanDog.data, vinyl.data]);
 
   const onSortClick = (key: SortKey, additive: boolean) => {
     setQuery((q) => {
@@ -155,12 +170,11 @@ export default function App() {
             <h1>{OTHER_COLLECTIONS.find((c) => c.id === tab)!.label}</h1>
             <p className="stats">
               {otherStats ? (
-                <>
-                  <span><b>{otherStats.owned}</b> owned</span>
-                  <span><b>{otherStats.total - otherStats.owned}</b> missing</span>
-                  <span><b>{otherStats.series}</b> series</span>
-                  <span><b>{otherStats.complete}</b> complete</span>
-                </>
+                otherStats.map(([n, label]) => (
+                  <span key={label}>
+                    <b>{n}</b> {label}
+                  </span>
+                ))
               ) : (
                 <span>&nbsp;</span>
               )}
@@ -197,18 +211,24 @@ export default function App() {
         <span className="tabs-divider" aria-hidden="true" />
         <span className="tabs-group-label">Other</span>
         {OTHER_COLLECTIONS.map((c) => (
-          <button key={c.id} className={`other-tab ${tab === c.id ? 'on' : ''}`} aria-label={c.label} aria-current={tab === c.id ? 'page' : undefined} onClick={() => (setTab(c.id), scrollTo(0, 0))}>
+          <button key={c.id} className={`other-tab tab-${c.id} ${tab === c.id ? 'on' : ''}`} aria-label={c.label} aria-current={tab === c.id ? 'page' : undefined} onClick={() => (setTab(c.id), scrollTo(0, 0))}>
             <span className="tab-long">{c.label}</span>
             <span className="tab-short">{c.short}</span>
           </button>
         ))}
       </nav>
 
-      {other &&
-        (other.data ? (
-          <ChecklistView slug={tab} data={other.data} editable={editable} onChange={other.setData} />
+      {tab === 'dylan-dog' &&
+        (dylanDog.data ? (
+          <ChecklistView slug={tab} data={dylanDog.data} editable={editable} onChange={dylanDog.setData} />
         ) : (
-          <div className="empty">{other.error ? `Couldn't load the collection: ${other.error}` : 'Loading…'}</div>
+          <div className="empty">{dylanDog.error ? `Couldn't load the collection: ${dylanDog.error}` : 'Loading…'}</div>
+        ))}
+      {tab === 'vinyl' &&
+        (vinyl.data ? (
+          <VinylView records={vinyl.data} editable={editable} onChange={vinyl.setData} />
+        ) : (
+          <div className="empty">{vinyl.error ? `Couldn't load the records: ${vinyl.error}` : 'Loading…'}</div>
         ))}
 
       {tab === 'gotm' &&
@@ -330,7 +350,26 @@ export default function App() {
       {modal?.kind === 'new' && (
         <GameForm game={null} allGames={games} onClose={closeModal} onSaved={(g) => (upsert(g), setModal({ kind: 'images', id: g.id }))} />
       )}
-      {modal?.kind === 'images' && openGame && <ImageManager game={openGame} onClose={backToDetail} onSaved={upsert} />}
+      {modal?.kind === 'images' && openGame && (
+        <ImageManager
+          item={openGame}
+          title={openGame.title}
+          ops={GAME_IMAGE_OPS}
+          findLinks={
+            <>
+              <a href={`https://www.google.com/search?tbm=isch&q=${encodeURIComponent(`${openGame.title} ${openGame.platform} cover`)}`} target="_blank" rel="noreferrer">
+                Google Images
+              </a>{' '}
+              ·{' '}
+              <a href={`https://www.mobygames.com/search/?q=${encodeURIComponent(openGame.title)}`} target="_blank" rel="noreferrer">
+                MobyGames
+              </a>
+            </>
+          }
+          onClose={backToDetail}
+          onSaved={upsert}
+        />
+      )}
     </div>
   );
 }

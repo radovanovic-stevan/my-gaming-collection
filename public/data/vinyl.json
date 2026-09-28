@@ -1,0 +1,353 @@
+[
+ {
+  "id": 1,
+  "artist": "ABBA",
+  "title": "Greatest Hits",
+  "images": [],
+  "cover": null,
+  "listens": [
+   {
+    "side": "2",
+    "date": "2026-09-17"
+   }
+  ]
+ },
+ {
+  "id": 2,
+  "artist": "Atomsko Sklonište",
+  "title": "Mentalna Higijena",
+  "images": [],
+  "cover": null,
+  "listens": [
+   {
+    "side": "1",
+    "date": "2026-09-22"
+   },
+   {
+    "side": "2",
+    "date": "2026-09-22"
+   }
+  ]
+ },
+ {
+  "id": 3,
+  "artist": "Chopin",
+  "title": "Chopin's Greatest Hits",
+  "images": [],
+  "cover": null,
+  "listens": []
+ },
+ {
+  "id": 4,
+  "artist": "Cune Gojković",
+  "title": "Janičar",
+  "images": [],
+  "cover": null,
+  "listens": [
+   {
+    "side": "1",
+    "date": "2026-09-04"
+   }
+  ]
+ },
+ {
+  "id": 5,
+  "artist": "Dino Dvornik",
+  "title": "Dino Dvornik",
+  "images": [],
+  "cover": null,
+  "listens": [
+   {
+    "side": "A",
+    "date": "2026-09-10"
+   },
+   {
+    "side": "A",
+    "date": "2026-09-23"
+   }
+  ]
+ },
+ {
+  "id": 6,
+  "artist": "Ed Sheeran",
+  "title": "Tour Collection",
+  "images": [],
+  "cover": null,
+  "listens": [
+   {
+    "side": "A",
+    "date": "2026-09-13"
+   },
+   {
+    "side": "B",
+    "date": "2026-09-13"
+   },
+   {
+    "side": "B",
+    "date": "2026-09-13"
+   },
+   {
+    "side": "C",
+    "date": "2026-09-13"
+   },
+   {
+    "side": "D",
+    "date": "2026-09-13"
+   }
+  ]
+ },
+ {
+  "id": 7,
+  "artist": "Gerry Rafferty",
+  "title": "Snakes and Ladders",
+  "images": [],
+  "cover": null,
+  "listens": [
+   {
+    "side": "1",
+    "date": "2026-09-11"
+   },
+   {
+    "side": "2",
+    "date": "2026-09-11"
+   },
+   {
+    "side": "1",
+    "date": "2026-09-21"
+   },
+   {
+    "side": "2",
+    "date": "2026-09-21"
+   }
+  ]
+ },
+ {
+  "id": 8,
+  "artist": "Linkin Park",
+  "title": "Hybrid Theory",
+  "images": [],
+  "cover": null,
+  "listens": [
+   {
+    "side": "1",
+    "date": "2026-09-03"
+   },
+   {
+    "side": "2",
+    "date": "2026-09-03"
+   },
+   {
+    "side": "2",
+    "date": "2026-09-17"
+   },
+   {
+    "side": "1",
+    "date": "2026-09-17"
+   },
+   {
+    "side": "1",
+    "date": "2026-09-17"
+   }
+  ]
+ },
+ {
+  "id": 9,
+  "artist": "Linkin Park",
+  "title": "Meteora",
+  "images": [],
+  "cover": null,
+  "listens": [
+   {
+    "side": "2",
+    "date": "2026-09-08"
+   },
+   {
+    "side": "1",
+    "date": "2026-09-28"
+   }
+  ]
+ },
+ {
+  "id": 10,
+  "artist": "Linkin Park",
+  "title": "From Zero",
+  "images": [],
+  "cover": null,
+  "listens": [
+   {
+    "side": "A",
+    "date": "2026-09-04"
+   },
+   {
+    "side": "B",
+    "date": "2026-09-04"
+   }
+  ]
+ },
+ {
+  "id": 11,
+  "artist": "Mozart",
+  "title": "Die Musikalische Geschichte eines Genies",
+  "images": [],
+  "cover": null,
+  "listens": [
+   {
+    "side": "1",
+    "date": "2026-09-24"
+   },
+   {
+    "side": "2",
+    "date": "2026-09-24"
+   }
+  ]
+ },
+ {
+  "id": 12,
+  "artist": "Orkestar Bečke Opere",
+  "title": "Bečki Valceri",
+  "images": [],
+  "cover": null,
+  "listens": []
+ },
+ {
+  "id": 13,
+  "artist": "Rokeri s Moravu",
+  "title": "Rokeri s Moravu",
+  "images": [],
+  "cover": null,
+  "listens": []
+ },
+ {
+  "id": 14,
+  "artist": "Rondo Veneziano",
+  "title": "Odissea Veneziana",
+  "images": [],
+  "cover": null,
+  "listens": [
+   {
+    "side": "A",
+    "date": "2026-09-03"
+   },
+   {
+    "side": "A",
+    "date": "2026-09-24"
+   },
+   {
+    "side": "B",
+    "date": "2026-09-24"
+   }
+  ]
+ },
+ {
+  "id": 15,
+  "artist": "Saga",
+  "title": "Images at Twilight",
+  "images": [],
+  "cover": null,
+  "listens": [
+   {
+    "side": "1",
+    "date": "2026-09-21"
+   },
+   {
+    "side": "2",
+    "date": "2026-09-21"
+   },
+   {
+    "side": "1",
+    "date": "2026-09-27"
+   },
+   {
+    "side": "2",
+    "date": "2026-09-27"
+   }
+  ]
+ },
+ {
+  "id": 16,
+  "artist": "Tyler, The Creator",
+  "title": "Igor",
+  "images": [],
+  "cover": null,
+  "listens": [
+   {
+    "side": "1",
+    "date": "2026-09-09"
+   },
+   {
+    "side": "2",
+    "date": "2026-09-09"
+   },
+   {
+    "side": "1",
+    "date": "2026-09-14"
+   },
+   {
+    "side": "1",
+    "date": "2026-09-14"
+   },
+   {
+    "side": "1",
+    "date": "2026-09-15"
+   },
+   {
+    "side": "2",
+    "date": "2026-09-15"
+   },
+   {
+    "side": "1",
+    "date": "2026-09-22"
+   },
+   {
+    "side": "2",
+    "date": "2026-09-22"
+   },
+   {
+    "side": "1",
+    "date": "2026-09-24"
+   }
+  ]
+ },
+ {
+  "id": 17,
+  "artist": "Various Artists",
+  "title": "Loving Sixties",
+  "images": [],
+  "cover": null,
+  "listens": [
+   {
+    "side": "1",
+    "date": "2026-09-05"
+   },
+   {
+    "side": "2",
+    "date": "2026-09-05"
+   }
+  ]
+ },
+ {
+  "id": 18,
+  "artist": "Queen",
+  "title": "Greatest Hits",
+  "images": [],
+  "cover": null,
+  "listens": []
+ },
+ {
+  "id": 19,
+  "artist": "Yu Grupa",
+  "title": "Yu Grupa",
+  "images": [],
+  "cover": null,
+  "listens": [
+   {
+    "side": "1",
+    "date": "2026-09-22"
+   },
+   {
+    "side": "2",
+    "date": "2026-09-22"
+   }
+  ]
+ }
+]

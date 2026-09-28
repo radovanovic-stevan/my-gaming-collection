@@ -1,6 +1,13 @@
 export const STATUSES = ['Completed', 'Not Completed', 'Null', 'Unplayable', 'Unrateable'] as const;
 export type Status = (typeof STATUSES)[number];
 
+/** Anything with pictures: a list of files in public/images, one of them the cover. */
+export interface WithImages {
+  id: number;
+  images: string[];
+  cover: string | null;
+}
+
 export interface Game {
   id: number;
   title: string;
@@ -139,4 +146,21 @@ export interface ChecklistSeries {
 export interface ChecklistCollection {
   title: string;
   series: ChecklistSeries[];
+}
+
+// --- Vinyl ---------------------------------------------------------------------
+
+/** One play of one side of a record. */
+export interface VinylListen {
+  /** The side as it's labelled on the record: 1, 2, A, B, … */
+  side: string;
+  /** yyyy-mm-dd, or null when it isn't known yet. */
+  date: string | null;
+}
+
+export interface Vinyl extends WithImages {
+  artist: string;
+  title: string;
+  /** Oldest first. */
+  listens: VinylListen[];
 }
