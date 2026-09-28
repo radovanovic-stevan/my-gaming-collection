@@ -3,8 +3,10 @@
   "id": 1,
   "artist": "ABBA",
   "title": "Greatest Hits",
-  "images": [],
-  "cover": null,
+  "images": [
+   "vinyl-1-c64fa28e.jpg"
+  ],
+  "cover": "vinyl-1-c64fa28e.jpg",
   "listens": [
    {
     "side": "2",
@@ -16,8 +18,10 @@
   "id": 2,
   "artist": "Atomsko Sklonište",
   "title": "Mentalna Higijena",
-  "images": [],
-  "cover": null,
+  "images": [
+   "vinyl-2-b3f05157.jpg"
+  ],
+  "cover": "vinyl-2-b3f05157.jpg",
   "listens": [
    {
     "side": "1",
@@ -33,16 +37,20 @@
   "id": 3,
   "artist": "Chopin",
   "title": "Chopin's Greatest Hits",
-  "images": [],
-  "cover": null,
+  "images": [
+   "vinyl-3-69e7f244.jpg"
+  ],
+  "cover": "vinyl-3-69e7f244.jpg",
   "listens": []
  },
  {
   "id": 4,
   "artist": "Cune Gojković",
   "title": "Janičar",
-  "images": [],
-  "cover": null,
+  "images": [
+   "vinyl-4-5fdd0b57.jpg"
+  ],
+  "cover": "vinyl-4-5fdd0b57.jpg",
   "listens": [
    {
     "side": "1",
@@ -54,8 +62,10 @@
   "id": 5,
   "artist": "Dino Dvornik",
   "title": "Dino Dvornik",
-  "images": [],
-  "cover": null,
+  "images": [
+   "vinyl-5-d444914c.jpg"
+  ],
+  "cover": "vinyl-5-d444914c.jpg",
   "listens": [
    {
     "side": "A",
@@ -71,8 +81,10 @@
   "id": 6,
   "artist": "Ed Sheeran",
   "title": "Tour Collection",
-  "images": [],
-  "cover": null,
+  "images": [
+   "vinyl-6-86198959.jpg"
+  ],
+  "cover": "vinyl-6-86198959.jpg",
   "listens": [
    {
     "side": "A",
@@ -100,8 +112,10 @@
   "id": 7,
   "artist": "Gerry Rafferty",
   "title": "Snakes and Ladders",
-  "images": [],
-  "cover": null,
+  "images": [
+   "vinyl-7-d020254a.jpg"
+  ],
+  "cover": "vinyl-7-d020254a.jpg",
   "listens": [
    {
     "side": "1",
@@ -125,8 +139,10 @@
   "id": 8,
   "artist": "Linkin Park",
   "title": "Hybrid Theory",
-  "images": [],
-  "cover": null,
+  "images": [
+   "vinyl-8-409a227a.jpg"
+  ],
+  "cover": "vinyl-8-409a227a.jpg",
   "listens": [
    {
     "side": "1",
@@ -154,8 +170,10 @@
   "id": 9,
   "artist": "Linkin Park",
   "title": "Meteora",
-  "images": [],
-  "cover": null,
+  "images": [
+   "vinyl-9-b75824f1.jpg"
+  ],
+  "cover": "vinyl-9-b75824f1.jpg",
   "listens": [
    {
     "side": "2",
@@ -171,8 +189,10 @@
   "id": 10,
   "artist": "Linkin Park",
   "title": "From Zero",
-  "images": [],
-  "cover": null,
+  "images": [
+   "vinyl-10-adb07576.jpg"
+  ],
+  "cover": "vinyl-10-adb07576.jpg",
   "listens": [
    {
     "side": "A",
@@ -188,8 +208,10 @@
   "id": 11,
   "artist": "Mozart",
   "title": "Die Musikalische Geschichte eines Genies",
-  "images": [],
-  "cover": null,
+  "images": [
+   "vinyl-11-4cb8d125.jpg"
+  ],
+  "cover": "vinyl-11-4cb8d125.jpg",
   "listens": [
    {
     "side": "1",
@@ -205,24 +227,30 @@
   "id": 12,
   "artist": "Orkestar Bečke Opere",
   "title": "Bečki Valceri",
-  "images": [],
-  "cover": null,
+  "images": [
+   "vinyl-12-14ff0c36.jpg"
+  ],
+  "cover": "vinyl-12-14ff0c36.jpg",
   "listens": []
  },
  {
   "id": 13,
   "artist": "Rokeri s Moravu",
   "title": "Rokeri s Moravu",
-  "images": [],
-  "cover": null,
+  "images": [
+   "vinyl-13-1761fd13.jpg"
+  ],
+  "cover": "vinyl-13-1761fd13.jpg",
   "listens": []
  },
  {
   "id": 14,
   "artist": "Rondo Veneziano",
   "title": "Odissea Veneziana",
-  "images": [],
-  "cover": null,
+  "images": [
+   "vinyl-14-74d9c278.jpg"
+  ],
+  "cover": "vinyl-14-74d9c278.jpg",
   "listens": [
    {
     "side": "A",
@@ -242,8 +270,10 @@
   "id": 15,
   "artist": "Saga",
   "title": "Images at Twilight",
-  "images": [],
-  "cover": null,
+  "images": [
+   "vinyl-15-7f0eb8d1.jpg"
+  ],
+  "cover": "vinyl-15-7f0eb8d1.jpg",
   "listens": [
    {
     "side": "1",
@@ -267,8 +297,10 @@
   "id": 16,
   "artist": "Tyler, The Creator",
   "title": "Igor",
-  "images": [],
-  "cover": null,
+  "images": [
+   "vinyl-16-7a11a6aa.jpg"
+  ],
+  "cover": "vinyl-16-7a11a6aa.jpg",
   "listens": [
    {
     "side": "1",
@@ -312,8 +344,10 @@
   "id": 17,
   "artist": "Various Artists",
   "title": "Loving Sixties",
-  "images": [],
-  "cover": null,
+  "images": [
+   "vinyl-17-7b385f4c.jpg"
+  ],
+  "cover": "vinyl-17-7b385f4c.jpg",
   "listens": [
    {
     "side": "1",
@@ -329,16 +363,20 @@
   "id": 18,
   "artist": "Queen",
   "title": "Greatest Hits",
-  "images": [],
-  "cover": null,
+  "images": [
+   "vinyl-18-1d01167f.jpg"
+  ],
+  "cover": "vinyl-18-1d01167f.jpg",
   "listens": []
  },
  {
   "id": 19,
   "artist": "Yu Grupa",
   "title": "Yu Grupa",
-  "images": [],
-  "cover": null,
+  "images": [
+   "vinyl-19-e1a7dc1e.jpg"
+  ],
+  "cover": "vinyl-19-e1a7dc1e.jpg",
   "listens": [
    {
     "side": "1",
