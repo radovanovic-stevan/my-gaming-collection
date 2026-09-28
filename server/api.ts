@@ -5,6 +5,7 @@
 //   public/data/gotm.json   - Game of the Month, one entry per month
 //   public/data/gotc.json   - Game of the Category: yearly awards and stats
 //   public/data/gallery.json - Gallery: pictures with a date, a description and the games in them
+//   public/data/<slug>.json  - other collections (e.g. dylan-dog.json): a checklist per series
 // Each game lists its images in `images`; `cover` is one of them (or null).
 // The static build (GitHub Pages) has no API, so the app is read-only there.
 import type { Plugin } from 'vite';
@@ -371,6 +372,89 @@ async function handleGallery(parts: string[], method: string, req: IncomingMessa
   throw new HttpError(405, 'Method not allowed');
 }
 
+// --- Other collections (checklists) --------------------------------------------
+
+type ChecklistSeries = { id: number; name: string; kind: 'numbers' | 'titles'; items: { label: string; owned: boolean }[] };
+type ChecklistCollection = { title: string; series: ChecklistSeries[] };
+
+const COLLECTION_SLUGS = ['dylan-dog'];
+
+function sanitizeSeries(input: Record<string, unknown>): Omit<ChecklistSeries, 'id'> {
+  const name = str(input.name);
+  if (!name) throw new HttpError(400, 'Series name is required');
+  const kind = input.kind === 'titles' ? 'titles' : 'numbers';
+  const seen = new Set<string>();
+  const items = (Array.isArray(input.items) ? input.items : [])
+    .map((it) => ({ label: str(obj(it).label), owned: obj(it).owned === true }))
+    .filter((it) => it.label && !seen.has(it.label) && seen.add(it.label));
+  if (kind === 'numbers') {
+    const bad = items.find((it) => !/^\d+$/.test(it.label));
+    if (bad) throw new HttpError(400, `"${bad.label}" isn't an issue number`);
+    items.sort((a, b) => Number(a.label) - Number(b.label));
+  }
+  return { name, kind, items };
+}
+
+/** Routes under /api/collections/:slug. Returns false when the path isn't one of them. */
+async function handleCollections(parts: string[], method: string, req: IncomingMessage, res: ServerResponse): Promise<boolean> {
+  if (parts[0] !== 'collections') return false;
+  const slug = parts[1];
+  if (!COLLECTION_SLUGS.includes(slug) || parts[2] !== 'series') throw new HttpError(404, 'Not found');
+  const file = path.join(ROOT, `public/data/${slug}.json`);
+  const id = parts[3] === undefined ? null : Number(parts[3]);
+  if (id !== null && !Number.isInteger(id)) throw new HttpError(400, 'Invalid id');
+  const findSeries = (data: ChecklistCollection) => {
+    const i = data.series.findIndex((s) => s.id === id);
+    if (i < 0) throw new HttpError(404, `Series #${id} not found`);
+    return i;
+  };
+
+  // POST /api/collections/:slug/series   (added at the end)
+  if (id === null && parts.length === 3 && method === 'POST') {
+    const fields = sanitizeSeries(await readBody(req));
+    const created = await exclusive(async () => {
+      const data = await loadJson<ChecklistCollection>(file);
+      const series: ChecklistSeries = { id: Math.max(0, ...data.series.map((s) => s.id)) + 1, ...fields };
+      data.series.push(series);
+      await saveJson(file, data);
+      return series;
+    });
+    send(res, 201, created);
+    return true;
+  }
+
+  // PUT /api/collections/:slug/series/:id   body: { name, kind, items, position? }  (position moves it, 0-based)
+  if (id !== null && parts.length === 4 && method === 'PUT') {
+    const body = await readBody(req);
+    const fields = sanitizeSeries(body);
+    const saved = await exclusive(async () => {
+      const data = await loadJson<ChecklistCollection>(file);
+      const i = findSeries(data);
+      data.series.splice(i, 1);
+      const series: ChecklistSeries = { id, ...fields };
+      const position = Number.isInteger(body.position) ? Math.max(0, Math.min(body.position, data.series.length)) : i;
+      data.series.splice(position, 0, series);
+      await saveJson(file, data);
+      return series;
+    });
+    send(res, 200, saved);
+    return true;
+  }
+
+  // DELETE /api/collections/:slug/series/:id
+  if (id !== null && parts.length === 4 && method === 'DELETE') {
+    await exclusive(async () => {
+      const data = await loadJson<ChecklistCollection>(file);
+      data.series.splice(findSeries(data), 1);
+      await saveJson(file, data);
+    });
+    send(res, 200, { ok: true });
+    return true;
+  }
+
+  throw new HttpError(405, 'Method not allowed');
+}
+
 async function handle(req: IncomingMessage, res: ServerResponse): Promise<void> {
   const url = new URL(req.url ?? '/', 'http://localhost');
   const parts = url.pathname.replace(/^\/api\/?/, '').split('/').filter(Boolean);
@@ -394,6 +478,7 @@ async function handle(req: IncomingMessage, res: ServerResponse): Promise<void> 
 
   if (await handleAwards(parts, method, req, res)) return;
   if (await handleGallery(parts, method, req, res)) return;
+  if (await handleCollections(parts, method, req, res)) return;
   if (parts[0] !== 'games') throw new HttpError(404, 'Not found');
   const id = parts[1] === undefined ? null : Number(parts[1]);
   if (id !== null && !Number.isInteger(id)) throw new HttpError(400, 'Invalid id');

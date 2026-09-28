@@ -31,6 +31,12 @@ The **Gallery** tab holds free-form pictures: add a picture (drop, pick, paste o
 from a URL), its date, a description and the games shown in it, if any. Pictures are resized
 to 1600px. The static build has no API, so it's view-only.
 
+**Other collections** that aren't games (for now, **Dylan Dog** comics) get their own tabs after
+the game tabs, with their own colours. Each series is a checklist of issue numbers or book titles,
+marked owned or missing. Locally, **Tick off issues** lets you click issues to switch them
+(and **+** adds the next number), and each series' **Edit** sets its name and its owned and
+missing issues as ranges like `1-10, 12`.
+
 ## Where the data lives
 
 Everything is plain files in the repo. There is no database.
@@ -42,6 +48,7 @@ Everything is plain files in the repo. There is no database.
 | `public/data/gotm.json` | Game of the Month: every month's games played, completed and bought counts, and the winner. |
 | `public/data/gotc.json` | Game of the Category: yearly awards and yearly stats. |
 | `public/data/gallery.json` | Gallery: each picture's image file, date, description and the games in it. |
+| `public/data/dylan-dog.json` | Dylan Dog: each series and which of its issues are owned. |
 | `data/source/*.tsv` | Original spreadsheet exports. |
 
 Commit the changes after editing to publish them.

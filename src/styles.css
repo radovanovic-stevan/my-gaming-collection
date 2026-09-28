@@ -2263,3 +2263,253 @@ div.gallery-main {
 .map-game:hover {
   background: var(--bg-sunk);
 }
+
+/* --- Other collections (not games) ------------------------------------------- */
+
+/* Tabs for other collections sit apart from the game tabs, after a divider. */
+.tabs-divider {
+  flex: none;
+  width: 1px;
+  margin: 8px 6px 8px auto;
+  background: var(--border);
+}
+
+.tabs-group-label {
+  flex: none;
+  align-self: center;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--fg-muted);
+}
+
+.tabs .other-tab {
+  color: var(--other-accent);
+}
+
+.tabs .other-tab.on {
+  border-bottom-color: var(--other-accent);
+}
+
+@media (max-width: 520px) {
+  .tabs-divider {
+    margin-left: 6px;
+  }
+  .tabs-group-label {
+    display: none;
+  }
+}
+
+:root {
+  --other-accent: #c8102e;
+}
+
+/* Each other collection gets its own colours, so it doesn't read as part of the game pages. */
+.app[data-collection='dylan-dog'] {
+  --accent: #c8102e;
+  --accent-soft: #fbe4e7;
+  --owned: #d7ebcf;
+  --owned-fg: #1f4d12;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --other-accent: #ff6b6b;
+  }
+  .app[data-collection='dylan-dog'] {
+    --accent: #ff6b6b;
+    --accent-soft: #3a1f23;
+    --owned: #24401c;
+    --owned-fg: #c9eab8;
+  }
+}
+
+.checklist .awards-head {
+  align-items: center;
+}
+
+.checklist .awards-head .legend {
+  margin: 0;
+  align-items: center;
+}
+
+.checklist .awards-actions {
+  flex-wrap: wrap;
+}
+
+.issue.swatch {
+  display: inline-grid;
+  width: 22px;
+  height: 20px;
+  margin-right: 4px;
+  font-size: 11px;
+}
+
+/* Columns rather than a grid, so short series stack under each other like the sheet. */
+.series-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  columns: 300px;
+  column-gap: 14px;
+}
+
+.series-card {
+  break-inside: avoid;
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-elev);
+  min-width: 0;
+}
+
+.series-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.series-head h3 {
+  flex: 1;
+  margin: 0;
+  font-size: 15px;
+  min-width: 0;
+}
+
+.series-head b {
+  color: var(--fg);
+}
+
+.series-tools {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  align-self: center;
+}
+
+.series-tools .link {
+  margin-left: 4px;
+}
+
+.series-progress {
+  height: 4px;
+  border-radius: 999px;
+  background: var(--bg-sunk);
+  overflow: hidden;
+}
+
+.series-progress span {
+  display: block;
+  height: 100%;
+  background: var(--r-top);
+}
+
+.issue-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  gap: 3px;
+}
+
+.issue-grid li {
+  display: flex;
+  min-width: 0;
+}
+
+.issue {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  place-items: center;
+  height: 26px;
+  padding: 0;
+  border: 1px dashed var(--border);
+  border-radius: 5px;
+  background: none;
+  color: var(--fg-muted);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.issue.owned {
+  border: 1px solid transparent;
+  background: var(--owned);
+  color: var(--owned-fg);
+  font-weight: 600;
+}
+
+button.issue:hover {
+  border-color: var(--accent);
+}
+
+.issue.add {
+  border-style: solid;
+  color: var(--accent);
+  font-size: 15px;
+}
+
+.title-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.title-list li,
+.title-toggle {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 4px 6px;
+  border-radius: 5px;
+  color: var(--fg-muted);
+}
+
+.title-list li.owned {
+  background: var(--owned);
+  color: var(--owned-fg);
+  font-weight: 600;
+}
+
+.title-list li:has(.title-toggle) {
+  padding: 0;
+}
+
+.title-toggle {
+  flex: 1;
+  border: 0;
+  background: none;
+  color: inherit;
+  font-weight: inherit;
+  text-align: left;
+}
+
+.title-toggle:hover {
+  outline: 1px solid var(--accent);
+}
+
+.title-list .tick {
+  flex: none;
+  width: 12px;
+}
+
+.title-row {
+  align-items: center;
+}
+
+.title-row input:not([type='checkbox']) {
+  flex: 1;
+  min-width: 0;
+  padding: 7px 9px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--bg);
+}

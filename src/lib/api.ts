@@ -1,7 +1,8 @@
-import type { Game, GalleryEntry, GotcYear, GotmMonth } from '../types';
+import type { ChecklistSeries, Game, GalleryEntry, GotcYear, GotmMonth } from '../types';
 
 export type GameInput = Omit<Game, 'id' | 'images' | 'cover'>;
 /** A new picture needs a dataUrl; when editing, one replaces the picture. */
+export type SeriesInput = Omit<ChecklistSeries, 'id'> & { position?: number };
 export type GalleryInput = Omit<GalleryEntry, 'id' | 'image'> & { dataUrl?: string };
 
 async function request<T>(method: string, path: string, body?: unknown): Promise<T> {
@@ -39,6 +40,9 @@ export const api = {
   addPicture: (entry: GalleryInput) => request<GalleryEntry>('POST', 'gallery', entry),
   updatePicture: (id: number, entry: GalleryInput) => request<GalleryEntry>('PUT', `gallery/${id}`, entry),
   deletePicture: (id: number) => request<{ ok: true }>('DELETE', `gallery/${id}`),
+  addSeries: (collection: string, series: SeriesInput) => request<ChecklistSeries>('POST', `collections/${collection}/series`, series),
+  updateSeries: (collection: string, id: number, series: SeriesInput) => request<ChecklistSeries>('PUT', `collections/${collection}/series/${id}`, series),
+  deleteSeries: (collection: string, id: number) => request<{ ok: true }>('DELETE', `collections/${collection}/series/${id}`),
   fetchImage: async (url: string): Promise<Blob> => {
     const r = await fetch(`/api/fetch-image?url=${encodeURIComponent(url)}`);
     if (!r.ok) throw new Error((await r.json().catch(() => ({}))).error ?? `HTTP ${r.status}`);

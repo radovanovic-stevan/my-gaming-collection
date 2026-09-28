@@ -1,5 +1,5 @@
 import { Suspense, lazy, useCallback, useEffect, useMemo, useState } from 'react';
-import type { Game, GalleryEntry, GotcData, GotmMonth, Query, SortKey } from './types';
+import type { ChecklistCollection, Game, GalleryEntry, GotcData, GotmMonth, Query, SortKey } from './types';
 import { DEFAULT_QUERY, SORT_LABELS, applyQuery, paramsToQuery, queryToParams } from './lib/query';
 import { Filters } from './components/Filters';
 import { SortBuilder } from './components/SortBuilder';
@@ -11,13 +11,19 @@ import { ImageManager } from './components/ImageManager';
 import { GotmView } from './components/GotmView';
 import { GotcView } from './components/GotcView';
 import { GalleryView } from './components/GalleryView';
+import { ChecklistView } from './components/ChecklistView';
 // The map carries the world's country shapes, so it's only loaded when opened.
 const MapView = lazy(() => import('./components/MapView'));
 import { api, detectEditing } from './lib/api';
 import { createLinker } from './lib/links';
 
-type Tab = 'collection' | 'gotm' | 'gotc' | 'gallery' | 'map';
-const TABS: { id: Tab; label: string; short: string }[] = [
+type GameTab = 'collection' | 'gotm' | 'gotc' | 'gallery' | 'map';
+/** Collections that aren't games. Each one is public/data/<id>.json. */
+const OTHER_COLLECTIONS = [{ id: 'dylan-dog', label: 'Dylan Dog', short: 'Dylan Dog' }] as const;
+type OtherTab = (typeof OTHER_COLLECTIONS)[number]['id'];
+type Tab = GameTab | OtherTab;
+const isOther = (t: Tab): t is OtherTab => OTHER_COLLECTIONS.some((c) => c.id === t);
+const TABS: { id: GameTab; label: string; short: string }[] = [
   { id: 'collection', label: 'Collection', short: 'Collection' },
   { id: 'gotm', label: 'Game of the Month', short: 'GOTM' },
   { id: 'gotc', label: 'Game of the Category', short: 'GOTC' },
@@ -26,7 +32,7 @@ const TABS: { id: Tab; label: string; short: string }[] = [
 ];
 const tabFromUrl = (): Tab => {
   const t = new URLSearchParams(location.search).get('tab');
-  return t === 'gotm' || t === 'gotc' || t === 'gallery' || t === 'map' ? t : 'collection';
+  return t === 'gotm' || t === 'gotc' || t === 'gallery' || t === 'map' || OTHER_COLLECTIONS.some((c) => c.id === t) ? (t as Tab) : 'collection';
 };
 
 /** Fetches a JSON file from public/data the first time it's needed. */
@@ -59,6 +65,8 @@ export default function App() {
   const gotm = useDataFile<GotmMonth[]>('gotm.json', tab === 'gotm' || (tab === 'gotc' && editable));
   const gotc = useDataFile<GotcData>('gotc.json', tab === 'gotc');
   const gallery = useDataFile<GalleryEntry[]>('gallery.json', tab === 'gallery');
+  const dylanDog = useDataFile<ChecklistCollection>('dylan-dog.json', tab === 'dylan-dog');
+  const other = isOther(tab) ? { 'dylan-dog': dylanDog }[tab] : null;
 
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}data/games.json`, { cache: 'no-cache' })
@@ -89,6 +97,13 @@ export default function App() {
       avg: rated.reduce((s, g) => s + g.rating!, 0) / rated.length,
     };
   }, [games]);
+
+  const otherStats = useMemo(() => {
+    if (!other?.data) return null;
+    const items = other.data.series.flatMap((s) => s.items);
+    const complete = other.data.series.filter((s) => s.items.length && s.items.every((i) => i.owned)).length;
+    return { owned: items.filter((i) => i.owned).length, total: items.length, series: other.data.series.length, complete };
+  }, [other?.data]);
 
   const onSortClick = (key: SortKey, additive: boolean) => {
     setQuery((q) => {
@@ -133,17 +148,35 @@ export default function App() {
   if (!games || !stats) return <div className="empty">Loading collection…</div>;
 
   return (
-    <div className="app">
+    <div className="app" data-collection={isOther(tab) ? tab : undefined}>
       <header className="header">
-        <div className="brand">
-          <h1>Game Collection</h1>
-          <p className="stats">
-            <span><b>{stats.total}</b> games</span>
-            <span><b>{stats.completed}</b> completed</span>
-            <span><b>{stats.platforms}</b> platforms</span>
-            <span><b>{stats.avg.toFixed(1)}</b> avg rating</span>
-          </p>
-        </div>
+        {isOther(tab) ? (
+          <div className="brand">
+            <h1>{OTHER_COLLECTIONS.find((c) => c.id === tab)!.label}</h1>
+            <p className="stats">
+              {otherStats ? (
+                <>
+                  <span><b>{otherStats.owned}</b> owned</span>
+                  <span><b>{otherStats.total - otherStats.owned}</b> missing</span>
+                  <span><b>{otherStats.series}</b> series</span>
+                  <span><b>{otherStats.complete}</b> complete</span>
+                </>
+              ) : (
+                <span>&nbsp;</span>
+              )}
+            </p>
+          </div>
+        ) : (
+          <div className="brand">
+            <h1>Game Collection</h1>
+            <p className="stats">
+              <span><b>{stats.total}</b> games</span>
+              <span><b>{stats.completed}</b> completed</span>
+              <span><b>{stats.platforms}</b> platforms</span>
+              <span><b>{stats.avg.toFixed(1)}</b> avg rating</span>
+            </p>
+          </div>
+        )}
         {editable && tab === 'collection' && (
           <div className="header-actions">
             <span className="edit-pill" title="Changes are written to public/data and public/images">Local editing on</span>
@@ -161,7 +194,22 @@ export default function App() {
             <span className="tab-short">{t.short}</span>
           </button>
         ))}
+        <span className="tabs-divider" aria-hidden="true" />
+        <span className="tabs-group-label">Other</span>
+        {OTHER_COLLECTIONS.map((c) => (
+          <button key={c.id} className={`other-tab ${tab === c.id ? 'on' : ''}`} aria-label={c.label} aria-current={tab === c.id ? 'page' : undefined} onClick={() => (setTab(c.id), scrollTo(0, 0))}>
+            <span className="tab-long">{c.label}</span>
+            <span className="tab-short">{c.short}</span>
+          </button>
+        ))}
       </nav>
+
+      {other &&
+        (other.data ? (
+          <ChecklistView slug={tab} data={other.data} editable={editable} onChange={other.setData} />
+        ) : (
+          <div className="empty">{other.error ? `Couldn't load the collection: ${other.error}` : 'Loading…'}</div>
+        ))}
 
       {tab === 'gotm' &&
         (gotm.data ? (

@@ -120,3 +120,23 @@ export interface GalleryEntry {
   /** Games shown in the picture; linked to the collection by title + platform. */
   games: GameRef[];
 }
+
+/** A non-game collection (e.g. comics), kept as a checklist per series. */
+export interface ChecklistItem {
+  /** An issue number, or a title for series without numbers. */
+  label: string;
+  owned: boolean;
+}
+
+export interface ChecklistSeries {
+  id: number;
+  name: string;
+  /** "numbers" shows a grid of issue numbers; "titles" a list of named books. */
+  kind: 'numbers' | 'titles';
+  items: ChecklistItem[];
+}
+
+export interface ChecklistCollection {
+  title: string;
+  series: ChecklistSeries[];
+}

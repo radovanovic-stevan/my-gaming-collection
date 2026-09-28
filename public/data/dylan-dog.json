@@ -1,0 +1,1763 @@
+{
+ "title": "Dylan Dog",
+ "series": [
+  {
+   "id": 1,
+   "name": "Regular Edition",
+   "kind": "numbers",
+   "items": [
+    {
+     "label": "1",
+     "owned": false
+    },
+    {
+     "label": "2",
+     "owned": true
+    },
+    {
+     "label": "3",
+     "owned": false
+    },
+    {
+     "label": "4",
+     "owned": true
+    },
+    {
+     "label": "5",
+     "owned": true
+    },
+    {
+     "label": "6",
+     "owned": false
+    },
+    {
+     "label": "7",
+     "owned": true
+    },
+    {
+     "label": "8",
+     "owned": true
+    },
+    {
+     "label": "9",
+     "owned": true
+    },
+    {
+     "label": "10",
+     "owned": true
+    },
+    {
+     "label": "11",
+     "owned": true
+    },
+    {
+     "label": "12",
+     "owned": true
+    },
+    {
+     "label": "13",
+     "owned": true
+    },
+    {
+     "label": "14",
+     "owned": true
+    },
+    {
+     "label": "15",
+     "owned": true
+    },
+    {
+     "label": "16",
+     "owned": true
+    },
+    {
+     "label": "17",
+     "owned": true
+    },
+    {
+     "label": "18",
+     "owned": true
+    },
+    {
+     "label": "19",
+     "owned": true
+    },
+    {
+     "label": "20",
+     "owned": true
+    },
+    {
+     "label": "21",
+     "owned": true
+    },
+    {
+     "label": "22",
+     "owned": true
+    },
+    {
+     "label": "23",
+     "owned": true
+    },
+    {
+     "label": "24",
+     "owned": true
+    },
+    {
+     "label": "25",
+     "owned": true
+    },
+    {
+     "label": "26",
+     "owned": true
+    },
+    {
+     "label": "27",
+     "owned": true
+    },
+    {
+     "label": "28",
+     "owned": true
+    },
+    {
+     "label": "29",
+     "owned": true
+    },
+    {
+     "label": "30",
+     "owned": true
+    },
+    {
+     "label": "31",
+     "owned": true
+    },
+    {
+     "label": "32",
+     "owned": true
+    },
+    {
+     "label": "33",
+     "owned": true
+    },
+    {
+     "label": "34",
+     "owned": true
+    },
+    {
+     "label": "35",
+     "owned": true
+    },
+    {
+     "label": "36",
+     "owned": true
+    },
+    {
+     "label": "37",
+     "owned": true
+    },
+    {
+     "label": "38",
+     "owned": true
+    },
+    {
+     "label": "39",
+     "owned": true
+    },
+    {
+     "label": "40",
+     "owned": true
+    },
+    {
+     "label": "41",
+     "owned": false
+    },
+    {
+     "label": "42",
+     "owned": true
+    },
+    {
+     "label": "43",
+     "owned": true
+    },
+    {
+     "label": "44",
+     "owned": true
+    },
+    {
+     "label": "45",
+     "owned": false
+    },
+    {
+     "label": "46",
+     "owned": true
+    },
+    {
+     "label": "47",
+     "owned": true
+    },
+    {
+     "label": "48",
+     "owned": true
+    },
+    {
+     "label": "49",
+     "owned": true
+    },
+    {
+     "label": "50",
+     "owned": true
+    },
+    {
+     "label": "51",
+     "owned": true
+    },
+    {
+     "label": "52",
+     "owned": true
+    },
+    {
+     "label": "53",
+     "owned": true
+    },
+    {
+     "label": "54",
+     "owned": true
+    },
+    {
+     "label": "55",
+     "owned": true
+    },
+    {
+     "label": "56",
+     "owned": true
+    },
+    {
+     "label": "57",
+     "owned": true
+    },
+    {
+     "label": "58",
+     "owned": true
+    },
+    {
+     "label": "59",
+     "owned": true
+    },
+    {
+     "label": "60",
+     "owned": true
+    },
+    {
+     "label": "61",
+     "owned": true
+    },
+    {
+     "label": "62",
+     "owned": true
+    },
+    {
+     "label": "63",
+     "owned": true
+    },
+    {
+     "label": "64",
+     "owned": true
+    },
+    {
+     "label": "65",
+     "owned": true
+    },
+    {
+     "label": "66",
+     "owned": true
+    },
+    {
+     "label": "67",
+     "owned": true
+    },
+    {
+     "label": "68",
+     "owned": true
+    },
+    {
+     "label": "69",
+     "owned": true
+    },
+    {
+     "label": "70",
+     "owned": true
+    },
+    {
+     "label": "71",
+     "owned": false
+    },
+    {
+     "label": "72",
+     "owned": true
+    },
+    {
+     "label": "73",
+     "owned": true
+    },
+    {
+     "label": "74",
+     "owned": true
+    },
+    {
+     "label": "75",
+     "owned": true
+    },
+    {
+     "label": "76",
+     "owned": true
+    },
+    {
+     "label": "77",
+     "owned": true
+    },
+    {
+     "label": "78",
+     "owned": true
+    },
+    {
+     "label": "79",
+     "owned": true
+    },
+    {
+     "label": "80",
+     "owned": true
+    },
+    {
+     "label": "81",
+     "owned": true
+    },
+    {
+     "label": "82",
+     "owned": true
+    },
+    {
+     "label": "83",
+     "owned": true
+    },
+    {
+     "label": "84",
+     "owned": true
+    },
+    {
+     "label": "85",
+     "owned": true
+    },
+    {
+     "label": "86",
+     "owned": true
+    },
+    {
+     "label": "87",
+     "owned": true
+    },
+    {
+     "label": "88",
+     "owned": true
+    },
+    {
+     "label": "89",
+     "owned": true
+    },
+    {
+     "label": "90",
+     "owned": true
+    },
+    {
+     "label": "91",
+     "owned": true
+    },
+    {
+     "label": "92",
+     "owned": true
+    },
+    {
+     "label": "93",
+     "owned": false
+    },
+    {
+     "label": "94",
+     "owned": true
+    },
+    {
+     "label": "95",
+     "owned": true
+    },
+    {
+     "label": "96",
+     "owned": true
+    },
+    {
+     "label": "97",
+     "owned": true
+    },
+    {
+     "label": "98",
+     "owned": false
+    },
+    {
+     "label": "99",
+     "owned": true
+    },
+    {
+     "label": "100",
+     "owned": true
+    },
+    {
+     "label": "101",
+     "owned": true
+    },
+    {
+     "label": "102",
+     "owned": true
+    },
+    {
+     "label": "103",
+     "owned": true
+    },
+    {
+     "label": "104",
+     "owned": true
+    },
+    {
+     "label": "105",
+     "owned": true
+    },
+    {
+     "label": "106",
+     "owned": true
+    },
+    {
+     "label": "107",
+     "owned": true
+    },
+    {
+     "label": "108",
+     "owned": true
+    },
+    {
+     "label": "109",
+     "owned": true
+    },
+    {
+     "label": "110",
+     "owned": true
+    },
+    {
+     "label": "111",
+     "owned": true
+    },
+    {
+     "label": "112",
+     "owned": true
+    },
+    {
+     "label": "113",
+     "owned": true
+    },
+    {
+     "label": "114",
+     "owned": true
+    },
+    {
+     "label": "115",
+     "owned": true
+    },
+    {
+     "label": "116",
+     "owned": true
+    },
+    {
+     "label": "117",
+     "owned": true
+    },
+    {
+     "label": "118",
+     "owned": true
+    },
+    {
+     "label": "119",
+     "owned": true
+    },
+    {
+     "label": "120",
+     "owned": true
+    },
+    {
+     "label": "121",
+     "owned": true
+    },
+    {
+     "label": "122",
+     "owned": true
+    },
+    {
+     "label": "123",
+     "owned": true
+    },
+    {
+     "label": "124",
+     "owned": true
+    },
+    {
+     "label": "125",
+     "owned": true
+    },
+    {
+     "label": "126",
+     "owned": true
+    },
+    {
+     "label": "127",
+     "owned": true
+    },
+    {
+     "label": "128",
+     "owned": true
+    },
+    {
+     "label": "129",
+     "owned": true
+    },
+    {
+     "label": "130",
+     "owned": true
+    },
+    {
+     "label": "131",
+     "owned": true
+    },
+    {
+     "label": "132",
+     "owned": true
+    },
+    {
+     "label": "133",
+     "owned": true
+    },
+    {
+     "label": "134",
+     "owned": true
+    },
+    {
+     "label": "135",
+     "owned": true
+    },
+    {
+     "label": "136",
+     "owned": true
+    },
+    {
+     "label": "137",
+     "owned": true
+    },
+    {
+     "label": "138",
+     "owned": true
+    },
+    {
+     "label": "139",
+     "owned": true
+    },
+    {
+     "label": "140",
+     "owned": true
+    },
+    {
+     "label": "141",
+     "owned": true
+    },
+    {
+     "label": "142",
+     "owned": true
+    },
+    {
+     "label": "143",
+     "owned": true
+    },
+    {
+     "label": "144",
+     "owned": true
+    },
+    {
+     "label": "145",
+     "owned": true
+    },
+    {
+     "label": "146",
+     "owned": true
+    },
+    {
+     "label": "147",
+     "owned": true
+    },
+    {
+     "label": "148",
+     "owned": true
+    },
+    {
+     "label": "149",
+     "owned": true
+    },
+    {
+     "label": "150",
+     "owned": true
+    },
+    {
+     "label": "151",
+     "owned": true
+    },
+    {
+     "label": "152",
+     "owned": true
+    },
+    {
+     "label": "153",
+     "owned": true
+    },
+    {
+     "label": "154",
+     "owned": true
+    },
+    {
+     "label": "155",
+     "owned": true
+    },
+    {
+     "label": "156",
+     "owned": true
+    },
+    {
+     "label": "157",
+     "owned": true
+    },
+    {
+     "label": "158",
+     "owned": true
+    },
+    {
+     "label": "159",
+     "owned": true
+    },
+    {
+     "label": "160",
+     "owned": true
+    },
+    {
+     "label": "161",
+     "owned": true
+    },
+    {
+     "label": "162",
+     "owned": true
+    },
+    {
+     "label": "163",
+     "owned": true
+    },
+    {
+     "label": "164",
+     "owned": true
+    },
+    {
+     "label": "165",
+     "owned": true
+    },
+    {
+     "label": "166",
+     "owned": true
+    },
+    {
+     "label": "167",
+     "owned": true
+    },
+    {
+     "label": "168",
+     "owned": true
+    },
+    {
+     "label": "169",
+     "owned": true
+    },
+    {
+     "label": "170",
+     "owned": true
+    },
+    {
+     "label": "171",
+     "owned": true
+    },
+    {
+     "label": "172",
+     "owned": true
+    },
+    {
+     "label": "173",
+     "owned": true
+    },
+    {
+     "label": "174",
+     "owned": true
+    },
+    {
+     "label": "175",
+     "owned": true
+    },
+    {
+     "label": "176",
+     "owned": true
+    },
+    {
+     "label": "177",
+     "owned": true
+    },
+    {
+     "label": "178",
+     "owned": true
+    },
+    {
+     "label": "179",
+     "owned": true
+    },
+    {
+     "label": "180",
+     "owned": true
+    },
+    {
+     "label": "181",
+     "owned": true
+    },
+    {
+     "label": "182",
+     "owned": true
+    },
+    {
+     "label": "183",
+     "owned": true
+    },
+    {
+     "label": "184",
+     "owned": true
+    },
+    {
+     "label": "185",
+     "owned": true
+    },
+    {
+     "label": "186",
+     "owned": true
+    },
+    {
+     "label": "187",
+     "owned": true
+    },
+    {
+     "label": "188",
+     "owned": true
+    },
+    {
+     "label": "189",
+     "owned": true
+    },
+    {
+     "label": "190",
+     "owned": true
+    },
+    {
+     "label": "191",
+     "owned": true
+    },
+    {
+     "label": "192",
+     "owned": true
+    },
+    {
+     "label": "193",
+     "owned": true
+    },
+    {
+     "label": "194",
+     "owned": true
+    },
+    {
+     "label": "195",
+     "owned": true
+    },
+    {
+     "label": "196",
+     "owned": true
+    },
+    {
+     "label": "197",
+     "owned": true
+    },
+    {
+     "label": "198",
+     "owned": true
+    },
+    {
+     "label": "199",
+     "owned": true
+    },
+    {
+     "label": "200",
+     "owned": true
+    },
+    {
+     "label": "201",
+     "owned": true
+    },
+    {
+     "label": "202",
+     "owned": true
+    },
+    {
+     "label": "203",
+     "owned": true
+    },
+    {
+     "label": "204",
+     "owned": true
+    },
+    {
+     "label": "205",
+     "owned": true
+    },
+    {
+     "label": "206",
+     "owned": true
+    },
+    {
+     "label": "207",
+     "owned": true
+    },
+    {
+     "label": "208",
+     "owned": true
+    },
+    {
+     "label": "209",
+     "owned": true
+    },
+    {
+     "label": "210",
+     "owned": true
+    },
+    {
+     "label": "211",
+     "owned": true
+    },
+    {
+     "label": "212",
+     "owned": true
+    },
+    {
+     "label": "213",
+     "owned": true
+    },
+    {
+     "label": "214",
+     "owned": true
+    },
+    {
+     "label": "215",
+     "owned": true
+    },
+    {
+     "label": "216",
+     "owned": true
+    },
+    {
+     "label": "217",
+     "owned": true
+    },
+    {
+     "label": "218",
+     "owned": true
+    },
+    {
+     "label": "219",
+     "owned": true
+    },
+    {
+     "label": "220",
+     "owned": true
+    },
+    {
+     "label": "221",
+     "owned": true
+    },
+    {
+     "label": "222",
+     "owned": true
+    },
+    {
+     "label": "223",
+     "owned": true
+    },
+    {
+     "label": "224",
+     "owned": true
+    },
+    {
+     "label": "225",
+     "owned": true
+    },
+    {
+     "label": "226",
+     "owned": true
+    },
+    {
+     "label": "227",
+     "owned": true
+    },
+    {
+     "label": "228",
+     "owned": true
+    },
+    {
+     "label": "229",
+     "owned": true
+    },
+    {
+     "label": "230",
+     "owned": true
+    },
+    {
+     "label": "231",
+     "owned": true
+    },
+    {
+     "label": "232",
+     "owned": true
+    },
+    {
+     "label": "233",
+     "owned": true
+    },
+    {
+     "label": "234",
+     "owned": true
+    },
+    {
+     "label": "235",
+     "owned": true
+    },
+    {
+     "label": "236",
+     "owned": true
+    },
+    {
+     "label": "237",
+     "owned": true
+    },
+    {
+     "label": "238",
+     "owned": true
+    },
+    {
+     "label": "239",
+     "owned": true
+    },
+    {
+     "label": "240",
+     "owned": false
+    },
+    {
+     "label": "241",
+     "owned": false
+    },
+    {
+     "label": "242",
+     "owned": false
+    },
+    {
+     "label": "243",
+     "owned": false
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "name": "SuperBook",
+   "kind": "numbers",
+   "items": [
+    {
+     "label": "1",
+     "owned": true
+    },
+    {
+     "label": "2",
+     "owned": true
+    },
+    {
+     "label": "3",
+     "owned": true
+    },
+    {
+     "label": "4",
+     "owned": true
+    },
+    {
+     "label": "5",
+     "owned": true
+    },
+    {
+     "label": "6",
+     "owned": true
+    },
+    {
+     "label": "7",
+     "owned": true
+    },
+    {
+     "label": "8",
+     "owned": true
+    },
+    {
+     "label": "9",
+     "owned": true
+    },
+    {
+     "label": "10",
+     "owned": false
+    },
+    {
+     "label": "11",
+     "owned": false
+    },
+    {
+     "label": "12",
+     "owned": false
+    },
+    {
+     "label": "13",
+     "owned": false
+    },
+    {
+     "label": "14",
+     "owned": false
+    },
+    {
+     "label": "15",
+     "owned": false
+    },
+    {
+     "label": "16",
+     "owned": false
+    },
+    {
+     "label": "17",
+     "owned": false
+    },
+    {
+     "label": "18",
+     "owned": false
+    },
+    {
+     "label": "19",
+     "owned": false
+    },
+    {
+     "label": "20",
+     "owned": false
+    },
+    {
+     "label": "21",
+     "owned": false
+    },
+    {
+     "label": "22",
+     "owned": false
+    },
+    {
+     "label": "23",
+     "owned": true
+    },
+    {
+     "label": "24",
+     "owned": false
+    },
+    {
+     "label": "25",
+     "owned": false
+    },
+    {
+     "label": "26",
+     "owned": false
+    },
+    {
+     "label": "27",
+     "owned": false
+    },
+    {
+     "label": "28",
+     "owned": false
+    },
+    {
+     "label": "29",
+     "owned": false
+    },
+    {
+     "label": "30",
+     "owned": false
+    },
+    {
+     "label": "31",
+     "owned": false
+    },
+    {
+     "label": "32",
+     "owned": false
+    },
+    {
+     "label": "33",
+     "owned": false
+    },
+    {
+     "label": "34",
+     "owned": false
+    },
+    {
+     "label": "35",
+     "owned": false
+    },
+    {
+     "label": "36",
+     "owned": false
+    },
+    {
+     "label": "37",
+     "owned": false
+    },
+    {
+     "label": "38",
+     "owned": false
+    },
+    {
+     "label": "39",
+     "owned": false
+    },
+    {
+     "label": "40",
+     "owned": false
+    },
+    {
+     "label": "41",
+     "owned": false
+    },
+    {
+     "label": "42",
+     "owned": false
+    },
+    {
+     "label": "43",
+     "owned": false
+    },
+    {
+     "label": "44",
+     "owned": false
+    },
+    {
+     "label": "45",
+     "owned": false
+    },
+    {
+     "label": "46",
+     "owned": false
+    },
+    {
+     "label": "47",
+     "owned": false
+    },
+    {
+     "label": "48",
+     "owned": false
+    },
+    {
+     "label": "49",
+     "owned": false
+    },
+    {
+     "label": "50",
+     "owned": false
+    },
+    {
+     "label": "51",
+     "owned": false
+    },
+    {
+     "label": "52",
+     "owned": false
+    },
+    {
+     "label": "53",
+     "owned": false
+    },
+    {
+     "label": "54",
+     "owned": false
+    },
+    {
+     "label": "55",
+     "owned": false
+    },
+    {
+     "label": "56",
+     "owned": true
+    },
+    {
+     "label": "57",
+     "owned": true
+    },
+    {
+     "label": "58",
+     "owned": true
+    },
+    {
+     "label": "59",
+     "owned": true
+    },
+    {
+     "label": "60",
+     "owned": true
+    },
+    {
+     "label": "61",
+     "owned": true
+    },
+    {
+     "label": "62",
+     "owned": true
+    },
+    {
+     "label": "63",
+     "owned": true
+    },
+    {
+     "label": "64",
+     "owned": true
+    },
+    {
+     "label": "65",
+     "owned": true
+    },
+    {
+     "label": "66",
+     "owned": true
+    },
+    {
+     "label": "67",
+     "owned": true
+    },
+    {
+     "label": "68",
+     "owned": true
+    },
+    {
+     "label": "69",
+     "owned": true
+    },
+    {
+     "label": "70",
+     "owned": false
+    },
+    {
+     "label": "71",
+     "owned": false
+    },
+    {
+     "label": "72",
+     "owned": false
+    },
+    {
+     "label": "73",
+     "owned": false
+    },
+    {
+     "label": "74",
+     "owned": false
+    },
+    {
+     "label": "75",
+     "owned": false
+    },
+    {
+     "label": "76",
+     "owned": false
+    },
+    {
+     "label": "77",
+     "owned": false
+    },
+    {
+     "label": "78",
+     "owned": false
+    },
+    {
+     "label": "79",
+     "owned": false
+    },
+    {
+     "label": "80",
+     "owned": false
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "name": "Biblioteka",
+   "kind": "numbers",
+   "items": [
+    {
+     "label": "1",
+     "owned": false
+    },
+    {
+     "label": "2",
+     "owned": false
+    },
+    {
+     "label": "3",
+     "owned": false
+    },
+    {
+     "label": "4",
+     "owned": false
+    },
+    {
+     "label": "5",
+     "owned": false
+    },
+    {
+     "label": "6",
+     "owned": false
+    },
+    {
+     "label": "7",
+     "owned": false
+    },
+    {
+     "label": "8",
+     "owned": false
+    },
+    {
+     "label": "9",
+     "owned": false
+    },
+    {
+     "label": "10",
+     "owned": false
+    },
+    {
+     "label": "11",
+     "owned": false
+    },
+    {
+     "label": "12",
+     "owned": false
+    },
+    {
+     "label": "13",
+     "owned": false
+    },
+    {
+     "label": "14",
+     "owned": false
+    },
+    {
+     "label": "15",
+     "owned": false
+    },
+    {
+     "label": "16",
+     "owned": false
+    },
+    {
+     "label": "17",
+     "owned": false
+    },
+    {
+     "label": "18",
+     "owned": false
+    },
+    {
+     "label": "19",
+     "owned": false
+    },
+    {
+     "label": "20",
+     "owned": false
+    },
+    {
+     "label": "21",
+     "owned": false
+    },
+    {
+     "label": "22",
+     "owned": false
+    },
+    {
+     "label": "23",
+     "owned": false
+    },
+    {
+     "label": "24",
+     "owned": false
+    },
+    {
+     "label": "25",
+     "owned": false
+    },
+    {
+     "label": "26",
+     "owned": false
+    },
+    {
+     "label": "27",
+     "owned": false
+    },
+    {
+     "label": "28",
+     "owned": false
+    },
+    {
+     "label": "29",
+     "owned": false
+    },
+    {
+     "label": "30",
+     "owned": false
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "name": "I Racconti Di Domani",
+   "kind": "numbers",
+   "items": [
+    {
+     "label": "1",
+     "owned": false
+    },
+    {
+     "label": "2",
+     "owned": true
+    },
+    {
+     "label": "3",
+     "owned": true
+    },
+    {
+     "label": "4",
+     "owned": false
+    },
+    {
+     "label": "5",
+     "owned": false
+    },
+    {
+     "label": "6",
+     "owned": false
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "name": "Planet of the Dead",
+   "kind": "numbers",
+   "items": [
+    {
+     "label": "0",
+     "owned": true
+    },
+    {
+     "label": "1",
+     "owned": true
+    },
+    {
+     "label": "2",
+     "owned": true
+    },
+    {
+     "label": "3",
+     "owned": true
+    },
+    {
+     "label": "4",
+     "owned": true
+    },
+    {
+     "label": "5",
+     "owned": true
+    },
+    {
+     "label": "6",
+     "owned": true
+    },
+    {
+     "label": "7",
+     "owned": true
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "name": "New Lunov Magnus",
+   "kind": "numbers",
+   "items": [
+    {
+     "label": "2",
+     "owned": true
+    },
+    {
+     "label": "6",
+     "owned": true
+    },
+    {
+     "label": "9",
+     "owned": true
+    },
+    {
+     "label": "12",
+     "owned": true
+    },
+    {
+     "label": "15",
+     "owned": true
+    },
+    {
+     "label": "18",
+     "owned": true
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "name": "New Lunov Magnus Bis",
+   "kind": "numbers",
+   "items": [
+    {
+     "label": "1",
+     "owned": false
+    },
+    {
+     "label": "5",
+     "owned": false
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "name": "Golden Edition",
+   "kind": "numbers",
+   "items": [
+    {
+     "label": "2",
+     "owned": true
+    },
+    {
+     "label": "9",
+     "owned": true
+    },
+    {
+     "label": "12",
+     "owned": false
+    },
+    {
+     "label": "19",
+     "owned": true
+    },
+    {
+     "label": "22",
+     "owned": true
+    },
+    {
+     "label": "33",
+     "owned": true
+    },
+    {
+     "label": "39",
+     "owned": true
+    },
+    {
+     "label": "47",
+     "owned": true
+    },
+    {
+     "label": "49",
+     "owned": true
+    },
+    {
+     "label": "63",
+     "owned": true
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "name": "Golden Edition Special",
+   "kind": "numbers",
+   "items": [
+    {
+     "label": "2",
+     "owned": true
+    },
+    {
+     "label": "7",
+     "owned": true
+    },
+    {
+     "label": "10",
+     "owned": true
+    },
+    {
+     "label": "16",
+     "owned": false
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "name": "Color Program",
+   "kind": "numbers",
+   "items": [
+    {
+     "label": "1",
+     "owned": false
+    },
+    {
+     "label": "3",
+     "owned": false
+    },
+    {
+     "label": "5",
+     "owned": false
+    },
+    {
+     "label": "7",
+     "owned": false
+    },
+    {
+     "label": "9",
+     "owned": false
+    },
+    {
+     "label": "11",
+     "owned": false
+    },
+    {
+     "label": "13",
+     "owned": false
+    },
+    {
+     "label": "17",
+     "owned": false
+    },
+    {
+     "label": "19",
+     "owned": false
+    },
+    {
+     "label": "21",
+     "owned": false
+    },
+    {
+     "label": "23",
+     "owned": false
+    },
+    {
+     "label": "25",
+     "owned": false
+    },
+    {
+     "label": "27",
+     "owned": false
+    },
+    {
+     "label": "29",
+     "owned": false
+    },
+    {
+     "label": "31",
+     "owned": false
+    },
+    {
+     "label": "35",
+     "owned": false
+    },
+    {
+     "label": "39",
+     "owned": false
+    },
+    {
+     "label": "45",
+     "owned": false
+    },
+    {
+     "label": "49",
+     "owned": false
+    },
+    {
+     "label": "53",
+     "owned": false
+    },
+    {
+     "label": "55",
+     "owned": false
+    },
+    {
+     "label": "59",
+     "owned": false
+    },
+    {
+     "label": "61",
+     "owned": false
+    },
+    {
+     "label": "65",
+     "owned": false
+    },
+    {
+     "label": "69",
+     "owned": false
+    },
+    {
+     "label": "73",
+     "owned": false
+    },
+    {
+     "label": "77",
+     "owned": false
+    },
+    {
+     "label": "83",
+     "owned": false
+    },
+    {
+     "label": "87",
+     "owned": false
+    },
+    {
+     "label": "89",
+     "owned": false
+    },
+    {
+     "label": "91",
+     "owned": false
+    },
+    {
+     "label": "93",
+     "owned": false
+    },
+    {
+     "label": "97",
+     "owned": false
+    }
+   ]
+  }
+ ]
+}
