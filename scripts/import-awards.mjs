@@ -139,6 +139,8 @@ function parseStats(text) {
     else if (key === 'multipleGotmWinners') stats[key] = [...value.matchAll(/(.+?)\s*\[([^\]]+)\]/g)].map((m) => ({ title: m[1].trim(), platform: platform(m[2]) }));
     else if (key === 'ratingChanges')
       stats[key] = [...value.matchAll(/(.+?)\s*\|\s*([\d.]+)\s*->\s*([\d.]+)/g)].map((m) => ({ title: m[1].trim(), from: Number(m[2]), to: Number(m[3]) }));
+    // The export runs the mentions together with no separator, so they come in as one item; split them in the app.
+    else if (key === 'honorableMentions') stats[key] = [value];
     else stats[key] = value;
   }
   return stats;

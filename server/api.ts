@@ -218,8 +218,9 @@ function sanitizeYear(input: Record<string, unknown>): GotcYear {
   if (consoles.length) stats.consolesBought = consoles;
   const multi = (Array.isArray(s.multipleGotmWinners) ? s.multipleGotmWinners : []).map((g) => gameRef(g, 'GOTM winner'));
   if (multi.length) stats.multipleGotmWinners = multi;
-  const mentions = str(s.honorableMentions);
-  if (mentions) stats.honorableMentions = mentions;
+  // A list; a string (one mention per line) is accepted too.
+  const mentions = strList(typeof s.honorableMentions === 'string' ? s.honorableMentions.split('\n') : s.honorableMentions);
+  if (mentions.length) stats.honorableMentions = mentions;
   const changes = (Array.isArray(s.ratingChanges) ? s.ratingChanges : [])
     .map((r) => ({ title: str(obj(r).title), from: num(obj(r).from, 'Rating from'), to: num(obj(r).to, 'Rating to') }))
     .filter((r) => r.title && r.from !== null && r.to !== null);

@@ -108,12 +108,16 @@ function YearStats({ year, link, onOpen }: { year: GotcYear; link: Props['link']
           </ul>
         </div>
       ) : null}
-      {s.honorableMentions && (
+      {s.honorableMentions?.length ? (
         <div className="stat-block">
           <h4>Moment of the Year: honourable mentions</h4>
-          <p className="small">{s.honorableMentions}</p>
+          <ul className="plain-list">
+            {s.honorableMentions.map((m, i) => (
+              <li key={i}>{m}</li>
+            ))}
+          </ul>
         </div>
-      )}
+      ) : null}
     </aside>
   );
 }
@@ -145,8 +149,8 @@ export function GotcView({ data, link, onOpen, editable, games, months, onChange
     <section className="awards">
       <div className="awards-head">
         <div>
-          <h2>Game of the Category</h2>
-          <p className="muted" title={data.about}>
+          <h2>Awards</h2>
+          <p className="muted">
             Favourite games per year and per category.
           </p>
         </div>
@@ -252,8 +256,6 @@ export function GotcView({ data, link, onOpen, editable, games, months, onChange
           ))}
         </>
       )}
-
-      <p className="about muted small">{data.about}</p>
 
       {editingYear !== undefined && (
         <YearEditor

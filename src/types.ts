@@ -105,7 +105,7 @@ export interface GotcYear {
     gamesBought?: number;
     consolesBought?: string[];
     multipleGotmWinners?: GameRef[];
-    honorableMentions?: string;
+    honorableMentions?: string[];
     ratingChanges?: { title: string; from: number; to: number }[];
   };
 }

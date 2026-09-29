@@ -43,7 +43,8 @@ export function YearEditor({ year, years, months, games, link, onSaved, onDelete
   const [bought, setBought] = useState(s.gamesBought?.toString() ?? '');
   const [consoles, setConsoles] = useState((s.consolesBought ?? []).join(', '));
   const [multi, setMulti] = useState<PickerValue[]>(s.multipleGotmWinners ?? []);
-  const [mentions, setMentions] = useState(s.honorableMentions ?? '');
+  // One mention per line.
+  const [mentions, setMentions] = useState((s.honorableMentions ?? []).join('\n'));
   const [changes, setChanges] = useState<ChangeRow[]>((s.ratingChanges ?? []).map((r) => ({ title: r.title, from: String(r.from), to: String(r.to) })));
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -84,7 +85,7 @@ export function YearEditor({ year, years, months, games, link, onSaved, onDelete
           gamesBought: bought === '' ? undefined : Number(bought),
           consolesBought: consoles.split(',').map((c) => c.trim()).filter(Boolean),
           multipleGotmWinners: multi.filter((m) => m.title.trim()),
-          honorableMentions: mentions,
+          honorableMentions: mentions.split('\n'),
           ratingChanges: changes.filter((c) => c.title.trim()).map((c) => ({ title: c.title, from: Number(c.from), to: Number(c.to) })),
         },
       });
@@ -199,8 +200,8 @@ export function YearEditor({ year, years, months, games, link, onSaved, onDelete
           </div>
 
           <label className="field">
-            <span>Moment of the Year: honourable mentions</span>
-            <textarea rows={3} value={mentions} onChange={(e) => setMentions(e.target.value)} />
+            <span>Moment of the Year: honourable mentions, one per line</span>
+            <textarea rows={5} value={mentions} onChange={(e) => setMentions(e.target.value)} />
           </label>
         </fieldset>
 

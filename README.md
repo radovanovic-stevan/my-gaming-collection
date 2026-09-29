@@ -15,7 +15,7 @@ When it runs through `npm run dev`, the app has a small local API that allows
 **adding, editing and deleting games** and **managing images**. A game can have
 several images: drop, pick, paste or fetch them from a URL, and mark one as the cover.
 
-The **Game of the Month** and **Game of the Category** tabs are editable locally too:
+The **Game of the Month** and **Awards** tabs are editable locally too:
 add or edit months (games played with their status, bought count; the completed count
 is worked out from the ✅ games), add or edit yearly awards and stats (a new year copies
 last year's categories), The all-time top-5 lists are
@@ -59,7 +59,7 @@ Everything is plain files in the repo. There is no database.
 | `public/data/games.json` | The collection. Edited by the app, or by hand. |
 | `public/images/` | Game images, named `<id>-<hash>.<ext>`. A game's `images` lists its files and `cover` picks one of them. Gallery pictures are named `gallery-<id>-<hash>.jpg`. |
 | `public/data/gotm.json` | Game of the Month: every month's games played, completed and bought counts, and the winner. |
-| `public/data/gotc.json` | Game of the Category: yearly awards and yearly stats. |
+| `public/data/gotc.json` | Awards: yearly awards and yearly stats. |
 | `public/data/gallery.json` | Gallery: each picture's image file, date, description and the games in it. |
 | `public/data/dylan-dog.json` | Dylan Dog: each series and which of its issues are owned. |
 | `public/data/vinyl.json` | Vinyl: each record's artist, album, images and listening log. Images are `vinyl-<id>-<hash>.<ext>`. |

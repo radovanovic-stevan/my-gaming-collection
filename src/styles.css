@@ -1756,11 +1756,6 @@ div.gallery-main {
   font-variant-numeric: tabular-nums;
 }
 
-.about {
-  max-width: 70ch;
-  margin: 32px 0 0;
-}
-
 @media (max-width: 640px) {
   .year-totals {
     display: grid;

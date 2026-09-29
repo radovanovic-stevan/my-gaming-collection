@@ -32,7 +32,7 @@ const isOther = (t: Tab): t is OtherTab => OTHER_COLLECTIONS.some((c) => c.id ==
 const TABS: { id: GameTab; label: string; short: string }[] = [
   { id: 'collection', label: 'Collection', short: 'Collection' },
   { id: 'gotm', label: 'Game of the Month', short: 'GOTM' },
-  { id: 'gotc', label: 'Game of the Category', short: 'GOTC' },
+  { id: 'gotc', label: 'Awards', short: 'Awards' },
   { id: 'gallery', label: 'Gallery', short: 'Gallery' },
   { id: 'map', label: 'Map', short: 'Map' },
   { id: 'consoles', label: 'Consoles', short: 'Consoles' },
@@ -285,7 +285,7 @@ export default function App() {
             onChange={gotc.setData}
           />
         ) : (
-          <div className="empty">{gotc.error ? `Couldn't load Game of the Category: ${gotc.error}` : 'Loading…'}</div>
+          <div className="empty">{gotc.error ? `Couldn't load the awards: ${gotc.error}` : 'Loading…'}</div>
         ))}
       {tab === 'gallery' &&
         (gallery.data ? (
