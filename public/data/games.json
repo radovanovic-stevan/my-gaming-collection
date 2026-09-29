@@ -17477,8 +17477,10 @@
   ],
   "edition": "",
   "boughtIn": "Japan",
-  "images": [],
-  "cover": null
+  "images": [
+   "706-b51d2d29.jpg"
+  ],
+  "cover": "706-b51d2d29.jpg"
  },
  {
   "id": 707,
