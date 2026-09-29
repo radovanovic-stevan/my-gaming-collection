@@ -1,4 +1,4 @@
-import { Suspense, lazy, useCallback, useEffect, useMemo, useState } from 'react';
+import { Suspense, lazy, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { BlogPost, ChecklistCollection, Game, GalleryEntry, GotcData, GameConsole, GotmMonth, Query, SortKey, Vinyl } from './types';
 import { DEFAULT_QUERY, SORT_LABELS, applyQuery, paramsToQuery, queryToParams } from './lib/query';
 import { Filters } from './components/Filters';
@@ -88,10 +88,34 @@ export default function App() {
     detectEditing().then(setEditable);
   }, []);
 
+  // Switching tabs adds a history entry, so Back and Forward move between tabs.
+  // Filter, sort and search changes only update the current entry.
+  const pushNext = useRef(false);
+  const goTo = (next: Tab) => {
+    if (next !== tab) pushNext.current = true;
+    setTab(next);
+    scrollTo(0, 0);
+  };
+
   useEffect(() => {
     const params = tab === 'collection' ? queryToParams(query) : `tab=${tab}`;
-    history.replaceState(null, '', params ? `?${params}` : location.pathname);
+    const push = pushNext.current;
+    pushNext.current = false;
+    if (location.search === (params ? `?${params}` : '')) return;
+    history[push ? 'pushState' : 'replaceState'](null, '', params ? `?${params}` : location.pathname);
   }, [query, tab]);
+
+  // Back and Forward: show the tab (and, for the collection, the filters) the URL describes.
+  useEffect(() => {
+    const onPop = () => {
+      const next = tabFromUrl();
+      setTab(next);
+      if (next === 'collection') setQuery(paramsToQuery(location.search));
+      setModal(null);
+    };
+    window.addEventListener('popstate', onPop);
+    return () => window.removeEventListener('popstate', onPop);
+  }, []);
 
   const link = useMemo(() => createLinker(games ?? []), [games]);
 
@@ -143,8 +167,7 @@ export default function App() {
   /** Opens the collection showing only one platform's games. */
   const showPlatform = (platform: string) => {
     setQuery({ ...DEFAULT_QUERY, view: query.view, platforms: [platform] });
-    setTab('collection');
-    scrollTo(0, 0);
+    goTo('collection');
   };
 
   const openId = modal && modal.kind !== 'new' ? modal.id : null;
@@ -216,7 +239,7 @@ export default function App() {
 
       <nav className="tabs" aria-label="Sections">
         {TABS.map((t) => (
-          <button key={t.id} className={tab === t.id ? 'on' : ''} aria-label={t.label} aria-current={tab === t.id ? 'page' : undefined} onClick={() => (setTab(t.id), scrollTo(0, 0))}>
+          <button key={t.id} className={tab === t.id ? 'on' : ''} aria-label={t.label} aria-current={tab === t.id ? 'page' : undefined} onClick={() => goTo(t.id)}>
             <span className="tab-long">{t.label}</span>
             <span className="tab-short">{t.short}</span>
           </button>
@@ -224,7 +247,7 @@ export default function App() {
         <span className="tabs-divider" aria-hidden="true" />
         <span className="tabs-group-label">Other</span>
         {OTHER_COLLECTIONS.map((c) => (
-          <button key={c.id} className={`other-tab tab-${c.id} ${tab === c.id ? 'on' : ''}`} aria-label={c.label} aria-current={tab === c.id ? 'page' : undefined} onClick={() => (setTab(c.id), scrollTo(0, 0))}>
+          <button key={c.id} className={`other-tab tab-${c.id} ${tab === c.id ? 'on' : ''}`} aria-label={c.label} aria-current={tab === c.id ? 'page' : undefined} onClick={() => goTo(c.id)}>
             <span className="tab-long">{c.label}</span>
             <span className="tab-short">{c.short}</span>
           </button>
