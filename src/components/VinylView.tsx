@@ -51,7 +51,7 @@ export function VinylCover({ record }: { record: Vinyl }) {
 
 export function VinylView({ records, editable, onChange }: Props) {
   const [search, setSearch] = useState('');
-  const [sort, setSort] = useState<SortKey>('artist');
+  const [sort, setSort] = useState<SortKey>('recent');
   const [undatedOnly, setUndatedOnly] = useState(false);
   const [modal, setModal] = useState<Modal>(null);
 

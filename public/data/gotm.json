@@ -23,7 +23,7 @@
    {
     "title": "Harvest Moon: Mad Dash",
     "platform": "PS4",
-    "status": null
+    "status": "in-progress"
    },
    {
     "title": "One Piece: Pirate Warriors 2",
@@ -34,6 +34,11 @@
     "title": "Time Crisis 4",
     "platform": "PS3",
     "status": "completed"
+   },
+   {
+    "title": "Hunted: The Demon's Forge",
+    "platform": "PS3",
+    "status": "in-progress"
    }
   ]
  },
