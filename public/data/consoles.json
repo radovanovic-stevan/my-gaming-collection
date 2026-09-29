@@ -4,7 +4,7 @@
   "name": "PlayStation",
   "maker": "Sony",
   "platform": "PS1",
-  "acquired": null,
+  "acquired": "October 2015",
   "notes": "",
   "models": [],
   "images": [
@@ -17,7 +17,7 @@
   "name": "PlayStation 2",
   "maker": "Sony",
   "platform": "PS2",
-  "acquired": null,
+  "acquired": "Slim in 2009, Fat in 2023",
   "notes": "",
   "models": [
    {
@@ -40,7 +40,7 @@
   "name": "PlayStation 3",
   "maker": "Sony",
   "platform": "PS3",
-  "acquired": null,
+  "acquired": "April 2019",
   "notes": "",
   "models": [],
   "images": [
@@ -53,7 +53,7 @@
   "name": "PlayStation 4",
   "maker": "Sony",
   "platform": "PS4",
-  "acquired": null,
+  "acquired": "2023",
   "notes": "",
   "models": [],
   "images": [
@@ -66,7 +66,7 @@
   "name": "PlayStation Portable",
   "maker": "Sony",
   "platform": "PSP",
-  "acquired": null,
+  "acquired": "August 2012",
   "notes": "",
   "models": [
    {
@@ -84,7 +84,7 @@
   "name": "PlayStation Vita",
   "maker": "Sony",
   "platform": "VITA",
-  "acquired": null,
+  "acquired": "Winter of 2025",
   "notes": "",
   "models": [],
   "images": [
@@ -97,7 +97,7 @@
   "name": "PlayStation Classic",
   "maker": "Sony",
   "platform": "PS Classic",
-  "acquired": null,
+  "acquired": "2023",
   "notes": "",
   "models": [],
   "images": [
@@ -110,7 +110,7 @@
   "name": "Game Boy Advance",
   "maker": "Nintendo",
   "platform": "GBA",
-  "acquired": null,
+  "acquired": "Summer of 2018",
   "notes": "",
   "models": [],
   "images": [
@@ -123,7 +123,7 @@
   "name": "Nintendo DS",
   "maker": "Nintendo",
   "platform": "NDS",
-  "acquired": null,
+  "acquired": "DSi in 2012, DS Lite in 2021",
   "notes": "",
   "models": [
    {
@@ -146,7 +146,7 @@
   "name": "Nintendo 3DS",
   "maker": "Nintendo",
   "platform": "3DS",
-  "acquired": null,
+  "acquired": "September 2022",
   "notes": "",
   "models": [],
   "images": [
@@ -159,7 +159,7 @@
   "name": "Wii",
   "maker": "Nintendo",
   "platform": "Wii",
-  "acquired": null,
+  "acquired": "Summer of 2015",
   "notes": "",
   "models": [],
   "images": [
@@ -172,7 +172,7 @@
   "name": "Super Nintendo Classic Mini",
   "maker": "Nintendo",
   "platform": "SNES Classic",
-  "acquired": null,
+  "acquired": "Summer of 2018",
   "notes": "",
   "models": [],
   "images": [
@@ -185,7 +185,7 @@
   "name": "Game & Watch: The Legend of Zelda",
   "maker": "Nintendo",
   "platform": "G&W",
-  "acquired": null,
+  "acquired": "Summer of 2022",
   "notes": "",
   "models": [],
   "images": [
@@ -198,7 +198,7 @@
   "name": "Atari Flashback 3",
   "maker": "Atari",
   "platform": "Atari FB3",
-  "acquired": null,
+  "acquired": "2025",
   "notes": "",
   "models": [],
   "images": [
