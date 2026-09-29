@@ -164,3 +164,37 @@ export interface Vinyl extends WithImages {
   /** Oldest first. */
   listens: VinylListen[];
 }
+
+// --- Consoles ------------------------------------------------------------------------
+
+/** One model of a console that's owned, e.g. PS2 Slim (Silver). */
+export interface ConsoleModel {
+  name: string;
+  /** Its picture; one of the console's `images`, or null. */
+  image: string | null;
+}
+
+export interface GameConsole extends WithImages {
+  name: string;
+  maker: string;
+  /** The platform its games are filed under in the collection (e.g. PS2). */
+  platform: string | null;
+  /** ISO date (yyyy-mm-dd) or free text, like a game's `acquired`. */
+  acquired: string | null;
+  notes: string;
+  /** The models owned, when it's worth naming them; empty otherwise. */
+  models: ConsoleModel[];
+}
+
+// --- Blog ---------------------------------------------------------------------------
+
+export interface BlogPost {
+  id: number;
+  title: string;
+  /** yyyy-mm-dd */
+  date: string;
+  /** Plain text; blank lines separate paragraphs. */
+  body: string;
+  /** File name inside public/images, or null. */
+  cover: string | null;
+}

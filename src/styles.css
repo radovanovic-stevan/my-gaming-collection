@@ -1835,6 +1835,7 @@ div.gallery-main {
 .award-editor select,
 .award-row-category,
 .change-row input,
+.model-row > input,
 .picker input {
   width: 100%;
   min-width: 0;
@@ -2680,5 +2681,217 @@ button.issue:hover {
   }
   .vinyl-grid {
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+}
+
+/* --- Consoles --------------------------------------------------------------------- */
+
+.consoles {
+  padding-top: 0;
+}
+
+.consoles .toolbar {
+  margin-bottom: 12px;
+}
+
+.console-group + .console-group {
+  margin-top: 22px;
+}
+
+.console-grid {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.console-grid > li {
+  contain-intrinsic-size: 200px 200px;
+}
+
+/* Product shots sit on white, so show them whole on a light tile instead of cropping.
+   Multiply blends their white backgrounds into the tile, which is dimmer in dark mode. */
+:root {
+  --console-tile: #fff;
+}
+
+.console-grid .card-cover,
+.console-detail .gallery-main,
+.console-model-picture {
+  aspect-ratio: 4 / 3;
+  background: var(--console-tile);
+}
+
+.console-grid .card-cover img.cover,
+.console-detail .gallery-main img,
+.console-model-picture img,
+.model-pictures img {
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.console-grid .card-cover img.cover {
+  padding: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --console-tile: #c9c7c1;
+  }
+}
+
+.console-models .section-title {
+  margin: 4px 0 8px;
+}
+
+.console-models ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.console-models li {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.console-model-picture {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.console-model-picture .cover {
+  width: 100%;
+  height: 100%;
+  padding: 4px;
+}
+
+.console-notes {
+  line-height: 1.5;
+}
+
+.console-notes p {
+  margin: 0 0 8px;
+}
+
+.model-rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.model-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.model-row > input {
+  flex: 1 1 180px;
+}
+
+.model-pictures {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.model-pictures button {
+  width: 52px;
+  height: 40px;
+  padding: 2px;
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  background: var(--console-tile);
+}
+
+.model-pictures button.on {
+  border-color: var(--accent);
+}
+
+.model-pictures img {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 640px) {
+  .console-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+/* --- Blog -------------------------------------------------------------------------- */
+
+.blog-posts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 720px;
+  display: grid;
+  gap: 16px;
+}
+
+.blog-post {
+  overflow: hidden;
+  padding: 18px 22px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-elev);
+  box-shadow: var(--shadow);
+}
+
+.blog-post-cover {
+  display: block;
+  width: calc(100% + 44px);
+  max-height: 360px;
+  margin: -18px -22px 16px;
+  object-fit: cover;
+}
+
+.blog-post-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.blog-post-title {
+  margin: 4px 0 10px;
+  font-size: 19px;
+  letter-spacing: -0.01em;
+}
+
+.blog-post-body {
+  line-height: 1.6;
+  text-align: justify;
+  hyphens: auto;
+  overflow-wrap: anywhere;
+}
+
+.blog-post-body p {
+  margin: 0 0 10px;
+}
+
+.blog-post-body p:last-child {
+  margin-bottom: 0;
+}
+
+.blog-post-body a {
+  color: var(--accent);
+}
+
+@media (max-width: 520px) {
+  .blog-post {
+    padding: 14px 16px;
+  }
+  .blog-post-cover {
+    width: calc(100% + 32px);
+    margin: -14px -16px 12px;
   }
 }

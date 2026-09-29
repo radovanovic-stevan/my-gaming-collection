@@ -1,5 +1,5 @@
 import { Suspense, lazy, useCallback, useEffect, useMemo, useState } from 'react';
-import type { ChecklistCollection, Game, GalleryEntry, GotcData, GotmMonth, Query, SortKey, Vinyl } from './types';
+import type { BlogPost, ChecklistCollection, Game, GalleryEntry, GotcData, GameConsole, GotmMonth, Query, SortKey, Vinyl } from './types';
 import { DEFAULT_QUERY, SORT_LABELS, applyQuery, paramsToQuery, queryToParams } from './lib/query';
 import { Filters } from './components/Filters';
 import { SortBuilder } from './components/SortBuilder';
@@ -13,12 +13,14 @@ import { GotcView } from './components/GotcView';
 import { GalleryView } from './components/GalleryView';
 import { ChecklistView } from './components/ChecklistView';
 import { VinylView } from './components/VinylView';
+import { ConsolesView } from './components/ConsolesView';
+import { BlogView } from './components/BlogView';
 // The map carries the world's country shapes, so it's only loaded when opened.
 const MapView = lazy(() => import('./components/MapView'));
 import { api, detectEditing } from './lib/api';
 import { createLinker } from './lib/links';
 
-type GameTab = 'collection' | 'gotm' | 'gotc' | 'gallery' | 'map';
+type GameTab = 'collection' | 'gotm' | 'gotc' | 'gallery' | 'map' | 'consoles' | 'blog';
 /** Collections that aren't games. Each one is public/data/<id>.json. */
 const OTHER_COLLECTIONS = [
   { id: 'dylan-dog', label: 'Dylan Dog', short: 'Dylan Dog' },
@@ -33,10 +35,12 @@ const TABS: { id: GameTab; label: string; short: string }[] = [
   { id: 'gotc', label: 'Game of the Category', short: 'GOTC' },
   { id: 'gallery', label: 'Gallery', short: 'Gallery' },
   { id: 'map', label: 'Map', short: 'Map' },
+  { id: 'consoles', label: 'Consoles', short: 'Consoles' },
+  { id: 'blog', label: 'Blog', short: 'Blog' },
 ];
 const tabFromUrl = (): Tab => {
   const t = new URLSearchParams(location.search).get('tab');
-  return t === 'gotm' || t === 'gotc' || t === 'gallery' || t === 'map' || OTHER_COLLECTIONS.some((c) => c.id === t) ? (t as Tab) : 'collection';
+  return TABS.some((x) => x.id === t) || OTHER_COLLECTIONS.some((c) => c.id === t) ? (t as Tab) : 'collection';
 };
 
 /** Fetches a JSON file from public/data the first time it's needed. */
@@ -73,6 +77,8 @@ export default function App() {
   const gallery = useDataFile<GalleryEntry[]>('gallery.json', tab === 'gallery');
   const dylanDog = useDataFile<ChecklistCollection>('dylan-dog.json', tab === 'dylan-dog');
   const vinyl = useDataFile<Vinyl[]>('vinyl.json', tab === 'vinyl');
+  const consoles = useDataFile<GameConsole[]>('consoles.json', tab === 'consoles');
+  const blog = useDataFile<BlogPost[]>('blog.json', tab === 'blog');
 
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}data/games.json`, { cache: 'no-cache' })
@@ -132,6 +138,13 @@ export default function App() {
       const dir = primary.key === key ? (primary.dir === 'asc' ? 'desc' : 'asc') : key === 'rating' ? 'desc' : 'asc';
       return { ...q, sort: [{ key, dir }, ...q.sort.filter((s) => s.key !== key).slice(0, 1)] };
     });
+  };
+
+  /** Opens the collection showing only one platform's games. */
+  const showPlatform = (platform: string) => {
+    setQuery({ ...DEFAULT_QUERY, view: query.view, platforms: [platform] });
+    setTab('collection');
+    scrollTo(0, 0);
   };
 
   const openId = modal && modal.kind !== 'new' ? modal.id : null;
@@ -256,6 +269,19 @@ export default function App() {
           <GalleryView entries={gallery.data} link={link} onOpen={(g) => showDetail(g.id)} editable={editable} games={games} onChange={gallery.setData} />
         ) : (
           <div className="empty">{gallery.error ? `Couldn't load the gallery: ${gallery.error}` : 'Loading…'}</div>
+        ))}
+
+      {tab === 'consoles' &&
+        (consoles.data ? (
+          <ConsolesView consoles={consoles.data} games={games} editable={editable} onChange={consoles.setData} onShowGames={showPlatform} />
+        ) : (
+          <div className="empty">{consoles.error ? `Couldn't load the consoles: ${consoles.error}` : 'Loading…'}</div>
+        ))}
+      {tab === 'blog' &&
+        (blog.data ? (
+          <BlogView posts={blog.data} editable={editable} onChange={blog.setData} />
+        ) : (
+          <div className="empty">{blog.error ? `Couldn't load the blog: ${blog.error}` : 'Loading…'}</div>
         ))}
 
       {tab === 'map' && (

@@ -1,10 +1,13 @@
-import type { ChecklistSeries, Game, GalleryEntry, GotcYear, GotmMonth, Vinyl } from '../types';
+import type { BlogPost, ChecklistSeries, Game, GalleryEntry, GotcYear, GameConsole, GotmMonth, Vinyl } from '../types';
 
 export type GameInput = Omit<Game, 'id' | 'images' | 'cover'>;
 /** A new picture needs a dataUrl; when editing, one replaces the picture. */
 export type VinylInput = Pick<Vinyl, 'artist' | 'title' | 'listens'>;
 export type SeriesInput = Omit<ChecklistSeries, 'id'> & { position?: number };
 export type GalleryInput = Omit<GalleryEntry, 'id' | 'image'> & { dataUrl?: string };
+export type ConsoleInput = Omit<GameConsole, 'id' | 'images' | 'cover'>;
+/** A dataUrl sets a new cover image; `cover: null` removes the current one. */
+export type BlogInput = Omit<BlogPost, 'id' | 'cover'> & { dataUrl?: string; cover?: null };
 
 async function request<T>(method: string, path: string, body?: unknown): Promise<T> {
   const r = await fetch(`/api/${path}`, {
@@ -50,6 +53,15 @@ export const api = {
   addVinylImage: (id: number, dataUrl: string) => request<Vinyl>('POST', `vinyl/${id}/images`, { dataUrl }),
   removeVinylImage: (id: number, file: string) => request<Vinyl>('DELETE', `vinyl/${id}/images/${encodeURIComponent(file)}`),
   setVinylCover: (id: number, file: string) => request<Vinyl>('PUT', `vinyl/${id}/cover`, { file }),
+  addConsole: (item: ConsoleInput) => request<GameConsole>('POST', 'consoles', item),
+  updateConsole: (id: number, item: ConsoleInput) => request<GameConsole>('PUT', `consoles/${id}`, item),
+  deleteConsole: (id: number) => request<{ ok: true }>('DELETE', `consoles/${id}`),
+  addConsoleImage: (id: number, dataUrl: string) => request<GameConsole>('POST', `consoles/${id}/images`, { dataUrl }),
+  removeConsoleImage: (id: number, file: string) => request<GameConsole>('DELETE', `consoles/${id}/images/${encodeURIComponent(file)}`),
+  setConsoleCover: (id: number, file: string) => request<GameConsole>('PUT', `consoles/${id}/cover`, { file }),
+  addPost: (post: BlogInput) => request<BlogPost>('POST', 'blog', post),
+  updatePost: (id: number, post: BlogInput) => request<BlogPost>('PUT', `blog/${id}`, post),
+  deletePost: (id: number) => request<{ ok: true }>('DELETE', `blog/${id}`),
   fetchImage: async (url: string): Promise<Blob> => {
     const r = await fetch(`/api/fetch-image?url=${encodeURIComponent(url)}`);
     if (!r.ok) throw new Error((await r.json().catch(() => ({}))).error ?? `HTTP ${r.status}`);

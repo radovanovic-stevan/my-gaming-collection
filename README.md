@@ -31,6 +31,14 @@ The **Gallery** tab holds free-form pictures: add a picture (drop, pick, paste o
 from a URL), its date, a description and the games shown in it, if any. Pictures are resized
 to 1600px. The static build has no API, so it's view-only.
 
+The **Consoles** tab lists the consoles, grouped by maker. Each one names the platform its games
+are filed under, so it shows how many games it has and links to them in the collection. A console
+can list the **models** owned (say, a PS2 Fat and a PS2 Slim), each with one of its pictures. It
+also has a maker, when it was acquired, and notes. The console pictures come from the internet.
+
+The **Blog** tab holds short posts: a title, a date, an optional cover image and plain text.
+Leave a blank line between paragraphs; links are clickable. Locally, **+ New post** writes one and **Edit** changes or deletes it.
+
 **Other collections** that aren't games (for now, **Dylan Dog** comics) get their own tabs after
 the game tabs, with their own colours. Each series is a checklist of issue numbers or book titles,
 marked owned or missing. Locally, **Tick off issues** lets you click issues to switch them
@@ -55,6 +63,8 @@ Everything is plain files in the repo. There is no database.
 | `public/data/gallery.json` | Gallery: each picture's image file, date, description and the games in it. |
 | `public/data/dylan-dog.json` | Dylan Dog: each series and which of its issues are owned. |
 | `public/data/vinyl.json` | Vinyl: each record's artist, album, images and listening log. Images are `vinyl-<id>-<hash>.<ext>`. |
+| `public/data/consoles.json` | Consoles: name, maker, platform, acquired, notes, models and images. Images are `console-<id>-<hash>.jpg`. |
+| `public/data/blog.json` | Blog posts, newest first. Cover images are `blog-<id>-<hash>.jpg`. |
 | `data/source/*.tsv` | Original spreadsheet exports. |
 
 Commit the changes after editing to publish them.

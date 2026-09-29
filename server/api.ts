@@ -7,6 +7,8 @@
 //   public/data/gallery.json - Gallery: pictures with a date, a description and the games in them
 //   public/data/<slug>.json  - other collections (e.g. dylan-dog.json): a checklist per series
 //   public/data/vinyl.json   - vinyl records and when each side was played; images are vinyl-<id>-<hash>.<ext>
+//   public/data/consoles.json - consoles and the models owned; images are console-<id>-<hash>.<ext>
+//   public/data/blog.json    - blog posts; cover images are blog-<id>-<hash>.jpg
 // Each game lists its images in `images`; `cover` is one of them (or null).
 // The static build (GitHub Pages) has no API, so the app is read-only there.
 import type { Plugin } from 'vite';
@@ -22,6 +24,8 @@ const GOTM_FILE = path.join(ROOT, 'public/data/gotm.json');
 const GOTC_FILE = path.join(ROOT, 'public/data/gotc.json');
 const GALLERY_FILE = path.join(ROOT, 'public/data/gallery.json');
 const VINYL_FILE = path.join(ROOT, 'public/data/vinyl.json');
+const CONSOLES_FILE = path.join(ROOT, 'public/data/consoles.json');
+const BLOG_FILE = path.join(ROOT, 'public/data/blog.json');
 
 const STATUSES = ['Completed', 'Not Completed', 'Null', 'Unplayable', 'Unrateable'];
 const IMAGE_TYPES: Record<string, string> = { 'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp', 'image/gif': 'gif' };
@@ -568,6 +572,199 @@ async function handleVinyl(parts: string[], method: string, req: IncomingMessage
   throw new HttpError(405, 'Method not allowed');
 }
 
+// --- Consoles ------------------------------------------------------------------------
+
+type ConsoleModel = { name: string; image: string | null };
+type GameConsole = {
+  id: number; name: string; maker: string; platform: string | null; acquired: string | null; notes: string;
+  models: ConsoleModel[]; images: string[]; cover: string | null;
+};
+
+/** The editable fields. A model's picture must be one of the console's `images`, or it's dropped. */
+function sanitizeConsole(input: Record<string, unknown>, images: string[]): Omit<GameConsole, 'id' | 'images' | 'cover'> {
+  const name = str(input.name);
+  if (!name) throw new HttpError(400, 'Name is required');
+  const notes = typeof input.notes === 'string' ? input.notes.trim() : '';
+  const models = (Array.isArray(input.models) ? input.models : [])
+    .map((m) => ({ name: str(obj(m).name), image: images.includes(obj(m).image as string) ? (obj(m).image as string) : null }))
+    .filter((m) => m.name);
+  return { name, maker: str(input.maker), platform: nullableStr(input.platform), acquired: nullableStr(input.acquired), notes, models };
+}
+
+const loadList = <T>(file: string) => loadJson<T[]>(file).catch((e) => (e.code === 'ENOENT' ? [] : Promise.reject(e)));
+
+/** Routes under /api/consoles. Returns false when the path isn't one of them. */
+async function handleConsoles(parts: string[], method: string, req: IncomingMessage, res: ServerResponse): Promise<boolean> {
+  if (parts[0] !== 'consoles') return false;
+  const id = parts[1] === undefined ? null : Number(parts[1]);
+  if (id !== null && !Number.isInteger(id)) throw new HttpError(400, 'Invalid id');
+  const byId = (items: GameConsole[]) => items.sort((a, b) => a.id - b.id);
+  /** Loads the consoles, lets `fn` change the one with this id, and saves. */
+  const change = (fn: (items: GameConsole[], i: number) => Promise<GameConsole | null>) =>
+    exclusive(async () => {
+      const items = await loadList<GameConsole>(CONSOLES_FILE);
+      const i = items.findIndex((r) => r.id === id);
+      if (i < 0) throw new HttpError(404, `Console #${id} not found`);
+      const result = await fn(items, i);
+      await saveJson(CONSOLES_FILE, byId(items));
+      return result;
+    });
+
+  // POST /api/consoles
+  if (id === null && parts.length === 1 && method === 'POST') {
+    const fields = sanitizeConsole(await readBody(req), []);
+    const created = await exclusive(async () => {
+      const items = await loadList<GameConsole>(CONSOLES_FILE);
+      const item: GameConsole = { id: Math.max(0, ...items.map((r) => r.id)) + 1, ...fields, images: [], cover: null };
+      await saveJson(CONSOLES_FILE, byId([...items, item]));
+      return item;
+    });
+    send(res, 201, created);
+    return true;
+  }
+  if (id === null) throw new HttpError(405, 'Method not allowed');
+
+  // PUT /api/consoles/:id   body: { name, maker, platform, acquired, notes, models }
+  if (parts.length === 2 && method === 'PUT') {
+    const body = await readBody(req);
+    send(res, 200, await change(async (items, i) => (items[i] = { ...items[i], ...sanitizeConsole(body, items[i].images) })));
+    return true;
+  }
+
+  // DELETE /api/consoles/:id
+  if (parts.length === 2 && method === 'DELETE') {
+    await change(async (items, i) => {
+      const [removed] = items.splice(i, 1);
+      await Promise.all(removed.images.map(removeImageFile));
+      return null;
+    });
+    send(res, 200, { ok: true });
+    return true;
+  }
+
+  // POST /api/consoles/:id/images   body: { dataUrl }  (the first image becomes the cover)
+  if (parts[2] === 'images' && parts.length === 3 && method === 'POST') {
+    const { dataUrl } = await readBody(req);
+    const saved = await change(async (items, i) => {
+      const r = items[i];
+      const file = await saveUpload(dataUrl, `console-${id}`);
+      if (!r.images.includes(file)) items[i] = { ...r, images: [...r.images, file], cover: r.cover ?? file };
+      return items[i];
+    });
+    send(res, 200, saved);
+    return true;
+  }
+
+  // DELETE /api/consoles/:id/images/:file   (a removed cover passes to the next image; models using it lose their picture)
+  if (parts[2] === 'images' && parts.length === 4 && method === 'DELETE') {
+    const file = decodeURIComponent(parts[3]);
+    const saved = await change(async (items, i) => {
+      const r = items[i];
+      if (!r.images.includes(file)) throw new HttpError(404, `Image ${file} not found`);
+      const images = r.images.filter((f) => f !== file);
+      const models = r.models.map((m) => (m.image === file ? { ...m, image: null } : m));
+      items[i] = { ...r, images, models, cover: r.cover === file ? (images[0] ?? null) : r.cover };
+      await removeImageFile(file);
+      return items[i];
+    });
+    send(res, 200, saved);
+    return true;
+  }
+
+  // PUT /api/consoles/:id/cover   body: { file }
+  if (parts[2] === 'cover' && parts.length === 3 && method === 'PUT') {
+    const { file } = await readBody(req);
+    const saved = await change(async (items, i) => {
+      if (!items[i].images.includes(file)) throw new HttpError(400, "Cover must be one of the console's images");
+      return (items[i] = { ...items[i], cover: file });
+    });
+    send(res, 200, saved);
+    return true;
+  }
+
+  throw new HttpError(405, 'Method not allowed');
+}
+
+// --- Blog ---------------------------------------------------------------------------
+
+type BlogPost = { id: number; title: string; date: string; body: string; cover: string | null };
+
+function sanitizePost(input: Record<string, unknown>): Omit<BlogPost, 'id' | 'cover'> {
+  const title = str(input.title);
+  const date = str(input.date);
+  // Keep line breaks, but no more than one blank line in a row.
+  const body = typeof input.body === 'string' ? input.body.replace(/\r\n?/g, '\n').replace(/\n{3,}/g, '\n\n').trim() : '';
+  if (!title) throw new HttpError(400, 'Title is required');
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) throw new HttpError(400, 'Date must look like 2026-09-29');
+  if (!body) throw new HttpError(400, 'The post is empty');
+  return { title, date, body };
+}
+
+/** Newest posts first. */
+const sortPosts = (posts: BlogPost[]) => posts.sort((a, b) => b.date.localeCompare(a.date) || b.id - a.id);
+
+/** Routes under /api/blog. Returns false when the path isn't one of them. */
+async function handleBlog(parts: string[], method: string, req: IncomingMessage, res: ServerResponse): Promise<boolean> {
+  if (parts[0] !== 'blog') return false;
+  const id = parts[1] === undefined ? null : Number(parts[1]);
+  if (id !== null && !Number.isInteger(id)) throw new HttpError(400, 'Invalid id');
+  const findPost = (posts: BlogPost[]) => {
+    const i = posts.findIndex((p) => p.id === id);
+    if (i < 0) throw new HttpError(404, `Post #${id} not found`);
+    return i;
+  };
+
+  // POST /api/blog   body: { title, date, body, dataUrl? }  (a dataUrl is the cover image)
+  if (id === null && parts.length === 1 && method === 'POST') {
+    const body = await readBody(req);
+    const fields = sanitizePost(body);
+    const created = await exclusive(async () => {
+      const posts = await loadList<BlogPost>(BLOG_FILE);
+      const post: BlogPost = { id: Math.max(0, ...posts.map((p) => p.id)) + 1, ...fields, cover: null };
+      if (body.dataUrl) post.cover = await saveUpload(body.dataUrl, `blog-${post.id}`);
+      await saveJson(BLOG_FILE, sortPosts([...posts, post]));
+      return post;
+    });
+    send(res, 201, created);
+    return true;
+  }
+
+  // PUT /api/blog/:id   body: { title, date, body, dataUrl?, cover? }  (a dataUrl replaces the cover; cover: null removes it)
+  if (id !== null && parts.length === 2 && method === 'PUT') {
+    const body = await readBody(req);
+    const fields = sanitizePost(body);
+    const saved = await exclusive(async () => {
+      const posts = await loadList<BlogPost>(BLOG_FILE);
+      const i = findPost(posts);
+      let cover = posts[i].cover ?? null;
+      if (body.dataUrl || body.cover === null) {
+        const replaced = cover;
+        cover = body.dataUrl ? await saveUpload(body.dataUrl, `blog-${id}`) : null;
+        if (replaced && replaced !== cover) await removeImageFile(replaced);
+      }
+      const post = (posts[i] = { id, ...fields, cover });
+      await saveJson(BLOG_FILE, sortPosts(posts));
+      return post;
+    });
+    send(res, 200, saved);
+    return true;
+  }
+
+  // DELETE /api/blog/:id
+  if (id !== null && parts.length === 2 && method === 'DELETE') {
+    await exclusive(async () => {
+      const posts = await loadList<BlogPost>(BLOG_FILE);
+      const [removed] = posts.splice(findPost(posts), 1);
+      await saveJson(BLOG_FILE, posts);
+      if (removed.cover) await removeImageFile(removed.cover);
+    });
+    send(res, 200, { ok: true });
+    return true;
+  }
+
+  throw new HttpError(405, 'Method not allowed');
+}
+
 async function handle(req: IncomingMessage, res: ServerResponse): Promise<void> {
   const url = new URL(req.url ?? '/', 'http://localhost');
   const parts = url.pathname.replace(/^\/api\/?/, '').split('/').filter(Boolean);
@@ -593,6 +790,8 @@ async function handle(req: IncomingMessage, res: ServerResponse): Promise<void> 
   if (await handleGallery(parts, method, req, res)) return;
   if (await handleCollections(parts, method, req, res)) return;
   if (await handleVinyl(parts, method, req, res)) return;
+  if (await handleConsoles(parts, method, req, res)) return;
+  if (await handleBlog(parts, method, req, res)) return;
   if (parts[0] !== 'games') throw new HttpError(404, 'Not found');
   const id = parts[1] === undefined ? null : Number(parts[1]);
   if (id !== null && !Number.isInteger(id)) throw new HttpError(400, 'Invalid id');
