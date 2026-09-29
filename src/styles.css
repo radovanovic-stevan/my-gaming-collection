@@ -2832,9 +2832,23 @@ button.issue:hover {
   list-style: none;
   margin: 0;
   padding: 0;
-  max-width: 720px;
   display: grid;
   gap: 16px;
+}
+
+/* Two columns on wide screens; posts in a row share its height. */
+@media (min-width: 900px) {
+  .blog-posts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.blog-posts > li {
+  display: flex;
+}
+
+.blog-posts .blog-post {
+  flex: 1;
 }
 
 .blog-post {
