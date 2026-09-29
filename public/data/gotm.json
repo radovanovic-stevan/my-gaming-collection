@@ -1,9 +1,13 @@
 [
  {
   "month": "2026-09",
-  "gameOfTheMonth": null,
+  "gameOfTheMonth": {
+   "title": "One Piece: Pirate Warriors 2",
+   "platform": "PS3",
+   "status": "completed"
+  },
   "completed": 5,
-  "bought": null,
+  "bought": 4,
   "played": [
    {
     "title": "Far Cry 4",
@@ -24,11 +28,6 @@
     "title": "Harvest Moon: Mad Dash",
     "platform": "PS4",
     "status": "in-progress"
-   },
-   {
-    "title": "One Piece: Pirate Warriors 2",
-    "platform": "PS3",
-    "status": "completed"
    },
    {
     "title": "Time Crisis 4",
