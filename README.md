@@ -22,6 +22,9 @@ last year's categories), The all-time top-5 lists are
 worked out from the collection's ratings (ties go to the most recently completed game), so they
 update by themselves.
 
+A game's **Last played** is the latest Game of the Month entry that lists it. It's worked out when
+the page loads, so nothing needs to be set on the game.
+
 The **Map** tab shows where the games were bought. Each game has a **Bought in** country
 (for a gift, where the giver bought it), set in the game's edit form. Hovering a country shows
 how many games came from it, and clicking it lists them. The map opens on Europe; a button
@@ -37,7 +40,8 @@ can list the **models** owned (say, a PS2 Fat and a PS2 Slim), each with one of 
 also has a maker, when it was acquired, and notes. The console pictures come from the internet.
 
 The **Blog** tab holds short posts: a title, a date, an optional cover image and plain text.
-Leave a blank line between paragraphs; links are clickable. Locally, **+ New post** writes one and **Edit** changes or deletes it.
+Leave a blank line between paragraphs; links are clickable. Tick **Draft** to keep a post to yourself: drafts only show while
+editing locally, not on the published site (they're still in `blog.json`, so they're in the repo). Locally, **+ New post** writes one and **Edit** changes or deletes it.
 
 **Other collections** that aren't games (for now, **Dylan Dog** comics) get their own tabs after
 the game tabs, with their own colours. Each series is a checklist of issue numbers or book titles,

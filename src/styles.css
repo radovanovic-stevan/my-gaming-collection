@@ -2904,3 +2904,33 @@ button.issue:hover {
     margin: -14px -16px 12px;
   }
 }
+
+/* Blog drafts: only shown while editing locally. */
+.check-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.blog-post.is-draft {
+  border-style: dashed;
+  border-color: var(--accent);
+}
+
+.blog-post-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.draft-tag {
+  padding: 1px 7px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent-fg);
+  background: var(--accent);
+}

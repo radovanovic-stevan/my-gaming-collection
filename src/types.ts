@@ -197,4 +197,6 @@ export interface BlogPost {
   body: string;
   /** File name inside public/images, or null. */
   cover: string | null;
+  /** A draft is only shown while editing locally, not on the published site. */
+  draft?: boolean;
 }

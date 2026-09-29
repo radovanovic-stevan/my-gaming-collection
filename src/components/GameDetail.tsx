@@ -1,19 +1,21 @@
 import { useEffect, type ReactNode } from 'react';
 import type { Game } from '../types';
-import { formatDate, formatNumber, formatPlaytime, genreLabel } from '../lib/format';
+import { formatDate, formatMonthYear, formatNumber, formatPlaytime, genreLabel } from '../lib/format';
 import { Gallery } from './Gallery';
 import { Cover } from './Cover';
 import { PlatformBadge, RatingBadge, StatusBadge } from './Badges';
 
 interface Props {
   game: Game;
+  /** The latest Game of the Month entry (yyyy-mm) that lists this game, if any. */
+  lastPlayed?: string | null;
   onClose: () => void;
   onPrev?: () => void;
   onNext?: () => void;
   actions?: ReactNode;
 }
 
-export function GameDetail({ game, onClose, onPrev, onNext, actions }: Props) {
+export function GameDetail({ game, lastPlayed, onClose, onPrev, onNext, actions }: Props) {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if ((e.target as HTMLElement).closest('input, textarea, select')) return;
@@ -29,6 +31,7 @@ export function GameDetail({ game, onClose, onPrev, onNext, actions }: Props) {
     ['Status', <StatusBadge status={game.status} />],
     ['Acquired', formatDate(game.acquired)],
     ['Completed', formatDate(game.completed)],
+    ['Last played', lastPlayed ? formatMonthYear(lastPlayed) : '—'],
     ['Times completed', formatNumber(game.timesCompleted)],
     ['Completion', formatNumber(game.percent, '%')],
     ['Playtime', formatPlaytime(game.playtime)],

@@ -64,6 +64,7 @@ function PostEditor({ post, onSaved, onDeleted, onClose }: {
   const [title, setTitle] = useState(post?.title ?? '');
   const [date, setDate] = useState(post?.date ?? today());
   const [body, setBody] = useState(post?.body ?? '');
+  const [draft, setDraft] = useState(post?.draft ?? false);
   // A newly chosen cover, as a resized data URL; `removed` drops the saved one.
   const [dataUrl, setDataUrl] = useState<string | null>(null);
   const [removed, setRemoved] = useState(false);
@@ -132,7 +133,7 @@ function PostEditor({ post, onSaved, onDeleted, onClose }: {
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
     run(async () => {
-      const input = { title, date, body, ...(dataUrl ? { dataUrl } : removed ? { cover: null } : {}) };
+      const input = { title, date, body, draft, ...(dataUrl ? { dataUrl } : removed ? { cover: null } : {}) };
       onSaved(post ? await api.updatePost(post.id, input) : await api.addPost(input));
     });
   };
@@ -199,6 +200,12 @@ function PostEditor({ post, onSaved, onDeleted, onClose }: {
           <span>Post</span>
           <textarea required rows={12} value={body} onChange={(e) => setBody(e.target.value)} placeholder="What's on your mind? Leave a blank line between paragraphs." />
         </label>
+        <label className="check-field">
+          <input type="checkbox" checked={draft} onChange={(e) => setDraft(e.target.checked)} />
+          <span>
+            Draft <span className="muted">· only shown while editing locally, not on the published site</span>
+          </span>
+        </label>
         {error && <p className="error">{error}</p>}
         <div className="form-actions">
           {post && (
@@ -211,7 +218,7 @@ function PostEditor({ post, onSaved, onDeleted, onClose }: {
             Cancel
           </button>
           <button className="btn primary" disabled={busy}>
-            {busy ? 'Saving…' : post ? 'Save changes' : 'Publish'}
+            {busy ? 'Saving…' : draft ? 'Save draft' : post && !post.draft ? 'Save changes' : 'Publish'}
           </button>
         </div>
       </form>
@@ -222,6 +229,8 @@ function PostEditor({ post, onSaved, onDeleted, onClose }: {
 export function BlogView({ posts, editable, onChange }: Props) {
   // undefined: closed; null: writing a new post; otherwise the post being edited.
   const [editing, setEditing] = useState<BlogPost | null | undefined>(undefined);
+  // Drafts only show up while editing.
+  const shown = editable ? posts : posts.filter((p) => !p.draft);
 
   const onSaved = (saved: BlogPost) => {
     onChange(sortPosts([...posts.filter((p) => p.id !== saved.id), saved]));
@@ -248,18 +257,21 @@ export function BlogView({ posts, editable, onChange }: Props) {
         )}
       </div>
 
-      {posts.length === 0 ? (
+      {shown.length === 0 ? (
         <div className="empty">No posts yet.{editable ? ' Write the first one with “+ New post”.' : ''}</div>
       ) : (
         <ol className="blog-posts">
-          {posts.map((post) => (
+          {shown.map((post) => (
             <li key={post.id}>
-              <article className="blog-post">
+              <article className={`blog-post ${post.draft ? 'is-draft' : ''}`}>
                 {post.cover && <img className="blog-post-cover" src={imageUrl(post.cover)} alt="" loading="lazy" />}
                 <header className="blog-post-head">
-                  <time className="muted small" dateTime={post.date}>
-                    {formatDate(post.date)}
-                  </time>
+                  <span className="blog-post-meta">
+                    {post.draft && <span className="draft-tag">Draft</span>}
+                    <time className="muted small" dateTime={post.date}>
+                      {formatDate(post.date)}
+                    </time>
+                  </span>
                   {editable && (
                     <button className="link" onClick={() => setEditing(post)}>
                       Edit

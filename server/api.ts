@@ -688,7 +688,7 @@ async function handleConsoles(parts: string[], method: string, req: IncomingMess
 
 // --- Blog ---------------------------------------------------------------------------
 
-type BlogPost = { id: number; title: string; date: string; body: string; cover: string | null };
+type BlogPost = { id: number; title: string; date: string; body: string; cover: string | null; draft?: boolean };
 
 function sanitizePost(input: Record<string, unknown>): Omit<BlogPost, 'id' | 'cover'> {
   const title = str(input.title);
@@ -698,7 +698,8 @@ function sanitizePost(input: Record<string, unknown>): Omit<BlogPost, 'id' | 'co
   if (!title) throw new HttpError(400, 'Title is required');
   if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) throw new HttpError(400, 'Date must look like 2026-09-29');
   if (!body) throw new HttpError(400, 'The post is empty');
-  return { title, date, body };
+  // Only drafts carry the flag, so published posts stay as they were.
+  return { title, date, body, ...(input.draft === true ? { draft: true } : {}) };
 }
 
 /** Newest posts first. */

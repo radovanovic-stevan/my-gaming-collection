@@ -15,6 +15,11 @@ export function formatPlaytime(minutes: number | null): string {
   return h ? `${h}h ${String(m).padStart(2, '0')}m` : `${m}m`;
 }
 
+const monthFmt = new Intl.DateTimeFormat('en-GB', { month: 'long', year: 'numeric' });
+
+/** "2024-08" as "August 2024". */
+export const formatMonthYear = (yyyyMm: string) => monthFmt.format(new Date(`${yyyyMm}-01T00:00:00`));
+
 export const formatNumber = (n: number | null, suffix = '') => (n === null ? '—' : `${n}${suffix}`);
 
 export const imageUrl = (file: string) => `${import.meta.env.BASE_URL}images/${encodeURIComponent(file)}`;

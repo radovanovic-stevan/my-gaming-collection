@@ -71,8 +71,8 @@ export default function App() {
   const [editable, setEditable] = useState(false);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [tab, setTab] = useState<Tab>(tabFromUrl);
-  // The year editor fills stats from Game of the Month, so load it for editing too.
-  const gotm = useDataFile<GotmMonth[]>('gotm.json', tab === 'gotm' || (tab === 'gotc' && editable));
+  // Always loaded: a game's Last played comes from Game of the Month, and the year editor fills stats from it.
+  const gotm = useDataFile<GotmMonth[]>('gotm.json', true);
   const gotc = useDataFile<GotcData>('gotc.json', tab === 'gotc');
   const gallery = useDataFile<GalleryEntry[]>('gallery.json', tab === 'gallery');
   const dylanDog = useDataFile<ChecklistCollection>('dylan-dog.json', tab === 'dylan-dog');
@@ -118,6 +118,18 @@ export default function App() {
   }, []);
 
   const link = useMemo(() => createLinker(games ?? []), [games]);
+
+  /** Each game's latest Game of the Month entry (yyyy-mm), by game id. */
+  const lastPlayed = useMemo(() => {
+    const out = new Map<number, string>();
+    for (const m of gotm.data ?? []) {
+      for (const ref of [m.gameOfTheMonth, ...m.played]) {
+        const game = link(ref);
+        if (game && m.month > (out.get(game.id) ?? '')) out.set(game.id, m.month);
+      }
+    }
+    return out;
+  }, [gotm.data, link]);
 
   const patch = useCallback((p: Partial<Query>) => setQuery((q) => ({ ...q, ...p })), []);
 
@@ -373,6 +385,7 @@ export default function App() {
       {modal?.kind === 'detail' && openGame && (
         <GameDetail
           game={openGame}
+          lastPlayed={lastPlayed.get(openGame.id)}
           onClose={closeModal}
           onPrev={tab === 'collection' && openIndex > 0 ? () => showDetail(results[openIndex - 1].id) : undefined}
           onNext={tab === 'collection' && openIndex >= 0 && openIndex < results.length - 1 ? () => showDetail(results[openIndex + 1].id) : undefined}
