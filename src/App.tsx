@@ -422,7 +422,7 @@ export default function App() {
         </>
       )}
 
-      {whatsNew && <WhatsNew groups={whatsNew} onClose={() => setWhatsNew(null)} onOpenItem={openChange} onOpenTab={goTo} />}
+      {whatsNew && <WhatsNew groups={whatsNew} onClose={() => setWhatsNew(null)} onOpenItem={openChange} />}
       {modal?.kind === 'detail' && openGame && (
         <GameDetail
           game={openGame}

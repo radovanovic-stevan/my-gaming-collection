@@ -7,10 +7,9 @@ interface Props {
   groups: ChangeGroup[];
   onClose: () => void;
   onOpenItem: (tab: ChangeTab, id: number | string) => void;
-  onOpenTab: (tab: ChangeTab) => void;
 }
 
-export function WhatsNew({ groups, onClose, onOpenItem, onOpenTab }: Props) {
+export function WhatsNew({ groups, onClose, onOpenItem }: Props) {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose();
     window.addEventListener('keydown', onKey);
@@ -30,15 +29,10 @@ export function WhatsNew({ groups, onClose, onOpenItem, onOpenTab }: Props) {
           const more = group.changes.length - SHOWN_PER_GROUP;
           return (
             <section key={group.tab} className="whats-new-group">
-              <div className="whats-new-head">
-                <h3 className="section-title">
-                  {group.label}{' '}
-                  <span className="whats-new-count">{[added && `${added} new`, updated && `${updated} updated`].filter(Boolean).join(' · ')}</span>
-                </h3>
-                <button className="btn" onClick={() => (onClose(), onOpenTab(group.tab))}>
-                  Open →
-                </button>
-              </div>
+              <h3 className="section-title">
+                {group.label}{' '}
+                <span className="whats-new-count">{[added && `${added} new`, updated && `${updated} updated`].filter(Boolean).join(' · ')}</span>
+              </h3>
               <ul className="whats-new-list">
                 {group.changes.slice(0, SHOWN_PER_GROUP).map((change, i) => (
                   <li key={i}>

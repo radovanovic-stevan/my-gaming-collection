@@ -2947,14 +2947,7 @@ button.issue:hover {
   gap: 8px;
 }
 
-.whats-new-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.whats-new-head .section-title {
+.whats-new-group .section-title {
   margin: 0;
 }
 
@@ -2962,11 +2955,6 @@ button.issue:hover {
   font-weight: 500;
   text-transform: none;
   letter-spacing: 0;
-}
-
-.whats-new-head .btn {
-  padding: 4px 10px;
-  font-size: 12.5px;
 }
 
 .whats-new-list {
