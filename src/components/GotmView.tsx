@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import type { Game, GameRef, GotmMonth } from '../types';
 import { PLAY_STATUS, RefCover, RefTitle, StatusEmoji } from './GameRefView';
 import { MonthEditor } from './MonthEditor';
+import { useFocus } from '../lib/focus';
 
 interface Props {
   months: GotmMonth[];
@@ -11,16 +12,23 @@ interface Props {
   editable: boolean;
   games: Game[];
   onChange: (months: GotmMonth[]) => void;
+  /** An item picked in the What's new pop-up, to show once. */
+  focus?: string;
+  onFocused?: () => void;
 }
 
 const monthName = new Intl.DateTimeFormat('en-GB', { month: 'long' });
 const formatMonth = (yyyyMm: string) => monthName.format(new Date(`${yyyyMm}-01T00:00:00`));
 
-export function GotmView({ months, link, onOpen, editable, games, onChange }: Props) {
+export function GotmView({ months, link, onOpen, editable, games, onChange, focus, onFocused }: Props) {
   const years = useMemo(() => [...new Set(months.map((m) => m.month.slice(0, 4)))], [months]);
   const [year, setYear] = useState(years[0]);
   // undefined: closed; null: adding a month; otherwise the month being edited.
   const [editing, setEditing] = useState<GotmMonth | null | undefined>(undefined);
+  useFocus(focus, onFocused, (month) => {
+    setYear(month.slice(0, 4));
+    return `month-${month}`;
+  });
 
   const onSaved = (saved: GotmMonth, previousKey: string | null) => {
     const rest = months.filter((m) => m.month !== saved.month && m.month !== previousKey);
@@ -99,7 +107,7 @@ export function GotmView({ months, link, onOpen, editable, games, onChange }: Pr
           const gotm = m.gameOfTheMonth;
           const gotmGame = gotm && link(gotm);
           return (
-            <li key={m.month} className="month-card">
+            <li key={m.month} id={`month-${m.month}`} className="month-card">
               <header className="month-card-head">
                 <h3>{formatMonth(m.month)}</h3>
                 {m.gameOfTheMonth ? (

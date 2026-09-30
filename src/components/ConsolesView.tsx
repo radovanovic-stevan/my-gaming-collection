@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import type { Game, GameConsole } from '../types';
 import { api } from '../lib/api';
+import { useFocus } from '../lib/focus';
 import { imageUrl, platformHue } from '../lib/format';
 import { ImageManager, type ImageOps } from './ImageManager';
 import { ConsoleDetail } from './ConsoleDetail';
@@ -15,6 +16,9 @@ interface Props {
   onChange: (consoles: GameConsole[]) => void;
   /** Opens the collection filtered to one platform. */
   onShowGames: (platform: string) => void;
+  /** An item picked in the What's new pop-up, to show once. */
+  focus?: number;
+  onFocused?: () => void;
 }
 
 type SortKey = 'maker' | 'name' | 'games' | 'added';
@@ -40,7 +44,7 @@ export function ConsoleCover({ item, image = item.cover }: { item: GameConsole; 
   );
 }
 
-export function ConsolesView({ consoles, games, editable, onChange, onShowGames }: Props) {
+export function ConsolesView({ consoles, games, editable, onChange, onShowGames, focus, onFocused }: Props) {
   const [search, setSearch] = useState('');
   // Consoles are added roughly in order, so by maker and then id keeps each maker's line-up in release order.
   const [sort, setSort] = useState<SortKey>('maker');
@@ -97,6 +101,7 @@ export function ConsolesView({ consoles, games, editable, onChange, onShowGames 
   const openIndex = open ? shown.findIndex((r) => r.id === open.id) : -1;
   const showDetail = (id: number) => setModal({ kind: 'detail', id });
   const backToDetail = () => setModal((m) => (m && m.kind !== 'new' ? { kind: 'detail', id: m.id } : null));
+  useFocus(focus, onFocused, showDetail);
 
   return (
     <section className="awards consoles">

@@ -4,6 +4,7 @@ import { isGameRef } from '../lib/links';
 import { RefCover, RefTitle } from './GameRefView';
 import { YearEditor } from './YearEditor';
 import { buildAllTime } from '../lib/allTime';
+import { useFocus } from '../lib/focus';
 
 interface Props {
   data: GotcData;
@@ -15,6 +16,9 @@ interface Props {
   /** Game of the Month data, used to fill in a year's stats while editing. */
   months: GotmMonth[] | null;
   onChange: (data: GotcData) => void;
+  /** An item picked in the What's new pop-up, to show once. */
+  focus?: number;
+  onFocused?: () => void;
 }
 
 type Group = { title: string; test: (category: string) => boolean };
@@ -122,12 +126,16 @@ function YearStats({ year, link, onOpen }: { year: GotcYear; link: Props['link']
   );
 }
 
-export function GotcView({ data, link, onOpen, editable, games, months, onChange }: Props) {
+export function GotcView({ data, link, onOpen, editable, games, months, onChange, focus, onFocused }: Props) {
   const [mode, setMode] = useState<'yearly' | 'all-time'>('yearly');
   const [yearNo, setYearNo] = useState<number | undefined>(data.years[0]?.year);
   const year: GotcYear | undefined = data.years.find((y) => y.year === yearNo) ?? data.years[0];
   // undefined: closed; null: adding; otherwise what's being edited.
   const [editingYear, setEditingYear] = useState<GotcYear | null | undefined>(undefined);
+  useFocus(focus, onFocused, (year) => {
+    setMode('yearly');
+    setYearNo(year);
+  });
   const allTime = useMemo(() => buildAllTime(games), [games]);
 
   const podium = year ? PODIUM.map((c) => year.awards.find((a) => a.category === c)) : [];

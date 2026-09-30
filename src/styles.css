@@ -3010,3 +3010,18 @@ button.issue:hover {
 .whats-new-title {
   font-weight: 500;
 }
+
+/* An item opened from the What's new pop-up. */
+.flash {
+  animation: flash 1.8s ease-out;
+}
+
+@keyframes flash {
+  0%,
+  30% {
+    box-shadow: 0 0 0 3px var(--accent);
+  }
+  100% {
+    box-shadow: 0 0 0 3px transparent;
+  }
+}

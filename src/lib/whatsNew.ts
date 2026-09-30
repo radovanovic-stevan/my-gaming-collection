@@ -17,8 +17,8 @@ export interface Change {
   title: string;
   isNew: boolean;
   details: string[];
-  /** Set for a game, so the modal can open its details. */
-  gameId?: number;
+  /** What to open on the item's tab: a game or record id, a month (yyyy-mm), a year. */
+  itemId?: number | string;
 }
 
 export type ChangeTab = 'collection' | 'gotm' | 'gotc' | 'gallery' | 'consoles' | 'blog' | 'dylan-dog' | 'vinyl';
@@ -76,7 +76,7 @@ function field<V>(out: string[], label: string, a: V, b: V, fmt: (v: V) => strin
 
 function listField(out: string[], label: string, a: string[], b: string[]) {
   const added = b.filter((x) => !a.includes(x)).map((x) => `+${x}`);
-  const removed = a.filter((x) => !b.includes(x)).map((x) => `−${x}`);
+  const removed = a.filter((x) => !b.includes(x)).map((x) => `-${x}`);
   if (added.length || removed.length) out.push(`${label}: ${[...added, ...removed].join(', ')}`);
 }
 
@@ -92,7 +92,7 @@ function photos(out: string[], a: WithImages, b: WithImages) {
 
 function games(before: Game[], after: Game[]): Change[] {
   return diffList(before, after, (g) => g.id, (g, old) => {
-    const change: Change = { title: `${g.title} (${g.platform})`, isNew: !old, details: [], gameId: g.id };
+    const change: Change = { title: `${g.title} (${g.platform})`, isNew: !old, details: [], itemId: g.id };
     if (!old) return change;
     const d = change.details;
     if (old.title !== g.title) d.push(`Renamed from "${old.title}"`);
@@ -125,7 +125,7 @@ function gotm(before: GotmMonth[], after: GotmMonth[]): Change[] {
   const all = (m: GotmMonth) => [m.gameOfTheMonth, ...m.played].filter((g): g is PlayedGame => g !== null);
   const key = (g: PlayedGame) => `${g.title}|${g.platform}`;
   return diffList(before, after, (m) => m.month, (m, old) => {
-    const change: Change = { title: formatMonthYear(m.month), isNew: !old, details: [] };
+    const change: Change = { title: formatMonthYear(m.month), isNew: !old, details: [], itemId: m.month };
     const d = change.details;
     if (!old) {
       if (m.gameOfTheMonth) d.push(`Game of the Month: ${m.gameOfTheMonth.title}`);
@@ -150,7 +150,7 @@ const winnerName = (v: AwardValue | null) => (v ? ('title' in v ? v.title : v.te
 
 function gotc(before: GotcData, after: GotcData): Change[] {
   const changes = diffList(before.years, after.years, (y) => y.year, (y, old) => {
-    const change: Change = { title: `${y.year} awards`, isNew: !old, details: [] };
+    const change: Change = { title: `${y.year} awards`, isNew: !old, details: [], itemId: y.year };
     const d = change.details;
     if (!old) {
       d.push(plural(y.awards.filter((a) => a.winner).length, 'category'));
@@ -172,7 +172,7 @@ function gallery(before: GalleryEntry[], after: GalleryEntry[]): Change[] {
   return diffList(before, after, (e) => e.id, (e, old) => {
     const first = e.description.split('\n')[0].trim();
     const title = first ? (first.length > 70 ? `${first.slice(0, 70)}…` : first) : e.date ? `Picture from ${formatDate(e.date)}` : 'Picture';
-    const change: Change = { title, isNew: !old, details: [] };
+    const change: Change = { title, isNew: !old, details: [], itemId: e.id };
     const d = change.details;
     if (!old) {
       if (e.games.length) d.push(`Shows ${names(e).join(', ')}`);
@@ -186,7 +186,7 @@ function gallery(before: GalleryEntry[], after: GalleryEntry[]): Change[] {
   });
 }
 
-/** Issue numbers as ranges ("#1–4, #7"); titled books by name. */
+/** Issue numbers as ranges ("#1-4, #7"); titled books by name. */
 function describeItems(items: ChecklistItem[]): string {
   const numbers = items.map((i) => Number(i.label)).filter(Number.isInteger).sort((a, b) => a - b);
   const titles = items.filter((i) => !Number.isInteger(Number(i.label))).map((i) => i.label);
@@ -194,7 +194,7 @@ function describeItems(items: ChecklistItem[]): string {
   for (let i = 0; i < numbers.length; i++) {
     let j = i;
     while (numbers[j + 1] === numbers[j] + 1) j++;
-    ranges.push(j === i ? `#${numbers[i]}` : `#${numbers[i]}–${numbers[j]}`);
+    ranges.push(j === i ? `#${numbers[i]}` : `#${numbers[i]}-${numbers[j]}`);
     i = j;
   }
   return [...ranges, ...titles].join(', ');
@@ -202,7 +202,7 @@ function describeItems(items: ChecklistItem[]): string {
 
 function checklist(before: ChecklistCollection, after: ChecklistCollection): Change[] {
   return diffList(before.series, after.series, (s) => s.id, (s, old) => {
-    const change: Change = { title: s.name, isNew: !old, details: [] };
+    const change: Change = { title: s.name, isNew: !old, details: [], itemId: s.id };
     const d = change.details;
     const owned = s.items.filter((i) => i.owned);
     if (!old) {
@@ -223,10 +223,10 @@ function checklist(before: ChecklistCollection, after: ChecklistCollection): Cha
 
 function vinyl(before: Vinyl[], after: Vinyl[]): Change[] {
   return diffList(before, after, (r) => r.id, (r, old) => {
-    const change: Change = { title: `${r.artist} — ${r.title}`, isNew: !old, details: [] };
+    const change: Change = { title: `${r.artist} - ${r.title}`, isNew: !old, details: [], itemId: r.id };
     if (!old) return change;
     const d = change.details;
-    if (old.artist !== r.artist || old.title !== r.title) d.push(`Renamed from "${old.artist} — ${old.title}"`);
+    if (old.artist !== r.artist || old.title !== r.title) d.push(`Renamed from "${old.artist} - ${old.title}"`);
     const played = r.listens.length - old.listens.length;
     if (played > 0) d.push(`${plural(played, 'new side')} played`);
     else if (!same(old.listens, r.listens)) d.push('Listening log updated');
@@ -237,7 +237,7 @@ function vinyl(before: Vinyl[], after: Vinyl[]): Change[] {
 
 function consoles(before: GameConsole[], after: GameConsole[]): Change[] {
   return diffList(before, after, (c) => c.id, (c, old) => {
-    const change: Change = { title: c.name, isNew: !old, details: [] };
+    const change: Change = { title: c.name, isNew: !old, details: [], itemId: c.id };
     if (!old) return change;
     const d = change.details;
     if (old.name !== c.name) d.push(`Renamed from "${old.name}"`);
@@ -253,7 +253,7 @@ function consoles(before: GameConsole[], after: GameConsole[]): Change[] {
 
 function blog(before: BlogPost[], after: BlogPost[]): Change[] {
   return diffList(before, after, (p) => p.id, (p, old) => {
-    const change: Change = { title: p.title, isNew: !old, details: [] };
+    const change: Change = { title: p.title, isNew: !old, details: [], itemId: p.id };
     const d = change.details;
     if (!old) {
       d.push(formatDate(p.date));

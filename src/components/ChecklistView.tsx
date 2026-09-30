@@ -2,6 +2,7 @@ import { useState } from 'react';
 import type { ChecklistCollection, ChecklistSeries } from '../types';
 import { api } from '../lib/api';
 import { SeriesEditor } from './SeriesEditor';
+import { useFocus } from '../lib/focus';
 
 interface Props {
   /** File and API name of the collection, e.g. "dylan-dog". */
@@ -10,17 +11,24 @@ interface Props {
   /** Local editing (dev server only). */
   editable: boolean;
   onChange: (data: ChecklistCollection) => void;
+  /** An item picked in the What's new pop-up, to show once. */
+  focus?: number;
+  onFocused?: () => void;
 }
 
 type Show = 'all' | 'owned' | 'missing';
 
-export function ChecklistView({ slug, data, editable, onChange }: Props) {
+export function ChecklistView({ slug, data, editable, onChange, focus, onFocused }: Props) {
   const [show, setShow] = useState<Show>('all');
   // In ticking mode a click on an issue marks it owned or missing and saves straight away.
   const [ticking, setTicking] = useState(false);
   // undefined: closed; null: adding a series; otherwise the series being edited.
   const [editing, setEditing] = useState<ChecklistSeries | null | undefined>(undefined);
   const [error, setError] = useState<string | null>(null);
+  useFocus(focus, onFocused, (id) => {
+    setShow('all');
+    return `series-${id}`;
+  });
 
   const replace = (saved: ChecklistSeries, position?: number) => {
     const rest = data.series.filter((s) => s.id !== saved.id);
@@ -102,7 +110,7 @@ export function ChecklistView({ slug, data, editable, onChange }: Props) {
           const items = s.items.filter((i) => show === 'all' || i.owned === (show === 'owned'));
           const pct = s.items.length ? (owned / s.items.length) * 100 : 0;
           return (
-            <li key={s.id} className="series-card">
+            <li key={s.id} id={`series-${s.id}`} className="series-card">
               <header className="series-head">
                 <h3>{s.name}</h3>
                 <span className="muted nowrap">

@@ -3,12 +3,16 @@ import type { BlogPost } from '../types';
 import { api } from '../lib/api';
 import { formatDate, imageUrl } from '../lib/format';
 import { toImageDataUrl } from '../lib/image';
+import { useFocus } from '../lib/focus';
 
 interface Props {
   posts: BlogPost[];
   /** Local editing (dev server only). */
   editable: boolean;
   onChange: (posts: BlogPost[]) => void;
+  /** An item picked in the What's new pop-up, to show once. */
+  focus?: number;
+  onFocused?: () => void;
 }
 
 /** Newest posts first. Same order the API saves them in. */
@@ -226,11 +230,12 @@ function PostEditor({ post, onSaved, onDeleted, onClose }: {
   );
 }
 
-export function BlogView({ posts, editable, onChange }: Props) {
+export function BlogView({ posts, editable, onChange, focus, onFocused }: Props) {
   // undefined: closed; null: writing a new post; otherwise the post being edited.
   const [editing, setEditing] = useState<BlogPost | null | undefined>(undefined);
   // Drafts only show up while editing.
   const shown = editable ? posts : posts.filter((p) => !p.draft);
+  useFocus(focus, onFocused, (id) => `post-${id}`);
 
   const onSaved = (saved: BlogPost) => {
     onChange(sortPosts([...posts.filter((p) => p.id !== saved.id), saved]));
@@ -263,7 +268,7 @@ export function BlogView({ posts, editable, onChange }: Props) {
         <ol className="blog-posts">
           {shown.map((post) => (
             <li key={post.id}>
-              <article className={`blog-post ${post.draft ? 'is-draft' : ''}`}>
+              <article id={`post-${post.id}`} className={`blog-post ${post.draft ? 'is-draft' : ''}`}>
                 {post.cover && <img className="blog-post-cover" src={imageUrl(post.cover)} alt="" loading="lazy" />}
                 <header className="blog-post-head">
                   <span className="blog-post-meta">

@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import type { Vinyl } from '../types';
 import { api } from '../lib/api';
+import { useFocus } from '../lib/focus';
 import { imageUrl, platformHue } from '../lib/format';
 import { ImageManager, type ImageOps } from './ImageManager';
 import { VinylDetail } from './VinylDetail';
@@ -11,6 +12,9 @@ interface Props {
   /** Local editing (dev server only). */
   editable: boolean;
   onChange: (records: Vinyl[]) => void;
+  /** An item picked in the What's new pop-up, to show once. */
+  focus?: number;
+  onFocused?: () => void;
 }
 
 type SortKey = 'artist' | 'title' | 'plays' | 'recent' | 'added';
@@ -49,7 +53,7 @@ export function VinylCover({ record }: { record: Vinyl }) {
   );
 }
 
-export function VinylView({ records, editable, onChange }: Props) {
+export function VinylView({ records, editable, onChange, focus, onFocused }: Props) {
   const [search, setSearch] = useState('');
   const [sort, setSort] = useState<SortKey>('recent');
   const [undatedOnly, setUndatedOnly] = useState(false);
@@ -84,6 +88,7 @@ export function VinylView({ records, editable, onChange }: Props) {
   const openIndex = open ? shown.findIndex((r) => r.id === open.id) : -1;
   const showDetail = (id: number) => setModal({ kind: 'detail', id });
   const backToDetail = () => setModal((m) => (m && m.kind !== 'new' ? { kind: 'detail', id: m.id } : null));
+  useFocus(focus, onFocused, showDetail);
 
   return (
     <section className="awards vinyl">

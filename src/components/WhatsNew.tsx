@@ -6,11 +6,11 @@ const SHOWN_PER_GROUP = 8;
 interface Props {
   groups: ChangeGroup[];
   onClose: () => void;
-  onOpenGame: (id: number) => void;
+  onOpenItem: (tab: ChangeTab, id: number | string) => void;
   onOpenTab: (tab: ChangeTab) => void;
 }
 
-export function WhatsNew({ groups, onClose, onOpenGame, onOpenTab }: Props) {
+export function WhatsNew({ groups, onClose, onOpenItem, onOpenTab }: Props) {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose();
     window.addEventListener('keydown', onKey);
@@ -44,8 +44,8 @@ export function WhatsNew({ groups, onClose, onOpenGame, onOpenTab }: Props) {
                   <li key={i}>
                     <span className={`whats-new-tag ${change.isNew ? 'is-new' : ''}`}>{change.isNew ? 'New' : 'Updated'}</span>
                     <div>
-                      {change.gameId !== undefined ? (
-                        <button className="ref-link" onClick={() => (onClose(), onOpenGame(change.gameId!))}>
+                      {change.itemId !== undefined ? (
+                        <button className="ref-link" onClick={() => (onClose(), onOpenItem(group.tab, change.itemId!))}>
                           <span className="ref-title">{change.title}</span>
                         </button>
                       ) : (

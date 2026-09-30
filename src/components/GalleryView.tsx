@@ -3,6 +3,7 @@ import type { Game, GalleryEntry, GameRef } from '../types';
 import { formatDate, imageUrl } from '../lib/format';
 import { RefTitle } from './GameRefView';
 import { GalleryEditor } from './GalleryEditor';
+import { useFocus } from '../lib/focus';
 
 interface Props {
   entries: GalleryEntry[];
@@ -12,6 +13,9 @@ interface Props {
   editable: boolean;
   games: Game[];
   onChange: (entries: GalleryEntry[]) => void;
+  /** An item picked in the What's new pop-up, to show once. */
+  focus?: number;
+  onFocused?: () => void;
 }
 
 /** Newest pictures first; undated ones last. Same order the API saves them in. */
@@ -81,11 +85,15 @@ function Viewer({ entries, index, onIndex, onClose, link, onOpen, onEdit }: {
   );
 }
 
-export function GalleryView({ entries, link, onOpen, editable, games, onChange }: Props) {
+export function GalleryView({ entries, link, onOpen, editable, games, onChange, focus, onFocused }: Props) {
   // Index into `entries` of the picture shown full size.
   const [viewing, setViewing] = useState<number | null>(null);
   // undefined: closed; null: adding; otherwise the picture being edited.
   const [editing, setEditing] = useState<GalleryEntry | null | undefined>(undefined);
+  useFocus(focus, onFocused, (id) => {
+    const index = entries.findIndex((e) => e.id === id);
+    if (index >= 0) setViewing(index);
+  });
 
   const groups = useMemo(() => {
     const out: { title: string; items: { entry: GalleryEntry; index: number }[] }[] = [];

@@ -20,7 +20,7 @@ import { WhatsNew } from './components/WhatsNew';
 const MapView = lazy(() => import('./components/MapView'));
 import { api, detectEditing } from './lib/api';
 import { createLinker } from './lib/links';
-import { findChanges, loadSnapshot, saveSnapshot, type ChangeGroup } from './lib/whatsNew';
+import { findChanges, loadSnapshot, saveSnapshot, type ChangeGroup, type ChangeTab } from './lib/whatsNew';
 
 type GameTab = 'collection' | 'gotm' | 'gotc' | 'gallery' | 'map' | 'consoles' | 'blog';
 /** Collections that aren't games. Each one is public/data/<id>.json. */
@@ -73,6 +73,9 @@ export default function App() {
   const [editable, setEditable] = useState(false);
   const [editingChecked, setEditingChecked] = useState(false);
   const [whatsNew, setWhatsNew] = useState<ChangeGroup[] | null>(null);
+  // An item picked in the What's new pop-up, for its tab to open or scroll to.
+  const [focus, setFocus] = useState<{ tab: Tab; id: number | string } | null>(null);
+  const clearFocus = useCallback(() => setFocus(null), []);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [tab, setTab] = useState<Tab>(tabFromUrl);
   // On the published site everything is loaded, to tell visitors what changed since their last visit.
@@ -215,6 +218,12 @@ export default function App() {
   const openIndex = openId === null ? -1 : results.findIndex((g) => g.id === openId);
   const openGame = openId === null ? null : (games?.find((g) => g.id === openId) ?? null);
   const showDetail = (id: number) => setModal({ kind: 'detail', id });
+  const openChange = (tab: ChangeTab, id: number | string) => {
+    if (tab === 'collection') return showDetail(id as number);
+    goTo(tab);
+    setFocus({ tab, id });
+  };
+  const focusOn = <T,>(t: Tab) => (focus?.tab === t ? (focus.id as T) : undefined);
   const closeModal = useCallback(() => setModal(null), []);
   const backToDetail = useCallback(() => setModal((m) => (m && m.kind !== 'new' ? { kind: 'detail', id: m.id } : null)), []);
 
@@ -297,20 +306,20 @@ export default function App() {
 
       {tab === 'dylan-dog' &&
         (dylanDog.data ? (
-          <ChecklistView slug={tab} data={dylanDog.data} editable={editable} onChange={dylanDog.setData} />
+          <ChecklistView slug={tab} data={dylanDog.data} editable={editable} onChange={dylanDog.setData} focus={focusOn<number>('dylan-dog')} onFocused={clearFocus} />
         ) : (
           <div className="empty">{dylanDog.error ? `Couldn't load the collection: ${dylanDog.error}` : 'Loading…'}</div>
         ))}
       {tab === 'vinyl' &&
         (vinyl.data ? (
-          <VinylView records={vinyl.data} editable={editable} onChange={vinyl.setData} />
+          <VinylView records={vinyl.data} editable={editable} onChange={vinyl.setData} focus={focusOn<number>('vinyl')} onFocused={clearFocus} />
         ) : (
           <div className="empty">{vinyl.error ? `Couldn't load the records: ${vinyl.error}` : 'Loading…'}</div>
         ))}
 
       {tab === 'gotm' &&
         (gotm.data ? (
-          <GotmView months={gotm.data} link={link} onOpen={(g) => showDetail(g.id)} editable={editable} games={games} onChange={gotm.setData} />
+          <GotmView months={gotm.data} link={link} onOpen={(g) => showDetail(g.id)} editable={editable} games={games} onChange={gotm.setData} focus={focusOn<string>('gotm')} onFocused={clearFocus} />
         ) : (
           <div className="empty">{gotm.error ? `Couldn't load Game of the Month: ${gotm.error}` : 'Loading…'}</div>
         ))}
@@ -324,26 +333,28 @@ export default function App() {
             games={games}
             months={gotm.data}
             onChange={gotc.setData}
+            focus={focusOn<number>('gotc')}
+            onFocused={clearFocus}
           />
         ) : (
           <div className="empty">{gotc.error ? `Couldn't load the awards: ${gotc.error}` : 'Loading…'}</div>
         ))}
       {tab === 'gallery' &&
         (gallery.data ? (
-          <GalleryView entries={gallery.data} link={link} onOpen={(g) => showDetail(g.id)} editable={editable} games={games} onChange={gallery.setData} />
+          <GalleryView entries={gallery.data} link={link} onOpen={(g) => showDetail(g.id)} editable={editable} games={games} onChange={gallery.setData} focus={focusOn<number>('gallery')} onFocused={clearFocus} />
         ) : (
           <div className="empty">{gallery.error ? `Couldn't load the gallery: ${gallery.error}` : 'Loading…'}</div>
         ))}
 
       {tab === 'consoles' &&
         (consoles.data ? (
-          <ConsolesView consoles={consoles.data} games={games} editable={editable} onChange={consoles.setData} onShowGames={showPlatform} />
+          <ConsolesView consoles={consoles.data} games={games} editable={editable} onChange={consoles.setData} onShowGames={showPlatform} focus={focusOn<number>('consoles')} onFocused={clearFocus} />
         ) : (
           <div className="empty">{consoles.error ? `Couldn't load the consoles: ${consoles.error}` : 'Loading…'}</div>
         ))}
       {tab === 'blog' &&
         (blog.data ? (
-          <BlogView posts={blog.data} editable={editable} onChange={blog.setData} />
+          <BlogView posts={blog.data} editable={editable} onChange={blog.setData} focus={focusOn<number>('blog')} onFocused={clearFocus} />
         ) : (
           <div className="empty">{blog.error ? `Couldn't load the blog: ${blog.error}` : 'Loading…'}</div>
         ))}
@@ -411,7 +422,7 @@ export default function App() {
         </>
       )}
 
-      {whatsNew && <WhatsNew groups={whatsNew} onClose={() => setWhatsNew(null)} onOpenGame={showDetail} onOpenTab={goTo} />}
+      {whatsNew && <WhatsNew groups={whatsNew} onClose={() => setWhatsNew(null)} onOpenItem={openChange} onOpenTab={goTo} />}
       {modal?.kind === 'detail' && openGame && (
         <GameDetail
           game={openGame}
