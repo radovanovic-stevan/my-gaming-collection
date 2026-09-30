@@ -15,10 +15,12 @@ import { ChecklistView } from './components/ChecklistView';
 import { VinylView } from './components/VinylView';
 import { ConsolesView } from './components/ConsolesView';
 import { BlogView } from './components/BlogView';
+import { WhatsNew } from './components/WhatsNew';
 // The map carries the world's country shapes, so it's only loaded when opened.
 const MapView = lazy(() => import('./components/MapView'));
 import { api, detectEditing } from './lib/api';
 import { createLinker } from './lib/links';
+import { findChanges, loadSnapshot, saveSnapshot, type ChangeGroup } from './lib/whatsNew';
 
 type GameTab = 'collection' | 'gotm' | 'gotc' | 'gallery' | 'map' | 'consoles' | 'blog';
 /** Collections that aren't games. Each one is public/data/<id>.json. */
@@ -69,24 +71,51 @@ export default function App() {
   const [query, setQuery] = useState<Query>(() => paramsToQuery(location.search));
   const [modal, setModal] = useState<Modal>(null);
   const [editable, setEditable] = useState(false);
+  const [editingChecked, setEditingChecked] = useState(false);
+  const [whatsNew, setWhatsNew] = useState<ChangeGroup[] | null>(null);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [tab, setTab] = useState<Tab>(tabFromUrl);
+  // On the published site everything is loaded, to tell visitors what changed since their last visit.
+  const checkChanges = editingChecked && !editable;
   // Always loaded: a game's Last played comes from Game of the Month, and the year editor fills stats from it.
   const gotm = useDataFile<GotmMonth[]>('gotm.json', true);
-  const gotc = useDataFile<GotcData>('gotc.json', tab === 'gotc');
-  const gallery = useDataFile<GalleryEntry[]>('gallery.json', tab === 'gallery');
-  const dylanDog = useDataFile<ChecklistCollection>('dylan-dog.json', tab === 'dylan-dog');
-  const vinyl = useDataFile<Vinyl[]>('vinyl.json', tab === 'vinyl');
-  const consoles = useDataFile<GameConsole[]>('consoles.json', tab === 'consoles');
-  const blog = useDataFile<BlogPost[]>('blog.json', tab === 'blog');
+  const gotc = useDataFile<GotcData>('gotc.json', tab === 'gotc' || checkChanges);
+  const gallery = useDataFile<GalleryEntry[]>('gallery.json', tab === 'gallery' || checkChanges);
+  const dylanDog = useDataFile<ChecklistCollection>('dylan-dog.json', tab === 'dylan-dog' || checkChanges);
+  const vinyl = useDataFile<Vinyl[]>('vinyl.json', tab === 'vinyl' || checkChanges);
+  const consoles = useDataFile<GameConsole[]>('consoles.json', tab === 'consoles' || checkChanges);
+  const blog = useDataFile<BlogPost[]>('blog.json', tab === 'blog' || checkChanges);
 
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}data/games.json`, { cache: 'no-cache' })
       .then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))))
       .then(setGames)
       .catch((e) => setError(String(e)));
-    detectEditing().then(setEditable);
+    detectEditing().then((on) => (setEditable(on), setEditingChecked(true)));
   }, []);
+
+  // Compares the collection with the visitor's last visit. A first visit only saves it.
+  const changesChecked = useRef(false);
+  useEffect(() => {
+    if (!checkChanges || changesChecked.current) return;
+    if (!games || !gotm.data || !gotc.data || !gallery.data || !dylanDog.data || !vinyl.data || !consoles.data || !blog.data) return;
+    changesChecked.current = true;
+    const now = {
+      games,
+      gotm: gotm.data,
+      gotc: gotc.data,
+      gallery: gallery.data,
+      dylanDog: dylanDog.data,
+      vinyl: vinyl.data,
+      consoles: consoles.data,
+      blog: blog.data.filter((p) => !p.draft),
+    };
+    const before = loadSnapshot();
+    saveSnapshot(now);
+    if (!before) return;
+    const groups = findChanges(before, now);
+    if (groups.length) setWhatsNew(groups);
+  }, [checkChanges, games, gotm.data, gotc.data, gallery.data, dylanDog.data, vinyl.data, consoles.data, blog.data]);
 
   // Switching tabs adds a history entry, so Back and Forward move between tabs.
   // Filter, sort and search changes only update the current entry.
@@ -382,6 +411,7 @@ export default function App() {
         </>
       )}
 
+      {whatsNew && <WhatsNew groups={whatsNew} onClose={() => setWhatsNew(null)} onOpenGame={showDetail} onOpenTab={goTo} />}
       {modal?.kind === 'detail' && openGame && (
         <GameDetail
           game={openGame}

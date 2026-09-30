@@ -54,6 +54,12 @@ the cover). Each record keeps a listening log: one entry per side played (1, 2, 
 date. Locally, open a record to set or change dates, change sides, remove entries, or log a side
 played today. **Needs dates** shows the records that still have listens without a date.
 
+**What's new**: on the published site, a returning visitor gets a pop-up listing what changed since
+their last visit: new and updated games (with what changed, like a rating or status), Game of the
+Month, awards, pictures, consoles, blog posts, Dylan Dog issues and records. Removed items aren't
+listed. It works from a copy of the data saved in the visitor's browser, so a first visit (or one after
+clearing site data) shows nothing. It's off while editing locally.
+
 ## Where the data lives
 
 Everything is plain files in the repo. There is no database.

@@ -2934,3 +2934,79 @@ button.issue:hover {
   color: var(--accent-fg);
   background: var(--accent);
 }
+
+/* --- What's new ---------------------------------------------------------------- */
+
+.whats-new {
+  width: min(640px, 100%);
+}
+
+.whats-new-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.whats-new-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.whats-new-head .section-title {
+  margin: 0;
+}
+
+.whats-new-count {
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.whats-new-head .btn {
+  padding: 4px 10px;
+  font-size: 12.5px;
+}
+
+.whats-new-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.whats-new-list li {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.whats-new-list li > div {
+  min-width: 0;
+}
+
+.whats-new-list .small {
+  margin-top: 2px;
+}
+
+.whats-new-tag {
+  flex: none;
+  padding: 1px 7px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  background: var(--bg-sunk);
+  color: var(--fg-muted);
+}
+
+.whats-new-tag.is-new {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.whats-new-title {
+  font-weight: 500;
+}
