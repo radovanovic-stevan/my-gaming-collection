@@ -391,5 +391,25 @@
     "date": "2026-09-22"
    }
   ]
+ },
+ {
+  "id": 20,
+  "artist": "Arctic Monkeys",
+  "title": "AM",
+  "images": [
+   "vinyl-20-8c3f41ac.jpg"
+  ],
+  "cover": "vinyl-20-8c3f41ac.jpg",
+  "listens": []
+ },
+ {
+  "id": 21,
+  "artist": "Lana Del Rey",
+  "title": "Born to Die",
+  "images": [
+   "vinyl-21-721029f5.jpg"
+  ],
+  "cover": "vinyl-21-721029f5.jpg",
+  "listens": []
  }
 ]
