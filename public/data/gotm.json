@@ -1,5 +1,23 @@
 [
  {
+  "month": "2026-10",
+  "gameOfTheMonth": null,
+  "completed": 0,
+  "bought": null,
+  "played": [
+   {
+    "title": "Hunted: The Demon's Forge",
+    "platform": "PS3",
+    "status": "in-progress"
+   },
+   {
+    "title": "Harvest Moon: Mad Dash",
+    "platform": "PS4",
+    "status": "in-progress"
+   }
+  ]
+ },
+ {
   "month": "2026-09",
   "gameOfTheMonth": {
    "title": "One Piece: Pirate Warriors 2",
