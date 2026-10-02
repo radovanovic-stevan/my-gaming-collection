@@ -20297,8 +20297,10 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "803-fc7e2214.jpg"
+  ],
+  "cover": "803-fc7e2214.jpg"
  },
  {
   "id": 804,
