@@ -122,8 +122,10 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "5-83f97648.jpg"
+  ],
+  "cover": "5-83f97648.jpg"
  },
  {
   "id": 6,
@@ -2941,8 +2943,10 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "118-88cff861.jpg"
+  ],
+  "cover": "118-88cff861.jpg"
  },
  {
   "id": 119,
@@ -3355,8 +3359,10 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "134-2649fc83.jpg"
+  ],
+  "cover": "134-2649fc83.jpg"
  },
  {
   "id": 135,
@@ -3379,8 +3385,10 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "135-aa28f1de.jpg"
+  ],
+  "cover": "135-aa28f1de.jpg"
  },
  {
   "id": 136,
@@ -4902,8 +4910,10 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "198-55a95d76.jpg"
+  ],
+  "cover": "198-55a95d76.jpg"
  },
  {
   "id": 199,
@@ -8696,8 +8706,10 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "351-3ea6a611.jpg"
+  ],
+  "cover": "351-3ea6a611.jpg"
  },
  {
   "id": 352,
@@ -8719,8 +8731,10 @@
   ],
   "edition": "Platinum",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "352-3a69edb5.jpg"
+  ],
+  "cover": "352-3a69edb5.jpg"
  },
  {
   "id": 353,
@@ -8743,8 +8757,10 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "353-070999a2.jpg"
+  ],
+  "cover": "353-070999a2.jpg"
  },
  {
   "id": 354,
@@ -10073,8 +10089,10 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "406-08ea5d28.jpg"
+  ],
+  "cover": "406-08ea5d28.jpg"
  },
  {
   "id": 407,
@@ -10097,8 +10115,10 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "407-20422ac4.jpg"
+  ],
+  "cover": "407-20422ac4.jpg"
  },
  {
   "id": 408,
@@ -10122,8 +10142,10 @@
   ],
   "edition": "Platinum",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "408-67a623f5.jpg"
+  ],
+  "cover": "408-67a623f5.jpg"
  },
  {
   "id": 409,
@@ -10320,10 +10342,12 @@
    "Cover",
    "Manual"
   ],
-  "edition": "",
+  "edition": "Platinum",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "416-7609f9ce.jpg"
+  ],
+  "cover": "416-7609f9ce.jpg"
  },
  {
   "id": 417,
@@ -10372,8 +10396,10 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "418-50bbebda.jpg"
+  ],
+  "cover": "418-50bbebda.jpg"
  },
  {
   "id": 419,
@@ -10419,8 +10445,10 @@
   ],
   "edition": "",
   "boughtIn": "Spain",
-  "images": [],
-  "cover": null
+  "images": [
+   "420-d1142b22.jpg"
+  ],
+  "cover": "420-d1142b22.jpg"
  },
  {
   "id": 421,
@@ -10592,8 +10620,10 @@
   ],
   "edition": "",
   "boughtIn": "Spain",
-  "images": [],
-  "cover": null
+  "images": [
+   "427-7e802086.jpg"
+  ],
+  "cover": "427-7e802086.jpg"
  },
  {
   "id": 428,
@@ -12064,8 +12094,10 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "485-497be11e.jpg"
+  ],
+  "cover": "485-497be11e.jpg"
  },
  {
   "id": 486,
@@ -12208,8 +12240,10 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "491-b102269d.jpg"
+  ],
+  "cover": "491-b102269d.jpg"
  },
  {
   "id": 492,
@@ -12306,8 +12340,10 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "495-8e50821d.jpg"
+  ],
+  "cover": "495-8e50821d.jpg"
  },
  {
   "id": 496,
@@ -12380,8 +12416,10 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "498-c4fc257d.jpg"
+  ],
+  "cover": "498-c4fc257d.jpg"
  },
  {
   "id": 499,
@@ -12674,8 +12712,10 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "510-c227f8da.jpg"
+  ],
+  "cover": "510-c227f8da.jpg"
  },
  {
   "id": 511,
@@ -12839,10 +12879,12 @@
    "Cover",
    "Manual"
   ],
-  "edition": "",
+  "edition": "Platinum",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "517-6280cc63.jpg"
+  ],
+  "cover": "517-6280cc63.jpg"
  },
  {
   "id": 518,
@@ -13527,8 +13569,10 @@
   ],
   "edition": "",
   "boughtIn": "France",
-  "images": [],
-  "cover": null
+  "images": [
+   "544-6e10e56c.jpg"
+  ],
+  "cover": "544-6e10e56c.jpg"
  },
  {
   "id": 545,
@@ -13702,8 +13746,10 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "551-6b65b86a.jpg"
+  ],
+  "cover": "551-6b65b86a.jpg"
  },
  {
   "id": 552,
@@ -13726,8 +13772,10 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "552-85f05287.jpg"
+  ],
+  "cover": "552-85f05287.jpg"
  },
  {
   "id": 553,
@@ -15336,8 +15384,10 @@
   ],
   "edition": "",
   "boughtIn": "Italy",
-  "images": [],
-  "cover": null
+  "images": [
+   "616-7cfee612.jpg"
+  ],
+  "cover": "616-7cfee612.jpg"
  },
  {
   "id": 617,
@@ -15512,8 +15562,10 @@
   ],
   "edition": "Platinum",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "623-7c7e0dd2.jpg"
+  ],
+  "cover": "623-7c7e0dd2.jpg"
  },
  {
   "id": 624,
@@ -15974,8 +16026,10 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "641-f4f80f28.jpg"
+  ],
+  "cover": "641-f4f80f28.jpg"
  },
  {
   "id": 642,
@@ -17469,8 +17523,10 @@
   ],
   "edition": "Essentials",
   "boughtIn": "Netherlands",
-  "images": [],
-  "cover": null
+  "images": [
+   "700-3e25f193.jpg"
+  ],
+  "cover": "700-3e25f193.jpg"
  },
  {
   "id": 701,
@@ -18165,8 +18221,10 @@
   ],
   "edition": "",
   "boughtIn": "Italy",
-  "images": [],
-  "cover": null
+  "images": [
+   "727-7b7e97d5.jpg"
+  ],
+  "cover": "727-7b7e97d5.jpg"
  },
  {
   "id": 728,
@@ -18265,8 +18323,10 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "731-a7a5e330.jpg"
+  ],
+  "cover": "731-a7a5e330.jpg"
  },
  {
   "id": 732,
@@ -18340,8 +18400,10 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "734-daf8ee12.jpg"
+  ],
+  "cover": "734-daf8ee12.jpg"
  },
  {
   "id": 735,
@@ -19271,8 +19333,10 @@
   ],
   "edition": "",
   "boughtIn": "Netherlands",
-  "images": [],
-  "cover": null
+  "images": [
+   "771-5ddccbf0.jpg"
+  ],
+  "cover": "771-5ddccbf0.jpg"
  },
  {
   "id": 772,
@@ -19719,8 +19783,10 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "789-97fec48c.jpg"
+  ],
+  "cover": "789-97fec48c.jpg"
  },
  {
   "id": 790,
@@ -19916,8 +19982,10 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "797-60d764aa.jpg"
+  ],
+  "cover": "797-60d764aa.jpg"
  },
  {
   "id": 798,
@@ -20135,8 +20203,10 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "806-43d533e3.jpg"
+  ],
+  "cover": "806-43d533e3.jpg"
  },
  {
   "id": 807,
@@ -20260,8 +20330,10 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "811-2181d54e.jpg"
+  ],
+  "cover": "811-2181d54e.jpg"
  },
  {
   "id": 812,
@@ -20284,8 +20356,10 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "812-b534c873.jpg"
+  ],
+  "cover": "812-b534c873.jpg"
  },
  {
   "id": 813,
@@ -20490,8 +20564,10 @@
   ],
   "edition": "",
   "boughtIn": "Portugal",
-  "images": [],
-  "cover": null
+  "images": [
+   "820-437a16e6.jpg"
+  ],
+  "cover": "820-437a16e6.jpg"
  },
  {
   "id": 821,
@@ -20514,8 +20590,10 @@
   ],
   "edition": "",
   "boughtIn": "Portugal",
-  "images": [],
-  "cover": null
+  "images": [
+   "821-14b56568.jpg"
+  ],
+  "cover": "821-14b56568.jpg"
  },
  {
   "id": 822,
@@ -20538,8 +20616,10 @@
   ],
   "edition": "",
   "boughtIn": "Portugal",
-  "images": [],
-  "cover": null
+  "images": [
+   "822-0be744a4.jpg"
+  ],
+  "cover": "822-0be744a4.jpg"
  },
  {
   "id": 823,
@@ -22733,8 +22813,10 @@
   ],
   "edition": "",
   "boughtIn": "Spain",
-  "images": [],
-  "cover": null
+  "images": [
+   "916-4a0580b4.jpg"
+  ],
+  "cover": "916-4a0580b4.jpg"
  },
  {
   "id": 917,
@@ -23076,8 +23158,10 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "930-52b338e5.jpg"
+  ],
+  "cover": "930-52b338e5.jpg"
  },
  {
   "id": 931,
@@ -24203,8 +24287,10 @@
   ],
   "edition": "",
   "boughtIn": "Italy",
-  "images": [],
-  "cover": null
+  "images": [
+   "974-78cdf48f.jpg"
+  ],
+  "cover": "974-78cdf48f.jpg"
  },
  {
   "id": 975,
@@ -25106,8 +25192,10 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "1011-6f497937.jpg"
+  ],
+  "cover": "1011-6f497937.jpg"
  },
  {
   "id": 1012,
@@ -25130,8 +25218,10 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "1012-0306c1b1.jpg"
+  ],
+  "cover": "1012-0306c1b1.jpg"
  },
  {
   "id": 1013,
