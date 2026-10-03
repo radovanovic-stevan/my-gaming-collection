@@ -395,7 +395,16 @@
    "vinyl-18-1d01167f.jpg"
   ],
   "cover": "vinyl-18-1d01167f.jpg",
-  "listens": []
+  "listens": [
+   {
+    "side": "1",
+    "date": "2026-10-03"
+   },
+   {
+    "side": "2",
+    "date": "2026-10-03"
+   }
+  ]
  },
  {
   "id": 19,
