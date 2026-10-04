@@ -1031,35 +1031,35 @@
     },
     {
      "label": "12",
-     "owned": false
+     "owned": true
     },
     {
      "label": "13",
-     "owned": false
+     "owned": true
     },
     {
      "label": "14",
-     "owned": false
+     "owned": true
     },
     {
      "label": "15",
-     "owned": false
+     "owned": true
     },
     {
      "label": "16",
-     "owned": false
+     "owned": true
     },
     {
      "label": "17",
-     "owned": false
+     "owned": true
     },
     {
      "label": "18",
-     "owned": false
+     "owned": true
     },
     {
      "label": "19",
-     "owned": false
+     "owned": true
     },
     {
      "label": "20",
@@ -1215,7 +1215,7 @@
     },
     {
      "label": "58",
-     "owned": true
+     "owned": false
     },
     {
      "label": "59",
