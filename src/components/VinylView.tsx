@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import type { Vinyl } from '../types';
 import { api } from '../lib/api';
 import { useFocus } from '../lib/focus';
-import { imageUrl, platformHue } from '../lib/format';
+import { acquiredSortKey, imageUrl, platformHue } from '../lib/format';
 import { ImageManager, type ImageOps } from './ImageManager';
 import { VinylDetail } from './VinylDetail';
 import { VinylForm } from './VinylForm';
@@ -35,7 +35,8 @@ function sortRecords(records: Vinyl[], key: SortKey): Vinyl[] {
     plays: (a, b) => b.listens.length - a.listens.length || artistThenTitle(a, b),
     // Records without a dated listen go last.
     recent: (a, b) => lastPlayed(b).localeCompare(lastPlayed(a)) || artistThenTitle(a, b),
-    added: (a, b) => b.id - a.id,
+    // Newest acquired first; records without an acquired date go last, newest added first.
+    added: (a, b) => acquiredSortKey(b.acquired).localeCompare(acquiredSortKey(a.acquired)) || b.id - a.id,
   };
   return [...records].sort(compare[key]);
 }

@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import type { Game, GameConsole } from '../types';
 import { api } from '../lib/api';
 import { useFocus } from '../lib/focus';
-import { imageUrl, platformHue } from '../lib/format';
+import { acquiredSortKey, imageUrl, platformHue } from '../lib/format';
 import { ImageManager, type ImageOps } from './ImageManager';
 import { ConsoleDetail } from './ConsoleDetail';
 import { ConsoleForm } from './ConsoleForm';
@@ -65,7 +65,8 @@ export function ConsolesView({ consoles, games, editable, onChange, onShowGames,
       maker: (a, b) => byText(a.maker, b.maker) || a.id - b.id,
       name: (a, b) => byText(a.name, b.name),
       games: (a, b) => gameCount(b) - gameCount(a) || byText(a.name, b.name),
-      added: (a, b) => b.id - a.id,
+      // Newest acquired first; consoles without an acquired year go last, newest added first.
+      added: (a, b) => acquiredSortKey(b.acquired).localeCompare(acquiredSortKey(a.acquired)) || b.id - a.id,
     };
     return [...matching].sort(compare[sort]);
   }, [consoles, search, sort, gameCount]);

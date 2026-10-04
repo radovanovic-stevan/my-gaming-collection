@@ -227,6 +227,7 @@ function vinyl(before: Vinyl[], after: Vinyl[]): Change[] {
     if (!old) return change;
     const d = change.details;
     if (old.artist !== r.artist || old.title !== r.title) d.push(`Renamed from "${old.artist} - ${old.title}"`);
+    field(d, 'Acquired', old.acquired ?? null, r.acquired, formatDate); // older snapshots predate the field
     const played = r.listens.length - old.listens.length;
     if (played > 0) d.push(`${plural(played, 'new side')} played`);
     else if (!same(old.listens, r.listens)) d.push('Listening log updated');

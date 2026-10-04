@@ -161,6 +161,8 @@ export interface VinylListen {
 export interface Vinyl extends WithImages {
   artist: string;
   title: string;
+  /** yyyy-mm-dd, or null when it isn't known. */
+  acquired: string | null;
   /** Oldest first. */
   listens: VinylListen[];
 }

@@ -3,6 +3,7 @@
   "id": 1,
   "artist": "ABBA",
   "title": "Greatest Hits",
+  "acquired": "2026-08-28",
   "images": [
    "vinyl-1-c64fa28e.jpg"
   ],
@@ -18,6 +19,7 @@
   "id": 2,
   "artist": "Atomsko Sklonište",
   "title": "Mentalna Higijena",
+  "acquired": "2025-10-17",
   "images": [
    "vinyl-2-b3f05157.jpg"
   ],
@@ -37,6 +39,7 @@
   "id": 3,
   "artist": "Chopin",
   "title": "Chopin's Greatest Hits",
+  "acquired": "2026-04-18",
   "images": [
    "vinyl-3-69e7f244.jpg"
   ],
@@ -47,6 +50,7 @@
   "id": 4,
   "artist": "Cune Gojković",
   "title": "Janičar",
+  "acquired": "2025-09-27",
   "images": [
    "vinyl-4-5fdd0b57.jpg"
   ],
@@ -62,6 +66,7 @@
   "id": 5,
   "artist": "Dino Dvornik",
   "title": "Dino Dvornik",
+  "acquired": null,
   "images": [
    "vinyl-5-d444914c.jpg"
   ],
@@ -81,6 +86,7 @@
   "id": 6,
   "artist": "Ed Sheeran",
   "title": "Tour Collection",
+  "acquired": null,
   "images": [
    "vinyl-6-86198959.jpg"
   ],
@@ -116,6 +122,7 @@
   "id": 7,
   "artist": "Gerry Rafferty",
   "title": "Snakes and Ladders",
+  "acquired": "2026-08-08",
   "images": [
    "vinyl-7-d020254a.jpg"
   ],
@@ -143,6 +150,7 @@
   "id": 8,
   "artist": "Linkin Park",
   "title": "Hybrid Theory",
+  "acquired": "2026-08-28",
   "images": [
    "vinyl-8-409a227a.jpg"
   ],
@@ -182,6 +190,7 @@
   "id": 9,
   "artist": "Linkin Park",
   "title": "Meteora",
+  "acquired": "2024-10-17",
   "images": [
    "vinyl-9-b75824f1.jpg"
   ],
@@ -209,6 +218,7 @@
   "id": 10,
   "artist": "Linkin Park",
   "title": "From Zero",
+  "acquired": null,
   "images": [
    "vinyl-10-adb07576.jpg"
   ],
@@ -244,6 +254,7 @@
   "id": 11,
   "artist": "Mozart",
   "title": "Die Musikalische Geschichte eines Genies",
+  "acquired": "2026-08-08",
   "images": [
    "vinyl-11-4cb8d125.jpg"
   ],
@@ -263,6 +274,7 @@
   "id": 12,
   "artist": "Orkestar Bečke Opere",
   "title": "Bečki Valceri",
+  "acquired": "2024-10-24",
   "images": [
    "vinyl-12-14ff0c36.jpg"
   ],
@@ -273,6 +285,7 @@
   "id": 13,
   "artist": "Rokeri s Moravu",
   "title": "Rokeri s Moravu",
+  "acquired": "2026-08-08",
   "images": [
    "vinyl-13-1761fd13.jpg"
   ],
@@ -283,6 +296,7 @@
   "id": 14,
   "artist": "Rondo Veneziano",
   "title": "Odissea Veneziana",
+  "acquired": "2026-08-08",
   "images": [
    "vinyl-14-74d9c278.jpg"
   ],
@@ -306,6 +320,7 @@
   "id": 15,
   "artist": "Saga",
   "title": "Images at Twilight",
+  "acquired": "2026-08-08",
   "images": [
    "vinyl-15-7f0eb8d1.jpg"
   ],
@@ -333,6 +348,7 @@
   "id": 16,
   "artist": "Tyler, The Creator",
   "title": "Igor",
+  "acquired": "2026-09-09",
   "images": [
    "vinyl-16-7a11a6aa.jpg"
   ],
@@ -384,6 +400,7 @@
   "id": 17,
   "artist": "Various Artists",
   "title": "Loving Sixties",
+  "acquired": "2026-08-28",
   "images": [
    "vinyl-17-7b385f4c.jpg"
   ],
@@ -407,6 +424,7 @@
   "id": 18,
   "artist": "Queen",
   "title": "Greatest Hits",
+  "acquired": "2026-08-28",
   "images": [
    "vinyl-18-1d01167f.jpg"
   ],
@@ -426,6 +444,7 @@
   "id": 19,
   "artist": "Yu Grupa",
   "title": "Yu Grupa",
+  "acquired": "2026-01-27",
   "images": [
    "vinyl-19-e1a7dc1e.jpg"
   ],
@@ -445,6 +464,7 @@
   "id": 20,
   "artist": "Arctic Monkeys",
   "title": "AM",
+  "acquired": "2026-09-30",
   "images": [
    "vinyl-20-8c3f41ac.jpg"
   ],
@@ -476,6 +496,7 @@
   "id": 21,
   "artist": "Lana Del Rey",
   "title": "Born to Die",
+  "acquired": "2026-09-30",
   "images": [
    "vinyl-21-721029f5.jpg"
   ],

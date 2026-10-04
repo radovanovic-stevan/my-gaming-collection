@@ -8,6 +8,27 @@ export function formatDate(value: string | null): string {
   return dateFmt.format(new Date(`${value}T00:00:00`));
 }
 
+const MONTHS = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+const SEASONS: Record<string, string> = { spring: '04', summer: '07', autumn: '10', fall: '10', winter: '12' };
+
+/**
+ * A sortable yyyy-mm-dd for an acquired value, also from free text like "October 2015", "Summer of 2018"
+ * or "Slim in 2009, Fat in 2023" (the latest one counts). Unknown months sort as the start of the year; '' when there's no year.
+ */
+export function acquiredSortKey(value: string | null): string {
+  if (!value) return '';
+  if (/^\d{4}-\d{2}-\d{2}$/.test(value)) return value;
+  const keys = value.split(/,|\band\b/i).map((part) => {
+    const year = part.match(/\b(\d{4})\b/)?.[1];
+    if (!year) return '';
+    const word = part.toLowerCase().match(/[a-z]+/g) ?? [];
+    const month = word.map((w) => MONTHS.indexOf(w.slice(0, 3))).find((i) => i >= 0);
+    const season = word.map((w) => SEASONS[w]).find(Boolean);
+    return `${year}-${month !== undefined ? String(month + 1).padStart(2, '0') : (season ?? '00')}-00`;
+  });
+  return keys.reduce((a, b) => (a > b ? a : b), '');
+}
+
 export function formatPlaytime(minutes: number | null): string {
   if (minutes === null) return '—';
   const h = Math.floor(minutes / 60);

@@ -464,9 +464,9 @@ async function handleCollections(parts: string[], method: string, req: IncomingM
 
 // --- Vinyl -----------------------------------------------------------------------
 
-type Vinyl = { id: number; artist: string; title: string; images: string[]; cover: string | null; listens: { side: string; date: string | null }[] };
+type Vinyl = { id: number; artist: string; title: string; acquired: string | null; images: string[]; cover: string | null; listens: { side: string; date: string | null }[] };
 
-function sanitizeVinyl(input: Record<string, unknown>): Pick<Vinyl, 'artist' | 'title' | 'listens'> {
+function sanitizeVinyl(input: Record<string, unknown>): Pick<Vinyl, 'artist' | 'title' | 'acquired' | 'listens'> {
   const artist = str(input.artist);
   const title = str(input.title);
   if (!artist) throw new HttpError(400, 'Artist is required');
@@ -478,7 +478,9 @@ function sanitizeVinyl(input: Record<string, unknown>): Pick<Vinyl, 'artist' | '
     if (date !== null && !/^\d{4}-\d{2}-\d{2}$/.test(date)) throw new HttpError(400, `Listen ${i + 1}: date must look like 2026-09-28`);
     return { side, date };
   });
-  return { artist, title, listens };
+  const acquired = nullableStr(input.acquired);
+  if (acquired !== null && !/^\d{4}-\d{2}-\d{2}$/.test(acquired)) throw new HttpError(400, 'Acquired must look like 2026-09-28');
+  return { artist, title, acquired, listens };
 }
 
 const sortVinyl = (records: Vinyl[]) => records.sort((a, b) => a.id - b.id);
@@ -513,7 +515,7 @@ async function handleVinyl(parts: string[], method: string, req: IncomingMessage
   }
   if (id === null) throw new HttpError(405, 'Method not allowed');
 
-  // PUT /api/vinyl/:id   body: { artist, title, listens }
+  // PUT /api/vinyl/:id   body: { artist, title, acquired, listens }
   if (parts.length === 2 && method === 'PUT') {
     const fields = sanitizeVinyl(await readBody(req));
     send(res, 200, await change(async (records, i) => (records[i] = { ...records[i], ...fields })));

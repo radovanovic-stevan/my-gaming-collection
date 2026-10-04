@@ -2,7 +2,7 @@ import type { BlogPost, ChecklistSeries, Game, GalleryEntry, GotcYear, GameConso
 
 export type GameInput = Omit<Game, 'id' | 'images' | 'cover'>;
 /** A new picture needs a dataUrl; when editing, one replaces the picture. */
-export type VinylInput = Pick<Vinyl, 'artist' | 'title' | 'listens'>;
+export type VinylInput = Pick<Vinyl, 'artist' | 'title' | 'acquired' | 'listens'>;
 export type SeriesInput = Omit<ChecklistSeries, 'id'> & { position?: number };
 export type GalleryInput = Omit<GalleryEntry, 'id' | 'image'> & { dataUrl?: string };
 export type ConsoleInput = Omit<GameConsole, 'id' | 'images' | 'cover'>;

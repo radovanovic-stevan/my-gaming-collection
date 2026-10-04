@@ -53,7 +53,7 @@ export function VinylDetail({ record, editable, onSaved, onClose, onPrev, onNext
     setListens(next);
     setError(null);
     queue.current = queue.current.then(() =>
-      api.updateVinyl(record.id, { artist: record.artist, title: record.title, listens: next }).then(onSaved, (e) => {
+      api.updateVinyl(record.id, { artist: record.artist, title: record.title, acquired: record.acquired, listens: next }).then(onSaved, (e) => {
         setError(`Couldn't save: ${e instanceof Error ? e.message : e}`);
       }),
     );
@@ -77,6 +77,10 @@ export function VinylDetail({ record, editable, onSaved, onClose, onPrev, onNext
           <span className="eyebrow">{record.artist}</span>
           <h2 className="detail-title">{record.title}</h2>
           <dl className="detail-list">
+            <div>
+              <dt>Acquired</dt>
+              <dd>{formatDate(record.acquired)}</dd>
+            </div>
             <div>
               <dt>Sides played</dt>
               <dd>{listens.length}</dd>
