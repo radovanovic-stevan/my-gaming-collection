@@ -2,7 +2,7 @@
  {
   "month": "2026-10",
   "gameOfTheMonth": null,
-  "completed": 0,
+  "completed": 1,
   "bought": null,
   "played": [
    {
@@ -13,7 +13,7 @@
    {
     "title": "Harvest Moon: Mad Dash",
     "platform": "PS4",
-    "status": "in-progress"
+    "status": "completed"
    }
   ]
  },
