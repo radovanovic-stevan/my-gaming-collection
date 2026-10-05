@@ -7430,8 +7430,10 @@
   "edition": "",
   "trophies": "https://psnprofiles.com/trophies/1042-warhammer-40000-space-marine/StevanMcfc",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "293-00156f61.jpg"
+  ],
+  "cover": "293-00156f61.jpg"
  },
  {
   "id": 294,
@@ -9161,8 +9163,10 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "359-46b44a81.jpg"
+  ],
+  "cover": "359-46b44a81.jpg"
  },
  {
   "id": 360,
@@ -9522,8 +9526,10 @@
   "edition": "",
   "trophies": "https://psnprofiles.com/trophies/1065-x-men-destiny/StevanMcfc",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "373-b735f653.jpg"
+  ],
+  "cover": "373-b735f653.jpg"
  },
  {
   "id": 374,
@@ -10064,8 +10070,10 @@
   "edition": "",
   "trophies": "https://psnprofiles.com/trophies/174-wet/StevanMcfc",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "394-2ba70f88.jpg"
+  ],
+  "cover": "394-2ba70f88.jpg"
  },
  {
   "id": 395,
@@ -14370,11 +14378,13 @@
    "Cover",
    "Manual"
   ],
-  "edition": "",
+  "edition": "Special Edition",
   "trophies": "https://psnprofiles.com/trophies/2623-watch-dogs/StevanMcfc",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "560-f3eb5623.jpg"
+  ],
+  "cover": "560-f3eb5623.jpg"
  },
  {
   "id": 561,
@@ -14870,8 +14880,10 @@
   "edition": "",
   "trophies": "https://psnprofiles.com/trophies/1383-warriors-orochi-3/StevanMcfc",
   "boughtIn": "Spain",
-  "images": [],
-  "cover": null
+  "images": [
+   "579-7cc356cf.jpg"
+  ],
+  "cover": "579-7cc356cf.jpg"
  },
  {
   "id": 580,
@@ -18171,8 +18183,10 @@
   "edition": "",
   "trophies": "https://psnprofiles.com/trophies/1699-playstation-all-stars-battle-royale/StevanMcfc",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "705-3d04afbd.jpg"
+  ],
+  "cover": "705-3d04afbd.jpg"
  },
  {
   "id": 706,
@@ -19871,8 +19885,10 @@
   ],
   "edition": "",
   "boughtIn": "Netherlands",
-  "images": [],
-  "cover": null
+  "images": [
+   "769-bd26edcc.jpg"
+  ],
+  "cover": "769-bd26edcc.jpg"
  },
  {
   "id": 770,
@@ -23421,8 +23437,10 @@
   "edition": "",
   "trophies": "https://psnprofiles.com/trophies/2087-one-piece-pirate-warriors-2/StevanMcfc",
   "boughtIn": "Spain",
-  "images": [],
-  "cover": null
+  "images": [
+   "913-e9458b13.jpg"
+  ],
+  "cover": "913-e9458b13.jpg"
  },
  {
   "id": 914,
@@ -24520,8 +24538,10 @@
   ],
   "edition": "",
   "boughtIn": "Spain",
-  "images": [],
-  "cover": null
+  "images": [
+   "955-a4e5f234.jpg"
+  ],
+  "cover": "955-a4e5f234.jpg"
  },
  {
   "id": 956,
@@ -25636,8 +25656,10 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "998-02014499.jpg"
+  ],
+  "cover": "998-02014499.jpg"
  },
  {
   "id": 999,
@@ -27349,8 +27371,10 @@
   "edition": "",
   "trophies": null,
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "1068-36170531.jpg"
+  ],
+  "cover": "1068-36170531.jpg"
  },
  {
   "id": 1069,
@@ -27636,7 +27660,9 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "1079-15d3d3af.jpg"
+  ],
+  "cover": "1079-15d3d3af.jpg"
  }
 ]
