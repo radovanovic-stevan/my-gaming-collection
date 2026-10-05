@@ -246,8 +246,10 @@
   "condition": [],
   "edition": "",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "10-5e4f511d.jpg"
+  ],
+  "cover": "10-5e4f511d.jpg"
  },
  {
   "id": 11,
