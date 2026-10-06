@@ -242,7 +242,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Action"
+  ],
   "condition": [],
   "edition": "",
   "boughtIn": "Serbia",
@@ -288,7 +290,8 @@
   "playtime": null,
   "genres": [
    "Action",
-   "Adventure"
+   "Adventure",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -515,7 +518,8 @@
   "playtime": null,
   "genres": [
    "Action",
-   "Adventure"
+   "Adventure",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -1265,7 +1269,8 @@
   "playtime": null,
   "genres": [
    "Action",
-   "Adventure"
+   "Adventure",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -2436,7 +2441,8 @@
   "percent": 92,
   "playtime": 489,
   "genres": [
-   "Racing"
+   "Racing",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -2587,7 +2593,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Party"
+  ],
   "condition": [],
   "edition": "",
   "boughtIn": "Serbia",
@@ -2774,7 +2782,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Party"
+  ],
   "condition": [
    "Box",
    "Cover",
@@ -2956,7 +2966,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Party"
+  ],
   "condition": [
    "Box",
    "Cover"
@@ -4199,7 +4211,8 @@
   "percent": 89,
   "playtime": null,
   "genres": [
-   "Racing"
+   "Racing",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -4328,7 +4341,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Party"
+  ],
   "condition": [
    "Box",
    "Cover"
@@ -5332,7 +5347,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Party"
+  ],
   "condition": [
    "Box",
    "Cover"
@@ -6323,7 +6340,8 @@
   "percent": null,
   "playtime": null,
   "genres": [
-   "Racing"
+   "Racing",
+   "OpenWorld"
   ],
   "condition": [
    "Box"
@@ -7895,7 +7913,8 @@
   "percent": null,
   "playtime": null,
   "genres": [
-   "Sports"
+   "Sports",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -8325,7 +8344,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Sports"
+  ],
   "condition": [
    "Box",
    "Cover",
@@ -10131,7 +10152,8 @@
   "percent": null,
   "playtime": null,
   "genres": [
-   "Sports"
+   "Sports",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -10622,7 +10644,8 @@
   "percent": null,
   "playtime": null,
   "genres": [
-   "Racing"
+   "Racing",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -11068,7 +11091,8 @@
   "percent": null,
   "playtime": null,
   "genres": [
-   "Sports"
+   "Sports",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -11736,7 +11760,8 @@
   "percent": null,
   "playtime": null,
   "genres": [
-   "RPG"
+   "RPG",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -12002,7 +12027,8 @@
   "percent": null,
   "playtime": null,
   "genres": [
-   "Racing"
+   "Racing",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -12029,7 +12055,8 @@
   "percent": null,
   "playtime": null,
   "genres": [
-   "Racing"
+   "Racing",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -12559,7 +12586,8 @@
   "percent": null,
   "playtime": null,
   "genres": [
-   "Sports"
+   "Sports",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -12841,7 +12869,8 @@
   "percent": null,
   "playtime": null,
   "genres": [
-   "Racing"
+   "Racing",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -13233,7 +13262,8 @@
   "playtime": null,
   "genres": [
    "Action",
-   "Adventure"
+   "Adventure",
+   "OpenWorld"
   ],
   "condition": [
    "Built-in Console"
@@ -13283,7 +13313,8 @@
   "playtime": null,
   "genres": [
    "Action",
-   "RPG"
+   "RPG",
+   "OpenWorld"
   ],
   "condition": [
    "Built-in Console"
@@ -13306,7 +13337,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Party"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -14325,7 +14358,8 @@
   "percent": null,
   "playtime": null,
   "genres": [
-   "FPS"
+   "FPS",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -14463,7 +14497,8 @@
   "playtime": null,
   "genres": [
    "Action",
-   "Adventure"
+   "Adventure",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -14810,7 +14845,8 @@
   "percent": null,
   "playtime": null,
   "genres": [
-   "Racing"
+   "Racing",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -16701,7 +16737,8 @@
   "playtime": null,
   "genres": [
    "FPS",
-   "RPG"
+   "RPG",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -16728,7 +16765,8 @@
   "percent": null,
   "playtime": null,
   "genres": [
-   "RPG"
+   "RPG",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -16782,7 +16820,8 @@
   "playtime": null,
   "genres": [
    "Action",
-   "Adventure"
+   "Adventure",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -16836,7 +16875,8 @@
   "percent": null,
   "playtime": null,
   "genres": [
-   "FPS"
+   "FPS",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -16864,7 +16904,8 @@
   "playtime": null,
   "genres": [
    "RPG",
-   "TPS"
+   "TPS",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -16891,7 +16932,8 @@
   "playtime": null,
   "genres": [
    "Action",
-   "Adventure"
+   "Adventure",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -17349,7 +17391,8 @@
   "playtime": null,
   "genres": [
    "Action",
-   "Adventure"
+   "Adventure",
+   "OpenWorld"
   ],
   "condition": [
    "Built-in Console"
@@ -17832,7 +17875,8 @@
   "percent": null,
   "playtime": null,
   "genres": [
-   "RPG"
+   "RPG",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -17859,7 +17903,8 @@
   "playtime": null,
   "genres": [
    "Action",
-   "Stealth"
+   "Stealth",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -18023,7 +18068,8 @@
   "genres": [
    "Action",
    "RPG",
-   "Horror"
+   "Horror",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -18074,7 +18120,8 @@
   "percent": 79,
   "playtime": null,
   "genres": [
-   "Racing"
+   "Racing",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -18617,7 +18664,8 @@
   "playtime": null,
   "genres": [
    "Horror",
-   "Action"
+   "Action",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -18643,7 +18691,8 @@
   "playtime": null,
   "genres": [
    "Action",
-   "RPG"
+   "RPG",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -18694,7 +18743,9 @@
   "timesCompleted": 1,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Action"
+  ],
   "condition": [
    "Box",
    "Cover",
@@ -18747,7 +18798,8 @@
   "playtime": null,
   "genres": [
    "Action",
-   "RPG"
+   "RPG",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -18825,7 +18877,10 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Sports",
+   "Strategy"
+  ],
   "condition": [
    "Box",
    "Cover",
@@ -19678,7 +19733,8 @@
   "playtime": null,
   "genres": [
    "Action",
-   "Adventure"
+   "Adventure",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -20237,7 +20293,8 @@
   "playtime": null,
   "genres": [
    "Action",
-   "Adventure"
+   "Adventure",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -20263,7 +20320,8 @@
   "percent": null,
   "playtime": null,
   "genres": [
-   "RPG"
+   "RPG",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -21340,7 +21398,8 @@
   "playtime": null,
   "genres": [
    "Action",
-   "Adventure"
+   "Adventure",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -21557,7 +21616,8 @@
   "playtime": null,
   "genres": [
    "Action",
-   "TPS"
+   "TPS",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -21935,7 +21995,8 @@
   "percent": null,
   "playtime": null,
   "genres": [
-   "RPG"
+   "RPG",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -22055,7 +22116,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Action"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -22077,7 +22140,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Action"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -22099,7 +22164,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Party"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -22145,7 +22212,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Action"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -22191,7 +22260,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Action"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -22213,7 +22284,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Action"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -22259,7 +22332,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Action"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -22281,7 +22356,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Action"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -22303,7 +22380,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Action"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -22325,7 +22404,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Action"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -22347,7 +22428,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Action"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -22369,7 +22452,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Action"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -22439,7 +22524,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Puzzle"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -22461,7 +22548,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Action"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -22483,7 +22572,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Puzzle"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -22505,7 +22596,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Sports"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -22527,7 +22620,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Action"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -22573,7 +22668,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Adventure"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -22595,7 +22692,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Sports"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -22617,7 +22716,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Action"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -22639,7 +22740,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Puzzle"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -22685,7 +22788,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Action"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -22731,7 +22836,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Action"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -22873,7 +22980,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Action"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -22895,7 +23004,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Puzzle"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -22917,7 +23028,10 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Action",
+   "Adventure"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -22939,7 +23053,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Sports"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -22961,7 +23077,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Action"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -22983,7 +23101,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Racing"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -23005,7 +23125,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Action"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -23027,7 +23149,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Sports"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -23049,7 +23173,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Action"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -23095,7 +23221,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Action"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -23165,7 +23293,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Adventure"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -23187,7 +23317,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Adventure"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -23209,7 +23341,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Party"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -23279,7 +23413,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Action"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -23301,7 +23437,9 @@
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "Action"
+  ],
   "condition": [
    "Built-in Console"
   ],
@@ -23511,7 +23649,8 @@
   "playtime": null,
   "genres": [
    "Action",
-   "Adventure"
+   "Adventure",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -23725,7 +23864,8 @@
   "playtime": null,
   "genres": [
    "Action",
-   "Adventure"
+   "Adventure",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -23752,7 +23892,8 @@
   "playtime": null,
   "genres": [
    "FPS",
-   "RPG"
+   "RPG",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -23777,7 +23918,8 @@
   "percent": null,
   "playtime": null,
   "genres": [
-   "FPS"
+   "FPS",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -23885,7 +24027,8 @@
   "percent": null,
   "playtime": null,
   "genres": [
-   "Adventure"
+   "Adventure",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -24069,7 +24212,8 @@
   "playtime": null,
   "genres": [
    "Action",
-   "Adventure"
+   "Adventure",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -24121,7 +24265,8 @@
   "playtime": null,
   "genres": [
    "Action",
-   "Adventure"
+   "Adventure",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -24332,7 +24477,8 @@
   "percent": null,
   "playtime": null,
   "genres": [
-   "RPG"
+   "RPG",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -24413,7 +24559,8 @@
   "playtime": null,
   "genres": [
    "Action",
-   "Adventure"
+   "Adventure",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -24493,7 +24640,10 @@
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
-  "genres": [],
+  "genres": [
+   "FPS",
+   "Strategy"
+  ],
   "condition": [
    "Box",
    "Cover",
@@ -24679,7 +24829,8 @@
   "playtime": null,
   "genres": [
    "Action",
-   "Adventure"
+   "Adventure",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -24874,7 +25025,8 @@
   "playtime": null,
   "genres": [
    "Action",
-   "Adventure"
+   "Adventure",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -25629,7 +25781,8 @@
   "playtime": null,
   "genres": [
    "Action",
-   "Adventure"
+   "Adventure",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -25914,7 +26067,8 @@
   "percent": null,
   "playtime": null,
   "genres": [
-   "Adventure"
+   "Adventure",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -26022,7 +26176,8 @@
   "percent": null,
   "playtime": null,
   "genres": [
-   "Racing"
+   "Racing",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -26049,7 +26204,8 @@
   "playtime": null,
   "genres": [
    "Action",
-   "Adventure"
+   "Adventure",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -26076,7 +26232,8 @@
   "playtime": null,
   "genres": [
    "Action",
-   "Adventure"
+   "Adventure",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -26283,7 +26440,8 @@
   "percent": null,
   "playtime": null,
   "genres": [
-   "RPG"
+   "RPG",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
@@ -26703,7 +26861,8 @@
   "percent": null,
   "playtime": null,
   "genres": [
-   "RPG"
+   "RPG",
+   "OpenWorld"
   ],
   "condition": [
    "Box",
