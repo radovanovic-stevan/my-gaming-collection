@@ -8575,8 +8575,10 @@
   "edition": "",
   "trophies": "https://psnprofiles.com/trophies/34-uncharted-drakes-fortune/StevanMcfc",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "336-ef3374a5.jpg"
+  ],
+  "cover": "336-ef3374a5.jpg"
  },
  {
   "id": 337,
@@ -11237,8 +11239,10 @@
   "edition": "",
   "trophies": "https://psnprofiles.com/trophies/1437-the-walking-dead/StevanMcfc",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "437-41a7c50d.jpg"
+  ],
+  "cover": "437-41a7c50d.jpg"
  },
  {
   "id": 438,
@@ -17227,8 +17231,10 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
-  "images": [],
-  "cover": null
+  "images": [
+   "664-cbcd5cf7.jpg"
+  ],
+  "cover": "664-cbcd5cf7.jpg"
  },
  {
   "id": 665,
