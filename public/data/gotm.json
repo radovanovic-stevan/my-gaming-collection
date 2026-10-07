@@ -2,13 +2,13 @@
  {
   "month": "2026-10",
   "gameOfTheMonth": null,
-  "completed": 1,
+  "completed": 2,
   "bought": null,
   "played": [
    {
     "title": "Hunted: The Demon's Forge",
     "platform": "PS3",
-    "status": "in-progress"
+    "status": "completed"
    },
    {
     "title": "Harvest Moon: Mad Dash",
