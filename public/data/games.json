@@ -3055,6 +3055,7 @@
   ],
   "edition": "Platinum",
   "boughtIn": "Serbia",
+  "playsVia": "Soft-modded PS2",
   "images": [
    "120-b1a0e84c.jpg"
   ],
@@ -5258,6 +5259,7 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
+  "playsVia": "Soft-modded PS2",
   "images": [
    "206-8594a99c.jpg"
   ],
@@ -6348,6 +6350,7 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
+  "playsVia": "Soft-modded PS2",
   "images": [
    "250-efa0f8c0.jpg"
   ],
@@ -7048,6 +7051,7 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
+  "playsVia": "Soft-modded PS2",
   "images": [
    "278-1d0c9780.jpg"
   ],
@@ -10759,6 +10763,7 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
+  "playsVia": "Soft-modded PS2",
   "images": [
    "418-50bbebda.jpg"
   ],
@@ -14287,6 +14292,7 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
+  "playsVia": "Soft-modded PS2",
   "images": [
    "552-85f05287.jpg"
   ],
@@ -18357,7 +18363,7 @@
   "platform": "Dreamcast",
   "acquired": "2023-12-13",
   "completed": null,
-  "status": "Unplayable",
+  "status": "Not Completed",
   "rating": null,
   "timesCompleted": null,
   "percent": null,
@@ -18372,6 +18378,7 @@
   ],
   "edition": "",
   "boughtIn": "Japan",
+  "playsVia": "Emulator",
   "images": [
    "706-b51d2d29.jpg"
   ],
@@ -18383,7 +18390,7 @@
   "platform": "Dreamcast",
   "acquired": "2023-12-13",
   "completed": null,
-  "status": "Unplayable",
+  "status": "Not Completed",
   "rating": null,
   "timesCompleted": null,
   "percent": null,
@@ -18398,6 +18405,7 @@
   ],
   "edition": "",
   "boughtIn": "Japan",
+  "playsVia": "Emulator",
   "images": [
    "707-9c70968d.jpg"
   ],

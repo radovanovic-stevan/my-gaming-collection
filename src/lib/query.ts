@@ -19,6 +19,7 @@ export const DEFAULT_QUERY: Query = {
   statuses: [],
   genres: [],
   conditions: [],
+  playsVia: [],
   acquiredYears: [],
   completedYears: [],
   ratingMin: null,
@@ -98,7 +99,7 @@ const normalize = (s: string) =>
 
 function matchesSearch(g: Game, terms: string[]): boolean {
   if (terms.length === 0) return true;
-  const hay = normalize([g.title, g.platform, g.edition, g.genres.join(' '), String(g.id)].join(' '));
+  const hay = normalize([g.title, g.platform, g.edition, g.genres.join(' '), g.playsVia ?? '', String(g.id)].join(' '));
   return terms.every((t) => hay.includes(t));
 }
 
@@ -115,6 +116,7 @@ export function applyQuery(games: Game[], q: Query): Game[] {
         // Genres narrow the list: a game must have every selected genre.
         q.genres.every((x) => g.genres.includes(x)) &&
         anyOf(q.conditions, g.condition) &&
+        anyOf(q.playsVia, g.playsVia ? [g.playsVia] : []) &&
         anyOf(q.acquiredYears, yearList(g.acquired)) &&
         anyOf(q.completedYears, yearList(g.completed)) &&
         (q.ratingMin === null || (g.rating !== null && g.rating >= q.ratingMin)) &&
@@ -133,7 +135,7 @@ export function facet(games: Game[], pick: (g: Game) => string[]): [string, numb
 
 // --- URL state -------------------------------------------------------------
 
-const LIST_KEYS = ['platforms', 'statuses', 'genres', 'conditions', 'acquiredYears', 'completedYears'] as const;
+const LIST_KEYS = ['platforms', 'statuses', 'genres', 'conditions', 'playsVia', 'acquiredYears', 'completedYears'] as const;
 
 export function queryToParams(q: Query): string {
   const p = new URLSearchParams();

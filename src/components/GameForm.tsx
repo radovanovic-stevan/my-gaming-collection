@@ -29,6 +29,7 @@ interface FormState {
   edition: string;
   trophies: string;
   boughtIn: string;
+  playsVia: string;
 }
 
 const today = () => new Date().toISOString().slice(0, 10);
@@ -59,6 +60,7 @@ function toForm(g: Game | null): FormState {
     edition: g?.edition ?? '',
     trophies: g?.trophies ?? '',
     boughtIn: g?.boughtIn ?? '',
+    playsVia: g?.playsVia ?? '',
   };
 }
 
@@ -79,6 +81,7 @@ function toInput(f: FormState): GameInput {
     edition: f.edition,
     trophies: f.trophies.trim() || null,
     boughtIn: f.boughtIn.trim() || null,
+    playsVia: f.playsVia.trim() || null,
   };
 }
 
@@ -137,6 +140,7 @@ export function GameForm({ game, allGames, onSaved, onClose }: Props) {
       platforms: facet(allGames, (g) => [g.platform]).map(([v]) => v),
       genres: facet(allGames, (g) => g.genres).map(([v]) => v),
       conditions: facet(allGames, (g) => g.condition).map(([v]) => v),
+      playsVia: facet(allGames, (g) => (g.playsVia ? [g.playsVia] : [])).map(([v]) => v),
     }),
     [allGames],
   );
@@ -235,6 +239,15 @@ export function GameForm({ game, allGames, onSaved, onClose }: Props) {
             <datalist id="countries">
               {COUNTRIES.map((c) => (
                 <option key={c} value={c} />
+              ))}
+            </datalist>
+          </label>
+          <label className="field span-2">
+            <span>Plays via</span>
+            <input list="plays-via" placeholder="When the original copy can't be played, e.g. Emulator, Modded PS2" {...field('playsVia')} />
+            <datalist id="plays-via">
+              {options.playsVia.map((v) => (
+                <option key={v} value={v} />
               ))}
             </datalist>
           </label>

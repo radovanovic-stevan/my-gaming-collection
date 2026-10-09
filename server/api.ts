@@ -126,6 +126,7 @@ function sanitize(input: Record<string, unknown>): Omit<Game, 'id' | 'images' | 
     edition: str(input.edition),
     trophies: trophiesUrl(input.trophies),
     boughtIn: nullableStr(input.boughtIn),
+    playsVia: nullableStr(input.playsVia),
   };
 }
 

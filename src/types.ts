@@ -29,6 +29,8 @@ export interface Game {
   trophies?: string | null;
   /** Country the copy was bought in (or, for a gift, where the giver got it). Named as on the world map. */
   boughtIn?: string | null;
+  /** How the game is played when the original copy can't be, e.g. "Emulator" or "Modded PS2"; null when it isn't needed. */
+  playsVia?: string | null;
   /** File names inside public/images. */
   images: string[];
   /** The image shown as the game's cover; always one of `images`. */
@@ -60,6 +62,7 @@ export interface Query {
   statuses: string[];
   genres: string[];
   conditions: string[];
+  playsVia: string[];
   acquiredYears: string[];
   completedYears: string[];
   ratingMin: number | null;

@@ -39,6 +39,7 @@ export function GameDetail({ game, lastPlayed, onClose, onPrev, onNext, actions 
     ['Edition', game.edition || '—'],
     ['Bought in', game.boughtIn || '—'],
   ];
+  if (game.playsVia) rows.push(['Plays via', game.playsVia]);
   if (game.trophies)
     rows.push([
       'Trophies',
