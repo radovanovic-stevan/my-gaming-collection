@@ -7735,7 +7735,7 @@
   "platform": "PSP",
   "acquired": "2019-08-30",
   "completed": null,
-  "status": "Unplayable",
+  "status": "Not Completed",
   "rating": null,
   "timesCompleted": null,
   "percent": null,
@@ -7745,7 +7745,9 @@
   ],
   "condition": [],
   "edition": "",
+  "trophies": null,
   "boughtIn": "Serbia",
+  "playsVia": "Emulator",
   "images": [
    "304-6b95ce7d.jpg"
   ],
@@ -13707,7 +13709,7 @@
   "platform": "PSP",
   "acquired": "2022-08-27",
   "completed": null,
-  "status": "Unplayable",
+  "status": "Not Completed",
   "rating": null,
   "timesCompleted": null,
   "percent": null,
@@ -13720,7 +13722,9 @@
    "Cover"
   ],
   "edition": "Collectors Edition",
+  "trophies": null,
   "boughtIn": "Serbia",
+  "playsVia": "Emulator",
   "images": [
    "530-e3953747.jpg"
   ],
@@ -18557,7 +18561,7 @@
   "platform": "PSP",
   "acquired": "2024-04-09",
   "completed": null,
-  "status": "Unplayable",
+  "status": "Not Completed",
   "rating": null,
   "timesCompleted": null,
   "percent": null,
@@ -18572,7 +18576,9 @@
    "Manual"
   ],
   "edition": "",
+  "trophies": null,
   "boughtIn": "Serbia",
+  "playsVia": "Emulator",
   "images": [
    "713-8eb7bbdc.jpg"
   ],
