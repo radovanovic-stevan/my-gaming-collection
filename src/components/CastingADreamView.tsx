@@ -7,7 +7,7 @@ import { Cover } from './Cover';
 
 /** Pictures of the launcher in public/images. */
 const SCREENSHOTS: { file: string; caption: string }[] = [
-  { file: 'casting-a-dream-library-a3696aab.jpg', caption: 'The library: every game in one place, with play time and a link to it in this collection.' },
+  { file: 'casting-a-dream-library-822d8059.jpg', caption: 'The library: every game in one place, with play time and a link to it in this collection.' },
 ];
 
 interface Props {
@@ -55,12 +55,38 @@ export function CastingADreamView({ data, games, onOpen, focus, onFocused }: Pro
         <div className="cad-intro">
           <h2>Casting a Dream</h2>
           <p>
-            A Mac launcher I built to play the games from my collection that I don't have the hardware for. It keeps them in one library, opens each one
-            in its emulator, tracks play time and awards trophies worked out from the games' own saves.
+            When you collect physical games, you're bound to end up with some games you can't play. Whether it's because you don't own the hardware, or
+            because the disc itself is scratched beyond repair, it's never a nice feeling to have something you
+            have no ways of playing. To combat that, I've resorted to emulation for certain games that fall into that category. For now, I've
+            limited that to PSP and Wii games that have faulty discs, as well as games from the japanese market
+            that require actual japanese hardware to play. I know I'm not getting those soon, so emulation is fine by me.
+            I've also built a unified launcher around all these emulators. Apart from being able to launch all games from
+            one place, Casting a Dream also logs my playing time for each game. For certain games I've also managed to create
+            my own custom trophy set, which are automatically awarded to me as I play the game.
           </p>
           <a className="btn" href={data.repository} target="_blank" rel="noreferrer">
             View on GitHub ↗
           </a>
+          <div className="year-totals">
+            <div>
+              <b>{data.games.length}</b>
+              <span>games</span>
+            </div>
+            <div>
+              <b>{groups.length}</b>
+              <span>systems</span>
+            </div>
+            <div>
+              <b>{formatPlaytime(minutes)}</b>
+              <span>played</span>
+            </div>
+            <div>
+              <b>
+                {earned}/{total}
+              </b>
+              <span>trophies</span>
+            </div>
+          </div>
         </div>
         {SCREENSHOTS.length > 0 && (
           <div className="cad-shots">
@@ -74,27 +100,6 @@ export function CastingADreamView({ data, games, onOpen, focus, onFocused }: Pro
             ))}
           </div>
         )}
-      </div>
-
-      <div className="year-totals">
-        <div>
-          <b>{data.games.length}</b>
-          <span>games</span>
-        </div>
-        <div>
-          <b>{groups.length}</b>
-          <span>systems</span>
-        </div>
-        <div>
-          <b>{formatPlaytime(minutes)}</b>
-          <span>played</span>
-        </div>
-        <div>
-          <b>
-            {earned}/{total}
-          </b>
-          <span>trophies</span>
-        </div>
       </div>
 
       {groups.map((s) => (

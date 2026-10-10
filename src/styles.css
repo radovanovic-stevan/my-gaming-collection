@@ -3066,9 +3066,29 @@ button.issue:hover {
 }
 
 .cad-intro p {
-  max-width: 62ch;
-  margin: 6px 0 12px;
+  margin: 0;
   color: var(--fg-muted);
+  text-align: justify;
+  hyphens: auto;
+}
+
+.cad-intro h2 {
+  margin-bottom: 6px;
+}
+
+.cad-intro .btn {
+  margin-top: 12px;
+}
+
+/* The four stats two by two under the intro, as wide as the text. */
+.cad-intro .year-totals {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 18px 0 0;
+}
+
+.cad-intro .year-totals > div {
+  min-width: 0;
 }
 
 .cad-shots {
@@ -3085,8 +3105,8 @@ button.issue:hover {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
+  /* Matches the window's own rounded corners, which the crop leaves square. */
+  border-radius: 20px;
   box-shadow: var(--shadow);
 }
 
