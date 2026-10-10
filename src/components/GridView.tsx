@@ -17,8 +17,10 @@ export function GridView({ games, onOpen }: Props) {
               <Cover game={g} />
               <RatingBadge rating={g.rating} />
               {g.images.length > 1 && <span className="card-count" title={`${g.images.length} images`}>{g.images.length}</span>}
-              {g.genres.includes('<3') && <span className="card-heart" aria-label="From my wife" title="From my wife">♥</span>}
-              {g.playsVia && <span className="card-plays-via" aria-label={`Plays via ${g.playsVia}`} title={`Plays via ${g.playsVia}`}>⇄</span>}
+              <span className="card-badges">
+                {g.genres.includes('<3') && <span className="card-heart" aria-label="From my wife" title="From my wife">♥</span>}
+                {g.playsVia && <span className="card-plays-via" aria-label={`Plays via ${g.playsVia}`} title={`Plays via ${g.playsVia}`}>⇄</span>}
+              </span>
             </div>
             <div className="card-body">
               <span className="card-title">{g.title}</span>
