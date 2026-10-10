@@ -1,14 +1,11 @@
 {
   "games" : [
     {
-      "lastPlayed" : "2026-10-10",
-      "minutes" : 0,
       "platform" : "Wii",
       "search" : "Animal Crossing - City Folk",
       "title" : "Animal Crossing - City Folk"
     },
     {
-      "lastPlayed" : "2026-10-09",
       "platform" : "Dreamcast",
       "search" : "Frame Gride",
       "title" : "Frame Gride"
@@ -24,7 +21,6 @@
       "title" : "Medal of Honor - Heroes 2"
     },
     {
-      "lastPlayed" : "2026-10-09",
       "platform" : "PSP",
       "search" : "MotorStorm - Arctic Edge",
       "title" : "MotorStorm - Arctic Edge"
@@ -35,14 +31,13 @@
       "title" : "Psychic Force 2012"
     },
     {
-      "lastPlayed" : "2026-10-09",
       "platform" : "PSP",
       "search" : "Sonic Rivals",
       "title" : "Sonic Rivals"
     },
     {
       "lastPlayed" : "2026-10-10",
-      "minutes" : 17,
+      "minutes" : 19,
       "platform" : "Famicom",
       "search" : "Tenchi wo Kurau II",
       "title" : "Tenchi o Kurau II - Shokatsu Koumei Den",
