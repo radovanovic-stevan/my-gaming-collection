@@ -11551,7 +11551,7 @@
   "platform": "Wii",
   "acquired": "2021-12-19",
   "completed": null,
-  "status": "Unplayable",
+  "status": "Not Completed",
   "rating": null,
   "timesCompleted": null,
   "percent": null,
@@ -11564,7 +11564,9 @@
    "Cover"
   ],
   "edition": "",
+  "trophies": null,
   "boughtIn": "Serbia",
+  "playsVia": "Emulator",
   "images": [
    "448-88ba3354.jpg"
   ],
@@ -13553,7 +13555,7 @@
   "platform": "Wii",
   "acquired": "2022-08-16",
   "completed": null,
-  "status": "Unplayable",
+  "status": "Not Completed",
   "rating": null,
   "timesCompleted": null,
   "percent": null,
@@ -13566,7 +13568,9 @@
    "Cover"
   ],
   "edition": "",
+  "trophies": null,
   "boughtIn": "Serbia",
+  "playsVia": "Emulator",
   "images": [
    "524-6f52b142.jpg"
   ],
@@ -15091,7 +15095,7 @@
   "platform": "Famicom",
   "acquired": "2023-02-11",
   "completed": null,
-  "status": "Unplayable",
+  "status": "Not Completed",
   "rating": null,
   "timesCompleted": null,
   "percent": null,
@@ -15104,7 +15108,9 @@
    "Cover"
   ],
   "edition": "",
+  "trophies": null,
   "boughtIn": "Spain",
+  "playsVia": "Emulator",
   "images": [
    "582-edec24d3.jpg"
   ],
