@@ -43,6 +43,14 @@ The **Blog** tab holds short posts: a title, a date, an optional cover image and
 Leave a blank line between paragraphs; links are clickable. Tick **Draft** to keep a post to yourself: drafts only show while
 editing locally, not on the published site (they're still in `blog.json`, so they're in the repo). Locally, **+ New post** writes one and **Edit** changes or deletes it.
 
+The **Casting a Dream** tab is about [Casting a Dream](https://github.com/radovanovic-stevan/casting-a-dream),
+the Mac launcher I play my emulated games with. It lists every game in the launcher by system, with its play time
+and last played date, and each game's trophies (earned ones dated; secret ones hidden until earned). The data comes
+from `public/data/casting-a-dream.json`, which the launcher rewrites whenever its library, play time or trophies
+change. For the games it plays, the launcher's play time replaces the game's **Playtime** across the site, and a
+game with launcher trophies gets a **Trophies** link to its list on this tab. Launcher games are found in the
+collection with the same search the launcher's collection link uses (title plus platform).
+
 **Other collections** that aren't games (for now, **Dylan Dog** comics) get their own tabs after
 the game tabs, with their own colours. Each series is a checklist of issue numbers or book titles,
 marked owned or missing. Locally, **Tick off issues** lets you click issues to switch them
@@ -75,6 +83,7 @@ Everything is plain files in the repo. There is no database.
 | `public/data/vinyl.json` | Vinyl: each record's artist, album, images and listening log. Images are `vinyl-<id>-<hash>.<ext>`. |
 | `public/data/consoles.json` | Consoles: name, maker, platform, acquired, notes, models and images. Images are `console-<id>-<hash>.jpg`. |
 | `public/data/blog.json` | Blog posts, newest first. Cover images are `blog-<id>-<hash>.jpg`. |
+| `public/data/casting-a-dream.json` | Written by the Casting a Dream launcher: its games, play time and trophies. Don't edit by hand; the launcher overwrites it. |
 | `data/source/*.tsv` | Original spreadsheet exports. |
 
 Commit the changes after editing to publish them.

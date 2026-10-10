@@ -1,0 +1,151 @@
+{
+  "games" : [
+    {
+      "lastPlayed" : "2026-10-10",
+      "minutes" : 0,
+      "platform" : "Wii",
+      "search" : "Animal Crossing - City Folk",
+      "title" : "Animal Crossing - City Folk"
+    },
+    {
+      "lastPlayed" : "2026-10-09",
+      "platform" : "Dreamcast",
+      "search" : "Frame Gride",
+      "title" : "Frame Gride"
+    },
+    {
+      "platform" : "PSP",
+      "search" : "Gran Turismo",
+      "title" : "Gran Turismo"
+    },
+    {
+      "platform" : "Wii",
+      "search" : "Medal of Honor - Heroes 2",
+      "title" : "Medal of Honor - Heroes 2"
+    },
+    {
+      "lastPlayed" : "2026-10-09",
+      "platform" : "PSP",
+      "search" : "MotorStorm - Arctic Edge",
+      "title" : "MotorStorm - Arctic Edge"
+    },
+    {
+      "platform" : "Dreamcast",
+      "search" : "Psychic Force 2012",
+      "title" : "Psychic Force 2012"
+    },
+    {
+      "lastPlayed" : "2026-10-09",
+      "platform" : "PSP",
+      "search" : "Sonic Rivals",
+      "title" : "Sonic Rivals"
+    },
+    {
+      "lastPlayed" : "2026-10-10",
+      "minutes" : 17,
+      "platform" : "Famicom",
+      "search" : "Tenchi wo Kurau II",
+      "title" : "Tenchi o Kurau II - Shokatsu Koumei Den",
+      "trophies" : [
+        {
+          "detail" : "Win a battle.",
+          "title" : "First Victory",
+          "unlocked" : "2026-10-10"
+        },
+        {
+          "detail" : "Have a general join Liu Bei's army.",
+          "title" : "First Recruits",
+          "unlocked" : "2026-10-10"
+        },
+        {
+          "detail" : "Reunite with both sworn brothers, Guan Yu and Zhang Fei.",
+          "title" : "Oath of the Peach Garden",
+          "unlocked" : "2026-10-10"
+        },
+        {
+          "detail" : "Recruit 10 generals.",
+          "title" : "Growing Army"
+        },
+        {
+          "detail" : "Hold 1,000 gold at once.",
+          "title" : "Full Coffers"
+        },
+        {
+          "detail" : "Reach level 10.",
+          "title" : "Seasoned Commander"
+        },
+        {
+          "detail" : "Win over Zhuge Liang.",
+          "title" : "The Sleeping Dragon"
+        },
+        {
+          "detail" : "Recruit Pang Tong.",
+          "title" : "Phoenix Fledgling"
+        },
+        {
+          "detail" : "Recruit 30 generals.",
+          "title" : "Grand Army"
+        },
+        {
+          "detail" : "Reach level 20.",
+          "title" : "Veteran Commander"
+        },
+        {
+          "detail" : "Hold 10,000 gold at once.",
+          "title" : "Imperial Treasury"
+        },
+        {
+          "detail" : "Command Guan Yu, Zhang Fei, Zhao Yun, Ma Chao and Huang Zhong.",
+          "title" : "The Five Tigers"
+        },
+        {
+          "detail" : "Recruit Jiang Wei.",
+          "title" : "Heir to the Strategist"
+        },
+        {
+          "detail" : "Recruit 60 generals.",
+          "title" : "Legendary Army"
+        },
+        {
+          "detail" : "Reach level 30.",
+          "title" : "Master of War"
+        },
+        {
+          "detail" : "Hold 50,000 gold at once.",
+          "title" : "Fortune of Kingdoms"
+        },
+        {
+          "secret" : true
+        }
+      ]
+    }
+  ],
+  "repository" : "https://github.com/radovanovic-stevan/casting-a-dream",
+  "systems" : [
+    {
+      "emulator" : "Flycast",
+      "name" : "Dreamcast",
+      "platform" : "Dreamcast"
+    },
+    {
+      "emulator" : "PPSSPP",
+      "name" : "PSP",
+      "platform" : "PSP"
+    },
+    {
+      "emulator" : "Dolphin",
+      "name" : "Wii",
+      "platform" : "Wii"
+    },
+    {
+      "emulator" : "Dolphin",
+      "name" : "GameCube",
+      "platform" : "GCN"
+    },
+    {
+      "emulator" : "Mesen",
+      "name" : "Famicom",
+      "platform" : "Famicom"
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 import { Suspense, lazy, useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import type { BlogPost, ChecklistCollection, Game, GalleryEntry, GotcData, GameConsole, GotmMonth, Query, SortKey, Vinyl } from './types';
+import type { BlogPost, CastingADream, ChecklistCollection, Game, GalleryEntry, GotcData, GameConsole, GotmMonth, Query, SortKey, Vinyl } from './types';
 import { DEFAULT_QUERY, SORT_LABELS, applyQuery, paramsToQuery, queryToParams } from './lib/query';
 import { Filters } from './components/Filters';
 import { SortBuilder } from './components/SortBuilder';
@@ -15,14 +15,16 @@ import { ChecklistView } from './components/ChecklistView';
 import { VinylView } from './components/VinylView';
 import { ConsolesView } from './components/ConsolesView';
 import { BlogView } from './components/BlogView';
+import { CastingADreamView } from './components/CastingADreamView';
 import { WhatsNew } from './components/WhatsNew';
 // The map carries the world's country shapes, so it's only loaded when opened.
 const MapView = lazy(() => import('./components/MapView'));
 import { api, detectEditing } from './lib/api';
 import { createLinker } from './lib/links';
+import { matchLauncherGames, withLauncherPlaytime } from './lib/castingADream';
 import { findChanges, loadSnapshot, saveSnapshot, type ChangeGroup, type ChangeTab } from './lib/whatsNew';
 
-type GameTab = 'collection' | 'gotm' | 'gotc' | 'gallery' | 'map' | 'consoles' | 'blog';
+type GameTab = 'collection' | 'gotm' | 'gotc' | 'gallery' | 'map' | 'consoles' | 'blog' | 'casting-a-dream';
 /** Collections that aren't games. Each one is public/data/<id>.json. */
 const OTHER_COLLECTIONS = [
   { id: 'dylan-dog', label: 'Dylan Dog', short: 'Dylan Dog' },
@@ -39,6 +41,7 @@ const TABS: { id: GameTab; label: string; short: string }[] = [
   { id: 'map', label: 'Map', short: 'Map' },
   { id: 'consoles', label: 'Consoles', short: 'Consoles' },
   { id: 'blog', label: 'Blog', short: 'Blog' },
+  { id: 'casting-a-dream', label: 'Casting a Dream', short: 'Dream' },
 ];
 const tabFromUrl = (): Tab => {
   const t = new URLSearchParams(location.search).get('tab');
@@ -66,7 +69,7 @@ const GAME_IMAGE_OPS: ImageOps<Game> = { add: api.addImage, remove: api.removeIm
 type Modal = { kind: 'detail' | 'edit' | 'images'; id: number } | { kind: 'new' } | null;
 
 export default function App() {
-  const [games, setGames] = useState<Game[] | null>(null);
+  const [storedGames, setGames] = useState<Game[] | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [query, setQuery] = useState<Query>(() => paramsToQuery(location.search));
   const [modal, setModal] = useState<Modal>(null);
@@ -88,6 +91,14 @@ export default function App() {
   const vinyl = useDataFile<Vinyl[]>('vinyl.json', tab === 'vinyl' || checkChanges);
   const consoles = useDataFile<GameConsole[]>('consoles.json', tab === 'consoles' || checkChanges);
   const blog = useDataFile<BlogPost[]>('blog.json', tab === 'blog' || checkChanges);
+  // Always loaded: the launcher's play time replaces the recorded one for the games it plays.
+  const castingADream = useDataFile<CastingADream>('casting-a-dream.json', true);
+  const games = useMemo(() => storedGames && withLauncherPlaytime(storedGames, castingADream.data), [storedGames, castingADream.data]);
+  /** Collection games with trophies in the launcher. */
+  const launcherTrophies = useMemo(() => {
+    if (!games || !castingADream.data) return new Set<number>();
+    return new Set([...matchLauncherGames(castingADream.data, games)].filter(([lg]) => lg.trophies?.length).map(([, g]) => g.id));
+  }, [games, castingADream.data]);
 
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}data/games.json`, { cache: 'no-cache' })
@@ -359,6 +370,13 @@ export default function App() {
           <div className="empty">{blog.error ? `Couldn't load the blog: ${blog.error}` : 'Loading…'}</div>
         ))}
 
+      {tab === 'casting-a-dream' &&
+        (castingADream.data ? (
+          <CastingADreamView data={castingADream.data} games={games} onOpen={(g) => showDetail(g.id)} focus={focusOn<number>('casting-a-dream')} onFocused={clearFocus} />
+        ) : (
+          <div className="empty">{castingADream.error ? `Couldn't load Casting a Dream: ${castingADream.error}` : 'Loading…'}</div>
+        ))}
+
       {tab === 'map' && (
         <Suspense fallback={<div className="empty">Loading map…</div>}>
           <MapView games={games} onOpen={(g) => showDetail(g.id)} />
@@ -428,6 +446,15 @@ export default function App() {
           game={openGame}
           lastPlayed={lastPlayed.get(openGame.id)}
           onClose={closeModal}
+          onShowLauncherTrophies={
+            launcherTrophies.has(openGame.id)
+              ? () => {
+                  setModal(null);
+                  goTo('casting-a-dream');
+                  setFocus({ tab: 'casting-a-dream', id: openGame.id });
+                }
+              : undefined
+          }
           onPrev={tab === 'collection' && openIndex > 0 ? () => showDetail(results[openIndex - 1].id) : undefined}
           onNext={tab === 'collection' && openIndex >= 0 && openIndex < results.length - 1 ? () => showDetail(results[openIndex + 1].id) : undefined}
           actions={

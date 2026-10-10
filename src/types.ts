@@ -205,3 +205,38 @@ export interface BlogPost {
   /** A draft is only shown while editing locally, not on the published site. */
   draft?: boolean;
 }
+
+// --- Casting a Dream ----------------------------------------------------------------
+
+/**
+ * public/data/casting-a-dream.json, written by the Casting a Dream launcher (my Mac emulator launcher)
+ * whenever its library, play time or trophies change.
+ */
+export interface CastingADream {
+  repository: string;
+  /** Every system the launcher plays, with the platform name used in the collection. */
+  systems: { name: string; platform: string; emulator: string }[];
+  games: LauncherGame[];
+}
+
+export interface LauncherTrophy {
+  /** Missing for a secret trophy that isn't unlocked yet. */
+  title?: string;
+  detail?: string;
+  secret?: boolean;
+  /** yyyy-mm-dd, or missing while locked. */
+  unlocked?: string;
+}
+
+export interface LauncherGame {
+  /** As the launcher names it (its folder name without region tags). */
+  title: string;
+  platform: string;
+  /** Search that finds the game in the collection; the launcher's collection link uses it too. */
+  search: string;
+  /** Minutes played through the launcher; missing when none have been tracked. */
+  minutes?: number;
+  /** yyyy-mm-dd */
+  lastPlayed?: string;
+  trophies?: LauncherTrophy[];
+}

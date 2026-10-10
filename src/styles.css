@@ -3030,3 +3030,184 @@ button.issue:hover {
     box-shadow: 0 0 0 3px transparent;
   }
 }
+
+/* --- Casting a Dream ------------------------------------------------------------ */
+
+.cad {
+  --gold: #a87800;
+  --gold-soft: #fbf0d0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .cad {
+    --gold: #ffc94d;
+    --gold-soft: #2e2614;
+  }
+}
+
+.cad-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 18px 28px;
+  margin-bottom: 18px;
+}
+
+/* Wide screens: the intro beside the screenshots. */
+@media (min-width: 900px) {
+  .cad-hero:has(.cad-shots) {
+    grid-template-columns: minmax(260px, 1fr) minmax(0, 1.7fr);
+    align-items: start;
+  }
+}
+
+.cad-intro h2 {
+  font-size: 22px;
+  letter-spacing: -0.01em;
+}
+
+.cad-intro p {
+  max-width: 62ch;
+  margin: 6px 0 12px;
+  color: var(--fg-muted);
+}
+
+.cad-shots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: 14px;
+}
+
+.cad-shots figure {
+  margin: 0;
+}
+
+.cad-shots img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.cad-shots figcaption {
+  margin-top: 6px;
+}
+
+.cad-emulator {
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.cad .console-group {
+  margin-bottom: 22px;
+}
+
+.cad-trophy-badge {
+  color: #ffd76a;
+}
+
+.cad-trophies-title {
+  margin-top: 8px;
+}
+
+.cad-set {
+  margin-bottom: 18px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-elev);
+}
+
+.cad-set-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 20px;
+  margin-bottom: 12px;
+}
+
+.cad-set-head > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cad-set-title {
+  font-size: 16px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.cad-progress {
+  flex: 0 1 260px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--bg-sunk);
+  overflow: hidden;
+}
+
+.cad-progress span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--gold);
+}
+
+.cad-trophies {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: 8px;
+}
+
+.cad-trophies li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 11px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  opacity: 0.7;
+}
+
+.cad-trophies li.earned {
+  opacity: 1;
+  border-color: color-mix(in srgb, var(--gold) 45%, var(--border));
+  background: var(--gold-soft);
+}
+
+.cad-trophies li > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  flex: 1;
+  min-width: 0;
+}
+
+.cad-trophy-icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-sunk);
+  font-size: 15px;
+  filter: grayscale(1);
+}
+
+.cad-trophies li.earned .cad-trophy-icon {
+  background: color-mix(in srgb, var(--gold) 20%, transparent);
+  filter: none;
+}
+
+.cad-unlocked {
+  flex: none;
+  color: var(--gold);
+  font-weight: 600;
+}

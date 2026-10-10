@@ -10,12 +10,14 @@ interface Props {
   /** The latest Game of the Month entry (yyyy-mm) that lists this game, if any. */
   lastPlayed?: string | null;
   onClose: () => void;
+  /** Opens this game's trophies on the Casting a Dream page, for games with trophies in the launcher. */
+  onShowLauncherTrophies?: () => void;
   onPrev?: () => void;
   onNext?: () => void;
   actions?: ReactNode;
 }
 
-export function GameDetail({ game, lastPlayed, onClose, onPrev, onNext, actions }: Props) {
+export function GameDetail({ game, lastPlayed, onClose, onShowLauncherTrophies, onPrev, onNext, actions }: Props) {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if ((e.target as HTMLElement).closest('input, textarea, select')) return;
@@ -46,6 +48,13 @@ export function GameDetail({ game, lastPlayed, onClose, onPrev, onNext, actions 
       <a href={game.trophies} target="_blank" rel="noreferrer">
         View on PSNProfiles ↗
       </a>,
+    ]);
+  else if (onShowLauncherTrophies)
+    rows.push([
+      'Trophies',
+      <button className="link" onClick={onShowLauncherTrophies}>
+        View in Casting a Dream →
+      </button>,
     ]);
 
   return (
