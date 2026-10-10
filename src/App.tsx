@@ -27,22 +27,23 @@ import { findChanges, loadSnapshot, saveSnapshot, type ChangeGroup, type ChangeT
 type GameTab = 'collection' | 'gotm' | 'gotc' | 'gallery' | 'map' | 'consoles' | 'blog' | 'casting-a-dream';
 /** Collections that aren't games. Each one is public/data/<id>.json. */
 const OTHER_COLLECTIONS = [
-  { id: 'dylan-dog', label: 'Dylan Dog', short: 'Dylan Dog' },
-  { id: 'vinyl', label: 'Vinyl', short: 'Vinyl' },
+  { id: 'dylan-dog', label: 'Dylan Dog' },
+  { id: 'vinyl', label: 'Vinyl' },
 ] as const;
 type OtherTab = (typeof OTHER_COLLECTIONS)[number]['id'];
 type Tab = GameTab | OtherTab;
 const isOther = (t: Tab): t is OtherTab => OTHER_COLLECTIONS.some((c) => c.id === t);
-const TABS: { id: GameTab; label: string; short: string }[] = [
-  { id: 'collection', label: 'Collection', short: 'Collection' },
-  { id: 'gotm', label: 'Game of the Month', short: 'GOTM' },
-  { id: 'gotc', label: 'Awards', short: 'Awards' },
-  { id: 'gallery', label: 'Gallery', short: 'Gallery' },
-  { id: 'map', label: 'Map', short: 'Map' },
-  { id: 'consoles', label: 'Consoles', short: 'Consoles' },
-  { id: 'blog', label: 'Blog', short: 'Blog' },
-  { id: 'casting-a-dream', label: 'Casting a Dream', short: 'Dream' },
+const TABS: { id: GameTab; label: string }[] = [
+  { id: 'collection', label: 'Collection' },
+  { id: 'gotm', label: 'Game of the Month' },
+  { id: 'gotc', label: 'Awards' },
+  { id: 'gallery', label: 'Gallery' },
+  { id: 'map', label: 'Map' },
+  { id: 'consoles', label: 'Consoles' },
+  { id: 'blog', label: 'Blog' },
+  { id: 'casting-a-dream', label: 'Casting a Dream' },
 ];
+const tabLabel = (t: Tab) => [...TABS, ...OTHER_COLLECTIONS].find((x) => x.id === t)!.label;
 const tabFromUrl = (): Tab => {
   const t = new URLSearchParams(location.search).get('tab');
   return TABS.some((x) => x.id === t) || OTHER_COLLECTIONS.some((c) => c.id === t) ? (t as Tab) : 'collection';
@@ -81,6 +82,8 @@ export default function App() {
   const clearFocus = useCallback(() => setFocus(null), []);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [tab, setTab] = useState<Tab>(tabFromUrl);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLElement>(null);
   // On the published site everything is loaded, to tell visitors what changed since their last visit.
   const checkChanges = editingChecked && !editable;
   // Always loaded: a game's Last played comes from Game of the Month, and the year editor fills stats from it.
@@ -135,6 +138,7 @@ export default function App() {
   // Filter, sort and search changes only update the current entry.
   const pushNext = useRef(false);
   const goTo = (next: Tab) => {
+    setMenuOpen(false);
     if (next !== tab) pushNext.current = true;
     setTab(next);
     scrollTo(0, 0);
@@ -148,11 +152,27 @@ export default function App() {
     history[push ? 'pushState' : 'replaceState'](null, '', params ? `?${params}` : location.pathname);
   }, [query, tab]);
 
+  // The phone menu closes on a tap outside it or Escape.
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onDown = (e: PointerEvent) => {
+      if (!menuRef.current?.contains(e.target as Node)) setMenuOpen(false);
+    };
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setMenuOpen(false);
+    document.addEventListener('pointerdown', onDown);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('pointerdown', onDown);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [menuOpen]);
+
   // Back and Forward: show the tab (and, for the collection, the filters) the URL describes.
   useEffect(() => {
     const onPop = () => {
       const next = tabFromUrl();
       setTab(next);
+      setMenuOpen(false);
       if (next === 'collection') setQuery(paramsToQuery(location.search));
       setModal(null);
     };
@@ -300,19 +320,43 @@ export default function App() {
 
       <nav className="tabs" aria-label="Sections">
         {TABS.map((t) => (
-          <button key={t.id} className={tab === t.id ? 'on' : ''} aria-label={t.label} aria-current={tab === t.id ? 'page' : undefined} onClick={() => goTo(t.id)}>
-            <span className="tab-long">{t.label}</span>
-            <span className="tab-short">{t.short}</span>
+          <button key={t.id} className={tab === t.id ? 'on' : ''} aria-current={tab === t.id ? 'page' : undefined} onClick={() => goTo(t.id)}>
+            {t.label}
           </button>
         ))}
         <span className="tabs-divider" aria-hidden="true" />
         <span className="tabs-group-label">Other</span>
         {OTHER_COLLECTIONS.map((c) => (
-          <button key={c.id} className={`other-tab tab-${c.id} ${tab === c.id ? 'on' : ''}`} aria-label={c.label} aria-current={tab === c.id ? 'page' : undefined} onClick={() => goTo(c.id)}>
-            <span className="tab-long">{c.label}</span>
-            <span className="tab-short">{c.short}</span>
+          <button key={c.id} className={`other-tab tab-${c.id} ${tab === c.id ? 'on' : ''}`} aria-current={tab === c.id ? 'page' : undefined} onClick={() => goTo(c.id)}>
+            {c.label}
           </button>
         ))}
+      </nav>
+
+      {/* Phones: the current section and a menu with all of them, instead of the tab row. */}
+      <nav className={`tabs-mobile ${menuOpen ? 'open' : ''}`} aria-label="Sections" ref={menuRef}>
+        <button className="tabs-mobile-toggle" aria-expanded={menuOpen} aria-controls="tabs-menu" onClick={() => setMenuOpen(!menuOpen)}>
+          <span className={`tabs-mobile-current ${isOther(tab) ? `tab-${tab}` : ''}`}>{tabLabel(tab)}</span>
+          <svg className="tabs-mobile-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+            {menuOpen ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
+          </svg>
+          <span className="visually-hidden">{menuOpen ? 'Close menu' : 'Open menu'}</span>
+        </button>
+        {menuOpen && (
+          <div className="tabs-menu" id="tabs-menu">
+            {TABS.map((t) => (
+              <button key={t.id} className={tab === t.id ? 'on' : ''} aria-current={tab === t.id ? 'page' : undefined} onClick={() => goTo(t.id)}>
+                {t.label}
+              </button>
+            ))}
+            <span className="tabs-menu-label">Other</span>
+            {OTHER_COLLECTIONS.map((c) => (
+              <button key={c.id} className={`other-tab tab-${c.id} ${tab === c.id ? 'on' : ''}`} aria-current={tab === c.id ? 'page' : undefined} onClick={() => goTo(c.id)}>
+                {c.label}
+              </button>
+            ))}
+          </div>
+        )}
       </nav>
 
       {tab === 'dylan-dog' &&

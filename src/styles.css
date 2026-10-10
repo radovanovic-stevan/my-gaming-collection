@@ -1291,25 +1291,111 @@ div.gallery-main {
   color: var(--fg);
 }
 
-.tab-short {
-  display: none;
-}
-
-@media (max-width: 520px) {
-  .tab-long {
-    display: none;
-  }
-  .tab-short {
-    display: inline;
-  }
-  .tabs button {
-    flex: 1;
-  }
-}
-
 .tabs button.on {
   color: var(--fg);
   border-bottom-color: var(--accent);
+}
+
+/* Phones get a menu instead of the tab row. */
+.tabs-mobile {
+  display: none;
+  position: relative;
+  margin-bottom: 4px;
+  border-bottom: 1px solid var(--border);
+}
+
+@media (max-width: 640px) {
+  .tabs {
+    display: none;
+  }
+  .tabs-mobile {
+    display: block;
+  }
+}
+
+.tabs-mobile-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-height: 46px;
+  padding: 0 2px;
+  border: 0;
+  background: none;
+}
+
+.tabs-mobile-current {
+  font-weight: 700;
+  font-size: 16px;
+  padding-bottom: 2px;
+  border-bottom: 2px solid var(--tab-accent, var(--accent));
+}
+
+.tabs-mobile-icon {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.tabs-menu {
+  position: absolute;
+  z-index: 30;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 6px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-elev);
+  box-shadow: 0 12px 32px rgb(0 0 0 / 0.3);
+}
+
+.tabs-menu button {
+  min-height: 44px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 8px;
+  background: none;
+  font-weight: 600;
+  text-align: left;
+  color: var(--fg-muted);
+}
+
+.tabs-menu button.on {
+  color: var(--fg);
+  background: var(--accent-soft);
+}
+
+.tabs-menu .other-tab {
+  color: var(--tab-accent);
+}
+
+.tabs-menu .other-tab.on {
+  background: color-mix(in srgb, var(--tab-accent) 15%, transparent);
+}
+
+.tabs-menu-label {
+  margin: 8px 12px 4px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--fg-muted);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 /* --- Award pages (Game of the Month / Category) ------------------------------ */
@@ -2305,22 +2391,14 @@ div.gallery-main {
   border-bottom-color: var(--tab-accent);
 }
 
-.tabs .tab-dylan-dog {
+.tab-dylan-dog {
   --tab-accent: var(--c-dylan-dog);
 }
 
-.tabs .tab-vinyl {
+.tab-vinyl {
   --tab-accent: var(--c-vinyl);
 }
 
-@media (max-width: 520px) {
-  .tabs-divider {
-    margin-left: 6px;
-  }
-  .tabs-group-label {
-    display: none;
-  }
-}
 
 :root {
   --c-dylan-dog: #c8102e;
