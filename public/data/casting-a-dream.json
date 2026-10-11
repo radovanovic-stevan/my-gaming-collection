@@ -219,7 +219,48 @@
     {
       "platform" : "PSP",
       "search" : "Sonic Rivals",
-      "title" : "Sonic Rivals"
+      "title" : "Sonic Rivals",
+      "trophies" : [
+        {
+          "detail" : "Clear a story stage.",
+          "title" : "Rivalry Begins"
+        },
+        {
+          "detail" : "Collect 10 cards.",
+          "title" : "Starter Deck"
+        },
+        {
+          "detail" : "Finish every stage of Sonic's story.",
+          "title" : "Fastest Thing Alive"
+        },
+        {
+          "detail" : "Finish every stage of Shadow's story.",
+          "title" : "Ultimate Life Form"
+        },
+        {
+          "detail" : "Finish every stage of Knuckles' story.",
+          "title" : "Guardian of the Emerald"
+        },
+        {
+          "detail" : "Finish every stage of Silver's story.",
+          "title" : "From the Future"
+        },
+        {
+          "detail" : "Collect 75 cards.",
+          "title" : "Half the Deck"
+        },
+        {
+          "detail" : "Finish all four stories.",
+          "title" : "No More Rivals"
+        },
+        {
+          "detail" : "Collect 120 cards.",
+          "title" : "Card Sharp"
+        },
+        {
+          "secret" : true
+        }
+      ]
     },
     {
       "lastPlayed" : "2026-10-10",
