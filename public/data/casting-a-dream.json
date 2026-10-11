@@ -3,7 +3,60 @@
     {
       "platform" : "Wii",
       "search" : "Animal Crossing - City Folk",
-      "title" : "Animal Crossing - City Folk"
+      "title" : "Animal Crossing - City Folk",
+      "trophies" : [
+        {
+          "detail" : "Donate something to the museum.",
+          "title" : "Blathers Is Delighted"
+        },
+        {
+          "detail" : "Donate 10 fish.",
+          "title" : "Gone Fishing"
+        },
+        {
+          "detail" : "Donate 10 insects.",
+          "title" : "Bug Off"
+        },
+        {
+          "detail" : "Donate 10 fossils.",
+          "title" : "Dig It"
+        },
+        {
+          "detail" : "Donate 5 paintings.",
+          "title" : "Art Lover"
+        },
+        {
+          "detail" : "Have 100,000 Bells between your pockets and the bank.",
+          "title" : "Nest Egg"
+        },
+        {
+          "detail" : "Donate 100 exhibits.",
+          "title" : "Curator's Pride"
+        },
+        {
+          "detail" : "Donate 25 fossils.",
+          "title" : "Paleontologist"
+        },
+        {
+          "detail" : "Have 1,000,000 Bells between your pockets and the bank.",
+          "title" : "Millionaire"
+        },
+        {
+          "detail" : "Donate all 64 fish.",
+          "title" : "Full Aquarium"
+        },
+        {
+          "detail" : "Donate all 64 insects.",
+          "title" : "Full Insect Exhibit"
+        },
+        {
+          "detail" : "Donate 150 exhibits.",
+          "title" : "Museum Benefactor"
+        },
+        {
+          "secret" : true
+        }
+      ]
     },
     {
       "platform" : "Dreamcast",
@@ -75,7 +128,108 @@
     {
       "platform" : "Wii",
       "search" : "Medal of Honor - Heroes 2",
-      "title" : "Medal of Honor - Heroes 2"
+      "title" : "Medal of Honor - Heroes 2",
+      "trophies" : [
+        {
+          "detail" : "Complete Campaign mode on the Green difficulty setting.",
+          "title" : "Participant"
+        },
+        {
+          "detail" : "Complete Campaign mode on the Veteran difficulty setting.",
+          "title" : "Veteran"
+        },
+        {
+          "detail" : "Complete Campaign mode on the Hero difficulty setting.",
+          "title" : "Heroism"
+        },
+        {
+          "detail" : "Complete a Mission with 75% accuracy.",
+          "title" : "Marksmanship"
+        },
+        {
+          "detail" : "Complete a Mission without being critically injured once.",
+          "title" : "Endurance"
+        },
+        {
+          "detail" : "Complete a Mission on Green without dying once.",
+          "title" : "Green Survivor"
+        },
+        {
+          "detail" : "Complete a Mission on Veteran without dying once.",
+          "title" : "Veteran Survivor"
+        },
+        {
+          "detail" : "Complete a Mission on Hero without dying once.",
+          "title" : "Hero Survivor"
+        },
+        {
+          "detail" : "Kill 100 enemy soldiers on the battlefield.",
+          "title" : "Combat Basic"
+        },
+        {
+          "detail" : "Kill 250 enemy soldiers on the battlefield.",
+          "title" : "Combat Senior"
+        },
+        {
+          "detail" : "Kill 500 enemy soldiers on the battlefield.",
+          "title" : "Combat Master"
+        },
+        {
+          "detail" : "Get 100 headshots on the battlefield.",
+          "title" : "Sharpshooter"
+        },
+        {
+          "detail" : "Kill 50 enemy soldiers with the Colt .45 or Luger pistol.",
+          "title" : "Pistol Combat"
+        },
+        {
+          "detail" : "Kill 250 enemy soldiers with the Thompson or MP40 sub machine guns.",
+          "title" : "SMG Combat"
+        },
+        {
+          "detail" : "Kill 150 enemy soldiers with the BAR or STG44 light machine guns.",
+          "title" : "LMG Combat"
+        },
+        {
+          "detail" : "Kill 50 enemy soldiers with the M1 Garand or Karabiner 98K rifles.",
+          "title" : "Rifle Combat"
+        },
+        {
+          "detail" : "Kill 50 enemy soldiers with the scoped Gewehr or Springfield rifle.",
+          "title" : "Sniper Combat"
+        },
+        {
+          "detail" : "Kill 50 enemy soldiers with the Shotgun.",
+          "title" : "Shotgun Combat"
+        },
+        {
+          "detail" : "Kill 25 enemy soldiers with the Bazooka or Panzerschreck.",
+          "title" : "Rocket Combat"
+        },
+        {
+          "detail" : "Kill 25 enemy soldiers with grenades.",
+          "title" : "Grenade Combat"
+        },
+        {
+          "detail" : "Kill 50 enemy soldiers with the MG42 machine gun.",
+          "title" : "Machine Gun Combat"
+        },
+        {
+          "detail" : "Kill 25 enemy soldiers in melee combat.",
+          "title" : "Melee Combat"
+        },
+        {
+          "detail" : "Get at least 1 kill with each weapon in the game.",
+          "title" : "Weapon Expert"
+        },
+        {
+          "detail" : "Earn 10 awards.",
+          "title" : "Decorated"
+        },
+        {
+          "secret" : true
+        }
+      ]
     },
     {
       "platform" : "PSP",
