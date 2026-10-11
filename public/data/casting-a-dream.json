@@ -8,7 +8,64 @@
     {
       "platform" : "Dreamcast",
       "search" : "Frame Gride",
-      "title" : "Frame Gride"
+      "title" : "Frame Gride",
+      "trophies" : [
+        {
+          "detail" : "Win a battle.",
+          "title" : "First Victory"
+        },
+        {
+          "detail" : "Own a squire.",
+          "title" : "Squire Bound"
+        },
+        {
+          "detail" : "Reach rank 3.",
+          "title" : "Rising Knight"
+        },
+        {
+          "detail" : "Win 10 battles.",
+          "title" : "Proven in the Arena"
+        },
+        {
+          "detail" : "Own 30 frame parts.",
+          "title" : "Spare Parts"
+        },
+        {
+          "detail" : "Own 10 different squires.",
+          "title" : "Retinue"
+        },
+        {
+          "detail" : "Hold every kind of material at once.",
+          "title" : "Alchemist's Shelf"
+        },
+        {
+          "detail" : "Reach rank 6.",
+          "title" : "Seasoned Knight"
+        },
+        {
+          "detail" : "Win 50 battles.",
+          "title" : "Veteran"
+        },
+        {
+          "detail" : "Fight 200 battles.",
+          "title" : "Tireless"
+        },
+        {
+          "detail" : "Own all 60 frame parts.",
+          "title" : "Full Armory"
+        },
+        {
+          "detail" : "Own all 32 squires.",
+          "title" : "Master of Squires"
+        },
+        {
+          "detail" : "Win 100 battles.",
+          "title" : "Champion"
+        },
+        {
+          "secret" : true
+        }
+      ]
     },
     {
       "platform" : "PSP",
