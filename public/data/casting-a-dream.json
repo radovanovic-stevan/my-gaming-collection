@@ -28,7 +28,71 @@
     {
       "platform" : "Dreamcast",
       "search" : "Psychic Force 2012",
-      "title" : "Psychic Force 2012"
+      "title" : "Psychic Force 2012",
+      "trophies" : [
+        {
+          "detail" : "Beat the game with any character.",
+          "title" : "Psychic Awakening"
+        },
+        {
+          "detail" : "Fight as each of the ten starting characters.",
+          "title" : "Full Roster"
+        },
+        {
+          "detail" : "Spend 1 hour in battle.",
+          "title" : "Warming Up"
+        },
+        {
+          "detail" : "Beat the game with 5 different characters.",
+          "title" : "Five Stories"
+        },
+        {
+          "detail" : "Unlock Wong.",
+          "title" : "Wong Steps In"
+        },
+        {
+          "detail" : "Unlock Keith.",
+          "title" : "Leader of Noah"
+        },
+        {
+          "detail" : "Unlock one of Emilio's other forms.",
+          "title" : "Emilio Transformed"
+        },
+        {
+          "detail" : "Unlock both of Emilio's other forms.",
+          "title" : "Every Side of Emilio"
+        },
+        {
+          "detail" : "Pick the same character 100 times.",
+          "title" : "Signature Style"
+        },
+        {
+          "detail" : "Beat the game as Wong.",
+          "title" : "Amplified"
+        },
+        {
+          "detail" : "Beat the game as Keith.",
+          "title" : "Psychiccer Utopia"
+        },
+        {
+          "detail" : "Spend 10 hours in battle.",
+          "title" : "Seasoned Psychiccer"
+        },
+        {
+          "secret" : true
+        },
+        {
+          "detail" : "Beat the game with all 13 characters.",
+          "title" : "Every Psychiccer's Story"
+        },
+        {
+          "detail" : "Spend 20 hours in battle.",
+          "title" : "Twenty Hours of Psychic Force"
+        },
+        {
+          "secret" : true
+        }
+      ]
     },
     {
       "platform" : "PSP",
