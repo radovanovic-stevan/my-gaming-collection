@@ -84,13 +84,11 @@
       "trophies" : [
         {
           "detail" : "Earn a medal in a Festival race.",
-          "title" : "On the Podium",
-          "unlocked" : "2026-10-11"
+          "title" : "On the Podium"
         },
         {
           "detail" : "Win a Festival race.",
-          "title" : "First Gold",
-          "unlocked" : "2026-10-11"
+          "title" : "First Gold"
         },
         {
           "detail" : "Score 1,000 Festival points.",
@@ -99,6 +97,10 @@
         {
           "detail" : "Win 10 Festival races.",
           "title" : "Hot Streak"
+        },
+        {
+          "detail" : "Unlock 20 vehicles.",
+          "title" : "Growing Garage"
         },
         {
           "detail" : "Earn a medal in 45 Festival races.",
@@ -113,6 +115,18 @@
           "title" : "Gold Rush"
         },
         {
+          "detail" : "Unlock all 24 track routes.",
+          "title" : "Every Route"
+        },
+        {
+          "detail" : "Finish all 90 Festival races.",
+          "title" : "Festival Finisher"
+        },
+        {
+          "detail" : "Unlock 40 vehicles.",
+          "title" : "Full Garage"
+        },
+        {
           "detail" : "Earn a medal in all 90 Festival races.",
           "title" : "Every Ticket Stamped"
         },
@@ -123,6 +137,10 @@
         {
           "detail" : "Earn silver or better in all 90 Festival races.",
           "title" : "Silver Lining"
+        },
+        {
+          "detail" : "Unlock all 22 drivers.",
+          "title" : "Full Line-Up"
         },
         {
           "secret" : true
