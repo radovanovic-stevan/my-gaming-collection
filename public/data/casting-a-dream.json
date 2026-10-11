@@ -80,7 +80,54 @@
     {
       "platform" : "PSP",
       "search" : "MotorStorm - Arctic Edge",
-      "title" : "MotorStorm - Arctic Edge"
+      "title" : "MotorStorm - Arctic Edge",
+      "trophies" : [
+        {
+          "detail" : "Earn a medal in a Festival race.",
+          "title" : "On the Podium",
+          "unlocked" : "2026-10-11"
+        },
+        {
+          "detail" : "Win a Festival race.",
+          "title" : "First Gold",
+          "unlocked" : "2026-10-11"
+        },
+        {
+          "detail" : "Score 1,000 Festival points.",
+          "title" : "Contender"
+        },
+        {
+          "detail" : "Win 10 Festival races.",
+          "title" : "Hot Streak"
+        },
+        {
+          "detail" : "Earn a medal in 45 Festival races.",
+          "title" : "Halfway Up the Mountain"
+        },
+        {
+          "detail" : "Score 4,000 Festival points.",
+          "title" : "Festival Favourite"
+        },
+        {
+          "detail" : "Win 30 Festival races.",
+          "title" : "Gold Rush"
+        },
+        {
+          "detail" : "Earn a medal in all 90 Festival races.",
+          "title" : "Every Ticket Stamped"
+        },
+        {
+          "detail" : "Score 7,000 Festival points.",
+          "title" : "Arctic Veteran"
+        },
+        {
+          "detail" : "Earn silver or better in all 90 Festival races.",
+          "title" : "Silver Lining"
+        },
+        {
+          "secret" : true
+        }
+      ]
     },
     {
       "platform" : "Dreamcast",
