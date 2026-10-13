@@ -419,8 +419,8 @@
       ]
     },
     {
-      "lastPlayed" : "2026-10-12",
-      "minutes" : 56,
+      "lastPlayed" : "2026-10-13",
+      "minutes" : 132,
       "platform" : "Famicom",
       "search" : "Tenchi wo Kurau II",
       "title" : "Tenchi o Kurau II - Shokatsu Koumei Den",
@@ -451,7 +451,8 @@
         },
         {
           "detail" : "Reach level 10.",
-          "title" : "Seasoned Commander"
+          "title" : "Seasoned Commander",
+          "unlocked" : "2026-10-13"
         },
         {
           "detail" : "Win over Zhuge Liang.",
