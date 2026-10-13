@@ -2,7 +2,7 @@
  {
   "month": "2026-10",
   "gameOfTheMonth": null,
-  "completed": 2,
+  "completed": 3,
   "bought": null,
   "played": [
    {
@@ -18,7 +18,7 @@
    {
     "title": "Asterix & Obelix XXL: Romastered",
     "platform": "PS4",
-    "status": "in-progress"
+    "status": "completed"
    },
    {
     "title": "Tenchi wo Kurau II - Shokatsu Kōmei Den",

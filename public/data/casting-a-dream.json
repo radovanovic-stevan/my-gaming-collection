@@ -59,6 +59,8 @@
       ]
     },
     {
+      "lastPlayed" : "2026-10-12",
+      "minutes" : 0,
       "platform" : "Dreamcast",
       "search" : "Frame Gride",
       "title" : "Frame Gride",
@@ -417,8 +419,8 @@
       ]
     },
     {
-      "lastPlayed" : "2026-10-10",
-      "minutes" : 19,
+      "lastPlayed" : "2026-10-12",
+      "minutes" : 56,
       "platform" : "Famicom",
       "search" : "Tenchi wo Kurau II",
       "title" : "Tenchi o Kurau II - Shokatsu Koumei Den",
@@ -444,7 +446,8 @@
         },
         {
           "detail" : "Hold 1,000 gold at once.",
-          "title" : "Full Coffers"
+          "title" : "Full Coffers",
+          "unlocked" : "2026-10-12"
         },
         {
           "detail" : "Reach level 10.",

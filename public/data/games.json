@@ -27890,10 +27890,10 @@
   "title": "Asterix & Obelix XXL: Romastered",
   "platform": "PS4",
   "acquired": "2026-08-28",
-  "completed": null,
-  "status": "Not Completed",
-  "rating": null,
-  "timesCompleted": 0,
+  "completed": "2026-10-12",
+  "status": "Completed",
+  "rating": 70,
+  "timesCompleted": 1,
   "percent": null,
   "playtime": null,
   "genres": [
@@ -27906,7 +27906,9 @@
    "Manual"
   ],
   "edition": "",
+  "trophies": "https://psnprofiles.com/trophies/11650-asterix-obelix-xxl/StevanMcfc",
   "boughtIn": "Greece",
+  "playsVia": null,
   "images": [
    "1075-940038ce.jpg"
   ],
