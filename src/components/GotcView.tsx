@@ -199,23 +199,29 @@ export function GotcView({ data, link, onOpen, editable, games, months, onChange
                 </button>
               ))}
             </div>
-            {year && (
-              <button className="btn primary review-btn" onClick={() => setReviewing(year.year)}>
-                ▶ {year.year} in review
-              </button>
-            )}
-            {editable && (
-              <div className="detail-nav">
-                {year && (
-                  <button className="btn" onClick={() => setEditingYear(year)}>
-                    Edit {year.year}
-                  </button>
-                )}
+            <div className="detail-nav awards-buttons">
+              {year && (
+                <button className="btn primary" onClick={() => setReviewing(year.year)} aria-label={`${year.year} in review`}>
+                  {/* Drawn, since the ▶ character shows as an emoji and makes the button taller. */}
+                  <svg className="play-icon" viewBox="0 0 10 12" width="9" height="11" aria-hidden="true">
+                    <path d="M0 0v12l10-6z" fill="currentColor" />
+                  </svg>
+                  {/* Phones show the short label; the year is picked just above. */}
+                  <span className="label-long">{year.year} in review</span>
+                  <span className="label-short">Review</span>
+                </button>
+              )}
+              {editable && year && (
+                <button className="btn" onClick={() => setEditingYear(year)}>
+                  Edit {year.year}
+                </button>
+              )}
+              {editable && (
                 <button className="btn primary" onClick={() => setEditingYear(null)}>
                   + Add year
                 </button>
-              </div>
-            )}
+              )}
+            </div>
           </div>
 
           {!year ? (

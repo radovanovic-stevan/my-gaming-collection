@@ -1900,6 +1900,34 @@ div.gallery-main {
   justify-content: flex-end;
 }
 
+/* The Awards buttons share one width, the widest one's. */
+.awards-buttons {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+}
+
+.awards-buttons .btn {
+  justify-content: center;
+}
+
+.awards-buttons .label-short {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .awards-buttons {
+    width: 100%;
+    grid-auto-columns: minmax(0, 1fr);
+  }
+  .awards-buttons .label-long {
+    display: none;
+  }
+  .awards-buttons .label-short {
+    display: inline;
+  }
+}
+
 .month-card-head .card-edit {
   margin-left: 4px;
 }
@@ -4398,10 +4426,6 @@ button.tl-chip:hover,
 }
 
 /* --- Year in Review ------------------------------------------------------------------------- */
-
-.review-btn {
-  margin-left: auto;
-}
 
 /* A story card, dark in both modes; each slide has its own tone. */
 .yr-backdrop {
