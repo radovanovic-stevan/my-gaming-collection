@@ -1,7 +1,7 @@
 # Notes for agents
 
 A personal site for a physical game collection (React + Vite, no backend), published to
-GitHub Pages at collection.stevan.co.rs. The README is only the now-playing card; don't add docs to it.
+GitHub Pages at collection.stevan.co.rs. The README is only the cards described below; don't add docs to it.
 
 ## Data and publishing
 - All data is JSON in `public/data/`; images are in `public/images/`. There is no database.
@@ -19,8 +19,11 @@ GitHub Pages at collection.stevan.co.rs. The README is only the now-playing card
   condition means it's built into a console like the SNES Classic.
 
 ## Build steps
-- `plugins/nowPlaying.ts` writes `dist/now-playing.svg` on every build (the README's card): the launcher game
-  played in the last 7 days, else an in-progress Game of the Month game, else the latest Game of the Month.
+- `plugins/readmeCards.ts` writes the README's cards to `dist/cards/*.svg` on every build: now playing (the
+  launcher game played in the last 7 days, else an in-progress Game of the Month game, else the latest Game of
+  the Month), latest vinyl, recently purchased (6 games), recently completed (3), recently listened (3 records)
+  and totals. Pictures are embedded, scaled down with `sharp` (a dev dependency) but not cropped: the owner
+  wants the photos as taken, white backdrop included. Cards side by side in the README share a height.
 
 ## The owner's preferences
 - Stats, Timeline and Year in Review cover games only; Vinyl and Dylan Dog are separate collections.
