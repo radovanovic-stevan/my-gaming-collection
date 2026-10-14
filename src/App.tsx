@@ -151,7 +151,9 @@ export default function App() {
   };
 
   useEffect(() => {
-    const params = tab === 'collection' ? queryToParams(query) : `tab=${tab}`;
+    // A review playing on the Awards tab (see GotcView) stays in the link.
+    const review = tab === 'gotc' ? new URLSearchParams(location.search).get('review') : null;
+    const params = tab === 'collection' ? queryToParams(query) : `tab=${tab}${review ? `&review=${review}` : ''}`;
     const push = pushNext.current;
     pushNext.current = false;
     if (location.search === (params ? `?${params}` : '')) return;

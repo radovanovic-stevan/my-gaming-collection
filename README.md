@@ -49,6 +49,13 @@ Acquired dates written as text ("Late 2013 - Early 2014") sit at the end of thei
 lists what happened on today's date in earlier years. Its arrows step through other days. Like Stats, it's
 worked out when the page loads.
 
+Each year on the **Awards** tab has a **Year in Review**: a story to tap through, built only from that year's
+awards and stats. It shows the numbers against the year before, the best game of each quarter, platform and
+genre champions, the biggest surprise and disappointment, the most memorable moment, the special awards, rating
+changes, the Console of the Year and, last, a countdown to the Game of the Year. Slides with nothing in them
+are skipped. Click or tap the right of the card (or press →) to go on, and the left (or ←) to go back. The
+link to a review (`?tab=gotc&review=2025`) opens it straight away.
+
 The **Map** tab shows where the games were bought. Each game has a **Bought in** country
 (for a gift, where the giver bought it), set in the game's edit form. Hovering a country shows
 how many games came from it, and clicking it lists them. The map opens on Europe; a button

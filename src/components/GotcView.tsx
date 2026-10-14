@@ -1,10 +1,12 @@
-import { useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import type { AwardValue, Game, GameRef, GotcData, GotcYear, GotmMonth } from '../types';
 import { isGameRef } from '../lib/links';
 import { RefCover, RefTitle } from './GameRefView';
 import { YearEditor } from './YearEditor';
+import { YearReview } from './YearReview';
 import { buildAllTime } from '../lib/allTime';
 import { useFocus } from '../lib/focus';
+import { PODIUM, isGenreAward, isPlatformAward, isQuarter } from '../lib/awards';
 
 interface Props {
   data: GotcData;
@@ -23,14 +25,11 @@ interface Props {
 
 type Group = { title: string; test: (category: string) => boolean };
 
-const PLATFORM_WORDS = /^(PS1|PS Classic|PS2|PS3|PS4|Wii|3DS|DS|GCN|SNES Classic|PSP|VITA|Atari FB|PC)\b/;
-
 // Yearly categories, in display order. The top three GOTY places get a podium instead.
-const PODIUM = ['Game of the Year Winner', 'Game of the Year Runner-Up', 'Game of the Year Third Place'];
 const YEAR_GROUPS: Group[] = [
-  { title: 'Quarters', test: (c) => /^Best Game of Q\d/.test(c) },
-  { title: 'Platforms', test: (c) => PLATFORM_WORDS.test(c) && c.endsWith('GOTY') },
-  { title: 'Genres', test: (c) => c.endsWith('GOTY') && !PLATFORM_WORDS.test(c) && !c.startsWith('Games from') && !c.startsWith('Co-op') },
+  { title: 'Quarters', test: isQuarter },
+  { title: 'Platforms', test: isPlatformAward },
+  { title: 'Genres', test: isGenreAward },
   { title: 'Highlights', test: () => true },
 ];
 
@@ -132,6 +131,24 @@ export function GotcView({ data, link, onOpen, editable, games, months, onChange
   const year: GotcYear | undefined = data.years.find((y) => y.year === yearNo) ?? data.years[0];
   // undefined: closed; null: adding; otherwise what's being edited.
   const [editingYear, setEditingYear] = useState<GotcYear | null | undefined>(undefined);
+  // The year whose review is playing; a link with ?review=<year> starts it.
+  const [reviewing, setReviewing] = useState<number | null>(() => {
+    const y = Number(new URLSearchParams(location.search).get('review'));
+    return data.years.some((x) => x.year === y) ? y : null;
+  });
+  useEffect(() => {
+    const p = new URLSearchParams(location.search);
+    if (reviewing === null) p.delete('review');
+    else p.set('review', String(reviewing));
+    const next = `?${p}`;
+    if (next !== location.search) history.replaceState(null, '', next);
+  }, [reviewing]);
+  const reviewYear = data.years.find((y) => y.year === reviewing);
+  const closeReview = useCallback(() => {
+    if (reviewYear) setYearNo(reviewYear.year);
+    setMode('yearly');
+    setReviewing(null);
+  }, [reviewYear]);
   useFocus(focus, onFocused, (year) => {
     setMode('yearly');
     setYearNo(year);
@@ -182,6 +199,11 @@ export function GotcView({ data, link, onOpen, editable, games, months, onChange
                 </button>
               ))}
             </div>
+            {year && (
+              <button className="btn primary review-btn" onClick={() => setReviewing(year.year)}>
+                ▶ {year.year} in review
+              </button>
+            )}
             {editable && (
               <div className="detail-nav">
                 {year && (
@@ -263,6 +285,17 @@ export function GotcView({ data, link, onOpen, editable, games, months, onChange
             </div>
           ))}
         </>
+      )}
+
+      {reviewYear && (
+        <YearReview
+          year={reviewYear}
+          // Years are newest first, so the one before is next in the list.
+          previous={data.years.find((y) => y.year < reviewYear.year) ?? null}
+          link={link}
+          onClose={closeReview}
+          onOpenYear={setReviewing}
+        />
       )}
 
       {editingYear !== undefined && (
