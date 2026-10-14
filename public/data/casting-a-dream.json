@@ -420,7 +420,7 @@
     },
     {
       "lastPlayed" : "2026-10-14",
-      "minutes" : 245,
+      "minutes" : 253,
       "platform" : "Famicom",
       "search" : "Tenchi wo Kurau II",
       "title" : "Tenchi o Kurau II - Shokatsu Koumei Den",
@@ -474,7 +474,8 @@
         },
         {
           "detail" : "Hold 10,000 gold at once.",
-          "title" : "Imperial Treasury"
+          "title" : "Imperial Treasury",
+          "unlocked" : "2026-10-14"
         },
         {
           "detail" : "Command Guan Yu, Zhang Fei, Zhao Yun, Ma Chao and Huang Zhong.",
