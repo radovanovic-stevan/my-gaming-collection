@@ -419,8 +419,8 @@
       ]
     },
     {
-      "lastPlayed" : "2026-10-13",
-      "minutes" : 132,
+      "lastPlayed" : "2026-10-14",
+      "minutes" : 213,
       "platform" : "Famicom",
       "search" : "Tenchi wo Kurau II",
       "title" : "Tenchi o Kurau II - Shokatsu Koumei Den",
@@ -456,7 +456,8 @@
         },
         {
           "detail" : "Win over Zhuge Liang.",
-          "title" : "The Sleeping Dragon"
+          "title" : "The Sleeping Dragon",
+          "unlocked" : "2026-10-14"
         },
         {
           "detail" : "Recruit Pang Tong.",
