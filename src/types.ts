@@ -54,7 +54,7 @@ export interface SortLevel {
   dir: 'asc' | 'desc';
 }
 
-export type View = 'grid' | 'table';
+export type View = 'grid' | 'table' | 'shelf';
 
 export interface Query {
   search: string;

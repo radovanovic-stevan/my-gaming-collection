@@ -170,6 +170,7 @@ export function paramsToQuery(search: string): Query {
       .filter((s) => s.key in SORT_LABELS);
     if (levels.length) q.sort = levels;
   }
-  q.view = p.get('view') === 'table' ? 'table' : 'grid';
+  const view = p.get('view');
+  q.view = view === 'table' || view === 'shelf' ? view : 'grid';
   return q;
 }

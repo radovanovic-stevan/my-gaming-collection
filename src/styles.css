@@ -4079,3 +4079,320 @@ button.tl-chip:hover,
     padding-right: 12px;
   }
 }
+
+/* --- Shelf view --------------------------------------------------------------------------- */
+
+.shelves {
+  --wood: #a77b4f;
+  --wood-edge: #c99b69;
+  --shelf-back: #e4ded3;
+  --shelf-scale: 0.9;
+  --spine-w: 30px;
+  display: grid;
+  gap: 22px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .shelves {
+    --wood: #5b4330;
+    --wood-edge: #7d5c40;
+    --shelf-back: #19181d;
+  }
+}
+
+.shelf-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 8px;
+  margin: 0 0 8px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.shelf-head-platform {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/*
+ * Every row of spines stands on a board. The rows are all the same height (one platform per shelf),
+ * so the boards are a repeating background: a gap above the spines (--t), the spines (--h), the board (--b).
+ */
+.shelf-rows {
+  --h: calc(var(--case-h) * var(--shelf-scale));
+  --t: 14px;
+  --b: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  column-gap: 2px;
+  row-gap: calc(var(--t) + var(--b));
+  margin: 0;
+  padding: var(--t) 12px var(--b);
+  list-style: none;
+  border-radius: 6px;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0 calc(var(--t) + var(--h)),
+      var(--wood-edge) calc(var(--t) + var(--h)) calc(var(--t) + var(--h) + 3px),
+      var(--wood) calc(var(--t) + var(--h) + 3px) calc(var(--t) + var(--h) + var(--b))
+    ),
+    var(--shelf-back);
+}
+
+.spine-slot {
+  display: flex;
+  align-items: flex-end;
+  height: var(--h);
+}
+
+.spine {
+  position: relative;
+  display: block;
+  width: var(--spine-w);
+  height: calc(var(--spine-h) * var(--shelf-scale));
+  padding: 0;
+  border: 0;
+  border-radius: 2px 2px 1px 1px;
+  overflow: hidden;
+  /* Dark in both modes, like the cases; a rounded edge, lighter in the middle and darker at the sides. */
+  background: linear-gradient(90deg, rgb(0 0 0 / 0.4), rgb(255 255 255 / 0.06) 45%, rgb(0 0 0 / 0.32)), #2a2a2f;
+  box-shadow: inset -1px 0 0 rgb(0 0 0 / 0.35), inset 1px 0 0 rgb(255 255 255 / 0.12);
+  transition: transform 0.15s ease;
+}
+
+.spine:hover,
+.spine:focus-visible {
+  transform: translateY(-10px);
+}
+
+.spine:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.spine-band {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  height: 15px;
+  background: var(--band);
+  color: var(--band-fg);
+  box-shadow: inset 0 -1px 0 rgb(0 0 0 / 0.35);
+  font-size: 7.5px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  overflow: hidden;
+}
+
+.spine-title {
+  position: relative;
+  z-index: 1;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  max-height: 100%;
+  padding: 20px 0 6px;
+  writing-mode: vertical-rl;
+  line-height: var(--spine-w);
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 1px 1px rgb(0 0 0 / 0.35);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.shelf-tip {
+  position: fixed;
+  z-index: 30;
+  transform: translate(-50%, calc(-100% - 20px));
+  width: 200px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-elev);
+  box-shadow: var(--shadow);
+  pointer-events: none;
+}
+
+.shelf-tip-text {
+  display: grid;
+  align-content: start;
+  gap: 5px;
+  min-width: 0;
+  font-size: 13px;
+}
+
+.shelf-tip-meta {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+@media (max-width: 640px) {
+  .shelves {
+    --shelf-scale: 0.7;
+    --spine-w: 24px;
+  }
+  .shelf-rows {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .spine-title {
+    font-size: 10px;
+  }
+}
+
+/* Consoles with games built in: one box per console on the last shelf, and its home screen below. */
+
+.console-row {
+  column-gap: 20px;
+  padding-left: 20px;
+}
+
+.console-slot {
+  display: flex;
+  align-items: flex-end;
+  height: var(--h);
+}
+
+.console-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 7px 7px 3px 3px;
+  background: linear-gradient(to bottom, rgb(255 255 255 / 0.14), rgb(0 0 0 / 0.18)), hsl(var(--hue) 28% 38%);
+  box-shadow: inset 0 -3px 0 rgb(0 0 0 / 0.25), 0 2px 4px rgb(0 0 0 / 0.2);
+  color: #fff;
+  text-align: left;
+  transition: transform 0.15s ease;
+}
+
+.console-box:hover,
+.console-box:focus-visible,
+.console-box.open {
+  transform: translateY(-8px);
+}
+
+.console-box.open {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.console-box:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.console-name {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.console-count {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+/* A power light. */
+.console-lights {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #ff4d4d;
+  box-shadow: 0 0 4px #ff4d4d;
+}
+
+.console-box.open .console-lights {
+  background: #4dff88;
+  box-shadow: 0 0 5px #4dff88;
+}
+
+/* The home screen is a dark screen in either mode, framed in the console's colour. */
+.console-screen {
+  margin-top: 14px;
+  padding: 16px;
+  border: 6px solid hsl(var(--hue) 22% 28%);
+  border-radius: 14px;
+  background: radial-gradient(ellipse at top, #1d1d26, #0d0d11 70%);
+  color: #f2f1ee;
+}
+
+.console-screen h3 {
+  margin: 0 0 12px;
+  font-size: 15px;
+}
+
+.console-screen h3 span {
+  font-weight: 400;
+  color: #a6a49c;
+}
+
+.console-games {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.console-game {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 54px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 6px;
+  background: linear-gradient(to bottom, rgb(255 255 255 / 0.06), transparent), #2a2a2f;
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: left;
+}
+
+/* Two lines at most; the tile is taller than that, so the clamp has to be on the text itself. */
+.console-game-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.console-game:hover,
+.console-game:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 1px;
+}
+
+@media (max-width: 640px) {
+  .console-row {
+    column-gap: 12px;
+    padding-left: 10px;
+  }
+  .console-games {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  }
+}

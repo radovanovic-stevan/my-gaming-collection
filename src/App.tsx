@@ -5,6 +5,7 @@ import { Filters } from './components/Filters';
 import { SortBuilder } from './components/SortBuilder';
 import { GridView } from './components/GridView';
 import { TableView } from './components/TableView';
+import { ShelfView, shelfOrder } from './components/ShelfView';
 import { GameDetail } from './components/GameDetail';
 import { GameForm } from './components/GameForm';
 import { ImageManager, type ImageOps } from './components/ImageManager';
@@ -201,7 +202,9 @@ export default function App() {
 
   const patch = useCallback((p: Partial<Query>) => setQuery((q) => ({ ...q, ...p })), []);
 
-  const results = useMemo(() => (games ? applyQuery(games, query) : []), [games, query]);
+  const filtered = useMemo(() => (games ? applyQuery(games, query) : []), [games, query]);
+  // In the order they're shown, so a game's Previous and Next follow the view.
+  const results = useMemo(() => (query.view === 'shelf' && games ? shelfOrder(filtered, games) : filtered), [filtered, games, query.view]);
 
   const stats = useMemo(() => {
     if (!games) return null;
@@ -490,6 +493,9 @@ export default function App() {
               <button className={query.view === 'table' ? 'on' : ''} onClick={() => patch({ view: 'table' })}>
                 Table
               </button>
+              <button className={query.view === 'shelf' ? 'on' : ''} onClick={() => patch({ view: 'shelf' })}>
+                Shelf
+              </button>
             </div>
           </div>
 
@@ -510,6 +516,8 @@ export default function App() {
                 <div className="empty">No games match these filters.</div>
               ) : query.view === 'grid' ? (
                 <GridView games={results} onOpen={(g) => showDetail(g.id)} />
+              ) : query.view === 'shelf' ? (
+                <ShelfView games={results} all={games} onOpen={(g) => showDetail(g.id)} />
               ) : (
                 <TableView games={results} sort={query.sort} onSortClick={onSortClick} onOpen={(g) => showDetail(g.id)} />
               )}

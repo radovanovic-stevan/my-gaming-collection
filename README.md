@@ -4,6 +4,15 @@ A browsable showcase of my physical game collection: a cover grid and a table vi
 with search, filters (status, platform, genre, condition, rating, cover art) and a
 multi-level custom sort. Filter and sort state is kept in the URL, so any view can be shared.
 
+The **Shelf** view shows the games as spines on a shelf, one shelf per platform with the biggest first,
+in the current sort order. Platforms with fewer than 10 boxed games in the collection share one **Other
+platforms** shelf. Each spine is a plain colour taken from the game's title, and the band on top is the
+platform's colour. Its height follows the platform's case: DVD cases, then Blu-ray and UMD cases, then
+handheld boxes. Games built into a console (condition **Built-in Console**) aren't spines. Each console
+stands on a last **Built into consoles** shelf, and clicking one opens its home screen with its games. Hovering
+a spine or a game (or focusing it with the keyboard) shows the game's details, and clicking it opens the game.
+Previous and Next follow the shelf order.
+
 ## Running it
 
 ```sh
