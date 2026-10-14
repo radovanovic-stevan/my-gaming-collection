@@ -45,7 +45,7 @@ const GENRE_NAMES: [string, string][] = [
   ['OpenWorld', 'Open World Games'],
 ];
 /** Tags that aren't genres: "<3" has its own "Games from Slavica" ranking. */
-const NOT_GENRES = new Set(['<3', 'L']);
+export const NOT_GENRES = new Set(['<3', 'L']);
 
 const isoDate = (v: string | null) => (v && /^\d{4}-\d{2}-\d{2}$/.test(v) ? v : '');
 

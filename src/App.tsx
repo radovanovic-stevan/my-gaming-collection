@@ -19,12 +19,13 @@ import { CastingADreamView } from './components/CastingADreamView';
 import { WhatsNew } from './components/WhatsNew';
 // The map carries the world's country shapes, so it's only loaded when opened.
 const MapView = lazy(() => import('./components/MapView'));
+const StatsView = lazy(() => import('./components/StatsView'));
 import { api, detectEditing } from './lib/api';
 import { createLinker } from './lib/links';
 import { matchLauncherGames, withLauncherPlaytime } from './lib/castingADream';
 import { findChanges, loadSnapshot, saveSnapshot, type ChangeGroup, type ChangeTab } from './lib/whatsNew';
 
-type GameTab = 'collection' | 'gotm' | 'gotc' | 'gallery' | 'map' | 'consoles' | 'blog' | 'casting-a-dream';
+type GameTab = 'collection' | 'gotm' | 'gotc' | 'stats' | 'gallery' | 'map' | 'consoles' | 'blog' | 'casting-a-dream';
 /** Collections that aren't games. Each one is public/data/<id>.json. */
 const OTHER_COLLECTIONS = [
   { id: 'dylan-dog', label: 'Dylan Dog' },
@@ -37,6 +38,7 @@ const TABS: { id: GameTab; label: string }[] = [
   { id: 'collection', label: 'Collection' },
   { id: 'gotm', label: 'Game of the Month' },
   { id: 'gotc', label: 'Awards' },
+  { id: 'stats', label: 'Stats' },
   { id: 'gallery', label: 'Gallery' },
   { id: 'map', label: 'Map' },
   { id: 'consoles', label: 'Consoles' },
@@ -239,11 +241,13 @@ export default function App() {
     });
   };
 
-  /** Opens the collection showing only one platform's games. */
-  const showPlatform = (platform: string) => {
-    setQuery({ ...DEFAULT_QUERY, view: query.view, platforms: [platform] });
+  /** Opens the collection with only these filters. */
+  const showGames = (filters: Partial<Query>) => {
+    setQuery({ ...DEFAULT_QUERY, view: query.view, ...filters });
     goTo('collection');
   };
+  /** Opens the collection showing only one platform's games. */
+  const showPlatform = (platform: string) => showGames({ platforms: [platform] });
 
   const openId = modal && modal.kind !== 'new' ? modal.id : null;
   const openIndex = openId === null ? -1 : results.findIndex((g) => g.id === openId);
@@ -420,6 +424,12 @@ export default function App() {
         ) : (
           <div className="empty">{castingADream.error ? `Couldn't load Casting a Dream: ${castingADream.error}` : 'Loading…'}</div>
         ))}
+
+      {tab === 'stats' && (
+        <Suspense fallback={<div className="empty">Loading stats…</div>}>
+          <StatsView games={games} onShowGames={showGames} onOpen={(g) => showDetail(g.id)} />
+        </Suspense>
+      )}
 
       {tab === 'map' && (
         <Suspense fallback={<div className="empty">Loading map…</div>}>

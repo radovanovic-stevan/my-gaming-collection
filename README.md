@@ -25,6 +25,13 @@ update by themselves.
 A game's **Last played** is the latest Game of the Month entry that lists it. It's worked out when
 the page loads, so nothing needs to be set on the game.
 
+The **Stats** tab charts the game collection (not the other collections). It shows this year's
+acquired and completed games against the same date last year, plus the completion rate, how many games
+are complete in box, and the play time tracked. It also has charts for acquired and completed games per
+year, platforms by status, ratings, genres, what came in the box, and the most-played games. It's all
+worked out from `games.json` when the page loads, so there's nothing to edit. Clicking a bar opens the
+collection filtered to those games, or the game itself for **Most played**.
+
 The **Map** tab shows where the games were bought. Each game has a **Bought in** country
 (for a gift, where the giver bought it), set in the game's edit form. Hovering a country shows
 how many games came from it, and clicking it lists them. The map opens on Europe; a button
