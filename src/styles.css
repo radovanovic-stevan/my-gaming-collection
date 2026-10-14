@@ -3628,3 +3628,454 @@ button.sv-bar-row:hover {
     font-size: 24px;
   }
 }
+
+/* --- Timeline --------------------------------------------------------------------------- */
+
+/* Each kind of event has a colour for its dot; the label beside it always names it too. */
+.timeline {
+  --tl-acquired: #5b4cf0;
+  --tl-completed: #0f9d58;
+  --tl-award: #c9961a;
+  --tl-trophy: #d95926;
+  --tl-photo: #2a78d6;
+  --tl-blog: #8a877f;
+  display: grid;
+  gap: 16px;
+  padding-top: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .timeline {
+    --tl-acquired: #9085e9;
+    --tl-completed: #199e70;
+    --tl-award: #d4a72c;
+    --tl-trophy: #e66a3a;
+    --tl-photo: #3987e5;
+    --tl-blog: #8a877f;
+  }
+}
+
+.timeline > * {
+  min-width: 0;
+}
+
+.tl-acquired { --tl-c: var(--tl-acquired); }
+.tl-completed { --tl-c: var(--tl-completed); }
+.tl-gotm,
+.tl-goty { --tl-c: var(--tl-award); }
+.tl-trophy { --tl-c: var(--tl-trophy); }
+.tl-photo { --tl-c: var(--tl-photo); }
+.tl-blog { --tl-c: var(--tl-blog); }
+
+.tl-dot {
+  display: inline-block;
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+  background: var(--tl-c);
+  vertical-align: 1px;
+}
+
+/* On this day */
+
+.tl-today,
+.tl-month,
+.tl-year > .tl-events {
+  min-width: 0;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-elev);
+}
+
+.tl-today {
+  padding: 16px;
+}
+
+.tl-today-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.tl-today-head h2 {
+  font-size: 22px;
+  letter-spacing: -0.01em;
+}
+
+.tl-today-nav {
+  display: flex;
+  gap: 6px;
+}
+
+.tl-today-nav .btn {
+  min-width: 36px;
+  justify-content: center;
+}
+
+.tl-today-year h3 {
+  margin: 14px 0 0;
+  font-size: 14px;
+}
+
+.tl-today > p {
+  margin: 8px 0 0;
+}
+
+/* Filters */
+
+.tl-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.tl-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tl-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 5px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg-elev);
+  font-size: 12.5px;
+}
+
+.tl-filter .muted {
+  margin-left: 4px;
+  font-variant-numeric: tabular-nums;
+}
+
+.tl-filter:not(.on) {
+  background: none;
+  color: var(--fg-muted);
+}
+
+.tl-filter:not(.on) .tl-dot {
+  background: none;
+  box-shadow: inset 0 0 0 1.5px var(--tl-c);
+}
+
+.tl-jump {
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-elev);
+  font-size: 13px;
+}
+
+/* The feed */
+
+.tl-year {
+  display: grid;
+  gap: 12px;
+  scroll-margin-top: 110px;
+}
+
+.tl-year-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  padding-top: 12px;
+}
+
+.tl-year-head h2 {
+  font-size: 26px;
+  letter-spacing: -0.02em;
+}
+
+.tl-month {
+  padding: 14px 16px 6px;
+}
+
+.tl-month h3 {
+  margin: 0 0 4px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--fg-muted);
+}
+
+.tl-year > .tl-events {
+  padding: 6px 16px;
+}
+
+.tl-events {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tl-event {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.tl-event + .tl-event {
+  border-top: 1px solid var(--border);
+}
+
+.tl-today .tl-event {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.tl-today .tl-lead {
+  display: none;
+}
+
+.tl-lead {
+  padding-top: 1px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--fg-muted);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.tl-body {
+  display: grid;
+  gap: 6px;
+  justify-items: start;
+  min-width: 0;
+}
+
+.tl-body > *,
+.tl-photo-text > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.tl-kind {
+  font-size: 12px;
+  color: var(--fg-muted);
+}
+
+/* One game */
+
+.tl-game {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  text-align: left;
+}
+
+button.tl-game:hover .tl-game-title {
+  text-decoration: underline;
+}
+
+.tl-thumb {
+  flex: none;
+  width: 40px;
+  height: 54px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--bg-sunk);
+}
+
+.tl-thumb-small {
+  width: 22px;
+  height: 30px;
+  border-radius: 3px;
+}
+
+/* Too small for the placeholder's text: its colour is enough. */
+.tl-thumb .cover-placeholder {
+  padding: 0;
+}
+
+.tl-thumb .cover-placeholder > * {
+  display: none;
+}
+
+.tl-game-text {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.tl-game-title {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.tl-game-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+/* Several games */
+
+.tl-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tl-chip,
+.tl-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  max-width: 100%;
+  padding: 3px 9px 3px 3px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--bg);
+  font-size: 12.5px;
+}
+
+.tl-more {
+  padding: 3px 10px;
+  color: var(--fg-muted);
+}
+
+button.tl-chip:hover,
+.tl-more:hover {
+  border-color: var(--fg-muted);
+}
+
+.tl-chip-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Pictures, posts and trophies */
+
+.tl-media {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.tl-photo-image {
+  flex: none;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--bg-sunk);
+}
+
+.tl-photo-image img {
+  display: block;
+  width: 140px;
+  height: 96px;
+  object-fit: cover;
+}
+
+.tl-photo-text {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  max-width: 100%;
+  justify-items: start;
+}
+
+
+.tl-photo-text p {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.tl-post-title,
+.tl-link {
+  padding: 0;
+  border: 0;
+  background: none;
+  text-align: left;
+}
+
+.tl-post-title {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.tl-post-title:hover,
+.tl-link:hover {
+  text-decoration: underline;
+}
+
+.tl-link {
+  font-size: 12.5px;
+  color: var(--accent);
+}
+
+.tl-trophies {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 13px;
+}
+
+@media (max-width: 640px) {
+  .tl-media {
+    flex-direction: column;
+  }
+  .tl-photo-image {
+    width: 100%;
+    max-width: 360px;
+  }
+  .tl-photo-image img {
+    width: 100%;
+    height: 180px;
+  }
+  /* One row of filters that scrolls sideways, so the sticky bar stays short. */
+  .tl-toolbar {
+    flex-wrap: nowrap;
+  }
+  .tl-filters {
+    flex: 1 1 auto;
+    min-width: 0;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .tl-filter {
+    flex: none;
+  }
+  .tl-jump {
+    flex: none;
+    width: 88px;
+  }
+  .tl-year {
+    scroll-margin-top: 60px;
+  }
+  .tl-month,
+  .tl-year > .tl-events {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}

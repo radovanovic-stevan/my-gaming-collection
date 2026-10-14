@@ -32,6 +32,14 @@ year, platforms by status, ratings, genres, what came in the box, and the most-p
 worked out from `games.json` when the page loads, so there's nothing to edit. Clicking a bar opens the
 collection filtered to those games, or the game itself for **Most played**.
 
+The **Timeline** tab puts the game side of the site in date order, newest first, grouped by year and month:
+games acquired and completed, Game of the Month and Game of the Year winners, Casting a Dream trophies,
+gallery pictures and blog posts (not drafts). Games acquired or completed on the same day share one entry.
+Acquired dates written as text ("Late 2013 - Early 2014") sit at the end of their year or month, and
+"Before 2012" comes last. The chips at the top switch kinds of events on and off. **On this day** at the top
+lists what happened on today's date in earlier years. Its arrows step through other days. Like Stats, it's
+worked out when the page loads.
+
 The **Map** tab shows where the games were bought. Each game has a **Bought in** country
 (for a gift, where the giver bought it), set in the game's edit form. Hovering a country shows
 how many games came from it, and clicking it lists them. The map opens on Europe; a button

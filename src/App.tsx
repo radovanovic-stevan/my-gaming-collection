@@ -20,12 +20,13 @@ import { WhatsNew } from './components/WhatsNew';
 // The map carries the world's country shapes, so it's only loaded when opened.
 const MapView = lazy(() => import('./components/MapView'));
 const StatsView = lazy(() => import('./components/StatsView'));
+const TimelineView = lazy(() => import('./components/TimelineView'));
 import { api, detectEditing } from './lib/api';
 import { createLinker } from './lib/links';
 import { matchLauncherGames, withLauncherPlaytime } from './lib/castingADream';
 import { findChanges, loadSnapshot, saveSnapshot, type ChangeGroup, type ChangeTab } from './lib/whatsNew';
 
-type GameTab = 'collection' | 'gotm' | 'gotc' | 'stats' | 'gallery' | 'map' | 'consoles' | 'blog' | 'casting-a-dream';
+type GameTab = 'collection' | 'gotm' | 'gotc' | 'stats' | 'timeline' | 'gallery' | 'map' | 'consoles' | 'blog' | 'casting-a-dream';
 /** Collections that aren't games. Each one is public/data/<id>.json. */
 const OTHER_COLLECTIONS = [
   { id: 'dylan-dog', label: 'Dylan Dog' },
@@ -39,6 +40,7 @@ const TABS: { id: GameTab; label: string }[] = [
   { id: 'gotm', label: 'Game of the Month' },
   { id: 'gotc', label: 'Awards' },
   { id: 'stats', label: 'Stats' },
+  { id: 'timeline', label: 'Timeline' },
   { id: 'gallery', label: 'Gallery' },
   { id: 'map', label: 'Map' },
   { id: 'consoles', label: 'Consoles' },
@@ -90,12 +92,13 @@ export default function App() {
   const checkChanges = editingChecked && !editable;
   // Always loaded: a game's Last played comes from Game of the Month, and the year editor fills stats from it.
   const gotm = useDataFile<GotmMonth[]>('gotm.json', true);
-  const gotc = useDataFile<GotcData>('gotc.json', tab === 'gotc' || checkChanges);
-  const gallery = useDataFile<GalleryEntry[]>('gallery.json', tab === 'gallery' || checkChanges);
+  // The timeline is built from awards, pictures and posts as well.
+  const gotc = useDataFile<GotcData>('gotc.json', tab === 'gotc' || tab === 'timeline' || checkChanges);
+  const gallery = useDataFile<GalleryEntry[]>('gallery.json', tab === 'gallery' || tab === 'timeline' || checkChanges);
   const dylanDog = useDataFile<ChecklistCollection>('dylan-dog.json', tab === 'dylan-dog' || checkChanges);
   const vinyl = useDataFile<Vinyl[]>('vinyl.json', tab === 'vinyl' || checkChanges);
   const consoles = useDataFile<GameConsole[]>('consoles.json', tab === 'consoles' || checkChanges);
-  const blog = useDataFile<BlogPost[]>('blog.json', tab === 'blog' || checkChanges);
+  const blog = useDataFile<BlogPost[]>('blog.json', tab === 'blog' || tab === 'timeline' || checkChanges);
   // Always loaded: the launcher's play time replaces the recorded one for the games it plays.
   const castingADream = useDataFile<CastingADream>('casting-a-dream.json', true);
   const games = useMemo(() => storedGames && withLauncherPlaytime(storedGames, castingADream.data), [storedGames, castingADream.data]);
@@ -430,6 +433,27 @@ export default function App() {
           <StatsView games={games} onShowGames={showGames} onOpen={(g) => showDetail(g.id)} />
         </Suspense>
       )}
+
+      {tab === 'timeline' &&
+        (gotm.data && gotc.data && gallery.data && blog.data ? (
+          <Suspense fallback={<div className="empty">Loading timeline…</div>}>
+            <TimelineView
+              games={games}
+              months={gotm.data}
+              awards={gotc.data}
+              gallery={gallery.data}
+              blog={blog.data}
+              launcher={castingADream.data}
+              link={link}
+              onOpen={(g) => showDetail(g.id)}
+              onOpenIn={(t, id) => (goTo(t), setFocus({ tab: t, id }))}
+            />
+          </Suspense>
+        ) : (
+          <div className="empty">
+            {(gotm.error ?? gotc.error ?? gallery.error ?? blog.error) ? `Couldn't load the timeline: ${gotm.error ?? gotc.error ?? gallery.error ?? blog.error}` : 'Loading…'}
+          </div>
+        ))}
 
       {tab === 'map' && (
         <Suspense fallback={<div className="empty">Loading map…</div>}>
