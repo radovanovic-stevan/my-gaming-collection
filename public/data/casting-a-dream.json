@@ -420,7 +420,7 @@
     },
     {
       "lastPlayed" : "2026-10-14",
-      "minutes" : 213,
+      "minutes" : 245,
       "platform" : "Famicom",
       "search" : "Tenchi wo Kurau II",
       "title" : "Tenchi o Kurau II - Shokatsu Koumei Den",
@@ -442,7 +442,8 @@
         },
         {
           "detail" : "Recruit 10 generals.",
-          "title" : "Growing Army"
+          "title" : "Growing Army",
+          "unlocked" : "2026-10-14"
         },
         {
           "detail" : "Hold 1,000 gold at once.",
