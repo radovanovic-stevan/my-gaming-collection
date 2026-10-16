@@ -28019,5 +28019,58 @@
    "1079-15d3d3af.jpg"
   ],
   "cover": "1079-15d3d3af.jpg"
+ },
+ {
+  "id": 1080,
+  "title": "Ratchet & Clank Future: A Crack in Time",
+  "platform": "PS3",
+  "acquired": "2026-10-16",
+  "completed": null,
+  "status": "Not Completed",
+  "rating": null,
+  "timesCompleted": 0,
+  "percent": null,
+  "playtime": null,
+  "genres": [
+   "Action",
+   "Adventure"
+  ],
+  "condition": [
+   "Box",
+   "Cover",
+   "Manual"
+  ],
+  "edition": "",
+  "trophies": null,
+  "boughtIn": "Netherlands",
+  "playsVia": null,
+  "images": [],
+  "cover": null
+ },
+ {
+  "id": 1081,
+  "title": "Eat Lead: The Return of Matt Hazard",
+  "platform": "PS3",
+  "acquired": "2026-10-16",
+  "completed": null,
+  "status": "Not Completed",
+  "rating": null,
+  "timesCompleted": 0,
+  "percent": null,
+  "playtime": null,
+  "genres": [
+   "TPS"
+  ],
+  "condition": [
+   "Box",
+   "Cover",
+   "Manual"
+  ],
+  "edition": "",
+  "trophies": null,
+  "boughtIn": "Netherlands",
+  "playsVia": null,
+  "images": [],
+  "cover": null
  }
 ]

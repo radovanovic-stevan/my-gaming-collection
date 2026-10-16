@@ -286,7 +286,7 @@
    },
    {
     "side": "B",
-    "date": "2026-10-16"
+    "date": "2026-10-15"
    }
   ]
  },
@@ -615,5 +615,23 @@
     "date": "2026-10-14"
    }
   ]
+ },
+ {
+  "id": 22,
+  "artist": "Linkin Park",
+  "title": "Unshatter Film Soundtrack (Live in São Paulo)",
+  "acquired": "2026-10-16",
+  "listens": [
+   {
+    "side": "1",
+    "date": "2026-10-16"
+   },
+   {
+    "side": "2",
+    "date": "2026-10-16"
+   }
+  ],
+  "images": [],
+  "cover": null
  }
 ]

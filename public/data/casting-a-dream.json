@@ -419,8 +419,8 @@
       ]
     },
     {
-      "lastPlayed" : "2026-10-15",
-      "minutes" : 282,
+      "lastPlayed" : "2026-10-16",
+      "minutes" : 303,
       "platform" : "Famicom",
       "search" : "Tenchi wo Kurau II",
       "title" : "Tenchi o Kurau II - Shokatsu Koumei Den",
@@ -470,7 +470,8 @@
         },
         {
           "detail" : "Reach level 20.",
-          "title" : "Veteran Commander"
+          "title" : "Veteran Commander",
+          "unlocked" : "2026-10-16"
         },
         {
           "detail" : "Hold 10,000 gold at once.",
