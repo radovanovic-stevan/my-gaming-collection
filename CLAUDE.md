@@ -19,9 +19,9 @@ GitHub Pages at collection.stevan.co.rs. The README is only the cards described 
   condition means it's built into a console like the SNES Classic.
 
 ## Build steps
-- `plugins/readmeCards.ts` writes the README's cards to `dist/cards/*.svg` on every build: now playing (the
-  launcher game played in the last 7 days, else an in-progress Game of the Month game, else the latest Game of
-  the Month), latest vinyl, recently purchased (6 games), recently completed (3), recently listened (3 records)
+- `plugins/readmeCards.ts` writes the README's cards to `dist/cards/*.svg` on every build: now playing (this
+  month's in-progress Game of the Month games, up to 4, ignoring any listed above a completed one; else the
+  latest Game of the Month), latest vinyl (as many records as Now playing shows games), recently purchased (6 games), recently completed (3), recently listened (3 records)
   and totals. Pictures are embedded, scaled down with `sharp` (a dev dependency) but not cropped: the owner
   wants the photos as taken, white backdrop included. Cards side by side in the README share a height.
 

@@ -1,7 +1,7 @@
 // Build step: writes the README's cards into dist/cards/, worked out from the data on every build:
-//   now-playing.svg         the launcher game played in the last week, else a Game of the Month game in progress,
-//                           else the latest Game of the Month
-//   latest-vinyl.svg        the record bought last
+//   now-playing.svg         the games in progress this month in Game of the Month (up to 4; only those listed
+//                           after the last completed one), else the latest Game of the Month
+//   latest-vinyl.svg        the records bought last, as many as Now playing shows
 //   recently-purchased.svg  the six games bought last
 //   recently-completed.svg  the three games completed last
 //   recently-listened.svg   the three records listened to last
@@ -12,15 +12,13 @@ import type { Plugin } from 'vite';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import sharp from 'sharp';
-import type { CastingADream, Game, GameConsole, GameRef, GotmMonth, Vinyl } from '../src/types';
-import { matchLauncherGames } from '../src/lib/castingADream';
+import type { Game, GameConsole, GameRef, GotmMonth, Vinyl } from '../src/types';
 import { createLinker } from '../src/lib/links';
 import { band } from '../src/lib/bands';
-import { formatPlaytime, ratingTier } from '../src/lib/format';
+import { ratingTier } from '../src/lib/format';
 
 const W = 480;
 const SITE = 'collection.stevan.co.rs';
-const RECENT_DAYS = 7;
 const FONT = `font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif"`;
 const GAME_DOT = '#3ddc84';
 const VINYL_DOT = '#f0a43a';
@@ -133,37 +131,108 @@ async function feature(heading: string, dot: string, file: string | null, fallba
   return frame(heading, dot, 152, body, 124);
 }
 
-async function nowPlaying(games: Game[], months: GotmMonth[], launcher: CastingADream | null, today: Date): Promise<string | null> {
-  let heading = 'Now playing';
-  let ref: GameRef | null = null;
-  let game: Game | null = null;
-  let detail = '';
-  if (launcher) {
-    const since = new Date(today.getTime() - RECENT_DAYS * 86_400_000).toISOString().slice(0, 10);
-    const recent = launcher.games.filter((g) => g.lastPlayed && g.lastPlayed >= since).sort((a, b) => b.lastPlayed!.localeCompare(a.lastPlayed!))[0];
-    if (recent) {
-      game = matchLauncherGames(launcher, games).get(recent) ?? null;
-      ref = { title: game?.title ?? recent.title, platform: recent.platform };
-      detail = `${recent.minutes ? `${formatPlaytime(recent.minutes)} played · ` : ''}last played ${day(recent.lastPlayed!)}`;
-    }
-  }
-  if (!ref) {
-    const link = createLinker(games);
-    const sorted = [...months].sort((a, b) => b.month.localeCompare(a.month));
-    const playing = sorted[0] && [sorted[0].gameOfTheMonth, ...sorted[0].played].find((p) => p?.status === 'in-progress');
-    const last = sorted.find((m) => m.gameOfTheMonth);
-    if (playing) [ref, detail] = [playing, `In progress · ${month(sorted[0].month)}`];
-    else if (last) [heading, ref, detail] = ['Last Game of the Month', last.gameOfTheMonth!, month(last.month)];
-    if (ref) game = link(ref);
-  }
-  if (!ref) return null;
-  const platform = ref.platform;
-  return feature(heading, heading === 'Now playing' ? GAME_DOT : '#d4a72c', game?.cover ? path.join(IMAGES, game.cover) : null, band(platform)[0], ref.title, (y) => platformBadge(platform, 124, y), detail);
+/** A column for each game or record when the top row shows more than one: picture, title, lead and detail. */
+interface Column {
+  file: string | null;
+  fallback: string;
+  title: string;
+  /** Drawn centred on x, at y. */
+  lead: (x: number, y: number) => string;
+  detail: string;
 }
 
-async function latestVinyl(records: Vinyl[]): Promise<string | null> {
-  const record = records.filter((r) => r.acquired && ISO.test(r.acquired)).sort((a, b) => b.acquired!.localeCompare(a.acquired!) || b.id - a.id)[0];
-  if (!record) return null;
+const COLUMNS_HEIGHT = 280;
+
+async function featureColumns(heading: string, dot: string, columns: Column[], id: string): Promise<string> {
+  const col = (W - 32) / columns.length;
+  const chars = Math.floor(col / 7.8);
+  const parts = await Promise.all(
+    columns.map(async (c, i) => {
+      const cx = 16 + i * col + col / 2;
+      return [
+        await picture(c.file, cx - 45, 54, 90, 120, c.fallback, `${id}${i}`),
+        `<text x="${cx}" y="196" font-size="13" font-weight="700" text-anchor="middle" fill="#ffffff">${escape(fit(c.title, chars))}</text>`,
+        c.lead(cx, 204),
+        c.detail && `<text x="${cx}" y="236" font-size="11" text-anchor="middle" fill="#a19fb0">${escape(c.detail)}</text>`,
+      ].join('\n    ');
+    }),
+  );
+  return frame(heading, dot, COLUMNS_HEIGHT, parts.join('\n    '));
+}
+
+/**
+ * The games in progress in this month's Game of the Month entry, in the order they're listed. A game
+ * completed later in the list means the ones in progress above it are no longer being played.
+ */
+function inProgress(months: GotmMonth[], today: Date): GameRef[] {
+  const key = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}`;
+  const current = months.find((m) => m.month === key);
+  if (!current) return [];
+  const list = [current.gameOfTheMonth, ...current.played].filter((p) => p !== null);
+  const lastCompleted = list.map((p) => p.status).lastIndexOf('completed');
+  return list.slice(lastCompleted + 1).filter((p) => p.status === 'in-progress');
+}
+
+const MAX_PLAYING = 4;
+
+async function nowPlaying(games: Game[], months: GotmMonth[], playing: GameRef[]): Promise<string | null> {
+  const link = createLinker(games);
+  const cover = (ref: GameRef) => {
+    const game = link(ref);
+    return game?.cover ? path.join(IMAGES, game.cover) : null;
+  };
+  if (playing.length > 1) {
+    return featureColumns(
+      'Now playing',
+      GAME_DOT,
+      playing.map((ref) => ({
+        file: cover(ref),
+        fallback: band(ref.platform)[0],
+        title: ref.title,
+        lead: (x, y) => {
+          const width = platformBadge(ref.platform, 0, 0).width;
+          return platformBadge(ref.platform, x - width / 2, y).svg;
+        },
+        detail: '',
+      })),
+      'p',
+    );
+  }
+  let heading = 'Now playing';
+  let ref: GameRef | undefined = playing[0];
+  let detail = 'In progress';
+  if (!ref) {
+    const last = [...months].sort((a, b) => b.month.localeCompare(a.month)).find((m) => m.gameOfTheMonth);
+    if (!last) return null;
+    [heading, ref, detail] = ['Last Game of the Month', last.gameOfTheMonth!, month(last.month)];
+  }
+  const platform = ref.platform;
+  return feature(heading, heading === 'Now playing' ? GAME_DOT : '#d4a72c', cover(ref), band(platform)[0], ref.title, (y) => platformBadge(platform, 124, y), detail);
+}
+
+/** The records bought last: as many as there are games in Now playing, so the two cards line up. */
+async function latestVinyl(records: Vinyl[], count: number): Promise<string | null> {
+  const latest = records
+    .filter((r) => r.acquired && ISO.test(r.acquired))
+    .sort((a, b) => b.acquired!.localeCompare(a.acquired!) || b.id - a.id)
+    .slice(0, count);
+  if (!latest.length) return null;
+  if (count > 1) {
+    const chars = Math.floor((W - 32) / count / 7);
+    return featureColumns(
+      'Latest vinyl',
+      VINYL_DOT,
+      latest.map((r) => ({
+        file: r.cover ? path.join(IMAGES, r.cover) : null,
+        fallback: '#3a2d1c',
+        title: r.title,
+        lead: (x, y) => `<text x="${x}" y="${y + 13}" font-size="12" text-anchor="middle" fill="#e2e0ea">${escape(fit(r.artist, chars))}</text>`,
+        detail: `Bought ${day(r.acquired!).replace(/ \d{4}$/, '')}`,
+      })),
+      'v',
+    );
+  }
+  const record = latest[0];
   // The artist and the date share one line of text, so the date follows the name however wide it is.
   const lead = (y: number) => ({
     width: 0,
@@ -254,9 +323,11 @@ export function readmeCards(): Plugin {
       IMAGES = path.join(outDir, 'images');
       const games = read<Game[]>('games.json', []);
       const records = read<Vinyl[]>('vinyl.json', []);
+      const months = read<GotmMonth[]>('gotm.json', []);
+      const playing = inProgress(months, new Date()).slice(0, MAX_PLAYING);
       const cards: [string, string | null][] = [
-        ['now-playing', await nowPlaying(games, read<GotmMonth[]>('gotm.json', []), read<CastingADream | null>('casting-a-dream.json', null), new Date())],
-        ['latest-vinyl', await latestVinyl(records)],
+        ['now-playing', await nowPlaying(games, months, playing)],
+        ['latest-vinyl', await latestVinyl(records, Math.max(1, playing.length))],
         ['recently-purchased', await recentlyPurchased(games)],
         ['recently-completed', await recentlyCompleted(games)],
         ['recently-listened', await recentlyListened(records)],
