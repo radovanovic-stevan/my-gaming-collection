@@ -28044,8 +28044,10 @@
   "trophies": null,
   "boughtIn": "Netherlands",
   "playsVia": null,
-  "images": [],
-  "cover": null
+  "images": [
+   "1080-619e790b.jpg"
+  ],
+  "cover": "1080-619e790b.jpg"
  },
  {
   "id": 1081,
@@ -28070,7 +28072,9 @@
   "trophies": null,
   "boughtIn": "Netherlands",
   "playsVia": null,
-  "images": [],
-  "cover": null
+  "images": [
+   "1081-bfaa8a3f.jpg"
+  ],
+  "cover": "1081-bfaa8a3f.jpg"
  }
 ]
