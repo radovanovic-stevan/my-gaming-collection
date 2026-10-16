@@ -88,6 +88,18 @@ export default function App() {
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [tab, setTab] = useState<Tab>(tabFromUrl);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [publishing, setPublishing] = useState(false);
+  const publish = async () => {
+    setPublishing(true);
+    try {
+      const { committed } = await api.publish();
+      alert(committed ? 'Committed and pushed. The site will update in a few minutes.' : 'Nothing new to commit; pushed anything pending.');
+    } catch (e) {
+      alert(`Couldn't publish: ${e instanceof Error ? e.message : e}`);
+    } finally {
+      setPublishing(false);
+    }
+  };
   const menuRef = useRef<HTMLElement>(null);
   // On the published site everything is loaded, to tell visitors what changed since their last visit.
   const checkChanges = editingChecked && !editable;
@@ -320,12 +332,17 @@ export default function App() {
             </p>
           </div>
         )}
-        {editable && tab === 'collection' && (
+        {editable && (
           <div className="header-actions">
             <span className="edit-pill" title="Changes are written to public/data and public/images">Local editing on</span>
-            <button className="btn primary" onClick={() => setModal({ kind: 'new' })}>
-              + Add game
+            <button className="btn" onClick={publish} disabled={publishing} title='Commit public/data and public/images as "Regular Updates" and push to GitHub'>
+              {publishing ? 'Publishing…' : 'Publish'}
             </button>
+            {tab === 'collection' && (
+              <button className="btn primary" onClick={() => setModal({ kind: 'new' })}>
+                + Add game
+              </button>
+            )}
           </div>
         )}
       </header>

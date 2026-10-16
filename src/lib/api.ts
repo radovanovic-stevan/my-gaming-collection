@@ -62,6 +62,7 @@ export const api = {
   addPost: (post: BlogInput) => request<BlogPost>('POST', 'blog', post),
   updatePost: (id: number, post: BlogInput) => request<BlogPost>('PUT', `blog/${id}`, post),
   deletePost: (id: number) => request<{ ok: true }>('DELETE', `blog/${id}`),
+  publish: () => request<{ committed: boolean }>('POST', 'publish'),
   fetchImage: async (url: string): Promise<Blob> => {
     const r = await fetch(`/api/fetch-image?url=${encodeURIComponent(url)}`);
     if (!r.ok) throw new Error((await r.json().catch(() => ({}))).error ?? `HTTP ${r.status}`);

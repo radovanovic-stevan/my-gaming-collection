@@ -13,9 +13,11 @@
 // The static build (GitHub Pages) has no API, so the app is read-only there.
 import type { Plugin } from 'vite';
 import type { IncomingMessage, ServerResponse } from 'node:http';
+import { execFile } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { readFile, rename, unlink, writeFile } from 'node:fs/promises';
 import path from 'node:path';
+import { promisify } from 'node:util';
 
 const ROOT = process.cwd();
 const GAMES_FILE = path.join(ROOT, 'public/data/games.json');
@@ -44,6 +46,24 @@ class HttpError extends Error {
   ) {
     super(message);
   }
+}
+
+const git = (...args: string[]) => promisify(execFile)('git', args, { cwd: ROOT });
+
+// Commits the data and images (nothing else) as "Regular Updates" and pushes, which deploys the site.
+async function publish(): Promise<{ committed: boolean }> {
+  const paths = ['public/data', 'public/images'];
+  await git('add', '-A', '--', ...paths);
+  const staged = await git('diff', '--cached', '--quiet', '--', ...paths).then(
+    () => false,
+    () => true,
+  );
+  if (staged) await git('commit', '-m', 'Regular Updates', '--', ...paths);
+  // Push anyway, in case an earlier commit didn't make it.
+  await git('push').catch((e) => {
+    throw new HttpError(502, `Push failed: ${String(e.stderr || e.message).trim()}`);
+  });
+  return { committed: staged };
 }
 
 // Serialize all writes so concurrent requests can't clobber each other.
@@ -777,6 +797,9 @@ async function handle(req: IncomingMessage, res: ServerResponse): Promise<void> 
 
   // GET /api/health
   if (parts[0] === 'health' && method === 'GET') return send(res, 200, { ok: true });
+
+  // POST /api/publish  (commit and push the data and images)
+  if (parts[0] === 'publish' && method === 'POST') return send(res, 200, await exclusive(publish));
 
   // GET /api/fetch-image?url=...  (lets the browser grab remote images without CORS trouble)
   if (parts[0] === 'fetch-image' && method === 'GET') {
