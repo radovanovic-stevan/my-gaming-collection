@@ -631,7 +631,9 @@
     "date": "2026-10-16"
    }
   ],
-  "images": [],
-  "cover": null
+  "images": [
+   "vinyl-22-2ff7175b.jpg"
+  ],
+  "cover": "vinyl-22-2ff7175b.jpg"
  }
 ]
