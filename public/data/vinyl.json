@@ -649,7 +649,24 @@
   "artist": "Linkin Park",
   "title": "Papercuts",
   "acquired": "2026-10-17",
-  "listens": [],
+  "listens": [
+   {
+    "side": "1",
+    "date": "2026-10-17"
+   },
+   {
+    "side": "2",
+    "date": "2026-10-17"
+   },
+   {
+    "side": "3",
+    "date": "2026-10-17"
+   },
+   {
+    "side": "4",
+    "date": "2026-10-17"
+   }
+  ],
   "images": [
    "vinyl-23-79b04e9d.jpg"
   ],
