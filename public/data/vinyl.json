@@ -643,5 +643,16 @@
    "vinyl-22-2ff7175b.jpg"
   ],
   "cover": "vinyl-22-2ff7175b.jpg"
+ },
+ {
+  "id": 23,
+  "artist": "Linkin Park",
+  "title": "Papercuts",
+  "acquired": "2026-10-17",
+  "listens": [],
+  "images": [
+   "vinyl-23-79b04e9d.jpg"
+  ],
+  "cover": "vinyl-23-79b04e9d.jpg"
  }
 ]

@@ -28076,5 +28076,32 @@
    "1081-bfaa8a3f.jpg"
   ],
   "cover": "1081-bfaa8a3f.jpg"
+ },
+ {
+  "id": 1082,
+  "title": "Little Deviants",
+  "platform": "VITA",
+  "acquired": "2026-10-17",
+  "completed": null,
+  "status": "Not Completed",
+  "rating": null,
+  "timesCompleted": 0,
+  "percent": null,
+  "playtime": null,
+  "genres": [
+   "Party"
+  ],
+  "condition": [
+   "Box",
+   "Cover"
+  ],
+  "edition": "",
+  "trophies": null,
+  "boughtIn": "Serbia",
+  "playsVia": null,
+  "images": [
+   "1082-8a8b4f2d.jpg"
+  ],
+  "cover": "1082-8a8b4f2d.jpg"
  }
 ]
