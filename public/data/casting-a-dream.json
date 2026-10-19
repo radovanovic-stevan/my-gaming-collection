@@ -419,8 +419,8 @@
       ]
     },
     {
-      "lastPlayed" : "2026-10-17",
-      "minutes" : 485,
+      "lastPlayed" : "2026-10-19",
+      "minutes" : 630,
       "platform" : "Famicom",
       "search" : "Tenchi wo Kurau II",
       "title" : "Tenchi o Kurau II - Shokatsu Koumei Den",
@@ -462,7 +462,8 @@
         },
         {
           "detail" : "Recruit Pang Tong.",
-          "title" : "Phoenix Fledgling"
+          "title" : "Phoenix Fledgling",
+          "unlocked" : "2026-10-18"
         },
         {
           "detail" : "Recruit 30 generals.",
@@ -492,7 +493,8 @@
         },
         {
           "detail" : "Reach level 30.",
-          "title" : "Master of War"
+          "title" : "Master of War",
+          "unlocked" : "2026-10-18"
         },
         {
           "detail" : "Hold 50,000 gold at once.",
