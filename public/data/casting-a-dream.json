@@ -419,8 +419,8 @@
       ]
     },
     {
-      "lastPlayed" : "2026-10-19",
-      "minutes" : 630,
+      "lastPlayed" : "2026-10-20",
+      "minutes" : 685,
       "platform" : "Famicom",
       "search" : "Tenchi wo Kurau II",
       "title" : "Tenchi o Kurau II - Shokatsu Koumei Den",
@@ -481,7 +481,8 @@
         },
         {
           "detail" : "Command Guan Yu, Zhang Fei, Zhao Yun, Ma Chao and Huang Zhong.",
-          "title" : "The Five Tigers"
+          "title" : "The Five Tigers",
+          "unlocked" : "2026-10-19"
         },
         {
           "detail" : "Recruit Jiang Wei.",
