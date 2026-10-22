@@ -15094,18 +15094,19 @@
   "title": "Tenchi wo Kurau II - Shokatsu Kōmei Den",
   "platform": "Famicom",
   "acquired": "2023-02-11",
-  "completed": null,
-  "status": "Not Completed",
-  "rating": null,
+  "completed": "2026-10-22",
+  "status": "Completed",
+  "rating": 77,
   "timesCompleted": null,
   "percent": null,
-  "playtime": null,
+  "playtime": 923,
   "genres": [
    "RPG"
   ],
   "condition": [
    "Box",
-   "Cover"
+   "Cover",
+   "Manual"
   ],
   "edition": "",
   "trophies": null,

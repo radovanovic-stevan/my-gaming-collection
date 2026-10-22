@@ -2,7 +2,7 @@
  {
   "month": "2026-10",
   "gameOfTheMonth": null,
-  "completed": 3,
+  "completed": 4,
   "bought": null,
   "played": [
    {
@@ -23,7 +23,7 @@
    {
     "title": "Tenchi wo Kurau II - Shokatsu Kōmei Den",
     "platform": "Famicom",
-    "status": "in-progress"
+    "status": "completed"
    },
    {
     "title": "Grand Theft Auto V",
