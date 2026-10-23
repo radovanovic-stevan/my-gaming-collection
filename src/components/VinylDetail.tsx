@@ -3,7 +3,7 @@ import type { Vinyl, VinylListen } from '../types';
 import { api } from '../lib/api';
 import { formatDate } from '../lib/format';
 import { Gallery } from './Gallery';
-import { VinylCover } from './VinylView';
+import { VinylCover, playsPerSide } from './VinylView';
 
 interface Props {
   record: Vinyl;
@@ -23,7 +23,7 @@ const today = () => new Date().toISOString().slice(0, 10);
 
 /** The sides this record has been played on, or 1 and 2 for one that hasn't been played yet. */
 const sidesOf = (listens: VinylListen[]) => {
-  const used = [...new Set(listens.map((l) => l.side))].sort();
+  const used = playsPerSide(listens).map(([side]) => side);
   return used.length ? used : ['1', '2'];
 };
 
@@ -82,8 +82,20 @@ export function VinylDetail({ record, editable, onSaved, onClose, onPrev, onNext
               <dd>{formatDate(record.acquired)}</dd>
             </div>
             <div>
-              <dt>Sides played</dt>
-              <dd>{listens.length}</dd>
+              <dt>Plays per side</dt>
+              <dd>
+                {listens.length === 0 ? (
+                  'None yet'
+                ) : (
+                  <ul className="side-play-list">
+                    {playsPerSide(listens).map(([side, n]) => (
+                      <li key={side}>
+                        Side {side} · {n} {n === 1 ? 'play' : 'plays'}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </dd>
             </div>
             <div>
               <dt>Last played</dt>
