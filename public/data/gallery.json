@@ -1,5 +1,53 @@
 [
  {
+  "id": 61,
+  "image": "gallery-61-3a581dab.jpg",
+  "date": "2026-10-24",
+  "description": "KP Haul",
+  "games": [
+   {
+    "title": "Guinness World Records: The Videogame",
+    "platform": "Wii"
+   },
+   {
+    "title": "Puzzle Quest: Challenge of the Warlords",
+    "platform": "Wii"
+   },
+   {
+    "title": "Sonic Colours",
+    "platform": "Wii"
+   },
+   {
+    "title": "WarioWare: Smooth Moves",
+    "platform": "Wii"
+   },
+   {
+    "title": "Crazy Taxi",
+    "platform": "PS2"
+   },
+   {
+    "title": "Titanic Mystery",
+    "platform": "NDS"
+   },
+   {
+    "title": "Radio Helicopter",
+    "platform": "Wii"
+   },
+   {
+    "title": "Mario & Sonic at the Olympic Games",
+    "platform": "Wii"
+   },
+   {
+    "title": "Valkyria Chronicles",
+    "platform": "PS3"
+   },
+   {
+    "title": "Dynasty Warriors 8 Xtreme Legends",
+    "platform": "PS3"
+   }
+  ]
+ },
+ {
   "id": 60,
   "image": "gallery-60-ab47a90d.jpg",
   "date": "2026-10-16",
