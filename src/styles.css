@@ -217,12 +217,26 @@ select:focus,
     padding: 20px 0 12px;
     gap: 12px;
   }
+  .brand {
+    position: relative;
+  }
+  /* Room for the PriceCharting link, which moves up to the title's line. */
   .brand h1 {
     font-size: 24px;
+    padding-right: 120px;
   }
   .stats {
     gap: 2px 12px;
     font-size: 13px;
+  }
+  .stats-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    /* The title's line: 24px at the page's 1.4 line height. */
+    height: calc(24px * 1.4);
   }
   .header-actions {
     width: 100%;
