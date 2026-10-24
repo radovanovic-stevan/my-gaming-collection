@@ -28105,5 +28105,278 @@
    "1082-8a8b4f2d.jpg"
   ],
   "cover": "1082-8a8b4f2d.jpg"
+ },
+ {
+  "id": 1083,
+  "title": "Guinness World Records: The Videogame",
+  "platform": "Wii",
+  "acquired": "2026-10-24",
+  "completed": null,
+  "status": "Null",
+  "rating": null,
+  "timesCompleted": 0,
+  "percent": null,
+  "playtime": null,
+  "genres": [
+   "Party"
+  ],
+  "condition": [
+   "Box",
+   "Cover",
+   "Manual"
+  ],
+  "edition": "",
+  "trophies": null,
+  "boughtIn": "Serbia",
+  "images": [
+   "1083-1757c1ab.jpg"
+  ],
+  "cover": "1083-1757c1ab.jpg"
+ },
+ {
+  "id": 1084,
+  "title": "Puzzle Quest: Challenge of the Warlords",
+  "platform": "Wii",
+  "acquired": "2026-10-24",
+  "completed": null,
+  "status": "Not Completed",
+  "rating": null,
+  "timesCompleted": 0,
+  "percent": null,
+  "playtime": null,
+  "genres": [
+   "RPG",
+   "Puzzle"
+  ],
+  "condition": [
+   "Box",
+   "Cover",
+   "Manual"
+  ],
+  "edition": "",
+  "trophies": null,
+  "boughtIn": "Serbia",
+  "images": [
+   "1084-5dd3727d.jpg"
+  ],
+  "cover": "1084-5dd3727d.jpg"
+ },
+ {
+  "id": 1085,
+  "title": "Sonic Colours",
+  "platform": "Wii",
+  "acquired": "2026-10-24",
+  "completed": null,
+  "status": "Not Completed",
+  "rating": null,
+  "timesCompleted": 0,
+  "percent": null,
+  "playtime": null,
+  "genres": [
+   "Platformer"
+  ],
+  "condition": [
+   "Box",
+   "Cover",
+   "Manual"
+  ],
+  "edition": "",
+  "trophies": null,
+  "boughtIn": "Serbia",
+  "images": [
+   "1085-b9b8a894.jpg"
+  ],
+  "cover": "1085-b9b8a894.jpg"
+ },
+ {
+  "id": 1086,
+  "title": "WarioWare: Smooth Moves",
+  "platform": "Wii",
+  "acquired": "2026-10-24",
+  "completed": null,
+  "status": "Not Completed",
+  "rating": null,
+  "timesCompleted": 0,
+  "percent": null,
+  "playtime": null,
+  "genres": [
+   "Party"
+  ],
+  "condition": [
+   "Box",
+   "Cover",
+   "Manual"
+  ],
+  "edition": "Nintendo Selects",
+  "trophies": null,
+  "boughtIn": "Serbia",
+  "images": [
+   "1086-041f3572.jpg"
+  ],
+  "cover": "1086-041f3572.jpg"
+ },
+ {
+  "id": 1087,
+  "title": "Crazy Taxi",
+  "platform": "PS2",
+  "acquired": "2026-10-24",
+  "completed": null,
+  "status": "Null",
+  "rating": null,
+  "timesCompleted": 0,
+  "percent": null,
+  "playtime": null,
+  "genres": [
+   "Racing"
+  ],
+  "condition": [
+   "Box",
+   "Cover",
+   "Manual"
+  ],
+  "edition": "Platinum",
+  "trophies": null,
+  "boughtIn": "Serbia",
+  "images": [
+   "1087-8e333f26.jpg"
+  ],
+  "cover": "1087-8e333f26.jpg"
+ },
+ {
+  "id": 1088,
+  "title": "Titanic Mystery",
+  "platform": "NDS",
+  "acquired": "2026-10-24",
+  "completed": null,
+  "status": "Not Completed",
+  "rating": null,
+  "timesCompleted": 0,
+  "percent": null,
+  "playtime": null,
+  "genres": [
+   "Puzzle"
+  ],
+  "condition": [
+   "Box",
+   "Cover",
+   "Manual"
+  ],
+  "edition": "",
+  "trophies": null,
+  "boughtIn": "Serbia",
+  "images": [
+   "1088-e740debd.jpg"
+  ],
+  "cover": "1088-e740debd.jpg"
+ },
+ {
+  "id": 1089,
+  "title": "Radio Helicopter",
+  "platform": "Wii",
+  "acquired": "2026-10-24",
+  "completed": null,
+  "status": "Not Completed",
+  "rating": null,
+  "timesCompleted": 0,
+  "percent": null,
+  "playtime": null,
+  "genres": [
+   "Action"
+  ],
+  "condition": [
+   "Box",
+   "Cover",
+   "Manual"
+  ],
+  "edition": "",
+  "trophies": null,
+  "boughtIn": "Serbia",
+  "images": [
+   "1089-6c34d603.jpg"
+  ],
+  "cover": "1089-6c34d603.jpg"
+ },
+ {
+  "id": 1090,
+  "title": "Mario & Sonic at the Olympic Games",
+  "platform": "Wii",
+  "acquired": "2026-10-24",
+  "completed": null,
+  "status": "Not Completed",
+  "rating": null,
+  "timesCompleted": 0,
+  "percent": null,
+  "playtime": null,
+  "genres": [
+   "Sports"
+  ],
+  "condition": [
+   "Box",
+   "Cover",
+   "Manual"
+  ],
+  "edition": "",
+  "trophies": null,
+  "boughtIn": "Serbia",
+  "images": [
+   "1090-f5cfe07a.jpg"
+  ],
+  "cover": "1090-f5cfe07a.jpg"
+ },
+ {
+  "id": 1091,
+  "title": "Valkyria Chronicles",
+  "platform": "PS3",
+  "acquired": "2026-10-24",
+  "completed": null,
+  "status": "Not Completed",
+  "rating": null,
+  "timesCompleted": 0,
+  "percent": null,
+  "playtime": null,
+  "genres": [
+   "Strategy",
+   "RPG"
+  ],
+  "condition": [
+   "Box",
+   "Cover",
+   "Manual"
+  ],
+  "edition": "",
+  "trophies": null,
+  "boughtIn": "Serbia",
+  "images": [
+   "1091-fb673d28.jpg"
+  ],
+  "cover": "1091-fb673d28.jpg"
+ },
+ {
+  "id": 1092,
+  "title": "Dynasty Warriors 8 Xtreme Legends",
+  "platform": "PS3",
+  "acquired": "2026-10-24",
+  "completed": null,
+  "status": "Not Completed",
+  "rating": null,
+  "timesCompleted": 0,
+  "percent": null,
+  "playtime": null,
+  "genres": [
+   "Action",
+   "H&S"
+  ],
+  "condition": [
+   "Box",
+   "Cover",
+   "Manual"
+  ],
+  "edition": "",
+  "trophies": null,
+  "boughtIn": "Serbia",
+  "images": [
+   "1092-71aa30fe.jpg"
+  ],
+  "cover": "1092-71aa30fe.jpg"
  }
 ]
