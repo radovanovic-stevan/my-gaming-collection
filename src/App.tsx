@@ -29,6 +29,9 @@ import { findChanges, loadSnapshot, saveSnapshot, type ChangeGroup, type ChangeT
 
 type GameTab = 'collection' | 'gotm' | 'gotc' | 'stats' | 'timeline' | 'gallery' | 'map' | 'consoles' | 'blog' | 'casting-a-dream';
 /** Collections that aren't games. Each one is public/data/<id>.json. */
+/** The owner's PriceCharting collection, linked from the header. */
+const PRICECHARTING_URL = 'https://www.pricecharting.com/offers?seller=dv636ks6lcmgdlb7pcyszkqvi4&status=collection';
+
 const OTHER_COLLECTIONS = [
   { id: 'dylan-dog', label: 'Dylan Dog' },
   { id: 'vinyl', label: 'Vinyl' },
@@ -329,6 +332,9 @@ export default function App() {
               <span><b>{stats.completed}</b> completed</span>
               <span><b>{stats.platforms}</b> platforms</span>
               <span><b>{stats.avg.toFixed(1)}</b> avg rating</span>
+              <a className="stats-link" href={PRICECHARTING_URL} target="_blank" rel="noreferrer">
+                PriceCharting ↗
+              </a>
             </p>
           </div>
         )}

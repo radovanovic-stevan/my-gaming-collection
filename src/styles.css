@@ -121,6 +121,16 @@ h2 {
   color: var(--fg);
 }
 
+.stats-link {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.stats-link:hover {
+  text-decoration: underline;
+}
+
 .toolbar {
   position: sticky;
   top: 0;
