@@ -6,6 +6,7 @@ import { acquiredSortKey, formatDate, imageUrl, platformHue } from '../lib/forma
 import { ImageManager, type ImageOps } from './ImageManager';
 import { VinylDetail } from './VinylDetail';
 import { VinylForm } from './VinylForm';
+import { VinylListening } from './VinylListening';
 
 interface Props {
   records: Vinyl[];
@@ -131,6 +132,7 @@ export function VinylView({ records, editable, onChange, focus, onFocused }: Pro
 
   return (
     <section className="awards vinyl">
+      <VinylListening records={records} />
       <div className="toolbar">
         <input className="search" type="search" placeholder="Search artists and albums…" value={search} onChange={(e) => setSearch(e.target.value)} />
         <label className="vinyl-sort">

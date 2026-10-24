@@ -1,8 +1,9 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import type { Game, Query } from '../types';
 import { yearOf } from '../lib/query';
 import { NOT_GENRES } from '../lib/allTime';
 import { formatPlaytime } from '../lib/format';
+import { useTip, type Bind } from '../lib/tip';
 
 interface Props {
   games: Game[];
@@ -24,35 +25,6 @@ function groupBy<T>(items: T[], key: (item: T) => string): [string, T[]][] {
 
 /** Statuses other than Completed and Not Completed share one grey segment. */
 const OTHER_STATUSES = ['Null', 'Unplayable', 'Unrateable'];
-
-// --- Tooltip -------------------------------------------------------------------------
-
-type Tip = { x: number; y: number; lines: string[] } | null;
-
-/** One tooltip for the whole tab: follows the pointer, or sits above a bar focused with the keyboard. */
-function useTip() {
-  const [tip, setTip] = useState<Tip>(null);
-  const bind = (lines: string[]) => ({
-    onPointerMove: (e: React.PointerEvent) => e.pointerType === 'mouse' && setTip({ x: e.clientX, y: e.clientY, lines }),
-    onPointerLeave: () => setTip(null),
-    onFocus: (e: React.FocusEvent<HTMLElement>) => {
-      const r = e.currentTarget.getBoundingClientRect();
-      setTip({ x: r.left + r.width / 2, y: r.top, lines });
-    },
-    onBlur: () => setTip(null),
-  });
-  const node = tip && (
-    <div className="sv-tip" style={{ left: Math.min(Math.max(tip.x, 110), innerWidth - 110), top: tip.y }} role="presentation">
-      <b>{tip.lines[0]}</b>
-      {tip.lines.slice(1).map((l, i) => (
-        <span key={i}>{l}</span>
-      ))}
-    </div>
-  );
-  return { bind, node };
-}
-
-type Bind = ReturnType<typeof useTip>['bind'];
 
 // --- Charts ----------------------------------------------------------------------------
 

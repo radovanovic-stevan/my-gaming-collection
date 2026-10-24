@@ -2762,6 +2762,95 @@ button.issue:hover {
   list-style: none;
 }
 
+/* Listening: tiles and a calendar of the days records were played, above the records. */
+.vinyl-listening {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.vinyl-tile-text {
+  overflow: hidden;
+  font-size: 20px;
+  line-height: 1.4;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Scrolls sideways on its own when the year doesn't fit, so the page never does. */
+.listen-calendar-scroll {
+  overflow-x: auto;
+  padding-bottom: 2px;
+}
+
+.listen-calendar {
+  display: grid;
+  /* Squares grow to fill the card, but no smaller than 10px; below that the calendar scrolls. */
+  grid-template-columns: auto repeat(var(--weeks), minmax(10px, 1fr));
+  gap: 3px;
+  /* Room for the day names and 10px squares. */
+  min-width: calc(30px + var(--weeks) * 13px);
+  font-size: 10px;
+  color: var(--fg-muted);
+}
+
+.lc-month {
+  grid-row: 1;
+  white-space: nowrap;
+  font-size: 11px;
+}
+
+.lc-weekday {
+  grid-column: 1;
+  align-self: center;
+  margin-right: 4px;
+  line-height: 1;
+}
+
+.lc-day {
+  display: inline-block;
+  aspect-ratio: 1;
+  border-radius: 3px;
+}
+
+.lc-0 { background: var(--bg-sunk); }
+.lc-1 { background: color-mix(in srgb, var(--accent) 30%, var(--bg-sunk)); }
+.lc-2 { background: color-mix(in srgb, var(--accent) 55%, var(--bg-sunk)); }
+.lc-3 { background: color-mix(in srgb, var(--accent) 80%, var(--bg-sunk)); }
+.lc-4 { background: var(--accent); }
+
+.lc-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px 16px;
+  margin-top: 10px;
+}
+
+.lc-foot .sv-note {
+  margin: 0;
+}
+
+.lc-legend {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 11px;
+}
+
+.lc-legend .lc-day {
+  width: 11px;
+}
+
+.lc-legend .lc-day:first-child {
+  margin-left: 3px;
+}
+
+.lc-legend .lc-day:last-of-type {
+  margin-right: 3px;
+}
+
 .vinyl-detail {
   grid-template-columns: 360px minmax(0, 1fr);
   width: min(900px, 100%);
