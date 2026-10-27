@@ -2,13 +2,12 @@ import { useMemo, useState } from 'react';
 import type { Game } from '../types';
 import { acquiredSortKey, imageUrl } from '../lib/format';
 import { PlatformBadge, RatingBadge } from './Badges';
-import { toIso, daysBetween } from './ActivityCalendar';
 
 /** Guesses before the cover is shown whole. */
 const TRIES = 6;
-/** The first daily puzzle; puzzle numbers count from here. */
-const FIRST_DAY = '2026-10-27';
-const STORE = 'guess-the-game';
+const STORE = 'guess-the-game-stats';
+/** Covers from the latest rounds, not picked again for a while. */
+const RECENT = 50;
 /** How blurred and how zoomed the cover is after each wrong guess. */
 const STEPS = [
   { blur: 9, zoom: 2.4 },
@@ -22,41 +21,31 @@ const STEPS = [
 const norm = (s: string) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
 const yearOf = (g: Game) => acquiredSortKey(g.acquired).slice(0, 4);
 
-/** A number from a string that stays the same for the same string. */
-function hash(s: string) {
-  let h = 2166136261;
-  for (const c of s) h = Math.imul(h ^ c.charCodeAt(0), 16777619);
-  return h >>> 0;
-}
+type Round = { id: number; guesses: number[]; won: boolean };
+type Stats = { played: number; won: number; streak: number; best: number; recent: number[] };
+const NO_STATS: Stats = { played: 0, won: 0, streak: 0, best: 0, recent: [] };
 
-type Day = { guesses: number[]; won: boolean };
-type Saved = Record<string, Day>;
-
-// Saved results live only in this browser; without storage the game still plays, it just forgets.
-function load(): Saved {
+// Stats live only in this browser; without storage the game still plays, it just forgets.
+function load(): Stats {
   try {
-    return JSON.parse(localStorage.getItem(STORE) ?? '{}') as Saved;
+    return { ...NO_STATS, ...(JSON.parse(localStorage.getItem(STORE) ?? '{}') as Partial<Stats>) };
   } catch {
-    return {};
+    return NO_STATS;
   }
 }
-function save(all: Saved) {
+function save(stats: Stats) {
   try {
-    localStorage.setItem(STORE, JSON.stringify(all));
+    localStorage.setItem(STORE, JSON.stringify(stats));
   } catch {
     /* nothing to do */
   }
 }
 
-/** Days won in a row, up to today or yesterday. */
-function streak(all: Saved, today: string) {
-  let day = all[today]?.won ? today : toIso(new Date(new Date(`${today}T12:00:00`).getTime() - 86_400_000));
-  let n = 0;
-  while (all[day]?.won) {
-    n++;
-    day = toIso(new Date(new Date(`${day}T12:00:00`).getTime() - 86_400_000));
-  }
-  return n;
+/** A random cover, skipping the ones played lately while there are others. */
+function pick(pool: Game[], recent: number[]): Round {
+  const fresh = pool.filter((g) => !recent.includes(g.id));
+  const from = fresh.length ? fresh : pool;
+  return { id: from[Math.floor(Math.random() * from.length)].id, guesses: [], won: false };
 }
 
 function GuessRow({ guess, answer }: { guess: Game; answer: Game }) {
@@ -132,80 +121,70 @@ function GuessInput({ games, onGuess, disabled }: { games: Game[]; onGuess: (g: 
   );
 }
 
-/** A daily puzzle: a cover from the collection, blurred and zoomed in, clearer with every wrong guess. */
+/** A cover from the collection, blurred and zoomed in, clearer with every wrong guess. Play as many as you like. */
 export default function GuessView({ games, onOpen }: { games: Game[]; onOpen: (game: Game) => void }) {
-  const today = toIso(new Date());
-  const number = daysBetween(FIRST_DAY, today) + 1;
-  const pool = useMemo(() => games.filter((g) => g.cover && !g.condition.includes('Built-in Console')).sort((a, b) => a.id - b.id), [games]);
+  const pool = useMemo(() => games.filter((g) => g.cover && !g.condition.includes('Built-in Console')), [games]);
   const byId = useMemo(() => new Map(games.map((g) => [g.id, g])), [games]);
+  const [stats, setStats] = useState<Stats>(load);
+  const [round, setRound] = useState<Round | null>(() => (pool.length ? pick(pool, stats.recent) : null));
+  // Counts each round once, so the cover changes without replaying the reveal.
+  const [rounds, setRounds] = useState(0);
 
-  const [saved, setSaved] = useState<Saved>(load);
-  // Practice rounds are a random cover each, and aren't saved.
-  const [practice, setPractice] = useState<{ id: number; day: Day } | null>(null);
-  const [copied, setCopied] = useState(false);
+  const answer = round && byId.get(round.id);
+  if (!round || !answer) return <div className="empty">No covers to guess yet.</div>;
 
-  const daily = pool.length ? pool[hash(today) % pool.length] : null;
-  const answer = practice ? byId.get(practice.id)! : daily;
-  const day = practice ? practice.day : (saved[today] ?? { guesses: [], won: false });
-  const over = day.won || day.guesses.length >= TRIES;
-  if (!answer) return <div className="empty">No covers to guess yet.</div>;
+  const over = round.won || round.guesses.length >= TRIES;
+  const step = over ? null : STEPS[Math.min(round.guesses.length, STEPS.length - 1)];
+  // Where the zoom points: somewhere near the middle, different for each cover.
+  const origin = `${30 + ((answer.id * 37) % 41)}% ${30 + ((answer.id * 53) % 41)}%`;
 
-  const guesses = day.guesses.map((id) => byId.get(id)).filter((g): g is Game => !!g);
-  const step = over ? null : STEPS[Math.min(day.guesses.length, STEPS.length - 1)];
-  // Where the zoom points: somewhere near the middle, the same for the same cover.
-  const seed = hash(`${answer.id}`);
-  const origin = `${30 + (seed % 41)}% ${30 + ((seed >> 8) % 41)}%`;
-
-  const record = (next: Day) => {
-    if (practice) return setPractice({ ...practice, day: next });
-    const all = { ...saved, [today]: next };
-    setSaved(all);
-    save(all);
+  const record = (next: Round) => {
+    setRound(next);
+    if (!(next.won || next.guesses.length >= TRIES)) return;
+    const streak = next.won ? stats.streak + 1 : 0;
+    const updated = {
+      played: stats.played + 1,
+      won: stats.won + Number(next.won),
+      streak,
+      best: Math.max(stats.best, streak),
+      recent: [next.id, ...stats.recent.filter((id) => id !== next.id)].slice(0, RECENT),
+    };
+    setStats(updated);
+    save(updated);
   };
   const guess = (g: Game) => {
-    if (over || day.guesses.includes(g.id)) return;
-    record({ guesses: [...day.guesses, g.id], won: norm(g.title) === norm(answer.title) });
+    if (over || round.guesses.includes(g.id)) return;
+    record({ ...round, guesses: [...round.guesses, g.id], won: norm(g.title) === norm(answer.title) });
   };
   // A skip counts as a wrong guess; -1 is no game.
-  const skip = () => !over && record({ guesses: [...day.guesses, -1], won: false });
-
-  const played = Object.values(saved).filter((d) => d.won || d.guesses.length >= TRIES);
-  const won = played.filter((d) => d.won).length;
-
-  const share = () => {
-    const squares = day.guesses.map((id) => {
-      const g = byId.get(id);
-      if (!g) return '⬛';
-      if (norm(g.title) === norm(answer.title)) return '🟩';
-      return g.platform === answer.platform ? '🟨' : '🟥';
-    });
-    const text = `Guess the Game #${number} ${day.won ? day.guesses.length : 'X'}/${TRIES}\n${squares.join('')}\n${location.origin}${location.pathname}?tab=guess`;
-    navigator.clipboard?.writeText(text).then(
-      () => (setCopied(true), setTimeout(() => setCopied(false), 2000)),
-      () => undefined,
-    );
+  const skip = () => !over && record({ ...round, guesses: [...round.guesses, -1] });
+  const next = () => {
+    setRound(pick(pool, stats.recent));
+    setRounds((n) => n + 1);
   };
+
+  const guesses = round.guesses.map((id) => byId.get(id)).filter((g): g is Game => !!g);
 
   return (
     <div className="guess">
       <header className="gg-head">
         <div>
-          <span className="eyebrow">{practice ? 'Practice round' : `Daily puzzle #${number}`}</span>
           <h2>Guess the Game</h2>
-          <p className="muted">
-            A cover from the collection, blurred and zoomed in. Every wrong guess shows more. {TRIES} tries.
-          </p>
+          <p className="muted">A cover from the collection, blurred and zoomed in. Every wrong guess shows more. {TRIES} tries.</p>
         </div>
-        {!practice && played.length > 0 && (
+        {stats.played > 0 && (
           <div className="gg-stats">
             <span>
-              <b>{played.length}</b> played
+              <b>{stats.played}</b> played
             </span>
             <span>
-              <b>{Math.round((won / played.length) * 100)}%</b> won
+              <b>{Math.round((stats.won / stats.played) * 100)}%</b> won
             </span>
             <span>
-              <b>{streak(saved, today)}</b> streak
+              <b>{stats.streak}</b> streak
+            </span>
+            <span>
+              <b>{stats.best}</b> best
             </span>
           </div>
         )}
@@ -213,7 +192,9 @@ export default function GuessView({ games, onOpen }: { games: Game[]; onOpen: (g
 
       <div className="gg-main">
         <div className="gg-cover" aria-label={over ? `The cover of ${answer.title}` : 'A blurred, zoomed-in cover'} role="img">
+          {/* A new element for each round, so a new cover starts blurred instead of easing in from the last reveal. */}
           <img
+            key={rounds}
             src={imageUrl(answer.cover!)}
             alt=""
             draggable={false}
@@ -223,8 +204,8 @@ export default function GuessView({ games, onOpen }: { games: Game[]; onOpen: (g
 
         <div className="gg-side">
           {over ? (
-            <div className={`gg-result ${day.won ? 'gg-won' : 'gg-lost'}`}>
-              <span className="eyebrow">{day.won ? `Got it in ${day.guesses.length}` : 'Out of tries'}</span>
+            <div className={`gg-result ${round.won ? 'gg-won' : 'gg-lost'}`}>
+              <span className="eyebrow">{round.won ? `Got it in ${round.guesses.length}` : 'Out of tries'}</span>
               <button className="gg-answer" onClick={() => onOpen(answer)}>
                 {answer.title}
               </button>
@@ -234,21 +215,10 @@ export default function GuessView({ games, onOpen }: { games: Game[]; onOpen: (g
                 {yearOf(answer) && <span className="muted">acquired {yearOf(answer)}</span>}
               </span>
               <div className="gg-actions">
-                {!practice && (
-                  <button className="btn primary" onClick={share}>
-                    {copied ? 'Copied' : 'Share result'}
-                  </button>
-                )}
-                <button className="btn" onClick={() => setPractice({ id: pool[Math.floor(Math.random() * pool.length)].id, day: { guesses: [], won: false } })}>
-                  {practice ? 'Another one' : 'Practice round'}
+                <button className="btn primary" onClick={next} autoFocus>
+                  Next cover
                 </button>
-                {practice && (
-                  <button className="btn" onClick={() => setPractice(null)}>
-                    Back to today's
-                  </button>
-                )}
               </div>
-              {!practice && <p className="muted gg-next">A new cover tomorrow.</p>}
             </div>
           ) : (
             <>
@@ -259,14 +229,14 @@ export default function GuessView({ games, onOpen }: { games: Game[]; onOpen: (g
                 </button>
               </div>
               <p className="muted gg-left">
-                {TRIES - day.guesses.length} of {TRIES} tries left. Any platform's copy counts.
+                {TRIES - round.guesses.length} of {TRIES} tries left. Any platform's copy counts.
               </p>
             </>
           )}
 
-          {day.guesses.length > 0 && (
+          {round.guesses.length > 0 && (
             <ol className="gg-rows">
-              {day.guesses.map((id, i) => {
+              {round.guesses.map((id, i) => {
                 const g = byId.get(id);
                 return g ? (
                   <GuessRow key={i} guess={g} answer={answer} />

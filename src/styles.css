@@ -3898,8 +3898,7 @@ button.sv-bar-row:hover {
 }
 
 .gg-left,
-.gg-legend,
-.gg-next {
+.gg-legend {
   margin: 0;
   font-size: 12.5px;
 }
