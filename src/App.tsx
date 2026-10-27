@@ -1,6 +1,6 @@
 import { Suspense, lazy, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { BlogPost, CastingADream, ChecklistCollection, Game, GalleryEntry, GotcData, GameConsole, GotmMonth, Query, SortKey, Vinyl } from './types';
-import { DEFAULT_QUERY, SORT_LABELS, applyQuery, paramsToQuery, queryToParams } from './lib/query';
+import { DEFAULT_QUERY, SORT_LABELS, applyQuery, lastPlayedKeys, paramsToQuery, queryToParams } from './lib/query';
 import { Filters } from './components/Filters';
 import { SortBuilder } from './components/SortBuilder';
 import { GridView } from './components/GridView';
@@ -207,21 +207,11 @@ export default function App() {
 
   const link = useMemo(() => createLinker(games ?? []), [games]);
 
-  /** Each game's latest Game of the Month entry (yyyy-mm), by game id. */
-  const lastPlayed = useMemo(() => {
-    const out = new Map<number, string>();
-    for (const m of gotm.data ?? []) {
-      for (const ref of [m.gameOfTheMonth, ...m.played]) {
-        const game = link(ref);
-        if (game && m.month > (out.get(game.id) ?? '')) out.set(game.id, m.month);
-      }
-    }
-    return out;
-  }, [gotm.data, link]);
+  const lastPlayed = useMemo(() => lastPlayedKeys(gotm.data ?? [], link), [gotm.data, link]);
 
   const patch = useCallback((p: Partial<Query>) => setQuery((q) => ({ ...q, ...p })), []);
 
-  const filtered = useMemo(() => (games ? applyQuery(games, query) : []), [games, query]);
+  const filtered = useMemo(() => (games ? applyQuery(games, query, lastPlayed) : []), [games, query, lastPlayed]);
   // In the order they're shown, so a game's Previous and Next follow the view.
   const results = useMemo(() => (query.view === 'shelf' && games ? shelfOrder(filtered, games) : filtered), [filtered, games, query.view]);
 
@@ -563,7 +553,7 @@ export default function App() {
       {modal?.kind === 'detail' && openGame && (
         <GameDetail
           game={openGame}
-          lastPlayed={lastPlayed.get(openGame.id)}
+          lastPlayed={lastPlayed.get(openGame.id)?.slice(0, 7)}
           onClose={closeModal}
           onShowLauncherTrophies={
             launcherTrophies.has(openGame.id)

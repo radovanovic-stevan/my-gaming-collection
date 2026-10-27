@@ -47,6 +47,7 @@ export type SortKey =
   | 'playtime'
   | 'timesCompleted'
   | 'percent'
+  | 'lastPlayed'
   | 'id';
 
 export interface SortLevel {

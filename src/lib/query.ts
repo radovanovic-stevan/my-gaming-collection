@@ -1,4 +1,4 @@
-import type { Game, Query, SortKey, SortLevel } from '../types';
+import type { Game, GotmMonth, PlayedGame, Query, SortKey, SortLevel } from '../types';
 
 export const SORT_LABELS: Record<SortKey, string> = {
   title: 'Title',
@@ -10,6 +10,7 @@ export const SORT_LABELS: Record<SortKey, string> = {
   playtime: 'Playtime',
   timesCompleted: 'Times completed',
   percent: '% complete',
+  lastPlayed: 'Last played',
   id: 'Collection #',
 };
 
@@ -61,8 +62,29 @@ export const yearList = (value: string | null) => {
   return y ? [y] : [];
 };
 
-function sortValue(g: Game, key: SortKey): string | number | null {
+/** Sortable keys (yyyy-mm#nnn) by game id, from `lastPlayedKeys`. */
+export type LastPlayed = Map<number, string>;
+
+/**
+ * Each game's latest Game of the Month appearance as a sortable key: the month, then its place in that month. The
+ * Game of the Month counts as played before the month's other games, and later games in `played` more recently.
+ */
+export function lastPlayedKeys(months: GotmMonth[], link: (ref: PlayedGame) => Game | null): LastPlayed {
+  const out: LastPlayed = new Map();
+  for (const m of months) {
+    [m.gameOfTheMonth, ...m.played].forEach((ref, i) => {
+      const game = ref && link(ref);
+      const key = `${m.month}#${String(i).padStart(3, '0')}`;
+      if (game && key > (out.get(game.id) ?? '')) out.set(game.id, key);
+    });
+  }
+  return out;
+}
+
+function sortValue(g: Game, key: SortKey, lastPlayed?: LastPlayed): string | number | null {
   switch (key) {
+    case 'lastPlayed':
+      return lastPlayed?.get(g.id) ?? null;
     case 'acquired':
     case 'completed':
       return dateKey(g[key]);
@@ -75,10 +97,10 @@ function sortValue(g: Game, key: SortKey): string | number | null {
   }
 }
 
-function compare(a: Game, b: Game, levels: SortLevel[]): number {
+function compare(a: Game, b: Game, levels: SortLevel[], lastPlayed?: LastPlayed): number {
   for (const { key, dir } of levels) {
-    const va = sortValue(a, key);
-    const vb = sortValue(b, key);
+    const va = sortValue(a, key, lastPlayed);
+    const vb = sortValue(b, key, lastPlayed);
     if (va === vb) continue;
     // Missing values always go last, whatever the direction.
     if (va === null) return 1;
@@ -105,7 +127,7 @@ function matchesSearch(g: Game, terms: string[]): boolean {
 
 const anyOf = (selected: string[], values: string[]) => selected.length === 0 || selected.some((s) => values.includes(s));
 
-export function applyQuery(games: Game[], q: Query): Game[] {
+export function applyQuery(games: Game[], q: Query, lastPlayed?: LastPlayed): Game[] {
   const terms = normalize(q.search).split(' ').filter(Boolean);
   return games
     .filter(
@@ -123,7 +145,7 @@ export function applyQuery(games: Game[], q: Query): Game[] {
         (q.ratingMax === null || (g.rating !== null && g.rating <= q.ratingMax)) &&
         (q.cover === 'any' || (q.cover === 'with') === Boolean(g.cover)),
     )
-    .sort((a, b) => compare(a, b, q.sort));
+    .sort((a, b) => compare(a, b, q.sort, lastPlayed));
 }
 
 /** Distinct values with counts, most common first. */
