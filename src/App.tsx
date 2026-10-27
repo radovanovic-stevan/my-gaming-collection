@@ -22,12 +22,13 @@ import { WhatsNew } from './components/WhatsNew';
 const MapView = lazy(() => import('./components/MapView'));
 const StatsView = lazy(() => import('./components/StatsView'));
 const TimelineView = lazy(() => import('./components/TimelineView'));
+const GuessView = lazy(() => import('./components/GuessView'));
 import { api, detectEditing } from './lib/api';
 import { createLinker } from './lib/links';
 import { matchLauncherGames, withLauncherPlaytime } from './lib/castingADream';
 import { findChanges, loadSnapshot, saveSnapshot, type ChangeGroup, type ChangeTab } from './lib/whatsNew';
 
-type GameTab = 'collection' | 'gotm' | 'gotc' | 'stats' | 'timeline' | 'gallery' | 'map' | 'consoles' | 'blog' | 'casting-a-dream';
+type GameTab = 'collection' | 'gotm' | 'gotc' | 'stats' | 'timeline' | 'gallery' | 'map' | 'consoles' | 'blog' | 'casting-a-dream' | 'guess';
 /** Collections that aren't games. Each one is public/data/<id>.json. */
 /** The owner's PriceCharting collection, linked from the header. */
 const PRICECHARTING_URL = 'https://www.pricecharting.com/offers?seller=dv636ks6lcmgdlb7pcyszkqvi4&status=collection';
@@ -50,6 +51,7 @@ const TABS: { id: GameTab; label: string }[] = [
   { id: 'consoles', label: 'Consoles' },
   { id: 'blog', label: 'Blog' },
   { id: 'casting-a-dream', label: 'Casting a Dream' },
+  { id: 'guess', label: 'Guess' },
 ];
 const tabLabel = (t: Tab) => [...TABS, ...OTHER_COLLECTIONS].find((x) => x.id === t)!.label;
 const tabFromUrl = (): Tab => {
@@ -482,6 +484,12 @@ export default function App() {
             {(gotm.error ?? gotc.error ?? gallery.error ?? blog.error) ? `Couldn't load the timeline: ${gotm.error ?? gotc.error ?? gallery.error ?? blog.error}` : 'Loading…'}
           </div>
         ))}
+
+      {tab === 'guess' && (
+        <Suspense fallback={<div className="empty">Loading…</div>}>
+          <GuessView games={games} onOpen={(g) => showDetail(g.id)} />
+        </Suspense>
+      )}
 
       {tab === 'map' && (
         <Suspense fallback={<div className="empty">Loading map…</div>}>
