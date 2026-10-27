@@ -1,21 +1,11 @@
-import { useLayoutEffect, useMemo, useRef } from 'react';
+import { useMemo } from 'react';
 import type { Vinyl } from '../types';
 import { formatDate } from '../lib/format';
-import { useTip } from '../lib/tip';
+import { ActivityCalendar, daysBetween, toIso } from './ActivityCalendar';
 
 const ISO = /^\d{4}-\d{2}-\d{2}$/;
-const DAY = 86_400_000;
-const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-/** The calendar shows the past year, a week to a column. */
-const WEEKS = 53;
 
 const plural = (n: number, one: string, many = `${one}s`) => `${n} ${n === 1 ? one : many}`;
-/** yyyy-mm-dd in local time. */
-const toIso = (d: Date) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
-/** Dates at local noon, so adding days never trips over a clock change. */
-const fromIso = (iso: string) => new Date(`${iso}T12:00:00`);
-const addDays = (iso: string, n: number) => toIso(new Date(fromIso(iso).getTime() + n * DAY));
-const daysBetween = (a: string, b: string) => Math.round((fromIso(b).getTime() - fromIso(a).getTime()) / DAY);
 
 type Play = { record: Vinyl; side: string };
 
@@ -38,14 +28,8 @@ function top<T>(items: T[], key: (item: T) => string): [string, number] | null {
   return [...counts].reduce<[string, number] | null>((a, b) => (!a || b[1] > a[1] ? b : a), null);
 }
 
-/** Shade for a day: 0 for none, then 1–4 as more sides were played. */
-const level = (sides: number) => (sides === 0 ? 0 : sides === 1 ? 1 : sides === 2 ? 2 : sides <= 4 ? 3 : 4);
-
 /** A calendar of the days records were played, with streaks and favourites; nothing until a listen has a date. */
 export function VinylListening({ records }: { records: Vinyl[] }) {
-  const { bind, node: tip } = useTip();
-  const scroller = useRef<HTMLDivElement>(null);
-
   const s = useMemo(() => {
     const today = toIso(new Date());
     const byDay = new Map<string, Play[]>();
@@ -58,27 +42,12 @@ export function VinylListening({ records }: { records: Vinyl[] }) {
     const days = [...byDay.keys()].sort();
     if (!days.length) return null;
 
-    // Weeks run Monday to Sunday; the last column is this week.
-    const lastMonday = addDays(today, -((fromIso(today).getDay() + 6) % 7));
-    const firstMonday = addDays(lastMonday, -7 * (WEEKS - 1));
-    const weeks = Array.from({ length: WEEKS }, (_, w) => Array.from({ length: 7 }, (_, d) => addDays(firstMonday, w * 7 + d)));
-
-    // A month's name goes over the week its 1st falls in, if there's room after the previous name.
-    const monthLabels: { week: number; label: string }[] = [];
-    weeks.forEach((week, w) => {
-      const first = week.find((d) => d.endsWith('-01'));
-      const prev = monthLabels[monthLabels.length - 1];
-      if (first && (!prev || w - prev.week >= 3)) monthLabels.push({ week: w, label: MONTHS[Number(first.slice(5, 7)) - 1] });
-    });
-
     const plays = [...byDay.values()].flat();
     const all = records.flatMap((record) => record.listens.map((l) => ({ record, side: l.side })));
     const topRecord = top(all, (p) => String(p.record.id));
     return {
       today,
       byDay,
-      weeks,
-      monthLabels,
       days,
       undated,
       dated: plays.length,
@@ -89,14 +58,8 @@ export function VinylListening({ records }: { records: Vinyl[] }) {
     };
   }, [records]);
 
-  // Start scrolled to the latest weeks when the calendar is wider than the screen.
-  useLayoutEffect(() => {
-    if (scroller.current) scroller.current.scrollLeft = scroller.current.scrollWidth;
-  }, [s?.weeks.length]);
-
   if (!s) return null;
 
-  const since = s.weeks[0][0];
   return (
     <section className="vinyl-listening" aria-label="Listening">
       <div className="sv-tiles">
@@ -133,56 +96,25 @@ export function VinylListening({ records }: { records: Vinyl[] }) {
         )}
       </div>
 
-      <div className="sv-card listen-calendar-card">
-        <h2 className="section-title">Listening calendar</h2>
-        <div className="listen-calendar-scroll" ref={scroller}>
-          {/* One grid: month names on top, day names on the left, then a column of days per week. */}
-          <div
-            className="listen-calendar"
-            style={{ '--weeks': s.weeks.length } as React.CSSProperties}
-            role="img"
-            aria-label={`${plural(s.dated, 'side')} played on ${plural(s.days.length, 'day')} since ${formatDate(since)}`}
-          >
-            {s.monthLabels.map((m) => (
-              <span key={m.week} className="lc-month" style={{ gridColumn: m.week + 2 }}>
-                {m.label}
-              </span>
-            ))}
-            {['Mon', 'Wed', 'Fri'].map((d, i) => (
-              <span key={d} className="lc-weekday" style={{ gridRow: i * 2 + 2 }}>
-                {d}
-              </span>
-            ))}
-            {s.weeks.map((week, w) =>
-              week.map((day, d) => {
-                const at = { gridColumn: w + 2, gridRow: d + 2 };
-                if (day > s.today) return <span key={day} className="lc-day lc-future" style={at} />;
-                const plays = s.byDay.get(day) ?? [];
-                const lines = [
-                  formatDate(day),
-                  plays.length ? `${plural(plays.length, 'side')} played` : 'Nothing played',
-                  ...plays.map((p) => `${p.record.artist} – ${p.record.title} · Side ${p.side}`),
-                ];
-                return <span key={day} className={`lc-day lc-${level(plays.length)}`} style={at} {...bind(lines)} />;
-              }),
-            )}
-          </div>
-        </div>
-        <div className="lc-foot">
-          <p className="sv-note muted">
+      <ActivityCalendar
+        title="Listening calendar"
+        count={(day) => s.byDay.get(day)?.length ?? 0}
+        describe={(day) => {
+          const plays = s.byDay.get(day) ?? [];
+          return [
+            formatDate(day),
+            plays.length ? `${plural(plays.length, 'side')} played` : 'Nothing played',
+            ...plays.map((p) => `${p.record.artist} – ${p.record.title} · Side ${p.side}`),
+          ];
+        }}
+        label={(since) => `${plural(s.dated, 'side')} played on ${plural(s.days.length, 'day')} since ${formatDate(since)}`}
+        note={
+          <>
             {plural(s.dated, 'side')} on {plural(s.days.length, 'day')}.
             {s.undated > 0 && ` ${plural(s.undated, 'listen')} without a date ${s.undated === 1 ? "isn't" : "aren't"} shown.`}
-          </p>
-          <span className="lc-legend muted" aria-hidden="true">
-            Less
-            {[0, 1, 2, 3, 4].map((l) => (
-              <span key={l} className={`lc-day lc-${l}`} />
-            ))}
-            More
-          </span>
-        </div>
-      </div>
-      {tip}
+          </>
+        }
+      />
     </section>
   );
 }
