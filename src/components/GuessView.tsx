@@ -4,18 +4,14 @@ import { acquiredSortKey, imageUrl } from '../lib/format';
 import { PlatformBadge, RatingBadge } from './Badges';
 
 /** Guesses before the cover is shown whole. */
-const TRIES = 6;
+const TRIES = 2;
 const STORE = 'guess-the-game-stats';
 /** Covers from the latest rounds, not picked again for a while. */
 const RECENT = 50;
 /** How blurred and how zoomed the cover is after each wrong guess. */
 const STEPS = [
-  { blur: 9, zoom: 2.4 },
-  { blur: 7, zoom: 2 },
-  { blur: 5, zoom: 1.7 },
-  { blur: 3.5, zoom: 1.4 },
-  { blur: 2, zoom: 1.2 },
-  { blur: 1, zoom: 1.05 },
+  { blur: 6, zoom: 1.9 },
+  { blur: 2.5, zoom: 1.25 },
 ];
 
 const norm = (s: string) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
@@ -123,7 +119,8 @@ function GuessInput({ games, onGuess, disabled }: { games: Game[]; onGuess: (g: 
 
 /** A cover from the collection, blurred and zoomed in, clearer with every wrong guess. Play as many as you like. */
 export default function GuessView({ games, onOpen }: { games: Game[]; onOpen: (game: Game) => void }) {
-  const pool = useMemo(() => games.filter((g) => g.cover && !g.condition.includes('Built-in Console')), [games]);
+  // Only copies that came with their own cover art; a stand-in picture would make the blur unguessable.
+  const pool = useMemo(() => games.filter((g) => g.cover && (g.condition.includes('Cover') || g.condition.includes('Cover*'))), [games]);
   const byId = useMemo(() => new Map(games.map((g) => [g.id, g])), [games]);
   const [stats, setStats] = useState<Stats>(load);
   const [round, setRound] = useState<Round | null>(() => (pool.length ? pick(pool, stats.recent) : null));
