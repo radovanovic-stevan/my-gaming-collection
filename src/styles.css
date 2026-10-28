@@ -3968,6 +3968,17 @@ button.sv-bar-row:hover {
   border-left-color: #d14343;
 }
 
+.gg-answers {
+  display: grid;
+  gap: 2px;
+  justify-items: start;
+}
+
+/* A compilation lists every game it holds, so the titles share the billing and the room. */
+.gg-answers:has(> :nth-child(2)) .gg-answer {
+  font-size: 18px;
+}
+
 .gg-answer {
   justify-self: start;
   padding: 0;

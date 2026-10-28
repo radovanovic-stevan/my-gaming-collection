@@ -10,8 +10,8 @@ const STORE = 'guess-the-game-stats';
 const RECENT = 50;
 /** How blurred and how zoomed the cover is after each wrong guess. */
 const STEPS = [
-  { blur: 6, zoom: 1.9 },
-  { blur: 2.5, zoom: 1.25 },
+  { blur: 9, zoom: 2.4 },
+  { blur: 7, zoom: 2 },
 ];
 
 const norm = (s: string) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
@@ -37,15 +37,15 @@ function save(stats: Stats) {
   }
 }
 
-/** A random cover, skipping the ones played lately while there are others. */
+/** A random cover, skipping the ones played lately while there are others. Compilations share a cover, so go by cover, not by id. */
 function pick(pool: Game[], recent: number[]): Round {
-  const fresh = pool.filter((g) => !recent.includes(g.id));
+  const seen = new Set(pool.filter((g) => recent.includes(g.id)).map((g) => g.cover));
+  const fresh = pool.filter((g) => !seen.has(g.cover));
   const from = fresh.length ? fresh : pool;
   return { id: from[Math.floor(Math.random() * from.length)].id, guesses: [], won: false };
 }
 
-function GuessRow({ guess, answer }: { guess: Game; answer: Game }) {
-  const right = norm(guess.title) === norm(answer.title);
+function GuessRow({ guess, answer, right }: { guess: Game; answer: Game; right: boolean }) {
   const samePlatform = guess.platform === answer.platform;
   const gy = yearOf(guess);
   const ay = yearOf(answer);
@@ -122,6 +122,12 @@ export default function GuessView({ games, onOpen }: { games: Game[]; onOpen: (g
   // Only copies that came with their own cover art; a stand-in picture would make the blur unguessable.
   const pool = useMemo(() => games.filter((g) => g.cover && (g.condition.includes('Cover') || g.condition.includes('Cover*'))), [games]);
   const byId = useMemo(() => new Map(games.map((g) => [g.id, g])), [games]);
+  // One photo can hold a compilation's whole line-up, and nothing in it says which game is meant.
+  const byCover = useMemo(() => {
+    const m = new Map<string, Game[]>();
+    for (const g of pool) m.set(g.cover!, [...(m.get(g.cover!) ?? []), g]);
+    return m;
+  }, [pool]);
   const [stats, setStats] = useState<Stats>(load);
   const [round, setRound] = useState<Round | null>(() => (pool.length ? pick(pool, stats.recent) : null));
   // Counts each round once, so the cover changes without replaying the reveal.
@@ -129,6 +135,10 @@ export default function GuessView({ games, onOpen }: { games: Game[]; onOpen: (g
 
   const answer = round && byId.get(round.id);
   if (!round || !answer) return <div className="empty">No covers to guess yet.</div>;
+
+  // Every game on the cover is an answer; any of them wins the round.
+  const answers = byCover.get(answer.cover!) ?? [answer];
+  const isRight = (g: Game) => answers.some((a) => norm(g.title) === norm(a.title));
 
   const over = round.won || round.guesses.length >= TRIES;
   const step = over ? null : STEPS[Math.min(round.guesses.length, STEPS.length - 1)];
@@ -151,7 +161,7 @@ export default function GuessView({ games, onOpen }: { games: Game[]; onOpen: (g
   };
   const guess = (g: Game) => {
     if (over || round.guesses.includes(g.id)) return;
-    record({ ...round, guesses: [...round.guesses, g.id], won: norm(g.title) === norm(answer.title) });
+    record({ ...round, guesses: [...round.guesses, g.id], won: isRight(g) });
   };
   // A skip counts as a wrong guess; -1 is no game.
   const skip = () => !over && record({ ...round, guesses: [...round.guesses, -1] });
@@ -203,14 +213,19 @@ export default function GuessView({ games, onOpen }: { games: Game[]; onOpen: (g
           {over ? (
             <div className={`gg-result ${round.won ? 'gg-won' : 'gg-lost'}`}>
               <span className="eyebrow">{round.won ? `Got it in ${round.guesses.length}` : 'Out of tries'}</span>
-              <button className="gg-answer" onClick={() => onOpen(answer)}>
-                {answer.title}
-              </button>
+              <div className="gg-answers">
+                {answers.map((g) => (
+                  <button key={g.id} className="gg-answer" onClick={() => onOpen(g)}>
+                    {g.title}
+                  </button>
+                ))}
+              </div>
               <span className="gg-answer-meta">
                 <PlatformBadge platform={answer.platform} />
-                <RatingBadge rating={answer.rating} />
+                {answers.length === 1 && <RatingBadge rating={answer.rating} />}
                 {yearOf(answer) && <span className="muted">acquired {yearOf(answer)}</span>}
               </span>
+              {answers.length > 1 && <p className="muted gg-legend">One cover, {answers.length} games — any of them counted.</p>}
               <div className="gg-actions">
                 <button className="btn primary" onClick={next} autoFocus>
                   Next cover
@@ -236,7 +251,7 @@ export default function GuessView({ games, onOpen }: { games: Game[]; onOpen: (g
               {round.guesses.map((id, i) => {
                 const g = byId.get(id);
                 return g ? (
-                  <GuessRow key={i} guess={g} answer={answer} />
+                  <GuessRow key={i} guess={g} answer={answer} right={isRight(g)} />
                 ) : (
                   <li key={i} className="gg-row gg-skip">
                     Skipped
