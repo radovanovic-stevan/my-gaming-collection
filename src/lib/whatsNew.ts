@@ -1,5 +1,6 @@
 import type { AwardValue, BlogPost, ChecklistCollection, ChecklistItem, Game, GalleryEntry, GameConsole, GotcData, GotmMonth, PlayStatus, PlayedGame, Vinyl, WithImages } from '../types';
 import { formatDate, formatMonthYear, formatPlaytime, genreLabel } from './format';
+import { monthPlayed } from './gotm';
 
 /** Everything a visitor can see, as it was published. */
 export interface Snapshot {
@@ -123,7 +124,7 @@ const PLAY_STATUS_WORDS: Record<PlayStatus, string> = {
 };
 
 function gotm(before: GotmMonth[], after: GotmMonth[]): Change[] {
-  const all = (m: GotmMonth) => [m.gameOfTheMonth, ...m.played].filter((g): g is PlayedGame => g !== null);
+  const all = (m: GotmMonth) => monthPlayed(m.gameOfTheMonth, m.played);
   const key = (g: PlayedGame) => `${g.title}|${g.platform}`;
   return diffList(before, after, (m) => m.month, (m, old) => {
     const change: Change = { title: formatMonthYear(m.month), isNew: !old, details: [], itemId: m.month };

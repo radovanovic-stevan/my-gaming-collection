@@ -1,4 +1,5 @@
 import type { Game, GotmMonth, PlayedGame, Query, SortKey, SortLevel } from '../types';
+import { monthPlayed } from './gotm';
 
 export const SORT_LABELS: Record<SortKey, string> = {
   title: 'Title',
@@ -66,13 +67,14 @@ export const yearList = (value: string | null) => {
 export type LastPlayed = Map<number, string>;
 
 /**
- * Each game's latest Game of the Month appearance as a sortable key: the month, then its place in that month. The
- * Game of the Month counts as played before the month's other games, and later games in `played` more recently.
+ * Each game's latest Game of the Month appearance as a sortable key: the month, then its place in that month.
+ * Later games in the month's list count as played more recently; a month that doesn't list its Game of the
+ * Month puts it first.
  */
 export function lastPlayedKeys(months: GotmMonth[], link: (ref: PlayedGame) => Game | null): LastPlayed {
   const out: LastPlayed = new Map();
   for (const m of months) {
-    [m.gameOfTheMonth, ...m.played].forEach((ref, i) => {
+    monthPlayed(m.gameOfTheMonth, m.played).forEach((ref, i) => {
       const game = ref && link(ref);
       const key = `${m.month}#${String(i).padStart(3, '0')}`;
       if (game && key > (out.get(game.id) ?? '')) out.set(game.id, key);

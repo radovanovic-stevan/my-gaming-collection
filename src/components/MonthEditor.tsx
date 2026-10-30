@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import type { Game, GameRef, GotmMonth, PlayStatus } from '../types';
 import { api } from '../lib/api';
+import { monthPlayed } from '../lib/gotm';
 import { GamePicker } from './GamePicker';
 import { PLAY_STATUS } from './GameRefView';
 
@@ -62,7 +63,7 @@ export function MonthEditor({ month, months, games, link, onSaved, onDeleted, on
 
   const filled = rows.filter((r) => r.title.trim());
   const hasGotm = gotm.title.trim() !== '';
-  const completed = [...(hasGotm ? [gotm] : []), ...filled].filter((r) => r.status === 'completed').length;
+  const completed = monthPlayed(hasGotm ? gotm : null, filled).filter((r) => r.status === 'completed').length;
 
   const updateRow = (i: number, patch: Partial<Row>) => setRows((rs) => rs.map((r, j) => (j === i ? { ...r, ...patch } : r)));
   const moveRow = (i: number, d: number) =>

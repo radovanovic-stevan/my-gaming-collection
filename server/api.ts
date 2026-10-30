@@ -18,6 +18,7 @@ import { createHash } from 'node:crypto';
 import { readFile, rename, unlink, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { promisify } from 'node:util';
+import { monthPlayed } from '../src/lib/gotm';
 
 const ROOT = process.cwd();
 const GAMES_FILE = path.join(ROOT, 'public/data/games.json');
@@ -218,8 +219,9 @@ function sanitizeMonth(input: Record<string, unknown>): GotmMonth {
   if (!/^\d{4}-(0[1-9]|1[0-2])$/.test(month)) throw new HttpError(400, 'Month must look like 2026-09');
   const gotm = input.gameOfTheMonth ? played(input.gameOfTheMonth, 'Game of the Month') : null;
   const list = (Array.isArray(input.played) ? input.played : []).map((g, i) => played(g, `Game ${i + 1}`));
-  // Same rule the sheet follows: completed = everything marked completed, including the winner.
-  const completed = [gotm, ...list].filter((g) => g?.status === 'completed').length;
+  // Same rule the sheet follows: completed = everything marked completed, including the winner. A month that
+  // lists its winner among the games played must not count it twice.
+  const completed = monthPlayed(gotm, list).filter((g) => g.status === 'completed').length;
   return { month, gameOfTheMonth: gotm, completed, bought: num(input.bought, 'Bought'), played: list };
 }
 

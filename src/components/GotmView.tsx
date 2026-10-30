@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import type { Game, GameRef, GotmMonth } from '../types';
 import { PLAY_STATUS, RefCover, RefTitle, StatusEmoji } from './GameRefView';
 import { MonthEditor } from './MonthEditor';
+import { monthPlayed, sameRef } from '../lib/gotm';
 import { useFocus } from '../lib/focus';
 
 interface Props {
@@ -44,7 +45,7 @@ export function GotmView({ months, link, onOpen, editable, games, onChange, focu
 
   const totals = useMemo(() => {
     const played = new Set<string>();
-    for (const m of shown) for (const g of [m.gameOfTheMonth, ...m.played]) if (g) played.add(`${g.title}|${g.platform}`);
+    for (const m of shown) for (const g of monthPlayed(m.gameOfTheMonth, m.played)) played.add(`${g.title}|${g.platform}`);
     return {
       completed: shown.reduce((s, m) => s + (m.completed ?? 0), 0),
       bought: shown.reduce((s, m) => s + (m.bought ?? 0), 0),
@@ -106,6 +107,8 @@ export function GotmView({ months, link, onOpen, editable, games, onChange, focu
         {shown.map((m) => {
           const gotm = m.gameOfTheMonth;
           const gotmGame = gotm && link(gotm);
+          // A month may list its Game of the Month among the games played, to place it in the month; the hero shows it.
+          const rest = m.played.filter((g) => !sameRef(g, gotm));
           return (
             <li key={m.month} id={`month-${m.month}`} className="month-card">
               <header className="month-card-head">
@@ -141,9 +144,9 @@ export function GotmView({ months, link, onOpen, editable, games, onChange, focu
                 </div>
               )}
 
-              {m.played.length > 0 && (
+              {rest.length > 0 && (
                 <ul className="played-list">
-                  {m.played.map((g, i) => (
+                  {rest.map((g, i) => (
                     <li key={`${g.title}|${g.platform}|${i}`}>
                       <StatusEmoji status={g.status} />
                       <RefTitle entry={g} game={link(g)} onOpen={onOpen} />

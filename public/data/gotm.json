@@ -1,7 +1,11 @@
 [
  {
   "month": "2026-10",
-  "gameOfTheMonth": null,
+  "gameOfTheMonth": {
+   "title": "Tenchi wo Kurau II - Shokatsu Kōmei Den",
+   "platform": "Famicom",
+   "status": "completed"
+  },
   "completed": 4,
   "bought": null,
   "played": [

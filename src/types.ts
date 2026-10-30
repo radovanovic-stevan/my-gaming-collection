@@ -94,7 +94,10 @@ export interface GotmMonth {
   /** Games completed that month, including the Game of the Month. */
   completed: number | null;
   bought: number | null;
-  /** Other games played that month (the Game of the Month is not repeated here). */
+  /**
+   * The games played that month, in order. From October 2026 the Game of the Month is listed here as well,
+   * where it falls in the month; before that it was left out. Read it through `monthPlayed` in `lib/gotm`.
+   */
   played: PlayedGame[];
 }
 

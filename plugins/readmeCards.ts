@@ -14,6 +14,7 @@ import path from 'node:path';
 import sharp from 'sharp';
 import type { Game, GameConsole, GameRef, GotmMonth, Vinyl } from '../src/types';
 import { createLinker } from '../src/lib/links';
+import { monthPlayed } from '../src/lib/gotm';
 import { band } from '../src/lib/bands';
 import { ratingTier } from '../src/lib/format';
 
@@ -168,7 +169,7 @@ function inProgress(months: GotmMonth[], today: Date): GameRef[] {
   const key = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}`;
   const current = months.find((m) => m.month === key);
   if (!current) return [];
-  const list = [current.gameOfTheMonth, ...current.played].filter((p) => p !== null);
+  const list = monthPlayed(current.gameOfTheMonth, current.played);
   const lastCompleted = list.map((p) => p.status).lastIndexOf('completed');
   return list.slice(lastCompleted + 1).filter((p) => p.status === 'in-progress');
 }
