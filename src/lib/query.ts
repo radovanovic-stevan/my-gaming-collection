@@ -15,13 +15,21 @@ export const SORT_LABELS: Record<SortKey, string> = {
   id: 'Collection #',
 };
 
+/** Yes/no filters that come from a field the facets can't list: each is a chip that narrows the results. */
+export const FLAGS: Record<string, { label: string; test: (g: Game) => boolean }> = {
+  trophies: { label: 'Has trophies', test: (g) => Boolean(g.trophies) },
+  replayed: { label: 'Replayed', test: (g) => (g.timesCompleted ?? 0) > 1 },
+};
+
 export const DEFAULT_QUERY: Query = {
   search: '',
   platforms: [],
   statuses: [],
   genres: [],
   conditions: [],
+  boughtIn: [],
   playsVia: [],
+  flags: [],
   acquiredYears: [],
   completedYears: [],
   ratingMin: null,
@@ -140,7 +148,10 @@ export function applyQuery(games: Game[], q: Query, lastPlayed?: LastPlayed): Ga
         // Genres narrow the list: a game must have every selected genre.
         q.genres.every((x) => g.genres.includes(x)) &&
         anyOf(q.conditions, g.condition) &&
+        anyOf(q.boughtIn, g.boughtIn ? [g.boughtIn] : []) &&
         anyOf(q.playsVia, g.playsVia ? [g.playsVia] : []) &&
+        // Like genres, the flags narrow: a game must pass every one selected.
+        q.flags.every((f) => FLAGS[f]?.test(g) ?? true) &&
         anyOf(q.acquiredYears, yearList(g.acquired)) &&
         anyOf(q.completedYears, yearList(g.completed)) &&
         (q.ratingMin === null || (g.rating !== null && g.rating >= q.ratingMin)) &&
@@ -159,7 +170,7 @@ export function facet(games: Game[], pick: (g: Game) => string[]): [string, numb
 
 // --- URL state -------------------------------------------------------------
 
-const LIST_KEYS = ['platforms', 'statuses', 'genres', 'conditions', 'playsVia', 'acquiredYears', 'completedYears'] as const;
+const LIST_KEYS = ['platforms', 'statuses', 'genres', 'conditions', 'boughtIn', 'playsVia', 'flags', 'acquiredYears', 'completedYears'] as const;
 
 export function queryToParams(q: Query): string {
   const p = new URLSearchParams();

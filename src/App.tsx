@@ -22,13 +22,14 @@ import { WhatsNew } from './components/WhatsNew';
 const MapView = lazy(() => import('./components/MapView'));
 const StatsView = lazy(() => import('./components/StatsView'));
 const TimelineView = lazy(() => import('./components/TimelineView'));
-const GuessView = lazy(() => import('./components/GuessView'));
+const PlayView = lazy(() => import('./components/PlayView'));
+const BacklogView = lazy(() => import('./components/BacklogView'));
 import { api, detectEditing } from './lib/api';
 import { createLinker } from './lib/links';
 import { matchLauncherGames, withLauncherPlaytime } from './lib/castingADream';
 import { findChanges, loadSnapshot, saveSnapshot, type ChangeGroup, type ChangeTab } from './lib/whatsNew';
 
-type GameTab = 'collection' | 'gotm' | 'gotc' | 'stats' | 'timeline' | 'gallery' | 'map' | 'consoles' | 'blog' | 'casting-a-dream' | 'guess';
+type GameTab = 'collection' | 'backlog' | 'gotm' | 'gotc' | 'stats' | 'timeline' | 'gallery' | 'map' | 'consoles' | 'blog' | 'casting-a-dream' | 'guess';
 /** Collections that aren't games. Each one is public/data/<id>.json. */
 /** The owner's PriceCharting collection, linked from the header. */
 const PRICECHARTING_URL = 'https://www.pricecharting.com/offers?seller=dv636ks6lcmgdlb7pcyszkqvi4&status=collection';
@@ -42,6 +43,7 @@ type Tab = GameTab | OtherTab;
 const isOther = (t: Tab): t is OtherTab => OTHER_COLLECTIONS.some((c) => c.id === t);
 const TABS: { id: GameTab; label: string }[] = [
   { id: 'collection', label: 'Collection' },
+  { id: 'backlog', label: 'Backlog' },
   { id: 'gotm', label: 'Game of the Month' },
   { id: 'gotc', label: 'Awards' },
   { id: 'stats', label: 'Stats' },
@@ -51,8 +53,13 @@ const TABS: { id: GameTab; label: string }[] = [
   { id: 'consoles', label: 'Consoles' },
   { id: 'blog', label: 'Blog' },
   { id: 'casting-a-dream', label: 'Casting a Dream' },
-  { id: 'guess', label: 'Guess' },
+  { id: 'guess', label: 'Play' },
 ];
+/** Desktop: how many sections stay in the tab row. The rest, and the other collections, live in the More menu. */
+const PINNED = 6;
+const PINNED_TABS = TABS.slice(0, PINNED);
+const MORE_TABS = TABS.slice(PINNED);
+
 const tabLabel = (t: Tab) => [...TABS, ...OTHER_COLLECTIONS].find((x) => x.id === t)!.label;
 const tabFromUrl = (): Tab => {
   const t = new URLSearchParams(location.search).get('tab');
@@ -93,6 +100,7 @@ export default function App() {
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [tab, setTab] = useState<Tab>(tabFromUrl);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
   const [publishing, setPublishing] = useState(false);
   const publish = async () => {
     setPublishing(true);
@@ -106,6 +114,7 @@ export default function App() {
     }
   };
   const menuRef = useRef<HTMLElement>(null);
+  const moreRef = useRef<HTMLDivElement>(null);
   // On the published site everything is loaded, to tell visitors what changed since their last visit.
   const checkChanges = editingChecked && !editable;
   // Always loaded: a game's Last played comes from Game of the Month, and the year editor fills stats from it.
@@ -162,6 +171,7 @@ export default function App() {
   const pushNext = useRef(false);
   const goTo = (next: Tab) => {
     setMenuOpen(false);
+    setMoreOpen(false);
     if (next !== tab) pushNext.current = true;
     setTab(next);
     scrollTo(0, 0);
@@ -177,20 +187,25 @@ export default function App() {
     history[push ? 'pushState' : 'replaceState'](null, '', params ? `?${params}` : location.pathname);
   }, [query, tab]);
 
-  // The phone menu closes on a tap outside it or Escape.
+  // The phone menu and the desktop More menu close on a tap outside them or Escape.
   useEffect(() => {
-    if (!menuOpen) return;
+    if (!menuOpen && !moreOpen) return;
     const onDown = (e: PointerEvent) => {
       if (!menuRef.current?.contains(e.target as Node)) setMenuOpen(false);
+      if (!moreRef.current?.contains(e.target as Node)) setMoreOpen(false);
     };
-    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setMenuOpen(false);
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== 'Escape') return;
+      setMenuOpen(false);
+      setMoreOpen(false);
+    };
     document.addEventListener('pointerdown', onDown);
     document.addEventListener('keydown', onKey);
     return () => {
       document.removeEventListener('pointerdown', onDown);
       document.removeEventListener('keydown', onKey);
     };
-  }, [menuOpen]);
+  }, [menuOpen, moreOpen]);
 
   // Back and Forward: show the tab (and, for the collection, the filters) the URL describes.
   useEffect(() => {
@@ -263,6 +278,9 @@ export default function App() {
   };
   /** Opens the collection showing only one platform's games. */
   const showPlatform = (platform: string) => showGames({ platforms: [platform] });
+
+  /** The open section sits in the More menu, so the button names it instead of saying "More". */
+  const inMoreMenu = MORE_TABS.some((t) => t.id === tab);
 
   const openId = modal && modal.kind !== 'new' ? modal.id : null;
   const openIndex = openId === null ? -1 : results.findIndex((g) => g.id === openId);
@@ -345,19 +363,47 @@ export default function App() {
         )}
       </header>
 
-      <nav className="tabs" aria-label="Sections">
-        {TABS.map((t) => (
-          <button key={t.id} className={tab === t.id ? 'on' : ''} aria-current={tab === t.id ? 'page' : undefined} onClick={() => goTo(t.id)}>
-            {t.label}
+      {/* Desktop: the game sections that fit, then More for the rest of them. The other collections stay pinned. */}
+      <nav className="tabs-bar" aria-label="Sections">
+        <div className="tabs">
+          {PINNED_TABS.map((t) => (
+            <button key={t.id} className={tab === t.id ? 'on' : ''} aria-current={tab === t.id ? 'page' : undefined} onClick={() => goTo(t.id)}>
+              {t.label}
+            </button>
+          ))}
+        </div>
+        <div className="tabs-more" ref={moreRef}>
+          <button
+            className={`tabs-more-toggle ${inMoreMenu ? 'on' : ''}`}
+            aria-expanded={moreOpen}
+            aria-controls="tabs-more-menu"
+            onClick={() => setMoreOpen(!moreOpen)}
+          >
+            <span className="tabs-more-current">{inMoreMenu ? tabLabel(tab) : 'More'}</span>
+            <svg className="tabs-mobile-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+            <span className="visually-hidden">{moreOpen ? 'Close menu' : 'More sections'}</span>
           </button>
-        ))}
+          {moreOpen && (
+            <div className="tabs-menu" id="tabs-more-menu">
+              {MORE_TABS.map((t) => (
+                <button key={t.id} className={tab === t.id ? 'on' : ''} aria-current={tab === t.id ? 'page' : undefined} onClick={() => goTo(t.id)}>
+                  {t.label}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
         <span className="tabs-divider" aria-hidden="true" />
         <span className="tabs-group-label">Other</span>
-        {OTHER_COLLECTIONS.map((c) => (
-          <button key={c.id} className={`other-tab tab-${c.id} ${tab === c.id ? 'on' : ''}`} aria-current={tab === c.id ? 'page' : undefined} onClick={() => goTo(c.id)}>
-            {c.label}
-          </button>
-        ))}
+        <div className="tabs-other">
+          {OTHER_COLLECTIONS.map((c) => (
+            <button key={c.id} className={`other-tab tab-${c.id} ${tab === c.id ? 'on' : ''}`} aria-current={tab === c.id ? 'page' : undefined} onClick={() => goTo(c.id)}>
+              {c.label}
+            </button>
+          ))}
+        </div>
       </nav>
 
       {/* Phones: the current section and a menu with all of them, instead of the tab row. */}
@@ -448,6 +494,15 @@ export default function App() {
           <div className="empty">{castingADream.error ? `Couldn't load Casting a Dream: ${castingADream.error}` : 'Loading…'}</div>
         ))}
 
+      {tab === 'backlog' &&
+        (gotm.data ? (
+          <Suspense fallback={<div className="empty">Loading backlog…</div>}>
+            <BacklogView games={games} months={gotm.data} link={link} onOpen={(g) => showDetail(g.id)} onShowGames={showGames} />
+          </Suspense>
+        ) : (
+          <div className="empty">{gotm.error ? `Couldn't load Game of the Month: ${gotm.error}` : 'Loading…'}</div>
+        ))}
+
       {tab === 'stats' && (
         <Suspense fallback={<div className="empty">Loading stats…</div>}>
           <StatsView games={games} onShowGames={showGames} onOpen={(g) => showDetail(g.id)} />
@@ -477,7 +532,7 @@ export default function App() {
 
       {tab === 'guess' && (
         <Suspense fallback={<div className="empty">Loading…</div>}>
-          <GuessView games={games} onOpen={(g) => showDetail(g.id)} />
+          <PlayView games={games} onOpen={(g) => showDetail(g.id)} />
         </Suspense>
       )}
 

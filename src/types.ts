@@ -63,7 +63,10 @@ export interface Query {
   statuses: string[];
   genres: string[];
   conditions: string[];
+  boughtIn: string[];
   playsVia: string[];
+  /** Keys of `FLAGS` in lib/query; a game must pass every one selected. */
+  flags: string[];
   acquiredYears: string[];
   completedYears: string[];
   ratingMin: number | null;

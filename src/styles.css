@@ -1291,16 +1291,42 @@ div.gallery-main {
 
 /* --- Tabs ------------------------------------------------------------------- */
 
-.tabs {
+/* Only the game tabs scroll: More, and the other collections, stay put on the right. */
+.tabs-bar {
   display: flex;
+  align-items: stretch;
   gap: 4px;
   margin-bottom: 4px;
   border-bottom: 1px solid var(--border);
+}
+
+.tabs {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  gap: 4px;
   overflow-x: auto;
   scrollbar-width: none;
 }
 
-.tabs button {
+/* Outside the scroller, so the menu hanging off it isn't clipped. */
+.tabs-more,
+.tabs-other {
+  display: flex;
+  position: relative;
+  flex: none;
+  gap: 4px;
+}
+
+.tabs-more-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tabs button,
+.tabs-other button,
+.tabs-more-toggle {
   flex: none;
   padding: 10px 14px;
   border: 0;
@@ -1311,13 +1337,23 @@ div.gallery-main {
   white-space: nowrap;
 }
 
-.tabs button:hover {
+.tabs button:hover,
+.tabs-other button:hover,
+.tabs-more-toggle:hover {
   color: var(--fg);
 }
 
-.tabs button.on {
+.tabs button.on,
+.tabs-more-toggle.on {
   color: var(--fg);
   border-bottom-color: var(--accent);
+}
+
+/* Anchored to its own button, not stretched across the bar like the phone menu. */
+.tabs-more .tabs-menu {
+  left: auto;
+  right: 0;
+  min-width: 220px;
 }
 
 /* Phones get a menu instead of the tab row. */
@@ -1329,7 +1365,7 @@ div.gallery-main {
 }
 
 @media (max-width: 640px) {
-  .tabs {
+  .tabs-bar {
     display: none;
   }
   .tabs-mobile {
@@ -2417,11 +2453,12 @@ div.gallery-main {
 
 /* --- Other collections (not games) ------------------------------------------- */
 
-/* Tabs for other collections sit apart from the game tabs, after a divider. */
+/* Tabs for other collections sit apart from the game tabs, after a divider, and never scroll away. */
 .tabs-divider {
   flex: none;
+  align-self: stretch;
   width: 1px;
-  margin: 8px 6px 8px auto;
+  margin: 8px 4px;
   background: var(--border);
 }
 
@@ -2435,11 +2472,12 @@ div.gallery-main {
   color: var(--fg-muted);
 }
 
-.tabs .other-tab {
+.tabs-other .other-tab {
   color: var(--tab-accent);
 }
 
-.tabs .other-tab.on {
+.tabs-other .other-tab.on {
+  color: var(--fg);
   border-bottom-color: var(--tab-accent);
 }
 
@@ -5239,5 +5277,211 @@ button.tl-chip:hover,
   }
   .yr-huge {
     font-size: 80px;
+  }
+}
+
+/* Backlog: what's still waiting, as rows of small covers. */
+.backlog {
+  display: grid;
+  gap: 24px;
+  padding-top: 16px;
+}
+
+.backlog > .awards-head {
+  margin-bottom: 0;
+}
+
+.bl-section {
+  display: grid;
+  gap: 12px;
+  justify-items: start;
+}
+
+.bl-section .section-title {
+  margin: 0;
+}
+
+.bl-section .section-title .muted {
+  text-transform: none;
+}
+
+.bl-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 10px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bl-row {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-elev);
+}
+
+.bl-cover {
+  display: block;
+  overflow: hidden;
+  width: 48px;
+  height: 64px;
+  padding: 0;
+  border: 0;
+  border-radius: 5px;
+  background: none;
+  cursor: pointer;
+}
+
+.bl-cover .cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bl-info {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.bl-info .ref-link {
+  min-width: 0;
+  text-align: left;
+}
+
+.bl-info .ref-title {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.bl-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.bl-progress {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.bl-progress-track {
+  flex: 1;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--bg-sunk);
+}
+
+.bl-progress-bar {
+  display: block;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--accent);
+}
+
+/* Higher or Lower: two covers, one rating hidden. */
+.play {
+  display: grid;
+  gap: 4px;
+  padding-top: 16px;
+}
+
+.play > .guess {
+  padding-top: 0;
+}
+
+.play-modes {
+  justify-self: start;
+}
+
+.hl-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 20px;
+  align-items: center;
+}
+
+.hl-card {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-elev);
+  text-align: center;
+}
+
+.hl-cover {
+  overflow: hidden;
+  width: min(100%, 220px);
+  aspect-ratio: 3 / 4;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.hl-cover .cover {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.hl-title {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-weight: 700;
+}
+
+.hl-rating {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.hl-mid {
+  display: grid;
+  gap: 8px;
+  justify-items: stretch;
+}
+
+.hl-btn {
+  white-space: nowrap;
+}
+
+.hl-verdict {
+  display: grid;
+  gap: 8px;
+  justify-items: center;
+  text-align: center;
+}
+
+.hl-verdict.gg-won .eyebrow {
+  color: #1f9d55;
+}
+
+.hl-verdict.gg-lost .eyebrow {
+  color: #d14343;
+}
+
+@media (max-width: 640px) {
+  .hl-main {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .hl-cover {
+    width: min(100%, 160px);
   }
 }

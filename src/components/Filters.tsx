@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import type { Game, Query } from '../types';
 import { STATUSES } from '../types';
-import { facet, yearList } from '../lib/query';
+import { FLAGS, facet, yearList } from '../lib/query';
 import { genreLabel } from '../lib/format';
 
 interface Props {
@@ -14,7 +14,7 @@ interface Props {
   onDone: () => void;
 }
 
-type ListKey = 'platforms' | 'statuses' | 'genres' | 'conditions' | 'playsVia' | 'acquiredYears' | 'completedYears';
+type ListKey = 'platforms' | 'statuses' | 'genres' | 'conditions' | 'boughtIn' | 'playsVia' | 'flags' | 'acquiredYears' | 'completedYears';
 
 // Newest first; non-year buckets such as "Before 2012" go last.
 const byYearDesc = (items: [string, number][]) =>
@@ -71,7 +71,11 @@ export function Filters({ games, query, onChange, onReset, resultCount, onDone }
       statuses: facet(games, (g) => [g.status]).sort((a, b) => STATUSES.indexOf(a[0] as never) - STATUSES.indexOf(b[0] as never)),
       genres: facet(games, (g) => g.genres),
       conditions: facet(games, (g) => g.condition),
+      boughtIn: facet(games, (g) => (g.boughtIn ? [g.boughtIn] : [])),
       playsVia: facet(games, (g) => (g.playsVia ? [g.playsVia] : [])),
+      flags: Object.entries(FLAGS)
+        .map(([key, f]): [string, number] => [key, games.filter(f.test).length])
+        .filter(([, n]) => n > 0),
       acquiredYears: byYearDesc(facet(games, (g) => yearList(g.acquired))),
       completedYears: byYearDesc(facet(games, (g) => yearList(g.completed))),
     }),
@@ -100,8 +104,12 @@ export function Filters({ games, query, onChange, onReset, resultCount, onDone }
       <FacetGroup title="Year acquired" items={facets.acquiredYears} selected={query.acquiredYears} onToggle={toggle('acquiredYears')} collapsedCount={10} />
       <FacetGroup title="Year completed" items={facets.completedYears} selected={query.completedYears} onToggle={toggle('completedYears')} collapsedCount={10} />
       <FacetGroup title="Condition" items={facets.conditions} selected={query.conditions} onToggle={toggle('conditions')} />
+      <FacetGroup title="Bought in" items={facets.boughtIn} selected={query.boughtIn} onToggle={toggle('boughtIn')} collapsedCount={8} />
       {facets.playsVia.length > 0 && (
         <FacetGroup title="Plays via" items={facets.playsVia} selected={query.playsVia} onToggle={toggle('playsVia')} />
+      )}
+      {facets.flags.length > 0 && (
+        <FacetGroup title="Extras (match all)" items={facets.flags} selected={query.flags} onToggle={toggle('flags')} label={(v) => FLAGS[v].label} />
       )}
 
       <fieldset className="facet">
