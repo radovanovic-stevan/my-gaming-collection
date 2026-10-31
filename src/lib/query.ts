@@ -34,6 +34,7 @@ export const DEFAULT_QUERY: Query = {
   completedYears: [],
   ratingMin: null,
   ratingMax: null,
+  asOf: null,
   cover: 'any',
   sort: [
     { key: 'rating', dir: 'desc' },
@@ -156,7 +157,9 @@ export function applyQuery(games: Game[], q: Query, lastPlayed?: LastPlayed): Ga
         anyOf(q.completedYears, yearList(g.completed)) &&
         (q.ratingMin === null || (g.rating !== null && g.rating >= q.ratingMin)) &&
         (q.ratingMax === null || (g.rating !== null && g.rating <= q.ratingMax)) &&
-        (q.cover === 'any' || (q.cover === 'with') === Boolean(g.cover)),
+        (q.cover === 'any' || (q.cover === 'with') === Boolean(g.cover)) &&
+        // The time machine hides anything bought after the chosen month.
+        (q.asOf === null || (dateKey(g.acquired) ?? '9999').slice(0, 7) <= q.asOf),
     )
     .sort((a, b) => compare(a, b, q.sort, lastPlayed));
 }
@@ -176,6 +179,7 @@ export function queryToParams(q: Query): string {
   const p = new URLSearchParams();
   if (q.search) p.set('q', q.search);
   for (const k of LIST_KEYS) if (q[k].length) p.set(k, q[k].join('~'));
+  if (q.asOf) p.set('asOf', q.asOf);
   if (q.ratingMin !== null) p.set('min', String(q.ratingMin));
   if (q.ratingMax !== null) p.set('max', String(q.ratingMax));
   if (q.cover !== 'any') p.set('cover', q.cover);
@@ -193,6 +197,8 @@ export function paramsToQuery(search: string): Query {
   q.search = p.get('q') ?? '';
   for (const k of LIST_KEYS) q[k] = p.get(k)?.split('~').filter(Boolean) ?? [];
   const num = (v: string | null) => (v === null || v === '' || Number.isNaN(Number(v)) ? null : Number(v));
+  const asOf = p.get('asOf');
+  q.asOf = asOf && /^\d{4}-(0[1-9]|1[0-2])$/.test(asOf) ? asOf : null;
   q.ratingMin = num(p.get('min'));
   q.ratingMax = num(p.get('max'));
   const cover = p.get('cover');

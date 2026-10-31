@@ -2,3 +2,6 @@ node_modules
 dist
 .DS_Store
 *.tsbuildinfo
+
+# Valuations and other notes that must not reach the public repo or the deployed site.
+/private/

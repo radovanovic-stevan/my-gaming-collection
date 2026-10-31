@@ -71,6 +71,8 @@ export interface Query {
   completedYears: string[];
   ratingMin: number | null;
   ratingMax: number | null;
+  /** Time machine: yyyy-mm, showing the collection as it stood at the end of that month. */
+  asOf: string | null;
   cover: 'any' | 'with' | 'without';
   sort: SortLevel[];
   view: View;
@@ -173,6 +175,8 @@ export interface Vinyl extends WithImages {
   title: string;
   /** yyyy-mm-dd, or null when it isn't known. */
   acquired: string | null;
+  /** The Discogs release id of this exact pressing, which is what makes a price mean anything. */
+  discogsId?: number | null;
   /** Oldest first. */
   listens: VinylListen[];
 }

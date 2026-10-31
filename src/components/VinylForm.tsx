@@ -14,6 +14,7 @@ export function VinylForm({ record, onSaved, onClose }: Props) {
   const [artist, setArtist] = useState(record?.artist ?? '');
   const [title, setTitle] = useState(record?.title ?? '');
   const [acquired, setAcquired] = useState(record ? (record.acquired ?? '') : new Date().toISOString().slice(0, 10));
+  const [discogs, setDiscogs] = useState(record?.discogsId ? String(record.discogsId) : '');
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -28,7 +29,7 @@ export function VinylForm({ record, onSaved, onClose }: Props) {
     setBusy(true);
     setError(null);
     try {
-      const input = { artist, title, acquired: acquired || null, listens: record?.listens ?? [] };
+      const input = { artist, title, acquired: acquired || null, discogsId: discogs.trim() || null, listens: record?.listens ?? [] };
       onSaved(record ? await api.updateVinyl(record.id, input) : await api.addVinyl(input));
     } catch (err) {
       setError(err instanceof Error ? err.message : String(err));
@@ -53,10 +54,21 @@ export function VinylForm({ record, onSaved, onClose }: Props) {
             <input required value={title} onChange={(e) => setTitle(e.target.value)} />
           </label>
         </div>
-        <label className="field">
-          <span>Acquired</span>
-          <input type="date" value={acquired} max={new Date().toISOString().slice(0, 10)} onChange={(e) => setAcquired(e.target.value)} />
-        </label>
+        <div className="editor-row">
+          <label className="field">
+            <span>Acquired</span>
+            <input type="date" value={acquired} max={new Date().toISOString().slice(0, 10)} onChange={(e) => setAcquired(e.target.value)} />
+          </label>
+          <label className="field grow">
+            <span>Discogs release</span>
+            <input
+              value={discogs}
+              placeholder="Paste the release link or its id"
+              onChange={(e) => setDiscogs(e.target.value)}
+              onBlur={(e) => setDiscogs(e.target.value.match(/\d+/)?.[0] ?? '')}
+            />
+          </label>
+        </div>
         {!record && <p className="muted small">Next you can add pictures. The first one becomes the cover.</p>}
         {error && <p className="error">{error}</p>}
         <div className="form-actions">

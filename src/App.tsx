@@ -3,6 +3,7 @@ import type { BlogPost, CastingADream, ChecklistCollection, Game, GalleryEntry, 
 import { DEFAULT_QUERY, SORT_LABELS, applyQuery, lastPlayedKeys, paramsToQuery, queryToParams } from './lib/query';
 import { Filters } from './components/Filters';
 import { SortBuilder } from './components/SortBuilder';
+import { TimeMachine } from './components/TimeMachine';
 import { GridView } from './components/GridView';
 import { TableView } from './components/TableView';
 import { ShelfView, shelfOrder } from './components/ShelfView';
@@ -26,6 +27,7 @@ const PlayView = lazy(() => import('./components/PlayView'));
 const BacklogView = lazy(() => import('./components/BacklogView'));
 import { api, detectEditing } from './lib/api';
 import { createLinker } from './lib/links';
+import { formatMonthYear } from './lib/format';
 import { matchLauncherGames, withLauncherPlaytime } from './lib/castingADream';
 import { findChanges, loadSnapshot, saveSnapshot, type ChangeGroup, type ChangeTab } from './lib/whatsNew';
 
@@ -59,6 +61,9 @@ const TABS: { id: GameTab; label: string }[] = [
 const PINNED = 6;
 const PINNED_TABS = TABS.slice(0, PINNED);
 const MORE_TABS = TABS.slice(PINNED);
+
+/** This month, the point the time machine opens at before you drag it back. */
+const thisMonth = `${new Date().getFullYear()}-${String(new Date().getMonth() + 1).padStart(2, '0')}`;
 
 const tabLabel = (t: Tab) => [...TABS, ...OTHER_COLLECTIONS].find((x) => x.id === t)!.label;
 const tabFromUrl = (): Tab => {
@@ -564,6 +569,13 @@ export default function App() {
                 <SortBuilder sort={query.sort} onChange={(sort) => patch({ sort })} />
               </div>
             </details>
+            <button
+              className={`btn ${query.asOf ? 'on' : ''}`}
+              onClick={() => patch({ asOf: query.asOf ? null : thisMonth })}
+              aria-pressed={Boolean(query.asOf)}
+            >
+              Time machine
+            </button>
             <div className="segmented view-toggle" role="group" aria-label="View">
               <button className={query.view === 'grid' ? 'on' : ''} onClick={() => patch({ view: 'grid' })}>
                 Covers
@@ -577,6 +589,8 @@ export default function App() {
             </div>
           </div>
 
+          {query.asOf && <TimeMachine games={games} value={query.asOf} onChange={(asOf) => patch({ asOf })} onClose={() => patch({ asOf: null })} />}
+
           <div className={`layout ${filtersOpen ? 'filters-open' : ''}`}>
             <Filters
               games={games}
@@ -589,6 +603,7 @@ export default function App() {
             <main className="results">
               <p className="result-count">
                 Showing <b>{results.length}</b> of {games.length}
+                {query.asOf && <span className="muted"> · as it stood in {formatMonthYear(query.asOf)}</span>}
               </p>
               {results.length === 0 ? (
                 <div className="empty">No games match these filters.</div>

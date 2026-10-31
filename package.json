@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "import:tsv": "node scripts/import-tsv.mjs",
     "covers:fetch": "node scripts/fetch-covers.mjs",
-    "import:awards": "node scripts/import-awards.mjs"
+    "import:awards": "node scripts/import-awards.mjs",
+    "value:vinyl": "node scripts/vinyl-value.mjs"
   },
   "dependencies": {
     "d3-geo": "^3.1.1",

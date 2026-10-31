@@ -147,7 +147,7 @@
    },
    {
     "title": "Platinum Sudoku",
-    "platform": "3DS",
+    "platform": "NDS",
     "status": "played"
    },
    {
@@ -492,7 +492,7 @@
     "status": "completed"
    },
    {
-    "title": "DIshonored 2",
+    "title": "Dishonored 2",
     "platform": "PS4",
     "status": "completed"
    },
@@ -779,12 +779,12 @@
     "status": "completed"
    },
    {
-    "title": "Adventure 2",
+    "title": "Adventure II",
     "platform": "Atari FB3",
     "status": "completed"
    },
    {
-    "title": "Assassins Creed III",
+    "title": "Assassin's Creed III",
     "platform": "PS3",
     "status": "completed"
    },
@@ -950,7 +950,7 @@
     "status": "played"
    },
    {
-    "title": "Neverdead",
+    "title": "NeverDead",
     "platform": "PS3",
     "status": "completed"
    },
@@ -1039,7 +1039,7 @@
     "status": "played"
    },
    {
-    "title": "Fifa Street",
+    "title": "FIFA Street",
     "platform": "PS3",
     "status": "played"
    },
@@ -1558,7 +1558,7 @@
     "status": "completed"
    },
    {
-    "title": "Need for Speed Underground: Rivals",
+    "title": "Need for Speed: Underground Rivals",
     "platform": "PSP",
     "status": "in-progress"
    },
@@ -1578,7 +1578,7 @@
     "status": "played"
    },
    {
-    "title": "FIFA 08",
+    "title": "Fifa 08",
     "platform": "PSP",
     "status": "played"
    },
@@ -1598,7 +1598,7 @@
     "status": "completed"
    },
    {
-    "title": "FIFA 08",
+    "title": "Fifa 08",
     "platform": "PS2",
     "status": "played"
    },
@@ -1715,7 +1715,7 @@
     "status": "in-progress"
    },
    {
-    "title": "Need for Speed Underground: Rivals",
+    "title": "Need for Speed: Underground Rivals",
     "platform": "PSP",
     "status": "in-progress"
    }
@@ -1732,7 +1732,7 @@
   "bought": 2,
   "played": [
    {
-    "title": "Beyond: Two Souls",
+    "title": "BEYOND: Two Souls",
     "platform": "PS3",
     "status": "completed"
    },
@@ -1762,7 +1762,7 @@
     "status": "completed"
    },
    {
-    "title": "Tron: Evolution",
+    "title": "TRON: Evolution",
     "platform": "PSP",
     "status": "completed"
    },
@@ -1809,7 +1809,7 @@
     "status": "completed"
    },
    {
-    "title": "Samurai Warriors: Xtreme Legends",
+    "title": "Samurai Warriors Xtreme Legends",
     "platform": "PS2",
     "status": "completed"
    },
@@ -1839,7 +1839,7 @@
     "status": "completed"
    },
    {
-    "title": "Beyond: Two Souls",
+    "title": "BEYOND: Two Souls",
     "platform": "PS3",
     "status": "in-progress"
    }
@@ -1881,7 +1881,7 @@
     "status": "in-progress"
    },
    {
-    "title": "Samurai Warriors: Xtreme Legends",
+    "title": "Samurai Warriors Xtreme Legends",
     "platform": "PS2",
     "status": "in-progress"
    }
@@ -1913,12 +1913,12 @@
     "status": "played"
    },
    {
-    "title": "Destroy All Humans",
+    "title": "Destroy All Humans!",
     "platform": "PS2",
     "status": "completed"
    },
    {
-    "title": "Locoroco",
+    "title": "LocoRoco",
     "platform": "PSP",
     "status": "completed"
    },
@@ -1932,7 +1932,7 @@
  {
   "month": "2023-06",
   "gameOfTheMonth": {
-   "title": "Rage",
+   "title": "RAGE",
    "platform": "PS3",
    "status": "completed"
   },
@@ -2391,7 +2391,7 @@
     "status": "completed"
    },
    {
-    "title": "FIFA 14",
+    "title": "Fifa 14",
     "platform": "3DS",
     "status": "played"
    },
@@ -2725,7 +2725,7 @@
     "status": "played"
    },
    {
-    "title": "Motorstorm: Pacific Rift",
+    "title": "MotorStorm: Pacific Rift",
     "platform": "PS3",
     "status": "completed"
    },
@@ -2735,7 +2735,7 @@
     "status": "in-progress"
    },
    {
-    "title": "Motorstorm",
+    "title": "MotorStorm",
     "platform": "PS3",
     "status": "in-progress"
    },
@@ -2787,7 +2787,7 @@
     "status": "completed"
    },
    {
-    "title": "Motorstorm: Pacific Rift",
+    "title": "MotorStorm: Pacific Rift",
     "platform": "PS3",
     "status": "in-progress"
    },
@@ -2864,7 +2864,7 @@
     "status": "completed"
    },
    {
-    "title": "Motorstorm: Pacific Rift",
+    "title": "MotorStorm: Pacific Rift",
     "platform": "PS3",
     "status": "in-progress"
    },
@@ -2926,7 +2926,7 @@
     "status": "played"
    },
    {
-    "title": "FIFA 08",
+    "title": "Fifa 08",
     "platform": "PS3",
     "status": "played"
    }
@@ -3057,7 +3057,7 @@
     "status": "in-progress"
    },
    {
-    "title": "Gunpey DS",
+    "title": "GunPey DS",
     "platform": "NDS",
     "status": "completed"
    },
@@ -3135,7 +3135,7 @@
    },
    {
     "title": "Metroid Prime 3: Corruption",
-    "platform": "WIi",
+    "platform": "Wii",
     "status": "in-progress"
    },
    {
@@ -3161,12 +3161,12 @@
     "status": "completed"
    },
    {
-    "title": "Motorstorm",
+    "title": "MotorStorm",
     "platform": "PS3",
     "status": "in-progress"
    },
    {
-    "title": "More Touchmaster",
+    "title": "More TouchMaster",
     "platform": "NDS",
     "status": "played"
    },
@@ -3479,12 +3479,12 @@
   "bought": 5,
   "played": [
    {
-    "title": "Heavy Rain: Move Edition",
+    "title": "Heavy Rain",
     "platform": "PS3",
     "status": "post-completion"
    },
    {
-    "title": "Harvest FIshing",
+    "title": "Harvest Fishing",
     "platform": "NDS",
     "status": "in-progress"
    },
@@ -3511,7 +3511,7 @@
     "status": "in-progress"
    },
    {
-    "title": "Ridge Racer: Unbounded",
+    "title": "Ridge Racer Unbounded",
     "platform": "PS3",
     "status": "in-progress"
    },
@@ -3536,7 +3536,7 @@
     "status": "played"
    },
    {
-    "title": "Heavy Rain: Move Edition",
+    "title": "Heavy Rain",
     "platform": "PS3",
     "status": "post-completion"
    },
@@ -3610,7 +3610,7 @@
     "status": "completed"
    },
    {
-    "title": "SEGA Superstars Tennis",
+    "title": "Sega Superstars Tennis",
     "platform": "PS2",
     "status": "in-progress"
    },
@@ -3687,7 +3687,7 @@
     "status": "completed"
    },
    {
-    "title": "Alone in the Dark - Inferno",
+    "title": "Alone in the Dark: Inferno",
     "platform": "PS3",
     "status": "in-progress"
    },
@@ -3746,7 +3746,7 @@
   "bought": 5,
   "played": [
    {
-    "title": "Infamous 2",
+    "title": "inFamous 2",
     "platform": "PS3",
     "status": "completed"
    },
@@ -3766,7 +3766,7 @@
     "status": "completed"
    },
    {
-    "title": "Ridge Racer: Unbounded",
+    "title": "Ridge Racer Unbounded",
     "platform": "PS3",
     "status": "in-progress"
    },
@@ -3848,7 +3848,7 @@
     "status": "completed"
    },
    {
-    "title": "Infamous 2",
+    "title": "inFamous 2",
     "platform": "PS3",
     "status": "in-progress"
    }
@@ -3857,7 +3857,7 @@
  {
   "month": "2020-02",
   "gameOfTheMonth": {
-   "title": "Lighting Returns: Final Fantasy XIII",
+   "title": "Lightning Returns: Final Fantasy XIII",
    "platform": "PS3",
    "status": "completed"
   },
@@ -4084,7 +4084,7 @@
  {
   "month": "2019-08",
   "gameOfTheMonth": {
-   "title": "Saint Row: The Third",
+   "title": "Saints Row: The Third",
    "platform": "PS3",
    "status": "completed"
   },
@@ -4097,7 +4097,7 @@
     "status": "post-completion"
    },
    {
-    "title": "Alone in the Dark - Inferno",
+    "title": "Alone in the Dark: Inferno",
     "platform": "PS3",
     "status": "completed"
    },
@@ -4188,7 +4188,7 @@
  {
   "month": "2019-06",
   "gameOfTheMonth": {
-   "title": "Metal Geaer Solid: Peace Walker",
+   "title": "Metal Gear Solid: Peace Walker",
    "platform": "PSP",
    "status": "completed"
   },
@@ -4210,7 +4210,7 @@
  {
   "month": "2019-05",
   "gameOfTheMonth": {
-   "title": "Metal Geaer Solid: Peace Walker",
+   "title": "Metal Gear Solid: Peace Walker",
    "platform": "PSP",
    "status": "in-progress"
   },
@@ -4223,7 +4223,7 @@
     "status": "completed"
    },
    {
-    "title": "Heavy Rain: Move Edition",
+    "title": "Heavy Rain",
     "platform": "PS3",
     "status": "in-progress"
    },
@@ -4280,7 +4280,7 @@
     "status": "in-progress"
    },
    {
-    "title": "Heavy Rain: Move Edition",
+    "title": "Heavy Rain",
     "platform": "PS3",
     "status": "completed"
    }
@@ -4388,7 +4388,7 @@
  {
   "month": "2019-01",
   "gameOfTheMonth": {
-   "title": "Pokemon Mystery Dungeon: Blue Rescue Team",
+   "title": "Pokémon Mystery Dungeon: Blue Rescue Team",
    "platform": "NDS",
    "status": "completed"
   },
@@ -4406,7 +4406,7 @@
     "status": "played"
    },
    {
-    "title": "MX vs ATV Untamed",
+    "title": "MX vs. ATV Untamed",
     "platform": "PSP",
     "status": "in-progress"
    },
@@ -4426,7 +4426,7 @@
     "status": "played"
    },
    {
-    "title": "Devil May Cry 3: Dante's Awakening Special Edition",
+    "title": "Devil May Cry 3: Dante's Awakening",
     "platform": "PS2",
     "status": "in-progress"
    },
@@ -4440,7 +4440,7 @@
  {
   "month": "2018-12",
   "gameOfTheMonth": {
-   "title": "Wipeout Pulse",
+   "title": "WipeOut Pulse",
    "platform": "PSP",
    "status": "in-progress"
   },
@@ -4465,7 +4465,7 @@
   "bought": 4,
   "played": [
    {
-    "title": "Over The Edge: Hammy Goes Nuts!",
+    "title": "Over the Hedge: Hammy Goes Nuts",
     "platform": "PSP",
     "status": "completed"
    }
