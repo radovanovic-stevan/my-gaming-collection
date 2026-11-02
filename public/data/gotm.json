@@ -1,5 +1,18 @@
 [
  {
+  "month": "2026-11",
+  "gameOfTheMonth": null,
+  "completed": 0,
+  "bought": null,
+  "played": [
+   {
+    "title": "Grand Theft Auto V",
+    "platform": "PS4",
+    "status": "in-progress"
+   }
+  ]
+ },
+ {
   "month": "2026-10",
   "gameOfTheMonth": {
    "title": "Tenchi wo Kurau II - Shokatsu Kōmei Den",
