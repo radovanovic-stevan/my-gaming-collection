@@ -880,7 +880,12 @@
    "vinyl-27-b3ba8a13.jpg"
   ],
   "cover": "vinyl-27-b3ba8a13.jpg",
-  "listens": [],
+  "listens": [
+   {
+    "side": "1",
+    "date": "2026-11-03"
+   }
+  ],
   "discogsId": null
  },
  {
