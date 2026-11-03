@@ -6,10 +6,11 @@
 // The output stays in private/, which is gitignored: this repo is public and the site is deployed from
 // public/, so a valuation must not be written into either. It is for the owner's own net-worth notes.
 // Each record is priced by its `discogsId`, the exact pressing on the shelf: a search can't tell one pressing
-// from another, and they aren't worth the same. Records without an id are listed as missing and priced at
-// nothing. Prices come from the marketplace stats endpoint, which quotes EUR directly, and EUR 1 is added per
-// record. It is the cheapest copy listed today, not what copies sell for: Discogs keeps the median behind an
-// account, so this total is a floor. Pass --detail to also record which pressing was priced.
+// from another, and they aren't worth the same. A record with no id, or with no copy on sale, is listed as
+// missing and carries only its EUR 1. Prices come from the marketplace stats endpoint, which quotes EUR
+// directly: the floors are added up, EUR 1 is added per record, and the lot is multiplied by 1.2. A floor is
+// the cheapest copy listed today, not what copies sell for, since Discogs keeps the median behind an account.
+// Pass --detail to also record which pressing was priced.
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname } from 'node:path';
 
@@ -20,8 +21,10 @@ const DISCOGS = 'https://api.discogs.com';
 const HEADERS = { 'User-Agent': 'game-collection/1.0 (personal vinyl valuation)' };
 /** Unauthenticated Discogs allows 25 calls a minute; stay under it. */
 const GAP_MS = 2600;
-/** Added to every record, priced or not. */
+/** Added to every record, priced or not, before the multiplier. */
 const PER_RECORD_EUR = 1;
+/** What the whole total is lifted by. */
+const MULTIPLIER = 1.2;
 
 const dry = process.argv.includes('--dry');
 const detail = process.argv.includes('--detail');
@@ -57,7 +60,7 @@ console.log(`${pinned.length} of ${vinyl.length} records pinned · prices in EUR
 const records = [];
 for (const record of vinyl) {
   const name = `${record.artist} — ${record.title}`;
-  const row = { id: record.id, artist: record.artist, title: record.title, release: null, forSale: 0, lowestEur: null, valueEur: PER_RECORD_EUR };
+  const row = { id: record.id, artist: record.artist, title: record.title, release: null, forSale: 0, lowestEur: null, valueEur: 0 };
   if (!record.discogsId) {
     records.push(row);
     console.log(`  ${String(record.id).padStart(3)}  ${name.slice(0, 48).padEnd(50)} no Discogs release set`);
@@ -67,7 +70,7 @@ for (const record of vinyl) {
     const stats = await politeFetch(`${DISCOGS}/marketplace/stats/${record.discogsId}?curr_abbr=EUR`);
     row.forSale = stats.num_for_sale ?? 0;
     row.lowestEur = typeof stats.lowest_price?.value === 'number' ? round(stats.lowest_price.value) : null;
-    row.valueEur = round((row.lowestEur ?? 0) + PER_RECORD_EUR);
+    row.valueEur = round(((row.lowestEur ?? 0) + PER_RECORD_EUR) * MULTIPLIER);
     row.release = { id: record.discogsId, url: `https://www.discogs.com/release/${record.discogsId}` };
     if (detail) {
       const release = await politeFetch(`${DISCOGS}/releases/${record.discogsId}`);
@@ -78,7 +81,7 @@ for (const record of vinyl) {
         catno: release.labels?.[0]?.catno ?? null,
       });
     }
-    const line = row.lowestEur === null ? `no copy for sale` : `€${row.lowestEur.toFixed(2)} + €${PER_RECORD_EUR}`;
+    const line = row.lowestEur === null ? `no copy for sale` : `€${row.lowestEur.toFixed(2)} → €${row.valueEur.toFixed(2)}`;
     console.log(`  ${String(record.id).padStart(3)}  ${name.slice(0, 48).padEnd(50)} ${line}`);
   } catch (e) {
     console.log(`  ${String(record.id).padStart(3)}  ${name.slice(0, 48).padEnd(50)} ! ${e.message}`);
@@ -87,25 +90,29 @@ for (const record of vinyl) {
 }
 
 const priced = records.filter((r) => r.lowestEur !== null);
+// Multiply the summed floors, not each one, so rounding happens once.
 const lowest = round(priced.reduce((s, r) => s + r.lowestEur, 0));
+const added = vinyl.length * PER_RECORD_EUR;
+const total = round((lowest + added) * MULTIPLIER);
 const result = {
   generated: new Date().toISOString().slice(0, 10),
-  method: `Lowest Discogs listing in EUR for each record's own pressing, plus EUR ${PER_RECORD_EUR} a record.`,
+  method: `The lowest Discogs listing in EUR for each record's own pressing, summed, plus EUR ${PER_RECORD_EUR} a record, all multiplied by ${MULTIPLIER}.`,
   source: 'Discogs marketplace stats, curr_abbr=EUR',
   perRecordEur: PER_RECORD_EUR,
+  multiplier: MULTIPLIER,
   totals: {
     records: vinyl.length,
     pinned: pinned.length,
     priced: priced.length,
     lowestEur: lowest,
-    addedEur: vinyl.length * PER_RECORD_EUR,
-    totalEur: round(lowest + vinyl.length * PER_RECORD_EUR),
+    addedEur: added,
+    totalEur: total,
   },
   records,
 };
 
 console.log(
-  `\n${priced.length} of ${vinyl.length} priced · €${lowest.toFixed(2)} + €${result.totals.addedEur} = €${result.totals.totalEur.toFixed(2)}`,
+  `\n${priced.length} of ${vinyl.length} priced · (€${lowest.toFixed(2)} + €${added}) × ${MULTIPLIER} = €${total.toFixed(2)}`,
 );
 // The one line worth copying into the net-worth notes.
 console.log(`\nVinyl · ${vinyl.length} records · €${result.totals.totalEur.toFixed(2)} · ${result.generated}`);
