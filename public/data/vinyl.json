@@ -922,8 +922,13 @@
    "vinyl-29-fffd904f.jpg"
   ],
   "cover": "vinyl-29-fffd904f.jpg",
-  "listens": [],
-  "discogsId": 10400186
+  "listens": [
+   {
+    "side": "1",
+    "date": "2026-11-03"
+   }
+  ],
+  "discogsId": null
  },
  {
   "id": 30,

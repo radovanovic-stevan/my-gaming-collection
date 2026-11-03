@@ -2,13 +2,13 @@
  {
   "month": "2026-11",
   "gameOfTheMonth": null,
-  "completed": 0,
+  "completed": 1,
   "bought": null,
   "played": [
    {
     "title": "Grand Theft Auto V",
     "platform": "PS4",
-    "status": "in-progress"
+    "status": "completed"
    }
   ]
  },

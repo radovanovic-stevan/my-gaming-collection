@@ -16941,11 +16941,11 @@
   "title": "Grand Theft Auto V",
   "platform": "PS4",
   "acquired": "2023-08-23",
-  "completed": null,
-  "status": "Not Completed",
-  "rating": null,
-  "timesCompleted": 0,
-  "percent": null,
+  "completed": "2026-11-03",
+  "status": "Completed",
+  "rating": 89.5,
+  "timesCompleted": 1,
+  "percent": 63,
   "playtime": null,
   "genres": [
    "Action",
@@ -16958,7 +16958,9 @@
    "Manual"
   ],
   "edition": "",
+  "trophies": "https://psnprofiles.com/trophies/3147-grand-theft-auto-v/StevanMcfc",
   "boughtIn": "Germany",
+  "playsVia": null,
   "images": [
    "652-4c534bde.jpg"
   ],
