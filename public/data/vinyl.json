@@ -826,5 +826,89 @@
   ],
   "cover": "vinyl-23-79b04e9d.jpg",
   "discogsId": 30348842
+ },
+ {
+  "id": 24,
+  "artist": "Saga",
+  "title": "In Transit",
+  "acquired": "2026-11-03",
+  "images": [
+   "vinyl-24-de9eb1d8.jpg"
+  ],
+  "cover": "vinyl-24-de9eb1d8.jpg",
+  "listens": [],
+  "discogsId": null
+ },
+ {
+  "id": 25,
+  "artist": "John Hiatt",
+  "title": "Slow Turning",
+  "acquired": "2026-11-03",
+  "images": [
+   "vinyl-25-0e978471.jpg"
+  ],
+  "cover": "vinyl-25-0e978471.jpg",
+  "listens": [],
+  "discogsId": null
+ },
+ {
+  "id": 26,
+  "artist": "The Equals",
+  "title": "Best of The Equals",
+  "acquired": "2026-11-03",
+  "images": [
+   "vinyl-26-5c67126d.jpg"
+  ],
+  "cover": "vinyl-26-5c67126d.jpg",
+  "listens": [],
+  "discogsId": null
+ },
+ {
+  "id": 27,
+  "artist": "The Alan Parsons Project",
+  "title": "Pyramid",
+  "acquired": "2026-11-03",
+  "images": [
+   "vinyl-27-b3ba8a13.jpg"
+  ],
+  "cover": "vinyl-27-b3ba8a13.jpg",
+  "listens": [],
+  "discogsId": null
+ },
+ {
+  "id": 28,
+  "artist": "Various Artists",
+  "title": "Lambada Dance Fever",
+  "acquired": "2026-11-03",
+  "images": [
+   "vinyl-28-76b76249.jpg"
+  ],
+  "cover": "vinyl-28-76b76249.jpg",
+  "listens": [],
+  "discogsId": null
+ },
+ {
+  "id": 29,
+  "artist": "Verdi",
+  "title": "Rigoletto",
+  "acquired": "2026-11-03",
+  "images": [
+   "vinyl-29-fffd904f.jpg"
+  ],
+  "cover": "vinyl-29-fffd904f.jpg",
+  "listens": [],
+  "discogsId": null
+ },
+ {
+  "id": 30,
+  "artist": "Various Artists",
+  "title": "Buona Sera Italia",
+  "acquired": "2026-11-03",
+  "images": [
+   "vinyl-30-d47687c3.jpg"
+  ],
+  "cover": "vinyl-30-d47687c3.jpg",
+  "listens": [],
+  "discogsId": null
  }
 ]
