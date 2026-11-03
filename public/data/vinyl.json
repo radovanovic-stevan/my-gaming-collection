@@ -848,9 +848,13 @@
    {
     "side": "1",
     "date": "2026-11-03"
+   },
+   {
+    "side": "2",
+    "date": "2026-11-03"
    }
   ],
-  "discogsId": null
+  "discogsId": 385986
  },
  {
   "id": 25,
@@ -862,7 +866,7 @@
   ],
   "cover": "vinyl-25-0e978471.jpg",
   "listens": [],
-  "discogsId": null
+  "discogsId": 2721434
  },
  {
   "id": 26,
@@ -874,7 +878,7 @@
   ],
   "cover": "vinyl-26-5c67126d.jpg",
   "listens": [],
-  "discogsId": null
+  "discogsId": 4503102
  },
  {
   "id": 27,
@@ -895,7 +899,7 @@
     "date": "2026-11-03"
    }
   ],
-  "discogsId": null
+  "discogsId": 2672585
  },
  {
   "id": 28,
@@ -907,7 +911,7 @@
   ],
   "cover": "vinyl-28-76b76249.jpg",
   "listens": [],
-  "discogsId": null
+  "discogsId": 1099763
  },
  {
   "id": 29,
@@ -919,7 +923,7 @@
   ],
   "cover": "vinyl-29-fffd904f.jpg",
   "listens": [],
-  "discogsId": null
+  "discogsId": 10400186
  },
  {
   "id": 30,
@@ -931,6 +935,6 @@
   ],
   "cover": "vinyl-30-d47687c3.jpg",
   "listens": [],
-  "discogsId": null
+  "discogsId": 5170805
  }
 ]
