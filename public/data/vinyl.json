@@ -844,7 +844,12 @@
    "vinyl-24-de9eb1d8.jpg"
   ],
   "cover": "vinyl-24-de9eb1d8.jpg",
-  "listens": [],
+  "listens": [
+   {
+    "side": "1",
+    "date": "2026-11-03"
+   }
+  ],
   "discogsId": null
  },
  {
@@ -883,6 +888,10 @@
   "listens": [
    {
     "side": "1",
+    "date": "2026-11-03"
+   },
+   {
+    "side": "2",
     "date": "2026-11-03"
    }
   ],
