@@ -865,8 +865,17 @@
    "vinyl-25-0e978471.jpg"
   ],
   "cover": "vinyl-25-0e978471.jpg",
-  "listens": [],
-  "discogsId": 2721434
+  "listens": [
+   {
+    "side": "A",
+    "date": "2026-11-04"
+   },
+   {
+    "side": "B",
+    "date": "2026-11-04"
+   }
+  ],
+  "discogsId": null
  },
  {
   "id": 26,
@@ -877,8 +886,13 @@
    "vinyl-26-5c67126d.jpg"
   ],
   "cover": "vinyl-26-5c67126d.jpg",
-  "listens": [],
-  "discogsId": 4503102
+  "listens": [
+   {
+    "side": "1",
+    "date": "2026-11-05"
+   }
+  ],
+  "discogsId": null
  },
  {
   "id": 27,
@@ -925,6 +939,10 @@
   "listens": [
    {
     "side": "1",
+    "date": "2026-11-03"
+   },
+   {
+    "side": "2",
     "date": "2026-11-03"
    }
   ],
