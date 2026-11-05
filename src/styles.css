@@ -365,6 +365,13 @@ select:focus,
   justify-items: start;
 }
 
+.sort-presets {
+  max-width: 380px;
+  padding-bottom: 8px;
+  margin-bottom: 2px;
+  border-bottom: 1px solid var(--border);
+}
+
 .sort-level {
   display: flex;
   gap: 6px;

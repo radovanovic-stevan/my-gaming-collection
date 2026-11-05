@@ -1,5 +1,5 @@
 import type { SortKey, SortLevel } from '../types';
-import { SORT_LABELS } from '../lib/query';
+import { SORT_LABELS, SORT_PRESETS, sortPreset } from '../lib/query';
 
 interface Props {
   sort: SortLevel[];
@@ -17,9 +17,17 @@ export function SortBuilder({ sort, onChange }: Props) {
     onChange(next);
   };
   const unused = KEYS.filter((k) => !sort.some((s) => s.key === k));
+  const active = sortPreset(sort);
 
   return (
     <div className="sort-builder">
+      <div className="chips sort-presets" role="group" aria-label="Preset sorts">
+        {SORT_PRESETS.map((p) => (
+          <button key={p.label} className={`chip ${p === active ? 'on' : ''}`} aria-pressed={p === active} onClick={() => onChange(p.sort)}>
+            {p.label}
+          </button>
+        ))}
+      </div>
       {sort.map((s, i) => (
         <div className="sort-level" key={s.key}>
           <span className="sort-level-label">{i === 0 ? 'Sort by' : 'then'}</span>

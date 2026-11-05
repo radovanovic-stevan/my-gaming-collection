@@ -15,6 +15,25 @@ export const SORT_LABELS: Record<SortKey, string> = {
   id: 'Collection #',
 };
 
+/** Ready-made sorts offered above the sort builder; picking one replaces every sort level. */
+export const SORT_PRESETS: { label: string; sort: SortLevel[] }[] = [
+  { label: 'Top rated', sort: [{ key: 'rating', dir: 'desc' }, { key: 'title', dir: 'asc' }] },
+  { label: 'A–Z', sort: [{ key: 'title', dir: 'asc' }] },
+  { label: 'By platform', sort: [{ key: 'platform', dir: 'asc' }, { key: 'title', dir: 'asc' }] },
+  { label: 'Newest buys', sort: [{ key: 'acquired', dir: 'desc' }, { key: 'id', dir: 'desc' }] },
+  { label: 'Oldest buys', sort: [{ key: 'acquired', dir: 'asc' }, { key: 'id', dir: 'asc' }] },
+  { label: 'Recently completed', sort: [{ key: 'completed', dir: 'desc' }, { key: 'title', dir: 'asc' }] },
+  { label: 'Recently played', sort: [{ key: 'lastPlayed', dir: 'desc' }, { key: 'title', dir: 'asc' }] },
+  { label: 'Most played', sort: [{ key: 'playtime', dir: 'desc' }, { key: 'title', dir: 'asc' }] },
+  { label: 'Most replayed', sort: [{ key: 'timesCompleted', dir: 'desc' }, { key: 'rating', dir: 'desc' }] },
+  { label: 'Most complete', sort: [{ key: 'percent', dir: 'desc' }, { key: 'rating', dir: 'desc' }] },
+  { label: 'Collection #', sort: [{ key: 'id', dir: 'asc' }] },
+];
+
+/** The preset a sort matches exactly, if any. */
+export const sortPreset = (sort: SortLevel[]) =>
+  SORT_PRESETS.find((p) => p.sort.length === sort.length && p.sort.every((s, i) => s.key === sort[i].key && s.dir === sort[i].dir));
+
 /** Yes/no filters that come from a field the facets can't list: each is a chip that narrows the results. */
 export const FLAGS: Record<string, { label: string; test: (g: Game) => boolean }> = {
   trophies: { label: 'Has trophies', test: (g) => Boolean(g.trophies) },

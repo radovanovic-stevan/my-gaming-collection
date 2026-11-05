@@ -1,6 +1,6 @@
 import { Suspense, lazy, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { BlogPost, CastingADream, ChecklistCollection, Game, GalleryEntry, GotcData, GameConsole, GotmMonth, Query, SortKey, Vinyl } from './types';
-import { DEFAULT_QUERY, SORT_LABELS, applyQuery, lastPlayedKeys, paramsToQuery, queryToParams } from './lib/query';
+import { DEFAULT_QUERY, SORT_LABELS, applyQuery, sortPreset, lastPlayedKeys, paramsToQuery, queryToParams } from './lib/query';
 import { Filters } from './components/Filters';
 import { SortBuilder } from './components/SortBuilder';
 import { TimeMachine } from './components/TimeMachine';
@@ -563,7 +563,8 @@ export default function App() {
             </button>
             <details className="sort-menu">
               <summary className="btn">
-                Sort: {query.sort.map((s) => `${SORT_LABELS[s.key]} ${s.dir === 'asc' ? '↑' : '↓'}`).join(', ')}
+                Sort:{' '}
+                {sortPreset(query.sort)?.label ?? query.sort.map((s) => `${SORT_LABELS[s.key]} ${s.dir === 'asc' ? '↑' : '↓'}`).join(', ')}
               </summary>
               <div className="popover">
                 <SortBuilder sort={query.sort} onChange={(sort) => patch({ sort })} />
