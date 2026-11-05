@@ -27,7 +27,6 @@ export const SORT_PRESETS: { label: string; sort: SortLevel[] }[] = [
   { label: 'Most played', sort: [{ key: 'playtime', dir: 'desc' }, { key: 'title', dir: 'asc' }] },
   { label: 'Most replayed', sort: [{ key: 'timesCompleted', dir: 'desc' }, { key: 'rating', dir: 'desc' }] },
   { label: 'Most complete', sort: [{ key: 'percent', dir: 'desc' }, { key: 'rating', dir: 'desc' }] },
-  { label: 'Collection #', sort: [{ key: 'id', dir: 'asc' }] },
 ];
 
 /** The preset a sort matches exactly, if any. */
