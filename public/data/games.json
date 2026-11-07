@@ -28380,5 +28380,59 @@
    "1092-71aa30fe.jpg"
   ],
   "cover": "1092-71aa30fe.jpg"
+ },
+ {
+  "id": 1093,
+  "title": "Borderlands 2",
+  "platform": "VITA",
+  "acquired": "2026-11-07",
+  "completed": null,
+  "status": "Not Completed",
+  "rating": null,
+  "timesCompleted": 0,
+  "percent": null,
+  "playtime": null,
+  "genres": [
+   "RPG",
+   "FPS",
+   "OpenWorld"
+  ],
+  "condition": [
+   "Box",
+   "Cover",
+   "Manual"
+  ],
+  "edition": "",
+  "trophies": null,
+  "boughtIn": "Romania",
+  "playsVia": null,
+  "images": [],
+  "cover": null
+ },
+ {
+  "id": 1094,
+  "title": "Wolfenstein: New Order",
+  "platform": "PS3",
+  "acquired": "2026-11-07",
+  "completed": null,
+  "status": "Not Completed",
+  "rating": null,
+  "timesCompleted": 0,
+  "percent": null,
+  "playtime": null,
+  "genres": [
+   "FPS"
+  ],
+  "condition": [
+   "Box",
+   "Cover",
+   "Manual"
+  ],
+  "edition": "",
+  "trophies": null,
+  "boughtIn": "Romania",
+  "playsVia": null,
+  "images": [],
+  "cover": null
  }
 ]
