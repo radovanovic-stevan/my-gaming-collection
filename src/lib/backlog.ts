@@ -25,9 +25,10 @@ const acquiredKey = (g: Game) => dateKey(g.acquired) ?? FAR;
 /**
  * What's left to play. A rating is the test: giving a game a score means it was played, so a game marked Not
  * Completed with one was started and set aside, and one without was never started. The Game of the Month log
- * only adds the month a game was last played, where it knows it.
+ * adds the month a game was last played, where it knows it, and keeps what's in progress this month out of
+ * the backlog: it isn't waiting, it's being played.
  */
-export function buildBacklog(games: Game[], months: GotmMonth[], link: (ref: PlayedGame) => Game | null): Backlog {
+export function buildBacklog(games: Game[], months: GotmMonth[], link: (ref: PlayedGame) => Game | null, today: Date): Backlog {
   const last = new Map<number, { key: string; status: PlayStatus | null }>();
   for (const m of months) {
     monthPlayed(m.gameOfTheMonth, m.played).forEach((ref, i) => {
@@ -44,10 +45,12 @@ export function buildBacklog(games: Game[], months: GotmMonth[], link: (ref: Pla
   };
   const byAcquired = (a: Waiting, b: Waiting) => acquiredKey(a.game).localeCompare(acquiredKey(b.game));
   const open = games.filter((g) => g.status === 'Not Completed').map(entry);
+  const thisMonth = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}`;
+  const playingNow = (w: Waiting) => w.month === thisMonth && w.status === 'in-progress';
 
   return {
     started: open.filter((w) => w.game.rating !== null).sort((a, b) => b.game.rating! - a.game.rating! || byAcquired(a, b)),
-    never: open.filter((w) => w.game.rating === null).sort(byAcquired),
+    never: open.filter((w) => w.game.rating === null && !playingNow(w)).sort(byAcquired),
     blocked: games
       .filter((g) => g.status === 'Unplayable')
       .map(entry)

@@ -94,7 +94,7 @@ function Section({
 /** Everything still waiting to be played, oldest first: what the collection is owed. */
 export default function BacklogView({ games, months, link, onOpen, onShowGames }: Props) {
   const today = useMemo(() => new Date(), []);
-  const backlog = useMemo(() => buildBacklog(games, months, link), [games, months, link]);
+  const backlog = useMemo(() => buildBacklog(games, months, link, today), [games, months, link, today]);
   const { started, never, blocked } = backlog;
 
   const owned = (w: Waiting) => {
@@ -112,7 +112,10 @@ export default function BacklogView({ games, months, link, onOpen, onShowGames }
       <div className="awards-head">
         <div>
           <h2>Backlog</h2>
-          <p className="muted">Everything still waiting. A rating means it was played: with one it was set aside, without one it was never started.</p>
+          <p className="muted">
+            Everything still waiting. A rating means it was played: with one it was set aside, without one it was never started. What's in
+            progress this month is left out.
+          </p>
         </div>
         <div className="awards-actions">
           <button className="btn" onClick={() => onShowGames({ statuses: ['Not Completed'], sort: [{ key: 'acquired', dir: 'asc' }] })}>
