@@ -1,7 +1,8 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState, type ReactNode } from 'react';
 import type { AwardValue, Game, GameRef, GotcData, GotcYear, GotmMonth } from '../types';
 import { isGameRef } from '../lib/links';
 import { RefCover, RefTitle } from './GameRefView';
+import { MomentNotes } from './MomentNotes';
 import { YearEditor } from './YearEditor';
 import { YearReview } from './YearReview';
 import { buildAllTime } from '../lib/allTime';
@@ -54,7 +55,7 @@ function Award({ value, link, onOpen, size = 'small' }: { value: AwardValue | nu
   );
 }
 
-function YearStats({ year, link, onOpen }: { year: GotcYear; link: Props['link']; onOpen: Props['onOpen'] }) {
+function YearStats({ year, link, onOpen, children }: { year: GotcYear; link: Props['link']; onOpen: Props['onOpen']; children?: ReactNode }) {
   const s = year.stats;
   return (
     <aside className="year-stats">
@@ -121,6 +122,7 @@ function YearStats({ year, link, onOpen }: { year: GotcYear; link: Props['link']
           </ul>
         </div>
       ) : null}
+      {children}
     </aside>
   );
 }
@@ -154,6 +156,9 @@ export function GotcView({ data, link, onOpen, editable, games, months, onChange
     setYearNo(year);
   });
   const allTime = useMemo(() => buildAllTime(games), [games]);
+  // Moments are written down for the year that's still going, which has no awards entry yet.
+  const notesYear = new Date().getFullYear();
+  const notes = data.notes?.[String(notesYear)] ?? [];
 
   const podium = year ? PODIUM.map((c) => year.awards.find((a) => a.category === c)) : [];
   const rest = year ? year.awards.filter((a) => !PODIUM.includes(a.category)) : [];
@@ -255,7 +260,15 @@ export function GotcView({ data, link, onOpen, editable, games, months, onChange
                   </div>
                 ))}
               </div>
-              <YearStats year={year} link={link} onOpen={onOpen} />
+              <YearStats year={year} link={link} onOpen={onOpen}>
+                {editable && (
+                  <MomentNotes
+                    year={notesYear}
+                    notes={notes}
+                    onSaved={(saved) => onChange({ ...data, notes: { ...data.notes, [String(notesYear)]: saved } })}
+                  />
+                )}
+              </YearStats>
             </div>
           )}
         </>
@@ -308,6 +321,7 @@ export function GotcView({ data, link, onOpen, editable, games, months, onChange
         <YearEditor
           year={editingYear}
           years={data.years}
+          notes={data.notes}
           months={months}
           games={games}
           link={link}

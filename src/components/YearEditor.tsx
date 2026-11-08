@@ -8,6 +8,8 @@ interface Props {
   /** Year to edit, or null to add one (its categories are copied from the latest year). */
   year: GotcYear | null;
   years: GotcYear[];
+  /** The moments written down during each year, to fold into that year's honourable mentions. */
+  notes?: Record<string, string[]>;
   /** Game of the Month data, when loaded, to fill in the year's stats. */
   months: GotmMonth[] | null;
   games: Game[];
@@ -32,7 +34,7 @@ const toPicker = (v: AwardValue | null): PickerValue => (!v ? { title: '', platf
 const fromPicker = (v: PickerValue): AwardValue | null =>
   !v.title.trim() ? null : v.platform.trim() ? { title: v.title, platform: v.platform } : { text: v.title };
 
-export function YearEditor({ year, years, months, games, link, onSaved, onDeleted, onClose }: Props) {
+export function YearEditor({ year, years, notes, months, games, link, onSaved, onDeleted, onClose }: Props) {
   const template = years[0];
   const [yearNo, setYearNo] = useState(String(year?.year ?? (template ? template.year + 1 : new Date().getFullYear())));
   const [awards, setAwards] = useState<AwardRow[]>(() =>
@@ -69,6 +71,10 @@ export function YearEditor({ year, years, months, games, link, onSaved, onDelete
     }
     setMulti([...wins.values()].filter((w) => w.n > 1).map((w) => ({ title: w.ref.title, platform: w.ref.platform })));
   };
+
+  const mentionLines = mentions.split('\n').map((m) => m.trim());
+  const yearNotes = (notes?.[yearNo] ?? []).filter((n) => !mentionLines.includes(n));
+  const addMention = (note: string) => setMentions((m) => (m.trim() ? `${m.replace(/\n+$/, '')}\n${note}` : note));
 
   const updateAward = (i: number, patch: Partial<AwardRow>) => setAwards((as) => as.map((a, j) => (j === i ? { ...a, ...patch } : a)));
 
@@ -198,6 +204,21 @@ export function YearEditor({ year, years, months, games, link, onSaved, onDelete
               + Add rating change
             </button>
           </div>
+
+          {yearNotes.length > 0 && (
+            <div className="field">
+              <span>Moments written down during {yearNo}</span>
+              <ul className="plain-list note-picks">
+                {yearNotes.map((n) => (
+                  <li key={n}>
+                    <button type="button" className="link" onClick={() => addMention(n)}>
+                      + {n}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           <label className="field">
             <span>Moment of the Year: honourable mentions, one per line</span>

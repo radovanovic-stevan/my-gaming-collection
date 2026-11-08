@@ -3,7 +3,7 @@
 //   public/data/games.json  - the collection
 //   public/images/          - game images, named <id>-<hash>.<ext>
 //   public/data/gotm.json   - Game of the Month, one entry per month
-//   public/data/gotc.json   - Game of the Category: yearly awards and stats
+//   public/data/gotc.json   - Game of the Category: yearly awards and stats, plus the moments jotted down per year
 //   public/data/gallery.json - Gallery: pictures with a date, a description and the games in them
 //   public/data/<slug>.json  - other collections (e.g. dylan-dog.json): a checklist per series
 //   public/data/vinyl.json   - vinyl records and when each side was played; images are vinyl-<id>-<hash>.<ext>
@@ -188,7 +188,7 @@ type Played = GameRef & { status: string | null };
 type AwardValue = GameRef | { text: string };
 type GotmMonth = { month: string; gameOfTheMonth: Played | null; completed: number; bought: number | null; played: Played[] };
 type GotcYear = { year: number; awards: { category: string; winner: AwardValue | null }[]; stats: Record<string, unknown> };
-type GotcData = { about: string; years: GotcYear[] };
+type GotcData = { about: string; years: GotcYear[]; notes?: Record<string, string[]> };
 
 const obj = (v: unknown): Record<string, unknown> => (v && typeof v === 'object' ? (v as Record<string, unknown>) : {});
 
@@ -305,6 +305,25 @@ async function handleAwards(parts: string[], method: string, req: IncomingMessag
       send(res, 200, { ok: true });
       return true;
     }
+  }
+
+  // PUT /api/gotc/notes/:year — the moments jotted down during a year, which the site never shows.
+  if (parts[0] === 'gotc' && parts[1] === 'notes' && parts.length === 3 && method === 'PUT') {
+    const key = parts[2];
+    if (!/^\d{4}$/.test(key)) throw new HttpError(400, 'Notes are kept by year, e.g. 2026');
+    const notes = strList((await readBody(req)).notes);
+    await exclusive(async () => {
+      const data = await loadJson<GotcData>(GOTC_FILE);
+      const all = { ...data.notes };
+      if (notes.length) all[key] = notes;
+      else delete all[key];
+      // Keep the file as it was while there is nothing written down.
+      if (Object.keys(all).length) data.notes = all;
+      else delete data.notes;
+      await saveJson(GOTC_FILE, data);
+    });
+    send(res, 200, { notes });
+    return true;
   }
 
   if (parts[0] === 'gotm' || parts[0] === 'gotc') throw new HttpError(405, 'Method not allowed');

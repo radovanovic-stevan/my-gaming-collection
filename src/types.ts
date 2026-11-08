@@ -125,6 +125,11 @@ export interface GotcYear {
 export interface GotcData {
   about: string;
   years: GotcYear[];
+  /**
+   * Moments worth an award, written down as the year goes, by year ("2026"). Only ever shown while local
+   * editing is on: the published site never renders them.
+   */
+  notes?: Record<string, string[]>;
 }
 
 // --- Gallery -----------------------------------------------------------------

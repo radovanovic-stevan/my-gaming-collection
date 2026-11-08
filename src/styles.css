@@ -1724,6 +1724,11 @@ div.gallery-main {
   .gotc-year {
     grid-template-columns: minmax(0, 1fr);
   }
+  /* Stacked under the awards, the stats column is no longer a sidebar: let it run its full height. */
+  .year-stats {
+    position: static;
+    max-height: none;
+  }
 }
 
 .podium {
@@ -1836,6 +1841,9 @@ div.gallery-main {
   background: var(--bg-elev);
   position: sticky;
   top: 12px;
+  /* The moment notes can make this column taller than the window; keep its end reachable. */
+  max-height: calc(100vh - 24px);
+  overflow-y: auto;
 }
 
 .year-stats .year-totals {
@@ -1944,10 +1952,39 @@ div.gallery-main {
   }
   .year-stats {
     position: static;
+    max-height: none;
   }
 }
 
 /* --- Award editors (local dev server only) ----------------------------------- */
+
+/* Moments jotted down for the year still going; the last block of the year's stats, and only with local
+   editing on. */
+.moment-notes {
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+}
+
+.moment-notes p {
+  margin: -4px 0 8px;
+}
+
+.moment-notes textarea {
+  width: 100%;
+  padding: 7px 9px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--bg);
+  resize: vertical;
+}
+
+.moment-notes .form-actions {
+  margin-top: 8px;
+}
+
+.note-picks .link {
+  text-align: left;
+}
 
 .awards-actions {
   display: flex;

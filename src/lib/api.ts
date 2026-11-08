@@ -41,6 +41,7 @@ export const api = {
   deleteMonth: (key: string) => request<{ ok: true }>('DELETE', `gotm/${key}`),
   saveYear: (key: number, year: GotcYear) => request<GotcYear>('PUT', `gotc/years/${key}`, year),
   deleteYear: (key: number) => request<{ ok: true }>('DELETE', `gotc/years/${key}`),
+  saveNotes: (year: number, notes: string[]) => request<{ notes: string[] }>('PUT', `gotc/notes/${year}`, { notes }),
   addPicture: (entry: GalleryInput) => request<GalleryEntry>('POST', 'gallery', entry),
   updatePicture: (id: number, entry: GalleryInput) => request<GalleryEntry>('PUT', `gallery/${id}`, entry),
   deletePicture: (id: number) => request<{ ok: true }>('DELETE', `gallery/${id}`),
