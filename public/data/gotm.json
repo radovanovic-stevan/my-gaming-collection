@@ -2,7 +2,7 @@
  {
   "month": "2026-11",
   "gameOfTheMonth": null,
-  "completed": 1,
+  "completed": 2,
   "bought": null,
   "played": [
    {
@@ -23,7 +23,7 @@
    {
     "title": "Need for Speed: The Run",
     "platform": "3DS",
-    "status": "in-progress"
+    "status": "completed"
    }
   ]
  },
