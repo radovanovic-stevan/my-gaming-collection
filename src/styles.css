@@ -3894,6 +3894,71 @@ button.sv-bar-row:hover {
   }
 }
 
+/* The barcode */
+
+.bc-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.bc-canvas {
+  display: block;
+  width: 100%;
+  border-radius: 4px;
+  cursor: crosshair;
+  /* The stripes are a pixel wide; let the browser keep them that way. */
+  image-rendering: pixelated;
+}
+
+.bc-axis {
+  position: relative;
+  height: 18px;
+  margin-top: 4px;
+  font-size: 11px;
+  color: var(--fg-muted);
+}
+
+.bc-year {
+  position: absolute;
+  top: 0;
+  padding-left: 4px;
+  border-left: 1px solid var(--border);
+  height: 100%;
+  white-space: nowrap;
+}
+
+.bc-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 4px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 12px;
+}
+
+.bc-key {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 7px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+
+.bc-key:hover {
+  border-color: var(--border);
+  background: var(--bg-sunk);
+}
+
+.bc-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+}
+
 /* --- Timeline --------------------------------------------------------------------------- */
 
 /* Each kind of event has a colour for its dot; the label beside it always names it too. */

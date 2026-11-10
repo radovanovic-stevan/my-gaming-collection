@@ -4,6 +4,7 @@ import { yearOf } from '../lib/query';
 import { NOT_GENRES } from '../lib/allTime';
 import { formatPlaytime } from '../lib/format';
 import { useTip, type Bind } from '../lib/tip';
+import Barcode from './Barcode';
 
 interface Props {
   games: Game[];
@@ -294,6 +295,8 @@ export default function StatsView({ games, onShowGames, onOpen }: Props) {
         <Tile label="Complete in box" value={pct(s.complete, s.physical)} detail={`${s.complete} of ${s.physical} games with box, cover and manual`} />
         <Tile label="Play time tracked" value={`${Math.round(s.minutes / 60)}h`} detail={`across ${plural(s.played.length, 'game')}`} />
       </section>
+
+      <Barcode games={games} bind={bind} onOpen={onOpen} onShowGames={onShowGames} />
 
       <section className="sv-card sv-wide">
         <h2 className="section-title">Acquired and completed per year</h2>
