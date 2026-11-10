@@ -4,6 +4,7 @@ import { buildBacklog, yearsOwned, type Waiting } from '../lib/backlog';
 import { formatDate, formatMonthYear } from '../lib/format';
 import { Cover } from './Cover';
 import { PlatformBadge, RatingBadge } from './Badges';
+import Confessional from './Confessional';
 
 interface Props {
   games: Game[];
@@ -123,6 +124,8 @@ export default function BacklogView({ games, months, link, onOpen, onShowGames }
           </button>
         </div>
       </div>
+
+      <Confessional entries={never} onOpen={onOpen} />
 
       <section className="sv-tiles" aria-label="Highlights">
         <Tile label="Still waiting" value={String(waiting)} detail={`of ${games.length} games`} />

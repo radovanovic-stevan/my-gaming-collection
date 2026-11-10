@@ -5400,6 +5400,170 @@ button.tl-chip:hover,
   margin-bottom: 0;
 }
 
+/* The Confessional: the worst offender in the backlog, with the clock still running on it.
+   Dark in both themes on purpose — it is the one part of the site that isn't trying to be nice. */
+.confessional {
+  --cf-fg: #f2f0ec;
+  --cf-muted: #98938b;
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid #000000;
+  background: radial-gradient(120% 140% at 15% 0%, #27232c, #121116 70%);
+  color: var(--cf-fg);
+}
+
+.cf-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.cf-head .section-title {
+  margin: 0;
+  color: var(--cf-muted);
+}
+
+.cf-position {
+  font-size: 12px;
+  color: var(--cf-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.cf-body {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.cf-cover {
+  flex: none;
+  display: block;
+  overflow: hidden;
+  width: 92px;
+  height: 122px;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  box-shadow: 0 6px 20px rgb(0 0 0 / 0.45);
+}
+
+.cf-cover .cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cf-text {
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+}
+
+.cf-title {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-align: left;
+}
+
+.cf-title:hover {
+  text-decoration: underline;
+}
+
+.cf-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--cf-muted);
+}
+
+/* The light-mode badge would glare on this panel; keep the dark one in both themes. */
+.confessional .badge-platform {
+  color: hsl(var(--hue) 70% 78%);
+  background: hsl(var(--hue) 35% 20%);
+}
+
+.cf-clock {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 2px 0 0;
+}
+
+.cf-days {
+  font-size: 54px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #f0845a;
+  font-variant-numeric: tabular-nums;
+}
+
+.cf-unit {
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cf-muted);
+}
+
+.cf-time {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 17px;
+  font-variant-numeric: tabular-nums;
+  color: var(--cf-muted);
+}
+
+.cf-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.cf-btn {
+  background: transparent;
+  border-color: rgb(255 255 255 / 0.22);
+  color: var(--cf-fg);
+}
+
+.cf-btn:hover:not(:disabled) {
+  border-color: rgb(255 255 255 / 0.55);
+}
+
+.cf-total {
+  margin: 18px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid rgb(255 255 255 / 0.1);
+  font-size: 13px;
+  color: var(--cf-muted);
+}
+
+@media (max-width: 560px) {
+  .cf-body {
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .cf-cover {
+    width: 66px;
+    height: 88px;
+  }
+  .cf-title {
+    font-size: 18px;
+  }
+  .cf-days {
+    font-size: 40px;
+  }
+}
+
 .bl-section {
   display: grid;
   gap: 12px;
