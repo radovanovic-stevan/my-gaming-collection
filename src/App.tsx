@@ -481,7 +481,7 @@ export default function App() {
 
       {tab === 'consoles' &&
         (consoles.data ? (
-          <ConsolesView consoles={consoles.data} games={games} editable={editable} onChange={consoles.setData} onShowGames={showPlatform} focus={focusOn<number>('consoles')} onFocused={clearFocus} />
+          <ConsolesView consoles={consoles.data} games={games} months={gotm.data} link={link} editable={editable} onChange={consoles.setData} onShowGames={showPlatform} focus={focusOn<number>('consoles')} onFocused={clearFocus} />
         ) : (
           <div className="empty">{consoles.error ? `Couldn't load the consoles: ${consoles.error}` : 'Loading…'}</div>
         ))}

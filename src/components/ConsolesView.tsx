@@ -1,16 +1,20 @@
 import { useMemo, useState } from 'react';
-import type { Game, GameConsole } from '../types';
+import type { Game, GameConsole, GameRef, GotmMonth } from '../types';
 import { api } from '../lib/api';
 import { useFocus } from '../lib/focus';
 import { acquiredSortKey, imageUrl, platformHue } from '../lib/format';
 import { ImageManager, type ImageOps } from './ImageManager';
 import { ConsoleDetail } from './ConsoleDetail';
 import { ConsoleForm } from './ConsoleForm';
+import Graveyard from './Graveyard';
 
 interface Props {
   consoles: GameConsole[];
   /** The game collection, for each console's game count. */
   games: Game[];
+  /** The Game of the Month log, for the graveyard's last-played dates; null until it loads. */
+  months: GotmMonth[] | null;
+  link: (ref: GameRef) => Game | null;
   /** Local editing (dev server only). */
   editable: boolean;
   onChange: (consoles: GameConsole[]) => void;
@@ -44,7 +48,7 @@ export function ConsoleCover({ item, image = item.cover }: { item: GameConsole; 
   );
 }
 
-export function ConsolesView({ consoles, games, editable, onChange, onShowGames, focus, onFocused }: Props) {
+export function ConsolesView({ consoles, games, months, link, editable, onChange, onShowGames, focus, onFocused }: Props) {
   const [search, setSearch] = useState('');
   // Consoles are added roughly in order, so by maker and then id keeps each maker's line-up in release order.
   const [sort, setSort] = useState<SortKey>('maker');
@@ -165,6 +169,8 @@ export function ConsolesView({ consoles, games, editable, onChange, onShowGames,
           </div>
         ))
       )}
+
+      <Graveyard games={games} months={months} link={link} onShowGames={onShowGames} />
 
       {modal?.kind === 'detail' && open && (
         <ConsoleDetail
