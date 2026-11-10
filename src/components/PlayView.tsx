@@ -2,10 +2,12 @@ import { useState } from 'react';
 import type { Game } from '../types';
 import GuessView from './GuessView';
 import HigherLowerView from './HigherLowerView';
+import RatingView from './RatingView';
 
 const MODES = [
   { id: 'guess', label: 'Guess the Game' },
   { id: 'higher-lower', label: 'Higher or Lower' },
+  { id: 'rating', label: 'Guess My Rating' },
 ] as const;
 
 type Mode = (typeof MODES)[number]['id'];
@@ -22,7 +24,9 @@ export default function PlayView({ games, onOpen }: { games: Game[]; onOpen: (ga
           </button>
         ))}
       </div>
-      {mode === 'guess' ? <GuessView games={games} onOpen={onOpen} /> : <HigherLowerView games={games} onOpen={onOpen} />}
+      {mode === 'guess' && <GuessView games={games} onOpen={onOpen} />}
+      {mode === 'higher-lower' && <HigherLowerView games={games} onOpen={onOpen} />}
+      {mode === 'rating' && <RatingView games={games} onOpen={onOpen} />}
     </div>
   );
 }

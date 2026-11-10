@@ -67,14 +67,6 @@ export default function Confessional({ entries, onOpen }: Props) {
             <span className="cf-bought">Bought {formatDate(game.acquired)}. Never started.</span>
           </span>
 
-          <p className="cf-clock" aria-label={`Owned for ${count(days)} days`}>
-            <span className="cf-days">{count(days)}</span>
-            <span className="cf-unit">days</span>
-            <span className="cf-time" aria-hidden="true">
-              {pad(Math.floor(rest / 3_600_000))}:{pad(Math.floor((rest % 3_600_000) / 60_000))}:{pad(Math.floor((rest % 60_000) / 1000))}
-            </span>
-          </p>
-
           <div className="cf-actions">
             <button className="btn cf-btn" onClick={() => setI((n) => (n + 1) % dated.length)}>
               Next
@@ -84,6 +76,14 @@ export default function Confessional({ entries, onOpen }: Props) {
             </button>
           </div>
         </div>
+
+        <p className="cf-clock" aria-label={`Owned for ${count(days)} days`}>
+          <span className="cf-days">{count(days)}</span>
+          <span className="cf-unit">days</span>
+          <span className="cf-time" aria-hidden="true">
+            {pad(Math.floor(rest / 3_600_000))}:{pad(Math.floor((rest % 3_600_000) / 60_000))}:{pad(Math.floor((rest % 60_000) / 1000))}
+          </span>
+        </p>
       </div>
 
       <p className="cf-total">

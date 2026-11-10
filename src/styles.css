@@ -4046,6 +4046,12 @@ button.sv-bar-row:hover {
   border-radius: inherit;
 }
 
+/* Four inks, picked per country by the hash in lib/passport. */
+.ps-ink-0 { --ink: #2b3a8f; }
+.ps-ink-1 { --ink: #26262a; }
+.ps-ink-2 { --ink: #96292c; }
+.ps-ink-3 { --ink: #1f6244; }
+
 .ps-round {
   width: 116px;
   height: 116px;
@@ -5570,6 +5576,7 @@ button.tl-chip:hover,
 .cf-body {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 18px;
 }
 
@@ -5628,12 +5635,15 @@ button.tl-chip:hover,
   background: hsl(var(--hue) 35% 20%);
 }
 
+/* Pushed to the far side of the panel, which is otherwise a lot of empty dark. */
 .cf-clock {
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 10px;
-  margin: 2px 0 0;
+  margin: 0 0 0 auto;
+  padding-left: 16px;
 }
 
 .cf-days {
@@ -5887,7 +5897,7 @@ button.tl-chip:hover,
 }
 
 
-/* Guess My Rating: one game, a slider, then the gap between the two numbers. */
+/* Guess My Rating: one game, a number typed in, then the gap between the two scores. */
 .gr-main {
   display: grid;
   justify-items: center;
@@ -5920,60 +5930,73 @@ button.tl-chip:hover,
   font-weight: 700;
 }
 
-.gr-guess {
-  margin-top: 6px;
-  font-size: 44px;
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  font-variant-numeric: tabular-nums;
-}
+/* Typing the guess */
 
-.gr-slider {
-  width: 100%;
-  accent-color: var(--accent);
-}
-
-.gr-lock {
-  justify-self: center;
-}
-
-/* The reveal: both numbers pinned on the same 0-100 track. */
-.gr-scale {
-  position: relative;
-  width: 100%;
-  height: 76px;
-  margin-top: 10px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--bg-sunk), var(--accent-soft));
-}
-
-.gr-scale::after {
-  content: '';
-  position: absolute;
-  inset: 34px 0 auto;
-  height: 4px;
-  border-radius: 2px;
-  background: var(--border);
-}
-
-.gr-pin {
-  position: absolute;
-  top: 0;
+.gr-entry {
   display: grid;
   justify-items: center;
-  gap: 1px;
-  transform: translateX(-50%);
-  white-space: nowrap;
+  gap: 12px;
+  margin-top: 8px;
 }
 
-.gr-pin b {
-  font-size: 20px;
+.gr-field {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.gr-input {
+  width: 2.4em;
+  padding: 2px 6px;
+  border: 0;
+  border-bottom: 2px solid var(--border);
+  border-radius: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-size: 44px;
+  font-weight: 800;
+  /* Tight, or the underline floats well below an empty box. */
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-align: center;
   font-variant-numeric: tabular-nums;
-  line-height: 1.1;
 }
 
-.gr-pin i {
+.gr-input:focus {
+  outline: none;
+  border-bottom-color: var(--accent);
+}
+
+.gr-hint {
+  font-size: 11.5px;
+  color: var(--fg-muted);
+}
+
+/* The reveal: both scores, the span between them, then the verdict as a sentence. */
+
+.gr-result {
+  display: grid;
+  gap: 4px;
+  width: 100%;
+  margin-top: 6px;
+}
+
+.gr-nums {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.gr-num,
+.gr-apart {
+  display: grid;
+  gap: 1px;
+}
+
+.gr-num i,
+.gr-apart i {
   font-size: 10px;
   font-style: normal;
   text-transform: uppercase;
@@ -5981,39 +6004,74 @@ button.tl-chip:hover,
   color: var(--fg-muted);
 }
 
-/* A stem down to the track, so a pin reads as a position and not a floating number. */
-.gr-pin::after {
-  content: '';
-  width: 2px;
-  height: 22px;
-  border-radius: 1px;
-  background: currentColor;
+.gr-num b {
+  font-size: 34px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
 }
 
-.gr-pin-guess {
-  color: var(--fg-muted);
-}
-
-.gr-pin-actual {
-  top: 38px;
+.gr-num-real b {
   color: var(--accent);
 }
 
-.gr-pin-actual::after {
-  order: -1;
+.gr-apart b {
+  font-size: 18px;
+  line-height: 1;
+  color: var(--fg-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.gr-track {
+  position: relative;
+  height: 8px;
+  margin: 12px 0 10px;
+  border-radius: 4px;
+  background: var(--bg-sunk);
+}
+
+.gr-span {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  border-radius: 4px;
+  background: var(--accent);
+  opacity: 0.25;
+}
+
+.gr-dot {
+  position: absolute;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--bg-elev);
+  transform: translate(-50%, -50%);
+}
+
+.gr-dot-guess {
+  background: var(--fg-muted);
+}
+
+.gr-dot-real {
+  background: var(--accent);
 }
 
 .gr-verdict {
-  display: grid;
-  gap: 2px;
-  margin: 6px 0 0;
+  margin: 0;
+  font-size: 15px;
+  color: var(--fg-muted);
 }
 
-.gr-verdict.gg-won .eyebrow {
+.gr-verdict b {
+  color: var(--fg);
+}
+
+.gr-near b {
   color: #1f9d55;
 }
 
-.gr-verdict.gg-lost .eyebrow {
+.gr-far b {
   color: #d14343;
 }
 
@@ -6021,6 +6079,7 @@ button.tl-chip:hover,
   display: grid;
   justify-items: center;
   gap: 8px;
+  margin-top: 12px;
 }
 
 @media (max-width: 640px) {
