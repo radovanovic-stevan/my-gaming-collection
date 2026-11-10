@@ -6,6 +6,7 @@ import type { Feature, Geometry, Polygon } from 'geojson';
 import world from 'world-atlas/countries-50m.json';
 import type { Game } from '../types';
 import { Cover } from './Cover';
+import Passport from './Passport';
 import { PlatformBadge } from './Badges';
 
 interface Props {
@@ -163,6 +164,8 @@ export default function MapView({ games, onOpen }: Props) {
           </ul>
         </div>
       )}
+
+      <Passport games={games} selected={selected} onSelect={setSelected} />
     </section>
   );
 }
