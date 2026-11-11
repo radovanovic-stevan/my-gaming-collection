@@ -25096,10 +25096,10 @@
   "title": "Dead or Alive: Dimensions",
   "platform": "3DS",
   "acquired": "2025-12-11",
-  "completed": null,
-  "status": "Not Completed",
-  "rating": null,
-  "timesCompleted": 0,
+  "completed": "2026-11-11",
+  "status": "Completed",
+  "rating": 64,
+  "timesCompleted": 1,
   "percent": null,
   "playtime": null,
   "genres": [
@@ -25111,7 +25111,9 @@
    "Manual"
   ],
   "edition": "",
+  "trophies": null,
   "boughtIn": "Italy",
+  "playsVia": null,
   "images": [
    "964-16e1ebf8.jpg",
    "964-2edd7bac.jpg"
