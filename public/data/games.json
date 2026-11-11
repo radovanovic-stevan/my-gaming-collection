@@ -28408,8 +28408,10 @@
   "trophies": null,
   "boughtIn": "Romania",
   "playsVia": null,
-  "images": [],
-  "cover": null
+  "images": [
+   "1093-70107c71.jpg"
+  ],
+  "cover": "1093-70107c71.jpg"
  },
  {
   "id": 1094,
@@ -28434,7 +28436,9 @@
   "trophies": null,
   "boughtIn": "Romania",
   "playsVia": null,
-  "images": [],
-  "cover": null
+  "images": [
+   "1094-47ae66e7.jpg"
+  ],
+  "cover": "1094-47ae66e7.jpg"
  }
 ]
