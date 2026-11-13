@@ -1,124 +1,732 @@
 {
-  "title": "KOEI Warriors",
-  "kanji": "無双",
-  "note": "Every Musou game Omega Force has made: the Warriors line and the crossovers built on it. Online-only and mobile-only titles are left out — there's nothing to put on a shelf.",
-  "series": [
+ "title": "Warriors Shrine",
+ "kanji": "無双",
+ "mark": "無",
+ "eyebrow": "Omega Force · Koei Tecmo",
+ "note": "Every Musou game Omega Force has made: the Warriors line and the crossovers built on it. Digital-only releases are left out — there's nothing to put on a shelf.",
+ "series": [
+  {
+   "id": "dynasty",
+   "kanji": "真・三國無双",
+   "name": "Dynasty Warriors",
+   "note": "Shin Sangoku Musou",
+   "games": [
     {
-      "id": "dynasty",
-      "kanji": "真・三國無双",
-      "name": "Dynasty Warriors",
-      "note": "Shin Sangoku Musou",
-      "games": [
-        { "title": "Dynasty Warriors", "year": 1997, "platforms": ["PS1"], "note": "A one-on-one fighter; the musou came later" },
-        { "title": "Dynasty Warriors 2", "year": 2000, "platforms": ["PS2"] },
-        { "title": "Dynasty Warriors 3", "year": 2001, "platforms": ["PS2", "XBOX"] },
-        { "title": "Dynasty Warriors 3: Xtreme Legends", "year": 2002, "platforms": ["PS2"] },
-        { "title": "Dynasty Warriors 4", "year": 2003, "platforms": ["PS2", "XBOX", "PC"] },
-        { "title": "Dynasty Warriors 4: Xtreme Legends", "year": 2003, "platforms": ["PS2"] },
-        { "title": "Dynasty Warriors 4: Empires", "year": 2004, "platforms": ["PS2", "XBOX"] },
-        { "title": "Dynasty Warriors 5", "year": 2005, "platforms": ["PS2", "XBOX"] },
-        { "title": "Dynasty Warriors 5: Xtreme Legends", "year": 2005, "platforms": ["PS2"] },
-        { "title": "Dynasty Warriors 5: Empires", "year": 2006, "platforms": ["PS2", "X360"] },
-        { "title": "Dynasty Warriors 6", "year": 2007, "platforms": ["PS3", "X360", "PC", "PS2"] },
-        { "title": "Dynasty Warriors 6: Empires", "year": 2009, "platforms": ["PS3", "X360"] },
-        { "title": "Dynasty Warriors 7", "year": 2011, "platforms": ["PS3", "X360", "PC"] },
-        { "title": "Dynasty Warriors 7: Xtreme Legends", "year": 2011, "platforms": ["PS3", "PC"] },
-        { "title": "Dynasty Warriors 7: Empires", "year": 2012, "platforms": ["PS3", "PC"] },
-        { "title": "Dynasty Warriors 8", "year": 2013, "platforms": ["PS3", "X360", "PC"] },
-        { "title": "Dynasty Warriors 8: Xtreme Legends", "year": 2013, "platforms": ["PS3", "PS4", "VITA", "PC"] },
-        { "title": "Dynasty Warriors 8: Empires", "year": 2015, "platforms": ["PS3", "PS4", "XB1", "VITA", "PC"] },
-        { "title": "Dynasty Warriors 9", "year": 2018, "platforms": ["PS4", "XB1", "PC"] },
-        { "title": "Dynasty Warriors 9: Empires", "year": 2021, "platforms": ["PS4", "PS5", "XB1", "XSX", "Switch", "PC"] },
-        { "title": "Dynasty Warriors: Origins", "year": 2025, "platforms": ["PS5", "XSX", "PC", "Switch 2"] },
-        { "title": "Dynasty Warriors 3: Complete Edition Remastered", "year": 2026, "platforms": ["PS5", "XSX", "Switch 2", "Switch", "PC"] }
-      ]
+     "title": "Dynasty Warriors",
+     "year": 1997,
+     "platforms": [
+      "PS1"
+     ],
+     "note": "A one-on-one fighter; the musou came later"
     },
     {
-      "id": "dynasty-spin",
-      "kanji": "外伝",
-      "name": "Dynasty Warriors spin-offs",
-      "games": [
-        { "title": "Dynasty Warriors", "year": 2004, "platforms": ["PSP"], "note": "The first handheld musou" },
-        { "title": "Dynasty Warriors Advance", "year": 2005, "platforms": ["GBA"] },
-        { "title": "Dynasty Warriors Vol. 2", "year": 2006, "platforms": ["PSP"] },
-        { "title": "Dynasty Warriors DS: Fighter's Battle", "year": 2007, "platforms": ["NDS"] },
-        { "title": "Dynasty Warriors: Strikeforce", "year": 2009, "platforms": ["PSP", "PS3", "X360"] },
-        { "title": "Shin Sangoku Musou: Multi Raid 2", "year": 2010, "platforms": ["PSP"], "jp": true, "note": "Strikeforce 2, never localised" },
-        { "title": "Dynasty Warriors Next", "year": 2011, "platforms": ["VITA"] },
-        { "title": "Shin Sangoku Musou VS", "year": 2012, "platforms": ["3DS"], "jp": true },
-        { "title": "Dynasty Warriors: Godseekers", "year": 2016, "platforms": ["PS3", "PS4", "VITA"], "note": "A tactical RPG" }
-      ]
+     "title": "Dynasty Warriors 2",
+     "year": 2000,
+     "platforms": [
+      "PS2"
+     ]
     },
     {
-      "id": "samurai",
-      "kanji": "戦国無双",
-      "name": "Samurai Warriors",
-      "note": "Sengoku Musou",
-      "games": [
-        { "title": "Samurai Warriors", "year": 2004, "platforms": ["PS2", "XBOX"] },
-        { "title": "Samurai Warriors: Xtreme Legends", "year": 2004, "platforms": ["PS2"] },
-        { "title": "Samurai Warriors: State of War", "year": 2005, "platforms": ["PSP"] },
-        { "title": "Samurai Warriors 2", "year": 2006, "platforms": ["PS2", "X360", "PC"] },
-        { "title": "Samurai Warriors 2: Xtreme Legends", "year": 2007, "platforms": ["PS2", "X360"] },
-        { "title": "Samurai Warriors 2: Empires", "year": 2007, "platforms": ["PS2", "X360"] },
-        { "title": "Samurai Warriors: Katana", "year": 2007, "platforms": ["Wii"], "note": "On rails, light-gun style" },
-        { "title": "Samurai Warriors 3", "year": 2009, "platforms": ["Wii", "PS3"], "note": "PS3 as Samurai Warriors 3 Z, Japan only" },
-        { "title": "Samurai Warriors 3: Xtreme Legends", "year": 2011, "platforms": ["Wii", "PSP"], "jp": true, "note": "Moushouden" },
-        { "title": "Samurai Warriors 3: Empires", "year": 2011, "platforms": ["PS3", "PSP"], "jp": true },
-        { "title": "Samurai Warriors: Chronicles", "year": 2011, "platforms": ["3DS"] },
-        { "title": "Samurai Warriors: Chronicles 2nd", "year": 2012, "platforms": ["3DS"], "jp": true },
-        { "title": "Samurai Warriors 4", "year": 2014, "platforms": ["PS3", "PS4", "VITA"] },
-        { "title": "Samurai Warriors: Chronicles 3", "year": 2015, "platforms": ["VITA", "3DS", "PC"] },
-        { "title": "Samurai Warriors 4-II", "year": 2015, "platforms": ["PS3", "PS4", "VITA", "PC"] },
-        { "title": "Samurai Warriors 4: Empires", "year": 2016, "platforms": ["PS3", "PS4", "VITA", "PC"] },
-        { "title": "Samurai Warriors: Spirit of Sanada", "year": 2016, "platforms": ["PS3", "PS4", "VITA", "PC"] },
-        { "title": "Samurai Warriors 4 DX", "year": 2021, "platforms": ["Switch", "PS4"], "jp": true },
-        { "title": "Samurai Warriors 5", "year": 2021, "platforms": ["PS4", "Switch", "XB1", "PC"] }
-      ]
+     "title": "Dynasty Warriors 3",
+     "year": 2001,
+     "platforms": [
+      "PS2",
+      "XBOX"
+     ]
     },
     {
-      "id": "orochi",
-      "kanji": "無双オロチ",
-      "name": "Warriors Orochi",
-      "note": "The two casts, thrown together",
-      "games": [
-        { "title": "Warriors Orochi", "year": 2007, "platforms": ["PS2", "PSP", "X360", "PC"] },
-        { "title": "Warriors Orochi 2", "year": 2008, "platforms": ["PS2", "PSP", "X360"] },
-        { "title": "Musou Orochi Z", "year": 2009, "platforms": ["PS3", "PC"], "jp": true },
-        { "title": "Warriors Orochi 3", "year": 2011, "platforms": ["PS3", "X360", "Wii U", "PS4", "VITA", "XB1", "PC", "Switch"], "note": "Later as Hyper, Ultimate and the Switch Definitive Edition" },
-        { "title": "Warriors All-Stars", "year": 2017, "platforms": ["PS4", "VITA", "PC"], "note": "Koei Tecmo's own cast, Nioh and Atelier included" },
-        { "title": "Warriors Orochi 4", "year": 2018, "platforms": ["PS4", "Switch", "XB1", "PC"], "note": "Ultimate followed in 2020" },
-        { "title": "Warriors: Abyss", "year": 2025, "platforms": ["PS4", "PS5", "XSX", "Switch", "PC"], "note": "A roguelite" }
-      ]
+     "title": "Dynasty Warriors 3: Xtreme Legends",
+     "year": 2002,
+     "platforms": [
+      "PS2"
+     ]
     },
     {
-      "id": "crossover",
-      "kanji": "共演",
-      "name": "Crossovers",
-      "note": "Someone else's cast, Omega Force's game",
-      "games": [
-        { "title": "Dynasty Warriors: Gundam", "year": 2007, "platforms": ["PS2", "PS3", "X360"] },
-        { "title": "Dynasty Warriors: Gundam 2", "year": 2008, "platforms": ["PS2", "PS3", "X360"] },
-        { "title": "Dynasty Warriors: Gundam 3", "year": 2010, "platforms": ["PS3", "X360"] },
-        { "title": "Dynasty Warriors: Gundam Reborn", "year": 2013, "platforms": ["PS3", "VITA"] },
-        { "title": "Fist of the North Star: Ken's Rage", "year": 2010, "platforms": ["PS3", "X360"] },
-        { "title": "Fist of the North Star: Ken's Rage 2", "year": 2012, "platforms": ["PS3", "X360", "Wii U"] },
-        { "title": "One Piece: Pirate Warriors", "year": 2012, "platforms": ["PS3"] },
-        { "title": "One Piece: Pirate Warriors 2", "year": 2013, "platforms": ["PS3", "VITA"] },
-        { "title": "One Piece: Pirate Warriors 3", "year": 2015, "platforms": ["PS3", "PS4", "VITA", "Switch", "PC"] },
-        { "title": "One Piece: Pirate Warriors 4", "year": 2020, "platforms": ["PS4", "Switch", "XB1", "PC", "Switch 2"] },
-        { "title": "Hyrule Warriors", "year": 2014, "platforms": ["Wii U", "3DS", "Switch"], "note": "Legends on 3DS, Definitive Edition on Switch" },
-        { "title": "Hyrule Warriors: Age of Calamity", "year": 2020, "platforms": ["Switch"] },
-        { "title": "Hyrule Warriors: Age of Imprisonment", "year": 2025, "platforms": ["Switch 2"] },
-        { "title": "Dragon Quest Heroes", "year": 2015, "platforms": ["PS3", "PS4", "PC", "Switch"], "aliases": ["Dragon Quest Heroes: The World Tree's Woe and the Blight Below"] },
-        { "title": "Dragon Quest Heroes II", "year": 2016, "platforms": ["PS3", "PS4", "VITA", "PC", "Switch"], "aliases": ["Dragon Quest Heroes II: Twin Kings and the Prophecy's End"] },
-        { "title": "Arslan: The Warriors of Legend", "year": 2015, "platforms": ["PS3", "PS4", "XB1", "PC"] },
-        { "title": "Berserk and the Band of the Hawk", "year": 2016, "platforms": ["PS3", "PS4", "VITA", "PC"] },
-        { "title": "Fire Emblem Warriors", "year": 2017, "platforms": ["Switch", "3DS"] },
-        { "title": "Persona 5 Strikers", "year": 2020, "platforms": ["PS4", "Switch", "PC"] },
-        { "title": "Touken Ranbu Warriors", "year": 2022, "platforms": ["Switch", "PC"] },
-        { "title": "Fire Emblem Warriors: Three Hopes", "year": 2022, "platforms": ["Switch"] }
-      ]
+     "title": "Dynasty Warriors 4",
+     "year": 2003,
+     "platforms": [
+      "PS2",
+      "XBOX",
+      "PC"
+     ]
+    },
+    {
+     "title": "Dynasty Warriors 4: Xtreme Legends",
+     "year": 2003,
+     "platforms": [
+      "PS2"
+     ]
+    },
+    {
+     "title": "Dynasty Warriors 4: Empires",
+     "year": 2004,
+     "platforms": [
+      "PS2",
+      "XBOX"
+     ]
+    },
+    {
+     "title": "Dynasty Warriors 5",
+     "year": 2005,
+     "platforms": [
+      "PS2",
+      "XBOX"
+     ]
+    },
+    {
+     "title": "Dynasty Warriors 5: Xtreme Legends",
+     "year": 2005,
+     "platforms": [
+      "PS2"
+     ]
+    },
+    {
+     "title": "Dynasty Warriors 5: Empires",
+     "year": 2006,
+     "platforms": [
+      "PS2",
+      "X360"
+     ]
+    },
+    {
+     "title": "Dynasty Warriors 6",
+     "year": 2007,
+     "platforms": [
+      "PS3",
+      "X360",
+      "PC",
+      "PS2"
+     ]
+    },
+    {
+     "title": "Dynasty Warriors 6: Empires",
+     "year": 2009,
+     "platforms": [
+      "PS3",
+      "X360"
+     ]
+    },
+    {
+     "title": "Dynasty Warriors 7",
+     "year": 2011,
+     "platforms": [
+      "PS3",
+      "X360",
+      "PC"
+     ]
+    },
+    {
+     "title": "Dynasty Warriors 7: Xtreme Legends",
+     "year": 2011,
+     "platforms": [
+      "PS3",
+      "PC"
+     ]
+    },
+    {
+     "title": "Dynasty Warriors 7: Empires",
+     "year": 2012,
+     "platforms": [
+      "PS3",
+      "PC"
+     ]
+    },
+    {
+     "title": "Dynasty Warriors 8",
+     "year": 2013,
+     "platforms": [
+      "PS3",
+      "X360",
+      "PC"
+     ]
+    },
+    {
+     "title": "Dynasty Warriors 8: Xtreme Legends",
+     "year": 2013,
+     "platforms": [
+      "PS3",
+      "PS4",
+      "VITA",
+      "PC"
+     ]
+    },
+    {
+     "title": "Dynasty Warriors 8: Empires",
+     "year": 2015,
+     "platforms": [
+      "PS3",
+      "PS4",
+      "XB1",
+      "VITA",
+      "PC"
+     ]
+    },
+    {
+     "title": "Dynasty Warriors 9",
+     "year": 2018,
+     "platforms": [
+      "PS4",
+      "XB1",
+      "PC"
+     ]
+    },
+    {
+     "title": "Dynasty Warriors 9: Empires",
+     "year": 2021,
+     "platforms": [
+      "PS4",
+      "PS5",
+      "XB1",
+      "XSX",
+      "Switch",
+      "PC"
+     ]
+    },
+    {
+     "title": "Dynasty Warriors: Origins",
+     "year": 2025,
+     "platforms": [
+      "PS5",
+      "XSX",
+      "PC",
+      "Switch 2"
+     ]
+    },
+    {
+     "title": "Dynasty Warriors 3: Complete Edition Remastered",
+     "year": 2026,
+     "platforms": [
+      "PS5",
+      "XSX",
+      "Switch 2",
+      "Switch",
+      "PC"
+     ]
     }
-  ]
+   ]
+  },
+  {
+   "id": "dynasty-spin",
+   "kanji": "外伝",
+   "name": "Dynasty Warriors spin-offs",
+   "games": [
+    {
+     "title": "Dynasty Warriors",
+     "year": 2004,
+     "platforms": [
+      "PSP"
+     ],
+     "note": "The first handheld musou"
+    },
+    {
+     "title": "Dynasty Warriors Advance",
+     "year": 2005,
+     "platforms": [
+      "GBA"
+     ]
+    },
+    {
+     "title": "Dynasty Warriors Vol. 2",
+     "year": 2006,
+     "platforms": [
+      "PSP"
+     ]
+    },
+    {
+     "title": "Dynasty Warriors DS: Fighter's Battle",
+     "year": 2007,
+     "platforms": [
+      "NDS"
+     ]
+    },
+    {
+     "title": "Dynasty Warriors: Strikeforce",
+     "year": 2009,
+     "platforms": [
+      "PSP",
+      "PS3",
+      "X360"
+     ]
+    },
+    {
+     "title": "Shin Sangoku Musou: Multi Raid 2",
+     "year": 2010,
+     "platforms": [
+      "PSP"
+     ],
+     "jp": true,
+     "note": "Strikeforce 2, never localised"
+    },
+    {
+     "title": "Dynasty Warriors Next",
+     "year": 2011,
+     "platforms": [
+      "VITA"
+     ]
+    },
+    {
+     "title": "Shin Sangoku Musou VS",
+     "year": 2012,
+     "platforms": [
+      "3DS"
+     ],
+     "jp": true
+    },
+    {
+     "title": "Dynasty Warriors: Godseekers",
+     "year": 2016,
+     "platforms": [
+      "PS3",
+      "PS4",
+      "VITA"
+     ],
+     "note": "A tactical RPG"
+    }
+   ]
+  },
+  {
+   "id": "samurai",
+   "kanji": "戦国無双",
+   "name": "Samurai Warriors",
+   "note": "Sengoku Musou",
+   "games": [
+    {
+     "title": "Samurai Warriors",
+     "year": 2004,
+     "platforms": [
+      "PS2",
+      "XBOX"
+     ]
+    },
+    {
+     "title": "Samurai Warriors: Xtreme Legends",
+     "year": 2004,
+     "platforms": [
+      "PS2"
+     ]
+    },
+    {
+     "title": "Samurai Warriors: State of War",
+     "year": 2005,
+     "platforms": [
+      "PSP"
+     ]
+    },
+    {
+     "title": "Samurai Warriors 2",
+     "year": 2006,
+     "platforms": [
+      "PS2",
+      "X360",
+      "PC"
+     ]
+    },
+    {
+     "title": "Samurai Warriors 2: Xtreme Legends",
+     "year": 2007,
+     "platforms": [
+      "PS2",
+      "X360"
+     ]
+    },
+    {
+     "title": "Samurai Warriors 2: Empires",
+     "year": 2007,
+     "platforms": [
+      "PS2",
+      "X360"
+     ]
+    },
+    {
+     "title": "Samurai Warriors: Katana",
+     "year": 2007,
+     "platforms": [
+      "Wii"
+     ],
+     "note": "On rails, light-gun style"
+    },
+    {
+     "title": "Samurai Warriors 3",
+     "year": 2009,
+     "platforms": [
+      "Wii",
+      "PS3"
+     ],
+     "note": "PS3 as Samurai Warriors 3 Z, Japan only"
+    },
+    {
+     "title": "Samurai Warriors 3: Xtreme Legends",
+     "year": 2011,
+     "platforms": [
+      "Wii",
+      "PSP"
+     ],
+     "jp": true,
+     "note": "Moushouden"
+    },
+    {
+     "title": "Samurai Warriors 3: Empires",
+     "year": 2011,
+     "platforms": [
+      "PS3",
+      "PSP"
+     ],
+     "jp": true
+    },
+    {
+     "title": "Samurai Warriors: Chronicles",
+     "year": 2011,
+     "platforms": [
+      "3DS"
+     ]
+    },
+    {
+     "title": "Samurai Warriors: Chronicles 2nd",
+     "year": 2012,
+     "platforms": [
+      "3DS"
+     ],
+     "jp": true
+    },
+    {
+     "title": "Samurai Warriors 4",
+     "year": 2014,
+     "platforms": [
+      "PS3",
+      "PS4",
+      "VITA"
+     ]
+    },
+    {
+     "title": "Samurai Warriors: Chronicles 3",
+     "year": 2015,
+     "platforms": [
+      "VITA",
+      "3DS",
+      "PC"
+     ]
+    },
+    {
+     "title": "Samurai Warriors 4-II",
+     "year": 2015,
+     "platforms": [
+      "PS3",
+      "PS4",
+      "VITA",
+      "PC"
+     ]
+    },
+    {
+     "title": "Samurai Warriors 4: Empires",
+     "year": 2016,
+     "platforms": [
+      "PS3",
+      "PS4",
+      "VITA",
+      "PC"
+     ]
+    },
+    {
+     "title": "Samurai Warriors: Spirit of Sanada",
+     "year": 2016,
+     "platforms": [
+      "PS3",
+      "PS4",
+      "VITA",
+      "PC"
+     ]
+    },
+    {
+     "title": "Samurai Warriors 4 DX",
+     "year": 2021,
+     "platforms": [
+      "Switch",
+      "PS4"
+     ],
+     "jp": true
+    },
+    {
+     "title": "Samurai Warriors 5",
+     "year": 2021,
+     "platforms": [
+      "PS4",
+      "Switch",
+      "XB1",
+      "PC"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "orochi",
+   "kanji": "無双オロチ",
+   "name": "Warriors Orochi",
+   "note": "The two casts, thrown together",
+   "games": [
+    {
+     "title": "Warriors Orochi",
+     "year": 2007,
+     "platforms": [
+      "PS2",
+      "PSP",
+      "X360",
+      "PC"
+     ]
+    },
+    {
+     "title": "Warriors Orochi 2",
+     "year": 2008,
+     "platforms": [
+      "PS2",
+      "PSP",
+      "X360"
+     ]
+    },
+    {
+     "title": "Musou Orochi Z",
+     "year": 2009,
+     "platforms": [
+      "PS3",
+      "PC"
+     ],
+     "jp": true
+    },
+    {
+     "title": "Warriors Orochi 3",
+     "year": 2011,
+     "platforms": [
+      "PS3",
+      "X360",
+      "Wii U",
+      "PS4",
+      "VITA",
+      "XB1",
+      "PC",
+      "Switch"
+     ],
+     "note": "Later as Hyper, Ultimate and the Switch Definitive Edition"
+    },
+    {
+     "title": "Warriors All-Stars",
+     "year": 2017,
+     "platforms": [
+      "PS4",
+      "VITA",
+      "PC"
+     ],
+     "note": "Koei Tecmo's own cast, Nioh and Atelier included"
+    },
+    {
+     "title": "Warriors Orochi 4",
+     "year": 2018,
+     "platforms": [
+      "PS4",
+      "Switch",
+      "XB1",
+      "PC"
+     ],
+     "note": "Ultimate followed in 2020"
+    }
+   ]
+  },
+  {
+   "id": "crossover",
+   "kanji": "共演",
+   "name": "Crossovers",
+   "note": "Someone else's cast, Omega Force's game",
+   "games": [
+    {
+     "title": "Dynasty Warriors: Gundam",
+     "year": 2007,
+     "platforms": [
+      "PS2",
+      "PS3",
+      "X360"
+     ]
+    },
+    {
+     "title": "Dynasty Warriors: Gundam 2",
+     "year": 2008,
+     "platforms": [
+      "PS2",
+      "PS3",
+      "X360"
+     ]
+    },
+    {
+     "title": "Dynasty Warriors: Gundam 3",
+     "year": 2010,
+     "platforms": [
+      "PS3",
+      "X360"
+     ]
+    },
+    {
+     "title": "Dynasty Warriors: Gundam Reborn",
+     "year": 2013,
+     "platforms": [
+      "PS3",
+      "VITA"
+     ]
+    },
+    {
+     "title": "Fist of the North Star: Ken's Rage",
+     "year": 2010,
+     "platforms": [
+      "PS3",
+      "X360"
+     ]
+    },
+    {
+     "title": "Fist of the North Star: Ken's Rage 2",
+     "year": 2012,
+     "platforms": [
+      "PS3",
+      "X360",
+      "Wii U"
+     ]
+    },
+    {
+     "title": "One Piece: Pirate Warriors",
+     "year": 2012,
+     "platforms": [
+      "PS3"
+     ]
+    },
+    {
+     "title": "One Piece: Pirate Warriors 2",
+     "year": 2013,
+     "platforms": [
+      "PS3",
+      "VITA"
+     ]
+    },
+    {
+     "title": "One Piece: Pirate Warriors 3",
+     "year": 2015,
+     "platforms": [
+      "PS3",
+      "PS4",
+      "VITA",
+      "Switch",
+      "PC"
+     ]
+    },
+    {
+     "title": "One Piece: Pirate Warriors 4",
+     "year": 2020,
+     "platforms": [
+      "PS4",
+      "Switch",
+      "XB1",
+      "PC",
+      "Switch 2"
+     ]
+    },
+    {
+     "title": "Hyrule Warriors",
+     "year": 2014,
+     "platforms": [
+      "Wii U",
+      "3DS",
+      "Switch"
+     ],
+     "note": "Legends on 3DS, Definitive Edition on Switch"
+    },
+    {
+     "title": "Hyrule Warriors: Age of Calamity",
+     "year": 2020,
+     "platforms": [
+      "Switch"
+     ]
+    },
+    {
+     "title": "Hyrule Warriors: Age of Imprisonment",
+     "year": 2025,
+     "platforms": [
+      "Switch 2"
+     ]
+    },
+    {
+     "title": "Dragon Quest Heroes",
+     "year": 2015,
+     "platforms": [
+      "PS3",
+      "PS4",
+      "PC",
+      "Switch"
+     ],
+     "aliases": [
+      "Dragon Quest Heroes: The World Tree's Woe and the Blight Below"
+     ]
+    },
+    {
+     "title": "Dragon Quest Heroes II",
+     "year": 2016,
+     "platforms": [
+      "PS3",
+      "PS4",
+      "VITA",
+      "PC",
+      "Switch"
+     ],
+     "aliases": [
+      "Dragon Quest Heroes II: Twin Kings and the Prophecy's End"
+     ]
+    },
+    {
+     "title": "Arslan: The Warriors of Legend",
+     "year": 2015,
+     "platforms": [
+      "PS3",
+      "PS4",
+      "XB1",
+      "PC"
+     ]
+    },
+    {
+     "title": "Berserk and the Band of the Hawk",
+     "year": 2016,
+     "platforms": [
+      "PS3",
+      "PS4",
+      "VITA",
+      "PC"
+     ]
+    },
+    {
+     "title": "Fire Emblem Warriors",
+     "year": 2017,
+     "platforms": [
+      "Switch",
+      "3DS"
+     ]
+    },
+    {
+     "title": "Persona 5 Strikers",
+     "year": 2020,
+     "platforms": [
+      "PS4",
+      "Switch",
+      "PC"
+     ]
+    },
+    {
+     "title": "Touken Ranbu Warriors",
+     "year": 2022,
+     "platforms": [
+      "Switch",
+      "PC"
+     ]
+    },
+    {
+     "title": "Fire Emblem Warriors: Three Hopes",
+     "year": 2022,
+     "platforms": [
+      "Switch"
+     ]
+    }
+   ]
+  }
+ ]
 }

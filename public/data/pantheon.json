@@ -1,0 +1,1532 @@
+{
+ "title": "The Pantheon",
+ "eyebrow": "Ten series, end to end",
+ "theme": "marble",
+ "note": "The long series, laid out whole: every game in each one, and which of them are here. Digital-only releases and collections are left out — a collection is the games on this wall in one box — and a remaster sits in the same niche as the game it remasters.",
+ "series": [
+  {
+   "id": "metal-gear",
+   "name": "Metal Gear",
+   "note": "Konami · 1987–",
+   "games": [
+    {
+     "title": "Metal Gear",
+     "year": 1987,
+     "platforms": [
+      "MSX2",
+      "NES"
+     ]
+    },
+    {
+     "title": "Snake's Revenge",
+     "year": 1990,
+     "platforms": [
+      "NES"
+     ],
+     "note": "Made without Kojima"
+    },
+    {
+     "title": "Metal Gear 2: Solid Snake",
+     "year": 1990,
+     "platforms": [
+      "MSX2"
+     ],
+     "jp": true
+    },
+    {
+     "title": "Metal Gear Solid",
+     "year": 1998,
+     "platforms": [
+      "PS1",
+      "PS Classic",
+      "PC"
+     ]
+    },
+    {
+     "title": "Metal Gear Solid: VR Missions",
+     "year": 1999,
+     "platforms": [
+      "PS1"
+     ]
+    },
+    {
+     "title": "Metal Gear: Ghost Babel",
+     "year": 2000,
+     "platforms": [
+      "GBC"
+     ]
+    },
+    {
+     "title": "Metal Gear Solid 2: Sons of Liberty",
+     "year": 2001,
+     "platforms": [
+      "PS2",
+      "XBOX",
+      "PC",
+      "PS3",
+      "X360",
+      "VITA"
+     ],
+     "note": "Substance, then the HD Collection"
+    },
+    {
+     "title": "Metal Gear Solid: The Twin Snakes",
+     "year": 2004,
+     "platforms": [
+      "GCN"
+     ]
+    },
+    {
+     "title": "Metal Gear Solid 3: Snake Eater",
+     "year": 2004,
+     "platforms": [
+      "PS2",
+      "PS3",
+      "X360",
+      "VITA",
+      "3DS"
+     ],
+     "note": "Subsistence, then the HD Collection"
+    },
+    {
+     "title": "Metal Gear Ac!d",
+     "year": 2004,
+     "platforms": [
+      "PSP"
+     ]
+    },
+    {
+     "title": "Metal Gear Ac!d 2",
+     "year": 2005,
+     "platforms": [
+      "PSP"
+     ]
+    },
+    {
+     "title": "Metal Gear Solid: Portable Ops",
+     "year": 2006,
+     "platforms": [
+      "PSP"
+     ]
+    },
+    {
+     "title": "Metal Gear Solid 4: Guns of the Patriots",
+     "year": 2008,
+     "platforms": [
+      "PS3"
+     ]
+    },
+    {
+     "title": "Metal Gear Solid: Peace Walker",
+     "year": 2010,
+     "platforms": [
+      "PSP",
+      "PS3",
+      "X360"
+     ]
+    },
+    {
+     "title": "Metal Gear Rising: Revengeance",
+     "year": 2013,
+     "platforms": [
+      "PS3",
+      "X360",
+      "PC"
+     ]
+    },
+    {
+     "title": "Metal Gear Solid V: Ground Zeroes",
+     "year": 2014,
+     "platforms": [
+      "PS3",
+      "PS4",
+      "X360",
+      "XB1",
+      "PC"
+     ]
+    },
+    {
+     "title": "Metal Gear Solid V: The Phantom Pain",
+     "year": 2015,
+     "platforms": [
+      "PS3",
+      "PS4",
+      "X360",
+      "XB1",
+      "PC"
+     ]
+    },
+    {
+     "title": "Metal Gear Survive",
+     "year": 2018,
+     "platforms": [
+      "PS4",
+      "XB1",
+      "PC"
+     ]
+    },
+    {
+     "title": "Metal Gear Solid Delta: Snake Eater",
+     "year": 2025,
+     "platforms": [
+      "PS5",
+      "XSX",
+      "PC"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "silent-hill",
+   "name": "Silent Hill",
+   "note": "Konami · 1999–",
+   "games": [
+    {
+     "title": "Silent Hill",
+     "year": 1999,
+     "platforms": [
+      "PS1"
+     ]
+    },
+    {
+     "title": "Silent Hill 2",
+     "year": 2001,
+     "platforms": [
+      "PS2",
+      "XBOX",
+      "PC",
+      "PS3",
+      "X360"
+     ],
+     "aliases": [
+      "Silent Hill 2 HD",
+      "Silent Hill 2: Restless Dreams",
+      "Silent Hill 2: Director's Cut"
+     ],
+     "note": "Restless Dreams, then the HD Collection"
+    },
+    {
+     "title": "Silent Hill 3",
+     "year": 2003,
+     "platforms": [
+      "PS2",
+      "PC",
+      "PS3",
+      "X360"
+     ],
+     "aliases": [
+      "Silent Hill 3 HD"
+     ]
+    },
+    {
+     "title": "Silent Hill 4: The Room",
+     "year": 2004,
+     "platforms": [
+      "PS2",
+      "XBOX",
+      "PC"
+     ]
+    },
+    {
+     "title": "Silent Hill: Origins",
+     "year": 2007,
+     "platforms": [
+      "PSP",
+      "PS2"
+     ]
+    },
+    {
+     "title": "Silent Hill: Homecoming",
+     "year": 2008,
+     "platforms": [
+      "PS3",
+      "X360",
+      "PC"
+     ]
+    },
+    {
+     "title": "Silent Hill: Shattered Memories",
+     "year": 2009,
+     "platforms": [
+      "Wii",
+      "PS2",
+      "PSP"
+     ]
+    },
+    {
+     "title": "Silent Hill: Downpour",
+     "year": 2012,
+     "platforms": [
+      "PS3",
+      "X360"
+     ]
+    },
+    {
+     "title": "Silent Hill: Book of Memories",
+     "year": 2012,
+     "platforms": [
+      "VITA"
+     ]
+    },
+    {
+     "title": "Silent Hill 2 (2024 remake)",
+     "year": 2024,
+     "platforms": [
+      "PS5",
+      "XSX",
+      "PC"
+     ]
+    },
+    {
+     "title": "Silent Hill f",
+     "year": 2025,
+     "platforms": [
+      "PS5",
+      "XSX",
+      "PC"
+     ]
+    },
+    {
+     "title": "Silent Hill: Townfall",
+     "year": 2026,
+     "platforms": [
+      "PS5",
+      "XSX",
+      "PC"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "resident-evil",
+   "name": "Resident Evil",
+   "note": "Capcom · 1996–",
+   "games": [
+    {
+     "title": "Resident Evil",
+     "year": 1996,
+     "platforms": [
+      "PS1",
+      "PS Classic",
+      "Saturn",
+      "PC",
+      "NDS"
+     ],
+     "aliases": [
+      "Resident Evil Director's Cut"
+     ]
+    },
+    {
+     "title": "Resident Evil 2",
+     "year": 1998,
+     "platforms": [
+      "PS1",
+      "N64",
+      "PC",
+      "Dreamcast",
+      "GCN"
+     ]
+    },
+    {
+     "title": "Resident Evil 3: Nemesis",
+     "year": 1999,
+     "platforms": [
+      "PS1",
+      "PC",
+      "Dreamcast",
+      "GCN"
+     ]
+    },
+    {
+     "title": "Resident Evil Survivor",
+     "year": 2000,
+     "platforms": [
+      "PS1",
+      "PC"
+     ]
+    },
+    {
+     "title": "Resident Evil - Code: Veronica",
+     "year": 2000,
+     "platforms": [
+      "Dreamcast",
+      "PS2",
+      "GCN",
+      "PS3",
+      "X360"
+     ],
+     "aliases": [
+      "Resident Evil - Code: Veronica X"
+     ]
+    },
+    {
+     "title": "Resident Evil Gaiden",
+     "year": 2001,
+     "platforms": [
+      "GBC"
+     ]
+    },
+    {
+     "title": "Resident Evil (2002 remake)",
+     "year": 2002,
+     "platforms": [
+      "GCN",
+      "Wii",
+      "PS3",
+      "PS4",
+      "XB1",
+      "PC"
+     ],
+     "note": "REmake, then the HD remaster"
+    },
+    {
+     "title": "Resident Evil Zero",
+     "year": 2002,
+     "platforms": [
+      "GCN",
+      "Wii",
+      "PS3",
+      "PS4",
+      "XB1",
+      "PC",
+      "Switch"
+     ]
+    },
+    {
+     "title": "Resident Evil: Dead Aim",
+     "year": 2003,
+     "platforms": [
+      "PS2"
+     ]
+    },
+    {
+     "title": "Resident Evil Outbreak",
+     "year": 2003,
+     "platforms": [
+      "PS2"
+     ]
+    },
+    {
+     "title": "Resident Evil Outbreak File #2",
+     "year": 2004,
+     "platforms": [
+      "PS2"
+     ]
+    },
+    {
+     "title": "Resident Evil 4",
+     "year": 2005,
+     "platforms": [
+      "GCN",
+      "PS2",
+      "Wii",
+      "PC",
+      "PS3",
+      "X360",
+      "PS4",
+      "XB1",
+      "Switch"
+     ]
+    },
+    {
+     "title": "Resident Evil: The Umbrella Chronicles",
+     "year": 2007,
+     "platforms": [
+      "Wii",
+      "PS3"
+     ],
+     "aliases": [
+      "Resident Evil: Umbrella Chronicles"
+     ]
+    },
+    {
+     "title": "Resident Evil 5",
+     "year": 2009,
+     "platforms": [
+      "PS3",
+      "X360",
+      "PC",
+      "PS4",
+      "XB1",
+      "Switch"
+     ]
+    },
+    {
+     "title": "Resident Evil: The Darkside Chronicles",
+     "year": 2009,
+     "platforms": [
+      "Wii",
+      "PS3"
+     ],
+     "aliases": [
+      "Resident Evil: Darkside Chronicles"
+     ]
+    },
+    {
+     "title": "Resident Evil: The Mercenaries 3D",
+     "year": 2011,
+     "platforms": [
+      "3DS"
+     ]
+    },
+    {
+     "title": "Resident Evil Revelations",
+     "year": 2012,
+     "platforms": [
+      "3DS",
+      "PS3",
+      "X360",
+      "PC",
+      "PS4",
+      "XB1",
+      "Switch"
+     ]
+    },
+    {
+     "title": "Resident Evil 6",
+     "year": 2012,
+     "platforms": [
+      "PS3",
+      "X360",
+      "PC",
+      "PS4",
+      "XB1",
+      "Switch"
+     ]
+    },
+    {
+     "title": "Resident Evil: Operation Raccoon City",
+     "year": 2012,
+     "platforms": [
+      "PS3",
+      "X360",
+      "PC"
+     ]
+    },
+    {
+     "title": "Resident Evil Revelations 2",
+     "year": 2015,
+     "platforms": [
+      "PS3",
+      "PS4",
+      "X360",
+      "XB1",
+      "VITA",
+      "PC",
+      "Switch"
+     ]
+    },
+    {
+     "title": "Resident Evil 7: Biohazard",
+     "year": 2017,
+     "platforms": [
+      "PS4",
+      "XB1",
+      "PC",
+      "Switch",
+      "PS5",
+      "XSX"
+     ]
+    },
+    {
+     "title": "Resident Evil 2 (2019 remake)",
+     "year": 2019,
+     "platforms": [
+      "PS4",
+      "XB1",
+      "PC",
+      "PS5",
+      "XSX"
+     ]
+    },
+    {
+     "title": "Resident Evil 3 (2020 remake)",
+     "year": 2020,
+     "platforms": [
+      "PS4",
+      "XB1",
+      "PC",
+      "PS5",
+      "XSX"
+     ]
+    },
+    {
+     "title": "Resident Evil Village",
+     "year": 2021,
+     "platforms": [
+      "PS4",
+      "PS5",
+      "XB1",
+      "XSX",
+      "PC"
+     ]
+    },
+    {
+     "title": "Resident Evil 4 (2023 remake)",
+     "year": 2023,
+     "platforms": [
+      "PS4",
+      "PS5",
+      "XSX",
+      "PC"
+     ]
+    },
+    {
+     "title": "Resident Evil Requiem",
+     "year": 2026,
+     "platforms": [
+      "PS5",
+      "XSX",
+      "PC",
+      "Switch 2"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "devil-may-cry",
+   "name": "Devil May Cry",
+   "note": "Capcom · 2001–",
+   "games": [
+    {
+     "title": "Devil May Cry",
+     "year": 2001,
+     "platforms": [
+      "PS2",
+      "PS3",
+      "X360",
+      "PS4",
+      "XB1",
+      "PC",
+      "Switch"
+     ]
+    },
+    {
+     "title": "Devil May Cry 2",
+     "year": 2003,
+     "platforms": [
+      "PS2",
+      "PS3",
+      "X360",
+      "PS4",
+      "XB1",
+      "PC",
+      "Switch"
+     ]
+    },
+    {
+     "title": "Devil May Cry 3: Dante's Awakening",
+     "year": 2005,
+     "platforms": [
+      "PS2",
+      "PC",
+      "PS3",
+      "X360",
+      "PS4",
+      "XB1",
+      "Switch"
+     ]
+    },
+    {
+     "title": "Devil May Cry 4",
+     "year": 2008,
+     "platforms": [
+      "PS3",
+      "X360",
+      "PC",
+      "PS4",
+      "XB1"
+     ]
+    },
+    {
+     "title": "DmC: Devil May Cry",
+     "year": 2013,
+     "platforms": [
+      "PS3",
+      "X360",
+      "PC",
+      "PS4",
+      "XB1"
+     ]
+    },
+    {
+     "title": "Devil May Cry 5",
+     "year": 2019,
+     "platforms": [
+      "PS4",
+      "XB1",
+      "PC",
+      "PS5",
+      "XSX"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "final-fantasy",
+   "name": "Final Fantasy",
+   "note": "Square Enix · 1987–",
+   "games": [
+    {
+     "title": "Final Fantasy",
+     "year": 1987,
+     "platforms": [
+      "NES",
+      "PS1",
+      "GBA",
+      "PSP",
+      "PS4",
+      "Switch",
+      "PC"
+     ]
+    },
+    {
+     "title": "Final Fantasy II",
+     "year": 1988,
+     "platforms": [
+      "NES",
+      "PS1",
+      "GBA",
+      "PSP",
+      "PS4",
+      "Switch",
+      "PC"
+     ]
+    },
+    {
+     "title": "Final Fantasy III",
+     "year": 1990,
+     "platforms": [
+      "NES",
+      "NDS",
+      "PSP",
+      "PS4",
+      "Switch",
+      "PC"
+     ]
+    },
+    {
+     "title": "Final Fantasy IV",
+     "year": 1991,
+     "platforms": [
+      "SNES",
+      "PS1",
+      "GBA",
+      "NDS",
+      "PSP",
+      "Switch",
+      "PC"
+     ]
+    },
+    {
+     "title": "Final Fantasy V",
+     "year": 1992,
+     "platforms": [
+      "SNES",
+      "PS1",
+      "GBA",
+      "PS4",
+      "Switch",
+      "PC"
+     ]
+    },
+    {
+     "title": "Final Fantasy VI",
+     "year": 1994,
+     "platforms": [
+      "SNES",
+      "SNES Classic",
+      "PS1",
+      "GBA",
+      "PS4",
+      "Switch",
+      "PC"
+     ],
+     "aliases": [
+      "Final Fantasy III"
+     ],
+     "note": "Sold as Final Fantasy III in the west"
+    },
+    {
+     "title": "Final Fantasy VII",
+     "year": 1997,
+     "platforms": [
+      "PS1",
+      "PS Classic",
+      "PC",
+      "PS4",
+      "Switch",
+      "XB1"
+     ]
+    },
+    {
+     "title": "Final Fantasy VIII",
+     "year": 1999,
+     "platforms": [
+      "PS1",
+      "PC",
+      "PS4",
+      "Switch",
+      "XB1"
+     ]
+    },
+    {
+     "title": "Final Fantasy IX",
+     "year": 2000,
+     "platforms": [
+      "PS1",
+      "PC",
+      "PS4",
+      "Switch",
+      "XB1"
+     ]
+    },
+    {
+     "title": "Final Fantasy X",
+     "year": 2001,
+     "platforms": [
+      "PS2",
+      "PS3",
+      "PS4",
+      "VITA",
+      "Switch",
+      "XB1",
+      "PC"
+     ]
+    },
+    {
+     "title": "Final Fantasy XI",
+     "year": 2002,
+     "platforms": [
+      "PS2",
+      "PC",
+      "X360"
+     ],
+     "note": "Online only"
+    },
+    {
+     "title": "Final Fantasy X-2",
+     "year": 2003,
+     "platforms": [
+      "PS2",
+      "PS3",
+      "PS4",
+      "VITA",
+      "Switch",
+      "XB1",
+      "PC"
+     ]
+    },
+    {
+     "title": "Final Fantasy XII",
+     "year": 2006,
+     "platforms": [
+      "PS2",
+      "PS4",
+      "Switch",
+      "XB1",
+      "PC"
+     ]
+    },
+    {
+     "title": "Final Fantasy XIII",
+     "year": 2009,
+     "platforms": [
+      "PS3",
+      "X360",
+      "PC"
+     ]
+    },
+    {
+     "title": "Final Fantasy XIII-2",
+     "year": 2011,
+     "platforms": [
+      "PS3",
+      "X360",
+      "PC"
+     ]
+    },
+    {
+     "title": "Lightning Returns: Final Fantasy XIII",
+     "year": 2013,
+     "platforms": [
+      "PS3",
+      "X360",
+      "PC"
+     ]
+    },
+    {
+     "title": "Final Fantasy XIV: A Realm Reborn",
+     "year": 2013,
+     "platforms": [
+      "PS3",
+      "PS4",
+      "PS5",
+      "PC"
+     ],
+     "note": "Online only"
+    },
+    {
+     "title": "Final Fantasy XV",
+     "year": 2016,
+     "platforms": [
+      "PS4",
+      "XB1",
+      "PC"
+     ]
+    },
+    {
+     "title": "Final Fantasy VII Remake",
+     "year": 2020,
+     "platforms": [
+      "PS4",
+      "PS5",
+      "PC"
+     ]
+    },
+    {
+     "title": "Final Fantasy XVI",
+     "year": 2023,
+     "platforms": [
+      "PS5",
+      "PC",
+      "XSX"
+     ]
+    },
+    {
+     "title": "Final Fantasy VII Rebirth",
+     "year": 2024,
+     "platforms": [
+      "PS5",
+      "PC"
+     ]
+    },
+    {
+     "title": "Final Fantasy Tactics",
+     "year": 1997,
+     "platforms": [
+      "PS1",
+      "PSP",
+      "PS4",
+      "PS5",
+      "Switch",
+      "PC"
+     ],
+     "note": "War of the Lions, then The Ivalice Chronicles"
+    },
+    {
+     "title": "Dirge of Cerberus: Final Fantasy VII",
+     "year": 2006,
+     "platforms": [
+      "PS2"
+     ]
+    },
+    {
+     "title": "Crisis Core: Final Fantasy VII",
+     "year": 2007,
+     "platforms": [
+      "PSP",
+      "PS4",
+      "PS5",
+      "XB1",
+      "Switch",
+      "PC"
+     ],
+     "note": "Reunion in 2022"
+    },
+    {
+     "title": "Dissidia Final Fantasy",
+     "year": 2008,
+     "platforms": [
+      "PSP"
+     ]
+    },
+    {
+     "title": "Dissidia 012 Final Fantasy",
+     "year": 2011,
+     "platforms": [
+      "PSP"
+     ]
+    },
+    {
+     "title": "Final Fantasy Type-0",
+     "year": 2011,
+     "platforms": [
+      "PSP",
+      "PS4",
+      "XB1",
+      "PC"
+     ]
+    },
+    {
+     "title": "World of Final Fantasy",
+     "year": 2016,
+     "platforms": [
+      "PS4",
+      "VITA",
+      "PC",
+      "Switch",
+      "XB1"
+     ]
+    },
+    {
+     "title": "Dissidia Final Fantasy NT",
+     "year": 2018,
+     "platforms": [
+      "PS4",
+      "PC"
+     ]
+    },
+    {
+     "title": "Stranger of Paradise: Final Fantasy Origin",
+     "year": 2022,
+     "platforms": [
+      "PS4",
+      "PS5",
+      "XB1",
+      "XSX",
+      "PC"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kingdom-hearts",
+   "name": "Kingdom Hearts",
+   "note": "Square Enix · 2002–",
+   "games": [
+    {
+     "title": "Kingdom Hearts",
+     "year": 2002,
+     "platforms": [
+      "PS2",
+      "PS3",
+      "PS4",
+      "XB1",
+      "Switch",
+      "PC"
+     ],
+     "aliases": [
+      "Kingdom Hearts Final Mix"
+     ]
+    },
+    {
+     "title": "Kingdom Hearts: Chain of Memories",
+     "year": 2004,
+     "platforms": [
+      "GBA",
+      "PS2",
+      "PS3",
+      "PS4",
+      "XB1",
+      "PC"
+     ],
+     "aliases": [
+      "Kingdom Hearts Re:Chain of Memories"
+     ]
+    },
+    {
+     "title": "Kingdom Hearts II",
+     "year": 2005,
+     "platforms": [
+      "PS2",
+      "PS3",
+      "PS4",
+      "XB1",
+      "Switch",
+      "PC"
+     ],
+     "aliases": [
+      "Kingdom Hearts II Final Mix"
+     ]
+    },
+    {
+     "title": "Kingdom Hearts 358/2 Days",
+     "year": 2009,
+     "platforms": [
+      "NDS"
+     ]
+    },
+    {
+     "title": "Kingdom Hearts Birth by Sleep",
+     "year": 2010,
+     "platforms": [
+      "PSP",
+      "PS3",
+      "PS4",
+      "XB1",
+      "PC"
+     ],
+     "aliases": [
+      "Kingdom Hearts Birth by Sleep Final Mix"
+     ]
+    },
+    {
+     "title": "Kingdom Hearts Re:coded",
+     "year": 2010,
+     "platforms": [
+      "NDS"
+     ]
+    },
+    {
+     "title": "Kingdom Hearts 3D: Dream Drop Distance",
+     "year": 2012,
+     "platforms": [
+      "3DS",
+      "PS4",
+      "XB1",
+      "PC"
+     ],
+     "aliases": [
+      "Kingdom Hearts Dream Drop Distance HD"
+     ]
+    },
+    {
+     "title": "Kingdom Hearts 0.2 Birth by Sleep -A fragmentary passage-",
+     "year": 2017,
+     "platforms": [
+      "PS4",
+      "XB1",
+      "PC"
+     ]
+    },
+    {
+     "title": "Kingdom Hearts III",
+     "year": 2019,
+     "platforms": [
+      "PS4",
+      "XB1",
+      "PS5",
+      "XSX",
+      "PC"
+     ]
+    },
+    {
+     "title": "Kingdom Hearts: Melody of Memory",
+     "year": 2020,
+     "platforms": [
+      "PS4",
+      "XB1",
+      "Switch",
+      "PC"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "god-of-war",
+   "name": "God of War",
+   "note": "Sony Santa Monica · 2005–",
+   "games": [
+    {
+     "title": "God of War",
+     "year": 2005,
+     "platforms": [
+      "PS2",
+      "PS3",
+      "VITA"
+     ]
+    },
+    {
+     "title": "God of War II",
+     "year": 2007,
+     "platforms": [
+      "PS2",
+      "PS3",
+      "VITA"
+     ]
+    },
+    {
+     "title": "God of War: Chains of Olympus",
+     "year": 2008,
+     "platforms": [
+      "PSP",
+      "PS3",
+      "VITA"
+     ]
+    },
+    {
+     "title": "God of War III",
+     "year": 2010,
+     "platforms": [
+      "PS3",
+      "PS4"
+     ],
+     "note": "Remastered on PS4"
+    },
+    {
+     "title": "God of War: Ghost of Sparta",
+     "year": 2010,
+     "platforms": [
+      "PSP",
+      "PS3",
+      "VITA"
+     ]
+    },
+    {
+     "title": "God of War: Ascension",
+     "year": 2013,
+     "platforms": [
+      "PS3"
+     ]
+    },
+    {
+     "title": "God of War (2018)",
+     "year": 2018,
+     "platforms": [
+      "PS4",
+      "PC"
+     ],
+     "note": "The Norse reboot"
+    },
+    {
+     "title": "God of War Ragnarök",
+     "year": 2022,
+     "platforms": [
+      "PS4",
+      "PS5",
+      "PC"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ratchet-clank",
+   "name": "Ratchet & Clank",
+   "note": "Insomniac · 2002–",
+   "games": [
+    {
+     "title": "Ratchet & Clank",
+     "year": 2002,
+     "platforms": [
+      "PS2",
+      "PS3",
+      "VITA"
+     ]
+    },
+    {
+     "title": "Ratchet & Clank: Going Commando",
+     "year": 2003,
+     "platforms": [
+      "PS2",
+      "PS3",
+      "VITA"
+     ],
+     "aliases": [
+      "Ratchet & Clank 2",
+      "Ratchet & Clank 2: Locked and Loaded"
+     ],
+     "note": "Locked and Loaded in Europe"
+    },
+    {
+     "title": "Ratchet & Clank: Up Your Arsenal",
+     "year": 2004,
+     "platforms": [
+      "PS2",
+      "PS3",
+      "VITA"
+     ],
+     "aliases": [
+      "Ratchet & Clank 3"
+     ]
+    },
+    {
+     "title": "Ratchet: Deadlocked",
+     "year": 2005,
+     "platforms": [
+      "PS2",
+      "PS3",
+      "VITA"
+     ],
+     "aliases": [
+      "Ratchet: Gladiator"
+     ],
+     "note": "Gladiator in Europe"
+    },
+    {
+     "title": "Ratchet & Clank: Size Matters",
+     "year": 2007,
+     "platforms": [
+      "PSP",
+      "PS2"
+     ]
+    },
+    {
+     "title": "Ratchet & Clank Future: Tools of Destruction",
+     "year": 2007,
+     "platforms": [
+      "PS3"
+     ],
+     "aliases": [
+      "Ratchet & Clank: Tools of Destruction"
+     ]
+    },
+    {
+     "title": "Secret Agent Clank",
+     "year": 2008,
+     "platforms": [
+      "PSP",
+      "PS2"
+     ]
+    },
+    {
+     "title": "Ratchet & Clank Future: Quest for Booty",
+     "year": 2008,
+     "platforms": [
+      "PS3"
+     ]
+    },
+    {
+     "title": "Ratchet & Clank Future: A Crack in Time",
+     "year": 2009,
+     "platforms": [
+      "PS3"
+     ],
+     "aliases": [
+      "Ratchet & Clank: A Crack in Time"
+     ]
+    },
+    {
+     "title": "Ratchet & Clank: All 4 One",
+     "year": 2011,
+     "platforms": [
+      "PS3"
+     ]
+    },
+    {
+     "title": "Ratchet & Clank: Full Frontal Assault",
+     "year": 2012,
+     "platforms": [
+      "PS3",
+      "VITA"
+     ]
+    },
+    {
+     "title": "Ratchet & Clank: Into the Nexus",
+     "year": 2013,
+     "platforms": [
+      "PS3"
+     ]
+    },
+    {
+     "title": "Ratchet & Clank",
+     "year": 2016,
+     "platforms": [
+      "PS4"
+     ],
+     "note": "The reimagining"
+    },
+    {
+     "title": "Ratchet & Clank: Rift Apart",
+     "year": 2021,
+     "platforms": [
+      "PS5",
+      "PC"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "uncharted",
+   "name": "Uncharted",
+   "note": "Naughty Dog · 2007–",
+   "games": [
+    {
+     "title": "Uncharted: Drake's Fortune",
+     "year": 2007,
+     "platforms": [
+      "PS3",
+      "PS4"
+     ]
+    },
+    {
+     "title": "Uncharted 2: Among Thieves",
+     "year": 2009,
+     "platforms": [
+      "PS3",
+      "PS4"
+     ]
+    },
+    {
+     "title": "Uncharted 3: Drake's Deception",
+     "year": 2011,
+     "platforms": [
+      "PS3",
+      "PS4"
+     ]
+    },
+    {
+     "title": "Uncharted: Golden Abyss",
+     "year": 2011,
+     "platforms": [
+      "VITA"
+     ]
+    },
+    {
+     "title": "Uncharted 4: A Thief's End",
+     "year": 2016,
+     "platforms": [
+      "PS4",
+      "PS5",
+      "PC"
+     ]
+    },
+    {
+     "title": "Uncharted: The Lost Legacy",
+     "year": 2017,
+     "platforms": [
+      "PS4",
+      "PS5",
+      "PC"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "grand-theft-auto",
+   "name": "Grand Theft Auto",
+   "note": "Rockstar · 1997–",
+   "games": [
+    {
+     "title": "Grand Theft Auto",
+     "year": 1997,
+     "platforms": [
+      "PS1",
+      "PS Classic",
+      "PC",
+      "GBC"
+     ]
+    },
+    {
+     "title": "Grand Theft Auto: London 1969",
+     "year": 1999,
+     "platforms": [
+      "PS1",
+      "PC"
+     ],
+     "note": "An expansion, sold on its own"
+    },
+    {
+     "title": "Grand Theft Auto 2",
+     "year": 1999,
+     "platforms": [
+      "PS1",
+      "PC",
+      "Dreamcast",
+      "GBC"
+     ]
+    },
+    {
+     "title": "Grand Theft Auto III",
+     "year": 2001,
+     "platforms": [
+      "PS2",
+      "XBOX",
+      "PC",
+      "PS3",
+      "PS4"
+     ]
+    },
+    {
+     "title": "Grand Theft Auto: Vice City",
+     "year": 2002,
+     "platforms": [
+      "PS2",
+      "XBOX",
+      "PC",
+      "PS3",
+      "PS4"
+     ]
+    },
+    {
+     "title": "Grand Theft Auto: Advance",
+     "year": 2004,
+     "platforms": [
+      "GBA"
+     ]
+    },
+    {
+     "title": "Grand Theft Auto: San Andreas",
+     "year": 2004,
+     "platforms": [
+      "PS2",
+      "XBOX",
+      "PC",
+      "X360",
+      "PS3",
+      "PS4"
+     ]
+    },
+    {
+     "title": "Grand Theft Auto: Liberty City Stories",
+     "year": 2005,
+     "platforms": [
+      "PSP",
+      "PS2",
+      "PS3",
+      "VITA"
+     ]
+    },
+    {
+     "title": "Grand Theft Auto: Vice City Stories",
+     "year": 2006,
+     "platforms": [
+      "PSP",
+      "PS2",
+      "PS3",
+      "VITA"
+     ]
+    },
+    {
+     "title": "Grand Theft Auto IV",
+     "year": 2008,
+     "platforms": [
+      "PS3",
+      "X360",
+      "PC"
+     ]
+    },
+    {
+     "title": "Grand Theft Auto: Chinatown Wars",
+     "year": 2009,
+     "platforms": [
+      "NDS",
+      "PSP"
+     ]
+    },
+    {
+     "title": "Grand Theft Auto: Episodes from Liberty City",
+     "year": 2009,
+     "platforms": [
+      "PS3",
+      "X360",
+      "PC"
+     ],
+     "note": "The Lost and Damned and The Ballad of Gay Tony on one disc"
+    },
+    {
+     "title": "Grand Theft Auto V",
+     "year": 2013,
+     "platforms": [
+      "PS3",
+      "X360",
+      "PS4",
+      "XB1",
+      "PC",
+      "PS5",
+      "XSX"
+     ]
+    },
+    {
+     "title": "Grand Theft Auto VI",
+     "year": 2026,
+     "platforms": [
+      "PS5",
+      "XSX"
+     ],
+     "note": "Due 19 November 2026"
+    }
+   ]
+  }
+ ]
+}

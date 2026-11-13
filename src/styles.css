@@ -6171,61 +6171,61 @@ button.tl-chip:hover,
   }
 }
 
-/* --- KOEI Warriors ---------------------------------------------------------- */
+/* --- Shrines (Warriors, Pantheon) ---------------------------------------------------------- */
 
-/* A shrine: lacquer and gold in both themes, like the Confessional. */
-.wr-shrine {
-  --wr-ink: #12100f;
-  --wr-red: #7a1b12;
-  --wr-gold: #c9a227;
-  --wr-gold-soft: #e7cf86;
-  --wr-paper: #efe7d8;
-  --wr-dim: #9d9284;
+/* A shrine: dark in both themes, like the Confessional. Lacquer and gold by default. */
+.shr-shrine {
+  --shr-ink: #12100f;
+  --shr-red: #7a1b12;
+  --shr-gold: #c9a227;
+  --shr-gold-soft: #e7cf86;
+  --shr-paper: #efe7d8;
+  --shr-dim: #9d9284;
 
   position: relative;
   padding: 28px;
-  border: 1px solid rgb(201 162 39 / 0.3);
+  border: 1px solid color-mix(in srgb, var(--shr-gold) 30%, transparent);
   border-radius: 16px;
-  color: var(--wr-paper);
+  color: var(--shr-paper);
   overflow: hidden;
   background:
-    radial-gradient(1200px 420px at 12% -10%, rgb(122 27 18 / 0.65), transparent 62%),
-    radial-gradient(900px 500px at 105% 108%, rgb(122 27 18 / 0.4), transparent 58%),
+    radial-gradient(1200px 420px at 12% -10%, color-mix(in srgb, var(--shr-red) 65%, transparent), transparent 62%),
+    radial-gradient(900px 500px at 105% 108%, color-mix(in srgb, var(--shr-red) 40%, transparent), transparent 58%),
     repeating-linear-gradient(45deg, rgb(255 255 255 / 0.018) 0 1px, transparent 1px 9px),
-    var(--wr-ink);
+    var(--shr-ink);
   box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.5), var(--shadow);
 }
 
 /* The banner at the top */
 
-.wr-hero {
+.shr-hero {
   position: relative;
   padding-bottom: 24px;
-  border-bottom: 1px solid rgb(201 162 39 / 0.28);
+  border-bottom: 1px solid color-mix(in srgb, var(--shr-gold) 28%, transparent);
 }
 
-.wr-hero-kanji {
+.shr-hero-kanji {
   position: absolute;
   top: -42px;
   right: -10px;
   font-size: 190px;
   line-height: 1;
   font-weight: 700;
-  color: rgb(201 162 39 / 0.12);
+  color: color-mix(in srgb, var(--shr-gold) 12%, transparent);
   pointer-events: none;
   user-select: none;
 }
 
-.wr-eyebrow {
+.shr-eyebrow {
   margin: 0;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--wr-gold);
+  color: var(--shr-gold);
 }
 
-.wr-hero h2 {
+.shr-hero h2 {
   margin: 6px 0 0;
   font-size: 40px;
   font-weight: 800;
@@ -6234,66 +6234,66 @@ button.tl-chip:hover,
   color: #fff;
 }
 
-.wr-hero-note {
+.shr-hero-note {
   max-width: 62ch;
   margin: 10px 0 0;
   font-size: 13px;
   line-height: 1.5;
-  color: var(--wr-dim);
+  color: var(--shr-dim);
 }
 
-.wr-tally {
+.shr-tally {
   display: flex;
   align-items: center;
   gap: 14px;
   margin-top: 20px;
 }
 
-.wr-tally-big {
+.shr-tally-big {
   display: flex;
   align-items: baseline;
   gap: 6px;
   line-height: 1;
 }
 
-.wr-tally-big b {
+.shr-tally-big b {
   font-size: 44px;
   letter-spacing: -0.03em;
-  color: var(--wr-gold-soft);
+  color: var(--shr-gold-soft);
 }
 
-.wr-tally-big i {
+.shr-tally-big i {
   font-style: normal;
   font-size: 17px;
-  color: var(--wr-dim);
+  color: var(--shr-dim);
 }
 
-.wr-tally-pct {
+.shr-tally-pct {
   font-size: 13px;
   font-weight: 700;
-  color: var(--wr-gold);
+  color: var(--shr-gold);
 }
 
-.wr-meter {
+.shr-meter {
   flex: 1;
   height: 6px;
   border-radius: 999px;
   background: rgb(0 0 0 / 0.45);
-  box-shadow: inset 0 0 0 1px rgb(201 162 39 / 0.2);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--shr-gold) 20%, transparent);
   overflow: hidden;
 }
 
-.wr-meter > span {
+.shr-meter > span {
   display: block;
   height: 100%;
-  background: linear-gradient(90deg, #a8761c, var(--wr-gold-soft));
+  background: linear-gradient(90deg, #a8761c, var(--shr-gold-soft));
 }
 
-.wr-meter.big {
+.shr-meter.big {
   height: 8px;
 }
 
-.wr-facts {
+.shr-facts {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -6301,55 +6301,55 @@ button.tl-chip:hover,
   margin: 14px 0 0;
   padding: 0;
   font-size: 12.5px;
-  color: var(--wr-dim);
+  color: var(--shr-dim);
 }
 
-.wr-facts b {
-  color: var(--wr-paper);
+.shr-facts b {
+  color: var(--shr-paper);
 }
 
 /* Everything / On the shelf / Missing */
 
-.wr-switch {
+.shr-switch {
   display: inline-flex;
   margin-top: 20px;
-  border: 1px solid rgb(201 162 39 / 0.35);
+  border: 1px solid color-mix(in srgb, var(--shr-gold) 35%, transparent);
   border-radius: 999px;
   overflow: hidden;
   background: rgb(0 0 0 / 0.35);
 }
 
-.wr-switch button {
+.shr-switch button {
   padding: 6px 16px;
   border: 0;
   background: none;
   font-size: 12.5px;
   font-weight: 600;
   letter-spacing: 0.02em;
-  color: var(--wr-dim);
+  color: var(--shr-dim);
   cursor: pointer;
 }
 
-.wr-switch button + button {
-  border-left: 1px solid rgb(201 162 39 / 0.25);
+.shr-switch button + button {
+  border-left: 1px solid color-mix(in srgb, var(--shr-gold) 25%, transparent);
 }
 
-.wr-switch button:hover {
-  color: var(--wr-paper);
+.shr-switch button:hover {
+  color: var(--shr-paper);
 }
 
-.wr-switch button.on {
-  background: linear-gradient(180deg, #8f2016, var(--wr-red));
+.shr-switch button.on {
+  background: linear-gradient(180deg, #8f2016, var(--shr-red));
   color: #fff;
 }
 
 /* One series */
 
-.wr-series {
+.shr-series {
   margin-top: 30px;
 }
 
-.wr-banner {
+.shr-banner {
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
@@ -6357,13 +6357,13 @@ button.tl-chip:hover,
   padding-bottom: 9px;
 }
 
-.wr-banner-kanji {
+.shr-banner-kanji {
   font-size: 15px;
   letter-spacing: 0.08em;
-  color: var(--wr-gold);
+  color: var(--shr-gold);
 }
 
-.wr-banner h3 {
+.shr-banner h3 {
   margin: 0;
   font-size: 20px;
   font-weight: 700;
@@ -6371,30 +6371,30 @@ button.tl-chip:hover,
   color: #fff;
 }
 
-.wr-banner-note {
+.shr-banner-note {
   font-size: 12px;
-  color: var(--wr-dim);
+  color: var(--shr-dim);
 }
 
-.wr-banner-count {
+.shr-banner-count {
   margin-left: auto;
   font-size: 13px;
-  color: var(--wr-dim);
+  color: var(--shr-dim);
 }
 
-.wr-banner-count b {
+.shr-banner-count b {
   font-size: 16px;
-  color: var(--wr-gold-soft);
+  color: var(--shr-gold-soft);
 }
 
-.wr-banner .wr-meter {
+.shr-banner .shr-meter {
   flex: 0 0 100%;
   height: 3px;
 }
 
 /* The wall */
 
-.wr-wall {
+.shr-wall {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(132px, 1fr));
@@ -6403,14 +6403,14 @@ button.tl-chip:hover,
   padding: 0;
 }
 
-.wr-tile {
+.shr-tile {
   display: flex;
   flex-direction: column;
   gap: 7px;
   min-width: 0;
 }
 
-.wr-frame {
+.shr-frame {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -6419,32 +6419,32 @@ button.tl-chip:hover,
   width: 100%;
   padding: 0;
   aspect-ratio: 5 / 7;
-  border: 1px solid rgb(201 162 39 / 0.22);
+  border: 1px solid color-mix(in srgb, var(--shr-gold) 22%, transparent);
   border-radius: 7px;
   background: rgb(0 0 0 / 0.42);
   overflow: hidden;
   transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
 }
 
-.wr-tile.owned .wr-frame {
+.shr-tile.owned .shr-frame {
   cursor: pointer;
   box-shadow: 0 6px 18px rgb(0 0 0 / 0.45);
 }
 
-.wr-tile.owned .wr-frame:hover {
+.shr-tile.owned .shr-frame:hover {
   transform: translateY(-3px);
-  border-color: var(--wr-gold);
+  border-color: var(--shr-gold);
   box-shadow: 0 10px 26px rgb(0 0 0 / 0.55);
 }
 
 /* Finished games are framed in gold. */
-.wr-tile.done .wr-frame {
-  border-color: rgb(201 162 39 / 0.75);
-  box-shadow: 0 0 0 1px rgb(201 162 39 / 0.25), 0 8px 22px rgb(0 0 0 / 0.5);
+.shr-tile.done .shr-frame {
+  border-color: color-mix(in srgb, var(--shr-gold) 75%, transparent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--shr-gold) 25%, transparent), 0 8px 22px rgb(0 0 0 / 0.5);
 }
 
 /* A little shadow at the foot of the cover, so the gold sits on something. */
-.wr-shade {
+.shr-shade {
   position: absolute;
   inset: auto 0 0;
   height: 38%;
@@ -6452,7 +6452,7 @@ button.tl-chip:hover,
   pointer-events: none;
 }
 
-.wr-crest {
+.shr-crest {
   position: absolute;
   top: 6px;
   right: 6px;
@@ -6468,21 +6468,21 @@ button.tl-chip:hover,
   box-shadow: 0 2px 6px rgb(0 0 0 / 0.5);
 }
 
-.wr-dupe {
+.shr-dupe {
   position: absolute;
   bottom: 6px;
   right: 6px;
   padding: 1px 6px;
   border-radius: 999px;
   background: rgb(0 0 0 / 0.65);
-  border: 1px solid rgb(201 162 39 / 0.4);
+  border: 1px solid color-mix(in srgb, var(--shr-gold) 40%, transparent);
   font-size: 10px;
   font-weight: 700;
-  color: var(--wr-gold-soft);
+  color: var(--shr-gold-soft);
 }
 
 /* An empty niche where a game isn't on the shelf. */
-.wr-tile.missing .wr-frame {
+.shr-tile.missing .shr-frame {
   gap: 8px;
   border-style: dashed;
   background:
@@ -6490,15 +6490,15 @@ button.tl-chip:hover,
     rgb(0 0 0 / 0.3);
 }
 
-.wr-niche-mark {
+.shr-niche-mark {
   font-size: 46px;
   line-height: 1;
-  color: rgb(201 162 39 / 0.22);
+  color: color-mix(in srgb, var(--shr-gold) 22%, transparent);
 }
 
 /* Captions */
 
-.wr-cap {
+.shr-cap {
   display: flex;
   flex-direction: column;
   gap: 3px;
@@ -6506,7 +6506,7 @@ button.tl-chip:hover,
 }
 
 /* Two lines kept for every title, so the years and platforms line up across a row. */
-.wr-cap-title {
+.shr-cap-title {
   min-height: 32px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -6515,57 +6515,57 @@ button.tl-chip:hover,
   font-size: 12.5px;
   font-weight: 600;
   line-height: 1.25;
-  color: var(--wr-paper);
+  color: var(--shr-paper);
 }
 
-.wr-tile.missing .wr-cap-title {
+.shr-tile.missing .shr-cap-title {
   font-weight: 500;
-  color: var(--wr-dim);
+  color: var(--shr-dim);
 }
 
-.wr-jp {
+.shr-jp {
   margin-left: 5px;
   padding: 0 3px;
-  border: 1px solid rgb(201 162 39 / 0.4);
+  border: 1px solid color-mix(in srgb, var(--shr-gold) 40%, transparent);
   border-radius: 3px;
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.06em;
-  color: var(--wr-gold);
+  color: var(--shr-gold);
   vertical-align: 1px;
 }
 
-.wr-cap-meta {
+.shr-cap-meta {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 4px 6px;
   font-size: 11px;
-  color: rgb(157 146 132 / 0.85);
+  color: color-mix(in srgb, var(--shr-dim) 85%, transparent);
 }
 
-.wr-year {
+.shr-year {
   font-variant-numeric: tabular-nums;
 }
 
-.wr-on {
+.shr-on {
   min-width: 0;
 }
 
-.wr-on i {
+.shr-on i {
   margin-left: 4px;
   font-style: normal;
-  color: rgb(201 162 39 / 0.75);
+  color: color-mix(in srgb, var(--shr-gold) 75%, transparent);
 }
 
-.wr-plats {
+.shr-plats {
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
 }
 
 /* An owned copy carries the platform's own colour and opens the game. */
-.wr-plat {
+.shr-plat {
   padding: 0 6px;
   border: 0;
   border-radius: 4px;
@@ -6577,32 +6577,139 @@ button.tl-chip:hover,
   background: hsl(var(--hue) 45% 24%);
 }
 
-.wr-plat:hover {
+.shr-plat:hover {
   color: #fff;
   background: hsl(var(--hue) 55% 34%);
 }
 
+/* The Pantheon: cold stone and platinum instead of lacquer and gold. */
+.shr-marble {
+  --shr-ink: #0d0f14;
+  --shr-red: #243247;
+  --shr-gold: #9fb3cc;
+  --shr-gold-soft: #dde7f4;
+  --shr-paper: #e8edf4;
+  --shr-dim: #8b95a5;
+}
+
+.shr-marble .shr-switch button.on {
+  background: linear-gradient(180deg, #33445e, #243247);
+}
+
+.shr-marble .shr-meter > span {
+  background: linear-gradient(90deg, #6f87a6, var(--shr-gold-soft));
+}
+
+.shr-marble .shr-crest {
+  background: linear-gradient(180deg, #e3ecf7, #93a7c0);
+  color: #16202e;
+}
+
+.shr-marble .shr-switch button.on {
+  color: #fff;
+}
+
+/* The year, standing in for a cover that isn't here. */
+.shr-niche-year {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+  color: color-mix(in srgb, var(--shr-gold) 26%, transparent);
+}
+
+/* Jump to a series, with how far along it is */
+
+.shr-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.shr-jump a {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2px 8px;
+  min-width: 132px;
+  padding: 7px 10px 8px;
+  border: 1px solid color-mix(in srgb, var(--shr-gold) 22%, transparent);
+  border-radius: 8px;
+  background: rgb(0 0 0 / 0.3);
+  color: var(--shr-paper);
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.shr-jump a:hover {
+  border-color: var(--shr-gold);
+  background: rgb(0 0 0 / 0.5);
+}
+
+.shr-jump-count {
+  color: var(--shr-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+.shr-jump a.full .shr-jump-count {
+  color: var(--shr-gold-soft);
+}
+
+.shr-jump-meter {
+  grid-column: 1 / -1;
+  height: 2px;
+  margin-top: 3px;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.08);
+  overflow: hidden;
+}
+
+.shr-jump-meter > span {
+  display: block;
+  height: 100%;
+  background: var(--shr-gold);
+}
+
+/* A series with nothing missing */
+
+.shr-complete {
+  padding: 1px 7px;
+  border: 1px solid var(--shr-gold);
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--shr-gold-soft);
+}
+
 @media (max-width: 700px) {
-  .wr-shrine {
+  .shr-jump a {
+    flex: 1 1 128px;
+    min-width: 0;
+  }
+
+  .shr-shrine {
     padding: 20px 14px;
     border-radius: 12px;
   }
 
-  .wr-hero h2 {
+  .shr-hero h2 {
     font-size: 30px;
   }
 
-  .wr-hero-kanji {
+  .shr-hero-kanji {
     top: -18px;
     font-size: 110px;
   }
 
-  .wr-wall {
+  .shr-wall {
     grid-template-columns: repeat(auto-fill, minmax(94px, 1fr));
     gap: 16px 10px;
   }
 
-  .wr-cap-title {
+  .shr-cap-title {
     min-height: 0;
   }
 }

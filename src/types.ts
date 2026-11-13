@@ -165,10 +165,10 @@ export interface ChecklistCollection {
   series: ChecklistSeries[];
 }
 
-// --- KOEI Warriors -------------------------------------------------------------
+// --- Shrines -------------------------------------------------------------------
 
-/** One game in the Warriors catalogue (public/data/warriors.json), owned or not. */
-export interface WarriorsEntry {
+/** One game in a shrine catalogue (public/data/warriors.json, pantheon.json), owned or not. */
+export interface ShrineEntry {
   title: string;
   /** Year of the first release anywhere. */
   year: number;
@@ -181,20 +181,27 @@ export interface WarriorsEntry {
   note?: string;
 }
 
-export interface WarriorsSeriesData {
+export interface ShrineSeriesData {
   id: string;
   name: string;
   /** The series' name in Japanese, shown on its banner. */
-  kanji: string;
+  kanji?: string;
   note?: string;
-  games: WarriorsEntry[];
+  games: ShrineEntry[];
 }
 
-export interface WarriorsCatalogue {
+export interface ShrineCatalogue {
   title: string;
-  kanji: string;
   note: string;
-  series: WarriorsSeriesData[];
+  /** The small line above the title; without one it counts the series. */
+  eyebrow?: string;
+  /** The watermark behind the title. */
+  kanji?: string;
+  /** The glyph in an empty niche; without one the niche shows the game's year. */
+  mark?: string;
+  /** 'marble' for the cool stone palette; the warm lacquer one is the default. */
+  theme?: 'lacquer' | 'marble';
+  series: ShrineSeriesData[];
 }
 
 // --- Vinyl ---------------------------------------------------------------------
