@@ -1,5 +1,5 @@
 import { Suspense, lazy, useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import type { BlogPost, CastingADream, ChecklistCollection, Game, GalleryEntry, GotcData, GameConsole, GotmMonth, Query, SortKey, Vinyl } from './types';
+import type { BlogPost, CastingADream, ChecklistCollection, Game, GalleryEntry, GotcData, GameConsole, GotmMonth, Query, SortKey, Vinyl, WarriorsCatalogue } from './types';
 import { DEFAULT_QUERY, SORT_LABELS, applyQuery, sortPreset, lastPlayedKeys, paramsToQuery, queryToParams } from './lib/query';
 import { Filters } from './components/Filters';
 import { SortBuilder } from './components/SortBuilder';
@@ -25,13 +25,15 @@ const StatsView = lazy(() => import('./components/StatsView'));
 const TimelineView = lazy(() => import('./components/TimelineView'));
 const PlayView = lazy(() => import('./components/PlayView'));
 const BacklogView = lazy(() => import('./components/BacklogView'));
+// The Warriors catalogue is its own page and its own data file; neither is fetched until it's opened.
+const WarriorsView = lazy(() => import('./components/WarriorsView'));
 import { api, detectEditing } from './lib/api';
 import { createLinker } from './lib/links';
 import { formatMonthYear } from './lib/format';
 import { matchLauncherGames, withLauncherPlaytime } from './lib/castingADream';
 import { findChanges, loadSnapshot, saveSnapshot, type ChangeGroup, type ChangeTab } from './lib/whatsNew';
 
-type GameTab = 'collection' | 'backlog' | 'gotm' | 'gotc' | 'stats' | 'timeline' | 'gallery' | 'map' | 'consoles' | 'blog' | 'casting-a-dream' | 'guess';
+type GameTab = 'collection' | 'backlog' | 'gotm' | 'gotc' | 'stats' | 'timeline' | 'gallery' | 'map' | 'consoles' | 'blog' | 'casting-a-dream' | 'warriors' | 'guess';
 /** Collections that aren't games. Each one is public/data/<id>.json. */
 /** The owner's PriceCharting collection, linked from the header. */
 const PRICECHARTING_URL = 'https://www.pricecharting.com/offers?seller=dv636ks6lcmgdlb7pcyszkqvi4&status=collection';
@@ -55,6 +57,7 @@ const TABS: { id: GameTab; label: string }[] = [
   { id: 'consoles', label: 'Consoles' },
   { id: 'blog', label: 'Blog' },
   { id: 'casting-a-dream', label: 'Casting a Dream' },
+  { id: 'warriors', label: 'Warriors' },
   { id: 'guess', label: 'Play' },
 ];
 /** Desktop: how many sections stay in the tab row. The rest, and the other collections, live in the More menu. */
@@ -133,6 +136,8 @@ export default function App() {
   const blog = useDataFile<BlogPost[]>('blog.json', tab === 'blog' || tab === 'timeline' || checkChanges);
   // Always loaded: the launcher's play time replaces the recorded one for the games it plays.
   const castingADream = useDataFile<CastingADream>('casting-a-dream.json', true);
+  // Only the Warriors page needs the catalogue, and it's a long list.
+  const warriors = useDataFile<WarriorsCatalogue>('warriors.json', tab === 'warriors');
   const games = useMemo(() => storedGames && withLauncherPlaytime(storedGames, castingADream.data), [storedGames, castingADream.data]);
   /** Collection games with trophies in the launcher. */
   const launcherTrophies = useMemo(() => {
@@ -506,6 +511,15 @@ export default function App() {
           </Suspense>
         ) : (
           <div className="empty">{gotm.error ? `Couldn't load Game of the Month: ${gotm.error}` : 'Loading…'}</div>
+        ))}
+
+      {tab === 'warriors' &&
+        (warriors.data ? (
+          <Suspense fallback={<div className="empty">Loading the Warriors…</div>}>
+            <WarriorsView catalogue={warriors.data} games={games} onOpen={(g) => showDetail(g.id)} />
+          </Suspense>
+        ) : (
+          <div className="empty">{warriors.error ? `Couldn't load the Warriors catalogue: ${warriors.error}` : 'Loading…'}</div>
         ))}
 
       {tab === 'stats' && (

@@ -165,6 +165,38 @@ export interface ChecklistCollection {
   series: ChecklistSeries[];
 }
 
+// --- KOEI Warriors -------------------------------------------------------------
+
+/** One game in the Warriors catalogue (public/data/warriors.json), owned or not. */
+export interface WarriorsEntry {
+  title: string;
+  /** Year of the first release anywhere. */
+  year: number;
+  /** Every platform it came out on, named as the collection names platforms. */
+  platforms: string[];
+  /** Other titles the same game is in the collection under. */
+  aliases?: string[];
+  /** Never released outside Japan. */
+  jp?: boolean;
+  note?: string;
+}
+
+export interface WarriorsSeriesData {
+  id: string;
+  name: string;
+  /** The series' name in Japanese, shown on its banner. */
+  kanji: string;
+  note?: string;
+  games: WarriorsEntry[];
+}
+
+export interface WarriorsCatalogue {
+  title: string;
+  kanji: string;
+  note: string;
+  series: WarriorsSeriesData[];
+}
+
 // --- Vinyl ---------------------------------------------------------------------
 
 /** One play of one side of a record. */
