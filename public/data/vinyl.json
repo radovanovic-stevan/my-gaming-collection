@@ -140,9 +140,13 @@
    {
     "side": "C",
     "date": "2026-10-25"
+   },
+   {
+    "side": "D",
+    "date": "2026-11-13"
    }
   ],
-  "discogsId": 31699214
+  "discogsId": null
  },
  {
   "id": 7,
@@ -398,9 +402,13 @@
    {
     "side": "A",
     "date": "2026-10-26"
+   },
+   {
+    "side": "A",
+    "date": "2026-11-12"
    }
   ],
-  "discogsId": 3442602
+  "discogsId": null
  },
  {
   "id": 15,
@@ -733,6 +741,10 @@
    {
     "side": "2",
     "date": "2026-11-01"
+   },
+   {
+    "side": "1",
+    "date": "2026-11-12"
    }
   ],
   "discogsId": null
@@ -957,7 +969,16 @@
    "vinyl-30-d47687c3.jpg"
   ],
   "cover": "vinyl-30-d47687c3.jpg",
-  "listens": [],
-  "discogsId": 5170805
+  "listens": [
+   {
+    "side": "1",
+    "date": "2026-11-13"
+   },
+   {
+    "side": "2",
+    "date": "2026-11-13"
+   }
+  ],
+  "discogsId": null
  }
 ]

@@ -8434,7 +8434,8 @@
   "playtime": null,
   "genres": [
    "Action",
-   "RPG"
+   "RPG",
+   "H&S"
   ],
   "condition": [
    "Box",
@@ -8442,7 +8443,9 @@
    "Manual"
   ],
   "edition": "",
+  "trophies": null,
   "boughtIn": "Serbia",
+  "playsVia": null,
   "images": [
    "330-a3dcabad.jpg"
   ],
@@ -14993,7 +14996,8 @@
   "playtime": null,
   "genres": [
    "Action",
-   "H&S"
+   "H&S",
+   "RPG"
   ],
   "condition": [
    "Box",
@@ -15001,7 +15005,9 @@
    "Manual"
   ],
   "edition": "",
+  "trophies": null,
   "boughtIn": "Spain",
+  "playsVia": null,
   "images": [
    "578-9c48a7e5.jpg"
   ],
