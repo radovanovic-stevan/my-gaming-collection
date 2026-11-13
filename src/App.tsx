@@ -27,13 +27,15 @@ const PlayView = lazy(() => import('./components/PlayView'));
 const BacklogView = lazy(() => import('./components/BacklogView'));
 // A shrine page and its catalogue are both only fetched when the tab is opened.
 const ShrineView = lazy(() => import('./components/ShrineView'));
+// The room builds a 3D scene and pulls in three.js, so it only loads when you walk into it.
+const RoomView = lazy(() => import('./components/RoomView'));
 import { api, detectEditing } from './lib/api';
 import { createLinker } from './lib/links';
 import { formatMonthYear } from './lib/format';
 import { matchLauncherGames, withLauncherPlaytime } from './lib/castingADream';
 import { findChanges, loadSnapshot, saveSnapshot, type ChangeGroup, type ChangeTab } from './lib/whatsNew';
 
-type GameTab = 'collection' | 'backlog' | 'gotm' | 'gotc' | 'stats' | 'timeline' | 'gallery' | 'map' | 'consoles' | 'blog' | 'casting-a-dream' | 'warriors' | 'pantheon' | 'guess';
+type GameTab = 'collection' | 'backlog' | 'gotm' | 'gotc' | 'stats' | 'timeline' | 'gallery' | 'map' | 'consoles' | 'blog' | 'casting-a-dream' | 'warriors' | 'pantheon' | 'room' | 'guess';
 /** Collections that aren't games. Each one is public/data/<id>.json. */
 /** The owner's PriceCharting collection, linked from the header. */
 const PRICECHARTING_URL = 'https://www.pricecharting.com/offers?seller=dv636ks6lcmgdlb7pcyszkqvi4&status=collection';
@@ -59,6 +61,7 @@ const TABS: { id: GameTab; label: string }[] = [
   { id: 'casting-a-dream', label: 'Casting a Dream' },
   { id: 'warriors', label: 'Warriors Shrine' },
   { id: 'pantheon', label: 'The Pantheon' },
+  { id: 'room', label: 'The Room' },
   { id: 'guess', label: 'Play' },
 ];
 /** Desktop: how many sections stay in the tab row. The rest, and the other collections, live in the More menu. */
@@ -532,6 +535,12 @@ export default function App() {
         ) : (
           <div className="empty">{pantheon.error ? `Couldn't load the Pantheon: ${pantheon.error}` : 'Loading…'}</div>
         ))}
+
+      {tab === 'room' && (
+        <Suspense fallback={<div className="empty">Opening the room…</div>}>
+          <RoomView games={games} onOpen={(g) => showDetail(g.id)} />
+        </Suspense>
+      )}
 
       {tab === 'stats' && (
         <Suspense fallback={<div className="empty">Loading stats…</div>}>

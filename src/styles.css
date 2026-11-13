@@ -6713,3 +6713,215 @@ button.tl-chip:hover,
     min-height: 0;
   }
 }
+
+/* --- The Room --- */
+.room-stage {
+  position: relative;
+  height: min(76vh, 860px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #0a0a0c;
+  touch-action: none;
+}
+
+.room-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+}
+
+.room-loading,
+.room-hint,
+.room-hover,
+.room-where {
+  position: absolute;
+  color: #f1efe9;
+  pointer-events: none;
+}
+
+.room-loading {
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: #0a0a0c;
+}
+
+.room-where {
+  top: 12px;
+  left: 14px;
+  display: grid;
+  gap: 1px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  /* The room is daylit and white, so the labels need their own backing to stay readable. */
+  background: rgb(0 0 0 / 0.42);
+}
+
+.room-where .eyebrow {
+  color: #f1efe9;
+}
+
+.room-where .muted {
+  color: #a6a39b;
+}
+
+.room-hint.top {
+  top: 14px;
+  bottom: auto;
+}
+
+.room-hint {
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgb(0 0 0 / 0.55);
+  font-size: 12.5px;
+  white-space: nowrap;
+}
+
+/* The title of whatever's under the crosshair, read like a label on the shelf edge. */
+.room-hover {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 18px);
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgb(0 0 0 / 0.6);
+  font-size: 13px;
+  max-width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.room-crosshair {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  margin: -2.5px 0 0 -2.5px;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 0.65);
+  pointer-events: none;
+}
+
+.room-stick {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  width: 104px;
+  height: 104px;
+  border-radius: 50%;
+  border: 1px solid rgb(255 255 255 / 0.25);
+  background: radial-gradient(circle, rgb(255 255 255 / 0.18), rgb(255 255 255 / 0.05));
+  touch-action: none;
+}
+
+.room-card {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  display: flex;
+  gap: 12px;
+  width: min(380px, calc(100% - 28px));
+  padding: 12px;
+  border-radius: var(--radius);
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.room-card-cover {
+  width: 72px;
+  flex: none;
+}
+
+.room-card-cover .cover {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.room-card-body {
+  display: grid;
+  gap: 5px;
+  align-content: start;
+  min-width: 0;
+}
+
+.room-card-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.room-bays {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.room-bay {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px 5px 8px;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--bay);
+  border-radius: var(--radius);
+  background: var(--bg-elev);
+  font-size: 12.5px;
+}
+
+.room-bay.on {
+  border-color: var(--accent);
+  border-left-color: var(--bay);
+}
+
+@media (max-width: 700px) {
+  .room-stage {
+    height: min(68vh, 560px);
+  }
+
+  .room-card {
+    right: 10px;
+    left: 10px;
+    bottom: 10px;
+    width: auto;
+  }
+}
+
+.room-console {
+  border-left-color: var(--fg-muted);
+}
+
+/* The consoles have games but no boxes, so they get a list instead of a box off the shelf. */
+.room-list {
+  max-height: min(60%, 420px);
+}
+
+.room-built {
+  list-style: none;
+  margin: 2px 0;
+  padding: 0;
+  overflow: auto;
+  display: grid;
+  gap: 2px;
+}
+
+.room-crouch {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  padding: 10px 14px;
+  border: 1px solid rgb(255 255 255 / 0.3);
+  border-radius: 999px;
+  background: rgb(0 0 0 / 0.42);
+  color: #fff;
+  font-size: 13px;
+}
