@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef } from 'react';
 import type { Game, Query } from '../types';
 import { yearOf } from '../lib/query';
 import { NOT_GENRES } from '../lib/allTime';
-import { formatPlaytime } from '../lib/format';
+import { conditionParts, formatPlaytime, hasPart } from '../lib/format';
 import { useTip, type Bind } from '../lib/tip';
 import Barcode from './Barcode';
 
@@ -253,10 +253,10 @@ export default function StatsView({ games, onShowGames, onOpen }: Props) {
 
     // What came with each game, as the exact set of parts. Built-in console games have no box of their own.
     const physical = games.filter((g) => !g.condition.includes('Built-in Console'));
-    const conditions = groupBy(physical, (g) => (g.condition.length ? [...g.condition].sort().join(' + ') : 'Nothing recorded'))
+    const conditions = groupBy(physical, (g) => (g.condition.length ? conditionParts(g).sort().join(' + ') : 'Nothing recorded'))
       .map(([combo, gs]) => ({ combo, count: gs.length }))
       .sort((a, b) => b.count - a.count);
-    const complete = physical.filter((g) => ['Box', 'Cover', 'Manual'].every((p) => g.condition.includes(p))).length;
+    const complete = physical.filter((g) => ['Box', 'Cover', 'Manual'].every((p) => hasPart(g, p))).length;
 
     const played = games.filter((g) => g.playtime).sort((a, b) => b.playtime! - a.playtime!);
 

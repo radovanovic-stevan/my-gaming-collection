@@ -1,5 +1,6 @@
 import type { Game } from '../types';
 import { band } from './bands';
+import { hasPart } from './format';
 
 /**
  * The owner's wall, shelf by shelf, in metres. The arrangement below is his, read off the photograph:
@@ -46,9 +47,12 @@ const CLEAR = SHELF - INSET * 2;
 
 const ROOM = { depth: 4, height: 2.8 };
 
-/** A box only stands on the shelf if there's a case to stand up: the rest live in the crate at the end of the run. */
 const isBuiltIn = (g: Game) => g.condition.includes('Built-in Console');
-const hasCase = (g: Game) => g.condition.includes('Box') && g.condition.some((c) => c === 'Cover' || c === 'Cover*');
+/**
+ * What can stand on a shelf: a box with its cover, of any kind. A bare disc or cartridge, and a case with
+ * no artwork at all, goes in the crate at the end of its platform's run instead.
+ */
+const hasCase = (g: Game) => hasPart(g, 'Box') && hasPart(g, 'Cover');
 
 /**
  * One thing standing on one shelf: a platform's boxes on their spines, or laid flat in a pile, or a box of
@@ -111,6 +115,10 @@ const CONSOLE_SHELF = { unit: 1, shelf: 5 };
 
 export interface Slot {
   game: Game;
+  /** What's on the spine: a game's title, or the name of the box several games share. */
+  title: string;
+  /** The games inside, when one box holds more than one. */
+  bundle?: Game[];
   x: number;
   y: number;
   z: number;
@@ -198,17 +206,67 @@ function shelfHeights(): number[] {
 /** Headroom in a compartment, which is what limits how high a pile of flat boxes can go. */
 const COMPARTMENT = (UNIT.body - UNIT.plinth - UNIT.panel) / UNIT.compartments - UNIT.panel - 0.015;
 
+/** One thing standing on the shelf: usually a game, sometimes a box holding several. */
+interface Item {
+  game: Game;
+  title: string;
+  bundle?: Game[];
+}
+
+/** The leading words the titles in a box share, which is usually what's printed biggest on its spine. */
+function sharedPrefix(titles: string[]): string {
+  const bare = (w: string) => w.replace(/[^a-z0-9']/gi, '').toLowerCase();
+  const words = titles.map((t) => t.split(/\s+/).filter(Boolean));
+  const first = words[0] ?? [];
+  let n = 0;
+  while (n < first.length && words.every((w) => n < w.length && bare(w[n]) === bare(first[n]) && bare(first[n]))) n++;
+  return first
+    .slice(0, n)
+    .join(' ')
+    .replace(/[\s:,-]+$/, '');
+}
+
+/** What to print on the spine of a box holding several games. */
+function boxTitle(games: Game[]): string {
+  const edition = games.map((g) => (g.edition ?? '').replace(/^[\s-]+|[\s-]+$/g, '')).find(Boolean) ?? '';
+  const prefix = sharedPrefix(games.map((g) => g.title));
+  if (prefix && edition && !prefix.toLowerCase().includes(edition.toLowerCase())) return `${prefix}: ${edition}`;
+  return edition || prefix || games[0].title;
+}
+
+/**
+ * Several games in one physical box — a trilogy, an HD collection, the Orange Box. They give themselves away
+ * by sharing a cover photograph: there is only one box, so there is only one picture of it. One spine stands
+ * for all of them, and opening it lists what's inside.
+ */
+function bundled(list: Game[]): Item[] {
+  const covers = new Map<string, Game[]>();
+  for (const g of list) if (g.cover) covers.set(g.cover, [...(covers.get(g.cover) ?? []), g]);
+  const boxes = [...covers.values()].filter((gs) => gs.length > 1);
+  const inside = new Set(boxes.flat().map((g) => g.id));
+  return [
+    ...list.filter((g) => !inside.has(g.id)).map((game) => ({ game, title: game.title })),
+    ...boxes.map((gs) => {
+      const games = [...gs].sort((a, b) => a.title.localeCompare(b.title));
+      return { game: games[0], title: boxTitle(games), bundle: games };
+    }),
+  ].sort((a, b) => a.title.localeCompare(b.title));
+}
+
 export function planRoom(games: Game[]): RoomPlan {
   const playable = games.filter((g) => !isBuiltIn(g));
   const byPlatform = new Map<string, Game[]>();
   for (const g of playable) byPlatform.set(g.platform, [...(byPlatform.get(g.platform) ?? []), g]);
 
-  const shelved = new Map<string, Game[]>();
+  const shelved = new Map<string, Item[]>();
   const loose = new Map<string, Game[]>();
   for (const [platform, list] of byPlatform) {
-    const sorted = [...list].sort((a, b) => a.title.localeCompare(b.title));
-    shelved.set(platform, sorted.filter(hasCase));
-    loose.set(platform, sorted.filter((g) => !hasCase(g)));
+    const items = bundled(list);
+    shelved.set(platform, items.filter((item) => hasCase(item.game)));
+    loose.set(
+      platform,
+      items.filter((item) => !hasCase(item.game)).flatMap((item) => item.bundle ?? [item.game]).sort((a, b) => a.title.localeCompare(b.title)),
+    );
   }
 
   const heights = shelfHeights();
@@ -284,11 +342,13 @@ export function planRoom(games: Game[]): RoomPlan {
           const take = all.slice(from);
           used.set(run.platform, from + take.length);
           placed.set(run.platform, (placed.get(run.platform) ?? 0) + 1);
-          take.forEach((game, i) => {
+          take.forEach((item, i) => {
             const base = under ? under.top : floor;
             const level = (under?.level ?? 0) + i;
             slots.push({
-              game,
+              game: item.game,
+              title: item.title,
+              bundle: item.bundle,
               x: (under ? under.x : startOf) + h / 2,
               y: base + t / 2 + level * t,
               z: unit.z + UNIT.depth / 2 - Math.min(d, UNIT.depth - 0.02) / 2 - 0.015,
@@ -302,9 +362,9 @@ export function planRoom(games: Game[]): RoomPlan {
             });
           });
           if (under) under.level += take.length;
-          for (const game of take) {
-            const seen = where.get(game.platform) ?? { x: 0, n: 0 };
-            where.set(game.platform, { x: seen.x + unit.x, n: seen.n + 1 });
+          for (const item of take) {
+            const seen = where.get(item.game.platform) ?? { x: 0, n: 0 };
+            where.set(item.game.platform, { x: seen.x + unit.x, n: seen.n + 1 });
           }
           continue;
         }
@@ -316,9 +376,11 @@ export function planRoom(games: Game[]): RoomPlan {
           const piles = Math.max(0, Math.floor(room_ / across));
           const take = all.slice(from, from + piles * perPile);
           used.set(run.platform, from + take.length);
-          take.forEach((game, i) => {
+          take.forEach((item, i) => {
             slots.push({
-              game,
+              game: item.game,
+              title: item.title,
+              bundle: item.bundle,
               x: startOf + along + Math.floor(i / perPile) * across + across / 2,
               y: floor + t / 2 + (i % perPile) * t,
               z: unit.z + UNIT.depth / 2 - Math.min(d, UNIT.depth - 0.02) / 2 - 0.015,
@@ -340,9 +402,11 @@ export function planRoom(games: Game[]): RoomPlan {
           const take = all.slice(from, from + fits);
           used.set(run.platform, from + take.length);
           rows.set(run.platform, { x: startOf + along, top: floor + h, level: 0 });
-          take.forEach((game, i) => {
+          take.forEach((item, i) => {
             slots.push({
-              game,
+              game: item.game,
+              title: item.title,
+              bundle: item.bundle,
               x: startOf + along + i * t + t / 2,
               y: floor + h / 2,
               z: unit.z + UNIT.depth / 2 - d / 2 - 0.015,
@@ -358,9 +422,9 @@ export function planRoom(games: Game[]): RoomPlan {
           along += take.length * t;
         }
         placed.set(run.platform, (placed.get(run.platform) ?? 0) + 1);
-        for (const game of all.slice(from, used.get(run.platform))) {
-          const seen = where.get(game.platform) ?? { x: 0, n: 0 };
-          where.set(game.platform, { x: seen.x + unit.x, n: seen.n + 1 });
+        for (const item of all.slice(from, used.get(run.platform))) {
+          const seen = where.get(item.game.platform) ?? { x: 0, n: 0 };
+          where.set(item.game.platform, { x: seen.x + unit.x, n: seen.n + 1 });
         }
 
         // The crate sits at the end of the platform's last run.
@@ -388,7 +452,7 @@ export function planRoom(games: Game[]): RoomPlan {
   for (const [platform, all] of shelved) {
     const done = used.get(platform) ?? 0;
     if (done >= all.length) continue;
-    const left = all.slice(done);
+    const left = all.slice(done).flatMap((item) => item.bundle ?? [item.game]);
     const crate = crates.find((c) => c.id === platform || c.id.split('+').includes(platform));
     if (crate) crate.games = [...crate.games, ...left].sort((a, b) => a.title.localeCompare(b.title));
   }
@@ -442,7 +506,7 @@ export function planRoom(games: Game[]): RoomPlan {
     crates,
     consoles,
     start: { x: 0, z: room.depth / 2 - 0.5, yaw: 0 },
-    shelved: slots.length,
+    shelved: slots.reduce((n, slot) => n + (slot.bundle?.length ?? 1), 0),
     crated: crates.reduce((n, c) => n + c.games.length, 0),
     cased: consoles.reduce((n, c) => n + c.count, 0),
   };

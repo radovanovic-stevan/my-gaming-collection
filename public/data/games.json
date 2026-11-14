@@ -3898,7 +3898,10 @@
    "TPS",
    "L"
   ],
-  "condition": [],
+  "condition": [
+   "Box",
+   "Cover"
+  ],
   "edition": "",
   "boughtIn": "Serbia",
   "images": [
@@ -3989,7 +3992,10 @@
   "genres": [
    "Sports"
   ],
-  "condition": [],
+  "condition": [
+   "Box",
+   "Cover"
+  ],
   "edition": "",
   "boughtIn": "Serbia",
   "images": [
@@ -4039,7 +4045,10 @@
    "Adventure",
    "OpenWorld"
   ],
-  "condition": [],
+  "condition": [
+   "Box",
+   "Cover"
+  ],
   "edition": "",
   "boughtIn": "Serbia",
   "images": [
@@ -6196,7 +6205,8 @@
    "Racing"
   ],
   "condition": [
-   "Box"
+   "Box",
+   "Cover*"
   ],
   "edition": "Platinum",
   "boughtIn": "Serbia",
@@ -7269,7 +7279,10 @@
    "RPG",
    "TPS"
   ],
-  "condition": [],
+  "condition": [
+   "Box",
+   "Cover"
+  ],
   "edition": "",
   "boughtIn": "Serbia",
   "images": [
@@ -8520,7 +8533,10 @@
    "RPG",
    "Action"
   ],
-  "condition": [],
+  "condition": [
+   "Box",
+   "Cover"
+  ],
   "edition": "",
   "boughtIn": "Serbia",
   "images": [
@@ -8652,7 +8668,10 @@
   "genres": [
    "Racing"
   ],
-  "condition": [],
+  "condition": [
+   "Box",
+   "Cover"
+  ],
   "edition": "",
   "boughtIn": "Serbia",
   "images": [
@@ -9634,7 +9653,8 @@
    "Puzzle"
   ],
   "condition": [
-   "Box"
+   "Box",
+   "Cover*"
   ],
   "edition": "",
   "boughtIn": "Serbia",
@@ -9658,7 +9678,8 @@
    "Action"
   ],
   "condition": [
-   "Box"
+   "Box",
+   "Cover*"
   ],
   "edition": "",
   "boughtIn": "Serbia",
@@ -11349,10 +11370,13 @@
   ],
   "condition": [
    "Box",
-   "Manual"
+   "Manual",
+   "Cover*"
   ],
   "edition": "",
+  "trophies": null,
   "boughtIn": "Serbia",
+  "playsVia": null,
   "images": [
    "440-f89d3acc.jpg"
   ],
@@ -12179,7 +12203,10 @@
   "genres": [
    "Sports"
   ],
-  "condition": [],
+  "condition": [
+   "Box",
+   "Cover"
+  ],
   "edition": "Platinum",
   "trophies": "https://psnprofiles.com/trophies/550-pro-evolution-soccer-2011/StevanMcfc",
   "boughtIn": "Serbia",
@@ -13776,7 +13803,10 @@
    "Action",
    "RPG"
   ],
-  "condition": [],
+  "condition": [
+   "Box",
+   "Cover"
+  ],
   "edition": "",
   "boughtIn": "Serbia",
   "images": [
@@ -14788,7 +14818,8 @@
    "Sports"
   ],
   "condition": [
-   "Box"
+   "Box",
+   "Cover*"
   ],
   "edition": "",
   "trophies": "https://psnprofiles.com/trophies/119-virtua-tennis-2009/StevanMcfc",
@@ -15434,7 +15465,10 @@
   "genres": [
    "Sports"
   ],
-  "condition": [],
+  "condition": [
+   "Box",
+   "Cover"
+  ],
   "edition": "",
   "boughtIn": "Italy",
   "images": [
@@ -15456,7 +15490,10 @@
   "genres": [
    "Racing"
   ],
-  "condition": [],
+  "condition": [
+   "Box",
+   "Cover"
+  ],
   "edition": "",
   "boughtIn": "Italy",
   "images": [
@@ -21855,7 +21892,10 @@
    "Action",
    "Adventure"
   ],
-  "condition": [],
+  "condition": [
+   "Box",
+   "Cover"
+  ],
   "edition": "",
   "boughtIn": "Russia",
   "images": [
@@ -21877,7 +21917,10 @@
   "genres": [
    "FPS"
   ],
-  "condition": [],
+  "condition": [
+   "Box",
+   "Cover"
+  ],
   "edition": "",
   "boughtIn": "Russia",
   "images": [
@@ -25703,7 +25746,10 @@
    "TPS",
    "Action"
   ],
-  "condition": [],
+  "condition": [
+   "Box",
+   "Cover"
+  ],
   "edition": "Orange Box",
   "boughtIn": "Netherlands",
   "images": [
@@ -25725,7 +25771,10 @@
   "genres": [
    "FPS"
   ],
-  "condition": [],
+  "condition": [
+   "Box",
+   "Cover"
+  ],
   "edition": "Orange Box",
   "boughtIn": "Netherlands",
   "images": [
@@ -25747,7 +25796,10 @@
   "genres": [
    "FPS"
   ],
-  "condition": [],
+  "condition": [
+   "Box",
+   "Cover"
+  ],
   "edition": "Orange Box",
   "boughtIn": "Netherlands",
   "images": [
@@ -25769,7 +25821,10 @@
   "genres": [
    "FPS"
   ],
-  "condition": [],
+  "condition": [
+   "Box",
+   "Cover"
+  ],
   "edition": "Orange Box",
   "boughtIn": "Netherlands",
   "images": [
@@ -25791,7 +25846,10 @@
   "genres": [
    "Puzzle"
   ],
-  "condition": [],
+  "condition": [
+   "Box",
+   "Cover"
+  ],
   "edition": "Orange Box",
   "boughtIn": "Netherlands",
   "images": [

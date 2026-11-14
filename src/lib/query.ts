@@ -1,3 +1,4 @@
+import { conditionParts } from './format';
 import type { Game, GotmMonth, PlayedGame, Query, SortKey, SortLevel } from '../types';
 import { monthPlayed } from './gotm';
 
@@ -166,7 +167,7 @@ export function applyQuery(games: Game[], q: Query, lastPlayed?: LastPlayed): Ga
         anyOf(q.statuses, [g.status]) &&
         // Genres narrow the list: a game must have every selected genre.
         q.genres.every((x) => g.genres.includes(x)) &&
-        anyOf(q.conditions, g.condition) &&
+        anyOf(q.conditions, conditionParts(g)) &&
         anyOf(q.boughtIn, g.boughtIn ? [g.boughtIn] : []) &&
         anyOf(q.playsVia, g.playsVia ? [g.playsVia] : []) &&
         // Like genres, the flags narrow: a game must pass every one selected.

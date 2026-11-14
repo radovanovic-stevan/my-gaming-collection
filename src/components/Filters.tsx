@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import type { Game, Query } from '../types';
 import { STATUSES } from '../types';
 import { FLAGS, facet, yearList } from '../lib/query';
-import { genreLabel } from '../lib/format';
+import { conditionParts, genreLabel } from '../lib/format';
 
 interface Props {
   games: Game[];
@@ -70,7 +70,7 @@ export function Filters({ games, query, onChange, onReset, resultCount, onDone }
       platforms: facet(games, (g) => [g.platform]),
       statuses: facet(games, (g) => [g.status]).sort((a, b) => STATUSES.indexOf(a[0] as never) - STATUSES.indexOf(b[0] as never)),
       genres: facet(games, (g) => g.genres),
-      conditions: facet(games, (g) => g.condition),
+      conditions: facet(games, conditionParts),
       boughtIn: facet(games, (g) => (g.boughtIn ? [g.boughtIn] : [])),
       playsVia: facet(games, (g) => (g.playsVia ? [g.playsVia] : [])),
       flags: Object.entries(FLAGS)

@@ -1,5 +1,4 @@
 import type * as THREE_NS from 'three';
-import type { Game } from '../types';
 import { band } from './bands';
 import { UNIT, UNIT_HEIGHT, type RoomPlan, type Slot } from './room';
 
@@ -108,16 +107,16 @@ function fit(ctx: CanvasRenderingContext2D, title: string, max: number): string 
 }
 
 /** One sheet of spine labels: a band of the platform's colour, the title down the spine, nothing else. */
-function drawSheet(games: Game[], from: number): HTMLCanvasElement {
+function drawSheet(spines: { title: string; platform: string }[], from: number): HTMLCanvasElement {
   const canvas = document.createElement('canvas');
   canvas.width = STRIP.sheet;
   canvas.height = STRIP.sheet;
   const ctx = canvas.getContext('2d')!;
   ctx.fillStyle = BODY;
   ctx.fillRect(0, 0, STRIP.sheet, STRIP.sheet);
-  for (let i = 0; i < PER_SHEET && from + i < games.length; i++) {
-    const game = games[from + i];
-    const [bandColour, labelColour, label] = band(game.platform);
+  for (let i = 0; i < PER_SHEET && from + i < spines.length; i++) {
+    const spine = spines[from + i];
+    const [bandColour, labelColour, label] = band(spine.platform);
     const x = (i % COLS) * STRIP.w;
     const y = Math.floor(i / COLS) * STRIP.h;
     ctx.fillStyle = BODY;
@@ -153,7 +152,7 @@ function drawSheet(games: Game[], from: number): HTMLCanvasElement {
     ctx.font = '600 16px Inter, system-ui, sans-serif';
     ctx.textAlign = 'left';
     ctx.textBaseline = 'middle';
-    ctx.fillText(fit(ctx, game.title, STRIP.h - BAND_H - PATCH_H - 14), 0, 0);
+    ctx.fillText(fit(ctx, spine.title, STRIP.h - BAND_H - PATCH_H - 14), 0, 0);
     ctx.restore();
   }
   return canvas;
@@ -188,15 +187,15 @@ function rect(i: number): [number, number, number, number] {
 }
 
 export function buildScene(three: THREE, scene: THREE_NS.Scene, plan: RoomPlan): Built {
-  const games = plan.slots.map((s) => s.game);
-  const sheets = Math.max(1, Math.ceil(games.length / PER_SHEET));
+  const spines = plan.slots.map((s) => ({ title: s.title, platform: s.game.platform }));
+  const sheets = Math.max(1, Math.ceil(spines.length / PER_SHEET));
   const textures: THREE_NS.Texture[] = [];
   const labels: Built['labels'] = [];
   const dark = new three.Color(BODY);
   const body = empty();
 
   for (let sheet = 0; sheet < sheets; sheet++) {
-    const texture = new three.CanvasTexture(drawSheet(games, sheet * PER_SHEET));
+    const texture = new three.CanvasTexture(drawSheet(spines, sheet * PER_SHEET));
     texture.colorSpace = three.SRGBColorSpace;
     texture.anisotropy = 4;
     textures.push(texture);

@@ -123,7 +123,7 @@ export default function RoomView({ games, onOpen }: Props) {
       const targets = () => [...built.labels.map((l) => l.mesh), built.bodies, built.fixtures.mesh];
       /** What the crosshair is on: a box on the shelf, or one of the fixtures that holds several games. */
       type Hit = { game: Game; slot: number } | { fixture: { title: string; note: string; games: Game[] }; slot: -1 } | null;
-      const titleOf = (h: Hit) => (!h ? null : 'game' in h ? h.game.title : h.fixture.title);
+      const titleOf = (h: Hit) => (!h ? null : 'game' in h ? built.slots[h.slot]?.title ?? h.game.title : h.fixture.title);
       let hit: Hit = null;
       let hitAt = 0;
 
@@ -230,7 +230,13 @@ export default function RoomView({ games, onOpen }: Props) {
         scene.add(mesh);
         collapse(index, true);
         pulled = { mesh, slot: index, t: 0, out: true, from: mesh.position.clone(), yaw: slot.yaw };
-        setPicked(slot.game);
+        if (slot.bundle) {
+          setShown({ title: slot.title, note: `${slot.bundle.length} games in the one box`, games: slot.bundle });
+          setPicked(null);
+        } else {
+          setShown(null);
+          setPicked(slot.game);
+        }
       };
 
       api.current = {
@@ -245,6 +251,7 @@ export default function RoomView({ games, onOpen }: Props) {
         putBack: () => {
           drop();
           setPicked(null);
+          setShown(null);
         },
         crouch: () => {
           move.low = !move.low;
@@ -566,7 +573,13 @@ export default function RoomView({ games, onOpen }: Props) {
                 ))}
               </ul>
               <span className="room-card-actions">
-                <button className="btn" onClick={() => setShown(null)}>
+                <button
+                  className="btn"
+                  onClick={() => {
+                    setShown(null);
+                    api.current?.putBack();
+                  }}
+                >
                   Close
                 </button>
               </span>

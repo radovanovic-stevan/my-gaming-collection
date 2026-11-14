@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import type { Game } from '../types';
-import { acquiredSortKey, imageUrl } from '../lib/format';
+import { acquiredSortKey, hasPart, imageUrl } from '../lib/format';
 import { PlatformBadge, RatingBadge } from './Badges';
 
 /** Guesses before the cover is shown whole. */
@@ -120,7 +120,7 @@ function GuessInput({ games, onGuess, disabled }: { games: Game[]; onGuess: (g: 
 /** A cover from the collection, blurred and zoomed in, clearer with every wrong guess. Play as many as you like. */
 export default function GuessView({ games, onOpen }: { games: Game[]; onOpen: (game: Game) => void }) {
   // Only copies that came with their own cover art; a stand-in picture would make the blur unguessable.
-  const pool = useMemo(() => games.filter((g) => g.cover && (g.condition.includes('Cover') || g.condition.includes('Cover*'))), [games]);
+  const pool = useMemo(() => games.filter((g) => g.cover && hasPart(g, 'Cover')), [games]);
   const byId = useMemo(() => new Map(games.map((g) => [g.id, g])), [games]);
   // One photo can hold a compilation's whole line-up, and nothing in it says which game is meant.
   const byCover = useMemo(() => {

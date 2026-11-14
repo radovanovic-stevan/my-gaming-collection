@@ -50,6 +50,14 @@ export const coverUrl = (game: Game): string | null => (game.cover ? imageUrl(ga
 /** Tags from the sheet with a friendlier display name. "<3" marks games my wife bought for me. */
 export const genreLabel = (g: string) => (g === '<3' ? '♥ From my wife' : g);
 
+/**
+ * The asterisk on "Cover*" marks a reprinted one; the game still has its cover, so everything that counts
+ * parts counts it as one. Only a game's own detail line shows the raw value.
+ */
+export const conditionPart = (part: string) => (part === 'Cover*' ? 'Cover' : part);
+export const conditionParts = (game: { condition: string[] }) => [...new Set(game.condition.map(conditionPart))];
+export const hasPart = (game: { condition: string[] }, part: string) => game.condition.some((c) => conditionPart(c) === part);
+
 /** Stable per-platform hue used for badges and placeholder covers. */
 export function platformHue(platform: string): number {
   let h = 2166136261;
