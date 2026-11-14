@@ -29,13 +29,15 @@ const BacklogView = lazy(() => import('./components/BacklogView'));
 const ShrineView = lazy(() => import('./components/ShrineView'));
 // The room builds a 3D scene and pulls in three.js, so it only loads when you walk into it.
 const RoomView = lazy(() => import('./components/RoomView'));
+// The screensaver runs pictures continuously, so it's only fetched when the channel is turned on.
+const ScreensaverView = lazy(() => import('./components/ScreensaverView'));
 import { api, detectEditing } from './lib/api';
 import { createLinker } from './lib/links';
 import { formatMonthYear } from './lib/format';
 import { matchLauncherGames, withLauncherPlaytime } from './lib/castingADream';
 import { findChanges, loadSnapshot, saveSnapshot, type ChangeGroup, type ChangeTab } from './lib/whatsNew';
 
-type GameTab = 'collection' | 'backlog' | 'gotm' | 'gotc' | 'stats' | 'timeline' | 'gallery' | 'map' | 'consoles' | 'blog' | 'casting-a-dream' | 'warriors' | 'pantheon' | 'room' | 'guess';
+type GameTab = 'collection' | 'backlog' | 'gotm' | 'gotc' | 'stats' | 'timeline' | 'gallery' | 'map' | 'consoles' | 'blog' | 'casting-a-dream' | 'warriors' | 'pantheon' | 'room' | 'screensaver' | 'guess';
 /** Collections that aren't games. Each one is public/data/<id>.json. */
 /** The owner's PriceCharting collection, linked from the header. */
 const PRICECHARTING_URL = 'https://www.pricecharting.com/offers?seller=dv636ks6lcmgdlb7pcyszkqvi4&status=collection';
@@ -61,7 +63,8 @@ const TABS: { id: GameTab; label: string }[] = [
   { id: 'casting-a-dream', label: 'Casting a Dream' },
   { id: 'warriors', label: 'Warriors Shrine' },
   { id: 'pantheon', label: 'The Pantheon' },
-  { id: 'room', label: 'The Room' },
+  { id: 'room', label: '3D Room Tour' },
+  { id: 'screensaver', label: 'Screensaver' },
   { id: 'guess', label: 'Play' },
 ];
 /** Desktop: how many sections stay in the tab row. The rest, and the other collections, live in the More menu. */
@@ -539,6 +542,12 @@ export default function App() {
       {tab === 'room' && (
         <Suspense fallback={<div className="empty">Opening the room…</div>}>
           <RoomView games={games} onOpen={(g) => showDetail(g.id)} />
+        </Suspense>
+      )}
+
+      {tab === 'screensaver' && (
+        <Suspense fallback={<div className="empty">Tuning in…</div>}>
+          <ScreensaverView games={games} months={gotm.data ?? []} link={link} />
         </Suspense>
       )}
 
