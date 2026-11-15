@@ -2,7 +2,7 @@
  {
   "month": "2026-11",
   "gameOfTheMonth": null,
-  "completed": 3,
+  "completed": 4,
   "bought": null,
   "played": [
    {
@@ -18,7 +18,7 @@
    {
     "title": "Sonic Colours",
     "platform": "Wii",
-    "status": "in-progress"
+    "status": "completed"
    },
    {
     "title": "Need for Speed: The Run",
