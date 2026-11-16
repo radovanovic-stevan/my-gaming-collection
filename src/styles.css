@@ -468,6 +468,11 @@ select {
   gap: 6px;
 }
 
+/* The rating range sits under its Any / Rated / No rating buttons. */
+.segmented + .range {
+  margin-top: 8px;
+}
+
 .range input {
   width: 80px;
   padding: 6px 8px;

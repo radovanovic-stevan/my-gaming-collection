@@ -114,29 +114,44 @@ export function Filters({ games, query, onChange, onReset, resultCount, onDone }
 
       <fieldset className="facet">
         <legend>Rating</legend>
-        <div className="range">
-          <input
-            type="number"
-            min={0}
-            max={100}
-            step={0.5}
-            placeholder="Min"
-            value={query.ratingMin ?? ''}
-            onChange={(e) => onChange({ ratingMin: parseRating(e.target.value) })}
-            aria-label="Minimum rating"
-          />
-          <span>–</span>
-          <input
-            type="number"
-            min={0}
-            max={100}
-            step={0.5}
-            placeholder="Max"
-            value={query.ratingMax ?? ''}
-            onChange={(e) => onChange({ ratingMax: parseRating(e.target.value) })}
-            aria-label="Maximum rating"
-          />
+        <div className="segmented">
+          {(['any', 'yes', 'no'] as const).map((v) => (
+            <button
+              key={v}
+              className={query.rated === v ? 'on' : ''}
+              aria-pressed={query.rated === v}
+              // Picking "No rating" clears the range, which can only ever match a rated game.
+              onClick={() => onChange(v === 'no' ? { rated: v, ratingMin: null, ratingMax: null } : { rated: v })}
+            >
+              {v === 'any' ? 'Any' : v === 'yes' ? 'Rated' : 'No rating'}
+            </button>
+          ))}
         </div>
+        {query.rated !== 'no' && (
+          <div className="range">
+            <input
+              type="number"
+              min={0}
+              max={100}
+              step={0.5}
+              placeholder="Min"
+              value={query.ratingMin ?? ''}
+              onChange={(e) => onChange({ ratingMin: parseRating(e.target.value) })}
+              aria-label="Minimum rating"
+            />
+            <span>–</span>
+            <input
+              type="number"
+              min={0}
+              max={100}
+              step={0.5}
+              placeholder="Max"
+              value={query.ratingMax ?? ''}
+              onChange={(e) => onChange({ ratingMax: parseRating(e.target.value) })}
+              aria-label="Maximum rating"
+            />
+          </div>
+        )}
       </fieldset>
 
       <fieldset className="facet">

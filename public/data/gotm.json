@@ -11,6 +11,16 @@
     "status": "completed"
    },
    {
+    "title": "Need for Speed: The Run",
+    "platform": "3DS",
+    "status": "completed"
+   },
+   {
+    "title": "Dead or Alive: Dimensions",
+    "platform": "3DS",
+    "status": "completed"
+   },
+   {
     "title": "Mario & Sonic at the Olympic Games",
     "platform": "Wii",
     "status": "in-progress"
@@ -21,14 +31,9 @@
     "status": "completed"
    },
    {
-    "title": "Need for Speed: The Run",
-    "platform": "3DS",
-    "status": "completed"
-   },
-   {
-    "title": "Dead or Alive: Dimensions",
-    "platform": "3DS",
-    "status": "completed"
+    "title": "WarioWare: Smooth Moves",
+    "platform": "Wii",
+    "status": "in-progress"
    }
   ]
  },

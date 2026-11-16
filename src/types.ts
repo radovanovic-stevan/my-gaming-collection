@@ -71,6 +71,8 @@ export interface Query {
   completedYears: string[];
   ratingMin: number | null;
   ratingMax: number | null;
+  /** 'no' keeps only games with no rating at all; the min/max above don't apply then. */
+  rated: 'any' | 'yes' | 'no';
   /** Time machine: yyyy-mm, showing the collection as it stood at the end of that month. */
   asOf: string | null;
   cover: 'any' | 'with' | 'without';

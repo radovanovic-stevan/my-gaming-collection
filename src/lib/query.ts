@@ -53,6 +53,7 @@ export const DEFAULT_QUERY: Query = {
   completedYears: [],
   ratingMin: null,
   ratingMax: null,
+  rated: 'any',
   asOf: null,
   cover: 'any',
   sort: [
@@ -174,6 +175,7 @@ export function applyQuery(games: Game[], q: Query, lastPlayed?: LastPlayed): Ga
         q.flags.every((f) => FLAGS[f]?.test(g) ?? true) &&
         anyOf(q.acquiredYears, yearList(g.acquired)) &&
         anyOf(q.completedYears, yearList(g.completed)) &&
+        (q.rated === 'any' || (q.rated === 'yes') === (g.rating !== null)) &&
         (q.ratingMin === null || (g.rating !== null && g.rating >= q.ratingMin)) &&
         (q.ratingMax === null || (g.rating !== null && g.rating <= q.ratingMax)) &&
         (q.cover === 'any' || (q.cover === 'with') === Boolean(g.cover)) &&
@@ -201,6 +203,7 @@ export function queryToParams(q: Query): string {
   if (q.asOf) p.set('asOf', q.asOf);
   if (q.ratingMin !== null) p.set('min', String(q.ratingMin));
   if (q.ratingMax !== null) p.set('max', String(q.ratingMax));
+  if (q.rated !== 'any') p.set('rated', q.rated);
   if (q.cover !== 'any') p.set('cover', q.cover);
   const sort = sortToParam(q.sort);
   if (sort !== sortToParam(DEFAULT_QUERY.sort)) p.set('sort', sort);
@@ -220,6 +223,8 @@ export function paramsToQuery(search: string): Query {
   q.asOf = asOf && /^\d{4}-(0[1-9]|1[0-2])$/.test(asOf) ? asOf : null;
   q.ratingMin = num(p.get('min'));
   q.ratingMax = num(p.get('max'));
+  const rated = p.get('rated');
+  q.rated = rated === 'yes' || rated === 'no' ? rated : 'any';
   const cover = p.get('cover');
   q.cover = cover === 'with' || cover === 'without' ? cover : 'any';
   const sort = p.get('sort');

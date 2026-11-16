@@ -179,6 +179,10 @@
      }
     },
     {
+     "category": "GBA GOTY",
+     "winner": null
+    },
+    {
      "category": "GCN GOTY",
      "winner": {
       "title": "NBA Street Vol. 2",
@@ -191,6 +195,10 @@
       "title": "The Legend of Zelda: A Link to the Past",
       "platform": "SNES Classic"
      }
+    },
+    {
+     "category": "G&W GOTY",
+     "winner": null
     },
     {
      "category": "PSP GOTY",
@@ -212,10 +220,6 @@
       "title": "Adventure II",
       "platform": "Atari FB3"
      }
-    },
-    {
-     "category": "PC GOTY",
-     "winner": null
     },
     {
      "category": "FPS GOTY",
@@ -533,6 +537,10 @@
      }
     },
     {
+     "category": "GBA GOTY",
+     "winner": null
+    },
+    {
      "category": "GCN GOTY",
      "winner": {
       "title": "NBA Street Vol. 2",
@@ -544,23 +552,15 @@
      "winner": null
     },
     {
+     "category": "G&W GOTY",
+     "winner": null
+    },
+    {
      "category": "PSP GOTY",
      "winner": {
       "title": "Phantasy Star Portable",
       "platform": "PSP"
      }
-    },
-    {
-     "category": "VITA GOTY",
-     "winner": null
-    },
-    {
-     "category": "Atari FB GOTY",
-     "winner": null
-    },
-    {
-     "category": "PC GOTY",
-     "winner": null
     },
     {
      "category": "FPS GOTY",
@@ -875,11 +875,15 @@
      }
     },
     {
-     "category": "GCN GOTY",
+     "category": "GBA GOTY",
      "winner": null
     },
     {
      "category": "SNES Classic GOTY",
+     "winner": null
+    },
+    {
+     "category": "G&W GOTY",
      "winner": null
     },
     {
@@ -888,18 +892,6 @@
       "title": "LocoRoco",
       "platform": "PSP"
      }
-    },
-    {
-     "category": "VITA GOTY",
-     "winner": null
-    },
-    {
-     "category": "Atari FB GOTY",
-     "winner": null
-    },
-    {
-     "category": "PC GOTY",
-     "winner": null
     },
     {
      "category": "FPS GOTY",
@@ -1190,10 +1182,6 @@
      "winner": null
     },
     {
-     "category": "PS Classic GOTY",
-     "winner": null
-    },
-    {
      "category": "PS2 GOTY",
      "winner": {
       "title": "Thrillville: Off The Rails",
@@ -1206,10 +1194,6 @@
       "title": "Kingdoms of Amalur: Reckoning",
       "platform": "PS3"
      }
-    },
-    {
-     "category": "PS4 GOTY",
-     "winner": null
     },
     {
      "category": "Wii GOTY",
@@ -1232,11 +1216,15 @@
      }
     },
     {
-     "category": "GCN GOTY",
+     "category": "GBA GOTY",
      "winner": null
     },
     {
      "category": "SNES Classic GOTY",
+     "winner": null
+    },
+    {
+     "category": "G&W GOTY",
      "winner": null
     },
     {
@@ -1245,18 +1233,6 @@
       "title": "Championship Manager",
       "platform": "PSP"
      }
-    },
-    {
-     "category": "VITA GOTY",
-     "winner": null
-    },
-    {
-     "category": "Atari FB GOTY",
-     "winner": null
-    },
-    {
-     "category": "PC GOTY",
-     "winner": null
     },
     {
      "category": "FPS GOTY",
@@ -1519,10 +1495,6 @@
      }
     },
     {
-     "category": "PS Classic GOTY",
-     "winner": null
-    },
-    {
      "category": "PS2 GOTY",
      "winner": {
       "title": "Bully",
@@ -1537,19 +1509,11 @@
      }
     },
     {
-     "category": "PS4 GOTY",
-     "winner": null
-    },
-    {
      "category": "Wii GOTY",
      "winner": {
       "title": "MadWorld",
       "platform": "Wii"
      }
-    },
-    {
-     "category": "3DS GOTY",
-     "winner": null
     },
     {
      "category": "DS GOTY",
@@ -1559,7 +1523,7 @@
      }
     },
     {
-     "category": "GCN GOTY",
+     "category": "GBA GOTY",
      "winner": null
     },
     {
@@ -1572,18 +1536,6 @@
       "title": "Star Wars: The Force Unleashed",
       "platform": "PSP"
      }
-    },
-    {
-     "category": "VITA GOTY",
-     "winner": null
-    },
-    {
-     "category": "Atari FB GOTY",
-     "winner": null
-    },
-    {
-     "category": "PC GOTY",
-     "winner": null
     },
     {
      "category": "FPS GOTY",
@@ -1836,10 +1788,6 @@
      "winner": null
     },
     {
-     "category": "PS Classic GOTY",
-     "winner": null
-    },
-    {
      "category": "PS2 GOTY",
      "winner": {
       "title": "Metal Gear Solid 2: Sons of Liberty",
@@ -1854,15 +1802,7 @@
      }
     },
     {
-     "category": "PS4 GOTY",
-     "winner": null
-    },
-    {
      "category": "Wii GOTY",
-     "winner": null
-    },
-    {
-     "category": "3DS GOTY",
      "winner": null
     },
     {
@@ -1873,7 +1813,7 @@
      }
     },
     {
-     "category": "GCN GOTY",
+     "category": "GBA GOTY",
      "winner": null
     },
     {
@@ -1886,18 +1826,6 @@
       "title": "Warriors Orochi",
       "platform": "PSP"
      }
-    },
-    {
-     "category": "VITA GOTY",
-     "winner": null
-    },
-    {
-     "category": "Atari FB GOTY",
-     "winner": null
-    },
-    {
-     "category": "PC GOTY",
-     "winner": null
     },
     {
      "category": "FPS GOTY",
@@ -2144,10 +2072,6 @@
      "winner": null
     },
     {
-     "category": "PS Classic GOTY",
-     "winner": null
-    },
-    {
      "category": "PS2 GOTY",
      "winner": {
       "title": "Devil May Cry 3: Dante's Awakening",
@@ -2162,15 +2086,7 @@
      }
     },
     {
-     "category": "PS4 GOTY",
-     "winner": null
-    },
-    {
      "category": "Wii GOTY",
-     "winner": null
-    },
-    {
-     "category": "3DS GOTY",
      "winner": null
     },
     {
@@ -2181,7 +2097,7 @@
      }
     },
     {
-     "category": "GCN GOTY",
+     "category": "GBA GOTY",
      "winner": null
     },
     {
@@ -2197,18 +2113,6 @@
       "title": "Metal Gear Solid: Peace Walker",
       "platform": "PSP"
      }
-    },
-    {
-     "category": "VITA GOTY",
-     "winner": null
-    },
-    {
-     "category": "Atari FB GOTY",
-     "winner": null
-    },
-    {
-     "category": "PC GOTY",
-     "winner": null
     },
     {
      "category": "FPS GOTY",
