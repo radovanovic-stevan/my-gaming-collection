@@ -28182,7 +28182,7 @@
   "platform": "Wii",
   "acquired": "2026-10-24",
   "completed": null,
-  "status": "Null",
+  "status": "Not Completed",
   "rating": null,
   "timesCompleted": 0,
   "percent": null,
@@ -28198,6 +28198,7 @@
   "edition": "",
   "trophies": null,
   "boughtIn": "Serbia",
+  "playsVia": null,
   "images": [
    "1083-1757c1ab.jpg"
   ],
@@ -28264,10 +28265,10 @@
   "title": "WarioWare: Smooth Moves",
   "platform": "Wii",
   "acquired": "2026-10-24",
-  "completed": null,
-  "status": "Not Completed",
-  "rating": null,
-  "timesCompleted": 0,
+  "completed": "2026-11-16",
+  "status": "Completed",
+  "rating": 82,
+  "timesCompleted": 1,
   "percent": null,
   "playtime": null,
   "genres": [
@@ -28281,6 +28282,7 @@
   "edition": "Nintendo Selects",
   "trophies": null,
   "boughtIn": "Serbia",
+  "playsVia": null,
   "images": [
    "1086-041f3572.jpg"
   ],
@@ -28374,7 +28376,7 @@
   "acquired": "2026-10-24",
   "completed": null,
   "status": "Not Completed",
-  "rating": null,
+  "rating": 68,
   "timesCompleted": 0,
   "percent": null,
   "playtime": null,
@@ -28389,6 +28391,7 @@
   "edition": "",
   "trophies": null,
   "boughtIn": "Serbia",
+  "playsVia": null,
   "images": [
    "1090-f5cfe07a.jpg"
   ],

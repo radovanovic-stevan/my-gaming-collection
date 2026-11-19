@@ -2,7 +2,7 @@
  {
   "month": "2026-11",
   "gameOfTheMonth": null,
-  "completed": 4,
+  "completed": 5,
   "bought": null,
   "played": [
    {
@@ -32,6 +32,11 @@
    },
    {
     "title": "WarioWare: Smooth Moves",
+    "platform": "Wii",
+    "status": "completed"
+   },
+   {
+    "title": "Guinness World Records: The Videogame",
     "platform": "Wii",
     "status": "in-progress"
    }
