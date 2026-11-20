@@ -304,13 +304,16 @@
       ]
     },
     {
+      "lastPlayed" : "2026-11-20",
+      "minutes" : 53,
       "platform" : "Dreamcast",
       "search" : "Psychic Force 2012",
       "title" : "Psychic Force 2012",
       "trophies" : [
         {
           "detail" : "Beat the game with any character.",
-          "title" : "Psychic Awakening"
+          "title" : "Psychic Awakening",
+          "unlocked" : "2026-11-20"
         },
         {
           "detail" : "Fight as each of the ten starting characters.",

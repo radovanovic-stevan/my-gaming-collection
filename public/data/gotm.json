@@ -39,6 +39,41 @@
     "title": "Guinness World Records: The Videogame",
     "platform": "Wii",
     "status": "in-progress"
+   },
+   {
+    "title": "Asteroids",
+    "platform": "Atari FB3",
+    "status": "played"
+   },
+   {
+    "title": "American Dragon: Jake Long",
+    "platform": "GBA",
+    "status": "in-progress"
+   },
+   {
+    "title": "Basketball",
+    "platform": "Atari FB3",
+    "status": "played"
+   },
+   {
+    "title": "Battlezone",
+    "platform": "Atari FB3",
+    "status": "played"
+   },
+   {
+    "title": "Bowling",
+    "platform": "Atari FB3",
+    "status": "played"
+   },
+   {
+    "title": "Canyon Bomber",
+    "platform": "Atari FB3",
+    "status": "played"
+   },
+   {
+    "title": "Psychic Force 2012",
+    "platform": "Dreamcast",
+    "status": "in-progress"
    }
   ]
  },

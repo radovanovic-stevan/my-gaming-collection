@@ -22208,7 +22208,7 @@
   "acquired": "2025-05-13",
   "completed": null,
   "status": "Null",
-  "rating": null,
+  "rating": 32,
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
@@ -22219,7 +22219,9 @@
    "Built-in Console"
   ],
   "edition": "",
+  "trophies": null,
   "boughtIn": "Serbia",
+  "playsVia": null,
   "images": [
    "atari-flashback-3-db9edf5e.jpg"
   ],
@@ -22256,7 +22258,7 @@
   "acquired": "2025-05-13",
   "completed": null,
   "status": "Null",
-  "rating": null,
+  "rating": 50,
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
@@ -22267,7 +22269,9 @@
    "Built-in Console"
   ],
   "edition": "",
+  "trophies": null,
   "boughtIn": "Serbia",
+  "playsVia": null,
   "images": [
    "atari-flashback-3-db9edf5e.jpg"
   ],
@@ -22280,7 +22284,7 @@
   "acquired": "2025-05-13",
   "completed": null,
   "status": "Null",
-  "rating": null,
+  "rating": 46,
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
@@ -22291,7 +22295,9 @@
    "Built-in Console"
   ],
   "edition": "",
+  "trophies": null,
   "boughtIn": "Serbia",
+  "playsVia": null,
   "images": [
    "atari-flashback-3-db9edf5e.jpg"
   ],
@@ -22304,7 +22310,7 @@
   "acquired": "2025-05-13",
   "completed": null,
   "status": "Null",
-  "rating": null,
+  "rating": 44,
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
@@ -22315,7 +22321,9 @@
    "Built-in Console"
   ],
   "edition": "",
+  "trophies": null,
   "boughtIn": "Serbia",
+  "playsVia": null,
   "images": [
    "atari-flashback-3-db9edf5e.jpg"
   ],
@@ -22328,7 +22336,7 @@
   "acquired": "2025-05-13",
   "completed": null,
   "status": "Null",
-  "rating": null,
+  "rating": 45,
   "timesCompleted": null,
   "percent": null,
   "playtime": null,
@@ -22339,7 +22347,9 @@
    "Built-in Console"
   ],
   "edition": "",
+  "trophies": null,
   "boughtIn": "Serbia",
+  "playsVia": null,
   "images": [
    "atari-flashback-3-db9edf5e.jpg"
   ],
@@ -28181,12 +28191,12 @@
   "title": "Guinness World Records: The Videogame",
   "platform": "Wii",
   "acquired": "2026-10-24",
-  "completed": null,
-  "status": "Not Completed",
-  "rating": null,
-  "timesCompleted": 0,
-  "percent": null,
-  "playtime": null,
+  "completed": "2026-11-19",
+  "status": "Completed",
+  "rating": 64,
+  "timesCompleted": 1,
+  "percent": 66,
+  "playtime": 514,
   "genres": [
    "Party"
   ],

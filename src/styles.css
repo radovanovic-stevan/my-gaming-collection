@@ -3303,7 +3303,27 @@ button.lc-day {
 /* --- What's new ---------------------------------------------------------------- */
 
 .whats-new {
-  width: min(640px, 100%);
+  width: min(560px, 100%);
+  /* A short box whatever the visit brought: the list inside does the scrolling,
+     so the heading and Got it stay put. */
+  max-height: min(560px, calc(100vh - 32px));
+  overflow: hidden;
+  gap: 12px;
+}
+
+.whats-new-body {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-height: 0;
+  overflow-y: auto;
+  /* Keeps the text clear of the scrollbar without shifting it when there's none. */
+  padding-right: 10px;
+  margin-right: -10px;
+}
+
+.whats-new .form-actions {
+  margin-top: 0;
 }
 
 .whats-new-group {

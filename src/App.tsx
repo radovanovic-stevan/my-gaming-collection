@@ -184,6 +184,29 @@ export default function App() {
     if (groups.length) setWhatsNew(groups);
   }, [checkChanges, games, gotm.data, gotc.data, gallery.data, dylanDog.data, vinyl.data, consoles.data, blog.data]);
 
+  // The sort menu is a <details>, which only closes on its own summary: shut it on an
+  // outside click or Escape like any other pop-over.
+  const sortMenu = useRef<HTMLDetailsElement>(null);
+  useEffect(() => {
+    const close = (e: Event) => {
+      const el = sortMenu.current;
+      if (el?.open && !el.contains(e.target as Node)) el.open = false;
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== 'Escape' || !sortMenu.current?.open) return;
+      sortMenu.current.open = false;
+      sortMenu.current.querySelector('summary')?.focus();
+    };
+    document.addEventListener('pointerdown', close);
+    document.addEventListener('focusin', close);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('pointerdown', close);
+      document.removeEventListener('focusin', close);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, []);
+
   // Switching tabs adds a history entry, so Back and Forward move between tabs.
   // Filter, sort and search changes only update the current entry.
   const pushNext = useRef(false);
@@ -604,7 +627,7 @@ export default function App() {
             <button className={`btn filters-toggle ${activeFilterCount ? 'on' : ''}`} onClick={() => setFiltersOpen(!filtersOpen)}>
               Filters{activeFilterCount ? ` (${activeFilterCount})` : ''}
             </button>
-            <details className="sort-menu">
+            <details className="sort-menu" ref={sortMenu}>
               <summary className="btn">
                 Sort:{' '}
                 {sortPreset(query.sort)?.label ?? query.sort.map((s) => `${SORT_LABELS[s.key]} ${s.dir === 'asc' ? '↑' : '↓'}`).join(', ')}
