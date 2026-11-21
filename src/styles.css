@@ -6864,10 +6864,13 @@ button.tl-chip:hover,
 .room-card-cover {
   width: 72px;
   flex: none;
+  /* Not stretched to the card's height: the picture keeps its own shape. */
+  align-self: start;
 }
 
 .room-card-cover .cover {
   width: 100%;
+  height: auto;
   border-radius: 5px;
 }
 
