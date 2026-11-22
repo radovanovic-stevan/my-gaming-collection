@@ -31,13 +31,15 @@ const ShrineView = lazy(() => import('./components/ShrineView'));
 const RoomView = lazy(() => import('./components/RoomView'));
 // The screensaver runs pictures continuously, so it's only fetched when the channel is turned on.
 const ScreensaverView = lazy(() => import('./components/ScreensaverView'));
+// The browser is a room of its own, loaded when the card goes in.
+const MemoryCardView = lazy(() => import('./components/MemoryCardView'));
 import { api, detectEditing } from './lib/api';
 import { createLinker } from './lib/links';
 import { formatMonthYear } from './lib/format';
 import { matchLauncherGames, withLauncherPlaytime } from './lib/castingADream';
 import { findChanges, loadSnapshot, saveSnapshot, type ChangeGroup, type ChangeTab } from './lib/whatsNew';
 
-type GameTab = 'collection' | 'backlog' | 'gotm' | 'gotc' | 'stats' | 'timeline' | 'gallery' | 'map' | 'consoles' | 'blog' | 'casting-a-dream' | 'warriors' | 'pantheon' | 'room' | 'screensaver' | 'guess';
+type GameTab = 'collection' | 'backlog' | 'gotm' | 'gotc' | 'stats' | 'timeline' | 'gallery' | 'map' | 'consoles' | 'blog' | 'casting-a-dream' | 'warriors' | 'pantheon' | 'room' | 'screensaver' | 'memory-card' | 'guess';
 /** Collections that aren't games. Each one is public/data/<id>.json. */
 /** The owner's PriceCharting collection, linked from the header. */
 const PRICECHARTING_URL = 'https://www.pricecharting.com/offers?seller=dv636ks6lcmgdlb7pcyszkqvi4&status=collection';
@@ -65,6 +67,7 @@ const TABS: { id: GameTab; label: string }[] = [
   { id: 'pantheon', label: 'The Pantheon' },
   { id: 'room', label: '3D Room Tour' },
   { id: 'screensaver', label: 'Screensaver' },
+  { id: 'memory-card', label: 'Memory Card' },
   { id: 'guess', label: 'Play' },
 ];
 /** Desktop: how many sections stay in the tab row. The rest, and the other collections, live in the More menu. */
@@ -571,6 +574,12 @@ export default function App() {
       {tab === 'screensaver' && (
         <Suspense fallback={<div className="empty">Tuning in…</div>}>
           <ScreensaverView games={games} months={gotm.data ?? []} link={link} />
+        </Suspense>
+      )}
+
+      {tab === 'memory-card' && (
+        <Suspense fallback={<div className="empty">Reading memory card…</div>}>
+          <MemoryCardView games={games} onOpen={(g) => showDetail(g.id)} />
         </Suspense>
       )}
 
