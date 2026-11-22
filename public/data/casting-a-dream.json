@@ -128,6 +128,13 @@
       "title" : "Gran Turismo"
     },
     {
+      "lastPlayed" : "2026-11-22",
+      "minutes" : 4,
+      "platform" : "PS2",
+      "search" : "Harry Potter and the Order of the Phoenix",
+      "title" : "Harry Potter and the Order of the Phoenix"
+    },
+    {
       "platform" : "Wii",
       "search" : "Medal of Honor - Heroes 2",
       "title" : "Medal of Honor - Heroes 2",
@@ -304,8 +311,8 @@
       ]
     },
     {
-      "lastPlayed" : "2026-11-20",
-      "minutes" : 74,
+      "lastPlayed" : "2026-11-22",
+      "minutes" : 120,
       "platform" : "Dreamcast",
       "search" : "Psychic Force 2012",
       "title" : "Psychic Force 2012",
@@ -325,7 +332,8 @@
         },
         {
           "detail" : "Beat the game with 5 different characters.",
-          "title" : "Five Stories"
+          "title" : "Five Stories",
+          "unlocked" : "2026-11-22"
         },
         {
           "detail" : "Unlock Wong.",
@@ -535,6 +543,11 @@
       "emulator" : "Mesen",
       "name" : "Famicom",
       "platform" : "Famicom"
+    },
+    {
+      "emulator" : "PCSX2",
+      "name" : "PS2",
+      "platform" : "PS2"
     }
   ]
 }
