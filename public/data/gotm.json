@@ -2,7 +2,7 @@
  {
   "month": "2026-11",
   "gameOfTheMonth": null,
-  "completed": 5,
+  "completed": 6,
   "bought": null,
   "played": [
    {
@@ -46,11 +46,6 @@
     "status": "played"
    },
    {
-    "title": "American Dragon: Jake Long",
-    "platform": "GBA",
-    "status": "in-progress"
-   },
-   {
     "title": "Basketball",
     "platform": "Atari FB3",
     "status": "played"
@@ -71,8 +66,18 @@
     "status": "played"
    },
    {
+    "title": "American Dragon: Jake Long",
+    "platform": "GBA",
+    "status": "in-progress"
+   },
+   {
     "title": "Psychic Force 2012",
     "platform": "Dreamcast",
+    "status": "completed"
+   },
+   {
+    "title": "Resident Evil Director’s Cut",
+    "platform": "PS Classic",
     "status": "in-progress"
    }
   ]

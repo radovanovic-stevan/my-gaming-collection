@@ -18419,12 +18419,12 @@
   "title": "Psychic Force 2012",
   "platform": "Dreamcast",
   "acquired": "2023-12-13",
-  "completed": null,
-  "status": "Not Completed",
-  "rating": null,
-  "timesCompleted": null,
+  "completed": "2026-11-23",
+  "status": "Completed",
+  "rating": 56,
+  "timesCompleted": 1,
   "percent": null,
-  "playtime": null,
+  "playtime": 164,
   "genres": [
    "Fighting"
   ],
@@ -18434,6 +18434,7 @@
    "Manual"
   ],
   "edition": "",
+  "trophies": null,
   "boughtIn": "Japan",
   "playsVia": "Emulator",
   "images": [
