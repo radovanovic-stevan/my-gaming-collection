@@ -66,11 +66,6 @@
     "status": "played"
    },
    {
-    "title": "American Dragon: Jake Long",
-    "platform": "GBA",
-    "status": "in-progress"
-   },
-   {
     "title": "Psychic Force 2012",
     "platform": "Dreamcast",
     "status": "completed"
@@ -78,6 +73,11 @@
    {
     "title": "Resident Evil Director’s Cut",
     "platform": "PS Classic",
+    "status": "in-progress"
+   },
+   {
+    "title": "American Dragon: Jake Long",
+    "platform": "GBA",
     "status": "in-progress"
    }
   ]
