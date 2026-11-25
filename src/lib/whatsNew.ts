@@ -110,6 +110,7 @@ function games(before: Game[], after: Game[]): Change[] {
     field(d, 'Edition', old.edition, g.edition);
     field(d, 'Bought in', old.boughtIn ?? null, g.boughtIn ?? null);
     field(d, 'Plays via', old.playsVia ?? null, g.playsVia ?? null);
+    textField(d, 'Includes', (old.includes ?? []).join('\n'), (g.includes ?? []).join('\n'));
     if ((old.trophies ?? null) !== (g.trophies ?? null)) d.push(g.trophies ? (old.trophies ? 'Trophy list link changed' : 'Trophy list added') : 'Trophy list removed');
     photos(d, old, g);
     return change;

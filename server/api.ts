@@ -148,6 +148,8 @@ function sanitize(input: Record<string, unknown>): Omit<Game, 'id' | 'images' | 
     trophies: trophiesUrl(input.trophies),
     boughtIn: nullableStr(input.boughtIn),
     playsVia: nullableStr(input.playsVia),
+    // Left out of the file when empty: few games have it.
+    includes: strList(input.includes).length ? strList(input.includes) : undefined,
   };
 }
 

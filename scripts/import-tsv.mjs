@@ -83,6 +83,7 @@ const games = lines.slice(1).map((line) => {
     trophies: existingById.get(id)?.trophies ?? null,
     boughtIn: existingById.get(id)?.boughtIn ?? null,
     playsVia: existingById.get(id)?.playsVia ?? null,
+    includes: existingById.get(id)?.includes,
     images: existingById.get(id)?.images ?? [],
     cover: existingById.get(id)?.cover ?? null,
   };

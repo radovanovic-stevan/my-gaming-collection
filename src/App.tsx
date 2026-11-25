@@ -1,6 +1,6 @@
 import { Suspense, lazy, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { BlogPost, CastingADream, ChecklistCollection, Game, GalleryEntry, GotcData, GameConsole, GotmMonth, Query, ShrineCatalogue, SortKey, Vinyl } from './types';
-import { DEFAULT_QUERY, SORT_LABELS, applyQuery, sortPreset, lastPlayedKeys, paramsToQuery, queryToParams } from './lib/query';
+import { DEFAULT_QUERY, SORT_LABELS, applyQuery, matchedIncludes, sortPreset, lastPlayedKeys, paramsToQuery, queryToParams } from './lib/query';
 import { Filters } from './components/Filters';
 import { SortBuilder } from './components/SortBuilder';
 import { TimeMachine } from './components/TimeMachine';
@@ -18,6 +18,7 @@ import { VinylView } from './components/VinylView';
 import { ConsolesView } from './components/ConsolesView';
 import { BlogView } from './components/BlogView';
 import { CastingADreamView } from './components/CastingADreamView';
+import { Rules } from './components/Rules';
 import { WhatsNew } from './components/WhatsNew';
 // The map carries the world's country shapes, so it's only loaded when opened.
 const MapView = lazy(() => import('./components/MapView'));
@@ -336,6 +337,8 @@ export default function App() {
     setFocus({ tab, id });
   };
   const focusOn = <T,>(t: Tab) => (focus?.tab === t ? (focus.id as T) : undefined);
+  const [rulesOpen, setRulesOpen] = useState(false);
+  const closeRules = useCallback(() => setRulesOpen(false), []);
   const closeModal = useCallback(() => setModal(null), []);
   const backToDetail = useCallback(() => setModal((m) => (m && m.kind !== 'new' ? { kind: 'detail', id: m.id } : null)), []);
 
@@ -633,6 +636,9 @@ export default function App() {
               onChange={(e) => patch({ search: e.target.value })}
               autoFocus
             />
+            <button className="btn" onClick={() => setRulesOpen(true)}>
+              Rules?
+            </button>
             <button className={`btn filters-toggle ${activeFilterCount ? 'on' : ''}`} onClick={() => setFiltersOpen(!filtersOpen)}>
               Filters{activeFilterCount ? ` (${activeFilterCount})` : ''}
             </button>
@@ -684,7 +690,7 @@ export default function App() {
               {results.length === 0 ? (
                 <div className="empty">No games match these filters.</div>
               ) : query.view === 'grid' ? (
-                <GridView games={results} onOpen={(g) => showDetail(g.id)} />
+                <GridView games={results} search={query.search} onOpen={(g) => showDetail(g.id)} />
               ) : query.view === 'shelf' ? (
                 <ShelfView games={results} all={games} onOpen={(g) => showDetail(g.id)} />
               ) : (
@@ -695,11 +701,13 @@ export default function App() {
         </>
       )}
 
+      {rulesOpen && <Rules onClose={closeRules} />}
       {whatsNew && <WhatsNew groups={whatsNew} onClose={() => setWhatsNew(null)} onOpenItem={openChange} />}
       {modal?.kind === 'detail' && openGame && (
         <GameDetail
           game={openGame}
           lastPlayed={lastPlayed.get(openGame.id)?.slice(0, 7)}
+          foundIncludes={tab === 'collection' ? matchedIncludes(openGame, query.search) : undefined}
           onClose={closeModal}
           onShowLauncherTrophies={
             launcherTrophies.has(openGame.id)

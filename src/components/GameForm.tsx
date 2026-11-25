@@ -30,6 +30,8 @@ interface FormState {
   trophies: string;
   boughtIn: string;
   playsVia: string;
+  /** One game per line. */
+  includes: string;
 }
 
 const today = () => new Date().toISOString().slice(0, 10);
@@ -61,6 +63,7 @@ function toForm(g: Game | null): FormState {
     trophies: g?.trophies ?? '',
     boughtIn: g?.boughtIn ?? '',
     playsVia: g?.playsVia ?? '',
+    includes: g?.includes?.join('\n') ?? '',
   };
 }
 
@@ -82,6 +85,7 @@ function toInput(f: FormState): GameInput {
     trophies: f.trophies.trim() || null,
     boughtIn: f.boughtIn.trim() || null,
     playsVia: f.playsVia.trim() || null,
+    includes: f.includes.split('\n').map((s) => s.trim()).filter(Boolean),
   };
 }
 
@@ -154,7 +158,7 @@ export function GameForm({ game, allGames, onSaved, onClose }: Props) {
   const set = <K extends keyof FormState>(key: K, value: FormState[K]) => setForm((f) => ({ ...f, [key]: value }));
   const field = (key: keyof FormState) => ({
     value: form[key] as string,
-    onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => set(key, e.target.value),
+    onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => set(key, e.target.value),
   });
 
   const submit = async (e: React.FormEvent) => {
@@ -254,6 +258,10 @@ export function GameForm({ game, allGames, onSaved, onClose }: Props) {
           <label className="field span-2">
             <span>Trophies (PSNProfiles link)</span>
             <input type="url" placeholder="https://psnprofiles.com/trophies/…" {...field('trophies')} />
+          </label>
+          <label className="field span-2">
+            <span>Includes</span>
+            <textarea rows={4} placeholder="For a compilation: the games inside, one per line" {...field('includes')} />
           </label>
           <div className="field span-2">
             <span>Genres</span>

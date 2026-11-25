@@ -156,14 +156,47 @@ function matchesSearch(g: Game, terms: string[]): boolean {
   return terms.every((t) => hay.includes(t));
 }
 
+const ROMAN = ['ii', 'iii', 'iv', 'v', 'vi', 'vii', 'viii', 'ix'];
+
+const isNumeral = (word: string) => ROMAN.includes(word) || /^[2-9]$/.test(word);
+
+/** Normalized, with every number from 2 to 9 in both forms, so "Doom 2" finds "Doom II" and the other way around. */
+function withNumerals(s: string): string {
+  const words = normalize(s).split(' ');
+  const alt = words.flatMap((w) => {
+    const i = ROMAN.indexOf(w);
+    if (i >= 0) return [String(i + 2)];
+    return /^[2-9]$/.test(w) ? [ROMAN[Number(w) - 2]] : [];
+  });
+  return [...words, ...alt].join(' ');
+}
+
+const searchTerms = (search: string) => normalize(search).split(' ').filter(Boolean);
+
+/** The games inside a compilation that a search finds; none when the compilation itself already matches. */
+function includesFound(g: Game, terms: string[]): string[] {
+  if (!g.includes?.length || matchesSearch(g, terms)) return [];
+  const platform = normalize(g.platform);
+  // Each title on its own, so a word from one and a number from another don't match together.
+  return g.includes.filter((title) => {
+    const hay = withNumerals(title);
+    const words = hay.split(' ');
+    // Numbers match whole words: "ii" isn't part of "iii".
+    return terms.every((t) => (isNumeral(t) ? words.includes(t) : hay.includes(t)) || platform.includes(t));
+  });
+}
+
+export const matchedIncludes = (g: Game, search: string) => includesFound(g, searchTerms(search));
+
 const anyOf = (selected: string[], values: string[]) => selected.length === 0 || selected.some((s) => values.includes(s));
 
-export function applyQuery(games: Game[], q: Query, lastPlayed?: LastPlayed): Game[] {
-  const terms = normalize(q.search).split(' ').filter(Boolean);
+/** `searchIncludes`: whether the search also looks inside compilations. */
+export function applyQuery(games: Game[], q: Query, lastPlayed?: LastPlayed, searchIncludes = true): Game[] {
+  const terms = searchTerms(q.search);
   return games
     .filter(
       (g) =>
-        matchesSearch(g, terms) &&
+        (matchesSearch(g, terms) || (searchIncludes && includesFound(g, terms).length > 0)) &&
         anyOf(q.platforms, [g.platform]) &&
         anyOf(q.statuses, [g.status]) &&
         // Genres narrow the list: a game must have every selected genre.

@@ -1,4 +1,4 @@
-import { useEffect, type ReactNode } from 'react';
+import { useEffect, useRef, type ReactNode } from 'react';
 import type { Game } from '../types';
 import { formatDate, formatMonthYear, formatNumber, formatPlaytime, genreLabel } from '../lib/format';
 import { Gallery } from './Gallery';
@@ -9,6 +9,8 @@ interface Props {
   game: Game;
   /** The latest Game of the Month entry (yyyy-mm) that lists this game, if any. */
   lastPlayed?: string | null;
+  /** Games inside this compilation that the current search found: shown open and highlighted. */
+  foundIncludes?: string[];
   onClose: () => void;
   /** Opens this game's trophies on the Casting a Dream page, for games with trophies in the launcher. */
   onShowLauncherTrophies?: () => void;
@@ -17,7 +19,7 @@ interface Props {
   actions?: ReactNode;
 }
 
-export function GameDetail({ game, lastPlayed, onClose, onShowLauncherTrophies, onPrev, onNext, actions }: Props) {
+export function GameDetail({ game, lastPlayed, foundIncludes = [], onClose, onShowLauncherTrophies, onPrev, onNext, actions }: Props) {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if ((e.target as HTMLElement).closest('input, textarea, select')) return;
@@ -28,6 +30,12 @@ export function GameDetail({ game, lastPlayed, onClose, onShowLauncherTrophies, 
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   }, [onClose, onPrev, onNext]);
+
+  // The first game the search found can be far down a long list.
+  const list = useRef<HTMLUListElement>(null);
+  useEffect(() => {
+    list.current?.querySelector('mark')?.scrollIntoView({ block: 'center' });
+  }, [game.id]);
 
   const rows: [string, ReactNode][] = [
     ['Status', <StatusBadge status={game.status} />],
@@ -59,7 +67,7 @@ export function GameDetail({ game, lastPlayed, onClose, onShowLauncherTrophies, 
 
   return (
     <div className="modal-backdrop" onClick={onClose}>
-      <div className="modal detail" role="dialog" aria-modal="true" aria-label={game.title} onClick={(e) => e.stopPropagation()}>
+      <div className="modal detail game-detail" role="dialog" aria-modal="true" aria-label={game.title} onClick={(e) => e.stopPropagation()}>
         <button className="modal-close icon-btn" onClick={onClose} aria-label="Close">
           ×
         </button>
@@ -89,6 +97,21 @@ export function GameDetail({ game, lastPlayed, onClose, onShowLauncherTrophies, 
                 <dd>{v}</dd>
               </div>
             ))}
+            {game.includes && game.includes.length > 0 && (
+              <div className="detail-includes">
+                <dt>Includes</dt>
+                <dd>
+                  <details key={game.id} open={foundIncludes.length > 0}>
+                    <summary>{game.includes.length === 1 ? '1 game' : `${game.includes.length} games`}</summary>
+                    <ul ref={list}>
+                      {game.includes.map((t) => (
+                        <li key={t}>{foundIncludes.includes(t) ? <mark>{t}</mark> : t}</li>
+                      ))}
+                    </ul>
+                  </details>
+                </dd>
+              </div>
+            )}
           </dl>
           <div className="detail-actions">
             <div className="detail-nav">

@@ -4,13 +4,13 @@ import { createLinker } from './links';
 
 /**
  * Finds each launcher game in the collection: by the same search the launcher's collection link uses
- * (it must find exactly one game on that platform), falling back to the title matching used for the award sheets.
+ * (it must find exactly one game on that platform, not counting games inside compilations), falling back to the title matching used for the award sheets.
  */
 export function matchLauncherGames(data: CastingADream, games: Game[]): Map<LauncherGame, Game> {
   const link = createLinker(games);
   const out = new Map<LauncherGame, Game>();
   for (const lg of data.games) {
-    const found = applyQuery(games, { ...DEFAULT_QUERY, search: lg.search, platforms: [lg.platform] });
+    const found = applyQuery(games, { ...DEFAULT_QUERY, search: lg.search, platforms: [lg.platform] }, undefined, false);
     const game = found.length === 1 ? found[0] : link({ title: lg.title, platform: lg.platform });
     if (game) out.set(lg, game);
   }

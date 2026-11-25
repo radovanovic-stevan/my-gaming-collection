@@ -758,6 +758,15 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
+  "includes": [
+   "Metal Slug",
+   "Metal Slug 2",
+   "Metal Slug X",
+   "Metal Slug 3",
+   "Metal Slug 4",
+   "Metal Slug 5",
+   "Metal Slug 6"
+  ],
   "images": [
    "31-f6398ac5.jpg"
   ],
@@ -5368,6 +5377,32 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
+  "includes": [
+   "720°",
+   "Blaster",
+   "Bubbles",
+   "Defender",
+   "Defender II (Stargate)",
+   "Gauntlet",
+   "Joust",
+   "Joust 2: Survival of the Fittest",
+   "Klax",
+   "Marble Madness",
+   "Paperboy",
+   "Rampage",
+   "Rampart",
+   "RoadBlasters",
+   "Robotron: 2084",
+   "Root Beer Tapper",
+   "Satan's Hollow",
+   "Sinistar",
+   "Smash TV",
+   "Splat!",
+   "Spy Hunter",
+   "Super Sprint",
+   "Toobin'",
+   "Vindicators"
+  ],
   "images": [
    "210-65c95ce8.jpg"
   ],
@@ -7260,6 +7295,10 @@
   "edition": "Special Edition",
   "trophies": "https://psnprofiles.com/trophies/1176-assassins-creed-revelations/StevanMcfc",
   "boughtIn": "Serbia",
+  "includes": [
+   "Assassin's Creed: Revelations",
+   "Assassin's Creed"
+  ],
   "images": [
    "285-cf1f3ba6.jpg"
   ],
@@ -11461,6 +11500,13 @@
   "edition": "",
   "trophies": "https://psnprofiles.com/trophies/1667-doom-3-bfg-edition/StevanMcfc",
   "boughtIn": "Serbia",
+  "includes": [
+   "Doom",
+   "Doom II: Hell on Earth",
+   "Doom 3",
+   "Doom 3: Resurrection of Evil",
+   "Doom 3: The Lost Mission"
+  ],
   "images": [
    "443-7efebcb2.jpg"
   ],
@@ -17116,6 +17162,10 @@
   ],
   "edition": "",
   "boughtIn": "Serbia",
+  "includes": [
+   "The Lost and Damned",
+   "The Ballad of Gay Tony"
+  ],
   "images": [
    "656-015be1d1.jpg"
   ],
@@ -18522,6 +18572,10 @@
   "edition": "Limited Edition",
   "trophies": "https://psnprofiles.com/trophies/742-dead-space-2/StevanMcfc",
   "boughtIn": "Serbia",
+  "includes": [
+   "Dead Space 2",
+   "Dead Space: Extraction"
+  ],
   "images": [
    "709-4fd66684.jpg"
   ],
@@ -27937,6 +27991,57 @@
   "edition": "",
   "trophies": "https://psnprofiles.com/trophies/472-sega-mega-drive-ultimate-collection/StevanMcfc",
   "boughtIn": "Serbia",
+  "includes": [
+   "Alex Kidd in the Enchanted Castle",
+   "Alien Storm",
+   "Altered Beast",
+   "Beyond Oasis (The Story of Thor)",
+   "Bonanza Bros.",
+   "Columns",
+   "Comix Zone",
+   "Decap Attack",
+   "Dr. Robotnik's Mean Bean Machine",
+   "Dynamite Headdy",
+   "Ecco the Dolphin",
+   "Ecco: The Tides of Time",
+   "ESWAT: City Under Siege",
+   "Fatal Labyrinth",
+   "Flicky",
+   "Gain Ground",
+   "Golden Axe",
+   "Golden Axe II",
+   "Golden Axe III",
+   "Kid Chameleon",
+   "Phantasy Star II",
+   "Phantasy Star III: Generations of Doom",
+   "Phantasy Star IV: The End of the Millennium",
+   "Ristar",
+   "Shining Force",
+   "Shining Force II",
+   "Shining in the Darkness",
+   "Shinobi III: Return of the Ninja Master",
+   "Sonic & Knuckles",
+   "Sonic 3D Blast (Flickies' Island)",
+   "Sonic the Hedgehog",
+   "Sonic the Hedgehog 2",
+   "Sonic the Hedgehog 3",
+   "Sonic Spinball",
+   "Streets of Rage",
+   "Streets of Rage 2",
+   "Streets of Rage 3",
+   "Super Thunder Blade",
+   "Vectorman",
+   "Vectorman 2",
+   "Alien Syndrome",
+   "Altered Beast (Arcade)",
+   "Congo Bongo",
+   "Fantasy Zone",
+   "Golden Axe Warrior",
+   "Phantasy Star",
+   "Shinobi",
+   "Space Harrier",
+   "Zaxxon"
+  ],
   "images": [
    "1073-6dd67493.jpg"
   ],

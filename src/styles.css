@@ -710,6 +710,12 @@ select {
   overflow: hidden;
 }
 
+.card-includes {
+  font-size: 11px;
+  line-height: 1.3;
+  color: var(--fg-muted);
+}
+
 .card-meta {
   display: flex;
   align-items: center;
@@ -911,6 +917,55 @@ select {
   margin: 2px 0 0;
 }
 
+.detail-includes {
+  grid-column: 1 / -1;
+}
+
+.detail-includes summary {
+  width: fit-content;
+  cursor: pointer;
+}
+
+.detail-includes ul {
+  margin: 6px 0 0;
+  padding-left: 18px;
+  columns: 2;
+  column-gap: 24px;
+}
+
+.detail-includes li {
+  break-inside: avoid;
+}
+
+.detail-includes mark {
+  padding: 0 3px;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--accent) 22%, transparent);
+  color: inherit;
+}
+
+.game-form .field textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: inherit;
+  font: inherit;
+  resize: vertical;
+}
+
+.game-form .field textarea:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: -1px;
+}
+
+@media (max-width: 600px) {
+  .detail-includes ul {
+    columns: 1;
+  }
+}
+
 .detail-actions {
   display: flex;
   justify-content: space-between;
@@ -923,6 +978,21 @@ select {
 .detail-nav {
   display: flex;
   gap: 8px;
+}
+
+/* A long game (a compilation's list) scrolls beside its picture instead of growing to full screen. */
+@media (min-width: 641px) {
+  .game-detail .detail-info {
+    max-height: min(620px, calc(100vh - 32px));
+    overflow-y: auto;
+  }
+  .game-detail .detail-actions {
+    position: sticky;
+    bottom: -24px;
+    margin: auto -24px -24px;
+    padding: 12px 24px 24px;
+    background: var(--bg-elev);
+  }
 }
 
 @media (max-width: 640px) {
@@ -3301,6 +3371,18 @@ button.lc-day {
 }
 
 /* --- What's new ---------------------------------------------------------------- */
+
+.rules {
+  width: min(480px, 100%);
+}
+
+.rules-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 18px;
+  line-height: 1.5;
+}
 
 .whats-new {
   width: min(560px, 100%);

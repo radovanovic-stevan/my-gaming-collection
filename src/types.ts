@@ -31,6 +31,8 @@ export interface Game {
   boughtIn?: string | null;
   /** How the game is played when the original copy can't be, e.g. "Emulator" or "Modded PS2"; null when it isn't needed. */
   playsVia?: string | null;
+  /** Games inside a compilation, listed and searchable but not entries of their own. */
+  includes?: string[];
   /** File names inside public/images. */
   images: string[];
   /** The image shown as the game's cover; always one of `images`. */
