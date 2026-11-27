@@ -1,5 +1,69 @@
 [
  {
+  "id": 66,
+  "image": "gallery-66-5fce881a.jpg",
+  "date": "2026-11-27",
+  "description": "KP Haul from my friend Filip from Požarevac",
+  "games": [
+   {
+    "title": "Mystery Case Files: MillionHeir",
+    "platform": "NDS"
+   },
+   {
+    "title": "Rooms: The Main Building",
+    "platform": "NDS"
+   },
+   {
+    "title": "Zubo",
+    "platform": "NDS"
+   },
+   {
+    "title": "187 Ride or Die",
+    "platform": "PS2"
+   },
+   {
+    "title": "Airblade",
+    "platform": "PS2"
+   },
+   {
+    "title": "Surfing H3O",
+    "platform": "PS2"
+   },
+   {
+    "title": "MTV Celebrity Deathmatch",
+    "platform": "PS2"
+   },
+   {
+    "title": "The Simpsons: Road Rage",
+    "platform": "PS2"
+   },
+   {
+    "title": "Agarest: Generations of War Zero",
+    "platform": "PS3"
+   },
+   {
+    "title": "Marvel Super Hero Squad",
+    "platform": "Wii"
+   },
+   {
+    "title": "Rayman: Raving Rabbids TV Party",
+    "platform": "Wii"
+   },
+   {
+    "title": "Trauma Center: New Blood",
+    "platform": "Wii"
+   },
+   {
+    "title": "The Last Airbender",
+    "platform": "Wii"
+   },
+   {
+    "title": "Brothers in Arms: Road to Hill 30",
+    "platform": "Wii"
+   }
+  ]
+ },
+ {
   "id": 65,
   "image": "gallery-65-3d76d683.jpg",
   "date": "2026-11-07",
