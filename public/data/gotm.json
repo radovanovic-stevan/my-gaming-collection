@@ -2,7 +2,7 @@
  {
   "month": "2026-11",
   "gameOfTheMonth": null,
-  "completed": 6,
+  "completed": 8,
   "bought": null,
   "played": [
    {
@@ -38,7 +38,7 @@
    {
     "title": "Guinness World Records: The Videogame",
     "platform": "Wii",
-    "status": "in-progress"
+    "status": "completed"
    },
    {
     "title": "Asteroids",
@@ -71,13 +71,13 @@
     "status": "completed"
    },
    {
-    "title": "Resident Evil Director’s Cut",
-    "platform": "PS Classic",
-    "status": "in-progress"
-   },
-   {
     "title": "American Dragon: Jake Long",
     "platform": "GBA",
+    "status": "completed"
+   },
+   {
+    "title": "Resident Evil Director’s Cut",
+    "platform": "PS Classic",
     "status": "in-progress"
    }
   ]

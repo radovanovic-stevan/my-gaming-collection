@@ -27402,10 +27402,10 @@
   "title": "American Dragon: Jake Long",
   "platform": "GBA",
   "acquired": "2026-07-21",
-  "completed": null,
-  "status": "Not Completed",
-  "rating": null,
-  "timesCompleted": 0,
+  "completed": "2026-11-26",
+  "status": "Completed",
+  "rating": 64,
+  "timesCompleted": 1,
   "percent": null,
   "playtime": null,
   "genres": [
@@ -27413,7 +27413,9 @@
   ],
   "condition": [],
   "edition": "",
+  "trophies": null,
   "boughtIn": "Serbia",
+  "playsVia": null,
   "images": [
    "1049-468e1d98.jpg"
   ],
