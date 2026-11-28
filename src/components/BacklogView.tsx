@@ -96,7 +96,7 @@ function Section({
 export default function BacklogView({ games, months, link, onOpen, onShowGames }: Props) {
   const today = useMemo(() => new Date(), []);
   const backlog = useMemo(() => buildBacklog(games, months, link, today), [games, months, link, today]);
-  const { started, never, blocked } = backlog;
+  const { started, never, untried, blocked } = backlog;
 
   const owned = (w: Waiting) => {
     const years = yearsOwned(w.game, today);
@@ -104,9 +104,10 @@ export default function BacklogView({ games, months, link, onOpen, onShowGames }
     return years === null ? `Owned since ${since}` : `Owned since ${since} · ${plural(years, 'year')}`;
   };
   const longest = never[0] ? yearsOwned(never[0].game, today) : null;
-  const waiting = started.length + never.length;
+  // Set-aside games are listed but not counted: they were played, so they aren't really waiting.
+  const waiting = never.length + untried.length;
 
-  if (!waiting && !blocked.length) return <div className="empty">Nothing waiting — the whole collection is finished.</div>;
+  if (!waiting && !started.length && !blocked.length) return <div className="empty">Nothing waiting — the whole collection is finished.</div>;
 
   return (
     <section className="backlog">
@@ -114,8 +115,9 @@ export default function BacklogView({ games, months, link, onOpen, onShowGames }
         <div>
           <h2>Backlog</h2>
           <p className="muted">
-            Everything still waiting. A rating means it was played: with one it was set aside, without one it was never started. What's in
-            progress this month is left out.
+            Everything still waiting: games that were never played, which is what having no rating means, whether they have an ending or not
+            (sports, party, arcade). Rated games that were set aside before the end are listed below them but not counted. What's in progress
+            this month is left out.
           </p>
         </div>
         <div className="awards-actions">
@@ -130,6 +132,7 @@ export default function BacklogView({ games, months, link, onOpen, onShowGames }
       <section className="sv-tiles" aria-label="Highlights">
         <Tile label="Still waiting" value={String(waiting)} detail={`of ${games.length} games`} />
         <Tile label="Never started" value={String(never.length)} detail="bought, never played" />
+        <Tile label="No ending, never tried" value={String(untried.length)} detail="sports, party, arcade" />
         <Tile label="Started, not finished" value={String(started.length)} detail="rated, never finished" />
         <Tile
           label="Longest wait"
@@ -139,16 +142,23 @@ export default function BacklogView({ games, months, link, onOpen, onShowGames }
       </section>
 
       <Section
-        title="Started, then set aside"
-        entries={started}
-        note={(w) => (w.month ? `Last played ${formatMonthYear(w.month)}` : owned(w))}
+        title="Never started"
+        entries={never}
+        note={owned}
         onOpen={onOpen}
       />
 
       <Section
-        title="Never started"
-        entries={never}
+        title="No ending, never tried"
+        entries={untried}
         note={owned}
+        onOpen={onOpen}
+      />
+
+      <Section
+        title="Started, then set aside"
+        entries={started}
+        note={(w) => (w.month ? `Last played ${formatMonthYear(w.month)}` : owned(w))}
         onOpen={onOpen}
       />
 

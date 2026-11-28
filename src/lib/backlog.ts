@@ -15,6 +15,8 @@ export interface Backlog {
   started: Waiting[];
   /** No rating: nothing says it was ever played. Longest owned first. */
   never: Waiting[];
+  /** Status Null (no ending: sports, party, arcade) and no rating: never tried. Longest owned first. */
+  untried: Waiting[];
   /** Owned but unplayable, longest owned first. */
   blocked: Waiting[];
 }
@@ -51,6 +53,11 @@ export function buildBacklog(games: Game[], months: GotmMonth[], link: (ref: Pla
   return {
     started: open.filter((w) => w.game.rating !== null).sort((a, b) => b.game.rating! - a.game.rating! || byAcquired(a, b)),
     never: open.filter((w) => w.game.rating === null && !playingNow(w)).sort(byAcquired),
+    untried: games
+      .filter((g) => g.status === 'Null' && g.rating === null)
+      .map(entry)
+      .filter((w) => !playingNow(w))
+      .sort(byAcquired),
     blocked: games
       .filter((g) => g.status === 'Unplayable')
       .map(entry)
