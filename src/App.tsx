@@ -54,7 +54,6 @@ type Tab = GameTab | OtherTab;
 const isOther = (t: Tab): t is OtherTab => OTHER_COLLECTIONS.some((c) => c.id === t);
 const TABS: { id: GameTab; label: string }[] = [
   { id: 'collection', label: 'Collection' },
-  { id: 'backlog', label: 'Backlog' },
   { id: 'gotm', label: 'Game of the Month' },
   { id: 'gotc', label: 'Awards' },
   { id: 'stats', label: 'Stats' },
@@ -63,6 +62,7 @@ const TABS: { id: GameTab; label: string }[] = [
   { id: 'map', label: 'Map' },
   { id: 'consoles', label: 'Consoles' },
   { id: 'blog', label: 'Blog' },
+  { id: 'backlog', label: 'Backlog' },
   { id: 'casting-a-dream', label: 'Casting a Dream' },
   { id: 'warriors', label: 'Warriors Shrine' },
   { id: 'pantheon', label: 'The Pantheon' },
@@ -71,10 +71,8 @@ const TABS: { id: GameTab; label: string }[] = [
   { id: 'memory-card', label: 'Memory Card' },
   { id: 'guess', label: 'Play' },
 ];
-/** Desktop: how many sections stay in the tab row. The rest, and the other collections, live in the More menu. */
+/** Desktop: how many sections stay in the tab row before the first measurement. After that, as many as fit; the rest live in the More menu. */
 const PINNED = 6;
-const PINNED_TABS = TABS.slice(0, PINNED);
-const MORE_TABS = TABS.slice(PINNED);
 
 /** This month, the point the time machine opens at before you drag it back. */
 const thisMonth = `${new Date().getFullYear()}-${String(new Date().getMonth() + 1).padStart(2, '0')}`;
@@ -134,6 +132,32 @@ export default function App() {
   };
   const menuRef = useRef<HTMLElement>(null);
   const moreRef = useRef<HTMLDivElement>(null);
+  // Desktop tab row: every label is measured once in a hidden copy, then the row keeps as many as its width holds.
+  // A callback ref: the row only appears once the collection has loaded.
+  const measureRef = useRef<HTMLDivElement>(null);
+  const [pinned, setPinned] = useState(PINNED);
+  const tabsObserver = useRef<ResizeObserver | null>(null);
+  const tabsRef = useCallback((row: HTMLDivElement | null) => {
+    tabsObserver.current?.disconnect();
+    tabsObserver.current = null;
+    const measure = measureRef.current;
+    if (!row || !measure) return;
+    const fit = () => {
+      const widths = [...measure.children].map((b) => (b as HTMLElement).offsetWidth);
+      if (!widths[0]) return; // Hidden (the phone layout): keep what we have.
+      const gap = parseFloat(getComputedStyle(row).columnGap) || 0;
+      let used = 0;
+      let n = 0;
+      while (n < widths.length && used + widths[n] <= row.clientWidth) used += widths[n++] + gap;
+      setPinned(Math.max(1, n));
+    };
+    fit();
+    tabsObserver.current = new ResizeObserver(fit);
+    tabsObserver.current.observe(row);
+    document.fonts?.ready.then(fit);
+  }, []);
+  const PINNED_TABS = TABS.slice(0, pinned);
+  const MORE_TABS = TABS.slice(pinned);
   // On the published site everything is loaded, to tell visitors what changed since their last visit.
   const checkChanges = editingChecked && !editable;
   // Always loaded: a game's Last played comes from Game of the Month, and the year editor fills stats from it.
@@ -412,14 +436,21 @@ export default function App() {
 
       {/* Desktop: the game sections that fit, then More for the rest of them. The other collections stay pinned. */}
       <nav className="tabs-bar" aria-label="Sections">
-        <div className="tabs">
+        <div className="tabs tabs-measure" ref={measureRef} aria-hidden="true">
+          {TABS.map((t) => (
+            <button key={t.id} tabIndex={-1}>
+              {t.label}
+            </button>
+          ))}
+        </div>
+        <div className="tabs" ref={tabsRef}>
           {PINNED_TABS.map((t) => (
             <button key={t.id} className={tab === t.id ? 'on' : ''} aria-current={tab === t.id ? 'page' : undefined} onClick={() => goTo(t.id)}>
               {t.label}
             </button>
           ))}
         </div>
-        <div className="tabs-more" ref={moreRef}>
+        {MORE_TABS.length > 0 && <div className="tabs-more" ref={moreRef}>
           <button
             className={`tabs-more-toggle ${inMoreMenu ? 'on' : ''}`}
             aria-expanded={moreOpen}
@@ -441,7 +472,7 @@ export default function App() {
               ))}
             </div>
           )}
-        </div>
+        </div>}
         <span className="tabs-divider" aria-hidden="true" />
         <span className="tabs-group-label">Other</span>
         <div className="tabs-other">

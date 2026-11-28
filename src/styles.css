@@ -1400,6 +1400,21 @@ div.gallery-main {
   gap: 4px;
 }
 
+/* A hidden copy of every tab, measured to decide how many fit in the row. */
+.tabs-bar {
+  position: relative;
+}
+
+.tabs.tabs-measure {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: max-content;
+  visibility: hidden;
+  pointer-events: none;
+  overflow: visible;
+}
+
 .tabs-more-toggle {
   display: flex;
   align-items: center;
